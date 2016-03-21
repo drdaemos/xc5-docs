@@ -2,18 +2,28 @@
     padding: 2em 0em;
 }
 
-.ui.banner.segment {
-    padding: 5rem 0;
+#banner {
+    padding: 1rem 0;
     background: url(#{$base-dir}/images/banner/img-home-web.jpg) no-repeat center center #514947;
     background-size: cover;
 
-    .header {
-        > .headline {
+    .banner-menu {
+        .header.item {
+            img {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .banner-welcome {
+        padding: 5rem 0;
+
+        .header > .headline {
             line-height: 1.5em;
             font-size: 1.5em;
         }
 
-        > .tagline {
+        .header > .tagline {
             font-size: 0.75em;
         }
     }
@@ -25,4 +35,16 @@
 
 .ui.container.page {
     padding: 2rem 0;
+}
+
+.navigation-item {
+    padding: 1rem;
+
+    a {
+        color: $text-color;
+    }
+
+    &:hover{
+        background: rgba($text-color, .03);
+    }
 }

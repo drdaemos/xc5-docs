@@ -1,77 +1,27 @@
 ---
 layout: base
 banner: /images/
+large_header: true
 ---
-<div class="ui vertical banner inverted segment">
-  <div class="ui text center aligned container">
-    <h1 class="ui inverted header">
-      <div class="headline">X-Cart Developer Documentation</div>
-      <div class="tagline">Build the tools that will shape the future of commerce</div>
-    </h1>
-    <div class="ui hidden divider"></div>
-    <a href="{{ '/getting-started/index.html' | prepend: site.baseurl }}" class="ui huge inverted basic button">
-        Get Started
-    </a>
-    <a href="/changelogs.html" class="ui huge inverted basic button">
-        What's new
-    </a>
-  </div>
-</div>
-
 <div class="ui vertical navigation segment">
-  <div class="ui container">
-    <div class="ui three link cards">
-
-      <div class="card">
-        <div class="content">
-          <a class="header" href="{{ '/getting-started/index.html' | prepend: site.baseurl }}">
-            Getting started
-          </a>
+  <div class="ui three column grid container">
+    {% assign home_pages = site.pages | sort: 'order' %}
+    {% for page in home_pages %}
+      {% if page.title and page.categories contains 'home' %}
+        <div class="column">
+            <div class="navigation-item">
+              <a href="{{ page.url || prepend: site.baseurl }}">
+                <h2 class="ui header">
+                  <i class="{{ page.icon }} icon"></i>
+                  <div class="content">
+                    {{ page.title }}
+                  </div>
+                </h2>
+                <p>{{ page.description }}</p>
+              </a>
+          </div>
         </div>
-      </a>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="header">Architecture overview</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="header">Changelogs</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="content">
-          <div class="header">Frontend developer guides</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="header">Design guidelines</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="header">UI Components</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="content">
-          <div class="header">Javascript developer guides</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="header">Module developer guides</div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="content">
-          <div class="header">Coding standarts</div>
-        </div>
-      </div>
-    </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>

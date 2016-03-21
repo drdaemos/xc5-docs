@@ -1,25 +1,44 @@
-<header class="site-header">
+<header id="banner" class="banner ui vertical inverted segment">
 
-  <div class="ui large borderless secondary menu">
+  <div class="banner-menu ui large secondary inverted menu">
     <div class="ui container">
-      <a class="header item" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      <a class="header item" href="{{ site.baseurl }}/">
+        <img src="{{ '/images/xcart-logo.png' | prepend: site.baseurl }}">
+        {{ site.title }}
+      </a>
 
       <div class="right menu">
         {% for page in site.pages %}
-          {% if page.title %}
-          <!-- <a class="item" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> -->
+          {% if page.title and page.categories contains 'top' %}
+            <a class="item" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
-
-        <div class="ui item">
-          <div class="ui transparent icon input">
+        <div class="item">
+          <div class="ui transparent inverted icon input">
             <input type="text" placeholder="Search...">
-            <i class="search link icon"></i>
+            <i class="search icon"></i>
           </div>
+          <div class="results"></div>
         </div>
 
       </div>
     </div>
   </div>
+
+  {% if page.large_header %}
+    <div class="banner-welcome ui text center aligned container">
+      <h1 class="ui inverted header">
+        <div class="headline">X-Cart Developer Documentation</div>
+        <div class="tagline">Build the tools that will shape the future of commerce</div>
+      </h1>
+      <div class="ui hidden divider"></div>
+      <a href="{{ '/getting-started/index.html' | prepend: site.baseurl }}" class="ui huge inverted basic button">
+          Get Started
+      </a>
+      <a href="/changelogs.html" class="ui huge inverted basic button">
+          What's new
+      </a>
+    </div>
+  {% endif %}
 
 </header>
