@@ -16,3 +16,5 @@ github_username:  drdaemos
 
 # Build settings
 markdown: kramdown
+incremental: false
+lsi: true

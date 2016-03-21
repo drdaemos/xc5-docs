@@ -1,23 +1,77 @@
 ---
-layout: default
+layout: base
+banner: /images/
 ---
+<div class="ui vertical banner inverted segment">
+  <div class="ui text center aligned container">
+    <h1 class="ui inverted header">
+      <div class="headline">X-Cart Developer Documentation</div>
+      <div class="tagline">Build the tools that will shape the future of commerce</div>
+    </h1>
+    <div class="ui hidden divider"></div>
+    <a href="{{ '/getting-started/index.html' | prepend: site.baseurl }}" class="ui huge inverted basic button">
+        Get Started
+    </a>
+    <a href="/changelogs.html" class="ui huge inverted basic button">
+        What's new
+    </a>
+  </div>
+</div>
 
-<div class="home">
+<div class="ui vertical navigation segment">
+  <div class="ui container">
+    <div class="ui three link cards">
 
-  <h1 class="page-heading">Posts</h1>
+      <div class="card">
+        <div class="content">
+          <a class="header" href="{{ '/getting-started/index.html' | prepend: site.baseurl }}">
+            Getting started
+          </a>
+        </div>
+      </a>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="header">Architecture overview</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="header">Changelogs</div>
+        </div>
+      </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <div class="card">
+        <div class="content">
+          <div class="header">Frontend developer guides</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="header">Design guidelines</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="header">UI Components</div>
+        </div>
+      </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+      <div class="card">
+        <div class="content">
+          <div class="header">Javascript developer guides</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="header">Module developer guides</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="content">
+          <div class="header">Coding standarts</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
