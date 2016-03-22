@@ -6,18 +6,18 @@ large_header: true
 <div class="ui vertical navigation segment">
   <div class="ui three column grid container">
     {% assign home_pages = site.pages | sort: 'order' %}
-    {% for page in home_pages %}
-      {% if page.title and page.categories contains 'home' %}
+    {% for item in home_pages %}
+      {% if item.title and item.categories contains 'home' %}
         <div class="column">
             <div class="navigation-item">
-              <a href="{{ page.url || prepend: site.baseurl }}">
+              <a href="{{ item.url || prepend: site.baseurl }}">
                 <h2 class="ui header">
-                  <i class="{{ page.icon }} icon"></i>
+                  <i class="{{ item.icon }} icon"></i>
                   <div class="content">
-                    {{ page.title }}
+                    {{ item.title }}
                   </div>
                 </h2>
-                <p>{{ page.description }}</p>
+                <p>{{ item.description }}</p>
               </a>
           </div>
         </div>

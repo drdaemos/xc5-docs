@@ -1,0 +1,18 @@
+---
+layout: null
+---
+[
+  {% for page in site.pages %}
+    {% if page.title %}
+      {
+        "title": "{{ page.title }}",
+        "content": "{{ page.content | markdownify | strip_html }}",
+        "link": "{{ page.url | prepend: site.baseurl }}",
+        "excerpt": "{{ page.description }}",
+        "keywords": "{{ page.keywords }}",
+        "exclude": {% if page.search_exclude %}"true"{% else %}"false"{% endif %}
+      },
+    {% endif %}
+  {% endfor %}
+  false
+]
