@@ -3,6 +3,7 @@ layout: article_with_sidebar
 title: Architectural basics
 categories: [architecture]
 order: 20
+keywords: [ajax]
 ---
 
 The Architecture Guide provides a relatively high-level introduction and view of the X-Cart  product.

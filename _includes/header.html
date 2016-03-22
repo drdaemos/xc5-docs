@@ -13,9 +13,9 @@
             <a class="item" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
-        <div class="item">
+        <div class="ui search item site-search">
           <div class="ui transparent inverted icon input">
-            <input type="text" placeholder="Search...">
+            <input class="prompt" type="text" placeholder="Search...">
             <i class="search icon"></i>
           </div>
           <div class="results"></div>
