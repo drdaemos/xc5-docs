@@ -48,3 +48,22 @@
         background: rgba($text-color, .03);
     }
 }
+
+.menu.navigation {
+    .menu.sub {
+        padding-left: 0.5em;
+    }
+    .anchor-link.item {
+        padding: 0;
+
+        a.ui {
+            display: block;
+            padding: 0.5em 1.33333333em;
+
+            &:hover{
+                background: rgba($text-color, .03);
+                color: $text-color;
+            }
+        }
+    }
+}

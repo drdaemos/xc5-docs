@@ -1,0 +1,29 @@
+  {% assign menu_items = site.pages | sort: 'order' %}
+  {% if include.level == 1 %}
+ 	{% assign class = 'ui vertical secondary navigation' %}
+  {% else %}
+  	{% assign class = 'sub' %}
+  {% endif %}
+
+  <div class="menu {{ class }}">
+  	{% for item in menu_items %}
+  		{% assign parts = item.url | remove_first: '/' | remove: 'index.html' | split: '/' %}
+  		{% assign itembase_array = "" | split: "|" %}
+   		{% for part in parts limit: include.level %}
+			{% assign itembase_array = itembase_array | push: part %}
+  		{% endfor %}
+  		{% assign itembase = itembase_array | join: '/' %}
+
+	  	{% assign parts_size = parts | size %}
+	  	{% if item.title and itembase == include.parent and parts_size > include.level %}
+	  		{% assign sublevel = include.level | plus: 1 %}
+	  		{% assign levelparent = parts | join: '/' %}
+	  		{% unless parts_size > sublevel %}
+		  		<div class="anchor-link item">
+		  			<a class="ui" href="{{ item.url | prepend: site.baseurl }}">{{item.title}}</a>
+		  			{% include navigation_level.html level=sublevel parent=levelparent %}
+		  		</div>
+	  		{% endunless %}
+	  	{% endif %}
+  	{% endfor %}
+  </div>

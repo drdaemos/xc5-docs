@@ -1,6 +1,6 @@
 ---
 layout: article_with_sidebar
-title: Architectural layers
+title: Introduction
 categories: [architecture]
 order: 10
 ---
