@@ -9,9 +9,9 @@
 
       <div class="right menu">
         <!-- Top categories -->
-        {% for page in site.pages %}
-          {% if page.title and page.categories contains 'top' %}
-            <a class="item" href="{{ page.url | prepend: baseurl_lang }}">{{ page.title }}</a>
+        {% for item in site.pages %}
+          {% if item.title and item.categories contains 'top' and item.lang == page.lang %}
+            <a class="item" href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a>
           {% endif %}
         {% endfor %}
 

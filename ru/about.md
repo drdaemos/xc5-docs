@@ -1,7 +1,7 @@
 ---
 layout: article
-lang: en
-title: About
+lang: ru
+title: О сайте
 categories: [top]
 ---
 Some about text

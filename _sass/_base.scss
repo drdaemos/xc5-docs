@@ -69,3 +69,18 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 }
+
+.center-image {
+    margin: 0 auto;
+    display: block;
+}
+
+.not-found-page {
+    padding-top: 120px;
+    padding-bottom: 140px;
+
+    .text {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+}
