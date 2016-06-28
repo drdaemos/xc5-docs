@@ -1,5 +1,6 @@
 ---
 layout: article_with_sidebar
+lang: en
 title: Introduction
 categories: [architecture]
 order: 10

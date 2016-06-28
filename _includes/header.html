@@ -2,17 +2,20 @@
 
   <div class="banner-menu ui large secondary inverted menu">
     <div class="ui container">
-      <a class="header item" href="{{ site.baseurl }}/">
+      <a class="header item" href="{{ site.baseurl }}/{{ lang_current }}">
         <img src="{{ '/images/xcart-logo.png' | prepend: site.baseurl }}">
         {{ site.title }}
       </a>
 
       <div class="right menu">
+        <!-- Top categories -->
         {% for page in site.pages %}
           {% if page.title and page.categories contains 'top' %}
-            <a class="item" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <a class="item" href="{{ page.url | prepend: baseurl_lang }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
+
+        <!-- Search panel -->
         <div class="ui search item site-search">
           <div class="ui transparent inverted icon input">
             <input class="prompt" type="text" placeholder="Search...">
@@ -21,20 +24,38 @@
           <div class="results"></div>
         </div>
 
+        <!-- Language selector -->
+        <div class="ui language floating dropdown link item" id="language-selector">
+          <i class="world icon"></i>
+          <span class="text">{{ site.lang[page.lang] }}</span>
+          <div class="menu">
+            {% for item in site.lang %}
+              {% assign lang_current_part = lang_current | append: '/' %}
+              {% if item[0] == lang_current %}
+                <div class="item">{{ item[1] }}</div>
+              {% elsif item[0] == site.lang_default %}
+                <a class="item" href="{{ page.url | remove_first: lang_current_part | prepend: '/' | prepend: site.baseurl }}">{{ item[1] }}</a>
+              {% else %}
+                <a class="item" href="{{ page.url | remove_first: lang_current_part | prepend: '/' | prepend: item[0] | prepend: '/' | prepend: site.baseurl }}">{{ item[1] }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
   {% if page.large_header %}
     <div class="banner-welcome ui text center aligned container">
       <h1 class="ui inverted header">
-        <div class="headline">X-Cart Developer Documentation</div>
-        <div class="tagline">Build the tools that will shape the future of commerce</div>
+        <div class="headline">{{ site.data.labels['X-Cart Developer Documentation'][page.lang] }}</div>
+        <div class="tagline">{{ site.data.labels['Build the tools that will shape the future of commerce'][page.lang] }}</div>
       </h1>
       <div class="ui hidden divider"></div>
-      <a href="{{ '/getting-started/index.html' | prepend: site.baseurl }}" class="ui huge inverted basic button">
+      <a href="{{ '/getting-started/index.html' | prepend: baseurl_lang }}" class="ui huge inverted basic button">
           Get Started
       </a>
-      <a href="/changelogs.html" class="ui huge inverted basic button">
+      <a href="{{ '/changelogs.html' | prepend: baseurl_lang }}" class="ui huge inverted basic button">
           What's new
       </a>
     </div>

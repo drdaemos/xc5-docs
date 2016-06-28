@@ -15,7 +15,7 @@
   		{% assign itembase = itembase_array | join: '/' %}
 
 	  	{% assign parts_size = parts | size %}
-	  	{% if item.title and itembase == include.parent and parts_size > include.level %}
+	  	{% if item.title and itembase == include.parent and parts_size > include.level && item.lang = page.lang %}
 	  		{% assign sublevel = include.level | plus: 1 %}
 	  		{% assign levelparent = parts | join: '/' %}
 	  		{% unless parts_size > sublevel %}

@@ -18,3 +18,17 @@ github_username:  drdaemos
 markdown: kramdown
 incremental: false
 lsi: true
+
+gems:
+  - jekyll-redirect-from
+
+# Languages
+
+baseurl_lang: ''
+lang_current: ''
+lang_default: en
+lang:
+    en: English
+    ru: Russian
+
+# Translations

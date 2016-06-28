@@ -1,5 +1,6 @@
 ---
 layout: article_with_sidebar
+lang: en
 title: Architecture overview
 categories: [home]
 order: 2
