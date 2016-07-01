@@ -1,5 +1,5 @@
   {% assign menu_items = site.pages | sort: 'order' %}
-  {% if include.level == 1 %}
+  {% if include.level == 2 %}
  	{% assign class = 'ui vertical secondary navigation' %}
   {% else %}
   	{% assign class = 'sub' %}
@@ -8,6 +8,7 @@
   <div class="menu {{ class }}">
   	{% for item in menu_items %}
   		{% assign parts = item.url | remove_first: '/' | remove: 'index.html' | split: '/' %}
+
   		{% assign itembase_array = "" | split: "|" %}
    		{% for part in parts limit: include.level %}
 			{% assign itembase_array = itembase_array | push: part %}

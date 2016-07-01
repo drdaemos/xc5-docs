@@ -1,9 +1,10 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Coding standarts
+title: Module developer guides
 categories: [home]
-order: 8
-icon: file code outline
+order: 7
+icon: lab
 description: How to contribute to the X-Cart codebase and Marketplace. Create or customize, and test and package extensions.
 ---
 

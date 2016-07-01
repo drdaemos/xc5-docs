@@ -1,11 +1,14 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Architectural layers
-categories: [architecture]
-order: 30
+title: Coding standarts
+categories: [home]
+order: 8
+icon: file code outline
+description: How to contribute to the X-Cart codebase and Marketplace. Create or customize, and test and package extensions.
 ---
 
-The Architecture Guide provides a relatively high-level introduction and view of the X-Cart  product.
+The Design guidelines provides a relatively high-level introduction and view of the X-Cart  product.
 
 The X-Cart  platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 

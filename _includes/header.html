@@ -33,10 +33,8 @@
               {% assign lang_current_part = lang_current | append: '/' %}
               {% if item[0] == lang_current %}
                 <div class="item">{{ item[1] }}</div>
-              {% elsif item[0] == site.lang_default %}
-                <a class="item" href="{{ page.url | remove_first: lang_current_part | prepend: '/' | prepend: site.baseurl }}">{{ item[1] }}</a>
               {% else %}
-                <a class="item" href="{{ page.url | remove_first: lang_current_part | prepend: '/' | prepend: item[0] | prepend: '/' | prepend: site.baseurl }}">{{ item[1] }}</a>
+                <a class="item" href="{{ page.url | remove_first: lang_current_part | prepend: item[0] | prepend: '/' | prepend: site.baseurl }}">{{ item[1] }}</a>
               {% endif %}
             {% endfor %}
           </div>

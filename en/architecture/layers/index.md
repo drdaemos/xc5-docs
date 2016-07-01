@@ -1,13 +1,12 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Javascript guides
-categories: [home]
-order: 6
-icon: html5
-description: Everything you need to know about X-Cart and JavaScript.
+title: Architectural layers
+categories: [architecture]
+order: 30
 ---
 
-The Design guidelines provides a relatively high-level introduction and view of the X-Cart  product.
+The Architecture Guide provides a relatively high-level introduction and view of the X-Cart  product.
 
 The X-Cart  platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 

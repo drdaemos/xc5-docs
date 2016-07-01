@@ -1,10 +1,11 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Tutorials
+title: UI components
 categories: [home]
-order: 9
-icon: sitemap
-description: Different guides to achieve features that you need.
+order: 5
+icon: cubes
+description: How to use grids, forms, and other elements of the X-Cart UI Components.
 ---
 
 The Design guidelines provides a relatively high-level introduction and view of the X-Cart  product.

@@ -1,13 +1,14 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Frontend developer guide
+title: Tutorials
 categories: [home]
-order: 3
-icon: browser
-description: Customize your frontend with ease.
+order: 9
+icon: sitemap
+description: Different guides to achieve features that you need.
 ---
 
-The Frontend developer guide provides a relatively high-level introduction and view of the X-Cart  product.
+The Design guidelines provides a relatively high-level introduction and view of the X-Cart  product.
 
 The X-Cart  platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 

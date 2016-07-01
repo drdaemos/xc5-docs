@@ -1,6 +1,9 @@
 {% include global.html %}
 
 <aside class="sidebar">
-  {% assign baseurl = page.url | remove_first: '/' | remove: 'index.html' | split: '/' | first %}
-  {% include navigation_level.html level=1 parent=baseurl %}
+  {% assign lang_current_part = lang_current | append: '/' %}
+  {% assign baseurl = page.url | remove_first: '/' | remove_first: lang_current_part | remove: 'index.html' | split: '/' | first %}
+  {% assign baseurl = baseurl | prepend: lang_current_part %}
+
+  {% include navigation_level.html level=2 parent=baseurl %}
 </aside>

@@ -1,6 +1,6 @@
 ---
-layout: article_with_sidebar
 lang: en
+layout: article_with_sidebar
 title: Getting started
 categories: [home]
 order: 1

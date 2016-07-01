@@ -1,13 +1,14 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Design guidelines
-categories: [home]
-order: 4
-icon: paint brush
-description: Learn design patterns which are agreed-upon conventions for creating UI features and interactions.
+title: Domain layer
+categories: [architecture]
+order: 10
+icon: book
+description: The Architecture Guide provides a relatively high-level introduction and view of the X-Cart product.
 ---
 
-The Design guidelines provides a relatively high-level introduction and view of the X-Cart  product.
+The Architecture Guide provides a relatively high-level introduction and view of the X-Cart  product.
 
 The X-Cart  platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 

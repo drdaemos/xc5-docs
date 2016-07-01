@@ -1,13 +1,12 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Module developer guides
-categories: [home]
-order: 7
-icon: lab
-description: How to contribute to the X-Cart codebase and Marketplace. Create or customize, and test and package extensions.
+title: Introduction
+categories: [architecture]
+order: 10
 ---
 
-The Design guidelines provides a relatively high-level introduction and view of the X-Cart  product.
+The Architecture Guide provides a relatively high-level introduction and view of the X-Cart  product.
 
 The X-Cart  platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 

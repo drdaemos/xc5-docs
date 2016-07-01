@@ -1,7 +1,2 @@
-{% if page.lang == site.lang_default %}
-    {% assign lang_current = '' %}
-    {% assign baseurl_lang = site.baseurl %}
-{% else %}
-    {% assign lang_current = page.lang %}
-    {% assign baseurl_lang = lang_current | prepend: '/' | prepend: site.baseurl %}
-{% endif %}
+{% assign lang_current = page.lang %}
+{% assign baseurl_lang = lang_current | prepend: '/' | prepend: site.baseurl %}

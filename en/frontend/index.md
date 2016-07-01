@@ -1,13 +1,14 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: Domain layer
-categories: [architecture]
-order: 10
-icon: book
-description: The Architecture Guide provides a relatively high-level introduction and view of the X-Cart product.
+title: Frontend developer guide
+categories: [home]
+order: 3
+icon: browser
+description: Customize your frontend with ease.
 ---
 
-The Architecture Guide provides a relatively high-level introduction and view of the X-Cart  product.
+The Frontend developer guide provides a relatively high-level introduction and view of the X-Cart  product.
 
 The X-Cart  platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 

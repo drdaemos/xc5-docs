@@ -1,10 +1,11 @@
 ---
+lang: en
 layout: article_with_sidebar
-title: UI components
+title: Design guidelines
 categories: [home]
-order: 5
-icon: cubes
-description: How to use grids, forms, and other elements of the X-Cart UI Components.
+order: 4
+icon: paint brush
+description: Learn design patterns which are agreed-upon conventions for creating UI features and interactions.
 ---
 
 The Design guidelines provides a relatively high-level introduction and view of the X-Cart  product.

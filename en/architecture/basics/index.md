@@ -1,4 +1,5 @@
 ---
+lang: en
 layout: article_with_sidebar
 title: Architectural basics
 categories: [architecture]
