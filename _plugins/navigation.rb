@@ -1,6 +1,8 @@
 module Jekyll
   module NavigationPlugin
+    class BreadcrumbsTag < Liquid::Tag
 
+    end
     class MenuTag < Liquid::Tag
 
       def initialize(tag_name, baseurl, tokens)
@@ -54,4 +56,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('navigation_menu', Jekyll::NavigationMenuPlugin::MenuTag)
+Liquid::Template.register_tag('navigation_menu', Jekyll::NavigationPlugin::MenuTag)
