@@ -5,6 +5,8 @@ title: 'Working with product attributes'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This guide aims to show some approach of working with product attributes. In this article we will create a mod that will hide certain attribute from being displayed in customer area.
@@ -18,14 +20,14 @@ Our mod will hide this **hidden-value** attribute in storefront.
 
 # Table of Contents
 
-*   [Introduction](#Workingwithproductattributes-Introduction)
-*   [Table of Contents](#Workingwithproductattributes-TableofContents)
-*   [Implementation](#Workingwithproductattributes-Implementation)
-*   [Module pack](#Workingwithproductattributes-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module pack](#module-pack)
 
 # Implementation
 
-We start with [creating an empty module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **AttributeDemo**.
+We start with [creating an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **AttributeDemo**.
 
 Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default/en/product/details/parts/attribute.tpl` template – as we can find it via **Webmaster Kit** module. Here is a code of this template:
 
@@ -42,7 +44,7 @@ Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default
 </li>
 {end:}{% endhighlight %}
 
-It takes attributes from array returned by the `getAttrList()` method and then display them in cycle. If we want to hide the **hidden-value** attribute, we should remove it from array returned by the `getAttrList()` method, so we must [decorate](Step-3---applying-logic-changes_8224804.html) the `\XLite\View\Product\Details\Customer\Attributes` class ([more info about classnames in X-Cart](X-Cart-classes-structure-and-namespaces_524301.html)). In order to do that we create the  
+It takes attributes from array returned by the `getAttrList()` method and then display them in cycle. If we want to hide the **hidden-value** attribute, we should remove it from array returned by the `getAttrList()` method, so we must [decorate]({{ baseurl_lang }}/developer_docs/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\Product\Details\Customer\Attributes` class ([more info about classnames in X-Cart]({{ baseurl_lang }}/developer_docs/misc/x-cart_classes_structure_and_namespaces.html)). In order to do that we create the  
 `<X-Cart>/classes/XLite/Module/Tony/AttributeDemo/View/Product/Details/Customer/Attributes.php` file with the following content: 
 
 {% highlight php %}<?php

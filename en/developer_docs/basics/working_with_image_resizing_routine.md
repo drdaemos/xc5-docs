@@ -5,6 +5,8 @@ title: 'Working with image resizing routine'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 Default X-Cart _lazy_ resizes images and this article describes how to work with this process.
@@ -13,17 +15,17 @@ To illustrate the image-resizing process, imagine that you uploaded 5000px x 500
 
 # Table of Contents
 
-*   [Introduction](#Workingwithimageresizingroutine-Introduction)
-*   [Table of Contents](#Workingwithimageresizingroutine-TableofContents)
-*   [Disabling image resizing routine](#Workingwithimageresizingroutine-Disablingimageresizingroutine)
-*   [Module pack](#Workingwithimageresizingroutine-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Disabling image resizing routine](#disabling-image-resizing-routine)
+*   [Module pack](#module-pack)
 
 # Disabling image resizing routine
 
 In order to disable image resizing routine in a whole store you can apply the following simple mod:
 
-1.  [Create an empty module](Step-1---creating-simplest-module_524296.html). We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
-2.  [Decorate](Step-3---applying-logic-changes_8224804.html) the `\XLite\View\Image` class ([more info about classnames](X-Cart-classes-structure-and-namespaces_524301.html)), so that your class would look as follows: 
+1.  [Create an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
+2.  [Decorate]({{ baseurl_lang }}/developer_docs/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\Image` class ([more info about classnames]({{ baseurl_lang }}/developer_docs/misc/x-cart_classes_structure_and_namespaces.html)), so that your class would look as follows: 
 
     {% highlight php %}<?php
     // vim: set ts=4 sw=4 sts=4 et:

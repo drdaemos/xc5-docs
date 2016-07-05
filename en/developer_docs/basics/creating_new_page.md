@@ -5,29 +5,31 @@ title: 'Creating new page'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article describes how developers can create a new page in X-Cart. For instance, we want to create a page in admin area (`admin.php?target=tony_custom`) that will show some specific information. This guide explains how to achieve this task.
 
 # Table of Contents
 
-*   [Introduction](#Creatingnewpage-Introduction)
-*   [Table of Contents](#Creatingnewpage-TableofContents)
-*   [Before get started](#Creatingnewpage-Beforegetstarted)
-*   [Creating page in admin area](#Creatingnewpage-Creatingpageinadminarea)
-*   [Creating page via macro](#Creatingnewpage-Creatingpageviamacro)
-*   [Creating page in customer area](#Creatingnewpage-Creatingpageincustomerarea)
-*   [Module pack](#Creatingnewpage-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Before get started](#before-get-started)
+*   [Creating page in admin area](#creating-page-in-admin-area)
+*   [Creating page via macro](#creating-page-via-macro)
+*   [Creating page in customer area](#creating-page-in-customer-area)
+*   [Module pack](#module-pack)
 
 # Before get started
 
-First thing to do is to [create an empty module](Step-1---creating-simplest-module_524296.html). We are creating a module with developer ID **Tony** and module ID **PageDemo**.
+First thing to do is to [create an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **PageDemo**.
 
 # Creating page in admin area
 
 For the sake of example, our task is to create the page which will be available at `admin.php?target=tony_custom` address and will display **Hello world!** text.
 
-1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look [here](Step-3---applying-logic-changes_8224804.html#Step3-applyinglogicchanges-GeneralX-Cartworkflow). 
+1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look [here]({{ baseurl_lang }}/developer_docs/getting_started/step_3_-_applying_logic_changes.html#Step3-applyinglogicchanges-GeneralX-Cartworkflow). 
 2.  We create the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/Admin/TonyCustom.php` file with the following content: 
 
     {% highlight php %}<?php
@@ -102,7 +104,7 @@ For the sake of example, our task is to create the page which will be available 
 
 # Creating page via macro
 
-You can [create a page via macro](X-Cart-SDK_7864338.html#X-CartSDK-Creatingpage), so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
+You can [create a page via macro]({{ baseurl_lang }}/developer_docs/getting_started/x-cart_sdk.html#X-CartSDK-Creatingpage), so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
 
 # Creating page in customer area
 

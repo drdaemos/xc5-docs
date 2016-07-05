@@ -5,9 +5,11 @@ title: 'Adding new property to a product - part 2 - value of this field must be 
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
-This article is a continuation of an article about [adding a new property to a product](Adding-new-property-to-a-product_8225149.html) and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).
+This article is a continuation of an article about [adding a new property to a product]({{ baseurl_lang }}/developer_docs/basics/adding_new_property_to_a_product/{{ baseurl_lang }}/index.html) and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).
 
 This article will explain how to save the product property's value when you place an order and even if you change this property's value later on, old invoices would still use saved value.
 
@@ -15,10 +17,10 @@ This article assumes that you are already familiar with the task described in th
 
 # Table of Contents
 
-*   [Introduction](#Addingnewpropertytoaproduct-part2-valueofthisfieldmustbesavedaftercheckout-Introduction)
-*   [Table of Contents](#Addingnewpropertytoaproduct-part2-valueofthisfieldmustbesavedaftercheckout-TableofContents)
-*   [Implementation](#Addingnewpropertytoaproduct-part2-valueofthisfieldmustbesavedaftercheckout-Implementation)
-*   [Module pack](#Addingnewpropertytoaproduct-part2-valueofthisfieldmustbesavedaftercheckout-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module pack](#module-pack)
 
 # Implementation
 
@@ -88,7 +90,7 @@ We start with creating a module similar to one from the first article.
 
 Now it is time to add this `$testField` property and its `getTestField()` accessor method to the `\XLite\Model\OrderItem` class and our mod will be ready.
 
-We [decorate](Step-3---applying-logic-changes_8224804.html) the `\XLite\Model\OrderItem` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/OrderItem.php` file with the following content: 
+We [decorate]({{ baseurl_lang }}/developer_docs/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\Model\OrderItem` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/OrderItem.php` file with the following content: 
 
 {% highlight php %}<?php
 // vim: set ts=4 sw=4 sts=4 et:
@@ -200,7 +202,7 @@ then go to your storefront, add this product to cart, proceed to checkout and pl
 
 If you go to your admin area, change the **Test Field** property for this product again and then reload the **Thank you** page, you will still see old value.
 
-_Note: this mod does not display this property on invoice page in admin area and in email notifications. To get the idea of how to enhance this mod and show the value in admin area, please check the [Adding product images to order notifications](Adding-product-images-to-order-notifications_8225446.html)__ guide._
+_Note: this mod does not display this property on invoice page in admin area and in email notifications. To get the idea of how to enhance this mod and show the value in admin area, please check the [Adding product images to order notifications]({{ baseurl_lang }}/developer_docs/design_changes/adding_product_images_to_order_notifications.html)__ guide._
 
 # Module pack
 

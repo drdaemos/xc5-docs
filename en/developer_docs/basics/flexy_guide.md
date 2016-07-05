@@ -5,22 +5,24 @@ title: 'Flexy Guide'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article is a guide to [Flexy](http://pear.php.net/package/HTML_Template_Flexy) template engine used in X-Cart.
 
 # Table of Contents
 
-*   [Introduction](#FlexyGuide-Introduction)
-*   [Table of Contents](#FlexyGuide-TableofContents)
-*   [Syntax](#FlexyGuide-Syntax)
-    *   [Basics](#FlexyGuide-Basics)
-    *   [Foreach](#FlexyGuide-Foreach)
-    *   [Modifiers](#FlexyGuide-Modifiers)
-    *   [Including templates and widgets](#FlexyGuide-Includingtemplatesandwidgets)
-*   [Output filter example](#FlexyGuide-Outputfilterexample)
-    *   [Implementation](#FlexyGuide-Implementation)
-    *   [Module pack](#FlexyGuide-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Syntax](#syntax)
+    *   [Basics](#basics)
+    *   [Foreach](#foreach)
+    *   [Modifiers](#modifiers)
+    *   [Including templates and widgets](#including-templates-and-widgets)
+*   [Output filter example](#output-filter-example)
+    *   [Implementation](#implementation)
+    *   [Module pack](#module-pack)
 
 # Syntax
 
@@ -30,7 +32,7 @@ Generally, Flexy template is a file where you specify plain text that will be di
 
 {% highlight php %}My name is {getMyName()}{% endhighlight %}
 
-`{getMyName()}` is a call of function `getMyName()` function [defined](Step-2---applying-design-changes_8224787.html#Step2-applyingdesignchanges-UnderstandingX-Cartlayoutsystem) in the current viewer class or controller class.
+`{getMyName()}` is a call of function `getMyName()` function [defined]({{ baseurl_lang }}/developer_docs/getting_started/step_2_-_applying_design_changes.html#Step2-applyingdesignchanges-UnderstandingX-Cartlayoutsystem) in the current viewer class or controller class.
 
 If you need to pass some string value to a function, it will look as follows: 
 
@@ -124,7 +126,7 @@ If you want to include another template into your one, you can do it as follows:
 <widget template="path/to/another/template.tpl" foo="bar" />
 {* in this case, {foo} variable in the path/to/another/template.tpl template will have value "bar" *}{% endhighlight %}
 
-The same way you can include [viewer classes](Working-with-viewer-classes_8224836.html) into templates: 
+The same way you can include [viewer classes]({{ baseurl_lang }}/developer_docs/basics/working_with_viewer_classes.html) into templates: 
 
 {% highlight php %}<widget class="\XLite\View\Header" />
 
@@ -142,9 +144,9 @@ This section introduces a module that will show you an example of creating Flexy
 
 ## Implementation
 
-We start with [creating an empty module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **OutputFilterDemo**. Then we [create a `target=output_filter` page](Creating-new-page_8224999.html) in customer area in this module. For that we create: 
+We start with [creating an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **OutputFilterDemo**. Then we [create a `target=output_filter` page]({{ baseurl_lang }}/developer_docs/basics/creating_new_page.html) in customer area in this module. For that we create: 
 
-*   an empty controller class `\XLite\Module\Tony\OutputFilterDemo\Controller\Customer\OutputFilter` ([more about classnames in X-Cart](X-Cart-classes-structure-and-namespaces_524301.html));
+*   an empty controller class `\XLite\Module\Tony\OutputFilterDemo\Controller\Customer\OutputFilter` ([more about classnames in X-Cart]({{ baseurl_lang }}/developer_docs/misc/x-cart_classes_structure_and_namespaces.html));
 *   a page viewer class `\XLite\Module\Tony\OutputFilterDemo\View\Page\Customer\OutputFilter` with the following content: 
 
     {% highlight php %}<?php
@@ -181,7 +183,7 @@ We start with [creating an empty module](Step-1---creating-simplest-module_52429
     }{% endhighlight %}
 *   an empty page template `<X-Cart>/skins/default/en/modules/Tony/OutputFilterDemo/page/output_filter/body.tpl`.
 
-Now we need to [decorate](Step-3---applying-logic-changes_8224804.html) the `\XLite\View\AView` class and implement our Flexy output filter. We create the `<X-Cart>/classes/XLite/Module/Tony/OutputFilterDemo/View/AView.php` file with the following content: 
+Now we need to [decorate]({{ baseurl_lang }}/developer_docs/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\AView` class and implement our Flexy output filter. We create the `<X-Cart>/classes/XLite/Module/Tony/OutputFilterDemo/View/AView.php` file with the following content: 
 
 {% highlight php %}<?php
 // vim: set ts=4 sw=4 sts=4 et:

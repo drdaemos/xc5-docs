@@ -5,22 +5,24 @@ title: 'Working with sessions'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
-This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by [decoration](Step-3---applying-logic-changes_8224804.html) of `\XLite\Core\Session` class.
+This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by [decoration]({{ baseurl_lang }}/developer_docs/getting_started/step_3_-_applying_logic_changes.html) of `\XLite\Core\Session` class.
 
 For the sake of example, we will create a module with a page `cart.php?target=session_demo` and this page can be called with the `session_value` parameter. For the very first time this page will display the **Session value has not been specified yet** message and it will remain the same until the **session_value** parameter is passed. Once it is passed, the page will display the **Session value is: {session_value}** message. Even if you open this page without **session_value** parameter after that, the message **Session value is: {session_value}** message will be displayed with the latest **session_value** submitted.
 
 # Table of Contents
 
-*   [Introduction](#Workingwithsessions-Introduction)
-*   [Table of Contents](#Workingwithsessions-TableofContents)
-*   [Implementation](#Workingwithsessions-Implementation)
-*   [Module example](#Workingwithsessions-Moduleexample)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module example](#module-example)
 
 # Implementation
 
-We start with [creating an empty module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **SessionDemo**. Then we [create a page](Creating-new-page_8224999.html) `cart.php?target=session_demo` in our module. For that we create:
+We start with [creating an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **SessionDemo**. Then we [create a page]({{ baseurl_lang }}/developer_docs/basics/creating_new_page.html) `cart.php?target=session_demo` in our module. For that we create:
 
 *   an empty controller class `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`;
 *   a page viewer class `\XLite\Module\Tony\SessionDemo\View\Page\Customer\SessionDemo` with the following content: 
@@ -59,7 +61,7 @@ We start with [creating an empty module](Step-1---creating-simplest-module_52429
     }{% endhighlight %}
 *   an empty page template `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl`.
 
-Now we need to check each [request](Retrieving-data-from-the-request_524294.html) to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our [controller class](Controller-class_8225389.html) `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
+Now we need to check each [request]({{ baseurl_lang }}/developer_docs/basics/retrieving_data_from_the_request.html) to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our [controller class]({{ baseurl_lang }}/developer_docs/basics/controller_class.html) `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
 
 {% highlight php %}    public function handleRequest()
     {

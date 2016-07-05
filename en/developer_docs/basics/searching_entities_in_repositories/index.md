@@ -5,6 +5,8 @@ title: 'Searching entities in repositories'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article aims to teach developers how they can pull data from repositories by certain criteria.
@@ -13,13 +15,13 @@ For the sake of example, we will consider pulling product information and will w
 
 # Table of Contents
 
-*   [Introduction](#Searchingentitiesinrepositories-Introduction)
-*   [Table of Contents](#Searchingentitiesinrepositories-TableofContents)
-*   [Pulling product by ID](#Searchingentitiesinrepositories-PullingproductbyID)
-*   [Pulling all products](#Searchingentitiesinrepositories-Pullingallproducts)
-*   [Pulling one product by condition](#Searchingentitiesinrepositories-Pullingoneproductbycondition)
-*   [Pulling many products by condition](#Searchingentitiesinrepositories-Pullingmanyproductsbycondition)
-*   [Pulling products by complex condition](#Searchingentitiesinrepositories-Pullingproductsbycomplexcondition)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Pulling product by ID](#pulling-product-by-id)
+*   [Pulling all products](#pulling-all-products)
+*   [Pulling one product by condition](#pulling-one-product-by-condition)
+*   [Pulling many products by condition](#pulling-many-products-by-condition)
+*   [Pulling products by complex condition](#pulling-products-by-complex-condition)
 
 # Pulling product by ID
 
@@ -78,4 +80,4 @@ $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findBy($condit
 
 # Pulling products by complex condition
 
-If you need more complex queries to the database, please learn how to use [QueryBuilder](QueryBuilder_8225337.html) object.
+If you need more complex queries to the database, please learn how to use [QueryBuilder]({{ baseurl_lang }}/developer_docs/basics/searching_entities_in_repositories/querybuilder.html) object.

@@ -5,6 +5,8 @@ title: 'Understanding Models'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 X-Cart primarily works with **Model** objects. For instance, product, category, order, image, user are all Model objects. This article gives an introduction to what is Model classes and how to work with them. 
@@ -13,14 +15,14 @@ For the sake of example, we will create a **TestEntity** class which will have t
 
 # Table of Contents
 
-*   [Introduction](#UnderstandingModels-Introduction)
-*   [Table of Contents](#UnderstandingModels-TableofContents)
-*   [Implementation](#UnderstandingModels-Implementation)
-*   [Module pack](#UnderstandingModels-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module pack](#module-pack)
 
 # Implementation
 
-We start with [creating an empty module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **RepoDemo**.
+We start with [creating an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **RepoDemo**.
 
 Once it is created, we create our **Model** class. For that, we create `<X-Cart>/classes/XLite/Module/Tony/RepoDemo/Model/TestEntity.php` file with the following content: 
 
@@ -50,7 +52,7 @@ class TestEntity extends \XLite\Model\AEntity
 
 Let us have a closer look at what we are doing here:
 
-1.  We start with defining [namespace](X-Cart-classes-structure-and-namespaces_524301.html): 
+1.  We start with defining [namespace]({{ baseurl_lang }}/developer_docs/misc/x-cart_classes_structure_and_namespaces.html): 
 
     {% highlight php %}namespace XLite\Module\Tony\RepoDemo\Model;{% endhighlight %}
 2.  Then in [DocBlocks](http://www.phpdoc.org/docs/latest/guides/docblocks.html) comments we define that this class is a new entity: 

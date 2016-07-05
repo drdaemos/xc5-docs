@@ -5,19 +5,21 @@ title: 'Working with authorization'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article shows you can authenticate a user by login and password. It also shows you how to log off a current user.
 
 # Table of Contents
 
-*   [Introduction](#Workingwithauthorization-Introduction)
-*   [Table of Contents](#Workingwithauthorization-TableofContents)
-*   [Implementation](#Workingwithauthorization-Implementation)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
 
 # Implementation
 
-We start with [creating an external script](Working-with-X-Cart-externally_8225358.html) `<X-Cart>/test.php` with the following content: 
+We start with [creating an external script]({{ baseurl_lang }}/developer_docs/basics/working_with_x-cart_externally.html) `<X-Cart>/test.php` with the following content: 
 
 {% highlight php %}<?php
 //X-Cart initializtion

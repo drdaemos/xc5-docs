@@ -5,9 +5,11 @@ title: 'QueryBuilder'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
-This article is an introduction of **QueryBuilder** object – a special object that is used in order to pull info about [Models](Understanding-Models_8225323.html) from the database.
+This article is an introduction of **QueryBuilder** object – a special object that is used in order to pull info about [Models]({{ baseurl_lang }}/developer_docs/basics/understanding_models.html) from the database.
 
 X-Cart uses [Doctrine 2](http://www.doctrine-project.org/) framework in order to work with database. Since this is [ORM](http://en.wikipedia.org/wiki/Object-relational_mapping) framework, it greatly eases developer's life. You do not have to worry about tables' structure or related objects.
 
@@ -19,9 +21,9 @@ The drawback is that you have to learn new syntax – **DQL** – and new appr
 
 # Table of Contents
 
-*   [Introduction](#QueryBuilder-Introduction)
-*   [Table of Contents](#QueryBuilder-TableofContents)
-*   [Example](#QueryBuilder-Example)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Example](#example)
 
 # Example
 
@@ -87,7 +89,7 @@ Let us have a closer look at commands:
 
     Important part is that the result will be an array of `\XLite\Model\Product` objects – since we generated queryBuilder based of `\XLite\Model\Product` repository.
 
-Let us try to run this code. We [create an external script](Working-with-X-Cart-externally_8225358.html) `test.php` in X-Cart's root and put the following content there: 
+Let us try to run this code. We [create an external script]({{ baseurl_lang }}/developer_docs/basics/working_with_x-cart_externally.html) `test.php` in X-Cart's root and put the following content there: 
 
 {% highlight php %}<?php
 

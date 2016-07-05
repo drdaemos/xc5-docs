@@ -5,9 +5,11 @@ title: 'Resetting the search parameter from &quot;any word&quot; to &quot;all wo
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 Search via the search form in X-Cart is performed based on the "any word" parameter; it is possible, however, to change the default behavior so the search is performed by "all words". To do so, follow the steps below:
 
-1.  Create the simplest module as described in the section [Step 1 - creating simplest module](Step-1---creating-simplest-module_524296.html) of this manual.
+1.  Create the simplest module as described in the section [Step 1 - creating simplest module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) of this manual.
 
 2.  In this module, add a new class:
 

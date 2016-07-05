@@ -5,16 +5,18 @@ title: 'Working with X-Cart externally'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 Imagine the situation that you want to pull some info from X-Cart and then display it in your blog software. In this case, you need to initialize X-Cart and then somehow call one of its functions. This article describes how you can achieve it.
 
 # Table of Contents
 
-*   [Introduction](#WorkingwithX-Cartexternally-Introduction)
-*   [Table of Contents](#WorkingwithX-Cartexternally-TableofContents)
-*   [Implementation](#WorkingwithX-Cartexternally-Implementation)
-*   [Full code](#WorkingwithX-Cartexternally-Fullcode)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Full code](#full-code)
 
 # Implementation
 
@@ -29,7 +31,7 @@ Now X-Cart is initialized in this file and we can start using its functions here
 
 {% highlight php %}echo \XLite\Core\Config::getInstance()->Company->company_name;{% endhighlight %}
 
-and it will display company name from [X-Cart settings](Step-4---working-with-settings_8224795.html).
+and it will display company name from [X-Cart settings]({{ baseurl_lang }}/developer_docs/getting_started/step_4_-_working_with_settings/{{ baseurl_lang }}/index.html).
 
 # Full code
 

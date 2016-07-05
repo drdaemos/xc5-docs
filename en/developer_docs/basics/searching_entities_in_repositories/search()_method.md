@@ -5,27 +5,29 @@ title: 'search() method'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article describes another approach of searching entities in the database and then pulling data. We already know two approaches:
 
-1.  [method find()](Searching-entities-in-repositories_7505773.html) for simple queries
-2.  [queryBuilder object](QueryBuilder_8225337.html) for complex queries
+1.  [method find()]({{ baseurl_lang }}/developer_docs/basics/searching_entities_in_repositories/{{ baseurl_lang }}/index.html) for simple queries
+2.  [queryBuilder object]({{ baseurl_lang }}/developer_docs/basics/searching_entities_in_repositories/querybuilder.html) for complex queries
 
-Method **search()** is used primarily in [ItemsLists objects](ItemsList-introduction----showing-products-on-a-page_8225226.html), because it uses and extends **queryBuilder** object and allows convenient way of adding conditions to a query.
+Method **search()** is used primarily in [ItemsLists objects]({{ baseurl_lang }}/developer_docs/basics/itemslist_introduction_--_showing_products_on_a_page/index.html), because it uses and extends **queryBuilder** object and allows convenient way of adding conditions to a query.
 
 For the sake of example, we will create a mod that will display names of products that have IDs less than 20.
 
 # Table of Contents
 
-*   [Introduction](#search()method-Introduction)
-*   [Table of Contents](#search()method-TableofContents)
-*   [Implementation](#search()method-Implementation)
-*   [Module pack](#search()method-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module pack](#module-pack)
 
 # Implementation
 
-We start with [creating an external](Working-with-X-Cart-externally_8225358.html) `test.php` script inside X-Cart folder. We put the following code inside this script: 
+We start with [creating an external]({{ baseurl_lang }}/developer_docs/basics/working_with_x-cart_externally.html) `test.php` script inside X-Cart folder. We put the following code inside this script: 
 
 {% highlight php %}<?php
 
@@ -58,7 +60,7 @@ However, since it is an object, you can take benefits of it. For instance, add l
 
 Since `\XLite\Core\CommonCell` object behaves as an array, you can think of `search()` method's first parameter as an array that represents conditions that must be handled. The second parameter of the method is a boolean flag that defines whether objects or number of objects must be returned.
 
-Now it is time to implement handling of our **myCond** condition in the `\XLite\Model\Repo\Product` class. We [create an empty module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **SearchRepoDemo**. Inside this module, we [decorate](Step-3---applying-logic-changes_8224804.html) the `\XLite\Model\Repo\Product` class, so we create the `<X-Cart>/classes/XLite/Module/Tony/SearchRepoDemo/Model/Repo/Product.php` file with the following content: 
+Now it is time to implement handling of our **myCond** condition in the `\XLite\Model\Repo\Product` class. We [create an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **SearchRepoDemo**. Inside this module, we [decorate]({{ baseurl_lang }}/developer_docs/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\Model\Repo\Product` class, so we create the `<X-Cart>/classes/XLite/Module/Tony/SearchRepoDemo/Model/Repo/Product.php` file with the following content: 
 
 {% highlight php %} <?php
 // vim: set ts=4 sw=4 sts=4 et:
@@ -151,7 +153,7 @@ It will return all products with ID less than 20\. If we comment the `$cnd->myC
 
 Imagine that you have dozen of conditions for pulling products. In this case, this approach will be very helpful for you.
 
-_Note: if you need to create search() method for your own entity, use [this guide](Creating-new-entity----Introduction-of-editable-ItemsList-in-admin-area_8225303.html#Creatingnewentity--IntroductionofeditableItemsListinadminarea-CreatingRepositoryclass)_ _for its general implementation._
+_Note: if you need to create search() method for your own entity, use [this guide]({{ baseurl_lang }}/developer_docs/basics/creating_new_entity_--_introduction_of_editable_itemslist_in_admin_area.html#Creatingnewentity--IntroductionofeditableItemsListinadminarea-CreatingRepositoryclass)_ _for its general implementation._
 
 # Module pack
 

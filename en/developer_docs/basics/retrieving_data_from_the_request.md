@@ -5,23 +5,25 @@ title: 'Retrieving data from the request'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article teaches X-Cart developers how to retrive data from request to end-points. For the sake of example, we will create a mod that will work as follows:
 
-1.  There will be a page that can be accessed as `cart.php?target=tony`. Please, check the [previous guide](Creating-new-page_8224999.html) in order to learn how to approach such tasks.
+1.  There will be a page that can be accessed as `cart.php?target=tony`. Please, check the [previous guide]({{ baseurl_lang }}/developer_docs/basics/creating_new_page.html) in order to learn how to approach such tasks.
 2.  You can call this page as `cart.php?target=tony&**param**=foo&**param2**=bar` and this page will display values of these parameters as shown below:![]({{ site.baseurl }}/attachments/524294/8355983.png)
 
 # Table of Contents
 
-*   [Introduction](#Retrievingdatafromtherequest-Introduction)
-*   [Table of Contents](#Retrievingdatafromtherequest-TableofContents)
-*   [Implementation](#Retrievingdatafromtherequest-Implementation)
-*   [Module pack](#Retrievingdatafromtherequest-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module pack](#module-pack)
 
 # Implementation
 
-1.  We [create a module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **RequesDemo**.
+1.  We [create a module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **RequesDemo**.
 2.  We [create a page](Creating-new-page_8224999.html) with **target=tony** customer area. Eventually, we will have three files in the module:  
     - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/Controller/Customer/Tony.php  
     `- `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`  

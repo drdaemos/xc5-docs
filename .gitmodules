@@ -1,0 +1,6 @@
+[submodule "jekyll-breadcrumbs"]
+	path = jekyll-breadcrumbs
+	url = git@github.com:git-no/jekyll-breadcrumbs.git
+[submodule "_vendor/jekyll-breadcrumbs"]
+	path = _vendor/jekyll-breadcrumbs
+	url = git@github.com:git-no/jekyll-breadcrumbs.git

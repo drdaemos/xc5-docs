@@ -5,6 +5,8 @@ title: 'Accessing data of current user profile'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article shows approaches of how to access data of current user in X-Cart. For instance, you are logged in as **John Doe**, how can X-Cart know what is your name? This article will show you how to pull this info.
@@ -13,14 +15,14 @@ For the sake of example, we will create a new page that will be accessible via `
 
 # Table of Contents
 
-*   [Introduction](#Accessingdataofcurrentuserprofile-Introduction)
-*   [Table of Contents](#Accessingdataofcurrentuserprofile-TableofContents)
-*   [Implementation](#Accessingdataofcurrentuserprofile-Implementation)
-*   [Module pack](#Accessingdataofcurrentuserprofile-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module pack](#module-pack)
 
 # Implementation
 
-Before we get started, we [create an empty module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **ProfileDemo**. Also, we [create a new page](Creating-new-page_8224999.html#Creatingnewpage-Creatingpageincustomerarea) that will be accessible via `cart.php?target=profile_demo` URL.
+Before we get started, we [create an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ProfileDemo**. Also, we [create a new page]({{ baseurl_lang }}/developer_docs/basics/creating_new_page.html#Creatingnewpage-Creatingpageincustomerarea) that will be accessible via `cart.php?target=profile_demo` URL.
 
 Once it is done, we go to the `<X-Cart>/classes/XLite/Module/Tony/ProfileDemo/Controller/Customer/ProfileDemo.php` file and add the following method there:
 
@@ -34,7 +36,7 @@ This method will be used in the template of our page in order to determine wheth
 
 {% highlight php %}$profile = \XLite\Core\Auth::getInstance()->getProfile();{% endhighlight %}
 
-and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see [more info about classnames](X-Cart-classes-structure-and-namespaces_524301.html) in X-Cart).
+and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see [more info about classnames]({{ baseurl_lang }}/developer_docs/misc/x-cart_classes_structure_and_namespaces.html) in X-Cart).
 
 Now it is time to edit this page's template and we go to the `<X-Cart>/skins/default/en/modules/Tony/ProfileDemo/page/profile_demo/body.tpl` and define its content as follows: 
 

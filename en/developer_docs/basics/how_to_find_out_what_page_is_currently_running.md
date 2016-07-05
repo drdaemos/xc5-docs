@@ -5,22 +5,24 @@ title: 'How to find out what page is currently running'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 This article teaches X-Cart developers how to determine what page is currently opened. For the sake of example, we will create a simple mod that will show different messages depending on whether **home**, **category** or **checkout** page is opened. If any other page is opened, then no message will be shown.
 
-This article assumes that you know [how to work with viewer classes](Working-with-viewer-classes_8224836.html) in X-Cart.
+This article assumes that you know [how to work with viewer classes]({{ baseurl_lang }}/developer_docs/basics/working_with_viewer_classes.html) in X-Cart.
 
 # Table of Contents
 
-*   [Introduction](#Howtofindoutwhatpageiscurrentlyrunning-Introduction)
-*   [Table of Contents](#Howtofindoutwhatpageiscurrentlyrunning-TableofContents)
-*   [Implementation](#Howtofindoutwhatpageiscurrentlyrunning-Implementation)
-*   [Module pack](#Howtofindoutwhatpageiscurrentlyrunning-Modulepack)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
+*   [Module pack](#module-pack)
 
 # Implementation
 
-To get started we [create an empty module](Step-1---creating-simplest-module_524296.html) with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
+To get started we [create an empty module]({{ baseurl_lang }}/developer_docs/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDetectionDemo/View/OurWidget.php` class with the following content:
 
 {% highlight php %}<?php
@@ -116,7 +118,7 @@ Now, it is time to create a template defined in the `getDefaultTemplate()` metho
 
 We call our `getOurText()` method that will analyze current controller class and define a message for a customer.
 
-_Note: we could have also checked the current page by analyzing **target** parameter of `[\XLite\Core\Request](Retrieving-data-from-the-request_524294.html)` object._
+_Note: we could have also checked the current page by analyzing **target** parameter of `[\XLite\Core\Request]({{ baseurl_lang }}/developer_docs/basics/retrieving_data_from_the_request.html)` object._
 
 Now, we need to re-deploy the store and check the results in customer store-front. You should see messages similar to:![]({{ site.baseurl }}/attachments/524292/8356147.png)
 

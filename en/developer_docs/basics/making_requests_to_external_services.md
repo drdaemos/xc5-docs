@@ -5,19 +5,21 @@ title: 'Making requests to external services'
 categories: [developer_docs]
 ---
 
+{% include global.html %}
+
 # Introduction
 
 Sometimes developers need to make a request to some external server and get a response from it. It can be done in order to get shipping rates, for instance. X-Cart has a wrapper around [PEAR2 HTTP REQUEST lib](http://pear2.php.net/PEAR2_HTTP_Request) that eases such task. This article shows an example of how to create requests to external services via X-Cart.
 
 # Table of Contents
 
-*   [Introduction](#Makingrequeststoexternalservices-Introduction)
-*   [Table of Contents](#Makingrequeststoexternalservices-TableofContents)
-*   [Implementation](#Makingrequeststoexternalservices-Implementation)
+*   [Introduction](#introduction)
+*   [Table of Contents](#table-of-contents)
+*   [Implementation](#implementation)
 
 # Implementation
 
-In order to show you the facility of making requests, we do not need a new module as we can show it via [external X-Cart script](Working-with-X-Cart-externally_8225358.html). We create the `<X-Cart>/test.php` script with the following content: 
+In order to show you the facility of making requests, we do not need a new module as we can show it via [external X-Cart script]({{ baseurl_lang }}/developer_docs/basics/working_with_x-cart_externally.html). We create the `<X-Cart>/test.php` script with the following content: 
 
 {% highlight php %}<?php
 //X-Cart initializtion
