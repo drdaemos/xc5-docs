@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding third column'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article gives an example of how to create the right sidebar and hide the left sidebar in admin area, while transferring all sidebar widgets from left to right.
@@ -20,14 +16,15 @@ This article gives an example of how to create the right sidebar and hide the le
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **RightColumnDemo**. The fact whether to show left and right sidebars is defined in the `\XLite\View\Controller` ([more about classnames]({{ baseurl_lang }}/../misc/x-cart_classes_structure_and_namespaces.md) in X-Cart) class: 
+We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **RightColumnDemo**. The fact whether to show left and right sidebars is defined in the `\XLite\View\Controller` ([more about classnames]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html) in X-Cart) class: 
 
 *   `isSidebarFirstVisible()` defines whether to show left sidebar;
 *   `isSidebarSecondVisible()` defines whether to show right sidebar.
 
-In our module we need to [decorate]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md) this class and override these methods. For that we create the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/View/Controller.php` file with the following content: 
+In our module we need to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) this class and override these methods. For that we create the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/View/Controller.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\RightColumnDemo\View;
@@ -46,13 +43,15 @@ abstract class Controller extends \XLite\View\Controller implements \XLite\Base\
     {
         return !\XLite::isAdminZone() ? false: parent::isSidebarFirstVisible();
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 We define `isSidebarSecondVisible()` method to return `true`, if we are in a customer area and we define i`sSidebarFirstVisible()` method to return `false`, if we are in customer area as well. This means that left sidebar will be hidden and right sidebar will be shown in customer area, while admin area will remain the same.
 
 Now we need to move all widgets from left to right sidebar and we can achieve it by adding the following method to the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/Main.php` class: 
 
-{% highlight php %}    public static function runBuildCacheHandler()
+{% highlight php %}{% raw %}
+    public static function runBuildCacheHandler()
     {
         parent::runBuildCacheHandler();
 
@@ -61,20 +60,24 @@ Now we need to move all widgets from left to right sidebar and we can achieve it
         foreach ($widgets as $widget) {
             $widget->setList('sidebar.second');
         }
-    }{% endhighlight %}
+    }
+{% endraw %}{% endhighlight %}
 
 and it will move all templates and widget classes from `sidebar.first` (left column) to `sidebar.second` (right column) view list.
 
-Finally, we need to [add CSS file]({{ baseurl_lang }}/../design_changes/adding_css_and_js_files.md) that will make look of right column smooth. We create the `<X-Cart>/skins/default/en/modules/Tony/RightColumnDemo/css/style.css` file with the following content: 
+Finally, we need to [add CSS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html) that will make look of right column smooth. We create the `<X-Cart>/skins/default/en/modules/Tony/RightColumnDemo/css/style.css` file with the following content: 
 
-{% highlight php %}#sidebar-second {
+{% highlight php %}{% raw %}
+#sidebar-second {
     width: 25%;
     padding-left: 20px;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 and then register this CSS file in the system by creating the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/View/AView.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\RightColumnDemo\View;
@@ -91,7 +94,8 @@ abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
         $list[static::RESOURCE_CSS][] = 'modules/Tony/RightColumnDemo/css/style.css';
         return $list;
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Now we are done with the mod and have to re-deploy the store. Once it is done, check your customer area and it should look like this:![]({{ site.baseurl }}/attachments/524300/8356186.png)
 

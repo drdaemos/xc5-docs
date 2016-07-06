@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with sessions'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by [decoration]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md) of `\XLite\Core\Session` class.
+This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by [decoration]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) of `\XLite\Core\Session` class.
 
 For the sake of example, we will create a module with a page `cart.php?target=session_demo` and this page can be called with the `session_value` parameter. For the very first time this page will display the **Session value has not been specified yet** message and it will remain the same until the **session_value** parameter is passed. Once it is passed, the page will display the **Session value is: {session_value}** message. Even if you open this page without **session_value** parameter after that, the message **Session value is: {session_value}** message will be displayed with the latest **session_value** submitted.
 
@@ -22,12 +18,13 @@ For the sake of example, we will create a module with a page `cart.php?target=se
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **SessionDemo**. Then we [create a page]({{ baseurl_lang }}/../basics/creating_new_page.md) `cart.php?target=session_demo` in our module. For that we create:
+We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **SessionDemo**. Then we [create a page]({{ baseurl_lang }}/basics/creating_new_page.html) `cart.php?target=session_demo` in our module. For that we create:
 
 *   an empty controller class `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`;
 *   a page viewer class `\XLite\Module\Tony\SessionDemo\View\Page\Customer\SessionDemo` with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
     namespace XLite\Module\Tony\SessionDemo\View\Page\Customer;
@@ -58,12 +55,14 @@ We start with [creating an empty module]({{ baseurl_lang }}/../getting_started/s
         {
             return 'modules/Tony/SessionDemo/page/session_demo/body.tpl';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 *   an empty page template `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl`.
 
-Now we need to check each [request]({{ baseurl_lang }}/../basics/retrieving_data_from_the_request.md) to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our [controller class]({{ baseurl_lang }}/../basics/controller_class.md) `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
+Now we need to check each [request]({{ baseurl_lang }}/basics/retrieving_data_from_the_request.html) to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our [controller class]({{ baseurl_lang }}/basics/controller_class.html) `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
 
-{% highlight php %}    public function handleRequest()
+{% highlight php %}{% raw %}
+    public function handleRequest()
     {
         $sessionValue = \XLite\Core\Request::getInstance()->session_value;
 
@@ -72,13 +71,15 @@ Now we need to check each [request]({{ baseurl_lang }}/../basics/retrieving_data
         }
 
         parent::handleRequest();
-    }{% endhighlight %}
+    }
+{% endraw %}{% endhighlight %}
 
 The code that saves the `session_value` param into a session is `\XLite\Core\Session::getInstance()->s_value = $sessionValue;`. As you can see, saving variable into a session is as simple as assigning a value.
 
 Now, we need to add a method to our controller that will fetch a value of this session variable. It will be as follows: 
 
-{% highlight php %}    public function getSessionValue() 
+{% highlight php %}{% raw %}
+    public function getSessionValue() 
     {
         $return = '';
 
@@ -87,13 +88,15 @@ Now, we need to add a method to our controller that will fetch a value of this s
         }
 
         return $return;
-    }{% endhighlight %}
+    }
+{% endraw %}{% endhighlight %}
 
 By default it returns an **empty string**, but if there is any value stored in the **s_value** session variable, then it will return this value.
 
 The final version of `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo` class will be as follows: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\SessionDemo\Controller\Customer;
@@ -124,15 +127,18 @@ class SessionDemo extends \XLite\Controller\Customer\ACustomer
 
         return $return;
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Now we need to define dynamically generated content of our page and mod will be done. We go to the `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl` template and define its content as follows: 
 
-{% highlight php %}{if:getSessionValue()}
+{% highlight php %}{% raw %}
+{if:getSessionValue()}
 Session value is: {getSessionValue()}
 {else:}
 Session value has not been specified yet
-{end:}{% endhighlight %}
+{end:}
+{% endraw %}{% endhighlight %}
 
 If `getSessionValue()` returns non-empty value – empty string is considered as an empty value – then we display the **Session value has not been specified yet** message, otherwise we display the message **Session value is: session_value**.
 

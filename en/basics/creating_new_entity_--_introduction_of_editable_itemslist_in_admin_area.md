@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating new entity -- Introduction of editable ItemsList in admin area'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article describes how developers can create new entity in X-Cart store. This article's example is how to create quick messages (they are our new entities) that can be created in admin area and then 3 latest active ones will be shown in storefront.
@@ -26,12 +22,13 @@ This article describes how developers can create new entity in X-Cart store. Thi
 
 # Implementation
 
-First of all we [create an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **NewEntityDemo**. In this module, we [create a page]({{ baseurl_lang }}/../basics/creating_new_page.md) `target=quick_messages` in admin area. We create:
+First of all we [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **NewEntityDemo**. In this module, we [create a page]({{ baseurl_lang }}/basics/creating_new_page.html) `target=quick_messages` in admin area. We create:
 
 *   empty controller class `\XLite\Module\Tony\NewEntityDemo\Controller\Admin\QuickMessages`
 *   viewer class `\XLite\Module\Tony\NewEntityDemo\View\Page\Admin\QuickMessages` with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
     namespace XLite\Module\Tony\NewEntityDemo\View\Page\Admin;
@@ -62,14 +59,16 @@ First of all we [create an empty module]({{ baseurl_lang }}/../getting_started/s
         {
             return 'modules/Tony/NewEntityDemo/page/quick_messages/body.tpl';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 *   empty template `<X-Cart>/skins/admin/en/modules/Tony/NewEntityDemo/page/quick_messages/body.tpl`
 
 ## Creating Quick Message entity
 
-In order to create a new entity in X-Cart, we have to create a new [Model class]({{ baseurl_lang }}/../misc/x-cart_classes_structure_and_namespaces.md). We create `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/QuickMessage.php` file with the following content: 
+In order to create a new entity in X-Cart, we have to create a new [Model class]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html). We create `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/QuickMessage.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\NewEntityDemo\Model;
 
@@ -96,61 +95,79 @@ class QuickMessage extends \XLite\Model\AEntity
      * @Column (type="text")
      */
     protected $body = '';
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Let us have a close look at this class implementation:
 
 1.  We mark that this class describes a new entity by adding directive: 
 
-    {% highlight php %}@Entity{% endhighlight %}
+    {% highlight php %}{% raw %}
+    @Entity
+    {% endraw %}{% endhighlight %}
 2.  We also specify a table name where records about these entities will be stored: 
 
-    {% highlight php %}@Table (name="quick_messages"){% endhighlight %}
+    {% highlight php %}{% raw %}
+    @Table (name="quick_messages")
+    {% endraw %}{% endhighlight %}
 3.  Since our entity is the most basic one we use `\XLite\Model\AEntity` class as its template: 
 
-    {% highlight php %}class QuickMessage extends \XLite\Model\AEntity{% endhighlight %}
+    {% highlight php %}{% raw %}
+    class QuickMessage extends \XLite\Model\AEntity
+    {% endraw %}{% endhighlight %}
 4.  Next, we specify each property of this class. We start with `$id`: 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Id
          * @GeneratedValue (strategy="AUTO")
          * @Column         (type="integer")
          */
-    	protected $id;{% endhighlight %}
+    	protected $id;
+    {% endraw %}{% endhighlight %}
 
     which is marked as ID: 
 
-    {% highlight php %}@Id{% endhighlight %}
+    {% highlight php %}{% raw %}
+    @Id
+    {% endraw %}{% endhighlight %}
 
     It is also marked as **auto-generated** **integer** value: 
 
-    {% highlight php %}* @GeneratedValue (strategy="AUTO")
-    * @Column         (type="integer"){% endhighlight %}
+    {% highlight php %}{% raw %}
+    * @GeneratedValue (strategy="AUTO")
+    * @Column         (type="integer")
+    {% endraw %}{% endhighlight %}
 5.  Our **QuickMessage** class will also have `$enabled` property, which will define whether quick message is active or not: 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Column (type="boolean")
          */
-        protected $enabled = true;{% endhighlight %}
+        protected $enabled = true;
+    {% endraw %}{% endhighlight %}
 
     As you can see, type of this property is **boolean**.
 
 6.  Finally, we will have a `$body` property that will define text of quick message: 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Column (type="text")
          */
-        protected $body = '';{% endhighlight %}
+        protected $body = '';
+    {% endraw %}{% endhighlight %}
 
 We have created the **Model** class and now we need to create **repository** class for QuickMessage entity.
 
 ## Creating Repository class
 
-Repository class is used in order to pull entities' info from the database. We need an implementation of [`search()` method]({{ baseurl_lang }}/../basics/searching_entities_in_repositories/search()_method.md) in it in order to allow proper work with ItemsList.
+Repository class is used in order to pull entities' info from the database. We need an implementation of [`search()` method]({{ baseurl_lang }}/basics/searching_entities_in_repositories/search()_method.html) in it in order to allow proper work with ItemsList.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/Repo/QuickMessage.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\NewEntityDemo\Model\Repo;
 
@@ -201,7 +218,8 @@ class QuickMessage extends \XLite\Model\Repo\ARepo
     {
        return array();
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Although, the implementation of repository class looks quite cumbersome, basically we only have to have `search()` method implemented and other 6 additional methods are just for keeping structure of the code atomic.
 
@@ -224,7 +242,8 @@ As you may have noticed, admin area of X-Cart is full of similar **ItemsLists**.
 
 In order to create an ItemsList for quick messages, we create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/ItemsList/Model/QuickMessage.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\NewEntityDemo\View\ItemsList\Model;
 
@@ -265,26 +284,32 @@ class QuickMessage extends \XLite\View\ItemsList\Model\Table
     {
         return \XLite\Core\Converter::buildUrl('quick_messages');
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 1.  Our ItemsList widget is basic that is why we extend the `\XLite\View\ItemsList\Model\Table` class: 
 
-    {% highlight php %}class QuickMessage extends \XLite\View\ItemsList\Model\Table{% endhighlight %}
+    {% highlight php %}{% raw %}
+    class QuickMessage extends \XLite\View\ItemsList\Model\Table
+    {% endraw %}{% endhighlight %}
 
     This class defines the basic look of **ItemsList** similar to other ones in admin area.
 
 2.  We define which entities must be displayed in this ItemList: 
 
-    {% highlight php %}    protected function defineRepositoryName()
+    {% highlight php %}{% raw %}
+        protected function defineRepositoryName()
         {
             return 'XLite\Module\Tony\NewEntityDemo\Model\QuickMessage';
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     In our case, we should display **quick messages** there.
 
 3.  Then, we define that our ItemsList must display **enable/disable** icon – `isSwitchable()` method – and **remove** icon – `isRemoved()` method: 
 
-    {% highlight php %}    protected function isSwitchable()
+    {% highlight php %}{% raw %}
+        protected function isSwitchable()
         {
             return true;
         }
@@ -292,13 +317,15 @@ class QuickMessage extends \XLite\View\ItemsList\Model\Table
         protected function isRemoved()
         {
             return true;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     `isSwitchable()` method searches for `$enabled` property in the model class – `\XLite\Module\Tony\NewEntityDemo\Model\QuickMessage` in our case–  in order to mark it either active or disabled.
 
 4.  Next, we define which model fields must be displayed in the ItemsList. In our case, we need to display only **body** properties there:  
 
-    {% highlight php %}    protected function defineColumns()
+    {% highlight php %}{% raw %}
+        protected function defineColumns()
         {
             return array(
                 'body' => array(
@@ -307,13 +334,15 @@ class QuickMessage extends \XLite\View\ItemsList\Model\Table
                     static::COLUMN_ORDERBY => 100,
                 ),
             );
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     Value from the `COLUMN_NAME` element will be displayed in the header of ItemsList. Key of the array – **body**, in our case – defines what is a property of an object where the value from the form will be saved to.
 
 5.  Finally, we need to add a button for creating new entities and this button should be placed at the bottom of the ItemsList: 
 
-    {% highlight php %}    protected function isInlineCreation()
+    {% highlight php %}{% raw %}
+        protected function isInlineCreation()
         {
             return static::CREATE_INLINE_BOTTOM;
         }
@@ -321,13 +350,15 @@ class QuickMessage extends \XLite\View\ItemsList\Model\Table
         protected function getCreateURL()
         {
             return \XLite\Core\Converter::buildUrl('quick_messages');
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
 We are done with **ItemsList** widget. Next step is to create a widget of a form that will wrap up our ItemList widget and will allow submitting its info to X-Cart.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/Form/ItemsList/QuickMessage.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\NewEntityDemo\View\Form\ItemsList;
 
@@ -342,7 +373,8 @@ class QuickMessage extends \XLite\View\Form\ItemsList\AItemsList
     {
         return 'update';
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Although it sounds quite complex – creating a form class – in fact this class contains just two methods:
 
@@ -353,9 +385,11 @@ Now we are done with the form widget class and we need to call **ItemsList** an
 
 We go to the `<X-Cart>/skins/admin/en/modules/Tony/NewEntityDemo/page/quick_messages/body.tpl` template – that has been created when we created the **target=quick_messages** page – and specify the following code there: 
 
-{% highlight php %}<widget class="XLite\Module\Tony\NewEntityDemo\View\Form\ItemsList\QuickMessage" name="list" />
+{% highlight php %}{% raw %}
+<widget class="XLite\Module\Tony\NewEntityDemo\View\Form\ItemsList\QuickMessage" name="list" />
 	<widget class="XLite\Module\Tony\NewEntityDemo\View\ItemsList\Model\QuickMessage" />
-<widget name="list" end />{% endhighlight %}
+<widget name="list" end />
+{% endraw %}{% endhighlight %}
 
 As you can see, we call the `\XLite\Module\Tony\NewEntityDemo\View\ItemsList\Model\QuickMessage` widget there and wrap it up into form widget –`\XLite\Module\Tony\NewEntityDemo\View\Form\ItemsList\QuickMessage`.
 
@@ -363,19 +397,25 @@ Finally, we need to adjust our controller class and tell it what to do with the 
 
 We go to the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Controller/Admin/QuickMessages.php` file and add the following method into the class: 
 
-{% highlight php %}	protected function doActionUpdate()
+{% highlight php %}{% raw %}
+	protected function doActionUpdate()
 	{
     	$list = new \XLite\Module\Tony\NewEntityDemo\View\ItemsList\Model\QuickMessage;
     	$list->processQuick();
-	}{% endhighlight %}
+	}
+{% endraw %}{% endhighlight %}
 
 This method will be called only when **action=update** param is be passed in the request. Implementation of this method means that we first create an **ItemsList** object based on values from the request: 
 
-{% highlight php %}$list = new \XLite\Module\Tony\NewEntityDemo\View\ItemsList\Model\QuickMessage;{% endhighlight %}
+{% highlight php %}{% raw %}
+$list = new \XLite\Module\Tony\NewEntityDemo\View\ItemsList\Model\QuickMessage;
+{% endraw %}{% endhighlight %}
 
 Then, we update, create and remove entities based on the info in this ItemsList. These processes are described in method: 
 
-{% highlight php %}$list->processQuick();{% endhighlight %}
+{% highlight php %}{% raw %}
+$list->processQuick();
+{% endraw %}{% endhighlight %}
 
 Finally, we open the **target=quick_messages** page with updated data.
 
@@ -389,11 +429,12 @@ Once you add some quick messages, do not forget to save results by clicking **Sa
 
 ## Showing quick messages in customer area
 
-We will show three latest quick messages in [sidebar box]({{ baseurl_lang }}/../design_changes/creating_sidebar_menu_in_customer_area.md) in the left-hand side menu in storefront.
+We will show three latest quick messages in [sidebar box]({{ baseurl_lang }}/design_changes/creating_sidebar_menu_in_customer_area.html) in the left-hand side menu in storefront.
 
-First, we create the [viewer class]({{ baseurl_lang }}/../basics/working_with_viewer_classes.md). For that we create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/QuickMessageMenu.php` file with the following content: 
+First, we create the [viewer class]({{ baseurl_lang }}/basics/working_with_viewer_classes.html). For that we create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/QuickMessageMenu.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\NewEntityDemo\View;
 
@@ -419,13 +460,15 @@ class QuickMessageMenu extends \XLite\View\SideBarBox
 
 		return $return;
 	}
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 The implementation is very similar to one showed in the basic guide of [creating sidebar menu in storefront](Creating-sidebar-menu-in-customer-area_7505759.html), but there is also `getMessages()` method. This method is aimed to pull three latest quick messages from the database. However, `findNewest()` method does not exist in our `\XLite\Module\Tony\NewEntityDemo\Model\Repo\QuickMessage` class yet and we have to create it.
 
 We go to the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/Repo/QuickMessage.php` file and add one more method there: 
 
-{% highlight php %}    public function findNewest()
+{% highlight php %}{% raw %}
+    public function findNewest()
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.enabled = 1')
@@ -433,18 +476,21 @@ We go to the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/Repo/Quick
             ->setFirstResult(0)
             ->setMaxResults(3)
             ->getResult();
-    }{% endhighlight %}
+    }
+{% endraw %}{% endhighlight %}
 
 Finally, we have to create the folder that was mentioned in our viewer class – `modules/Tony/NewEntityDemo/quickmessage` – so we create  
 `<X-Cart>/skins/default/en/modules/Tony/NewEntityDemo/quickmessage/` folder with the `body.tpl` template inside it. The content of this template is as follows: 
 
-{% highlight php %}{if:getMessages()}
+{% highlight php %}{% raw %}
+{if:getMessages()}
 	<ul class="menu menu-list messages">
 		{foreach:getMessages(), message}
 			<li>{message.body}</li>
 		{end:}
 	</ul>
-{end:}{% endhighlight %}
+{end:}
+{% endraw %}{% endhighlight %}
 
 This code can be read as follows. If there are quick messages – `{if:getMessages()}` – then we create `<ul>` element and walk through each element returned by `getMessages()` method – `{foreach:getMessages(), message}` – displaying text of each quick message inside `<li>` element – `<li>{message.body}</li>`.
 

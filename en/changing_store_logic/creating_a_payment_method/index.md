@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating a payment method'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This guide is an introduction to creating payment gateways in X-Cart.
@@ -37,19 +33,22 @@ we will be redirected to `http://example.com?target=main&transactionID=10&statu
 
 We will create this "payment gateway" script as the `<X-Cart>/payment.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 $location = $_POST['returnURL'] . '&transactionID=' . $_POST['transactionID'] . '&status=Paid';
 
 header('Location: ' . $location);
-die();{% endhighlight %}
+die();
+{% endraw %}{% endhighlight %}
 
 # Payment gateway module implementation
 
-We start the creation of the payment gateway by [creating an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with the developer ID **Tony** and the module ID **PaymentDemo**. Then, we create the file  
+We start the creation of the payment gateway by [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with the developer ID **Tony** and the module ID **PaymentDemo**. Then, we create the file  
 `<X-Cart>/classes/XLite/Module/Tony/PaymentDemo/Model/Payment/Processor/DemoPayment.php` with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\PaymentDemo\Model\Payment\Processor;
 
@@ -80,7 +79,8 @@ class DemoPayment extends \XLite\Model\Payment\Base\WebBased
 
         $this->transaction->setStatus($status);
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 and this class describes our payment gateway integration.
 
@@ -95,7 +95,8 @@ Let us have a closer look at its implementation:
 5.  Once X-Cart receives a request at the URL `cart.php?target=payment_return&txn_id_name=transactionID&transactionID=a1b2c3d4`, it will try to identify the transaction that needs to be updated. X-Cart will have a look at the `txn_id_name` parameter, and since its value is **transactionID**, X-Cart will find out that transaction ID is stored in the transactionID parameter and will have a look at the `transactionID=a1b2c3d4` parameter. Finally, it will find out that the needed transaction is identified by the ID **a1b2c3d4** and will look for it in the database.
 6.  When the transaction object is found, X-Cart will run our payment gateway's `processReturn()` method passing this transaction object as an argument to it: 
 
-    {% highlight php %}    public function processReturn(\XLite\Model\Payment\Transaction $transaction)
+    {% highlight php %}{% raw %}
+        public function processReturn(\XLite\Model\Payment\Transaction $transaction)
         {
             parent::processReturn($transaction);
 
@@ -106,21 +107,26 @@ Let us have a closer look at its implementation:
                 : $transaction::STATUS_FAILED;
 
             $this->transaction->setStatus($status);
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     This method analyzes the request received, and if the request contains the **status=Paid** parameter, then we will mark this transaction as successful: 
 
-    {% highlight php %}$this->transaction->setStatus($status);{% endhighlight %}
+    {% highlight php %}{% raw %}
+    $this->transaction->setStatus($status);
+    {% endraw %}{% endhighlight %}
 
 Our payment integration is ready and now we only need to register this payment gateway in the system. For that, we create the file `<X-Cart>/classes/XLite/Module/Tony/PaymentDemo/install.yaml` with the following content: 
 
-{% highlight php %}XLite\Model\Payment\Method:
+{% highlight php %}{% raw %}
+XLite\Model\Payment\Method:
   - service_name: DemoPayment
     class: Module\Tony\PaymentDemo\Model\Payment\Processor\DemoPayment
     type: C
     translations:
       - code: en
-        name: Demo Payment{% endhighlight %}
+        name: Demo Payment
+{% endraw %}{% endhighlight %}
 
 Now the YAML file contains all the needed information about this payment method:
 
@@ -132,10 +138,12 @@ Now the YAML file contains all the needed information about this payment method:
 
 For payment methods that have country restrictions based on the merchant's location, be sure to add information about these restrictions to the YAML file. The format is as follows:   
 
-{% highlight php %}XLite\Model\Payment\Method:
+{% highlight php %}{% raw %}
+XLite\Model\Payment\Method:
  - service_name: AuthorizeNet SIM
    countries: [US, CA]
-   exCountries: [US, CA]{% endhighlight %}
+   exCountries: [US, CA]
+{% endraw %}{% endhighlight %}
 
 *   The field **countries** provides a list of codes of allowed merchant countries. If a country is listed in this field, it means that merchants from this country may register an account with the payment system and use this payment method to accept payments on their website. If the field is blank, it means that the payment method is available in all countries (In this case, the field **countries** may be omitted from the YAML file).
 *   The field **exCountries** provides a list of exceptions. It means that merchants from all countries - except for the ones listed in this field - may register an account and use this method. If there are no exceptions, the field may be omitted.
@@ -144,7 +152,7 @@ Your YAML file will probably contain just one of the above fields.
 
 The list of allowed countries / exceptions in the YAML file will be used to filter payment methods in the payment method selection popup in the admin area.
 
-Once the YAML file has been created, do not forget to [push it to the database]({{ baseurl_lang }}/../getting_started/x-cart_sdk.md#X-CartSDK-LoadingYAMLfile).
+Once the YAML file has been created, do not forget to [push it to the database]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-LoadingYAMLfile).
 
 The mod is completed, and we need to re-deploy the store in order to test it in action.
 

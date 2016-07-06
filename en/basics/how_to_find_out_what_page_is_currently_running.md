@@ -2,16 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to find out what page is currently running'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article teaches X-Cart developers how to determine what page is currently opened. For the sake of example, we will create a simple mod that will show different messages depending on whether **home**, **category** or **checkout** page is opened. If any other page is opened, then no message will be shown.
 
-This article assumes that you know [how to work with viewer classes]({{ baseurl_lang }}/../basics/working_with_viewer_classes.md) in X-Cart.
+This article assumes that you know [how to work with viewer classes]({{ baseurl_lang }}/basics/working_with_viewer_classes.html) in X-Cart.
 
 # Table of Contents
 
@@ -22,10 +18,11 @@ This article assumes that you know [how to work with viewer classes]({{ baseurl_
 
 # Implementation
 
-To get started we [create an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
+To get started we [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDetectionDemo/View/OurWidget.php` class with the following content:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\ControllerDetectionDemo\View;
 
@@ -65,24 +62,30 @@ class OurWidget extends \XLite\View\AView
 
 		return $return;
 	}
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Let us have a closer look at this class implementation:
 
 1.  `@ListChild` directive says that our widget will be displayed right after `</head>` tag: 
 
-    {% highlight php %}/**
+    {% highlight php %}{% raw %}
+    /**
      * @ListChild (list="body", weight="1", zone="customer")
-     */{% endhighlight %}
+     */
+    {% endraw %}{% endhighlight %}
 2.  `getDefaultTemplate()` method defines that our viewer class will use `<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` template in order to output the result:
 
-    {% highlight php %}	public function getDefaultTemplate() 
+    {% highlight php %}{% raw %}
+    	public function getDefaultTemplate() 
     	{
     		return 'modules/Tony/ControllerDetectionDemo/text.tpl';
-    	}{% endhighlight %}
+    	}
+    {% endraw %}{% endhighlight %}
 3.  `getAllowedTargets()` method tells X-Cart that this widget must be displayed on home, category and checkout pages only:
 
-    {% highlight php %}	public static function getAllowedTargets() 
+    {% highlight php %}{% raw %}
+    	public static function getAllowedTargets() 
     	{
     		$list = parent::getAllowedTargets();
 
@@ -91,10 +94,12 @@ Let us have a closer look at this class implementation:
     		$list[] = 'category'; // category page
 
     		return $list;
-    	}{% endhighlight %}
+    	}
+    {% endraw %}{% endhighlight %}
 4.  `getOurText()` method defines the message that will be shown to a customer: 
 
-    {% highlight php %}	public function getOurText()
+    {% highlight php %}{% raw %}
+    	public function getOurText()
     	{
     		$return = 'no text';
 
@@ -107,18 +112,21 @@ Let us have a closer look at this class implementation:
     		}
 
     		return $return;
-    	}{% endhighlight %}
+    	}
+    {% endraw %}{% endhighlight %}
 
     As you can see, we analyze the **controller** that is fetched by calling `\XLite::getController()` method.
 
 Now, it is time to create a template defined in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` template with the following content: 
 
-{% highlight php %}<div>{getOurText()}</div>
- {% endhighlight %}
+{% highlight php %}{% raw %}
+<div>{getOurText()}</div>
+
+{% endraw %}{% endhighlight %}
 
 We call our `getOurText()` method that will analyze current controller class and define a message for a customer.
 
-_Note: we could have also checked the current page by analyzing **target** parameter of `[\XLite\Core\Request]({{ baseurl_lang }}/../basics/retrieving_data_from_the_request.md)` object._
+_Note: we could have also checked the current page by analyzing **target** parameter of `[\XLite\Core\Request]({{ baseurl_lang }}/basics/retrieving_data_from_the_request.html)` object._
 
 Now, we need to re-deploy the store and check the results in customer store-front. You should see messages similar to:![]({{ site.baseurl }}/attachments/524292/8356147.png)
 

@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This guide teaches X-Cart developers how they can add their own field to products and then use it on invoices.
@@ -24,13 +20,14 @@ This guide teaches X-Cart developers how they can add their own field to product
 
 # Implementation
 
-First of all, [create a new module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md). We are creating a module with developer ID **Tony** and module ID **ProductFieldDemo**.
+First of all, [create a new module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **ProductFieldDemo**.
 
 ## Adding new field to product model
 
-[Decorate]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md) the `\XLite\Model\Product` class ([more info about X-Cart classnames]({{ baseurl_lang }}/../misc/x-cart_classes_structure_and_namespaces.md)). We are creating the `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/Model/Product.php` file with the following content: 
+[Decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\Model\Product` class ([more info about X-Cart classnames]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)). We are creating the `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/Model/Product.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ProductFieldDemo\Model;
@@ -41,14 +38,17 @@ class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 	 * @Column (type="string", length=32)
 	 */
 	protected $testField;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 *   `protected $testField` says that now product objects will have a new property that can be accessed like `$product->testField`
 *   this piece of code 
 
-    {% highlight php %}	/**
+    {% highlight php %}{% raw %}
+    	/**
     	 * @Column (type="string", length=32)
-    	 */{% endhighlight %}
+    	 */
+    {% endraw %}{% endhighlight %}
 
     specifies parameters of this field, i.e. that this field is a **string** and can be up to **32 symbols**.
 
@@ -59,7 +59,8 @@ That is it. If we re-deploy the store right now, X-Cart will create a new field 
 Now we need to be able to specify value of this property on product details page in admin area. We decorate `\XLite\View\Model\Product` class and create  
 `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/View/Model/Product.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ProductFieldDemo\View\Model;
@@ -78,11 +79,12 @@ class Product extends \XLite\View\Model\Product implements \XLite\Base\IDecorato
             	),
         	);
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
-Such code will add a new field to the product details page in admin area. This field will be named **Test field **and its value will be saved into `testField` field of `xc_products` MySQL table. The [FormField class]({{ baseurl_lang }}/../getting_started/step_4_-_working_with_settings/creating_custom_setting_class.md) that defines an input field in the interface is default `\XLite\View\FormField\Input\Text` one.
+Such code will add a new field to the product details page in admin area. This field will be named **Test field **and its value will be saved into `testField` field of `xc_products` MySQL table. The [FormField class]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/creating_custom_setting_class.html) that defines an input field in the interface is default `\XLite\View\FormField\Input\Text` one.
 
-_Note: see an example of creating model editing form with more detailed explanation here: [Model editing page]({{ baseurl_lang }}/../basics/model_editing_page.md)._
+_Note: see an example of creating model editing form with more detailed explanation here: [Model editing page]({{ baseurl_lang }}/basics/model_editing_page.html)._
 
 ## Showing this field value on thank you page
 
@@ -90,16 +92,18 @@ Finally, we need to display the value of this field on thank you page after the 
 
 In order to achieve it, we create the `<X-Cart>/skins/default/en/modules/Tony/ProductFieldDemo/item.test-field.tpl` template with the following content: 
 
-{% highlight php %}{* vim: set ts=2 sw=2 sts=2 et: *}
+{% highlight php %}{% raw %}
+{* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * @ListChild (list="invoice.item.name", weight="20")
  *}
 <li class="test-field">
   <span class="name">{t(#Test field#)}</span>
   <span class="test-field-value">{item.product.getTestField()}</span>
-</li>{% endhighlight %}
+</li>
+{% endraw %}{% endhighlight %}
 
-In this template, we tell template to be registered in the `invoice.item.name` view list (more about [template system in X-Cart]({{ baseurl_lang }}/../getting_started/step_2_-_applying_design_changes.md)).
+In this template, we tell template to be registered in the `invoice.item.name` view list (more about [template system in X-Cart]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html)).
 
 Another important part is that we just call value of **testField** property as `item.product.getTestField()`, even though we did not declare `getTestField()` method in the `\XLite\Model\Product`. X-Cart creates `get{PropertyName}()` methods for each property automatically, if it is not declared explicitly.
 

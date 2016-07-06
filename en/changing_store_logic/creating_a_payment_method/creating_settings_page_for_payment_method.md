@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating settings page for payment method'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-This article is a continuation of the guide about [creating payment method]({{ baseurl_lang }}/../changing_store_logic/creating_a_payment_method/index.md). During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.
+This article is a continuation of the guide about [creating payment method]({{ baseurl_lang }}/changing_store_logic/creating_a_payment_method/{{ baseurl_lang }}/index.html). During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.
 
 # Table of Contents
 
@@ -24,18 +20,21 @@ We start with creating an empty module with developer ID **Tony** and module ID 
 
 1.  We create the `<X-Cart>/payment.php` file with the following code there: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     $location = $_POST['returnURL'] . '&transactionID=' . $_POST['transactionID'] . '&status=Paid';
 
     header('Location: ' . $location);
-    die();{% endhighlight %}
+    die();
+    {% endraw %}{% endhighlight %}
 
     This file will represent our **self-designed payment gateway**.
 
 2.  We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/Model/Payment/Processor/DemoPayment.php` file with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\Tony\PaymentFormDemo\Model\Payment\Processor;
 
@@ -66,22 +65,25 @@ We start with creating an empty module with developer ID **Tony** and module ID 
 
             $this->transaction->setStatus($status);
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     This file represents an integration with the self-designed payment gateway described in the point 1 here.
 
 3.  We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/install.yaml` file with the following content: 
 
-    {% highlight php %}XLite\Model\Payment\Method:
+    {% highlight php %}{% raw %}
+    XLite\Model\Payment\Method:
       - service_name: DemoPayment
         class: Module\Tony\PaymentFormDemo\Model\Payment\Processor\DemoPayment
         type: C
         translations:
           - code: en
-            name: Demo Payment{% endhighlight %}
+            name: Demo Payment
+    {% endraw %}{% endhighlight %}
 
     This file will register this payment method in the database.  
-    _Note: do not forget to [push this file into the database]({{ baseurl_lang }}/../getting_started/x-cart_sdk.md#X-CartSDK-LoadingYAMLfile)._
+    _Note: do not forget to [push this file into the database]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-LoadingYAMLfile)._
 
 Now we have the module described in [the previous guide](Creating-a-payment-method_8225448.html), but it has been created with module ID **PaymentFormDemo** and we want to add some settings to it. We will create a settings form that will contain three fields:
 
@@ -91,17 +93,20 @@ Now we have the module described in [the previous guide](Creating-a-payment-meth
 
 We start with updating `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/install.yaml file`. We should add payment method settings there, so we append it with following lines: 
 
-{% highlight php %}    settings:
+{% highlight php %}{% raw %}
+    settings:
       - name: login
       - name: password
       - name: mode
-        value: live{% endhighlight %}
+        value: live
+{% endraw %}{% endhighlight %}
 
 These lines will add **login** and **password** settings with **empty default values** as well as **mode** setting that has **live** value by default.
 
 The final version of this YAML file will be as follows: 
 
-{% highlight php %}XLite\Model\Payment\Method:
+{% highlight php %}{% raw %}
+XLite\Model\Payment\Method:
   - service_name: DemoPayment
     class: Module\Tony\PaymentFormDemo\Model\Payment\Processor\DemoPayment
     type: C
@@ -112,13 +117,15 @@ The final version of this YAML file will be as follows: 
       - name: login
       - name: password
       - name: mode
-        value: live{% endhighlight %}
+        value: live
+{% endraw %}{% endhighlight %}
 
 Once we are done with this, we need to [push renewed version of our YAML file](X-Cart-SDK_7864338.html#X-CartSDK-LoadingYAMLfile) to the database.
 
 After that we go to the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/Model/Payment/Processor/DemoPayment.php` file and add following methods there: 
 
-{% highlight php %}    public function getSettingsWidget()
+{% highlight php %}{% raw %}
+    public function getSettingsWidget()
     {
         return 'modules/Tony/PaymentFormDemo/config.tpl';
     }
@@ -133,7 +140,8 @@ After that we go to the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/Mod
         return parent::isConfigured($method)
             && $method->getSetting('login')
             && $method->getSetting('password');
-    }{% endhighlight %}
+    }
+{% endraw %}{% endhighlight %}
 
 *   `getSettingsWidget()` method defines a **template** that will display a settings for this payment method;
 *   `isTestMode()` method defines a condition that will mark this payment method as in test mode. In our case, if the **mode** setting is not live, then our payment method is in test mode;
@@ -142,7 +150,8 @@ After that we go to the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/Mod
 
 Final version of the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/Model/Payment/Processor/DemoPayment.php` file will be as follows: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\PaymentFormDemo\Model\Payment\Processor;
 
@@ -190,11 +199,13 @@ class DemoPayment extends \XLite\Model\Payment\Base\WebBased
             && $method->getSetting('login')
             && $method->getSetting('password');
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Finally, we need to create the template mentioned in the getSettingsWidget() method, so we create the <X-Cart>/skins/admin/en/modules/Tony/PaymentFormDemo/config.tpl file with the following content: 
 
-{% highlight php %}<table cellspacing="1" cellpadding="5" class="settings-table">
+{% highlight php %}{% raw %}
+<table cellspacing="1" cellpadding="5" class="settings-table">
   <tr>
     <td class="setting-name">
     <label for="settings_login">{t(#Login#)}</label>
@@ -222,7 +233,8 @@ Finally, we need to create the template mentioned in the getSettingsWidget() me
     </select>
     </td>
   </tr>
-</table>{% endhighlight %}
+</table>
+{% endraw %}{% endhighlight %}
 
 This template represents the form that will be displayed in the payment method settings page. Important notes are:
 

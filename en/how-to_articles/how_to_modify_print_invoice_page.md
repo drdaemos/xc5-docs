@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to modify &quot;Print Invoice&quot; page'
-categories: [how-to_articles]
 ---
-
-{% include global.html %}
-
 I would like make some minor CSS changes to the print invoice page in the admin section of the store. How do I do that?
 
 ## Step-by-step guide
@@ -21,7 +17,8 @@ Here are the steps involved:
 
 3.  Add the following code to the custom script:
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     namespace XLite\Module\XC\CustomSkin\View;
     abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
     {
@@ -38,17 +35,20 @@ Here are the steps involved:
             $list[static::RESOURCE_CSS][] = "modules/XC/CustomSkin/custom_style.css";
             return $list;
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 4.  Create your custom CSS files:  
     - for admin back-end: _skins/admin/en/modules/XC/CustomSkin/custom_style.css_  
     - for customer front-end: _skins/default/en/modules/XC/CustomSkin/custom_style.css_  
 
 5.  Add your custom code to the CSS files created, for example:
 
-    {% highlight php %}.invoice-box .header .address strong{
+    {% highlight php %}{% raw %}
+    .invoice-box .header .address strong{
       font-size: 27px !important;
       margin: 10px 10px 10px 14px;
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 6.  Re-generate X-Cart cache.  
 
 Icon

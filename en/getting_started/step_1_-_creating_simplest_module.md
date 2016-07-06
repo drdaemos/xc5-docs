@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Step 1 - creating simplest module'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This guide describes how one can create a simplest module in X-Cart 5.
@@ -36,7 +32,8 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 1.  Create `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` directory inside your installation. Of course, you should use your own developer and module IDs instead of `<YOUR-DEVELOPER-ID>` and `<YOUR-MODULE-ID>` parts of the path.
 2.  Create `Main.php` file inside `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` folder with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     namespace XLite\Module\<YOUR-DEVELOPER-ID>\<YOUR-MODULE-ID>;
 
     abstract class Main extends \XLite\Module\AModule
@@ -90,7 +87,8 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
         {
             return 'Your module description';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     Change `namespace` section in this file and replace `<YOUR-DEVELOPER-ID>` and `<YOUR-MODULE-ID>` placeholders with your actual developer and module IDs.
 
@@ -101,7 +99,7 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 
 # Module creation via SDK
 
-1.  [Obtain X-Cart SDK]({{ baseurl_lang }}/../getting_started/x-cart_sdk.md#X-CartSDK-ObtainingX-CartSDK)
+1.  [Obtain X-Cart SDK]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-ObtainingX-CartSDK)
 2.  Call [create module macro](X-Cart-SDK_7864338.html#X-CartSDK-Creatingmodule) with your developer and module IDs
 
 # Packing up your module

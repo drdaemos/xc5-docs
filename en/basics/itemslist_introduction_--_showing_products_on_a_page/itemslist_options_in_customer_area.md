@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList options in customer area'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-This article is in advanced explanation of how to use [ItemsLists in customer area]({{ baseurl_lang }}/../basics/itemslist_introduction_--_showing_products_on_a_page/index.md). It explains how to enable/disable pagination, sorting options, display options etc.
+This article is in advanced explanation of how to use [ItemsLists in customer area]({{ baseurl_lang }}/basics/itemslist_introduction_--_showing_products_on_a_page/{{ baseurl_lang }}/index.html). It explains how to enable/disable pagination, sorting options, display options etc.
 
 # Table of Contents
 
@@ -21,7 +17,8 @@ This article is in advanced explanation of how to use [ItemsLists in customer ar
 
 Main method that defines what options that exist in an **ItemsList** is `defineWidgetParams()`. See its implementation in the `\XLite\View\ItemsList\Product\Customer\ACustomer` class as an example: 
 
-{% highlight php %}    protected function defineWidgetParams()
+{% highlight php %}{% raw %}
+    protected function defineWidgetParams()
     {
         parent::defineWidgetParams();
 
@@ -48,7 +45,8 @@ Main method that defines what options that exist in an **ItemsList** is `defineW
                 'Maximal icon height', 0, true
             ),
         );
-    }{% endhighlight %}
+    }
+{% endraw %}{% endhighlight %}
 
 Definition of parameters is done during widget initialization and if you want to override some values, you can do this in the `setWidgetParams()` method. We will take a look at this method a bit later, but for now let us have a look at default parameters of product **ItemsList**:
 
@@ -66,7 +64,8 @@ Definition of parameters is done during widget initialization and if you want to
 
 In our mods, we sometimes want to disable some of these parameters or define another default value. It can be done in the `setWidgetParams()` method of an ItemsList widget: 
 
-{% highlight php %}public function setWidgetParams(array $params)
+{% highlight php %}{% raw %}
+public function setWidgetParams(array $params)
 {
 	parent::setWidgetParams($params);
 
@@ -81,4 +80,4 @@ In our mods, we sometimes want to disable some of these parameters or define ano
 	$this->widgetParams[self::PARAM_SHOW_SORT_BY_SELECTOR]->setValue(false);
 }
 
-{% endhighlight %}
+{% endraw %}{% endhighlight %}

@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Implementing horizontal attribute tabs'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 X-Cart 5.1.4 introduced **vertical product attribute tabs** that look as follows:![]({{ site.baseurl }}/attachments/8225427/8356199.png)
@@ -24,10 +20,11 @@ then this guide is for you.
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to [register a new CSS file]({{ baseurl_lang }}/../design_changes/adding_css_and_js_files.md). We create the  
+We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to [register a new CSS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html). We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductTabsChange/View/AView.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ProductTabsChange\View;
@@ -45,11 +42,13 @@ abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
 
         return $list;
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 and then create the `<X-Cart>/skins/default/en/modules/Tony/ProductTabsChange/css/style.css` file with the following content: 
 
-{% highlight php %}.product-details-tabs div.tabs ul.tabs {
+{% highlight php %}{% raw %}
+.product-details-tabs div.tabs ul.tabs {
     width: 100%;
     margin-bottom:10px;
     border-bottom:1px solid #E5E5E5;
@@ -83,7 +82,8 @@ and then create the `<X-Cart>/skins/default/en/modules/Tony/ProductTabsChange/cs
 .product-details-tabs div.tabs ul.tabs > li > a, .product-details-tabs div.tabs ul.tabs > li > span {
     border-radius:0px;
     border:1px solid #E5E5E5;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 That is it. Now you need to re-deploy the store and check the results in store-front.
 

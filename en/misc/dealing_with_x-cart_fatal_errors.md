@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Dealing with X-Cart fatal errors'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article helps merchants who faced a fatal error from X-Cart.
@@ -36,7 +32,9 @@ If you request a help on forums or send us a message, please specify as much inf
 
 Typical PHP syntax error looks like this:
 
-{% highlight php %}Parse error: syntax error, unexpected 'typo' (T_STRING), expecting function (T_FUNCTION) in /Applications/MAMP/htdocs/next/src/classes/XLite/Module/CDev/AmazonS3Images/Main.php on line 97{% endhighlight %}
+{% highlight php %}{% raw %}
+Parse error: syntax error, unexpected 'typo' (T_STRING), expecting function (T_FUNCTION) in /Applications/MAMP/htdocs/next/src/classes/XLite/Module/CDev/AmazonS3Images/Main.php on line 97
+{% endraw %}{% endhighlight %}
 
 In this case you should check the file mentioned in the error message (e.g. `/Applications/MAMP/htdocs/next/src/classes/XLite/Module/CDev/AmazonS3Images/Main.php`) at the line 97 (as mentioned in the error message) and find the code that causes this problem.
 
@@ -50,12 +48,16 @@ Check [this guide](http://kb.x-cart.com/pages/viewpage.action?pageId=524295#Inst
 
 Such typical error message looks like this:
 
-{% highlight php %}A new entity was found through the relationship 'XLite\Model\Attribute#product' that was not configured to cascade persist operations for entity: XLite\Model\Product@0000000043bd29bd000000000dc64c73\. To solve this issue: Either explicitly call EntityManager#persist() on this unknown entity or configure cascade persist this association in the mapping for example @ManyToOne(..,cascade={"persist"}). If you cannot find out which entity causes the problem implement 'XLite\Model\Product#__toString()' to get a clue.{% endhighlight %}
+{% highlight php %}{% raw %}
+A new entity was found through the relationship 'XLite\Model\Attribute#product' that was not configured to cascade persist operations for entity: XLite\Model\Product@0000000043bd29bd000000000dc64c73\. To solve this issue: Either explicitly call EntityManager#persist() on this unknown entity or configure cascade persist this association in the mapping for example @ManyToOne(..,cascade={"persist"}). If you cannot find out which entity causes the problem implement 'XLite\Model\Product#__toString()' to get a clue.
+{% endraw %}{% endhighlight %}
 
 This problem is most likely caused by the fact that the store data (products, categories, etc) was migrated to X-Cart incorrectly and some entities are not linked properly. In this particular cases, the database contains some product attributes that linked to a product and this product does not exist. You need to find such attributes and delete them in order to let your store work properly.
 
 You can find problem entities by running the following MySQL query:
 
-{% highlight php %}SELECT * from xc_attributes LEFT JOIN xc_products ON xc_products.product_id = xc_attributes.product__id WHERE xc_products.product_id IS NULL;{% endhighlight %}
+{% highlight php %}{% raw %}
+SELECT * from xc_attributes LEFT JOIN xc_products ON xc_products.product_id = xc_attributes.product__id WHERE xc_products.product_id IS NULL;
+{% endraw %}{% endhighlight %}
 
 If you feel that you do not have enough tech knowledge to solve the problem yourself, please contact developers who migrated your data or our [support service](http://www.x-cart.com/contact-us.html).

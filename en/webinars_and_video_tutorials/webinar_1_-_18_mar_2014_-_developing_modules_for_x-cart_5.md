@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This webinar is dedicated to creating the simple **News** module for X-Cart 5\. In this module, admin can define news in back-end and customers can see them in the store-front.
@@ -53,13 +49,16 @@ This webinar is dedicated to creating the simple **News** module for X-Cart 5\. 
 
 Run **next-sdk**'s macros: 
 
-{% highlight php %}../../next-sdk/devkit/macros/create-module.php --module=Tony\\News --version=5.0{% endhighlight %}
+{% highlight php %}{% raw %}
+../../next-sdk/devkit/macros/create-module.php --module=Tony\\News --version=5.0
+{% endraw %}{% endhighlight %}
 
 ## 2\. Create a News entity
 
 Create the **classes/XLite/Module/Tony/News/Model/News.php** file with the following content:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\News\Model;
 
@@ -90,14 +89,14 @@ class News extends \XLite\Model\AEntity
     * @Column (type="text")
     */
    protected $body = '';
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ### Create Repo for News model
 
 Create the **classes/XLite/Module/Tony/News/****Model/Repo**/**News.php** file with the following content: 
 
-{% highlight php %}
-{% raw %}
+{% highlight php %}{% raw %}
 <?php
 
 namespace XLite\Module\Tony\News\Model\Repo;
@@ -158,14 +157,15 @@ class News extends \XLite\Model\Repo\ARepo
        call_user_func_array(array($this, 'assignFrame'), array_merge(array($queryBuilder), $value));
    }
 }
-{% endraw %}
-{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
 ## 3\. Admin area: create a page that displays list of news
 
 Create a page via macros of next-sdk:
 
-{% highlight php %}../../next-sdk/devkit/macros/create-page.php --module=Tony\\News --target=news --interface=admin --menu=content{% endhighlight %}
+{% highlight php %}{% raw %}
+../../next-sdk/devkit/macros/create-page.php --module=Tony\\News --target=news --interface=admin --menu=content
+{% endraw %}{% endhighlight %}
 
 It creates the following files:
 
@@ -179,7 +179,8 @@ It creates the following files:
 
 Change the **classes/XLite/Module/Tony/News/View/Menu/Admin/TopMenu.php** script and define new version of the **defineItems()** method:
 
-{% highlight php %}protected function defineItems()
+{% highlight php %}{% raw %}
+protected function defineItems()
 {
 	$list = parent::defineItems();
 
@@ -198,13 +199,15 @@ Change the **classes/XLite/Module/Tony/News/View/Menu/Admin/TopMenu.php** script
     );
 
   	return $list;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ### Create ItemsList for News
 
 Create the **classes/XLite/Module/Tony/News/****View/ItemsList/Model/News.php** file with the following content:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\News\View\ItemsList\Model;
 
@@ -251,19 +254,23 @@ class News extends \XLite\View\ItemsList\Model\Table
    {
        return \XLite\Core\Converter::buildUrl('news_edit');
    }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ### Add News ItemsList to this page
 
 Put the following code into the **skins/admin/en/modules/Tony/News/page/news/body.tpl** template:
 
-{% highlight php %}<widget class="XLite\Module\Tony\News\View\ItemsList\Model\News" />{% endhighlight %}
+{% highlight php %}{% raw %}
+<widget class="XLite\Module\Tony\News\View\ItemsList\Model\News" />
+{% endraw %}{% endhighlight %}
 
 ### Add form for this ItemsList
 
 Create the **classes/XLite/Module/Tony/News/****View/Form/ItemsList/News/Table.php **file:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\News\View\Form\ItemsList\News;
 
@@ -278,29 +285,36 @@ class Table extends \XLite\View\Form\ItemsList\AItemsList
  	{
   		return 'update';
  	}
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Update **skins/admin/en/modules/Tony/News/page/news/body.tpl** template and add the following code there:
 
-{% highlight php %}<widget class="XLite\Module\Tony\News\View\Form\ItemsList\News\Table" name="list" />
+{% highlight php %}{% raw %}
+<widget class="XLite\Module\Tony\News\View\Form\ItemsList\News\Table" name="list" />
  <widget class="XLite\Module\Tony\News\View\ItemsList\Model\News" />
-<widget name="list" end />{% endhighlight %}
+<widget name="list" end />
+{% endraw %}{% endhighlight %}
 
 ### Add ItemsList handler to Controller
 
 Update **Controller/Admin/News.php** file and put the following code there:
 
-{% highlight php %}protected function doActionUpdate()
+{% highlight php %}{% raw %}
+protected function doActionUpdate()
 {
  	$list = new \XLite\Module\Tony\News\View\ItemsList\Model\News;
     $list->processQuick();
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ### Add page for target=news_edit
 
 Add page via macros: 
 
-{% highlight php %}../../next-sdk/devkit/macros/create-page.php --module=Tony\\News --target=news_edit --interface=admin{% endhighlight %}
+{% highlight php %}{% raw %}
+../../next-sdk/devkit/macros/create-page.php --module=Tony\\News --target=news_edit --interface=admin
+{% endraw %}{% endhighlight %}
 
 It creates following files:
 
@@ -314,7 +328,8 @@ It creates following files:
 
 Create **classes/XLite/Module/Tony/News/****View/Model/News.php** file with the following code:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\News\View\Model;
 
@@ -361,13 +376,15 @@ class News extends \XLite\View\Model\AModel
 
        return $result;
    	} 
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ### Create form class for model editing
 
 Create the **classes/XLite/Module/Tony/News/****View/Form/Model/News.php** file with the following code:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\News\View\Form\Model;
 
@@ -382,19 +399,23 @@ class News extends \XLite\View\Form\AForm
  	{
   		return 'update';
  	}
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ### Update template
 
 Edit the **skins/admin/en/modules/Tony/News/page/news_edit/body.tpl** template and add the following code there:
 
-{% highlight php %}<widget class="XLite\Module\Tony\News\View\Model\News" useBodyTemplate="1" />{% endhighlight %}
+{% highlight php %}{% raw %}
+<widget class="XLite\Module\Tony\News\View\Model\News" useBodyTemplate="1" />
+{% endraw %}{% endhighlight %}
 
 ### Update controller
 
 Edit the **classes/XLite/Module/Tony/News/Controller/Admin/NewsEdit.php** file and add the following code there:
 
-{% highlight php %}	protected $params = array('target', 'id');
+{% highlight php %}{% raw %}
+	protected $params = array('target', 'id');
 
  	protected function getModelFormClass()
  	{
@@ -414,13 +435,15 @@ Edit the **classes/XLite/Module/Tony/News/Controller/Admin/NewsEdit.php** file 
      			)
     		);
   		}
- 	}{% endhighlight %}
+ 	}
+{% endraw %}{% endhighlight %}
 
 ## 5\. Customer area: adding news menu
 
 Create the **classes/XLite/Module/Tony/News/****View/NewsMenu.php** file with the following content:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\News\View;
 
@@ -439,11 +462,13 @@ class NewsMenu extends \XLite\View\SideBarBox
  	{
   		return 'modules/Tony/News/menu';
  	}
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Create the **skins/default/en/modules/Tony/News/menu/body.tpl** template with the following code:
 
-{% highlight php %}{if:getNews()}
+{% highlight php %}{% raw %}
+{if:getNews()}
 <ul class="menu menu-list news">
  {foreach:getNews(),row}
  <li><a href="{buildURL(#news#,##,_ARRAY_(#news_id#^row.id))}">{row.title}</a></li>
@@ -451,20 +476,25 @@ Create the **skins/default/en/modules/Tony/News/menu/body.tpl** template with th
 </ul>
 {else:}
 No news added
-{end:}{% endhighlight %}
+{end:}
+{% endraw %}{% endhighlight %}
 
 Add **getNews()** method to **classes/XLite/Module/Tony/News/****View/NewsMenu.php** file:
 
-{% highlight php %}protected function getNews()
+{% highlight php %}{% raw %}
+protected function getNews()
 {
   	return \XLite\Core\Database::getRepo('\XLite\Module\Tony\News\Model\News')->findAll();
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ## 6\. Customer area: news details page
 
 Create page via macros:
 
-{% highlight php %}../../next-sdk/devkit/macros/create-page.php --module=Tony\\News --target=news --interface=customer{% endhighlight %}
+{% highlight php %}{% raw %}
+../../next-sdk/devkit/macros/create-page.php --module=Tony\\News --target=news --interface=customer
+{% endraw %}{% endhighlight %}
 
 The following files are created:
 
@@ -476,11 +506,14 @@ The following files are created:
 
 Update template **skins/default/en/modules/Tony/News/page/news/body.tpl** and add the following code there: 
 
-{% highlight php %}{getNewsBody():h}{% endhighlight %}
+{% highlight php %}{% raw %}
+{getNewsBody():h}
+{% endraw %}{% endhighlight %}
 
 Update the **classes/XLite/Module/Tony/News/****Controller/Customer/News.php** controller:
 
-{% highlight php %}protected $params = array('target', 'news_id');
+{% highlight php %}{% raw %}
+protected $params = array('target', 'news_id');
 
 public function getNewsBody()
 {
@@ -498,7 +531,8 @@ public function getNewsBody()
   	}
 
   	return $return;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ## 7\. Mod is finished 
 
@@ -524,7 +558,8 @@ First of all, we are planning to write a thorough article describing the decorat
 
 In short words, you can add a new field to the product model by adding the **classes/XLite/Module/Tony/News/Model/Product.php **with the following content:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 namespace XLite\Module\Tony\News\Model;
 class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 {
@@ -532,7 +567,8 @@ class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 	 * @Column (type="string", length=255)
 	 */
 	protected $secondary_name;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 After you rebuild the cache, the **xc_products **table will have a new field called **secondary_name. **
 
@@ -556,7 +592,8 @@ Yes, sure. As well as anything else in X-Cart 5.
 
 The simplest way to check whether module is enabled shown below:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 // init X-Cart 5
 require 'top.inc.php';
@@ -575,6 +612,7 @@ if (is_object($module)) {
 	}
 } else {
 	echo 'Module does not exist';
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 This script is supposed to be placed into the X-Cart 5 root folder.

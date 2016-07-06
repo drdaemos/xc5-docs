@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Connecting X-Payments 2.1 x with X-Cart 5'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This video tutorial explains how to connect X-Cart 5 to X-Payments 2.1 to enable PCI compliant credit card processing via X-Payments.

@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Using X-Cart 5 AOM and X-Payments together'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 In this tutorial we take an order paid for via X-Payments and edit it using the X-Cart 5 Advanced Order Management feature.

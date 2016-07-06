@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Understanding Models'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 X-Cart primarily works with **Model** objects. For instance, product, category, order, image, user are all Model objects. This article gives an introduction to what is Model classes and how to work with them. 
@@ -22,11 +18,12 @@ For the sake of example, we will create a **TestEntity** class which will have t
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **RepoDemo**.
+We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **RepoDemo**.
 
 Once it is created, we create our **Model** class. For that, we create `<X-Cart>/classes/XLite/Module/Tony/RepoDemo/Model/TestEntity.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\RepoDemo\Model;
 
@@ -48,40 +45,53 @@ class TestEntity extends \XLite\Model\AEntity
      * @Column (type="text")
      */
     protected $text;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Let us have a closer look at what we are doing here:
 
-1.  We start with defining [namespace]({{ baseurl_lang }}/../misc/x-cart_classes_structure_and_namespaces.md): 
+1.  We start with defining [namespace]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html): 
 
-    {% highlight php %}namespace XLite\Module\Tony\RepoDemo\Model;{% endhighlight %}
+    {% highlight php %}{% raw %}
+    namespace XLite\Module\Tony\RepoDemo\Model;
+    {% endraw %}{% endhighlight %}
 2.  Then in [DocBlocks](http://www.phpdoc.org/docs/latest/guides/docblocks.html) comments we define that this class is a new entity: 
 
-    {% highlight php %}@Entity{% endhighlight %}
+    {% highlight php %}{% raw %}
+    @Entity
+    {% endraw %}{% endhighlight %}
 
     and it must be stored in the `xc_**test_entities**` table (assuming you have not changed table prefix in `<X-Cart/etc/config.php`): 
 
-    {% highlight php %}@Table (name="test_entities"){% endhighlight %}
+    {% highlight php %}{% raw %}
+    @Table (name="test_entities")
+    {% endraw %}{% endhighlight %}
 3.  Our class is the basic one that is why it extends `\XLite\Model\AEntity` class: 
 
-    {% highlight php %}class TestEntity extends \XLite\Model\AEntity{% endhighlight %}
+    {% highlight php %}{% raw %}
+    class TestEntity extends \XLite\Model\AEntity
+    {% endraw %}{% endhighlight %}
 4.  Our **TestEntity** has two properties. First is `$id` that is unique identifier of TestEntity in the database: 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Id
          * @GeneratedValue (strategy="AUTO")
          * @Column         (type="integer")
          */
-    	protected $id; {% endhighlight %}
+    	protected $id; 
+    {% endraw %}{% endhighlight %}
 
     That is why we mark this property with `@Id` tag. We also specify that it has in an **integer** type and its value must be **automatically** **generated** upon creating a new object.
 
 5.  The second property is `$text` that must have **TEXT** MySQL type: 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Column (type="text")
          */
-        protected $text;{% endhighlight %}
+        protected $text;
+    {% endraw %}{% endhighlight %}
 
 We are done with creating an entity class.
 
@@ -89,7 +99,8 @@ When we re-deploy the store X-Cart will create `xc_test_entities` table with nee
 
 Now, we create the `test.php` script in X-Cart's root and start experimenting with our **TestEntity** class. Here is a content of the `test.php` file: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 //X-Cart initializtion
 require_once 'top.inc.php';
@@ -121,18 +132,23 @@ $result = \XLite\Core\Database::getRepo('\XLite\Module\Tony\RepoDemo\Model\TestE
 // displaying text of TestEntities
 foreach ($result as $entity) {
 	echo 'entity text: ' . $entity->getText() . '<br />';
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 After running this script you should get the following results: 
 
-{% highlight php %}there should be no records array ( )
-entity text: test value{% endhighlight %}
+{% highlight php %}{% raw %}
+there should be no records array ( )
+entity text: test value
+{% endraw %}{% endhighlight %}
 
 If you run the script the second time, you will see that first pulling of **NewEntities** will actually get you some results and the output will be a bit different as there are two TestEntities in the database now: 
 
-{% highlight php %}there should be no records array ( 0 => XLite\Module\Tony\RepoDemo\Model\TestEntity::__set_state(array( 'id' => 1, 'text' => 'test value', )), )
+{% highlight php %}{% raw %}
+there should be no records array ( 0 => XLite\Module\Tony\RepoDemo\Model\TestEntity::__set_state(array( 'id' => 1, 'text' => 'test value', )), )
 entity text: test value
-entity text: test value{% endhighlight %}
+entity text: test value
+{% endraw %}{% endhighlight %}
 
 # Module pack
 

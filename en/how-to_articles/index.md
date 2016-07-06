@@ -4,11 +4,8 @@ lang: en
 title: 'How-To Articles'
 categories: [home]
 order: 5
-icon: object group
-description: Study different guides to achieve features that you need.
----
-
-{% include global.html %}
+icon: info circle
+description: Study different guides to achieve features that you need
 
 [Create from Template](http://kb.x-cart.com?createDialogSpaceKey=XDD&createDialogBlueprintId=c22b678d-69eb-4160-abab-455789c88bde)
 

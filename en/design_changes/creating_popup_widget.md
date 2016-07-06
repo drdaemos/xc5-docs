@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating popup widget'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article describes how developers can create a popup widget in X-Cart. For instance, we want our custom page in customer area to have a button that shows popup window with some information. This guide explains how to achieve this task. We'll be trying to create a simple overview of shopping cart:
@@ -26,8 +22,8 @@ This article describes how developers can create a popup widget in X-Cart. For i
 
 # Some necessary preparations
 
-First of all, you should have your custom module. We are [creating a new module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **PopupDemo**.  
-Secondly, we'll create a [custom page]({{ baseurl_lang }}/../basics/creating_new_page.md) to have our popup button. This page will be available at `cart.php?target=tony_custom` address.
+First of all, you should have your custom module. We are [creating a new module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **PopupDemo**.  
+Secondly, we'll create a [custom page]({{ baseurl_lang }}/basics/creating_new_page.html) to have our popup button. This page will be available at `cart.php?target=tony_custom` address.
 
 # Implementation
 
@@ -35,9 +31,10 @@ Through this course we will define our custom button, which will be used to open
 
 ## Creating popup button
 
-X-Cart has `\XLite\View\Button\APopupButton` class, which defines popup button. In order to use it, you should extend it with your custom button class (this thing is thoroughly explained in [Working with viewer classes]({{ baseurl_lang }}/../basics/working_with_viewer_classes.md)). To do this, we are creating a file `<X-Cart>/classes/XLite/Module/Tony/PopupDemo/View/Button/DemoPopupButton.php` with the following content:
+X-Cart has `\XLite\View\Button\APopupButton` class, which defines popup button. In order to use it, you should extend it with your custom button class (this thing is thoroughly explained in [Working with viewer classes]({{ baseurl_lang }}/basics/working_with_viewer_classes.html)). To do this, we are creating a file `<X-Cart>/classes/XLite/Module/Tony/PopupDemo/View/Button/DemoPopupButton.php` with the following content:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 namespace XLite\Module\Tony\PopupDemo\View\Button;
 /**
  * Demo popup widget
@@ -76,7 +73,8 @@ class DemoPopupButton extends \XLite\View\Button\APopupButton
     {
         return parent::getClass() . ' demo-popup';
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 By extending, we set some parameters, which will be used to get access to our popup widget. Let's walk through each method in order to understand these parameters:
 
@@ -88,7 +86,8 @@ By extending, we set some parameters, which will be used to get access to our po
 
 Apart from viewer class we should create an additional script in `<X-Cart>/modules/Tony/PopupDemo/page/tony_custom/popup_button.js` file with the following content:
 
-{% highlight php %}/**
+{% highlight php %}{% raw %}
+/**
  * Demo popup button controller
  */
 function DemoPopupButton()
@@ -102,7 +101,8 @@ DemoPopupButton.prototype.callback = function(selector)
   PopupButton.prototype.callback.apply(this, arguments);
   // You could add some inner widget autoloading here
 }
-core.autoload(DemoPopupButton);{% endhighlight %}
+core.autoload(DemoPopupButton);
+{% endraw %}{% endhighlight %}
 
 This script describes JavaScript controller for our button and we aren't doing much work here, just extending the X-Cart `PopupButton`. Let's walk through each line of its code:
 
@@ -120,7 +120,8 @@ This script describes JavaScript controller for our button and we aren't doing m
 
 Another viewer class that we should create is the popup widget. This class will define the content of our popup window. Please note that you can use potentially any viewer class as popup widget, but for instance we will create it from scratch. Our viewer class will be a mini-overview of a current cart, similar to **Minicart** core widget, done by writing the following code in <`X-Cart>/skins/default/en``/classes/XLite/Module/Tony/PopupDemo/View/DemoWidget.php` file:
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 namespace XLite\Module\Tony\PopupDemo\View;
 /**
  * Demo loadable widget
@@ -170,7 +171,8 @@ class DemoWidget extends \XLite\View\AView
             min(5, \XLite\Model\Cart::getInstance()->countItems())
         );
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Let's get quick overview of methods, featuring this viewer class (more about this in [Working with viewer classes](Working-with-viewer-classes_8224836.html)):
 
@@ -184,7 +186,8 @@ Let's get quick overview of methods, featuring this viewer class (more about thi
 
  Now we need to create a template defined in the `getDefaultTemplate()` method. We are creating `<X-Cart>/skins/default/en/modules/Tony/PopupDemo/page/tony_custom/demo_widget.tpl `template with the following content: 
 
-{% highlight php %}{* vim: set ts=2 sw=2 sts=2 et: *}
+{% highlight php %}{% raw %}
+{* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * Demo widget block
  *}
@@ -201,9 +204,10 @@ Let's get quick overview of methods, featuring this viewer class (more about thi
     <strong>{t(#Subtotal#)}:</strong>
     <span>{formatPrice(getDisplaySubtotal(),getCurrency(),1)}</span>
   </p>
-</div>{% endhighlight %}
+</div>
+{% endraw %}{% endhighlight %}
 
-This template uses several [Flexy]({{ baseurl_lang }}/../basics/flexy_guide.md) features to show cart quantity, unordered list of items in the cart and subtotal in user currency. 
+This template uses several [Flexy]({{ baseurl_lang }}/basics/flexy_guide.html) features to show cart quantity, unordered list of items in the cart and subtotal in user currency. 
 
 This is basically everything that we need to make a simple popup widget. We're only step away from finishing our work.
 
@@ -211,7 +215,9 @@ This is basically everything that we need to make a simple popup widget. We're o
 
 To use newly-created widget, we should add the following code on target page template:
 
-{% highlight php %}<widget class="\XLite\Module\Tony\PopupDemo\View\Button\DemoPopupButton" label="Demo popup!" />{% endhighlight %}
+{% highlight php %}{% raw %}
+<widget class="\XLite\Module\Tony\PopupDemo\View\Button\DemoPopupButton" label="Demo popup!" />
+{% endraw %}{% endhighlight %}
 
 The **class** parameter defines a viewer class to use as a widget (it is our popup button), and the **label** parameter is the text on the button. After doing this, we have to re-deploy the store with our module **PopupDemo** set as enabled and once the process is finished, we should add some items to the cart and go to the `cart.php?target=tony_custom` page. As a result, we should be able to see a page, similar to the picture in the **Introduction** section.
 

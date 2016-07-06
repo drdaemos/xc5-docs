@@ -2,16 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Retrieving data from the request'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article teaches X-Cart developers how to retrive data from request to end-points. For the sake of example, we will create a mod that will work as follows:
 
-1.  There will be a page that can be accessed as `cart.php?target=tony`. Please, check the [previous guide]({{ baseurl_lang }}/../basics/creating_new_page.md) in order to learn how to approach such tasks.
+1.  There will be a page that can be accessed as `cart.php?target=tony`. Please, check the [previous guide]({{ baseurl_lang }}/basics/creating_new_page.html) in order to learn how to approach such tasks.
 2.  You can call this page as `cart.php?target=tony&**param**=foo&**param2**=bar` and this page will display values of these parameters as shown below:![]({{ site.baseurl }}/attachments/524294/8355983.png)
 
 # Table of Contents
@@ -23,37 +19,43 @@ This article teaches X-Cart developers how to retrive data from request to end-p
 
 # Implementation
 
-1.  We [create a module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **RequesDemo**.
+1.  We [create a module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **RequesDemo**.
 2.  We [create a page](Creating-new-page_8224999.html) with **target=tony** customer area. Eventually, we will have three files in the module:  
     - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/Controller/Customer/Tony.php  
     `- `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`  
     - `<X-Cart>/skins/default/en/modules/Tony/RequestDemo/page/tony/body.tpl`
 3.  We define the template's content as follows: 
 
-    {% highlight php %}<div>
+    {% highlight php %}{% raw %}
+    <div>
     Param: {getParamValue()} <br />
     Param2: {getParam2Value()}
-    </div>{% endhighlight %}
+    </div>
+    {% endraw %}{% endhighlight %}
 4.  Now we need to define these two methods: `getParamValue()` and `getParam2Value()` in the viewer class (`<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`), so that the template could use them.
 5.  We edit the `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php` file and define a new `getParamValue()` method there as follows: 
 
-    {% highlight php %}    public function getParamValue()
+    {% highlight php %}{% raw %}
+        public function getParamValue()
         {
             return \XLite\Core\Request::getInstance()->param;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     This is how easy you can pull the parameter's value from the HTTP request.
 
 6.  We define the `getParam2Value()` method in the same file as follows: 
 
-    {% highlight php %}    public function getParam2Value()
+    {% highlight php %}{% raw %}
+        public function getParam2Value()
         {
             $return = 'none';
             if (isset($_GET['param2'])) {
                 $return = $_GET['param2'];
             }
             return $return;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     As you can see, X-Cart allows to `$_GET` array directly, but in this case you need to handle errors manually.
 

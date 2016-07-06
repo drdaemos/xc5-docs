@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding new sort by option to ItemsList'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-This article aims to teach X-Cart developers how they can add a sorting option to their [ItemsLists]({{ baseurl_lang }}/../basics/itemslist_introduction_--_showing_products_on_a_page/index.md).
+This article aims to teach X-Cart developers how they can add a sorting option to their [ItemsLists]({{ baseurl_lang }}/basics/itemslist_introduction_--_showing_products_on_a_page/{{ baseurl_lang }}/index.html).
 
 For the sake of example we will add **Sort by date** option to all product ItemsLists as shown on the snapshot below:
 
@@ -26,10 +22,11 @@ Similar option already exists in [Product Advisor](http://www.x-cart.com/extensi
 
 # Implementation
 
-We start with [creating a module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **SortingByDate**. In this module we are going to [decorate]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md) the `\XLite\View\ItemsList\Product\Customer\ACustomer` class, so we create the  
+We start with [creating a module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **SortingByDate**. In this module we are going to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\ItemsList\Product\Customer\ACustomer` class, so we create the  
 `<X-Cart>/classes/XLite/Module/Tony/SortingByDate/View/ItemsList/Product/Customer/ACustomer.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\SortingByDate\View\ItemsList\Product\Customer;
@@ -39,26 +36,31 @@ namespace XLite\Module\Tony\SortingByDate\View\ItemsList\Product\Customer;
  */
 abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
 {
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Adding of new sorting option is as easy as changing the `__construct()` method in this class:
 
-{% highlight php %}    public function __construct(array $params = array())
+{% highlight php %}{% raw %}
+    public function __construct(array $params = array())
     {
         parent::__construct($params);
 
         $this->sortByModes = array(
             'p.arrivalDate' => 'Sort by date',
         ) + $this->sortByModes;
-    }{% endhighlight %}
+    }
+{% endraw %}{% endhighlight %}
 
 As you can see, we call parent's constructor and then adding one more record to the `$this->sortByModes` array: 
 
-{% highlight php %}		$this->sortByModes = array(
+{% highlight php %}{% raw %}
+		$this->sortByModes = array(
             'p.arrivalDate' => 'Sort by date',
-        ) + $this->sortByModes;{% endhighlight %}
+        ) + $this->sortByModes;
+{% endraw %}{% endhighlight %}
 
-*   This new record's key is a field that will be used by [queryBuilder]({{ baseurl_lang }}/../basics/searching_entities_in_repositories/querybuilder.md) object for sorting results. In our case we are going to sort by date and key is `p.arrivalDate`.
+*   This new record's key is a field that will be used by [queryBuilder]({{ baseurl_lang }}/basics/searching_entities_in_repositories/querybuilder.html) object for sorting results. In our case we are going to sort by date and key is `p.arrivalDate`.
 *   The value of new record is a name of sorting option, which will be displayed to a customer. In our case it is **Sort by date**.
 
 That is it. Now we can re-deploy the store and check the results in store-front. It will look as follows:![]({{ site.baseurl }}/attachments/8749095/8716415.png)

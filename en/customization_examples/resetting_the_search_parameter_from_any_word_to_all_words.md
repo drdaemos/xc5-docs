@@ -2,18 +2,15 @@
 layout: article_with_sidebar
 lang: en
 title: 'Resetting the search parameter from &quot;any word&quot; to &quot;all words&quot;'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 Search via the search form in X-Cart is performed based on the "any word" parameter; it is possible, however, to change the default behavior so the search is performed by "all words". To do so, follow the steps below:
 
-1.  Create the simplest module as described in the section [Step 1 - creating simplest module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) of this manual.
+1.  Create the simplest module as described in the section [Step 1 - creating simplest module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) of this manual.
 
 2.  In this module, add a new class:
 
-    {% highlight php %}namespace XLite\Module\<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>\View\Form\Product\Search\Customer;
+    {% highlight php %}{% raw %}
+    namespace XLite\Module\<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>\View\Form\Product\Search\Customer;
     class SimpleForm extends \XLite\View\Form\Product\Search\Customer\SimpleForm implements \XLite\Base\IDecorator
     {
        protected function getDefaultParams()
@@ -22,7 +19,8 @@ Search via the search form in X-Cart is performed based on the "any word" parame
            $params[\XLite\View\ItemsList\Product\Customer\Search::PARAM_INCLUDING] = \XLite\Model\Repo\Product::INCLUDING_ALL;
            return $params;
        }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     The function getDefaultParams, as you might expect from its name, is responsible for the default parameters of this "View". 
 

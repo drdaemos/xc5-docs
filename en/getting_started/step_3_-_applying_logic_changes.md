@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Step 3 - applying logic changes'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This is the third article in **Getting Started** section and it aims to teach X-Cart developers how to change the store's logic. We will start with an overview of how X-Cart works in general and then explain how you can change this default workflow.
@@ -27,8 +23,8 @@ This article also contains the working example of changing X-Cart's logic.
 
 Before we start explaining general workflow of X-Cart, we must say that X-Cart uses **object-oriented paradigm**, which means that code is objects-based + code widely utilizes **inheritance** as well as uses polymorphism and encapsulation. We also can call X-Cart as **MVC** (Model - View - Controller) framework, because of three main class types in X-Cart:
 
-1.  [**Model** class]({{ baseurl_lang }}/../basics/understanding_models.md) is a class that describes some entity. Products, orders, users, payment gateways, etc are all model objects. All model classes are defined in files of the `<X-Cart>/classes/XLite/Model/` folder.
-2.  [**Viewer** class]({{ baseurl_lang }}/../basics/working_with_viewer_classes.md) is a class that handles the output of HTML code to the client. For example, in order to display an order page there is a bulk of viewer classes that takes info from order model, then processes it and finally outputs to the client. All viewer classes are defined in files of the `<X-Cart>/classes/XLite/View/` directory.
+1.  [**Model** class]({{ baseurl_lang }}/basics/understanding_models.html) is a class that describes some entity. Products, orders, users, payment gateways, etc are all model objects. All model classes are defined in files of the `<X-Cart>/classes/XLite/Model/` folder.
+2.  [**Viewer** class]({{ baseurl_lang }}/basics/working_with_viewer_classes.html) is a class that handles the output of HTML code to the client. For example, in order to display an order page there is a bulk of viewer classes that takes info from order model, then processes it and finally outputs to the client. All viewer classes are defined in files of the `<X-Cart>/classes/XLite/View/` directory.
 3.  **Controller** class aims to make a preparation of data and application before viewer class starts the output of content. All controller classes are described in files of the `<X-Cart>/classes/XLite/Controller/` folder.
 
 # General X-Cart workflow
@@ -53,9 +49,10 @@ It means, that we can tell X-Cart to use our own implementation of certain metho
 
 Let me show you how the real-life working example for better understanding. Assume we want to hide the quicklook magnifier icon from all product lists. This icon is marked on the snapshot below:
 
-![](attachments/8224804/8355865.png)Using the approach described in [Step 2 - applying design changes]({{ site.baseurl }}/{{ baseurl_lang }}/../getting_started/step_2_-_applying_design_changes.md) article, we can find that this icon is defined by the `<X-Cart>/skins/default/en/items_list/product/parts/common.quicklook-button.tpl` template. Its code is below: 
+![](attachments/8224804/8355865.png)Using the approach described in [Step 2 - applying design changes]({{ site.baseurl }}/{{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html) article, we can find that this icon is defined by the `<X-Cart>/skins/default/en/items_list/product/parts/common.quicklook-button.tpl` template. Its code is below: 
 
-{% highlight php %}{* vim: set ts=2 sw=2 sts=2 et: *}
+{% highlight php %}{% raw %}
+{* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * Overlapping box
  *
@@ -74,16 +71,18 @@ Let me show you how the real-life working example for better understanding. Assu
     class="quicklook-link quicklook-link-{product.product_id} quicklook-link-category-{categoryId}">
     <div class="quicklook-view">&nbsp;</div>
   </a>
-</div>{% endhighlight %}
+</div>
+{% endraw %}{% endhighlight %}
 
 As you can see, the code is straight-forward: if `isQuickLookEnabled()` method returns true, then this icon is displayed. Of course, we can hide this icon by **overriding** the template as it was described previously in step 2 article, but we can also hide it by **decorating the viewer class** of this template – this class is `\XLite\View\ItemsList\Product\Customer` – and changing the `isQuickLookEnabled()` method to always return false.
 
 Here is how we can achieve it:
 
-1.  [Create an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md). I am creating it with developer ID as **Tony** and module ID as **DecoratorDemo**. Of course, you can use your own IDs.
+1.  [Create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). I am creating it with developer ID as **Tony** and module ID as **DecoratorDemo**. Of course, you can use your own IDs.
 2.  Create the `<Your-Module-Directory>/VIew/ItemsList/Product/Customer/ACustomer.php` file inside your module with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     namespace XLite\Module\Tony\DecoratorDemo\View\ItemsList\Product\Customer;
     abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
     {
@@ -91,32 +90,41 @@ Here is how we can achieve it:
         {
             return false;
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     Of course, if you are using your own IDs, you must change the namespace.
 
 3.  Let me walk through each line of this code and explain what it does.
-4.  {% highlight php %}namespace XLite\Module\Tony\DecoratorDemo\View\ItemsList\Product\Customer;{% endhighlight %}
+4.  {% highlight php %}{% raw %}
+    namespace XLite\Module\Tony\DecoratorDemo\View\ItemsList\Product\Customer;
+    {% endraw %}{% endhighlight %}
 
     This is just a definition of the class' **namespace**.
 
-5.  {% highlight php %}abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator{% endhighlight %}
+5.  {% highlight php %}{% raw %}
+    abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
+    {% endraw %}{% endhighlight %}
 
     Here we specifiy that our class decorates the `\XLite\View\ItemsList\Product\Customer\ACustomer` one of default X-Cart. It means that X-Cart will use the implementation of the `isQuickLookEnabled()` method defined in our class instead of implementation of the `isQuickLookEnabled()` method defined in the `\XLite\View\ItemsList\Product\Customer\ACustomer` class. However, X-Cart will keep using other methods of `\XLite\View\ItemsList\Product\Customer\ACustomer` class as they were defined, unless these methods were decorated as well (by other modules, for example).  
     _Note: decorating class must always be abstract, no matter what class it decorates._
 
-6.  {% highlight php %}    protected function isQuickLookEnabled()
+6.  {% highlight php %}{% raw %}
+        protected function isQuickLookEnabled()
         {
             return false;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     Our implementation of the `isQuickLookEnabled()` method. Quite often, you want to keep existing functionality and just extend it with your own routines. In this case, you can decorate certain methods like this: 
 
-    {% highlight php %}    protected function isQuickLookEnabled()
+    {% highlight php %}{% raw %}
+        protected function isQuickLookEnabled()
         {
         	myMethod();
             return parent::isQuickLookEnabled();
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     In other words, you may want to call **parent** class in order to keep existing functionality in place.  
     _Note: again the signature of the method (accessibility and argument types and number) must remain the same during decoration._
@@ -133,7 +141,8 @@ Decoration approach is widely-used in X-Cart modules and here are few other mome
 
 1.  You can decorate class' **properties** the same way you do with methods. For example, this code will decorate `\XLite\Model\Product` object and add `$myProperty` field to each product.
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     namespace XLite\Module\Tony\DecoratorChanges\Model;
     class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
     {
@@ -141,7 +150,8 @@ Decoration approach is widely-used in X-Cart modules and here are few other mome
          * @Column (type="string", length=32, nullable=true)
          */
         protected $myProperty;
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     Of course, this code assumes that this code is placed in the `<X-Cart>/classes/Module/Tony/DecoratorChanges/Model/Product.php` file. Otherwise, you should change namespace accordingly.
 

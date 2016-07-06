@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Import and Export of Categories: Tutorial by Mike White'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This is an X-Сart 5 tutorial by Mike White aka totaltec from [http://babymonkeystudios.com](http://babymonkeystudios.com/ "http://babymonkeystudios.com"). It explains how to import and export categories and products in X-Cart 5. 

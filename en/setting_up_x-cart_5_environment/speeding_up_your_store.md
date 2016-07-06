@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Speeding up your store'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article aims to provide guidance to X-Cart users who want to improve the performance of their X-Cart installation.
@@ -48,7 +44,7 @@ The former two options allow X-Cart to compound most CSS files into a single one
 
 The **Use widget cache** option enables the internal cache of viewer classes, which is a great way to speed up the opening of pages that have static data, like product or category pages. This allows to skip some calculations if no changes have been made to the content.
 
-If you have custom mods, you may consider [making some of their widgets cached]({{ baseurl_lang }}/../design_changes/making_your_custom_widget_cached.md) as well.
+If you have custom mods, you may consider [making some of their widgets cached]({{ baseurl_lang }}/design_changes/making_your_custom_widget_cached.html) as well.
 
 ![]({{ site.baseurl }}/attachments/8224875/9437214.png?effects=drop-shadow)
 
@@ -72,13 +68,15 @@ If you manage your host by yourself, you should enable the [zlib](http://php.n
 
 Besides, in case all static files are served directly by Nginx on your site, you can enable gzip compression for static files, by specifying additional directives in your nginx configuration file, for example: 
 
-{% highlight php %}# enable gzip compression
+{% highlight php %}{% raw %}
+# enable gzip compression
 gzip on;
 gzip_min_length  1100;
 gzip_buffers  4 32k;
 gzip_types    text/plain application/x-javascript application/javascript text/xml text/css;
 gzip_vary on;
-# end gzip configuration{% endhighlight %}
+# end gzip configuration
+{% endraw %}{% endhighlight %}
 
 ## Step 5\. Use a recent PHP version (5.5+)
 
@@ -94,9 +92,11 @@ Unfortunately, X-Cart does not support PHP 7.0 yet. The reason for that is that 
 
 MySQL provides a convenient feature that can be used to speed up any queries to the database - Query Cache. To get an optimized and speedy response from your MySQL server, you may want to add the following configuration directives to your MySQL server:
 
-{% highlight php %}SET GLOBAL query_cache_size  = 268435456;
+{% highlight php %}{% raw %}
+SET GLOBAL query_cache_size  = 268435456;
 SET GLOBAL query_cache_type  = 1;
-SET GLOBAL query_cache_limit = 1048576;{% endhighlight %}
+SET GLOBAL query_cache_limit = 1048576;
+{% endraw %}{% endhighlight %}
 
 Alternatively, you can adjust these settings in the MySQL configuration file. A good article explaining each aspect of Query Cache configuration is available at [http://dev.mysql.com/doc/refman/5.7/en/query-cache-configuration.html](http://dev.mysql.com/doc/refman/5.7/en/query-cache-configuration.html)
 

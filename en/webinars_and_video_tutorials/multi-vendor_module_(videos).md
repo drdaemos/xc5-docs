@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Multi-vendor module (videos)'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 In this series of video tutorials we provide an overview of the functionality of X-Cart 5 Multi-vendor module - as experienced by Admin, Vendor and Customer.  

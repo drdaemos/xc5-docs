@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Making your custom widget cached'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 X-Cart allows to cache certain widgets that contain mostly (or entirely) static data. This way X-Cart will not need to render this widget from scratch and the store will work faster.
@@ -22,18 +18,21 @@ This article explains developers how they can enable widget cache for their cust
 
 # Implementation
 
-Imagine a situation that we have added a [custom sidebar widget]({{ baseurl_lang }}/../design_changes/creating_sidebar_menu_in_customer_area.md). We know that this widget never changes, that is why we can generate its content (HTML code) only once and then insert this HTML code without running PHP process. Let us mark this widget as available for cache.
+Imagine a situation that we have added a [custom sidebar widget]({{ baseurl_lang }}/design_changes/creating_sidebar_menu_in_customer_area.html). We know that this widget never changes, that is why we can generate its content (HTML code) only once and then insert this HTML code without running PHP process. Let us mark this widget as available for cache.
 
 1.  Before we get started install the module from [here](Creating-sidebar-menu-in-customer-area_7505759.html#Creatingsidebarmenuincustomerarea-Modulepack).
 2.  In order to mark a widget as available for caching you should simply add the `isCacheAvailable()` to your viewer class as follows:
 
-    {% highlight php %}    protected function isCacheAvailable()
+    {% highlight php %}{% raw %}
+        protected function isCacheAvailable()
         {
             return true;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 3.  If you want to add some logic whether or not enable caching depending on some condition (e.g. cache widget on home page only and do not cache them on category page), then you can also add `isCacheAllowed()` method. Example of its implementation: 
 
-    {% highlight php %}    protected function isCacheAllowed($template)
+    {% highlight php %}{% raw %}
+        protected function isCacheAllowed($template)
         {
     			// we must call parent's method for backward compatibility
             return parent::isCacheAllowed($template) 
@@ -41,7 +40,8 @@ Imagine a situation that we have added a [custom sidebar widget]({{ baseurl_lang
                 && \XLite::getController() instanceof \XLite\Controller\Customer\Category 
     			// if category's ID is root category ID, then we are on home page
                 && \XLite::getController()->getCategoryId() == \XLite::getController()->getRootCategoryId();
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 4.  That is it. Now it is time to re-deploy the store and check the results.
 5.  _Important: widget's cache works only if you enable the **Use view cache** option in the **System Settings** > **Look & feel** > **Performance** section in admin area.![]({{ site.baseurl }}/attachments/8225080/8356028.png)_
 

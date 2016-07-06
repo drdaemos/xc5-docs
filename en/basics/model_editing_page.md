@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'Model editing page'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-During module creation developers sometimes [create complex entities]({{ baseurl_lang }}/../basics/understanding_models.md) that require a **separate** page for editing of its properties, instead of doing it via [ItemsList]({{ baseurl_lang }}/../basics/creating_new_entity_--_introduction_of_editable_itemslist_in_admin_area.md). This article will explain how you can create a page where you can edit certain fields of a model. For the sake of example, we will create a simple mod that will implement a new page where you can edit a product, but the same principles apply to all other entities as well.
+During module creation developers sometimes [create complex entities]({{ baseurl_lang }}/basics/understanding_models.html) that require a **separate** page for editing of its properties, instead of doing it via [ItemsList]({{ baseurl_lang }}/basics/creating_new_entity_--_introduction_of_editable_itemslist_in_admin_area.html). This article will explain how you can create a page where you can edit certain fields of a model. For the sake of example, we will create a simple mod that will implement a new page where you can edit a product, but the same principles apply to all other entities as well.
 
 # Table of Contents
 
@@ -20,12 +16,13 @@ During module creation developers sometimes [create complex entities]({{ baseurl
 
 # Implementation
 
-We start with [creating a simple module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **ModelEditingDemo**. Then, we create a page **target=product_edit** in admin area. For that we create:
+We start with [creating a simple module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ModelEditingDemo**. Then, we create a page **target=product_edit** in admin area. For that we create:
 
-*   an empty [controller]({{ baseurl_lang }}/../basics/controller_class.md) class `\XLite\Module\Tony\ModelEditingDemo\Controller\Admin\ProductEdit`;
+*   an empty [controller]({{ baseurl_lang }}/basics/controller_class.html) class `\XLite\Module\Tony\ModelEditingDemo\Controller\Admin\ProductEdit`;
 *   page widget class `\XLite\Module\Tony\ModelEditingDemo\View\Page\Admin\ProductEdit` with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
     namespace XLite\Module\Tony\ModelEditingDemo\View\Page\Admin;
@@ -57,12 +54,14 @@ We start with [creating a simple module]({{ baseurl_lang }}/../getting_started/s
         {
             return 'modules/Tony/ModelEditingDemo/page/product_edit/body.tpl';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 *   an empty page template `<X-Cart>/skins/admin/en/modules/Tony/ModelEditingDemo/page/product_edit/body.tpl`.
 
 Now we start creating a widget for **model editing**. For that we create the `<X-Cart>/classes/XLite/Module/Tony/ModelEditingDemo/View/Model/Product.php` file with the following code: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\ModelEditingDemo\View\Model; 
 
@@ -110,16 +109,20 @@ class Product extends \XLite\View\Model\AModel
     {
         return '\XLite\Module\Tony\ModelEditingDemo\View\Form\Model\Product';
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Let us have a closer look at this implementation: 
 
 1.  Our class extends an abstract implementation model editing widget (`\XLite\View\Model\AModel`): 
 
-    {% highlight php %}class Product extends \XLite\View\Model\AModel{% endhighlight %}
+    {% highlight php %}{% raw %}
+    class Product extends \XLite\View\Model\AModel
+    {% endraw %}{% endhighlight %}
 2.  Next, we define what fields will be displayed in this widget by defining `$schemaDefault` property: 
 
-    {% highlight php %}    protected $schemaDefault = array(
+    {% highlight php %}{% raw %}
+        protected $schemaDefault = array(
             'sku' => array(
                 self::SCHEMA_CLASS    => 'XLite\View\FormField\Input\Text\SKU',
                 self::SCHEMA_LABEL    => 'SKU',
@@ -141,14 +144,16 @@ Let us have a closer look at this implementation: 
                 self::SCHEMA_REQUIRED => false,
                 \XLite\View\FormField\Textarea\Advanced::PARAM_STYLE => 'product-description',
             ),
-        );{% endhighlight %}
+        );
+    {% endraw %}{% endhighlight %}
 
-    This property is an array. **Key** of its elements is a **name** of Model **property** that will be defined in this widget. In our case, they are **sku**, **name**, **price** and **description**. Value of array's elements is an array of parameters that define each field. There are three params: `self::SCHEMA_CLASS` defines a [FormField class]({{ baseurl_lang }}/../getting_started/step_4_-_working_with_settings/creating_custom_setting_class.md) that will represent this field; `self::SCHEMA_LABEL` defines a label next to model's property field; `self::SCHEMA_REQUIRED` defines whether this field's value is required or not.  
+    This property is an array. **Key** of its elements is a **name** of Model **property** that will be defined in this widget. In our case, they are **sku**, **name**, **price** and **description**. Value of array's elements is an array of parameters that define each field. There are three params: `self::SCHEMA_CLASS` defines a [FormField class]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/creating_custom_setting_class.html) that will represent this field; `self::SCHEMA_LABEL` defines a label next to model's property field; `self::SCHEMA_REQUIRED` defines whether this field's value is required or not.  
     Construction like `\XLite\View\FormField\Textarea\Advanced::PARAM_STYLE => 'product-description'` defines additional parameters for FormField class defined in the `self::SCHEMA_CLASS` param.
 
 3.  After that, we implement the `getDefaultModelObject()` method that will define initial values in fields of our widget: 
 
-    {% highlight php %}    public function getModelId()
+    {% highlight php %}{% raw %}
+        public function getModelId()
         {
             return \XLite\Core\Request::getInstance()->product_id;
         }
@@ -160,21 +165,25 @@ Let us have a closer look at this implementation: 
                 : null;
 
             return $model ?: new \XLite\Model\Product;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
-    The properties of an object returned by `getDefaultModelObject()` method will be put into widget's form as default values. In the `getDefaultModelObject()` method we just [pull `\XLite\Model\Product` model]({{ baseurl_lang }}/../basics/searching_entities_in_repositories/index.md) based on the **product_id** parameter in the request. If there is no **product_id** parameter in the request –`[\XLite\Core\Request::getInstance()->product_id]({{ baseurl_lang }}/../basics/retrieving_data_from_the_request.md)` returns `false` –  we assume that we are going to create a new product, not edit existing one, that is why we create new empty `\XLite\Model\Product` object.
+    The properties of an object returned by `getDefaultModelObject()` method will be put into widget's form as default values. In the `getDefaultModelObject()` method we just [pull `\XLite\Model\Product` model]({{ baseurl_lang }}/basics/searching_entities_in_repositories/{{ baseurl_lang }}/index.html) based on the **product_id** parameter in the request. If there is no **product_id** parameter in the request –`[\XLite\Core\Request::getInstance()->product_id]({{ baseurl_lang }}/basics/retrieving_data_from_the_request.html)` returns `false` –  we assume that we are going to create a new product, not edit existing one, that is why we create new empty `\XLite\Model\Product` object.
 
 4.  Finally, we implement the `getFormClass()` method that will define a form around our widget: 
 
-    {% highlight php %}    protected function getFormClass()
+    {% highlight php %}{% raw %}
+        protected function getFormClass()
         {
             return '\XLite\Module\Tony\ModelEditingDemo\View\Form\Model\Product';
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
 Now we need to create the `\XLite\Module\Tony\ModelEditingDemo\View\Form\Model\Produc`t class returned by the `getFormClass()` method as it does not exist yet. For that, we create the  
 `<X-Cart>/classes/XLite/Module/Tony/ModelEditingDemo/View/Form/Model/Product.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\ModelEditingDemo\View\Form\Model;
 
@@ -196,17 +205,21 @@ class Product extends \XLite\View\Form\AForm
             'product_id' => \XLite\Core\Request::getInstance()->product_id,
         );
     }    
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 1.  `getDefaultTarget()` method defines an **action** field of the form. In our case, the request will be submitted to `admin.php?target=product_edit` page;
 2.  `getDefaultAction()` method defines a value of `<input type="hidden" name="action" value="" />` element in this form. This param will be used in order to allow controller run proper routine that will handle data submitted. Of course, we will have to add corresponding method – `doActionUpdate()` in our case – to the controller class and we will do it a bit later.
 3.  `getDefaultParams()` method defines an array of additional parameters that will be added to the form as `<input type="hidden" name="key-on-an-array" value="value-of-an-array" />` elements, so in our case, we will add `<input type="hidden" name="product_id" value="product-id-from-request" />` element.
 
-Now we are good with the model editing widget and we need to add it to the page template. We go to the `<X-Cart>/skins/admin/en/modules/Tony/ModelEditingDemo/page/product_edit/body.tpl` template and define its content as follows: {% highlight php %}<widget class="XLite\Module\Tony\ModelEditingDemo\View\Model\Product" />{% endhighlight %}
+Now we are good with the model editing widget and we need to add it to the page template. We go to the `<X-Cart>/skins/admin/en/modules/Tony/ModelEditingDemo/page/product_edit/body.tpl` template and define its content as follows: {% highlight php %}{% raw %}
+<widget class="XLite\Module\Tony\ModelEditingDemo\View\Model\Product" />
+{% endraw %}{% endhighlight %}
 
 Finally, we have to adjust our `\XLite\Module\Tony\ModelEditingDemo\Controller\Admin\ProductEdit` controller class in order to process requests about saving product model – implement aforementioned `doActionUpdate()` method. We go to the `<X-Cart>/classes/XLite/Module/Tony/ModelEditingDemo/Controller/Admin/ProductEdit.php` file and define its content as follows: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ModelEditingDemo\Controller\Admin;
@@ -242,11 +255,14 @@ class ProductEdit extends \XLite\Controller\Admin\AAdmin
     {
         return \XLite\Core\Request::getInstance()->product_id ?: 0;
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 1.  We define `$params` property as: 
 
-    {% highlight php %}protected $params = array('target', 'product_id');{% endhighlight %}
+    {% highlight php %}{% raw %}
+    protected $params = array('target', 'product_id');
+    {% endraw %}{% endhighlight %}
 
     and it will tell controller class that only **target** and **product_id** parameters can be accepted.
 
@@ -254,19 +270,23 @@ class ProductEdit extends \XLite\Controller\Admin\AAdmin
 
 3.  `doActionUpdate()` method defines a routine that will be run after we submit a form with the model editing widget values. The main processing happens in this line: 
 
-    {% highlight php %}$this->getModelForm()->performAction('modify');{% endhighlight %}
+    {% highlight php %}{% raw %}
+    $this->getModelForm()->performAction('modify');
+    {% endraw %}{% endhighlight %}
 
     `getModelForm()` returns a model object – `\XLite\Model\Product` in our case – and `performAction('modify')` method will fill it with new values and then save the results in the database.
 
 4.  Also, if we create a new product, we need to properly redirect merchant to this newly created product page, that is why we pull new product id – `$this->getModelForm()->getModelObject()->getId()` – and redirect customer as follows: 
 
-    {% highlight php %}            $this->setReturnURL(
+    {% highlight php %}{% raw %}
+                $this->setReturnURL(
                     $this->buildURL(
                         'product_edit',
                         '',
                         array('product_id' => $this->getModelForm()->getModelObject()->getId())
                     )
-                );{% endhighlight %}
+                );
+    {% endraw %}{% endhighlight %}
 
 We are done with this mod and now we have to re-deploy the store. After that try to open the `admin.php?target=product_edit` page. You should see the following result:![]({{ site.baseurl }}/attachments/8225393/8356184.png)
 

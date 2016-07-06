@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.4 - 11 Jul 2013'
-categories: [changelog]
 ---
-
-{% include global.html %}
-
 **List of new modules**
 
 *   CanadaPost

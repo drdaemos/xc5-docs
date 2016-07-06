@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 development lectures (in Russian with English subtitles)'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This is a serie of educational videos that were shot in X-Cart office. These lectures were done by Max Shamaev, X-Cart architect, and they were aimed to teach X-Cart staff how to customize X-Cart 5\. At the time of lectures creation, X-Cart 5 was still known as X-Cart Next. Do not be confused by it!

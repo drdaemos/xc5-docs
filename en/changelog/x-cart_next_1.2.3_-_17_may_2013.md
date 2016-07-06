@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.3 - 17 May 2013'
-categories: [changelog]
 ---
-
-{% include global.html %}
-
 **List of new modules**
 
 *   ProductComparison

@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with authorization'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article shows you can authenticate a user by login and password. It also shows you how to log off a current user.
@@ -19,9 +15,10 @@ This article shows you can authenticate a user by login and password. It also sh
 
 # Implementation
 
-We start with [creating an external script]({{ baseurl_lang }}/../basics/working_with_x-cart_externally.md) `<X-Cart>/test.php` with the following content: 
+We start with [creating an external script]({{ baseurl_lang }}/basics/working_with_x-cart_externally.html) `<X-Cart>/test.php` with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 //X-Cart initializtion
 require_once 'top.inc.php';
 $login = 'bit-bucket@x-cart.com';
@@ -40,19 +37,24 @@ if ($_GET['mode'] == 'login') {
     \XLite\Core\Auth::getInstance()->logoff();
 
     echo 'You are logged off';
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 As you can see, this script can work in two modes: logging in – `if ($_GET['mode'] == 'login')` – and logging off – `elseif ($_GET['mode'] == 'logoff')`.
 
 When we pass `mode=login` in request, then we try to log a user in with `$login` and `$password` credentials. Logging in is as simple as calling one function: 
 
-{% highlight php %}$profile = \XLite\Core\Auth::getInstance()->login($login, $password);{% endhighlight %}
+{% highlight php %}{% raw %}
+$profile = \XLite\Core\Auth::getInstance()->login($login, $password);
+{% endraw %}{% endhighlight %}
 
 If result equals to `\XLite\Core\Auth::RESULT_ACCESS_DENIED` constant, it means that we failed to log this user in and you need to make sure that a user with given login exists and the password is correct.
 
 When we pass `mode=logoff` in request, we log off the current user and this operation is simple as well: 
 
-{% highlight php %}\XLite\Core\Auth::getInstance()->logoff();{% endhighlight %}
+{% highlight php %}{% raw %}
+\XLite\Core\Auth::getInstance()->logoff();
+{% endraw %}{% endhighlight %}
 
 Now, you can check this script in action:
 

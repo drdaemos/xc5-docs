@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to move category description below products list'
-categories: [how-to_articles]
 ---
-
-{% include global.html %}
-
 This article describes how to move category description below products list.
 
 Для реализации требуемых изменений, понадобится сделать описанные ниже модификации темплейтов в Х-Карт, а также установить и настроить модуль "Banner System" ([http://www.x-cart.com/extensions/addons/banner-system.html](http://www.x-cart.com/extensions/addons/banner-system.html)).
@@ -21,18 +17,22 @@ This article describes how to move category description below products list.
 
     Содержимое нового темплейта:
 
-    {% highlight php %}{**
+    {% highlight php %}{% raw %}
+    {**
      * @ListChild (list="center.bottom", weight="300")
      *}
     {if:getTarget()=#category#}
     <div class="category-description">{getDescription():h}</div>
-    {end:}{% endhighlight %}
+    {end:}
+    {% endraw %}{% endhighlight %}
 
     Новый темплейт будет использоваться для отображения описания категории в нижней центральной части страницы, в составе списка "center.bottom".  
 
     1.2\. Примените к базе X-Cart следующий SQL запрос:
 
-    {% highlight php %}INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/center/bottom/category_description.tpl", UNIX_TIMESTAMP());{% endhighlight %}
+    {% highlight php %}{% raw %}
+    INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/center/bottom/category_description.tpl", UNIX_TIMESTAMP());
+    {% endraw %}{% endhighlight %}
 
     После этого появится возможность редактировать новый темплейт непосредственно в администраторской части X-Cart, на странице "Look & Feel " в разделе "Webmaster mode", или используя инструмент "Webmaster mode".  
 
@@ -44,9 +44,11 @@ This article describes how to move category description below products list.
 
     Закомментируйте код, который выводит описание категории, заключив его в специальные тэги {* *}, например:
 
-    {% highlight php %}{*
+    {% highlight php %}{% raw %}
+    {*
     <div class="category-description">{getDescription():h}</div>
-    *}{% endhighlight %}
+    *}
+    {% endraw %}{% endhighlight %}
 
     Это позволит убрать описание категории из верхней центральной части страницы.  
 
@@ -68,11 +70,15 @@ Icon
 
  _classes/XLite/View/ItemsList/Product/Customer/Category/Main.php_
 
-{% highlight php %}* @ListChild (list="center.bottom", zone="customer", weight="200"){% endhighlight %}
+{% highlight php %}{% raw %}
+* @ListChild (list="center.bottom", zone="customer", weight="200")
+{% endraw %}{% endhighlight %}
 
 _classes/XLite/Module/CDev/Bestsellers/View/Bestsellers.php_
 
-{% highlight php %}* @ListChild (list="center.bottom", zone="customer", weight="400"){% endhighlight %}
+{% highlight php %}{% raw %}
+* @ListChild (list="center.bottom", zone="customer", weight="400")
+{% endraw %}{% endhighlight %}
 
 На скриншотах ниже показано, как с помощью инструмента "Webmaster mode" определить, какие виджеты и темплейты используются для отображения данных на странице категории:
 

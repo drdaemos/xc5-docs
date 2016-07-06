@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Making payment method depend on shipping method'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article explains how you can make payment methods depend on a shipping method chosen.
@@ -36,7 +32,9 @@ We go to **Store setup** > **Shipping** section in your admin area and create th
 
 Do not forget to [assign some shipping rates]({{ baseurl_lang }}/drafts/setting_up_shipping_costs.html) to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
 
-{% highlight php %}admin.php?target=shipping_rates&methodid=2{% endhighlight %}
+{% highlight php %}{% raw %}
+admin.php?target=shipping_rates&methodid=2
+{% endraw %}{% endhighlight %}
 
 The value right after `methodid=` part is the shipping method ID. In my case, it is **2**.
 
@@ -44,7 +42,9 @@ We also have to have two payment methods, that is why we go to **Store setup** >
 
 We need to know ID of **Credit Card** payment method that is why we click its **Configure** button and then look at browser's address bar again. It will be something like: 
 
-{% highlight php %}admin.php?target=payment_method&method_id=132{% endhighlight %}
+{% highlight php %}{% raw %}
+admin.php?target=payment_method&method_id=132
+{% endraw %}{% endhighlight %}
 
 The value right after `method_id=` part is the payment method ID. In my case, it is **132**.
 
@@ -52,9 +52,10 @@ The value right after `method_id=` part is the payment method ID. In my case, it
 
 Now we can start creating our mod.
 
-We [create an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **PaymentShippingDependencyDemo**. Inside this module, we decorate the `getPaymentMethods()` method of the `\XLite\Model\Order` class. We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentShippingDependencyDemo/Model/Order.php` file with the following content: 
+We [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **PaymentShippingDependencyDemo**. Inside this module, we decorate the `getPaymentMethods()` method of the `\XLite\Model\Order` class. We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentShippingDependencyDemo/Model/Order.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\PaymentShippingDependencyDemo\Model;
@@ -83,15 +84,20 @@ abstract class Order extends \XLite\Model\Order implements \XLite\Base\IDecorato
 
         return $list;
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Right now, `getPaymentMethods()` method looks default. We want to disable the **Credit Card** payment method for **Courier** shipping method that is why we should alter the condition: 
 
-{% highlight php %}if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method)){% endhighlight %}
+{% highlight php %}{% raw %}
+if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method))
+{% endraw %}{% endhighlight %}
 
 and if chosen shipping method is **Courier** – `$this->getShippingId() == 2` – then payment method with ID 132 (**Credit Card**) must be unset – `$method->getMethodId() == 132`. So, the final condition will be as follows: 
 
-{% highlight php %}if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method) || $this->getShippingId() == 2 && $method->getMethodId() == 132){% endhighlight %}
+{% highlight php %}{% raw %}
+if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method) || $this->getShippingId() == 2 && $method->getMethodId() == 132)
+{% endraw %}{% endhighlight %}
 
 That is it. Now we need to re-deploy the store and check the results at checkout.
 

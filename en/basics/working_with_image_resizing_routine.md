@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with image resizing routine'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 Default X-Cart _lazy_ resizes images and this article describes how to work with this process.
@@ -24,10 +20,11 @@ To illustrate the image-resizing process, imagine that you uploaded 5000px x 500
 
 In order to disable image resizing routine in a whole store you can apply the following simple mod:
 
-1.  [Create an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md). We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
-2.  [Decorate]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md) the `\XLite\View\Image` class ([more info about classnames]({{ baseurl_lang }}/../misc/x-cart_classes_structure_and_namespaces.md)), so that your class would look as follows: 
+1.  [Create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
+2.  [Decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\Image` class ([more info about classnames]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)), so that your class would look as follows: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
     namespace XLite\Module\Tony\DisableImageResize\View;
@@ -38,12 +35,15 @@ In order to disable image resizing routine in a whole store you can apply the fo
     		parent::defineWidgetParams();
     		$this->widgetParams[self::PARAM_USE_CACHE] = new \XLite\Model\WidgetParam\Bool('Use cache', 0);
     	}
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 3.  The only thing we change is we set `PARAM_USE_CACHE` to false. If you check default `\XLite\View\Image` class, you will see that this `PARAM_USE_CACHE` triggers this condition: 
 
-    {% highlight php %}$url = $this->getParam(self::PARAM_USE_CACHE)
+    {% highlight php %}{% raw %}
+    $url = $this->getParam(self::PARAM_USE_CACHE)
                     ? $this->resizedURL
-                    : $this->getParam(self::PARAM_IMAGE)->getFrontURL();{% endhighlight %}
+                    : $this->getParam(self::PARAM_IMAGE)->getFrontURL();
+    {% endraw %}{% endhighlight %}
 
     so if `PARAM_USE_CACHE` is true, then X-Cart returns a resized image, otherwise it returns default image URL.
 

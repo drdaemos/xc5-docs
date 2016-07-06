@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Configuring volume discounts and coupons in X-Cart 5'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 The video below shows how to use the _volume discounts_ and _coupons_ features.

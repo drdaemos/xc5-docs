@@ -2,6 +2,10 @@ Jekyll::Hooks.register :pages, :pre_render do |page|
   
 end
 
+Jekyll::Hooks.register :site, :post_write do |post|
+  # execute this code on attachments folder - find ./ -regextype posix-extended -regex '.+\.(jpg|jpeg|png|gif)' -exec mogrify -strip -resize 1024 {} \;
+end
+
 class Object
   def try_call(method)
     self.send(method.to_sym) if self.respond_to?(method.to_sym)

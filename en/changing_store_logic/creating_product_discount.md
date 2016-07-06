@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating product discount'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-Previously we have learned how to create a [global discount]({{ baseurl_lang }}/../changing_store_logic/creating_global_discount.md) and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as
+Previously we have learned how to create a [global discount]({{ baseurl_lang }}/changing_store_logic/creating_global_discount.html) and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as
 
 *   a **10% off** label on product lists;
 *   an **old price** label with crossed old price near product price.
@@ -31,10 +27,11 @@ The main difference between this module and [one that described global discount]
 
 Such an approach is quite convenient, because you can enable such module for a sale period, it will automatically apply needed discounts and once the sale is over, you just disable the module. No import/export for updating prices will be needed.
 
-We start with [creating an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **ProductDiscountDemo**. Now we need to [decorate]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md) product [model]({{ baseurl_lang }}/../basics/understanding_models.md) class `\XLite\Model\Product`, so we create the  
+We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ProductDiscountDemo**. Now we need to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) product [model]({{ baseurl_lang }}/basics/understanding_models.html) class `\XLite\Model\Product`, so we create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/Model/Product.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ProductDiscountDemo\Model;
@@ -72,22 +69,26 @@ abstract class Product extends \XLite\Model\Product implements \XLite\Base\IDeco
     {
         return 0 === stripos($this->getName(), 'A');
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Let us have a close look at this enhancement of product model:
 
 1.  First of all we implement a condition when the discount must be applied: 
 
-    {% highlight php %}    public function isMyDiscount() 
+    {% highlight php %}{% raw %}
+        public function isMyDiscount() 
         {
             return 0 === stripos($this->getName(), 'A');
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     If a product name starts with A, then this method will return `true`.
 
 2.  Next, we change default `getClearPrice()` method of the `\XLite\Model\Product` class. If a product meets the discount condition, then `getClearPrice()` will be reduced by 10%: 
 
-    {% highlight php %}    public function getClearPrice()
+    {% highlight php %}{% raw %}
+        public function getClearPrice()
         {
             $price = parent::getClearPrice();
 
@@ -97,17 +98,21 @@ Let us have a close look at this enhancement of product model:
             }
 
             return $price;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 3.  Note, that if the condition is triggered, we save the price into the `$priceBeforeMyProductDiscount` property.
 
-    {% highlight php %}        if ($this->isMyDiscount()) {
+    {% highlight php %}{% raw %}
+            if ($this->isMyDiscount()) {
                 $this->setPriceBeforeMyProductDiscount($price);
                 // ....
-            }{% endhighlight %}
+            }
+    {% endraw %}{% endhighlight %}
 
     We also create this property in the class as well as add accessor methods for it: 
 
-    {% highlight php %}    protected $priceBeforeMyProductDiscount = null;
+    {% highlight php %}{% raw %}
+        protected $priceBeforeMyProductDiscount = null;
 
         protected function setPriceBeforeMyProductDiscount($price)
         {
@@ -117,17 +122,19 @@ Let us have a close look at this enhancement of product model:
         public function getPriceBeforeMyProductDiscount()
         {
             return $this->priceBeforeMyProductDiscount;
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
 Now the discount will be applied to products that start with A and we need to add display changes:
 
 *   display **10% off** label near such products on product lists;
 *   display **Old price** label near such product prices.
 
-In order to display **10% off** label on product lists, we have to decorate the `\XLite\View\ItemsList\Product\Customer\ACustomer` [ItemsList class]({{ baseurl_lang }}/../basics/itemslist_introduction_--_showing_products_on_a_page/index.md). We create the  
+In order to display **10% off** label on product lists, we have to decorate the `\XLite\View\ItemsList\Product\Customer\ACustomer` [ItemsList class]({{ baseurl_lang }}/basics/itemslist_introduction_--_showing_products_on_a_page/{{ baseurl_lang }}/index.html). We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/ItemsList/Product/Customer/ACustomer.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ProductDiscountDemo\View\ItemsList\Product\Customer;
@@ -147,28 +154,36 @@ abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustome
 
         return $labels;
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 As you can see, we need to only change the `getLabels()` method in this class and add our record to its returning array: 
 
-{% highlight php %}$labels += array('my-discount' => '10% off');{% endhighlight %}
+{% highlight php %}{% raw %}
+$labels += array('my-discount' => '10% off');
+{% endraw %}{% endhighlight %}
 
 Key of this array – **my-discount** – defines a CSS class that will be assigned to this label, value of this array – **10% off** – defines a text that will be displayed by this label.
 
 This method `getLabels()` will be run on each product displayed by the ItemsList widget – as you can see a `$product` object is passed to this method as an argument – that is why we can freely use product model's methods in this `getLabels()` method, e.g.: 
 
-{% highlight php %}$product->isMyDiscount(){% endhighlight %}
+{% highlight php %}{% raw %}
+$product->isMyDiscount()
+{% endraw %}{% endhighlight %}
 
 Now, let us add **Old price** label near price display of discounted products. We simply create the `<X-Cart>/skins/default/en/modules/Tony/ProductDiscountDemo/old-price.tpl` template with the following content: 
 
-{% highlight php %}{**
+{% highlight php %}{% raw %}
+{**
  * @ListChild (list="product.plain_price", weight="100")
  *}
-<li IF="{isMyDiscount()}" class="old-price">Old price: <span class="price old-price">{formatPrice(getOldPrice(),null,1):h}</span></li>{% endhighlight %}
+<li IF="{isMyDiscount()}" class="old-price">Old price: <span class="price old-price">{formatPrice(getOldPrice(),null,1):h}</span></li>
+{% endraw %}{% endhighlight %}
 
-and it will be assigned to the `product.plain_price` [view list]({{ baseurl_lang }}/../getting_started/step_2_-_applying_design_changes.md), so it will be displayed below main product price in store-front. Since we use two methods – `isMyDiscount()` and `getOldPrice()` – that do not exist in the default implementation of the `\XLite\View\Price` [viewer class]({{ baseurl_lang }}/../basics/working_with_viewer_classes.md)– this viewer class manages the display of `product.plain_price` view list –, we have to create such methods by decorating `\XLite\View\Price` viewer. We create the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/Price.php` file with the following content: 
+and it will be assigned to the `product.plain_price` [view list]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html), so it will be displayed below main product price in store-front. Since we use two methods – `isMyDiscount()` and `getOldPrice()` – that do not exist in the default implementation of the `\XLite\View\Price` [viewer class]({{ baseurl_lang }}/basics/working_with_viewer_classes.html)– this viewer class manages the display of `product.plain_price` view list –, we have to create such methods by decorating `\XLite\View\Price` viewer. We create the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/Price.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ProductDiscountDemo\View;
@@ -187,13 +202,15 @@ abstract class Price extends \XLite\View\Price implements \XLite\Base\IDecorator
     {
         return $this->getProduct()->isMyDiscount();
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 This implementation is just proxying product methods – `isMyDiscount()` and `getPriceBeforeMyProductDiscount()` – from our enhanced version of `\XLite\Model\Product` class.
 
-Finally, we need to apply several CSS styles in order to make our **Old price** label look smooth. We [add CSS file]({{ baseurl_lang }}/../design_changes/adding_css_and_js_files.md) by creating the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/AView.php` file with the following content: 
+Finally, we need to apply several CSS styles in order to make our **Old price** label look smooth. We [add CSS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html) by creating the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/AView.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\ProductDiscountDemo\View;
@@ -211,17 +228,20 @@ abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
 
         return $list;
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 and then creating the actual `<X-Cart>/skins/default/en/modules/Tony/ProductDiscountDemo/css/style.css` CSS file with the following content: 
 
-{% highlight php %}ul.product-price li.old-price {
+{% highlight php %}{% raw %}
+ul.product-price li.old-price {
     display: block;
     font-size: 18px;
 }
 ul.product-price li.old-price span.old-price {
     text-decoration: line-through;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 That is it. Now we need to re-deploy the store and check the results in store-front.
 

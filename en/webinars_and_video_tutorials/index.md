@@ -6,9 +6,6 @@ categories: [home]
 order: 10
 icon: youtube play
 description: Live video from our developers and associates
----
-
-{% include global.html %}
 
 In this section you will find webinars and video tutorials for X-Cart 5.
 
@@ -65,7 +62,7 @@ In this section you will find webinars and video tutorials for X-Cart 5.
 
 *   [X-Cart 5 development lectures (in Russian with English subtitles)]({{ baseurl_lang }}/webinars_and_video_tutorials/x-cart_5_development_lectures_(in_russian_with_english_subtitles).html)
 *   [Creating a module for X-Cart 5: Tutorial by Mike White]({{ baseurl_lang }}/webinars_and_video_tutorials/creating_a_module_for_x-cart_5_tutorial_by_mike_white.html)
-*   [Creating a simple discount module for X-Cart 5]({{ baseurl_lang }}/../changing_store_logic/creating_global_discount.md)
+*   [Creating a simple discount module for X-Cart 5]({{ baseurl_lang }}/changing_store_logic/creating_global_discount.html)
 *   [Editing templates on the example of Adding Market Price to Products List in X-Сart 5: Tutorial by Mike White]({{ baseurl_lang }}/webinars_and_video_tutorials/editing_templates_on_the_example_of_adding_market_price_to_products_list_in_x-сart_5_tutorial_by_mike_white.html)
 *   [Building a custom skin in X-Cart 5: Tutorial by Mike White]({{ baseurl_lang }}/webinars_and_video_tutorials/building_a_custom_skin_in_x-cart_5_tutorial_by_mike_white.html)
 *   [Removing the Primary Menu In X-Cart 5 (with the help of WebmasterKit): Tutorial by Mike White]({{ baseurl_lang }}/webinars_and_video_tutorials/removing_the_primary_menu_in_x-cart_5_(with_the_help_of_webmasterkit)_tutorial_by_mike_white.html)

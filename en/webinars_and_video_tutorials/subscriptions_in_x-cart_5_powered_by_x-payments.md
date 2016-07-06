@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Subscriptions in X-Cart 5 powered by X-Payments'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 With X-Payments subscriptions module you can sell subscription based products and automate recurring billing in your X-Cart 5 store.

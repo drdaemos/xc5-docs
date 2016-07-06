@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Setting time limit of your server'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 Every web server has a **time limit** within which the request can be processed. For instance, if **time limit** is set to 30 seconds, each request to X-Cart 5 can last no longer than 30 seconds and it will be terminated after that. It is not a problem for quick requests like opening the product page or logging in, but it may become a problem when you are running a long process like product import or cache rebuilding.
 
 In such cases, X-Cart 5 tries to alter the server's time limit (via **set_time_limit() **function) and allow requests to last forever, but some server configurations do not allow X-Cart 5 to achieve the desired result. This article describes how you can set up your server in order to let long requests go through.

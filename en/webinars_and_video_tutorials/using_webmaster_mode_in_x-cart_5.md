@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Using Webmaster Mode in X-Cart 5'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This video shows how to edit your X-Cart 5 store's templates using Webmaster mode.

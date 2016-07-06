@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom setting class'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-This article describes how developer can create a [complex setting class]({{ baseurl_lang }}/../getting_started/step_4_-_working_with_settings/index.md) in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
+This article describes how developer can create a [complex setting class]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/{{ baseurl_lang }}/index.html) in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
 
 # Table of Contents
 
@@ -21,12 +17,13 @@ This article describes how developer can create a [complex setting class]({{ bas
 
 # Implementation
 
-We start with [creating a module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with developer ID **Tony** and module ID **FormFieldDemo**. Then, we [create a page]({{ baseurl_lang }}/../basics/creating_new_page.md) **target=form_field** in admin area. During this process, we create:
+We start with [creating a module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **FormFieldDemo**. Then, we [create a page]({{ baseurl_lang }}/basics/creating_new_page.html) **target=form_field** in admin area. During this process, we create:
 
 *   empty controller class `\XLite\Module\Tony\FormFieldDemo\Controller\Admin\FormField`;
 *   viewer class `\XLite\Module\Tony\FormFieldDemo\View\Page\Admin\FormField` with the following content:
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
     namespace XLite\Module\Tony\FormFieldDemo\View\Page\Admin;
@@ -57,12 +54,14 @@ We start with [creating a module]({{ baseurl_lang }}/../getting_started/step_1_-
         {
             return 'modules/Tony/FormFieldDemo/page/form_field/body.tpl';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 *   empty template `<X-Cart>/skins/admin/en/modules/Tony/FormField/page/form_field/body.tpl`.
 
 Next step is to create a select-box class. We create the `<X-Cart>/classes/XLite/Module/Tony/FormField/View/FormField/Select/CustomSelect.php` file with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 
 namespace XLite\Module\Tony\FormFieldDemo\View\FormField\Select;
 
@@ -76,24 +75,31 @@ class CustomSelect extends \XLite\View\FormField\Select\Regular
             'Third value'  => static::t('Third value'),
         );
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 This is an implementation of simple select-box class. We just define options of this select-box in the `getDefaultOptions()` method. Our select-box will have three options: **First value**, **Second value** and **Third value**.
 
 In order to display this setting widget on our page, we go to the `<X-Cart>/skins/admin/en/modules/Tony/FormField/page/form_field/body.tpl` template and add the following code there: 
 
-{% highlight php %}<widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" />{% endhighlight %}
+{% highlight php %}{% raw %}
+<widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" />
+{% endraw %}{% endhighlight %}
 
 If we leave the code like this, X-Cart will display this setting with missed label:   
 ![]({{ site.baseurl }}/attachments/1048617/8356169.png)
 
 Instead, we can either define this setting to be displayed without label: 
 
-{% highlight php %}<widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" fieldOnly="true" />{% endhighlight %}
+{% highlight php %}{% raw %}
+<widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" fieldOnly="true" />
+{% endraw %}{% endhighlight %}
 
 or define some label for it: 
 
-{% highlight php %}<widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" label="Some label" />{% endhighlight %}
+{% highlight php %}{% raw %}
+<widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" label="Some label" />
+{% endraw %}{% endhighlight %}
 
 Our module pack will contain both variants.
 

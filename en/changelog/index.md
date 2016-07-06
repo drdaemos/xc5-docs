@@ -4,10 +4,8 @@ lang: en
 title: 'Changelog'
 categories: [home]
 order: 11
-icon: exchange
+icon: announcement
 description: Discover new features and bugfixes
 ---
-
-{% include global.html %}
 
 X-Cart 5 Changelog

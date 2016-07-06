@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to hide left-hand bar for static pages only'
-categories: [how-to_articles]
 ---
-
-{% include global.html %}
-
 If you would like to hide the left-hand bar for static pages only, but still want it displayed for other pages, just follow the below guide.
 
 ## Step-by-step guide
@@ -21,7 +17,8 @@ Here are the steps involved:
 
 3.  Add the following code to the custom script:
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     namespace XLite\Module\XC\CustomSkin\Core;
     class Layout extends \XLite\Core\Layout implements \XLite\Base\IDecorator
     {
@@ -35,7 +32,8 @@ Here are the steps involved:
                 array('page')
             );
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 4.  Rebuild the X-Cart cache.
 
 Icon

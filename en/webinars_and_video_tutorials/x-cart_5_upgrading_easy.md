@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 upgrading easy'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 The video in this section provides an overview of the X-Cart 5 upgrading process.

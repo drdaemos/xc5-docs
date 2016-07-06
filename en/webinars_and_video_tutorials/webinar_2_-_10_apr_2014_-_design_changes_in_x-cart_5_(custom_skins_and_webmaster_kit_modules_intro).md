@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 2 - 10 Apr 2014 - Design changes in X-Cart 5 (Custom Skins and Webmaster Kit modules intro)'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 Aim of this webinar is to show developers how they can implement design changes in X-Cart 5\. The webinar consists of 6 typical tasks and I will explain how approach them. Besides that, the webinar introduced Custom Skin and Webmaster Kit modules that will be helpful for X-Cart 5 developers.
@@ -53,18 +49,21 @@ This is the simplest way. It has its downsides though. The info about your store
 
 Go to the **System settings** > **Look & feel** > **Custom CSS** section in your admin area and define the following CSS code there:
 
-{% highlight php %}.powered-by .powered-by-label {
+{% highlight php %}{% raw %}
+.powered-by .powered-by-label {
   display: none;
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 ### 1.2\. Via your own CSS file
 
 This is similar way to what I have [described earlier]({{ baseurl_lang }}/webinars_and_video_tutorials/webinar_2_-_10_apr_2014_-_design_changes_in_x-cart_5_(custom_skins_and_webmaster_kit_modules_intro).html). The only difference is that you do not need ThemeTweaker module in order to apply the change.
 
-1.  [Create your own module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) or enable default **CustomSkin** (XC/CustomSkin) one. I will be using CustomSkin in my example. The same approach will work for custom module as well, you will only need to adjust namespaces in PHP scripts.
+1.  [Create your own module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) or enable default **CustomSkin** (XC/CustomSkin) one. I will be using CustomSkin in my example. The same approach will work for custom module as well, you will only need to adjust namespaces in PHP scripts.
 2.  Create the View/AView.php script inside your module with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\XC\CustomSkin\View;
 
@@ -78,15 +77,18 @@ This is similar way to what I have [described earlier]({{ baseurl_lang }}/webina
 
             return $list;
         }	
-    } {% endhighlight %}
+    } 
+    {% endraw %}{% endhighlight %}
 
     This code simply defines that **skins/default/en/modules/XC/CustomSkin/css/css.css** file must be included into every page.
 
 3.  Finally, we need to create this CSS file and we create it with the following content: 
 
-    {% highlight php %}.powered-by .powered-by-label {
+    {% highlight php %}{% raw %}
+    .powered-by .powered-by-label {
       display: none;
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 4.  Rebuild the cache and check the results.
 
 ### 1.3\. Via overriding template in CustomSkin module
@@ -99,14 +101,18 @@ Although this method is more complex than ones above, it allows you to completel
 4.  Copy this template to the **skins/custom_skin/default/en/powered_by.tpl **one.
 5.  Its code is:
 
-    {% highlight php %}<div class="powered-by">
+    {% highlight php %}{% raw %}
+    <div class="powered-by">
       <p class="copyright">&copy; {getCompanyYear()} {config.Company.company_name}. {t(#All rights reserved.#)}</p>
       <p class="powered-by-label">{getMessage():h}</p>
-    </div>{% endhighlight %}
+    </div>
+    {% endraw %}{% endhighlight %}
 
     and you need to remove the following part: 
 
-    {% highlight php %}<p class="powered-by-label">{getMessage():h}</p>{% endhighlight %}
+    {% highlight php %}{% raw %}
+    <p class="powered-by-label">{getMessage():h}</p>
+    {% endraw %}{% endhighlight %}
 6.  Save the results and reload the page in order to see the results. You do not need to rebuild cache.
 
 ## 2\. How can I wrap the <div id="content"> on home page into <div id="homepage">?
@@ -117,22 +123,26 @@ Although this method is more complex than ones above, it allows you to completel
 2.  We can see that the **skins/default/en/layout/main.center.center.tpl** template contains this <div id="content"> and we can apply the approach described in [section 1.3](7504837.html) in order to change it.
 3.  Copy the **main.center.center.tpl** template to **skins/custom_skin/default/en/layout/main.center.center.tpl .** It should have the following content: 
 
-    {% highlight php %}<div id="content" class="column">
-      <div class="section">
-        <a id="main-content"></a>
-        <widget template="center.tpl" />
-      </div>
-    </div>{% endhighlight %}
-4.  Change this new file and wrap this code into <div id="homepage">, so it would become: 
-
-    {% highlight php %}<div class="homepage">
+    {% highlight php %}{% raw %}
     <div id="content" class="column">
       <div class="section">
         <a id="main-content"></a>
         <widget template="center.tpl" />
       </div>
     </div>
-    </div>{% endhighlight %}
+    {% endraw %}{% endhighlight %}
+4.  Change this new file and wrap this code into <div id="homepage">, so it would become: 
+
+    {% highlight php %}{% raw %}
+    <div class="homepage">
+    <div id="content" class="column">
+      <div class="section">
+        <a id="main-content"></a>
+        <widget template="center.tpl" />
+      </div>
+    </div>
+    </div>
+    {% endraw %}{% endhighlight %}
 5.  Reload the page in your browser and check the results.
 
 ### 2.2\. By PHP code
@@ -141,12 +151,14 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 
 1.  Change the **Main.php** script of the **XLite/Module/XC/CustomSkin** module (as usual you can use your own module instead of existing XC/CustomSkin one) and add a new method there as follows: 
 
-    {% highlight php %}public static function runBuildCacheHandler()
+    {% highlight php %}{% raw %}
+    public static function runBuildCacheHandler()
         {
             parent::runBuildCacheHandler();
 
             \XLite\Core\Layout::getInstance()->removeTemplateFromLists('layout/main.center.center.tpl');
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     This method unassigns **layout/main.center.center.tpl**from all view lists. 
 
@@ -154,13 +166,15 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 3.  Before next step please do not forget to remove the **skins/custom_skin/default/en/layout/main.center.center.tpl** template mentioned in [section 2.1](7504837.html).
 4.  Create the **skins/default/en/modules/XC/CustomSkin/main.custom_center.center.tpl** template with the following content: 
 
-    {% highlight php %}{**
+    {% highlight php %}{% raw %}
+    {**
      * @ListChild (list="layout.main.center", weight="200")
      *}
 
     <div class="homepage">
     	<widget template="layout/main.center.center.tpl" />
-    </div>{% endhighlight %}
+    </div>
+    {% endraw %}{% endhighlight %}
 
     This code assigns this new template to **layout.main.center** view list, - the same view list where **layout/main.center.center.tpl** was - adds <div class="homepage"> wrapper and calls the initial template.
 
@@ -171,9 +185,11 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 1.  Override the **skins/default/en/layout/header.logo.tpl** template with the **skins/custom_skin/default/en/layout/header.logo.tpl** one as described earlier ([section 2.1](7504837.html), [section 1.3](7504837.html))
 2.  Define the code of this new template as follows and save the results. 
 
-    {% highlight php %}<div id="logo">
+    {% highlight php %}{% raw %}
+    <div id="logo">
       <a href="{buildURL()}" title="{t(#Home#)}" rel="home"><img src="{t(#skins/default/en/images/logo.png#)}" alt="{t(#Home#)}" /></a>
-    </div>{% endhighlight %}
+    </div>
+    {% endraw %}{% endhighlight %}
 
     The most important part here is that if you put any text between **t() **construction, then it can be translated via admin area.
 
@@ -189,7 +205,8 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 5.  I am using CustomSkin module just for an example. You can use your own module. Do not forget to update namespaces, in case you are using your own module.
 6.  ****classes/XLite/Module/XC/CustomSkin/View/Menu/Customer/Top.php**** script will have the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\XC\CustomSkin\View\Menu\Customer;
 
@@ -212,13 +229,15 @@ Although, the approach shown above is easy, it has its downsides. If future vers
         	return $this->getMyItems();
         }
     }
-    {% endhighlight %}
+
+    {% endraw %}{% endhighlight %}
 
     Method **getMyItems**() defines what items must be put into the menu and we call this method inside **defineItems**() method.
 
 7.  **classes/XLite/Module/XC/CustomSkin/View/Menu/Customer/TopAfterSimpleCMS.php **script will have the following content:
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\XC\CustomSkin\View\Menu\Customer;
 
@@ -233,7 +252,8 @@ Although, the approach shown above is easy, it has its downsides. If future vers
         {
         	return $this->getMyItems();
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     The most important part here is the `@LC_Dependencies ("CDev\SimpleCMS")` construction. It tells X-Cart that the decoration described in this script must happen only when SimpleCMS module is enabled. If we did not have this script, we would not be sure what module (CustomSkin or SimpleCMS) would decorate viewer **XLite/View/Menu/Customer/Top.php** last, but we need to be sure that this decoration will happen after SimpleCMS module. On the other hand, we cannot have only this viewer, because if SimpleCMS module is not enabled, then the decoration described in this file will not happen as well.
 
@@ -244,7 +264,8 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 1.  Using Webmaster Kit, find the viewer that manages display of category block on home page. It will be **classes/XLite/View/TopCategories.php** one.
 2.  Decorate this class by creating the** classes/XLite/Module/XC/CustomSkins/View/TopCategories.php** script with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\XC\CustomSkin\View;
 
@@ -255,7 +276,8 @@ Although, the approach shown above is easy, it has its downsides. If future vers
     		return parent::isVisible() &&
     			\XLite\Core\Request::getInstance()->target != 'main';
     	}
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     Of course, you can use your own module here. CustomSkin one is used just for an example.
 
@@ -266,7 +288,8 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 
 1.  Create the **classes/XLite/Module/XC/CustomSkin/View/ItemsList/Product/Customer/ACustomer.php** file with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     namespace XLite\Module\XC\CustomSkin\View\ItemsList\Product\Customer;
     abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
     {
@@ -276,7 +299,8 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 
             $this->widgetParams[static::PARAM_DISPLAY_MODE] = new \XLite\Model\WidgetParam\Set('Display mode', static::DISPLAY_MODE_TABLE, true, array());
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     Of course, you can use you own module instead of CustomSkin. I am using this one just for an example.
 

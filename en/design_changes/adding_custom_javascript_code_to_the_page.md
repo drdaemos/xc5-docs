@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding custom JavaScript code to the page'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 If you want to add some custom JavaScript code or load additional scripts to store pages, there are several ways of doing that.
 
 The easiest way is by using the **ThemeTweaker** addon module:
@@ -21,21 +17,25 @@ However, if you need to load your code in the <head> tag or want to limit its us
 
 If you choose to put your code in the <body> tag, you should enable the **Custom Skin** module, then copy the default template "`skins/admin/en/body.tpl`" to "`skins/custom_skin/admin/en/body.tpl`", and add your code using the following <script> element:  
 
-{% highlight php %}<script IF="getTarget()=#order_list#">
+{% highlight php %}{% raw %}
+<script IF="getTarget()=#order_list#">
 <!– PLACE YOUR CODE BELOW THIS LINE –>
-</script>{% endhighlight %}
+</script>
+{% endraw %}{% endhighlight %}
 
 For the head template, it can be implemented as follows: you can copy the default template "skins/admin/en/header/body.tpl" to "skins/custom_skin/admin/en/header/body.tpl", then add your custom code using the following bit of code:  
 
-{% highlight php %}<script IF="getTarget()=#order_list#">
+{% highlight php %}{% raw %}
+<script IF="getTarget()=#order_list#">
 <!– PLACE YOUR CODE BELOW THIS LINE –>
-</script>{% endhighlight %}
+</script>
+{% endraw %}{% endhighlight %}
 
 This example code will be executed only on the **order_list** page in the Admin back end. You can see the result here: **<u>http://<store domain>/admin.php?target=order_list</u>**.
 
 _See also:_
 
-*   [Basic guide to theme creation: Using Custom Skin module]({{ baseurl_lang }}/../design_changes/basic_guide_to_theme_creation.md#Basicguidetothemecreation-UsingCustomSkinmodule)
+*   [Basic guide to theme creation: Using Custom Skin module]({{ baseurl_lang }}/design_changes/basic_guide_to_theme_creation.html#Basicguidetothemecreation-UsingCustomSkinmodule)
 
 ## Attachments:
 

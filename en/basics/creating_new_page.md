@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating new page'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article describes how developers can create a new page in X-Cart. For instance, we want to create a page in admin area (`admin.php?target=tony_custom`) that will show some specific information. This guide explains how to achieve this task.
@@ -23,29 +19,32 @@ This article describes how developers can create a new page in X-Cart. For insta
 
 # Before get started
 
-First thing to do is to [create an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md). We are creating a module with developer ID **Tony** and module ID **PageDemo**.
+First thing to do is to [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **PageDemo**.
 
 # Creating page in admin area
 
 For the sake of example, our task is to create the page which will be available at `admin.php?target=tony_custom` address and will display **Hello world!** text.
 
-1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look [here]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md#Step3-applyinglogicchanges-GeneralX-Cartworkflow). 
+1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look [here]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html#Step3-applyinglogicchanges-GeneralX-Cartworkflow). 
 2.  We create the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/Admin/TonyCustom.php` file with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\Tony\PageDemo\Controller\Admin;
 
     class TonyCustom extends \XLite\Controller\Admin\AAdmin
     {
 
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     As you can see, it is pretty empty, but since no data should be processed from the request, we do not need any extra methods here.
 
 3.  Create new viewer class that will manage the data output. This viewer class must sit in the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Admin/` directory and it must be named the same as its controller class. This way X-Cart can pick it up automatically. We are creating the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Admin/TonyCustom.php` file with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\Tony\PageDemo\View\Page\Admin;
 
@@ -64,47 +63,60 @@ For the sake of example, our task is to create the page which will be available 
         {
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 4.  Let us walk through each line of this code. 
 
-    {% highlight php %}namespace XLite\Module\Tony\PageDemo\View\Page\Admin;{% endhighlight %}
+    {% highlight php %}{% raw %}
+    namespace XLite\Module\Tony\PageDemo\View\Page\Admin;
+    {% endraw %}{% endhighlight %}
 
     This is just a namespace definition. 
 
-    {% highlight php %}/**
+    {% highlight php %}{% raw %}
+    /**
      * @ListChild (list="admin.center", zone="admin")
-     */{% endhighlight %}
+     */
+    {% endraw %}{% endhighlight %}
 
     This part is very important. It registers this viewer class to be displayed in the central area of admin area. 
 
-    {% highlight php %}class TonyCustom extends \XLite\View\AView{% endhighlight %}
+    {% highlight php %}{% raw %}
+    class TonyCustom extends \XLite\View\AView
+    {% endraw %}{% endhighlight %}
 
     Just a class definition. 
 
-    {% highlight php %}	public static function getAllowedTargets()
+    {% highlight php %}{% raw %}
+    	public static function getAllowedTargets()
         {
             return array_merge(parent::getAllowedTargets(), array('tony_custom'));
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     The `getAllowedTargets()` method defines which targets will trigger this viewer class. The current implementation means that, if **target=tony_custom**, then this viewer class will display its content in the central area. If there is any other target, than this viewer class will not be even run. 
 
-    {% highlight php %}    protected function getDefaultTemplate()
+    {% highlight php %}{% raw %}
+        protected function getDefaultTemplate()
         {
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     The `getDefaultTemplate()` method defines what template will be used in order to output the content. The template path can be whatever you prefer.
 
 5.  Now it is time to create the template defined in the `getDefaultTemplate()` method, so it would display **Hello world!** text. We are creating the `<X-Cart>/skins/admin/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` file with the following content: 
 
-    {% highlight php %}Hello world!{% endhighlight %}
+    {% highlight php %}{% raw %}
+    Hello world!
+    {% endraw %}{% endhighlight %}
 6.  We are done with this mod. Now it is time to re-deploy the store and check the results. If you open the following URL in your store: `admin.php?target=tony_custom`, you will see the following result:
 
 ![]({{ site.baseurl }}/attachments/8224999/8355981.png)
 
 # Creating page via macro
 
-You can [create a page via macro]({{ baseurl_lang }}/../getting_started/x-cart_sdk.md#X-CartSDK-Creatingpage), so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
+You can [create a page via macro]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-Creatingpage), so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
 
 # Creating page in customer area
 
@@ -114,19 +126,22 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
 
 2.  The content of the controller class will be as follows: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\Tony\PageDemo\Controller\Customer;
 
     class TonyCustom extends \XLite\Controller\Customer\ACustomer
     {
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
     The implementation of the controller class is similar to admin's one, but it has different namespace (`XLite\Module\Tony\PageDemo\Controller\**Customer**`) and it extends different class (`\XLite\Controller\**Customer\ACustomer**`)
 
 3.  We create new viewer class: `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/**Customer**/TonyCustom.php` (again, notice change from `Page/**Admin**/TonyCustom.php` to `Page/**Customer**/TonyCustom.php` in the path) with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\Tony\PageDemo\View\Page\Customer;
 
@@ -144,23 +159,30 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
         {
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 4.  As you can see this implementation has only few differences: 
 
-    {% highlight php %}namespace XLite\Module\Tony\PageDemo\View\Page\Customer;{% endhighlight %}
+    {% highlight php %}{% raw %}
+    namespace XLite\Module\Tony\PageDemo\View\Page\Customer;
+    {% endraw %}{% endhighlight %}
 
     namespace is a bit different;
 
-    {% highlight php %}/**
+    {% highlight php %}{% raw %}
+    /**
      * @ListChild (list="center")
-     */{% endhighlight %}
+     */
+    {% endraw %}{% endhighlight %}
 
     We use this `@ListChild` directive in order to insert this viewer class into central area of customer area, instead of admin one;
 
-    {% highlight php %}	protected function getDefaultTemplate()
+    {% highlight php %}{% raw %}
+    	protected function getDefaultTemplate()
         {
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     The template for this viewer sits in other location. Aside from that, the implementation is the same.
 

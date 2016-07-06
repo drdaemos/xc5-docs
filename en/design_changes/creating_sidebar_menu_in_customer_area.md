@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating sidebar menu in customer area'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article describes how you can create your own sidebar menu in customer store-front via module. This is a menu similar to **Categories** or **New** **Arrivals** ones you can see in default package.
@@ -25,7 +21,7 @@ This article describes how you can create your own sidebar menu in customer stor
 
 # Step 1\. Create an empty module
 
-You can simply do it according to [the guide]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md). For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
+You can simply do it according to [the guide]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
 
 Rebuild the cache and this module will appear in the **Extensions > Installed modules** section in your admin area. Enable this module.
 
@@ -34,7 +30,8 @@ Rebuild the cache and this module will appear in the **Extensions > Installed mo
 1.  Create `View` folder in your module.
 2.  Put `MySidebar.php` script into this folder with the following content: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
 
     namespace XLite\Module\Tony\SidebarMenu\View;
 
@@ -54,7 +51,8 @@ Rebuild the cache and this module will appear in the **Extensions > Installed mo
         {
             return 'modules/Tony/SidebarMenu/menu';
         }
-    }{% endhighlight %}
+    }
+    {% endraw %}{% endhighlight %}
 
 Let's walk through each line of its code:
 
@@ -70,7 +68,9 @@ Let's walk through each line of its code:
 
 Create the template `<X-Cart 5>/skins/default/en/modules/Tony/SidebarMenu/menu/body.tpl` mentioned above. Its content will be what you want to display in the sidebar box, e.g.: 
 
-{% highlight php %}Hello world!{% endhighlight %}
+{% highlight php %}{% raw %}
+Hello world!
+{% endraw %}{% endhighlight %}
 
 # Step 4\. Rebuild the cache and check the results.
 

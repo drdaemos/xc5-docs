@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Upgrading X-Cart 5'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 The purpose of this article is to describe how X-Cart 5 performs upgrades and give hints about what to do if upgrade fails in the middle of the process.
@@ -95,13 +91,15 @@ Below the description of full manual upgrade:
 1.  How to get new files? First of all, you should check `<X-Cart 5>/var/tmp` folder and all new files should be there. If this folder is empty, you should install the X-Cart 5 version you are upgrading to on the same server (you can freely get it on [http://www.x-cart.com)](http://www.x-cart.com)) and activate all paid add-ons using your license keys. After that, this installation will have all needed files.
 2.  You need to run all pre-upgrade hooks (core's and modules'). The code example of how to run one hook is below: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
     require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'top.inc.php');
 
     $func = include 'upgrade/5.1/0/pre_upgrade.php';
     $func();
 
-    ?>{% endhighlight %}
+    ?>
+    {% endraw %}{% endhighlight %}
 3.  Overwrite all files manually. You can put files from the new version distributive pack to your store's folder.
 
 4.  Run all post-upgrade hooks. The code will be the same as in the point 2, but it will point to the post-upgrade hooks file.
@@ -112,7 +110,8 @@ Below the description of full manual upgrade:
 
 7.  Run hooks for updating language variables. The code example for one hook is below: 
 
-    {% highlight php %}<?php
+    {% highlight php %}{% raw %}
+    <?php
         require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'top.inc.php');
 
     	// core yaml file
@@ -124,13 +123,14 @@ Below the description of full manual upgrade:
         \XLite\Core\Translation::getInstance()->loadLabelsFromYaml($yamlFile);
 
         \XLite\Core\Translation::getInstance()->reset();
-    ?>{% endhighlight %}
+    ?>
+    {% endraw %}{% endhighlight %}
 8.  Upgrade is finished.
 
 _Related pages:_
 
-*   [X-Cart Upgrade General Steps]({{ baseurl_lang }}/../misc/x-cart_upgrade_general_steps.md)
-*   [Upgrade hooks]({{ baseurl_lang }}/../misc/upgrade_hooks.md)
+*   [X-Cart Upgrade General Steps]({{ baseurl_lang }}/misc/x-cart_upgrade_general_steps.html)
+*   [Upgrade hooks]({{ baseurl_lang }}/misc/upgrade_hooks.html)
 
 ## Attachments:
 

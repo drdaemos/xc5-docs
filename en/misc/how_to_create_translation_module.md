@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to create translation module'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 Translation module is an add-on that translates X-Cart store to another language. Most part of such module is not a code, but the list of translated labels, so we tried to ease the process for translators and all they need to do is to perform their translating job. After that you can run a special script that will wrap up their translation into the module.
 
 This article describes the whole process of creating translation module.
@@ -48,7 +44,7 @@ Once you are done with the CSV file, you should go to the [http://www.x-cart.co
 
 Fill in the form of this script as:
 
-*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: [Step 1 - creating simplest module#Choosingidentifiers]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md#Step1-creatingsimplestmodule-Choosingidentifiers)
+*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: [Step 1 - creating simplest module#Choosingidentifiers]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html#Step1-creatingsimplestmodule-Choosingidentifiers)
 *   **Module author** should contain the name of the translation author how it should be displayed to merchants.
 *   **Module service name** should contain the ID of your module in X-Cart. See more here: [Step 1 - creating simplest module#Choosingidentifiers](Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Choosingidentifiers)
 *   **Module name** should contain the name of your module how it is going to be displayed to merchants.

@@ -2,16 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Basic guide to theme creation'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article aims to teach designers how they can create X-Cart skin using preemptive (or substitutional) template model. This guide will also introduce **Custom Skin** module and will give real life example of how to work with preemptive templates in X-Cart.
 
-Before you get started, we recommend learning the [basic designer guide]({{ baseurl_lang }}/../getting_started/step_2_-_applying_design_changes.md) from **Getting started** section.
+Before you get started, we recommend learning the [basic designer guide]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html) from **Getting started** section.
 
 # Table of Contents
 
@@ -25,10 +21,11 @@ Before you get started, we recommend learning the [basic designer guide]({{ base
 
 If we want to make our module to be a skin and dramatically change the X-Cart appearance, there is a special way how to do it:
 
-1.  [Create an empty module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md). In this article, I will be using module with developer ID as **Tony** and module ID as **SkinDemo**.
+1.  [Create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). In this article, I will be using module with developer ID as **Tony** and module ID as **SkinDemo**.
 2.  Add the following method into your `Main.php` file 
 
-    {% highlight php %}    public static function getSkins()
+    {% highlight php %}{% raw %}
+        public static function getSkins()
         {
             return array(
                 \XLite::CUSTOMER_INTERFACE => array(
@@ -38,7 +35,8 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
                     'TonyTheme/admin',
                 ),
             );
-        }{% endhighlight %}
+        }
+    {% endraw %}{% endhighlight %}
 
     This method tells X-Cart that this module registers new templates for customer area (they are located in the `<X-Cart>/skins/TonyTheme/customer/en/` folder) and new templates for admin area (they are located in the `<X-Cart>/skins/TonyTheme/admin/en/` folder)
 
@@ -47,7 +45,9 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
 5.  In order to make sure that everything works as we expect, let us try to override `<X-Cart>/skins/default/en/welcome.tpl` template which is responsible for display of welcome message in store-front.
 6.  We just create the template `<X-Cart>/skins/TonyTheme/customer/en/welcome.tpl` with the following text: 
 
-    {% highlight php %}Hello world! This is a piece of text to display as welcome message.{% endhighlight %}
+    {% highlight php %}{% raw %}
+    Hello world! This is a piece of text to display as welcome message.
+    {% endraw %}{% endhighlight %}
 7.  Check the store-front with re-deploying the store. It should display our welcome message there, while rest of the layout will be the same.![]({{ site.baseurl }}/attachments/8224814/8355867.png)
 8.  _Important note: if you override templates that contain @ListChild directives, do not keep this directive in the overriding template. Otherwise X-Cart will include this template twice._
 
@@ -73,7 +73,9 @@ Let us assume a task that you want to get rid of exclamation marks from notifica
     - `skins/custom_skin/mail/en/` for email notifications interface
 4.  We create the `<X-Cart>/skins/custom_skin/mail/en/order_advanced_changed/subject.tpl` with the following content: 
 
-    {% highlight php %}{config.Company.company_name:h}: {t(#Order receipt#)} #{order.getOrderNumber()}{% endhighlight %}
+    {% highlight php %}{% raw %}
+    {config.Company.company_name:h}: {t(#Order receipt#)} #{order.getOrderNumber()}
+    {% endraw %}{% endhighlight %}
 
     in other words, we just remove the exclamation mark from the notification. The same way create three other overriding templates.
 

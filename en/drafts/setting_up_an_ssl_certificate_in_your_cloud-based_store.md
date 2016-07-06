@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Setting up an SSL certificate in your cloud-based store'
-categories: [drafts]
 ---
-
-{% include global.html %}
-
 Installing SSL certificate allows merchants to provide safe environment for their customers. Since the information such as password or email address is quite sensitive, it is a good idea to pass it to the server via encrypted protocol (HTTPS).
 
 All X-Cart 5 stores have SSL certificates for their default domain such as shop-1234.myxcart.com, but when you decide to [assign a custom domain]({{ baseurl_lang }}/user_manual/general_setup/changing_the_domain_name.html) to your shop, this SSL certificate will no longer work and you will need to buy one for your particular domain.

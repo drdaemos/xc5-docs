@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Prolongation of access to updates (video)'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 The video below demonstrates how to get a prolongation of access to X-Cart 5 updates after your period of free access to updates expires.

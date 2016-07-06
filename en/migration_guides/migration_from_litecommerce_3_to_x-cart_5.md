@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Migration from Litecommerce 3 to X-Cart 5'
-categories: [migration_guides]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This document describes the process of upgrade Litecommerce 3 to X-Cart 5.

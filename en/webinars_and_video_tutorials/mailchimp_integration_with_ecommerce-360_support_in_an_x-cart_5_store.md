@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'MailChimp Integration with Ecommerce-360 support in an X-Cart 5 Store'
-categories: [webinars_and_video_tutorials]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 MailChimp is a simple and inexpensive method of e-mailing marketing campaigns. You can send up to 12 000 emails to 2 000 subscribers for free. With its advanced reporting features, segmentation of the customer database, inbox inspector, integration with Google Analytics and Ecommerce-360 support, it is easy to boost your sales and analyze the results of your campaigns.

@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Setting up cURL'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 [cURL](http://www.php.net/manual/en/intro.curl.php) is a PHP extension that is used for creating connections to different types of servers. In particular, we are using cURL to connect to our marketplace and install modules from there. Usually hosting teams compile PHP with cURL enabled and everything works fine. If this is not your case, this article is for you.
@@ -34,21 +30,29 @@ In this case, the solution will be different depending on the type of your web-s
 
 1.  Find three files on your PC:
 
-    {% highlight php %}C:\Program Files\xampp\apache\bin\php.ini
+    {% highlight php %}{% raw %}
+    C:\Program Files\xampp\apache\bin\php.ini
     C:\Program Files\xampp\php\php.ini
-    C:\Program Files\xampp\php\php4\php.ini{% endhighlight %}
+    C:\Program Files\xampp\php\php4\php.ini
+    {% endraw %}{% endhighlight %}
 2.  Edit each of them and replace there the following piece of code:
 
-    {% highlight php %};extension=php_curl.dll{% endhighlight %}
+    {% highlight php %}{% raw %}
+    ;extension=php_curl.dll
+    {% endraw %}{% endhighlight %}
 
     with the next one:
 
-    {% highlight php %}extension=php_curl.dll{% endhighlight %}
+    {% highlight php %}{% raw %}
+    extension=php_curl.dll
+    {% endraw %}{% endhighlight %}
 3.  Restart Apache.
 
 ## Ubuntu/Debian + Apache
 
 1.  Run the following command in your console
 
-    {% highlight php %}sudo apt-get install php5-curl{% endhighlight %}
+    {% highlight php %}{% raw %}
+    sudo apt-get install php5-curl
+    {% endraw %}{% endhighlight %}
 2.  Restart Apache.

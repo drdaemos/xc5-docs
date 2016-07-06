@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to remove Transaction ID info in order notification emails?'
-categories: [how-to_articles]
 ---
-
-{% include global.html %}
-
 ## Step-by-step guide
 
 Here are the steps involved:
@@ -22,9 +18,11 @@ Here are the steps involved:
     _
 3.  Modify the custom template as you need - for example, remove the code that is used to display Transaction ID info:
 
-    {% highlight php %}  {if:order.getPaymentTransactionId()}
+    {% highlight php %}{% raw %}
+      {if:order.getPaymentTransactionId()}
         {t(#Transaction ID#)}: {order.getPaymentTransactionId()}
-      {end:}{% endhighlight %}
+      {end:}
+    {% endraw %}{% endhighlight %}
 4.  Re-generate X-Cart cache.
 
 Icon

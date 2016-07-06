@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to add Google Adwords Conversion Tracking Code to &quot;Thank you for your order&quot; page'
-categories: [how-to_articles]
 ---
-
-{% include global.html %}
-
 This article describes how to add Google Adwords Conversion Tracking code to X-Car's order confirmation page ("Thank you for your order" page).
 
 ## Step-by-step guide
@@ -19,7 +15,8 @@ Steps involved:
 
 2.  Add your Google Adwords Conversion Tracking Code to the custom template, for example:
 
-    {% highlight php %}{* vim: set ts=2 sw=2 sts=2 et: *}
+    {% highlight php %}{% raw %}
+    {* vim: set ts=2 sw=2 sts=2 et: *}
     {**
      * @ListChild (list="body", weight="999100")
      *}
@@ -44,18 +41,23 @@ Steps involved:
     <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/999999999/?value={order.getTotal()}&amp;currency_code={order.currency.getCode()}&amp;label=xxxfCKzzz2YQyyyyxxx&amp;guid=ON&amp;script=0"/>
     </div>
     </noscript>
-    {end:}{% endhighlight %}Icon
+    {end:}
+    {% endraw %}{% endhighlight %}Icon
 
     Please note, you will need to adjust your original tracking code, in order to pass order total and currency values properly, for example:
 
-    {% highlight php %}var google_conversion_value = {order.getTotal()};
+    {% highlight php %}{% raw %}
+    var google_conversion_value = {order.getTotal()};
     var google_conversion_currency = {order.currency.getCode()};
 
     value={order.getTotal()}
-    currency_code={order.currency.getCode()}{% endhighlight %}
+    currency_code={order.currency.getCode()}
+    {% endraw %}{% endhighlight %}
 3.  Apply the following SQL patch to your X-Cart database:
 
-    {% highlight php %}INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/body/js/google_ads_coversion_tracking.tpl", UNIX_TIMESTAMP());{% endhighlight %}
+    {% highlight php %}{% raw %}
+    INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/body/js/google_ads_coversion_tracking.tpl", UNIX_TIMESTAMP());
+    {% endraw %}{% endhighlight %}
 4.  Re-generate X-Cart cache.
 
 Icon

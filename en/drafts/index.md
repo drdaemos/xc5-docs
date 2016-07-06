@@ -5,5 +5,3 @@ title: 'Drafts'
 categories: []
 ---
 
-{% include global.html %}
-

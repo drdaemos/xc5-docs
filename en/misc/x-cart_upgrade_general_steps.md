@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Upgrade General Steps'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 To upgrade your store, we recommend the following scenario:
 
 1.  Close your existing X-Cart store frontend for a while.
@@ -23,4 +19,4 @@ If the installation of updates has been completed successfully (without errors),
 
 _Related pages:_
 
-*   [Upgrading X-Cart 5]({{ baseurl_lang }}/../setting_up_x-cart_5_environment/upgrading_x-cart_5.md)
+*   [Upgrading X-Cart 5]({{ baseurl_lang }}/setting_up_x-cart_5_environment/upgrading_x-cart_5.html)

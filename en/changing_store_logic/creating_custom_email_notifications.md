@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom email notifications'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article describes how developers can configure and send custom **email notifications**. Custom email notifications may be useful if you want to send messages after certain events. For instance, we want to be able to send notifications on behalf of the shop admin. This guide explains how to do it; it will also cover the topic of regiseting your custom notifications in the admin area.
@@ -23,14 +19,15 @@ This article describes how developers can configure and send custom **email noti
 
 # Implementation
 
-First of all, this task requires you to have a custom module. We'll [create a new module]({{ baseurl_lang }}/../getting_started/step_1_-_creating_simplest_module.md) with the developer ID **Tony** and the module ID **EmailDemo**.  
-Besides, we'll create a [custom page]({{ baseurl_lang }}/../basics/creating_new_page.md) in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
+First of all, this task requires you to have a custom module. We'll [create a new module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with the developer ID **Tony** and the module ID **EmailDemo**.  
+Besides, we'll create a [custom page]({{ baseurl_lang }}/basics/creating_new_page.html) in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
 
 ## Creating the mailer method
 
 X-Cart offers a convenient and expandable interface to send emails -`XLite\Core\Mailer` class. This class contains a lot of functions designed to build and send messages step by step. In order to use it, we decorate the class `XLite\Core\Mailer `and add a method to send our notification. We create a file `<X-Cart>/classes/XLite/Module/Tony/EmailDemo/Core/Mailer.php `with the following content: 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 namespace XLite\Module\Tony\EmailDemo\Core;
 /**
  * Mailer
@@ -63,7 +60,8 @@ abstract class Mailer extends \XLite\Core\Mailer implements \XLite\Base\IDecorat
         );
         return static::getMailer()->getLastError();
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 The method we will be using to send our notifications is `sendEmailDemoMessage().` Be sure to define it as a static method and choose a unique name so it doesn't override any existing mailer methods. Let's get an overview of its features:
 
@@ -87,13 +85,17 @@ An email message is composed from several parts such as _header_, _subject_, _b
 
 **subject.tpl**
 
-{% highlight php %}{subject}{% endhighlight %}
+{% highlight php %}{% raw %}
+{subject}
+{% endraw %}{% endhighlight %}
 
 **body.tpl**
 
-{% highlight php %}<p>
+{% highlight php %}{% raw %}
+<p>
   The text is - {custom_param}
-</p>{% endhighlight %}
+</p>
+{% endraw %}{% endhighlight %}
 
 As you can see, we can mix some predefined content with the registered parameters. As a result, we will be able to send messages like this:
 
@@ -101,7 +103,8 @@ As you can see, we can mix some predefined content with the registered parameter
 
 From now on, to send a message, you should call your newly created method like this:
 
-{% highlight php %}/**
+{% highlight php %}{% raw %}
+/**
  * Action to send test email notification
  *
  * @return void
@@ -122,7 +125,8 @@ protected function doActionSendEmail()
     $this->setReturnURL(
         $this->buildURL('tony_custom_email', '', array())
     );
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
 Please note that the above way is simply an example of usage; you can send messages during certain events or logic processing, if needed. This example sends a message on form submit.
 
@@ -130,7 +134,8 @@ Please note that the above way is simply an example of usage; you can send messa
 
 The admin area of an X-Cart store allows you to turn off certain notifications for admin or for customer. You can configure that on the <u>Store setup</u> -> <u>Email notifications</u> -> <u>Settings</u> page. This page contains a list of different notification types and provides switches allowing the user to enable/disable specific notification types for administrator and customer. For a custom notification to appear in the mentioned list, it should be registered in the module file `install.yaml`. For instance, we will add the following content:
 
-{% highlight php %}XLite\Model\Notification:
+{% highlight php %}{% raw %}
+XLite\Model\Notification:
   - templatesDirectory: modules/Tony/EmailDemo/message
     availableForAdmin: true
     availableForCustomer: false
@@ -141,7 +146,8 @@ The admin area of an X-Cart store allows you to turn off certain notifications f
         name: Advanced demo notification sent (Email Demo module)
         description: 'This notification is sent from testing page with preset subject and text'
         adminSubject: Someone has sent advanced demo notification
-        adminText: "This is the body of your advanced demo notification"{% endhighlight %}
+        adminText: "This is the body of your advanced demo notification"
+{% endraw %}{% endhighlight %}
 
 Notification definition consists of several parameters:
 
@@ -161,23 +167,27 @@ Notification definition consists of several parameters:
 After writing this code to the file, you should load it into system. It can be done using one of the two methods:
 
 1.  by re-installing this module,
-2.  by [loading the YAML file manually]({{ baseurl_lang }}/../misc/loading_yaml_file.md).
+2.  by [loading the YAML file manually]({{ baseurl_lang }}/misc/loading_yaml_file.html).
 
 You can also change the mail templates to make use of the default **subject** and **body** text, preset in the _translation_ parameter, like this:
 
 **subject.tpl**
 
-{% highlight php %}{getNotificationSubject()}{% endhighlight %}
+{% highlight php %}{% raw %}
+{getNotificationSubject()}
+{% endraw %}{% endhighlight %}
 
 **body.tpl**
 
-{% highlight php %}<p>
+{% highlight php %}{% raw %}
+<p>
   {getNotificationText():h}
 </p>
 <p>
 	Custom parameter:<br>
 	{custom_param}
-</p>{% endhighlight %}
+</p>
+{% endraw %}{% endhighlight %}
 
 This allows you to change the subject and body text in the admin area, without tampering with template files. The interface is shown on the picture below:
 

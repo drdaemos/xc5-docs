@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Upgrade hooks'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 In X-Cart 5.2.7 we added the ability to create upgrade hooks that can be run iteratively. This allows time consuming operations on the store's data to be performed without the fear that an operation may not be completed correctly due to exceeding a timeout value set in the web server settings.
 
 If you want to use iterative upgrade hooks, you need to know the following:
@@ -22,7 +18,8 @@ If you want to use iterative upgrade hooks, you need to know the following:
 
 Below is an example of iterative hooks performing the operations of updating products' clean URLs (See the original version in upgrade/5.2/1):
 
-**pre_upgrade.php**{% highlight php %}return function()
+**pre_upgrade.php**{% highlight php %}{% raw %}
+return function()
 {
     // Initial iteration position
     $pos = 0;
@@ -90,7 +87,9 @@ Below is an example of iterative hooks performing the operations of updating pro
 
     // Return current iteration position or zero (if end of products list has been reached)
     return $result;
-};{% endhighlight %}**post_rebuild.php**{% highlight php %}return function()
+};
+{% endraw %}{% endhighlight %}**post_rebuild.php**{% highlight php %}{% raw %}
+return function()
 {
     // Initial iteration position
     $pos = 0;
@@ -162,4 +161,5 @@ Below is an example of iterative hooks performing the operations of updating pro
 
     // Return current iteration position or zero (if end of products list has been reached)
     return $result;
-};{% endhighlight %}
+};
+{% endraw %}{% endhighlight %}

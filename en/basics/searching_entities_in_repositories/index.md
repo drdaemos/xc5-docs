@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Searching entities in repositories'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article aims to teach developers how they can pull data from repositories by certain criteria.
@@ -29,9 +25,11 @@ Repository method: `find()`
 
 Code sample: 
 
-{% highlight php %}$product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
+{% highlight php %}{% raw %}
+$product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
 
-//$product now contains product object{% endhighlight %}
+//$product now contains product object
+{% endraw %}{% endhighlight %}
 
 # Pulling all products
 
@@ -39,9 +37,11 @@ Repository method: `findAll()`
 
 Code sample: 
 
-{% highlight php %}$products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findAll();
+{% highlight php %}{% raw %}
+$products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findAll();
 
-//$products now contains an array of product objects{% endhighlight %}
+//$products now contains an array of product objects
+{% endraw %}{% endhighlight %}
 
 # Pulling one product by condition
 
@@ -49,7 +49,8 @@ Repository method: `findOneBy()`
 
 Code sample:
 
-{% highlight php %}// $condition defines what products exactly you want to pull.
+{% highlight php %}{% raw %}
+// $condition defines what products exactly you want to pull.
 // This condition defines that we need to pull all enabled products, 
 // i.e. they all must have enabled field set as true.
 
@@ -60,7 +61,8 @@ $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy($cond
 //$product now contains the very first enabled product
 
 $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array('product_id' => $id));
-// the same as $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);{% endhighlight %}
+// the same as $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
+{% endraw %}{% endhighlight %}
 
 # Pulling many products by condition
 
@@ -68,7 +70,8 @@ Repository method: `findBy()`
 
 Code:
 
-{% highlight php %}// $condition defines what products exactly you want to pull.
+{% highlight php %}{% raw %}
+// $condition defines what products exactly you want to pull.
 // This condition defines that we need to pull all enabled products, 
 // i.e. they all must have enabled field set as true.
 
@@ -76,8 +79,9 @@ $condition = array('enabled' => 1);
 
 $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findBy($condition);
 
-//$products now contains array of product objects and all of these products are enabled {% endhighlight %}
+//$products now contains array of product objects and all of these products are enabled 
+{% endraw %}{% endhighlight %}
 
 # Pulling products by complex condition
 
-If you need more complex queries to the database, please learn how to use [QueryBuilder]({{ baseurl_lang }}/../basics/searching_entities_in_repositories/querybuilder.md) object.
+If you need more complex queries to the database, please learn how to use [QueryBuilder]({{ baseurl_lang }}/basics/searching_entities_in_repositories/querybuilder.html) object.

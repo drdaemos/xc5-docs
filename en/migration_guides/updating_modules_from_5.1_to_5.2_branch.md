@@ -2,11 +2,7 @@
 layout: article_with_sidebar
 lang: en
 title: 'Updating modules from 5.1 to 5.2 branch'
-categories: [migration_guides]
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article describes the major change each module developer must apply to their modules in order allow their smooth upgrade from 5.1 to 5.2.
@@ -22,7 +18,7 @@ This article describes the major change each module developer must apply to thei
 
 Your module is a subject to hot-fix change if any of conditions below were triggered during module adaptation from 5.1 to 5.2 version:
 
-1.  You changed any [Model]({{ baseurl_lang }}/../basics/understanding_models.md) class' properties from `uinteger` to `integer` type.
+1.  You changed any [Model]({{ baseurl_lang }}/basics/understanding_models.html) class' properties from `uinteger` to `integer` type.
 
 2.  You used `integer` properties in your Model classes .
 
@@ -36,36 +32,45 @@ You need to release the next version of your module that will contain the follow
 
 1.  If you changed `uinteger` properties to `integer` ones. Then, you need to specify new `integer` properties as follows: 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Column         (type="integer", options={ "unsigned": true })
          */
-        protected $id;{% endhighlight %}
+        protected $id;
+    {% endraw %}{% endhighlight %}
 
     not just 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Column         (type="integer")
          */
-        protected $id;{% endhighlight %}
+        protected $id;
+    {% endraw %}{% endhighlight %}
 2.  If you used `integer` properties in your Models and these properties **are not** used as **indexes**, then you must replace such properties with the following directive: 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Column         (type="integer", nullable=true)
          */
-        protected $id;{% endhighlight %}
+        protected $id;
+    {% endraw %}{% endhighlight %}
 
     not just 
 
-    {% highlight php %}    /**
+    {% highlight php %}{% raw %}
+        /**
          * @Column         (type="integer")
          */
-        protected $id;{% endhighlight %}
+        protected $id;
+    {% endraw %}{% endhighlight %}
 
     The reason for this change is that previous Doctrine version assumed `nullable=true` even if it was not specified. This change will allow backward compatibility.
 
-Aside from that, your module must [decorate]({{ baseurl_lang }}/../getting_started/step_3_-_applying_logic_changes.md) the `postprocessSchema()` method of the  `\XLite\Core\Database` class as follows: 
+Aside from that, your module must [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `postprocessSchema()` method of the  `\XLite\Core\Database` class as follows: 
 
-{% highlight php %}abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDecorator
+{% highlight php %}{% raw %}
+abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDecorator
 {
     /**
      * Post process schemas
@@ -92,11 +97,13 @@ Aside from that, your module must [decorate]({{ baseurl_lang }}/../getting_start
 
         return array_merge($tmp1, $tmp2);
     }
-}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
-and your module must include the following [pre-upgrade hook]({{ baseurl_lang }}/../setting_up_x-cart_5_environment/upgrading_x-cart_5.md): 
+and your module must include the following [pre-upgrade hook]({{ baseurl_lang }}/setting_up_x-cart_5_environment/upgrading_x-cart_5.html): 
 
-{% highlight php %}<?php
+{% highlight php %}{% raw %}
+<?php
 // vim: set ts=4 sw=4 sts=4 et:
 
 return function()
@@ -124,7 +131,8 @@ return function()
             }
         }
     }
-};{% endhighlight %}
+};
+{% endraw %}{% endhighlight %}
 
 where `$tables` variable must contain all tables of your module.
 

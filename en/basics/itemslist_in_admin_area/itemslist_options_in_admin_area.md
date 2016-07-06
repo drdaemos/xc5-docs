@@ -2,14 +2,10 @@
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList options in admin area'
-categories: [developer_docs]
 ---
-
-{% include global.html %}
-
 # Introduction
 
-This article explains main options of [ItemsList widget in admin area]({{ baseurl_lang }}/../basics/itemslist_in_admin_area/index.md): how to create **Remove** and **Create** buttons, define look of columns etc.
+This article explains main options of [ItemsList widget in admin area]({{ baseurl_lang }}/basics/itemslist_in_admin_area/{{ baseurl_lang }}/index.html): how to create **Remove** and **Create** buttons, define look of columns etc.
 
 This guide will have two parts:
 
@@ -40,14 +36,14 @@ You can also define other parameters of a column:
 *   `static::COLUMN_TEMPLATE` – value type: **string** – defines a specific template for displaying column cell. Typical value is: `modules/Developer/Module/tempalte.tpl` and it will pick up the  
     `<X-Cart>/skins/admin/en/modules/Developer/Module/tempalte.tpl` template;
 *   `static::COLUMN_HEAD_TEMPLATE` – value type: **string** – similar to above, defines a specific template for displaying head cell of a table;
-*   `static::COLUMN_CLASS` – value type: **string** – defines a [FormField class]({{ baseurl_lang }}/../getting_started/step_4_-_working_with_settings/creating_custom_setting_class.md) that will be used for displaying of editable field. E.g. `\XLite\View\FormField\Inline\Input\Text\Float`. If you need more info about creating editable ItemsList in admin area, please have a look at [Creating new entity -- Introduction of editable ItemsList in admin area]({{ baseurl_lang }}/../basics/creating_new_entity_--_introduction_of_editable_itemslist_in_admin_area.md) guide;
+*   `static::COLUMN_CLASS` – value type: **string** – defines a [FormField class]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/creating_custom_setting_class.html) that will be used for displaying of editable field. E.g. `\XLite\View\FormField\Inline\Input\Text\Float`. If you need more info about creating editable ItemsList in admin area, please have a look at [Creating new entity -- Introduction of editable ItemsList in admin area]({{ baseurl_lang }}/basics/creating_new_entity_--_introduction_of_editable_itemslist_in_admin_area.html) guide;
 *   `static::COLUMN_PARAMS` – value type: **array** – defines parameters for **FormField** class defined in `static::COLUMN_CLASS` param.
 
 # ItemsList parameters
 
 ItemsList parameters are defined as methods and the mandatory methods are:
 
-*   `defineRepositoryName()` method that points an ItemsList to a [Model]({{ baseurl_lang }}/../basics/understanding_models.md) class;
+*   `defineRepositoryName()` method that points an ItemsList to a [Model]({{ baseurl_lang }}/basics/understanding_models.html) class;
 *   `defineColumns()` method defines what columns will exist in this ItemsList.
 
 Aside from these two, you can define:
@@ -63,10 +59,12 @@ Aside from these two, you can define:
 
 *   `getCreateURL()` method is used in conjunction with `isInlineCreation()` method and it defines URL of the page where new record will be created. If it is the same page, where your ItemsList sits on, then a new item will be created right in the table without reloading the page. Otherwise, you will be redirected to the page returned by the `getCreateURL()` method. Typical implementation of this method is:
 
-    {% highlight php %}   protected function getCreateURL()
+    {% highlight php %}{% raw %}
+       protected function getCreateURL()
        {
            return \XLite\Core\Converter::buildUrl('your_target');
-       }{% endhighlight %}
+       }
+    {% endraw %}{% endhighlight %}
 
     where **your_target** is a target of a page.
 
