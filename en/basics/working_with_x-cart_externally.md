@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with X-Cart externally'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 Imagine the situation that you want to pull some info from X-Cart and then display it in your blog software. In this case, you need to initialize X-Cart and then somehow call one of its functions. This article describes how you can achieve it.

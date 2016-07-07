@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Implementing horizontal attribute tabs'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 X-Cart 5.1.4 introduced **vertical product attribute tabs** that look as follows:![]({{ site.baseurl }}/attachments/8225427/8356199.png)

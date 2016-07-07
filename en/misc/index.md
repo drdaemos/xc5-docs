@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Misc'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 This section contains useful guides that could not be categorized to previous sections:
 
 *   [Rules of naming X-Cart classes]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html);

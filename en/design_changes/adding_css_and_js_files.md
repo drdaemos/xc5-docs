@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding CSS and JS files'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 In order to register some CSS/JS resources in your viewer class (more about this in [Working with viewer classes]({{ baseurl_lang }}/basics/working_with_viewer_classes.html)), it should implement two specific methods: `getCSSFiles() and ``getJSFiles().`
 
 `**getCSSFiles()**`

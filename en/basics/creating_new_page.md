@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating new page'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how developers can create a new page in X-Cart. For instance, we want to create a page in admin area (`admin.php?target=tony_custom`) that will show some specific information. This guide explains how to achieve this task.

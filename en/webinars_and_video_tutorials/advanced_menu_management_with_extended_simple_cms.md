@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Advanced menu management with Extended Simple CMS'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 The video below shows how the X-Cart 5 Extended Simple CMS module expands the default Menus functionality and allows you to build multi-level dropdown menus in the primary menu and multi-column menus in the footer.

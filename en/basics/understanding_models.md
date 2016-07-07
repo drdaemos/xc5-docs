@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Understanding Models'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 X-Cart primarily works with **Model** objects. For instance, product, category, order, image, user are all Model objects. This article gives an introduction to what is Model classes and how to work with them. 

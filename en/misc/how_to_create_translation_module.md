@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to create translation module'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 Translation module is an add-on that translates X-Cart store to another language. Most part of such module is not a code, but the list of translated labels, so we tried to ease the process for translators and all they need to do is to perform their translating job. After that you can run a special script that will wrap up their translation into the module.
 
 This article describes the whole process of creating translation module.

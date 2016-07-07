@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Inserting an X-Cart &#39;Add to cart&#39; button in a new page'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 Sometimes the standard 'Add to cart' buttons you get in your X-Cart  store are not enough, and you want to add another 'Add to cart' button - for example, on a static page inside your X-Cart store, or on a product landing page outside X-Cart.
 
 There are two methods to do so:

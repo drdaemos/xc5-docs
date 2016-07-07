@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Updating modules from 5.1 to 5.2 branch'
+categories: [migration_guides]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes the major change each module developer must apply to their modules in order allow their smooth upgrade from 5.1 to 5.2.

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList introduction -- showing products on a page'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes the process of creating page with products. For instance, any category page is a page with products. In this guide we will create a page that is available at `cart.php?target=all_products` and then display all products on this page.

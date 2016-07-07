@@ -6,6 +6,9 @@ categories: [home]
 order: 1
 icon: rocket
 description: Start developing for X-Cart without any hassle. Speed up your work process with X-Cart SDK
+---
+
+{% include global.html %}
 
 # Getting started 
 

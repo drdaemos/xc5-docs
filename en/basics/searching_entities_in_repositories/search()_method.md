@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'search() method'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes another approach of searching entities in the database and then pulling data. We already know two approaches:

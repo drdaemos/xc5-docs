@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating product discount'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 Previously we have learned how to create a [global discount]({{ baseurl_lang }}/changing_store_logic/creating_global_discount.html) and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as

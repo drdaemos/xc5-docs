@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Special offer with free item'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide explains how to create a module that implements a **special offer**: buy three items of the same product and the third one will be free for you. On top of that, this type of discount will be displayed as a **separate line** on the checkout.

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Accessing data of current user profile'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article shows approaches of how to access data of current user in X-Cart. For instance, you are logged in as **John Doe**, how can X-Cart know what is your name? This article will show you how to pull this info.

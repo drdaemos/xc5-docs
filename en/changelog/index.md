@@ -8,4 +8,6 @@ icon: announcement
 description: Discover new features and bugfixes
 ---
 
+{% include global.html %}
+
 X-Cart 5 Changelog

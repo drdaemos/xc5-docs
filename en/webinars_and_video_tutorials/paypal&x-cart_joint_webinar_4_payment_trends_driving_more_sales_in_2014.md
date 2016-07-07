@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'PayPal&amp;X-Cart joint webinar: 4 payment trends driving more sales in 2014'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 The video below provides some useful tips to help you increase your sales.

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding third column'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article gives an example of how to create the right sidebar and hide the left sidebar in admin area, while transferring all sidebar widgets from left to right.

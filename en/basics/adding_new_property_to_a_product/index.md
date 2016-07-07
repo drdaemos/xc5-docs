@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide teaches X-Cart developers how they can add their own field to products and then use it on invoices.

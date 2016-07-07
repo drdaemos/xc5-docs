@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Making payment method depend on shipping method'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article explains how you can make payment methods depend on a shipping method chosen.

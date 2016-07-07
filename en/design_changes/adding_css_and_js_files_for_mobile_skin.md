@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding CSS and JS files for Mobile Skin'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how developers can include CSS/JS files to X-Cart which has the [Mobile Skin](http://www.x-cart.com/extensions/addons/mobile.html) module enabled. The problem is that Mobile Skin module removes all CSS/JS files that were registered via [regular approach of adding CSS/JS files]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html), so we must work around it in this case.

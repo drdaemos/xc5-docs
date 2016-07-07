@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating a payment method'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide is an introduction to creating payment gateways in X-Cart.

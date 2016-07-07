@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Debugging X-Cart'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 The main purpose of debugging any software is to find faulty piece of code or data that causes the problem. This article describes main approaches of digging into X-Cart 5 and finding problem piece of code or data.

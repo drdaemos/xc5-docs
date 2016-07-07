@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding new shipping/payment statuses (X-Cart 5.2.6 and earlier)'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article shows developers how they can create new shipping and payment statuses for orders. The process is as easy as running 3 MySQL queries.

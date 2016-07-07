@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product - part 2 - value of this field must be saved after checkout'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article is a continuation of an article about [adding a new property to a product]({{ baseurl_lang }}/basics/adding_new_property_to_a_product/{{ baseurl_lang }}/index.html) and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).

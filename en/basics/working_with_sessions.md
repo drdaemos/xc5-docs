@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with sessions'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by [decoration]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) of `\XLite\Core\Session` class.

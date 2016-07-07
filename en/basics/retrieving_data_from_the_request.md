@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Retrieving data from the request'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article teaches X-Cart developers how to retrive data from request to end-points. For the sake of example, we will create a mod that will work as follows:

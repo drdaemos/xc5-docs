@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Setting up cURL'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 [cURL](http://www.php.net/manual/en/intro.curl.php) is a PHP extension that is used for creating connections to different types of servers. In particular, we are using cURL to connect to our marketplace and install modules from there. Usually hosting teams compile PHP with cURL enabled and everything works fine. If this is not your case, this article is for you.

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Step 2 - applying design changes'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article is an introduction to X-Cart design system. It explains general principles of how X-Cart layout is organized. I will combine general explanation with the process of applying real life design task (wrapping **My Account** link into `<span></span>` tags on home page), so you could see both theory and practice in action.

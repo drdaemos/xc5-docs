@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How do I submit my extension to X-Cart marketplace'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article is aimed to the developers who want to submit their extensions to X-Cart marketplace. This process is quite straight-forward and takes only 4 steps from your wish to actual publishing of your module.

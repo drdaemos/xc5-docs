@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with image resizing routine'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 Default X-Cart _lazy_ resizes images and this article describes how to work with this process.

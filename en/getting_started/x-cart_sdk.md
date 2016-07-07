@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart SDK'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 X-Cart SDK is a collection of macros that ease X-Cart 5 development. This article explains how to obtain X-Cart SDK and how to use its macros.

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'QueryBuilder'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article is an introduction of **QueryBuilder** object – a special object that is used in order to pull info about [Models]({{ baseurl_lang }}/basics/understanding_models.html) from the database.

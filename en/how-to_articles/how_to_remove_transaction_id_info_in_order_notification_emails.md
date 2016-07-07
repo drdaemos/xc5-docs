@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to remove Transaction ID info in order notification emails?'
+categories: [how-to_articles]
+
 ---
+
+{% include global.html %}
+
 ## Step-by-step guide
 
 Here are the steps involved:

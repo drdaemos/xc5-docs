@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Infinite Scroll module (video)'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 In this video we provide an overview of the functionality of X-Cart 5 Infinite Scroll module.  

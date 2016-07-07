@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating sidebar menu in customer area'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how you can create your own sidebar menu in customer store-front via module. This is a menu similar to **Categories** or **New** **Arrivals** ones you can see in default package.

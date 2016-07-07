@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Flexy Guide'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article is a guide to [Flexy](http://pear.php.net/package/HTML_Template_Flexy) template engine used in X-Cart.

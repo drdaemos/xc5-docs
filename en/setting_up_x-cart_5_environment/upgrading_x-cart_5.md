@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Upgrading X-Cart 5'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 The purpose of this article is to describe how X-Cart 5 performs upgrades and give hints about what to do if upgrade fails in the middle of the process.

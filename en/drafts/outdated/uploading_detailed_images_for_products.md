@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Uploading detailed images for products'
+categories: [drafts]
+
 ---
+
+{% include global.html %}
+
 1.  Go to any product details page in your admin area.
 2.  Switch to the **Product images** tab there.  
     ![]({{ site.baseurl }}/attachments/6389809/6586478.png)  

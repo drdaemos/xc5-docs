@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Installing X-Cart (video guide)'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 Icon
 
 The video below captures the process of installation for X-Cart versions 5.2.4 and earlier. In X-Cart 5.2.5 the installation wizard was updated; so, if you are installing a later version, please expect the wizard steps to be different from those in the video.

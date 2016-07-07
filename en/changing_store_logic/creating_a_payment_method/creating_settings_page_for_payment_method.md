@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating settings page for payment method'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article is a continuation of the guide about [creating payment method]({{ baseurl_lang }}/changing_store_logic/creating_a_payment_method/{{ baseurl_lang }}/index.html). During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.

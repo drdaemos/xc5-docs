@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Building a custom skin in X-Cart 5: Tutorial by Mike White'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 Thanks to Mike White who created this video guide: [http://xcartguru.com/tutorials/x-cart-5-tutorials/building-a-custom-skin-in-x-cart-5/](http://xcartguru.com/tutorials/x-cart-5-tutorials/building-a-custom-skin-in-x-cart-5/)
 
 <iframe class="youtube-player" type="text/html" style="width: 800px; height: 450px" src="http://www.youtube.com/embed/3zV1ZmHaUWY" frameborder="0"></iframe>

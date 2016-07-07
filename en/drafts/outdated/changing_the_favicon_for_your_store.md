@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Changing the favicon for your store'
+categories: [drafts]
+
 ---
+
+{% include global.html %}
+
 1.  Make sure you have the **Theme tweaker** module installed and activated in your store. If not, [install and activate it]({{ baseurl_lang }}/user_manual/general_setup/installing_and_activating_modules.html).  
     ![]({{ site.baseurl }}/attachments/6389871/6586613.png)
 2.  Go to the **System settings > Look & feel** section in your admin area.  

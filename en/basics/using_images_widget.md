@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Using images widget'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article explains how to use image selection widget in X-Cart as well as how to attach images to an entity. For the sake of example, we will create a mod that will add secondary images field for a product. Merchant will be able to assign any number of secondary images to a product and these images will be shown on product details page in customer area.

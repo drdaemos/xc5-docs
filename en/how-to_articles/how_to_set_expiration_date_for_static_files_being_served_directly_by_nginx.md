@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to set expiration date for static files being served directly by Nginx'
+categories: [how-to_articles]
+
 ---
+
+{% include global.html %}
+
 In case all static files are served directly by Nginx on your site, you may want to set expiration date for these static files.
 
 To do it, specify additional directives in your nginx configuration file, within the "http" section, for example:

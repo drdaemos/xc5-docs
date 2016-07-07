@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Model editing page'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 During module creation developers sometimes [create complex entities]({{ baseurl_lang }}/basics/understanding_models.html) that require a **separate** page for editing of its properties, instead of doing it via [ItemsList]({{ baseurl_lang }}/basics/creating_new_entity_--_introduction_of_editable_itemslist_in_admin_area.html). This article will explain how you can create a page where you can edit certain fields of a model. For the sake of example, we will create a simple mod that will implement a new page where you can edit a product, but the same principles apply to all other entities as well.

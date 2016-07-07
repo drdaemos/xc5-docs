@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding new sort by option to ItemsList'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article aims to teach X-Cart developers how they can add a sorting option to their [ItemsLists]({{ baseurl_lang }}/basics/itemslist_introduction_--_showing_products_on_a_page/{{ baseurl_lang }}/index.html).

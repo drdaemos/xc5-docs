@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList in admin area'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 **ItemsList** is a type of X-Cart widget that displays records about entities in structured format. Examples of ItemsList widgets are below:

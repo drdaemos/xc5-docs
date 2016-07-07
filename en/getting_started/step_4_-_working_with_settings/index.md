@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Step 4 - working with settings'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article aims to teach developers how to create settings of their module and then use them in the code. This article assumes that you have already learnt three previous articles from **Getting started** section:

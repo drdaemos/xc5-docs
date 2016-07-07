@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Migration from X-Cart 4 to X-Cart 5'
+categories: [migration_guides]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide describes the process of migration from X-Cart 4 to X-Cart 5\. The migration can be split up into two big steps: **data migration** and **design/custom functionality migration**.

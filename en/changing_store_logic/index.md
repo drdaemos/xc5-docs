@@ -8,6 +8,8 @@ icon: setting
 description: Learn how to adapt the X-Cart workflow and enlarge possibilities for your customers
 ---
 
+{% include global.html %}
+
 This section contains guides that describe changes of X-Cart workflow:
 
 *   [Creating global discount]({{ baseurl_lang }}/changing_store_logic/creating_global_discount.html), [product specific discount]({{ baseurl_lang }}/changing_store_logic/creating_product_discount.html) or [offering free product]({{ baseurl_lang }}/changing_store_logic/special_offer_with_free_item.html);

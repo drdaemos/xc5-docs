@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Kount in X-Cart 5 integrated with X-Payments'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 The powerful fraud detection and prevention solution by Kount is now integrated with X-Payments.

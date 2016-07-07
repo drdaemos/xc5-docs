@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with authorization'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article shows you can authenticate a user by login and password. It also shows you how to log off a current user.

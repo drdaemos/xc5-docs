@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Forcing product quantity while adding to cart'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article aims to show how you can change the routine of adding product to cart. In our case, we will create a module that will allow only **even** quantity of product (2, 4, 6) to be added to cart. If you try to add **odd** quantity of product (1, 3, 5), then you will be given a warning message.

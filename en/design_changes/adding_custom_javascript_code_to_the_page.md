@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding custom JavaScript code to the page'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 If you want to add some custom JavaScript code or load additional scripts to store pages, there are several ways of doing that.
 
 The easiest way is by using the **ThemeTweaker** addon module:

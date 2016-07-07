@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Controller class'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 **Controller** is a class that responsible for very first handling of request to X-Cart. This article aims to give a basic understanding of how controllers work in X-Cart and how you can use them.

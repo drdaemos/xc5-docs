@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Getting started with eBay Integration (Outdated article)'
+categories: [drafts]
+
 ---
+
+{% include global.html %}
+
 This guide assumes that the eBay Integration module has been [installed and enabled]({{ baseurl_lang }}/user_manual/modules/ebay_integration/ebay_integration_module_system_requirements_and_installation.html) in your store.
 
 To start using the eBay Integration module:

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Loading YAML file'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide describes how developers can load updated YAML file of your module without running [X-Cart SDK macro]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-LoadingYAMLfile).

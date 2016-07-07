@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating new entity -- Introduction of editable ItemsList in admin area'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how developers can create new entity in X-Cart store. This article's example is how to create quick messages (they are our new entities) that can be created in admin area and then 3 latest active ones will be shown in storefront.

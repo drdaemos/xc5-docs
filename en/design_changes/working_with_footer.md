@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with footer'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how X-Cart developers can change content of footer area in customer store-front of X-Cart that by default looks like this:![]({{ site.baseurl }}/attachments/8225291/8356161.png)

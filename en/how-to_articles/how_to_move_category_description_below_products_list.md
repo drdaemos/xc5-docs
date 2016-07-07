@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to move category description below products list'
+categories: [how-to_articles]
+
 ---
+
+{% include global.html %}
+
 This article describes how to move category description below products list.
 
 Для реализации требуемых изменений, понадобится сделать описанные ниже модификации темплейтов в Х-Карт, а также установить и настроить модуль "Banner System" ([http://www.x-cart.com/extensions/addons/banner-system.html](http://www.x-cart.com/extensions/addons/banner-system.html)).

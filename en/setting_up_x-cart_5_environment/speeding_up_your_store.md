@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Speeding up your store'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article aims to provide guidance to X-Cart users who want to improve the performance of their X-Cart installation.

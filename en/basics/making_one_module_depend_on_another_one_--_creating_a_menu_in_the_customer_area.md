@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Making one module depend on another one -- creating a menu in the customer area'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article aims to show developers how to give priority to one class over another during the [decoration process]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html). It also shows how one module can require another one for proper work.

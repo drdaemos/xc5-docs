@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Upgrade General Steps'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 To upgrade your store, we recommend the following scenario:
 
 1.  Close your existing X-Cart store frontend for a while.

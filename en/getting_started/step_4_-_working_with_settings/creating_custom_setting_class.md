@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom setting class'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how developer can create a [complex setting class]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/{{ baseurl_lang }}/index.html) in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.

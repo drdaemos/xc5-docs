@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating global discount'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article teaches X-Cart developers how they can create discounts via custom module. For the sake of example, we will show how to create a straight-forward **10% discount** to order subtotal.

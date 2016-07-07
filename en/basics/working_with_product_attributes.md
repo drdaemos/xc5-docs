@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with product attributes'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide aims to show some approach of working with product attributes. In this article we will create a mod that will hide certain attribute from being displayed in customer area.

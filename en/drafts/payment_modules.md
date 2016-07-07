@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Payment modules'
+categories: [drafts]
+
 ---
+
+{% include global.html %}
+
 All payment methods in X-Cart 5 are developed via "modules".  Let's name the module **MyPayment** and developer - **John**
 
 Basically the payment module is consist of 3 (three) files:

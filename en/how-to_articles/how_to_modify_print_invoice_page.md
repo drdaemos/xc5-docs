@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to modify &quot;Print Invoice&quot; page'
+categories: [how-to_articles]
+
 ---
+
+{% include global.html %}
+
 I would like make some minor CSS changes to the print invoice page in the admin section of the store. How do I do that?
 
 ## Step-by-step guide

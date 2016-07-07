@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating menu in admin area'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how developers can create/change menu items in admin area.  

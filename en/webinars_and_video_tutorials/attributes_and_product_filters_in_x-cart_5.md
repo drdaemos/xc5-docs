@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Attributes and product filters in X-Cart 5'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This video explains the use of attributes and product filters in X-Cart 5.

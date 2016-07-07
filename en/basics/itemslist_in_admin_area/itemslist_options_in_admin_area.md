@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList options in admin area'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article explains main options of [ItemsList widget in admin area]({{ baseurl_lang }}/basics/itemslist_in_admin_area/{{ baseurl_lang }}/index.html): how to create **Remove** and **Create** buttons, define look of columns etc.

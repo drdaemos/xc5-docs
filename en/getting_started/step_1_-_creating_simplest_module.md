@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Step 1 - creating simplest module'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide describes how one can create a simplest module in X-Cart 5.

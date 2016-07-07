@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart classes structure and namespaces'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes the structure of X-Cart classes. Also, it describes how to generate namespaces correctly.

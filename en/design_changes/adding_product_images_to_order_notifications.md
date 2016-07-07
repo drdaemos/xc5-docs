@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding product images to order notifications'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide explains how you can add product images to order notifications. It also gives an overview of invoice structure in terms of templates.

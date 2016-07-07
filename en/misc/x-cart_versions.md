@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart versions'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article explains a rule of building X-Cart core and module versions.

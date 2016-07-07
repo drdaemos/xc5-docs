@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with viewer classes'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This guide describes how developers can display the dynamically generated content in X-Cart using viewer classes.

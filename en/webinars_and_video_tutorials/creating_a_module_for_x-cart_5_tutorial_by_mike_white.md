@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating a module for X-Cart 5: Tutorial by Mike White'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 This simple and easy to follow tutorial from Michael White and [http://babymonkeystudios.com](http://babymonkeystudios.com/ "http://babymonkeystudios.com") will show you how to form the basic building blocks of an X-cart 5 module.
 
 **Tools Used:**  

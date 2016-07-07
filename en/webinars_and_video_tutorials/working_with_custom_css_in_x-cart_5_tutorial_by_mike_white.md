@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Working with custom CSS in X-Cart 5: Tutorial by Mike White'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This video provides a quick tip on working with Custom CSS in X-Cart 5 and Chrome. 

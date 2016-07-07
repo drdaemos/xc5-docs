@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Making your custom widget cached'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 X-Cart allows to cache certain widgets that contain mostly (or entirely) static data. This way X-Cart will not need to render this widget from scratch and the store will work faster.

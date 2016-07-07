@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom email notifications'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how developers can configure and send custom **email notifications**. Custom email notifications may be useful if you want to send messages after certain events. For instance, we want to be able to send notifications on behalf of the shop admin. This guide explains how to do it; it will also cover the topic of regiseting your custom notifications in the admin area.

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Saving credit cards in X-Cart 5 integrated with X-Payments 2.x'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This video demonstrates how a customer can save their credit card for future use at an Cart 5 store integrated with X-Payments without the card details being actually stored by X-Cart. 

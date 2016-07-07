@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Setting up shipping costs'
+categories: [drafts]
+
 ---
+
+{% include global.html %}
+
 This article describes the process of setting up shipping system. First I will explain the general principles of creating shipping rates and then give examples of creating complex cases of shipping systems.
 
 # 1\. Understanding what shipping system you are going to create

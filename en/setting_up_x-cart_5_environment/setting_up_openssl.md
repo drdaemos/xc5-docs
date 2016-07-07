@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Setting up openSSL'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 [openSSL](http://www.php.net/manual/en/book.openssl.php) is PHP encryption extension and its purpose to encrypt sensitive data, so malicious users would not be able to access it. If openSSL is not configured properly, your store will not be able to communicate with marketplace and install modules out of there.

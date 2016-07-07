@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 2 - 10 Apr 2014 - Design changes in X-Cart 5 (Custom Skins and Webmaster Kit modules intro)'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 Aim of this webinar is to show developers how they can implement design changes in X-Cart 5\. The webinar consists of 6 typical tasks and I will explain how approach them. Besides that, the webinar introduced Custom Skin and Webmaster Kit modules that will be helpful for X-Cart 5 developers.

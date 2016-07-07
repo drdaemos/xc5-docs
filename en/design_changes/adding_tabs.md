@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Adding tabs'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how you can tabs on a page in admin area. For instance, each order page has two tabs: **General info** and **Invoice**: 

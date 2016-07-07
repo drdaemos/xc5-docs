@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Moving X-Cart to another location'
+categories: [migration_guides]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 Imagine the situation that you have your X-Cart installed at [http://localhost/xcart/,](http://localhost/xcart/,) but you want it be available at [http://localhost/xcart5/](http://localhost/xcart/,).

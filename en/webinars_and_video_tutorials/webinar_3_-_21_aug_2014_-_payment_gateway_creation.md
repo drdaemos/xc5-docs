@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 3 - 21 Aug 2014 - Payment gateway creation'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 The aim of this webinar is to show the process of creating payment gateway in X-Cart 5\. During webinar, we will create an integration with [Dwolla](https://developers.dwolla.com/) payment gateway. The integration will be done according to the following checkout flow: [https://developers.dwolla.com/dev/pages/gateway#server-to-server](https://developers.dwolla.com/dev/pages/gateway#server-to-server)

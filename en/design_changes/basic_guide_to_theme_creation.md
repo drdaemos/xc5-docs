@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Basic guide to theme creation'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article aims to teach designers how they can create X-Cart skin using preemptive (or substitutional) template model. This guide will also introduce **Custom Skin** module and will give real life example of how to work with preemptive templates in X-Cart.

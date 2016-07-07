@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Dealing with X-Cart fatal errors'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article helps merchants who faced a fatal error from X-Cart.

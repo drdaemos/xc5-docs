@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Creating popup widget'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes how developers can create a popup widget in X-Cart. For instance, we want our custom page in customer area to have a button that shows popup window with some information. This guide explains how to achieve this task. We'll be trying to create a simple overview of shopping cart:

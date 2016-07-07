@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to add Facebook Pixel Сode to X-Cart pages'
+categories: [how-to_articles]
+
 ---
+
+{% include global.html %}
+
 This article describes how to add Facebook Pixel code to X-Cart pages.
 
 ## Step-by-step guide

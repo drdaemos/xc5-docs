@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Searching entities in repositories'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article aims to teach developers how they can pull data from repositories by certain criteria.

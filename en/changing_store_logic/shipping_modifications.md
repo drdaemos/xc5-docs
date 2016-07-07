@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Shipping modifications'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This article describes the process of creating a simple shipping method. In our module, we will create a new shipping carrier – **My Processor** – that will have one shipping method – **My Shipping Method** –  that has a flat rate of **$10**.

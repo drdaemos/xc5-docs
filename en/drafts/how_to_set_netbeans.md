@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'How to set NetBeans'
+categories: [drafts]
+
 ---
+
+{% include global.html %}
+
 # Настройки редактирования NetBeans
 
 Сервис > Параметры > Редактор > Форматирование

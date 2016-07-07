@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This webinar is dedicated to creating the simple **News** module for X-Cart 5\. In this module, admin can define news in back-end and customers can see them in the store-front.

@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'YAML files'
+categories: [drafts]
+
 ---
+
+{% include global.html %}
+
 By default X-Cart 5 core uses [YAML](http://en.wikipedia.org/wiki/YAML) files to store the DB content.
 
 YAML file is a human-readable description of complex "name-value" structures.

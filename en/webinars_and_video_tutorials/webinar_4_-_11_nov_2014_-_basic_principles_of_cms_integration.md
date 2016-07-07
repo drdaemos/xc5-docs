@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 4 - 11 Nov 2014 - Basic principles of CMS integration'
+categories: [webinars_and_video_tutorials]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 The aim of this webinar is to show developers how they can work with X-Cart from 3rd party scripts, e.g. CMS.

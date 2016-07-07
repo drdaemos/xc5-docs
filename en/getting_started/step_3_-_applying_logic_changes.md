@@ -2,7 +2,12 @@
 layout: article_with_sidebar
 lang: en
 title: 'Step 3 - applying logic changes'
+categories: [developer_docs]
+
 ---
+
+{% include global.html %}
+
 # Introduction
 
 This is the third article in **Getting Started** section and it aims to teach X-Cart developers how to change the store's logic. We will start with an overview of how X-Cart works in general and then explain how you can change this default workflow.
