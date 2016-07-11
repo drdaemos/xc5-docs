@@ -1,6 +1,3 @@
-
-/* слегка доработанный, универсальный clearfix хак */
-
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -11,10 +8,8 @@
 }
 
 .clearfix { display: inline-block; }
-/* start commented backslash hack \*/
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
-/* close commented backslash hack */
 
 /**
  * Basic styling
