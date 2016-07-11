@@ -85,4 +85,4 @@ In this section you will find webinars and video tutorials for X-Cart 5.
 *   [Webinar 2 - 10 Apr 2014 - Design changes in X-Cart 5 (Custom Skins and Webmaster Kit modules intro)]({{ baseurl_lang }}/webinars_and_video_tutorials/webinar_2_-_10_apr_2014_-_design_changes_in_x-cart_5_(custom_skins_and_webmaster_kit_modules_intro).html)
 *   [Webinar 3 - 21 Aug 2014 - Payment gateway creation]({{ baseurl_lang }}/webinars_and_video_tutorials/webinar_3_-_21_aug_2014_-_payment_gateway_creation.html)
 *   [Webinar 4 - 11 Nov 2014 - Basic principles of CMS integration]({{ baseurl_lang }}/webinars_and_video_tutorials/webinar_4_-_11_nov_2014_-_basic_principles_of_cms_integration.html)
-*   [PayPal&X-Cart joint webinar: 4 payment trends driving more sales in 2014]({{ baseurl_lang }}/webinars_and_video_tutorials/paypal&x-cart_joint_webinar_4_payment_trends_driving_more_sales_in_2014.html)
+*   [PayPal & X-Cart joint webinar: 4 payment trends driving more sales in 2014]({{ baseurl_lang }}/webinars_and_video_tutorials/paypal_x-cart_joint_webinar_4_payment_trends_driving_more_sales_in_2014.html)

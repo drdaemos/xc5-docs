@@ -67,3 +67,97 @@
         }
     }
 }
+
+
+/* Footer */
+.footer {background: #1C1C1C;}
+.block-footer-links {font-size: 13px; margin: 20px 0; position: relative;}
+.block-footer-links .block-copyright {display: block; float: left; color: #6A6A6A; margin-left: 10px;}
+.block-footer-links ul {display: block; float: left; margin: 0 10px 0 0; padding: 0; width: 100%;}
+.block-footer-links ul li {display: block; color: #6A6A6A; padding: 5px 0;}
+.block-footer-links ul li ul {float: none; margin: 0 0 20px;}
+.block-footer-links ul li ul.menu {}
+.block-footer-links ul .footer-title {color: #FFF; font: 16px/1 'Open Sans',sans-serif; padding: 20px 0 5px; text-align: left; letter-spacing: -1px;}
+.block-footer-links ul li a {color: #999999;}
+.block-footer-links ul li a:hover {color: #dddddd;}
+.block-footer-links>.container>ul>li {width: 39%; float: left; margin: 0;}
+.block-footer-links>.container>ul>li.show-links {display: none;}
+.block-footer-links>.container>ul>li>ul>li {width: 50%; float: left; margin: 0;}
+.block-footer-links>.container>ul>li.contact-us {width: 22%;}
+.block-footer-links>.container>ul>li.contact-us ul li {margin-left: 0;}
+.block-footer-links>.container>ul>li.contact-us .phones {padding: 5px 0 11px 0; margin: 0 0 13px 0; border-bottom: 1px dotted #3C3C3C;}
+.block-footer-links>.container>ul>li.contact-us .block-contact {position: relative;}
+.block-footer-links>.container>ul>li.contact-us .block-contact .follow-us {position: absolute; right: 0;}
+.block-footer-links>.container>ul>li.contact-us .block-contact .follow-us .fa-facebook {font-size: 15px; color: #FFF; background: #4B75BB; width: 24px; height: 24px; border-radius: 3px; text-align: center; line-height: 24px;}
+.block-footer-links>.container>ul>li.contact-us .block-contact .follow-us .fa-twitter {font-size: 15px; color: #FFF; background: #00b2ee; width: 24px; height: 24px; border-radius: 3px; text-align: center; line-height: 24px; margin-left: 8px;}
+
+.block-footer-links>.container>ul>li.contact-us .block-contact .follow-us {position: relative; margin: 10px 0 10px;}
+.block-footer-links ul li .follow-us a {font-size: 23px; margin-right: 7px; color: #4B75BB;}
+.block-footer-links ul li .follow-us a.sprite-facebook {color: #4B75BB;}
+.block-footer-links ul li .follow-us a.sprite-twitter {color: #00B2EE;}
+.block-footer-links ul li .follow-us a.sprite-instagram {color: #3F729B;}
+.block-footer-links ul li .follow-us a.sprite-home {position: relative; width: 20px; height: 20px; display: inline-block;}
+.block-footer-links ul li .follow-us a.sprite-home .fa {}
+.block-footer-links ul li .follow-us a.sprite-home .fa:before {position: absolute; top: 0px; left: 0px;}
+
+.block-copyright {background: #000;}
+.block-copyright .copyright {color: #6A6A6A; font-size: 12px; display: block; float: left; margin: 20px 20px 20px 0;}
+.block-copyright .footer-links {display: block; float: right; margin: 20px 20px 20px 0;}
+.block-copyright .footer-links ul {padding: 0; margin: 0;}
+.block-copyright .footer-links ul li {display: block; float: left; margin: 0 0 0 20px;}
+.block-copyright .footer-links ul li:first-child {margin-left: 0px;}
+.block-copyright .footer-links ul li a {font-size: 12px; line-height: 1.2em; color: #999; display: block;}
+.block-copyright .footer-links ul li a:hover {color: #DDD;}
+
+.phones #us-toll-free {display: block; background: url(../images/base/us-flag.gif) no-repeat scroll 0 5px rgba(0, 0, 0, 0); padding: 0 0 10px 23px;}
+.phones #uk-toll-free {display: block; background: url(../images/base/uk-flag.gif) no-repeat scroll 0 5px rgba(0, 0, 0, 0); padding: 0 0 10px 23px;}
+.phones #toll-free {display: block; background: url(../images/base/icon-world.gif) no-repeat scroll 1px 4px rgba(0, 0, 0, 0); padding: 0 0 10px 23px;}
+
+.shadow:before {content:' '; position: fixed; background-color: #000; opacity: 0.5; top: 0; left: 0; width: 100%; height: 150%; bottom: 0; z-index: 999;}
+.shadow {/*-webkit-filter: blur(2px);*/}
+
+@media (max-width: 767px) {
+.block-footer-links>.container>ul>li {width: 36%;}
+.block-footer-links>.container>ul>li>ul>li {width: 100%; padding: 0;}
+.block-footer-links>.container>ul>li>ul>li>ul {margin-bottom: 0;}
+.block-footer-links>.container>ul>li.contact-us {position: absolute; right: 20px; top: 0px;}
+
+.block-footer-links ul li {float: none; margin-left: 0px;}
+body .main-container.container { margin-bottom: 20px; }
+.block-footer-links ul {float: left; margin: 0 0 20px 10px; clear: both;}
+.block-footer-links .block-copyright {clear: left;}
+
+.block-copyright .footer-links {float: left; clear: both; width: 100%;margin-bottom: 0;}
+.block-copyright .footer-links ul {float: left; padding: 0; margin-left: 10px;}
+.block-copyright .copyright {margin-left: 10px;}
+}
+@media (max-width: 640px) {
+.block-copyright .footer-links ul {width: 100%;}
+.block-copyright .footer-links ul li {width: 30%; margin: 5px 0;}
+}
+
+@media (max-width: 480px) {
+.block-copyright .footer-links ul {margin-left: 0;}
+.block-footer-links ul {margin-bottom: 0;}
+.block-footer-links>.container>ul>li {display: none;}
+.block-footer-links>.container>ul>li.contact-us .phones {border-bottom: 0 none; width: 70%; float: left; padding-left: 24px; margin-bottom: 0;}
+.block-footer-links>.container>ul>li.contact-us .phones .footer-title {padding-bottom: 15px;}
+.block-footer-links>.container>ul>li.contact-us>.block-contact>.menu {float: left; width: 30%;}
+.block-footer-links>.container>ul>li.contact-us .block-contact .follow-us {position: relative; margin: 22px 0 7px 0;}
+.block-footer-links>.container>ul>li.contact-us .follow-us + .menu {position: relative;}
+
+.block-footer-links ul li ul {margin-left: 0;}
+.block-footer-links>.container>ul>li {width: 50%;}
+.block-footer-links>.container>ul>li.show-links {display: block; width: 100%; padding: 30px 0px 10px; font-size: 18px; cursor: pointer; color: #999;}
+.block-footer-links>.container>ul>li.show-links .fa {font-weight: normal; font-size: 21px; float: left; padding-right: 10px; line-height: 1.2em;}
+.block-footer-links>.container>ul>li.links {display: none;}
+.block-footer-links>.container>ul>li.links.show {display: block;}
+
+.block-footer-links>.container>ul>li>ul>li>ul {margin-left: 0;}
+.block-footer-links>.container>ul>li.contact-us {min-width: 220px; width: 100%;}
+.block-footer-links>.container>ul:first-child {margin-top: 140px;}
+.block-footer-links>.container>ul>li.contact-us {position: absolute; right: auto; left: 0px; display: block;}
+.block-copyright .footer-links {padding-left: 13px;}
+.block-copyright .footer-links ul li {float: none; width: 100%;}
+.block-copyright .copyright {margin: 13px;}
+}

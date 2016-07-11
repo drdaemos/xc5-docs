@@ -1,3 +1,21 @@
+
+/* слегка доработанный, универсальный clearfix хак */
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
 /**
  * Basic styling
  */
@@ -88,5 +106,19 @@ h1, h2, h3, h4, h5, h6 {
     .text {
         font-size: 20px;
         margin-top: 40px;
+    }
+}
+
+aside.sidebar {
+    background: #fafafa;
+    .ui.large.vertical.menu {
+        width: 100%;
+        margin: 0px;
+
+        .anchor-link.item {
+            a {
+                line-height: 1.5em;
+            }
+        }
     }
 }

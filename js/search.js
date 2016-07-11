@@ -16,7 +16,6 @@ layout: null
           searchFields : [
             'title',
             'description',
-            // 'content',
             'keywords'
           ],
           minCharacters : 3

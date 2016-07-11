@@ -6,11 +6,10 @@ layout: null
   {% for page in site.pages %}
     {% if page.title %}
       <page>
-        <title>{{ page.title | xml_escape }}</title>
-        <content>{{ page.content | markdownify | strip_html | xml_escape }}</content>
+        <title>{{ page.title | remove: '&' | xml_escape }}</title>
         <link>{{ page.url | prepend: site.baseurl }}</link>
-        <description>{{ page.description }}</description>
-        <keywords>{{ page.keywords }}</keywords>
+        <description>{{ page.description | xml_escape }}</description>
+        <keywords>{{ page.keywords | xml_escape }}</keywords>
         <exclude>{% if page.search_exclude %}true{% else %}false{% endif %}</exclude>
       </page>
     {% endif %}

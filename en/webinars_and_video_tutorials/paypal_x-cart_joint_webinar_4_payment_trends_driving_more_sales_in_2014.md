@@ -1,9 +1,8 @@
 ---
 layout: article_with_sidebar
 lang: en
-title: 'PayPal&amp;X-Cart joint webinar: 4 payment trends driving more sales in 2014'
+title: 'PayPal and X-Cart joint webinar: 4 payment trends driving more sales in 2014'
 categories: [webinars_and_video_tutorials]
-
 ---
 
 {% include global.html %}
