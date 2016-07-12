@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 After the module has been installed and enabled, it needs to be configured.
 

@@ -6,7 +6,7 @@ categories: [how-to_articles]
 
 ---
 
-{% include global.html %}
+
 
 This article describes how to add Google Adwords Conversion Tracking code to X-Car's order confirmation page ("Thank you for your order" page).
 

@@ -6,7 +6,7 @@ categories: [how-to_articles]
 
 ---
 
-{% include global.html %}
+
 
 ## Step-by-step guide
 

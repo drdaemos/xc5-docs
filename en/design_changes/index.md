@@ -8,7 +8,7 @@ icon: paint brush
 description: Learn how to make your X-Cart store eye pretty. Discover design patterns for making X-Cart themes.
 ---
 
-{% include global.html %}
+
 
 The Design changes cover typical tasks for design integrator.
 

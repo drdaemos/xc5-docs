@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 1.  Go to any product details page in your admin area.
 2.  Switch to the **Product images** tab there.  

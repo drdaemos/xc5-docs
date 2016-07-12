@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 **Go2Group Plugin for Google Analytics - An error has occurred. If you need additional help, please contact Go2Group: support@go2group.com**
 

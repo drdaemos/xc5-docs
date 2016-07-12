@@ -6,7 +6,7 @@ categories: [webinars_and_video_tutorials]
 
 ---
 
-{% include global.html %}
+
 
 Thanks to Mike White who created this video guide: [http://xcartguru.com/tutorials/x-cart-5-tutorials/building-a-custom-skin-in-x-cart-5/](http://xcartguru.com/tutorials/x-cart-5-tutorials/building-a-custom-skin-in-x-cart-5/)
 

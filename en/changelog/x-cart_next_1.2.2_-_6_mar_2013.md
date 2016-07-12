@@ -6,7 +6,7 @@ categories: [changelog]
 
 ---
 
-{% include global.html %}
+
 
 <a name="bugnotes" rel="nofollow"></a>
 

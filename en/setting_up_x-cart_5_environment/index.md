@@ -8,7 +8,7 @@ icon: server
 description: Discover how to setup an environment for your X-Cart store
 ---
 
-{% include global.html %}
+
 
 This section contains guides about how to set up your X-Cart environment properly:
 

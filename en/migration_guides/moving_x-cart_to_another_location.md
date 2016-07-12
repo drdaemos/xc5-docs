@@ -6,7 +6,7 @@ categories: [migration_guides]
 
 ---
 
-{% include global.html %}
+
 
 # Introduction
 

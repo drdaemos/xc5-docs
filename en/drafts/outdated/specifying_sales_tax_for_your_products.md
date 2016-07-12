@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 [Sales tax](http://en.wikipedia.org/wiki/Value_added_tax#With_a_sales_tax) is a type of VAT that is added over the total of what customer pays for a product. In other words, its value will be calculated based on the price consumer  will finally pay, not on the seller margin/profit only, as [it works in VAT]({{ baseurl_lang }}/user_manual/taxes/defining_vat_for_your_products.html).
 

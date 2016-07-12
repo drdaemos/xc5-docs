@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 By default X-Cart 5 core uses [YAML](http://en.wikipedia.org/wiki/YAML) files to store the DB content.
 

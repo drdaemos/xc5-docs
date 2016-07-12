@@ -6,7 +6,7 @@ categories: [how-to_articles]
 
 ---
 
-{% include global.html %}
+
 
 This article describes how to move category description below products list.
 

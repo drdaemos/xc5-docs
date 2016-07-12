@@ -8,7 +8,7 @@ icon: youtube play
 description: Live video from our developers and associates
 ---
 
-{% include global.html %}
+
 
 In this section you will find webinars and video tutorials for X-Cart 5.
 

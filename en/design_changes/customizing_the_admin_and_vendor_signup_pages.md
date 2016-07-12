@@ -6,7 +6,7 @@ categories: [developer_docs]
 
 ---
 
-{% include global.html %}
+
 
 To change the logo and the logo link for the Admin and Vendor Signup pages, use the **Custom skin** module and create a custom version of the default template:
 

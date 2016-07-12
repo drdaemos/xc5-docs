@@ -6,7 +6,7 @@ categories: [developer_docs]
 
 ---
 
-{% include global.html %}
+
 
 If you want to add some custom JavaScript code or load additional scripts to store pages, there are several ways of doing that.
 

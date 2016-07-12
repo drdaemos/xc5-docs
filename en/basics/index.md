@@ -8,8 +8,6 @@ icon: sitemap
 description: Understand what technologies and approaches used in the X-Cart core and learn how to achieve typical tasks
 ---
 
-{% include global.html %}
-
 The Basics section shows how to achieve typical tasks when you edit your X-Cart store:
 
 *   [Creating new page]({{ baseurl_lang }}/basics/creating_new_page.html) and [How to find out what page is currently running]({{ baseurl_lang }}/basics/how_to_find_out_what_page_is_currently_running.html) from the PHP script;

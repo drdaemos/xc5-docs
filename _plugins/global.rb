@@ -1,5 +1,7 @@
-Jekyll::Hooks.register :pages, :pre_render do |page|
-  
+Jekyll::Hooks.register [:pages, :posts], :pre_render do |page, payload|
+  lang = page['lang'] || payload['site']['lang_default']
+  payload['baseurl_lang'] = payload['site']['baseurl'] + '/' + lang
+  payload
 end
 
 Jekyll::Hooks.register :site, :post_write do |post|

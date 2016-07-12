@@ -6,7 +6,7 @@ categories: [developer_docs]
 
 ---
 
-{% include global.html %}
+
 
 This section contains useful guides that could not be categorized to previous sections:
 

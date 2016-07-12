@@ -8,7 +8,7 @@ icon: pencil square o
 description: Take a look at some of the customizations, made for our clients
 ---
 
-{% include global.html %}
+
 
 _In this section:_
 

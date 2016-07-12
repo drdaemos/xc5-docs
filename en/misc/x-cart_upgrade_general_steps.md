@@ -6,7 +6,7 @@ categories: [developer_docs]
 
 ---
 
-{% include global.html %}
+
 
 To upgrade your store, we recommend the following scenario:
 

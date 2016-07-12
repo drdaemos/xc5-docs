@@ -8,7 +8,7 @@ icon: setting
 description: Learn how to adapt the X-Cart workflow and enlarge possibilities for your customers
 ---
 
-{% include global.html %}
+
 
 This section contains guides that describe changes of X-Cart workflow:
 

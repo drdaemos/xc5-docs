@@ -6,7 +6,7 @@ categories: [developer_docs]
 
 ---
 
-{% include global.html %}
+
 
 **.phar** lib is used for creating PHP archives. PHP 5.3 always has this extension built-in, but hosting teams may disable it for some reason.
 

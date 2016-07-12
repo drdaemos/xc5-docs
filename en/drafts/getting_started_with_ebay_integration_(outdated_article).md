@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 This guide assumes that the eBay Integration module has been [installed and enabled]({{ baseurl_lang }}/user_manual/modules/ebay_integration/ebay_integration_module_system_requirements_and_installation.html) in your store.
 

@@ -6,5 +6,5 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 

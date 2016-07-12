@@ -6,7 +6,7 @@ categories: [how-to_articles]
 
 ---
 
-{% include global.html %}
+
 
 If you would like to hide the left-hand bar for static pages only, but still want it displayed for other pages, just follow the below guide.
 

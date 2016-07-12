@@ -6,7 +6,7 @@ categories: [webinars_and_video_tutorials]
 
 ---
 
-{% include global.html %}
+
 
 Icon
 

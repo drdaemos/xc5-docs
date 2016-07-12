@@ -6,7 +6,7 @@ categories: [developer_docs]
 
 ---
 
-{% include global.html %}
+
 
 Before submitting a module to X-Cart 5 marketplace, you need to verify its code style. Your code must comply [PSR-2 standard](http://www.php-fig.org/psr/psr-2/).
 

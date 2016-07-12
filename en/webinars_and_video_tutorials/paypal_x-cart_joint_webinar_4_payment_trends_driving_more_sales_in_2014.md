@@ -5,7 +5,7 @@ title: 'PayPal and X-Cart joint webinar: 4 payment trends driving more sales in 
 categories: [webinars_and_video_tutorials]
 ---
 
-{% include global.html %}
+
 
 # Introduction
 

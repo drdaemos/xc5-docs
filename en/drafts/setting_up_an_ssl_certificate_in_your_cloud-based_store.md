@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 Installing SSL certificate allows merchants to provide safe environment for their customers. Since the information such as password or email address is quite sensitive, it is a good idea to pass it to the server via encrypted protocol (HTTPS).
 

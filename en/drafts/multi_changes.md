@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 1.  [Multi-vendor: Admin experience]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_admin_experience.html)  
     <s>#6 access to classes and attributes:</s>  

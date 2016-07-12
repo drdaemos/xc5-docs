@@ -6,7 +6,7 @@ categories: [drafts]
 
 ---
 
-{% include global.html %}
+
 
 The module POS system for X-Cart employs a Java based web applet named QZ Print ([https://code.google.com/p/jzebra/](https://code.google.com/p/jzebra/)) to connect with the printers used to print barcodes and receipts. After the module has been installed, the applet files qz-print.jar and qz-print_jnlp.jnlp can be found in the skins\admin\en\modules\XC\PosSystem\common\lib directory on the server where your X-Cart installation is running. Being a Java based applet, QZ Print operates on the client side: from the said directory on the server, the applet is loaded via the web browser onto the computer of the POS system module user where it is employed to discover the printers installed on the system and to send raw commands directly to these printers. The loading of the applet in the client browser happens every time the user opens or refreshes a page that involves connecting to the Barcode or Receipt printers. This includes:
 
