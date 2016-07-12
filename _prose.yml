@@ -1,5 +1,5 @@
 prose:
-  siteurl: 'http://devkb.x-cart.biz/'
+  siteurl: 'http://devkb.xcart-service.com/'
   baseurl: '/xc5-docs'
   media: 'attachments'
   ignore:
