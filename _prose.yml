@@ -2,11 +2,11 @@ prose:
   siteurl: 'http://devkb.x-cart.biz/xc5-docs'
   media: 'attachments'
   ignore:
-    - _includes/
-    - _layout/
-    - _plugins/
-    - _sass/
-    - _site/
+    - /_includes
+    - /_layouts
+    - /_plugins
+    - /_sass
+    - /_site
     - attachments
     - css
     - images
