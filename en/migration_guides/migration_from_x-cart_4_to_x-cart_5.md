@@ -1,12 +1,14 @@
 ---
+identifier: rymZ3-hmP
 layout: article_with_sidebar
 lang: en
 title: 'Migration from X-Cart 4 to X-Cart 5'
-categories: [migration_guides]
+categories:
+  - Migration guides
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -41,7 +43,7 @@ Once you decided what data you are going to migrate, you need to decide who will
 
 ### Step 2a. Migrating data by yourself
 
-In this case, export data from X-Cart 4 and adjust it according to [X-Cart 5 import format]({{ baseurl_lang }}/user_manual/import-export/{{ baseurl_lang }}/index.html), then import it into X-Cart 5.
+In this case, export data from X-Cart 4 and adjust it according to {% link "X-Cart 5 import format" Sy_niW27w %}, then import it into X-Cart 5.
 
 In order to help with this task, we designed a special script that generates product CSV in X-Cart 5 format right from X-Cart 4 database. To use this script, you should
 
@@ -67,7 +69,7 @@ In order to help with this task, we designed a special script that generates pro
 
 # Migration of your custom functionality and design
 
-In order to migrate all your preferred features that do not exist in X-Cart 5 as well as migrate the custom layout of your store, you should re-implement such changes to X-Cart 5 from scratch. Our [developer documentation]({{ baseurl_lang }}/developer_docs/index.html) will be very helpful for such task.
+In order to migrate all your preferred features that do not exist in X-Cart 5 as well as migrate the custom layout of your store, you should re-implement such changes to X-Cart 5 from scratch. Our {% link "developer documentation" SJfKoWhmD %} will be very helpful for such task.
 
 If you do not know who can perform such task for you, feel free to request a free quote from us here: [http://www.x-cart.com/contact-us.html](http://www.x-cart.com/contact-us.html)
 

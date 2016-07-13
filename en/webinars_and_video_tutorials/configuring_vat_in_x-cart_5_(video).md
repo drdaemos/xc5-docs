@@ -1,14 +1,13 @@
 ---
+identifier: HkKNj-hQP
 layout: article_with_sidebar
 lang: en
-title: Configuring VAT in X-Cart 5
+title: 'Configuring VAT in X-Cart 5'
 categories:
-  - webinars_and_video_tutorials
-published: true
-order: 0
+  - Webinars and video tutorials
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

@@ -1,12 +1,14 @@
 ---
+identifier: B1-5oWhQD
 layout: article_with_sidebar
 lang: en
 title: 'Flexy Guide'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -35,7 +37,7 @@ Generally, Flexy template is a file where you specify plain text that will be di
 My name is {getMyName()}
 {% endraw %}{% endhighlight %}
 
-`{getMyName()}` is a call of function `getMyName()` function [defined]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html#Step2-applyingdesignchanges-UnderstandingX-Cartlayoutsystem) in the current viewer class or controller class.
+`{getMyName()}` is a call of function `getMyName()` function {% link "defined" HkDO3Wh7v#Step2-applyingdesignchanges-UnderstandingX-Cartlayoutsystem %} in the current viewer class or controller class.
 
 If you need to pass some string value to a function, it will look as follows: 
 
@@ -145,7 +147,7 @@ If you want to include another template into your one, you can do it as follows:
 {* in this case, {foo} variable in the path/to/another/template.tpl template will have value "bar" *}
 {% endraw %}{% endhighlight %}
 
-The same way you can include [viewer classes]({{ baseurl_lang }}/basics/working_with_viewer_classes.html) into templates: 
+The same way you can include {% link "viewer classes" rkeo2b3XP %} into templates: 
 
 {% highlight php %}{% raw %}
 <widget class="\XLite\View\Header" />
@@ -154,7 +156,7 @@ The same way you can include [viewer classes]({{ baseurl_lang }}/basics/working_
 {* the same way, {foo} variable will have "baz" value in this viewer class *}
 {% endraw %}{% endhighlight %}
 
-Finally, you can include view lists – [view list is a collection of templates and viewer classes](Step-2---applying-design-changes_8224787.html#Step2-applyingdesignchanges-Hidingtemplatesandwidgets) – into the template as follows: 
+Finally, you can include view lists – {% link "view list is a collection of templates and viewer classes" Step-2---applying-design-changes_8224787.html#Step2-applyingdesignchanges-Hidingtemplatesandwidgets %} – into the template as follows: 
 
 {% highlight php %}{% raw %}
 <list name="list-name" />
@@ -167,9 +169,9 @@ This section introduces a module that will show you an example of creating Flexy
 
 ## Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **OutputFilterDemo**. Then we [create a `target=output_filter` page]({{ baseurl_lang }}/basics/creating_new_page.html) in customer area in this module. For that we create: 
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **OutputFilterDemo**. Then we {% link "create a `target=output_filter` page" B1zwoW37P %} in customer area in this module. For that we create: 
 
-*   an empty controller class `\XLite\Module\Tony\OutputFilterDemo\Controller\Customer\OutputFilter` ([more about classnames in X-Cart]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html));
+*   an empty controller class `\XLite\Module\Tony\OutputFilterDemo\Controller\Customer\OutputFilter` ({% link "more about classnames in X-Cart" S1RinW3Qv %});
 *   a page viewer class `\XLite\Module\Tony\OutputFilterDemo\View\Page\Customer\OutputFilter` with the following content: 
 
     {% highlight php %}{% raw %}
@@ -208,7 +210,7 @@ We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step
     {% endraw %}{% endhighlight %}
 *   an empty page template `<X-Cart>/skins/default/en/modules/Tony/OutputFilterDemo/page/output_filter/body.tpl`.
 
-Now we need to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\AView` class and implement our Flexy output filter. We create the `<X-Cart>/classes/XLite/Module/Tony/OutputFilterDemo/View/AView.php` file with the following content: 
+Now we need to {% link "decorate" rkE_3bnXw %} the `\XLite\View\AView` class and implement our Flexy output filter. We create the `<X-Cart>/classes/XLite/Module/Tony/OutputFilterDemo/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -244,7 +246,7 @@ Now, it is time to test our output filter in action. We go to our `<X-Cart>/ski
 
 **I am an example string** is our test string.
 
-Then, we have to re-deploy the store and once the process is finished, we should go to the `cart.php?target=output_filter` page and we will see the following result: ![]({{ site.baseurl }}/attachments/8225410/8356193.png)
+Then, we have to re-deploy the store and once the process is finished, we should go to the `cart.php?target=output_filter` page and we will see the following result: ![]({{site.baseurl}}/attachments/8225410/8356193.png)
 
 As you can see all spaces have been removed from our test string.
 
@@ -254,4 +256,4 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [output-filter.png]({{ site.baseurl }}/attachments/8225410/8356193.png) (image/png)
+![](images/icons/bullet_blue.gif) [output-filter.png]({{site.baseurl}}/attachments/8225410/8356193.png) (image/png)

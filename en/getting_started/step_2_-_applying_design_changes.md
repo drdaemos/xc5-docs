@@ -1,18 +1,20 @@
 ---
+identifier: HkDO3Wh7v
 layout: article_with_sidebar
 lang: en
 title: 'Step 2 - applying design changes'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article is an introduction to X-Cart design system. It explains general principles of how X-Cart layout is organized. I will combine general explanation with the process of applying real life design task (wrapping **My Account** link into `<span></span>` tags on home page), so you could see both theory and practice in action.
 
-![]({{ site.baseurl }}/attachments/8224787/8355857.png)
+![]({{site.baseurl}}/attachments/8224787/8355857.png)
 
 # Table of Contents
 
@@ -121,11 +123,11 @@ First thing you have to learn is how to find templates or widgets responsible fo
 
 As a real life example, let us find what template is responsible for display of **My account** link on X-Cart's home page.
 
-1.  Enable **Webmaster Kit** module in your admin area.![]({{ site.baseurl }}/attachments/8224787/8355858.png)
-2.  Tick the **Profiler enabled** and **Mark templates** options on in its settings.![]({{ site.baseurl }}/attachments/8224787/8355859.png)
+1.  Enable **Webmaster Kit** module in your admin area.![]({{site.baseurl}}/attachments/8224787/8355858.png)
+2.  Tick the **Profiler enabled** and **Mark templates** options on in its settings.![]({{site.baseurl}}/attachments/8224787/8355859.png)
 3.  Click **Enable tracing** and Webmaster Kit will start showing treelike structure of X-Cart templates.  
-    ![]({{ site.baseurl }}/attachments/8224787/8355860.png)
-4.  Go to your home page and hover your pointer over the **My account** area. The top path is a path where the template responsible for display of this area is located.![]({{ site.baseurl }}/attachments/8224787/8355861.png)  
+    ![]({{site.baseurl}}/attachments/8224787/8355860.png)
+4.  Go to your home page and hover your pointer over the **My account** area. The top path is a path where the template responsible for display of this area is located.![]({{site.baseurl}}/attachments/8224787/8355861.png)  
 
 5.  `skins/``default/en/layout/header.bar.links.logged.account.tpl` is the template we were looking for. Its content is below: 
 
@@ -185,7 +187,7 @@ In order to remove the template from its view list, you must specify the `runBu
     }
 {% endraw %}{% endhighlight %}
 
-_Note: if you are not sure how to create the module and Main.php file there, please check our [previous guide]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) out._
+_Note: if you are not sure how to create the module and Main.php file there, please check our {% link "previous guide" H1Qu2b27w %} out._
 
 As you can see, we are passing first parameter to `removeTemplateFromList()` method as template path and second parameter as **view list name**.
 
@@ -264,8 +266,8 @@ You can download the module example described above here: [https://dl.dropboxus
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [home-page-my-account.png]({{ site.baseurl }}/attachments/8224787/8355857.png) (image/png)  
-![](images/icons/bullet_blue.gif) [webmaster-kit-module.png]({{ site.baseurl }}/attachments/8224787/8355858.png) (image/png)  
-![](images/icons/bullet_blue.gif) [webmaster-kit-module-settings.png]({{ site.baseurl }}/attachments/8224787/8355859.png) (image/png)  
-![](images/icons/bullet_blue.gif) [enable-tracing.png]({{ site.baseurl }}/attachments/8224787/8355860.png) (image/png)  
-![](images/icons/bullet_blue.gif) [path-to-template.png]({{ site.baseurl }}/attachments/8224787/8355861.png) (image/png)
+![](images/icons/bullet_blue.gif) [home-page-my-account.png]({{site.baseurl}}/attachments/8224787/8355857.png) (image/png)  
+![](images/icons/bullet_blue.gif) [webmaster-kit-module.png]({{site.baseurl}}/attachments/8224787/8355858.png) (image/png)  
+![](images/icons/bullet_blue.gif) [webmaster-kit-module-settings.png]({{site.baseurl}}/attachments/8224787/8355859.png) (image/png)  
+![](images/icons/bullet_blue.gif) [enable-tracing.png]({{site.baseurl}}/attachments/8224787/8355860.png) (image/png)  
+![](images/icons/bullet_blue.gif) [path-to-template.png]({{site.baseurl}}/attachments/8224787/8355861.png) (image/png)

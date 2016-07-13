@@ -1,19 +1,21 @@
 ---
+identifier: B1lPiZ27v
 layout: article_with_sidebar
 lang: en
 title: 'Creating menu in admin area'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article describes how developers can create/change menu items in admin area.  
- ![]({{ site.baseurl }}/attachments/8225143/8356087.png)
+ ![]({{site.baseurl}}/attachments/8225143/8356087.png)
 
-The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class ([more info about X-Cart classnames]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)) and this guide describes how you can apply changes to it.
+The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class ({% link "more info about X-Cart classnames" S1RinW3Qv %}) and this guide describes how you can apply changes to it.
 
 # Table of Contents
 
@@ -24,8 +26,8 @@ The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class 
 
 # Implementation
 
-1.  [Create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). We are creating module with developer ID **Tony** and module ID **AdminMenuDemo**.
-2.  [Decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\Menu\Admin\TopMenu` class in your module. We are creating the `<X-Cart>/classes/XLite/Module/Tony/AdminMenuDemo/View/Menu/Admin/TopMenu.php` file with the following content:
+1.  {% link "Create an empty module" H1Qu2b27w %}. We are creating module with developer ID **Tony** and module ID **AdminMenuDemo**.
+2.  {% link "Decorate" rkE_3bnXw %} the `\XLite\View\Menu\Admin\TopMenu` class in your module. We are creating the `<X-Cart>/classes/XLite/Module/Tony/AdminMenuDemo/View/Menu/Admin/TopMenu.php` file with the following content:
 
     {% highlight php %}{% raw %}
     <?php
@@ -140,7 +142,7 @@ The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class 
     This piece of code should already be familiar to you.
 
 9.  Now it is time to re-deploy the store and check the results. You will see new menu items:  
-    ![]({{ site.baseurl }}/attachments/8225143/8356088.png)
+    ![]({{site.baseurl}}/attachments/8225143/8356088.png)
 
 # Module pack
 
@@ -148,5 +150,5 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [admin-area-menu-items.png]({{ site.baseurl }}/attachments/8225143/8356087.png) (image/png)  
-![](images/icons/bullet_blue.gif) [admin-area-custom-menu.png]({{ site.baseurl }}/attachments/8225143/8356088.png) (image/png)
+![](images/icons/bullet_blue.gif) [admin-area-menu-items.png]({{site.baseurl}}/attachments/8225143/8356087.png) (image/png)  
+![](images/icons/bullet_blue.gif) [admin-area-custom-menu.png]({{site.baseurl}}/attachments/8225143/8356088.png) (image/png)

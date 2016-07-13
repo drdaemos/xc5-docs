@@ -2,7 +2,7 @@
 
   <div class="banner-menu ui large secondary inverted menu">
     <div class="ui container">
-      <a class="header item" href="{{ site.baseurl }}/{{ lang_current }}">
+      <a class="header item" href="{{ site.baseurl }}/{{ page.lang }}">
         <img src="{{ '/images/xcart-logo.png' | prepend: site.baseurl }}">
         {{ site.title }}
       </a>
@@ -30,8 +30,8 @@
           <span class="text">{{ site.lang[page.lang] }}</span>
           <div class="menu">
             {% for item in site.lang %}
-              {% assign lang_current_part = lang_current | append: '/' %}
-              {% if item[0] == lang_current %}
+              {% assign lang_current_part = page.lang | append: '/' %}
+              {% if item[0] == page.lang %}
                 <div class="item">{{ item[1] }}</div>
               {% else %}
                 <a class="item" href="{{ page.url | remove_first: lang_current_part | prepend: item[0] | prepend: '/' | prepend: site.baseurl }}">{{ item[1] }}</a>

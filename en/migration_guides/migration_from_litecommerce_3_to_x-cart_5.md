@@ -1,12 +1,14 @@
 ---
+identifier: r1f-n-37D
 layout: article_with_sidebar
 lang: en
 title: 'Migration from Litecommerce 3 to X-Cart 5'
-categories: [migration_guides]
+categories:
+  - Migration guides
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -31,16 +33,16 @@ This document describes the process of upgrade Litecommerce 3 to X-Cart 5.
 2.  Open the page 'Manage add-ons' in you admin area (admin.php?target=addons_list_installed)
 3.  Click the 'Upload add-on' button and follow the instructions
 
-**** ![]({{ site.baseurl }}/attachments/3309570/7602238.png?effects=drop-shadow)****
+**** ![]({{site.baseurl}}/attachments/3309570/7602238.png?effects=drop-shadow)****
 
 # Step 2\. Open the Migrate2XCN module settings page and enter your X-Cart 5 license key.
 
 Once you have installed the Migrate2XCN module, go to its settings:
 
-**** ![]({{ site.baseurl }}/attachments/3309570/7602239.png?effects=drop-shadow)****
+**** ![]({{site.baseurl}}/attachments/3309570/7602239.png?effects=drop-shadow)****
 
 and insert your X-Cart 5 license key there (you should have received this license key by email from X-Cart team)****  
- ![]({{ site.baseurl }}/attachments/3309570/7602240.png?effects=drop-shadow)****
+ ![]({{site.baseurl}}/attachments/3309570/7602240.png?effects=drop-shadow)****
 
 # Step 3\. Change the marketplace URL in the file config.php.
 
@@ -62,31 +64,31 @@ and insert your X-Cart 5 license key there (you should have received this licens
 
 Open the page admin.php?target=addons_list_marketplace&action=clear_cache
 
-**** ![]({{ site.baseurl }}/attachments/3309570/7602241.png?effects=drop-shadow)****
+**** ![]({{site.baseurl}}/attachments/3309570/7602241.png?effects=drop-shadow)****
 
 # Step 5\. Upgrade your store.
 
 After that you will see one of the links ('Updates available' or 'Upgrade available') in the header of the Admin area.
 
-![]({{ site.baseurl }}/attachments/3309570/7602242.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/3309570/7602242.png?effects=drop-shadow)
 
 Click this link and upgrade your Litecommerce 3 store.
 
-![]({{ site.baseurl }}/attachments/3309570/7602243.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/3309570/7602243.png?effects=drop-shadow)
 
-![]({{ site.baseurl }}/attachments/3309570/7602244.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/3309570/7602244.png?effects=drop-shadow)
 
 After that you will see the following message:
 
-![]({{ site.baseurl }}/attachments/3309570/7602245.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/3309570/7602245.png?effects=drop-shadow)
 
 Stock Chart and Wishlist modules are just for example here. You may see other modules during this step as it depends on which modules have been installed in your Litecommerce 3\. At least, the module Migrate2XCN will be displayed there. Do not worry, this is correct behaviour. Click the **Continue** button and follow further upgrade steps.
 
 # Step 6\. Activate the license key.
 
-![]({{ site.baseurl }}/attachments/3309570/7602246.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/3309570/7602246.png?effects=drop-shadow)
 
-![]({{ site.baseurl }}/attachments/3309570/7602247.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/3309570/7602247.png?effects=drop-shadow)
 
 # Step 7\. Update your etc/config.php file.
 
@@ -117,13 +119,13 @@ Try to clear the browser's cache.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step1.png]({{ site.baseurl }}/attachments/3309570/7602238.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step2.png]({{ site.baseurl }}/attachments/3309570/7602239.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step3.png]({{ site.baseurl }}/attachments/3309570/7602240.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step4.png]({{ site.baseurl }}/attachments/3309570/7602241.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step5.png]({{ site.baseurl }}/attachments/3309570/7602242.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step6.png]({{ site.baseurl }}/attachments/3309570/7602243.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step7.png]({{ site.baseurl }}/attachments/3309570/7602244.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step8.png]({{ site.baseurl }}/attachments/3309570/7602245.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step9.png]({{ site.baseurl }}/attachments/3309570/7602246.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step10.png]({{ site.baseurl }}/attachments/3309570/7602247.png) (image/png)
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step1.png]({{site.baseurl}}/attachments/3309570/7602238.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step2.png]({{site.baseurl}}/attachments/3309570/7602239.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step3.png]({{site.baseurl}}/attachments/3309570/7602240.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step4.png]({{site.baseurl}}/attachments/3309570/7602241.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step5.png]({{site.baseurl}}/attachments/3309570/7602242.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step6.png]({{site.baseurl}}/attachments/3309570/7602243.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step7.png]({{site.baseurl}}/attachments/3309570/7602244.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step8.png]({{site.baseurl}}/attachments/3309570/7602245.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step9.png]({{site.baseurl}}/attachments/3309570/7602246.png) (image/png)  
+![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step10.png]({{site.baseurl}}/attachments/3309570/7602247.png) (image/png)

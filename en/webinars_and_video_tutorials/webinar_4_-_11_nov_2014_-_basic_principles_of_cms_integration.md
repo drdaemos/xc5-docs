@@ -1,12 +1,14 @@
 ---
+identifier: S1wc2bhXP
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 4 - 11 Nov 2014 - Basic principles of CMS integration'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -58,7 +60,7 @@ echo $product->getName();
     echo $product->getName();
     {% endraw %}{% endhighlight %}
 
-    _More information about pulling data from database is [here]({{ baseurl_lang }}/basics/searching_entities_in_repositories/{{ baseurl_lang }}/index.html)._
+    _More information about pulling data from database is {% link "here" S1GH2-nmv %}._
 
 The same way you can use absolutely all public methods of X-Cart in your scripts: create and update objects, get data out of these objects.
 
@@ -109,7 +111,7 @@ $widget->display();
     </div>
     </div>
     {% endraw %}{% endhighlight %}
-4.  The same approach can be used for every other X-Cart viewer class. All [viewer classes]({{ baseurl_lang }}/basics/working_with_viewer_classes.html) are located in `<X-Cart>/classes/XLite/Viewer` folder. Here is working example:
+4.  The same approach can be used for every other X-Cart viewer class. All {% link "viewer classes" rkeo2b3XP %} are located in `<X-Cart>/classes/XLite/Viewer` folder. Here is working example:
 
     {% highlight php %}{% raw %}
     <?php
@@ -163,13 +165,13 @@ In order to overcome these problems, we will need an integration module in the X
 
 ## Step 1\. Create an empty module
 
-There is already [an article]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) describing how you can achieve it. I already have a module with developer ID **Tony** and module ID **CMSIntegration**.
+There is already {% link "an article" H1Qu2b27w %} describing how you can achieve it. I already have a module with developer ID **Tony** and module ID **CMSIntegration**.
 
 ## Step 2\. Point links to X-Cart installation
 
 It can be achieved by decoration of the `\XLite\Core\Converter` class that contains `buildURL()` method. This method is used throughout entire X-Cart code in order to build proper X-Cart URLs.
 
-We are running the [following macro]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-Decoratingclass):
+We are running the {% link "following macro" B1ni2bhQD#X-CartSDK-Decoratingclass %}:
 
 {% highlight php %}{% raw %}
 ../../next-sdk/devkit/macros/decorate.php --module=Tony\\CMSIntegration --class=classes/XLite/Core/Converter.php

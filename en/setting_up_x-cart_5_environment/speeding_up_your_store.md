@@ -1,12 +1,14 @@
 ---
+identifier: B1Z_nb2QD
 layout: article_with_sidebar
 lang: en
 title: 'Speeding up your store'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -49,9 +51,9 @@ The former two options allow X-Cart to compound most CSS files into a single one
 
 The **Use widget cache** option enables the internal cache of viewer classes, which is a great way to speed up the opening of pages that have static data, like product or category pages. This allows to skip some calculations if no changes have been made to the content.
 
-If you have custom mods, you may consider [making some of their widgets cached]({{ baseurl_lang }}/design_changes/making_your_custom_widget_cached.html) as well.
+If you have custom mods, you may consider {% link "making some of their widgets cached" H1GAiWhmD %} as well.
 
-![]({{ site.baseurl }}/attachments/8224875/9437214.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/8224875/9437214.png?effects=drop-shadow)
 
 ## Step 2\. Disable any unused modules
 
@@ -107,6 +109,6 @@ Alternatively, you can adjust these settings in the MySQL configuration file. A 
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [aggregate-css.png]({{ site.baseurl }}/attachments/8224875/8355887.png) (image/png)  
-![](images/icons/bullet_blue.gif) [use-view-cache.png]({{ site.baseurl }}/attachments/8224875/8355888.png) (image/png)  
-![](images/icons/bullet_blue.gif) [X Cart online store builder Look Feel.png]({{ site.baseurl }}/attachments/8224875/9437214.png) (image/png)
+![](images/icons/bullet_blue.gif) [aggregate-css.png]({{site.baseurl}}/attachments/8224875/8355887.png) (image/png)  
+![](images/icons/bullet_blue.gif) [use-view-cache.png]({{site.baseurl}}/attachments/8224875/8355888.png) (image/png)  
+![](images/icons/bullet_blue.gif) [X Cart online store builder Look Feel.png]({{site.baseurl}}/attachments/8224875/9437214.png) (image/png)

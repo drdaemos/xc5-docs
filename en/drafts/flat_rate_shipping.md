@@ -1,10 +1,12 @@
 ---
+identifier: BJqoW37P
 layout: article_with_sidebar
 lang: en
 title: 'Flat rate shipping'
-categories: [drafts]
+categories:
+  - Drafts
 
 ---
 
-
+{% include global.html %}
 

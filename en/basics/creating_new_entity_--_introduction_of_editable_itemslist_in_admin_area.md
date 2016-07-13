@@ -1,12 +1,14 @@
 ---
+identifier: ryWDjW3Qw
 layout: article_with_sidebar
 lang: en
 title: 'Creating new entity -- Introduction of editable ItemsList in admin area'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -27,7 +29,7 @@ This article describes how developers can create new entity in X-Cart store. Thi
 
 # Implementation
 
-First of all we [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **NewEntityDemo**. In this module, we [create a page]({{ baseurl_lang }}/basics/creating_new_page.html) `target=quick_messages` in admin area. We create:
+First of all we {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **NewEntityDemo**. In this module, we {% link "create a page" B1zwoW37P %} `target=quick_messages` in admin area. We create:
 
 *   empty controller class `\XLite\Module\Tony\NewEntityDemo\Controller\Admin\QuickMessages`
 *   viewer class `\XLite\Module\Tony\NewEntityDemo\View\Page\Admin\QuickMessages` with the following content: 
@@ -70,7 +72,7 @@ First of all we [create an empty module]({{ baseurl_lang }}/getting_started/step
 
 ## Creating Quick Message entity
 
-In order to create a new entity in X-Cart, we have to create a new [Model class]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html). We create `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/QuickMessage.php` file with the following content: 
+In order to create a new entity in X-Cart, we have to create a new {% link "Model class" S1RinW3Qv %}. We create `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/QuickMessage.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -167,7 +169,7 @@ We have created the **Model** class and now we need to create **repository** cla
 
 ## Creating Repository class
 
-Repository class is used in order to pull entities' info from the database. We need an implementation of [`search()` method]({{ baseurl_lang }}/basics/searching_entities_in_repositories/search()_method.html) in it in order to allow proper work with ItemsList.
+Repository class is used in order to pull entities' info from the database. We need an implementation of {% link "`search()` method" S1Qh5WhQP %} in it in order to allow proper work with ItemsList.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/Repo/QuickMessage.php` file with the following content: 
 
@@ -241,7 +243,7 @@ Now it is time to add a form where you can create, edit or delete quick messages
 
 Let us start with creating **ItemsList**. ItemsList is a widget that displays info about entities in the structured format. Our widget should produce a result similar to the snapshot below: 
 
-![]({{ site.baseurl }}/attachments/8225303/8356165.png)
+![]({{site.baseurl}}/attachments/8225303/8356165.png)
 
 As you may have noticed, admin area of X-Cart is full of similar **ItemsLists**. Moreover, product and category lists in storefront are ItemsLists too, even though they look a bit differently.
 
@@ -426,17 +428,17 @@ Finally, we open the **target=quick_messages** page with updated data.
 
 ## Checking intermittent results
 
-Now we are done with the admin part of this mod and we can create our quick messages in admin area. Re-deploy the store and go to `admin.php?target=quick_messages` page. You should see the following result:![]({{ site.baseurl }}/attachments/8225303/8356166.png)
+Now we are done with the admin part of this mod and we can create our quick messages in admin area. Re-deploy the store and go to `admin.php?target=quick_messages` page. You should see the following result:![]({{site.baseurl}}/attachments/8225303/8356166.png)
 
-Of course, we do not have any quick messages yet, but if you click **Create** button, you will be able to create some:![]({{ site.baseurl }}/attachments/8225303/8356167.png)
+Of course, we do not have any quick messages yet, but if you click **Create** button, you will be able to create some:![]({{site.baseurl}}/attachments/8225303/8356167.png)
 
 Once you add some quick messages, do not forget to save results by clicking **Save changes** button.
 
 ## Showing quick messages in customer area
 
-We will show three latest quick messages in [sidebar box]({{ baseurl_lang }}/design_changes/creating_sidebar_menu_in_customer_area.html) in the left-hand side menu in storefront.
+We will show three latest quick messages in {% link "sidebar box" rkf_sbnmP %} in the left-hand side menu in storefront.
 
-First, we create the [viewer class]({{ baseurl_lang }}/basics/working_with_viewer_classes.html). For that we create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/QuickMessageMenu.php` file with the following content: 
+First, we create the {% link "viewer class" rkeo2b3XP %}. For that we create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/QuickMessageMenu.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -468,7 +470,7 @@ class QuickMessageMenu extends \XLite\View\SideBarBox
 }
 {% endraw %}{% endhighlight %}
 
-The implementation is very similar to one showed in the basic guide of [creating sidebar menu in storefront](Creating-sidebar-menu-in-customer-area_7505759.html), but there is also `getMessages()` method. This method is aimed to pull three latest quick messages from the database. However, `findNewest()` method does not exist in our `\XLite\Module\Tony\NewEntityDemo\Model\Repo\QuickMessage` class yet and we have to create it.
+The implementation is very similar to one showed in the basic guide of {% link "creating sidebar menu in storefront" Creating-sidebar-menu-in-customer-area_7505759.html %}, but there is also `getMessages()` method. This method is aimed to pull three latest quick messages from the database. However, `findNewest()` method does not exist in our `\XLite\Module\Tony\NewEntityDemo\Model\Repo\QuickMessage` class yet and we have to create it.
 
 We go to the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/Repo/QuickMessage.php` file and add one more method there: 
 
@@ -501,7 +503,7 @@ This code can be read as follows. If there are quick messages – `{if:getMessa
 
 ## Checking the final results
 
-We are done with this mod and we have to re-deploy the store one more time. If you have any active quick messages in admin area, you will see the following picture in the storefront: ![]({{ site.baseurl }}/attachments/8225303/8356168.png)
+We are done with this mod and we have to re-deploy the store one more time. If you have any active quick messages in admin area, you will see the following picture in the storefront: ![]({{site.baseurl}}/attachments/8225303/8356168.png)
 
 # Module pack
 
@@ -509,7 +511,7 @@ You can download the code of this module from here: [https://dl.dropboxusercont
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [quick-messages-items-list.png]({{ site.baseurl }}/attachments/8225303/8356165.png) (image/png)  
-![](images/icons/bullet_blue.gif) [empty-quick-messages-admin.png]({{ site.baseurl }}/attachments/8225303/8356166.png) (image/png)  
-![](images/icons/bullet_blue.gif) [quick-messages-admin.png]({{ site.baseurl }}/attachments/8225303/8356167.png) (image/png)  
-![](images/icons/bullet_blue.gif) [quick-messages-customer.png]({{ site.baseurl }}/attachments/8225303/8356168.png) (image/png)
+![](images/icons/bullet_blue.gif) [quick-messages-items-list.png]({{site.baseurl}}/attachments/8225303/8356165.png) (image/png)  
+![](images/icons/bullet_blue.gif) [empty-quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356166.png) (image/png)  
+![](images/icons/bullet_blue.gif) [quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356167.png) (image/png)  
+![](images/icons/bullet_blue.gif) [quick-messages-customer.png]({{site.baseurl}}/attachments/8225303/8356168.png) (image/png)

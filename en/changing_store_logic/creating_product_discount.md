@@ -1,16 +1,18 @@
 ---
+identifier: rJ_i-2mv
 layout: article_with_sidebar
 lang: en
 title: 'Creating product discount'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-Previously we have learned how to create a [global discount]({{ baseurl_lang }}/changing_store_logic/creating_global_discount.html) and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as
+Previously we have learned how to create a {% link "global discount" B1PsW37P %} and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as
 
 *   a **10% off** label on product lists;
 *   an **old price** label with crossed old price near product price.
@@ -24,7 +26,7 @@ Previously we have learned how to create a [global discount]({{ baseurl_lang }}/
 
 # Implementation
 
-The main difference between this module and [one that described global discount](Creating-global-discount_8225204.html) is that in this module we will simply alter product prices and then adjust appearance of the price in order to show that it has been reduced. In that sense, if we have a $10 product and want to apply 10% discount to it, then:
+The main difference between this module and {% link "one that described global discount" Creating-global-discount_8225204.html %} is that in this module we will simply alter product prices and then adjust appearance of the price in order to show that it has been reduced. In that sense, if we have a $10 product and want to apply 10% discount to it, then:
 
 *   the database will still contain record about it having $10 price;
 *   product object will return price as $9, however;
@@ -32,7 +34,7 @@ The main difference between this module and [one that described global discount]
 
 Such an approach is quite convenient, because you can enable such module for a sale period, it will automatically apply needed discounts and once the sale is over, you just disable the module. No import/export for updating prices will be needed.
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ProductDiscountDemo**. Now we need to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) product [model]({{ baseurl_lang }}/basics/understanding_models.html) class `\XLite\Model\Product`, so we create the  
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ProductDiscountDemo**. Now we need to {% link "decorate" rkE_3bnXw %} product {% link "model" B1F3WnQv %} class `\XLite\Model\Product`, so we create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/Model/Product.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -135,7 +137,7 @@ Now the discount will be applied to products that start with A and we need to ad
 *   display **10% off** label near such products on product lists;
 *   display **Old price** label near such product prices.
 
-In order to display **10% off** label on product lists, we have to decorate the `\XLite\View\ItemsList\Product\Customer\ACustomer` [ItemsList class]({{ baseurl_lang }}/basics/itemslist_introduction_--_showing_products_on_a_page/{{ baseurl_lang }}/index.html). We create the  
+In order to display **10% off** label on product lists, we have to decorate the `\XLite\View\ItemsList\Product\Customer\ACustomer` {% link "ItemsList class" HkNpibnXv %}. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/ItemsList/Product/Customer/ACustomer.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -185,7 +187,7 @@ Now, let us add **Old price** label near price display of discounted products. W
 <li IF="{isMyDiscount()}" class="old-price">Old price: <span class="price old-price">{formatPrice(getOldPrice(),null,1):h}</span></li>
 {% endraw %}{% endhighlight %}
 
-and it will be assigned to the `product.plain_price` [view list]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html), so it will be displayed below main product price in store-front. Since we use two methods – `isMyDiscount()` and `getOldPrice()` – that do not exist in the default implementation of the `\XLite\View\Price` [viewer class]({{ baseurl_lang }}/basics/working_with_viewer_classes.html)– this viewer class manages the display of `product.plain_price` view list –, we have to create such methods by decorating `\XLite\View\Price` viewer. We create the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/Price.php` file with the following content: 
+and it will be assigned to the `product.plain_price` {% link "view list" HkDO3Wh7v %}, so it will be displayed below main product price in store-front. Since we use two methods – `isMyDiscount()` and `getOldPrice()` – that do not exist in the default implementation of the `\XLite\View\Price` {% link "viewer class" rkeo2b3XP %}– this viewer class manages the display of `product.plain_price` view list –, we have to create such methods by decorating `\XLite\View\Price` viewer. We create the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/Price.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -212,7 +214,7 @@ abstract class Price extends \XLite\View\Price implements \XLite\Base\IDecorator
 
 This implementation is just proxying product methods – `isMyDiscount()` and `getPriceBeforeMyProductDiscount()` – from our enhanced version of `\XLite\Model\Product` class.
 
-Finally, we need to apply several CSS styles in order to make our **Old price** label look smooth. We [add CSS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html) by creating the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/AView.php` file with the following content: 
+Finally, we need to apply several CSS styles in order to make our **Old price** label look smooth. We {% link "add CSS file" rkvxo-3mP %} by creating the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -251,11 +253,11 @@ ul.product-price li.old-price span.old-price {
 That is it. Now we need to re-deploy the store and check the results in store-front.
 
 Your product list will have discount labels and old price crossed:  
-![]({{ site.baseurl }}/attachments/8225422/8356196.png)
+![]({{site.baseurl}}/attachments/8225422/8356196.png)
 
-Your product details page will also have old price crossed, because product price is displayed by the same `\XLite\View\Price` widget:![]({{ site.baseurl }}/attachments/8225422/8356197.png)
+Your product details page will also have old price crossed, because product price is displayed by the same `\XLite\View\Price` widget:![]({{site.baseurl}}/attachments/8225422/8356197.png)
 
-Finally, since we decorated the most basic product ItemsList class `\XLite\View\ItemsList\Product\Customer\ACustomer`, absolutely all product lists in customer area are having **10% off** labels, even those ones that are produced by other modules, e.g. **Customers who bought this product also bought **product list by **Product Advisor** module: ![]({{ site.baseurl }}/attachments/8225422/8356198.png)
+Finally, since we decorated the most basic product ItemsList class `\XLite\View\ItemsList\Product\Customer\ACustomer`, absolutely all product lists in customer area are having **10% off** labels, even those ones that are produced by other modules, e.g. **Customers who bought this product also bought **product list by **Product Advisor** module: ![]({{site.baseurl}}/attachments/8225422/8356198.png)
 
 # Module example
 
@@ -263,6 +265,6 @@ You can download this module pack from here: [https://dl.dropboxusercontent.com
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [discount-items-list.png]({{ site.baseurl }}/attachments/8225422/8356196.png) (image/png)  
-![](images/icons/bullet_blue.gif) [product-details-page-discount.png]({{ site.baseurl }}/attachments/8225422/8356197.png) (image/png)  
-![](images/icons/bullet_blue.gif) [customers-who-bought-discount.png]({{ site.baseurl }}/attachments/8225422/8356198.png) (image/png)
+![](images/icons/bullet_blue.gif) [discount-items-list.png]({{site.baseurl}}/attachments/8225422/8356196.png) (image/png)  
+![](images/icons/bullet_blue.gif) [product-details-page-discount.png]({{site.baseurl}}/attachments/8225422/8356197.png) (image/png)  
+![](images/icons/bullet_blue.gif) [customers-who-bought-discount.png]({{site.baseurl}}/attachments/8225422/8356198.png) (image/png)

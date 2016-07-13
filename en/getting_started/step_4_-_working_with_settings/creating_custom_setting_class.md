@@ -1,16 +1,18 @@
 ---
+identifier: HkH8iZ3XP
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom setting class'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-This article describes how developer can create a [complex setting class]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/{{ baseurl_lang }}/index.html) in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
+This article describes how developer can create a {% link "complex setting class" HyBu3W3XD %} in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
 
 # Table of Contents
 
@@ -22,7 +24,7 @@ This article describes how developer can create a [complex setting class]({{ bas
 
 # Implementation
 
-We start with [creating a module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **FormFieldDemo**. Then, we [create a page]({{ baseurl_lang }}/basics/creating_new_page.html) **target=form_field** in admin area. During this process, we create:
+We start with {% link "creating a module" H1Qu2b27w %} with developer ID **Tony** and module ID **FormFieldDemo**. Then, we {% link "create a page" B1zwoW37P %} **target=form_field** in admin area. During this process, we create:
 
 *   empty controller class `\XLite\Module\Tony\FormFieldDemo\Controller\Admin\FormField`;
 *   viewer class `\XLite\Module\Tony\FormFieldDemo\View\Page\Admin\FormField` with the following content:
@@ -92,7 +94,7 @@ In order to display this setting widget on our page, we go to the `<X-Cart>/skin
 {% endraw %}{% endhighlight %}
 
 If we leave the code like this, X-Cart will display this setting with missed label:   
-![]({{ site.baseurl }}/attachments/1048617/8356169.png)
+![]({{site.baseurl}}/attachments/1048617/8356169.png)
 
 Instead, we can either define this setting to be displayed without label: 
 
@@ -110,7 +112,7 @@ Our module pack will contain both variants.
 
 # Result
 
-Now we re-deploy the store and once it is finished we go to `admin.php?target=form_field` page in order to check the result. You should something like this: ![]({{ site.baseurl }}/attachments/1048617/8356170.png)
+Now we re-deploy the store and once it is finished we go to `admin.php?target=form_field` page in order to check the result. You should something like this: ![]({{site.baseurl}}/attachments/1048617/8356170.png)
 
 # Module pack
 
@@ -118,14 +120,14 @@ You can download an example of this module from here: [https://dl.dropboxuserco
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [1.png]({{ site.baseurl }}/attachments/1048617/1572866.png) (image/png)  
-![](images/icons/bullet_blue.gif) [1.png]({{ site.baseurl }}/attachments/1048617/1572870.png) (image/png)  
-![](images/icons/bullet_blue.gif) [2.png]({{ site.baseurl }}/attachments/1048617/1572867.png) (image/png)  
-![](images/icons/bullet_blue.gif) [3.png]({{ site.baseurl }}/attachments/1048617/1572868.png) (image/png)  
-![](images/icons/bullet_blue.gif) [4.png]({{ site.baseurl }}/attachments/1048617/1572869.png) (image/png)  
-![](images/icons/bullet_blue.gif) [1.png]({{ site.baseurl }}/attachments/1048617/1572865.png) (image/png)  
-![](images/icons/bullet_blue.gif) [5.png]({{ site.baseurl }}/attachments/1048617/1572871.png) (image/png)  
-![](images/icons/bullet_blue.gif) [6.png]({{ site.baseurl }}/attachments/1048617/1572872.png) (image/png)  
-![](images/icons/bullet_blue.gif) [7.png]({{ site.baseurl }}/attachments/1048617/1572873.png) (image/png)  
-![](images/icons/bullet_blue.gif) [setting-with-missed-label.png]({{ site.baseurl }}/attachments/1048617/8356169.png) (image/png)  
-![](images/icons/bullet_blue.gif) [custom-setting.png]({{ site.baseurl }}/attachments/1048617/8356170.png) (image/png)
+![](images/icons/bullet_blue.gif) [1.png]({{site.baseurl}}/attachments/1048617/1572866.png) (image/png)  
+![](images/icons/bullet_blue.gif) [1.png]({{site.baseurl}}/attachments/1048617/1572870.png) (image/png)  
+![](images/icons/bullet_blue.gif) [2.png]({{site.baseurl}}/attachments/1048617/1572867.png) (image/png)  
+![](images/icons/bullet_blue.gif) [3.png]({{site.baseurl}}/attachments/1048617/1572868.png) (image/png)  
+![](images/icons/bullet_blue.gif) [4.png]({{site.baseurl}}/attachments/1048617/1572869.png) (image/png)  
+![](images/icons/bullet_blue.gif) [1.png]({{site.baseurl}}/attachments/1048617/1572865.png) (image/png)  
+![](images/icons/bullet_blue.gif) [5.png]({{site.baseurl}}/attachments/1048617/1572871.png) (image/png)  
+![](images/icons/bullet_blue.gif) [6.png]({{site.baseurl}}/attachments/1048617/1572872.png) (image/png)  
+![](images/icons/bullet_blue.gif) [7.png]({{site.baseurl}}/attachments/1048617/1572873.png) (image/png)  
+![](images/icons/bullet_blue.gif) [setting-with-missed-label.png]({{site.baseurl}}/attachments/1048617/8356169.png) (image/png)  
+![](images/icons/bullet_blue.gif) [custom-setting.png]({{site.baseurl}}/attachments/1048617/8356170.png) (image/png)

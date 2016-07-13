@@ -1,12 +1,14 @@
 ---
+identifier: HkPuiZ3Xv
 layout: article_with_sidebar
 lang: en
 title: 'Dealing with X-Cart fatal errors'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

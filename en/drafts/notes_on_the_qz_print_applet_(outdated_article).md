@@ -1,12 +1,14 @@
 ---
+identifier: Sk-FcZnmv
 layout: article_with_sidebar
 lang: en
 title: 'Notes on the QZ Print applet (Outdated article)'
-categories: [drafts]
+categories:
+  - Drafts
 
 ---
 
-
+{% include global.html %}
 
 The module POS system for X-Cart employs a Java based web applet named QZ Print ([https://code.google.com/p/jzebra/](https://code.google.com/p/jzebra/)) to connect with the printers used to print barcodes and receipts. After the module has been installed, the applet files qz-print.jar and qz-print_jnlp.jnlp can be found in the skins\admin\en\modules\XC\PosSystem\common\lib directory on the server where your X-Cart installation is running. Being a Java based applet, QZ Print operates on the client side: from the said directory on the server, the applet is loaded via the web browser onto the computer of the POS system module user where it is employed to discover the printers installed on the system and to send raw commands directly to these printers. The loading of the applet in the client browser happens every time the user opens or refreshes a page that involves connecting to the Barcode or Receipt printers. This includes:
 
@@ -20,19 +22,19 @@ The applet download size is rather small (around 100 kB); however, it takes some
 
 1.  Initial state:
 
-    ![]({{ site.baseurl }}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_wait.png")
+    ![]({{site.baseurl}}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_wait.png")
 
 2.  Applet has been found and is being loaded:
 
-    ![]({{ site.baseurl }}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_loading.png")
+    ![]({{site.baseurl}}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_loading.png")
 
 3.  Applet has been loaded; searching for printers:
 
-    ![]({{ site.baseurl }}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_search_printers.png")
+    ![]({{site.baseurl}}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_search_printers.png")
 
 4.  One or more printers have been found:
 
-    ![]({{ site.baseurl }}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_printers_found.png")
+    ![]({{site.baseurl}}/plugins/servlet/confluence/placeholder/unknown-attachment "qzprint_printers_found.png")
 
     (The status shown above is used for the ‘“Pos System” module settings’ page; the status displayed on the Barcode page uses the actual name of the barcode printer).
 
@@ -40,5 +42,5 @@ On the Invoice page, the applet loading status is not visible to users; however,
 
 _Related pages:_
 
-*   [Configuring the POS system module](/pages/createpage.action?spaceKey=XDD&title=Configuring+the+POS+system+module&linkCreation=true&fromPageId=7504386)
-*   [Getting started with POS system for X-Cart]({{ baseurl_lang }}/user_manual/modules/pos_system_for_x-cart/getting_started_with_pos_system_for_x-cart/{{ baseurl_lang }}/index.html)
+*   {% link "Configuring the POS system module" /pages/createpage.action?spaceKey=XDD&title=Configuring+the+POS+system+module&linkCreation=true&fromPageId=7504386 %}
+*   {% link "Getting started with POS system for X-Cart" r1sqiWh7v %}

@@ -1,16 +1,18 @@
 ---
+identifier: Sy39n-hQD
 layout: article_with_sidebar
 lang: en
 title: 'Working with footer'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-This article describes how X-Cart developers can change content of footer area in customer store-front of X-Cart that by default looks like this:![]({{ site.baseurl }}/attachments/8225291/8356161.png)
+This article describes how X-Cart developers can change content of footer area in customer store-front of X-Cart that by default looks like this:![]({{site.baseurl}}/attachments/8225291/8356161.png)
 
 For the sake of example, let us add a **Visa/MasterCard** logo to the left part of the footer. First we have to have a look at how default HTML code of the footer area look like:
 
@@ -82,7 +84,7 @@ Once we apply this change to footer's HTML code, we will be able to specify `flo
 
 Content of `<div id="footer-area>` section is defined by the `<X-Cart>/skins/default/en/layout/main.footer.tpl` template. Our module should alter its content as it was described in the **Introduction** section.
 
-We [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **FooterDemo**. Our **Main.php** file must contain a directive to [remove the default implementation]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html#Step2-applyingdesignchanges-Hidingtemplatesandwidgets) of   
+We {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **FooterDemo**. Our **Main.php** file must contain a directive to {% link "remove the default implementation" HkDO3Wh7v#Step2-applyingdesignchanges-Hidingtemplatesandwidgets %} of   
 `<X-Cart>/skins/default/en/layout/main.footer.tpl` template as we would like to create our own version of it, so we add the following method into the  
 `<X-Cart>/classes/XLite/Module/Tony/FooterDemo/Main.php` file: 
 
@@ -136,7 +138,7 @@ We change it a little, so it would fit our requirements for HTML code from **Int
 
 Of course, do not forget to upload **visa.jpg** image into the `<X-Cart>/skins/default/en/modules/Tony/FooterDemo/img/` folder.
 
-Our mod is almost done and we only need to apply several CSS rules in order to make the appearance of updated footer smooth. We are going to [add new CSS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html) to our mod.
+Our mod is almost done and we only need to apply several CSS rules in order to make the appearance of updated footer smooth. We are going to {% link "add new CSS file" rkvxo-3mP %} to our mod.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/FooterDemo/View/AView.php` file with the following content: 
 
@@ -174,7 +176,7 @@ In addition to that, we have to create aforementioned CSS file and we create the
 }
 {% endraw %}{% endhighlight %}
 
-That is it. Now we need to re-deploy the store and check the results in customer store-front. It should be as follows:![]({{ site.baseurl }}/attachments/8225291/8356162.png)
+That is it. Now we need to re-deploy the store and check the results in customer store-front. It should be as follows:![]({{site.baseurl}}/attachments/8225291/8356162.png)
 
 # Module pack
 
@@ -182,5 +184,5 @@ You can download this mod's example from here: [https://dl.dropboxusercontent.c
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [default-footer.png]({{ site.baseurl }}/attachments/8225291/8356161.png) (image/png)  
-![](images/icons/bullet_blue.gif) [custom-footer-in-customer-area.png]({{ site.baseurl }}/attachments/8225291/8356162.png) (image/png)
+![](images/icons/bullet_blue.gif) [default-footer.png]({{site.baseurl}}/attachments/8225291/8356161.png) (image/png)  
+![](images/icons/bullet_blue.gif) [custom-footer-in-customer-area.png]({{site.baseurl}}/attachments/8225291/8356162.png) (image/png)

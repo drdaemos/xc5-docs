@@ -1,12 +1,14 @@
 ---
+identifier: r1XGs-27w
 layout: article_with_sidebar
 lang: en
 title: 'Adding third column'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -21,12 +23,12 @@ This article gives an example of how to create the right sidebar and hide the le
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **RightColumnDemo**. The fact whether to show left and right sidebars is defined in the `\XLite\View\Controller` ([more about classnames]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html) in X-Cart) class: 
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **RightColumnDemo**. The fact whether to show left and right sidebars is defined in the `\XLite\View\Controller` ({% link "more about classnames" S1RinW3Qv %} in X-Cart) class: 
 
 *   `isSidebarFirstVisible()` defines whether to show left sidebar;
 *   `isSidebarSecondVisible()` defines whether to show right sidebar.
 
-In our module we need to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) this class and override these methods. For that we create the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/View/Controller.php` file with the following content: 
+In our module we need to {% link "decorate" rkE_3bnXw %} this class and override these methods. For that we create the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/View/Controller.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -70,7 +72,7 @@ Now we need to move all widgets from left to right sidebar and we can achieve it
 
 and it will move all templates and widget classes from `sidebar.first` (left column) to `sidebar.second` (right column) view list.
 
-Finally, we need to [add CSS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html) that will make look of right column smooth. We create the `<X-Cart>/skins/default/en/modules/Tony/RightColumnDemo/css/style.css` file with the following content: 
+Finally, we need to {% link "add CSS file" rkvxo-3mP %} that will make look of right column smooth. We create the `<X-Cart>/skins/default/en/modules/Tony/RightColumnDemo/css/style.css` file with the following content: 
 
 {% highlight php %}{% raw %}
 #sidebar-second {
@@ -102,7 +104,7 @@ abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
 }
 {% endraw %}{% endhighlight %}
 
-Now we are done with the mod and have to re-deploy the store. Once it is done, check your customer area and it should look like this:![]({{ site.baseurl }}/attachments/524300/8356186.png)
+Now we are done with the mod and have to re-deploy the store. Once it is done, check your customer area and it should look like this:![]({{site.baseurl}}/attachments/524300/8356186.png)
 
 _Note: using the same approach you can create three column layout or a vertical layout without sidebars._
 
@@ -112,4 +114,4 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [right-column.png]({{ site.baseurl }}/attachments/524300/8356186.png) (image/png)
+![](images/icons/bullet_blue.gif) [right-column.png]({{site.baseurl}}/attachments/524300/8356186.png) (image/png)

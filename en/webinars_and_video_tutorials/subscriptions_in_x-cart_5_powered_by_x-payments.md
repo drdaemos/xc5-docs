@@ -1,12 +1,14 @@
 ---
+identifier: H1_On-h7P
 layout: article_with_sidebar
 lang: en
 title: 'Subscriptions in X-Cart 5 powered by X-Payments'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

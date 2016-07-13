@@ -1,18 +1,20 @@
 ---
+identifier: SJ5fj-hmw
 layout: article_with_sidebar
 lang: en
 title: 'Basic guide to theme creation'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article aims to teach designers how they can create X-Cart skin using preemptive (or substitutional) template model. This guide will also introduce **Custom Skin** module and will give real life example of how to work with preemptive templates in X-Cart.
 
-Before you get started, we recommend learning the [basic designer guide]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html) from **Getting started** section.
+Before you get started, we recommend learning the {% link "basic designer guide" HkDO3Wh7v %} from **Getting started** section.
 
 # Table of Contents
 
@@ -26,7 +28,7 @@ Before you get started, we recommend learning the [basic designer guide]({{ base
 
 If we want to make our module to be a skin and dramatically change the X-Cart appearance, there is a special way how to do it:
 
-1.  [Create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). In this article, I will be using module with developer ID as **Tony** and module ID as **SkinDemo**.
+1.  {% link "Create an empty module" H1Qu2b27w %}. In this article, I will be using module with developer ID as **Tony** and module ID as **SkinDemo**.
 2.  Add the following method into your `Main.php` file 
 
     {% highlight php %}{% raw %}
@@ -53,7 +55,7 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
     {% highlight php %}{% raw %}
     Hello world! This is a piece of text to display as welcome message.
     {% endraw %}{% endhighlight %}
-7.  Check the store-front with re-deploying the store. It should display our welcome message there, while rest of the layout will be the same.![]({{ site.baseurl }}/attachments/8224814/8355867.png)
+7.  Check the store-front with re-deploying the store. It should display our welcome message there, while rest of the layout will be the same.![]({{site.baseurl}}/attachments/8224814/8355867.png)
 8.  _Important note: if you override templates that contain @ListChild directives, do not keep this directive in the overriding template. Otherwise X-Cart will include this template twice._
 
 # Module example
@@ -84,9 +86,9 @@ Let us assume a task that you want to get rid of exclamation marks from notifica
 
     in other words, we just remove the exclamation mark from the notification. The same way create three other overriding templates.
 
-5.  If [developer mode is enabled](Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Packingupyourmodule) in your store, effect will take place immediately after you save the templates, without having to re-deploy the store.
+5.  If {% link "developer mode is enabled" Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Packingupyourmodule %} in your store, effect will take place immediately after you save the templates, without having to re-deploy the store.
 6.  Surely, you can apply more complex modifications to your store layout using the same approach.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [custom-welcome-message-text.png]({{ site.baseurl }}/attachments/8224814/8355867.png) (image/png)
+![](images/icons/bullet_blue.gif) [custom-welcome-message-text.png]({{site.baseurl}}/attachments/8224814/8355867.png) (image/png)

@@ -1,12 +1,14 @@
 ---
+identifier: rkb95bhXP
 layout: article_with_sidebar
 lang: en
 title: 'Tweaking CSS Styles: remove space at the bottom of the page with the &quot;Custom CSS&quot; feature: Tutorial by Mike White'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

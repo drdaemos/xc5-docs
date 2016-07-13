@@ -1,12 +1,14 @@
 ---
+identifier: ryEkjZ37P
 layout: article_with_sidebar
 lang: en
 title: 'How to add Google Adwords Conversion Tracking Code to &quot;Thank you for your order&quot; page'
-categories: [how-to_articles]
+categories:
+  - How-To Articles
 
 ---
 
-
+{% include global.html %}
 
 This article describes how to add Google Adwords Conversion Tracking code to X-Car's order confirmation page ("Thank you for your order" page).
 
@@ -69,10 +71,10 @@ Icon
 
 ## Related articles
 
-*   Page:[How to remove Transaction ID info in order notification emails?](/pages/viewpage.action?pageId=9666581)
-*   Page:[How to modify "Print Invoice" page](/pages/viewpage.action?pageId=9306925)
-*   Page:[How to move category description below products list](/display/XDD/How+to+move+category+description+below+products+list)
-*   Page:[How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page](/pages/viewpage.action?pageId=9307079)
-*   Page:[How to add Facebook Pixel Сode to X-Cart pages](/pages/viewpage.action?pageId=9306783)
+*   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
+*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
+*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
+*   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
+*   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
 
 Showing first 5 of 8 results

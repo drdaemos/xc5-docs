@@ -1,12 +1,14 @@
 ---
+identifier: H1fpcb2mP
 layout: article_with_sidebar
 lang: en
 title: 'Specifying your company info, changing the text on the Add to Cart button and editing the Contact Us page in X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

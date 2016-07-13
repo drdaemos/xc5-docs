@@ -1,18 +1,20 @@
 ---
+identifier: Hymwj-nmw
 layout: article_with_sidebar
 lang: en
 title: 'Creating popup widget'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article describes how developers can create a popup widget in X-Cart. For instance, we want our custom page in customer area to have a button that shows popup window with some information. This guide explains how to achieve this task. We'll be trying to create a simple overview of shopping cart:
 
-![]({{ site.baseurl }}/attachments/8750139/8718767.png)
+![]({{site.baseurl}}/attachments/8750139/8718767.png)
 
 # Table of Contents
 
@@ -27,8 +29,8 @@ This article describes how developers can create a popup widget in X-Cart. For i
 
 # Some necessary preparations
 
-First of all, you should have your custom module. We are [creating a new module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **PopupDemo**.  
-Secondly, we'll create a [custom page]({{ baseurl_lang }}/basics/creating_new_page.html) to have our popup button. This page will be available at `cart.php?target=tony_custom` address.
+First of all, you should have your custom module. We are {% link "creating a new module" H1Qu2b27w %} with developer ID **Tony** and module ID **PopupDemo**.  
+Secondly, we'll create a {% link "custom page" B1zwoW37P %} to have our popup button. This page will be available at `cart.php?target=tony_custom` address.
 
 # Implementation
 
@@ -36,7 +38,7 @@ Through this course we will define our custom button, which will be used to open
 
 ## Creating popup button
 
-X-Cart has `\XLite\View\Button\APopupButton` class, which defines popup button. In order to use it, you should extend it with your custom button class (this thing is thoroughly explained in [Working with viewer classes]({{ baseurl_lang }}/basics/working_with_viewer_classes.html)). To do this, we are creating a file `<X-Cart>/classes/XLite/Module/Tony/PopupDemo/View/Button/DemoPopupButton.php` with the following content:
+X-Cart has `\XLite\View\Button\APopupButton` class, which defines popup button. In order to use it, you should extend it with your custom button class (this thing is thoroughly explained in {% link "Working with viewer classes" rkeo2b3XP %}). To do this, we are creating a file `<X-Cart>/classes/XLite/Module/Tony/PopupDemo/View/Button/DemoPopupButton.php` with the following content:
 
 {% highlight php %}{% raw %}
 <?php
@@ -179,7 +181,7 @@ class DemoWidget extends \XLite\View\AView
 }
 {% endraw %}{% endhighlight %}
 
-Let's get quick overview of methods, featuring this viewer class (more about this in [Working with viewer classes](Working-with-viewer-classes_8224836.html)):
+Let's get quick overview of methods, featuring this viewer class (more about this in {% link "Working with viewer classes" Working-with-viewer-classes_8224836.html %}):
 
 *   function `getAllowedTargets()` defines available targets allowed for this widget;
 
@@ -212,7 +214,7 @@ Let's get quick overview of methods, featuring this viewer class (more about thi
 </div>
 {% endraw %}{% endhighlight %}
 
-This template uses several [Flexy]({{ baseurl_lang }}/basics/flexy_guide.html) features to show cart quantity, unordered list of items in the cart and subtotal in user currency. 
+This template uses several {% link "Flexy" B1-5oWhQD %} features to show cart quantity, unordered list of items in the cart and subtotal in user currency. 
 
 This is basically everything that we need to make a simple popup widget. We're only step away from finishing our work.
 
@@ -232,5 +234,5 @@ You can download this module example from here: [Tony-PopupDemo-v5.2.0.tar](att
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [daemos xcart cart.php target tony_custom.png]({{ site.baseurl }}/attachments/8750139/8718767.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Tony-PopupDemo-v5.2.0.tar]({{ site.baseurl }}/attachments/8750139/8718768.tar) (application/x-tar)
+![](images/icons/bullet_blue.gif) [daemos xcart cart.php target tony_custom.png]({{site.baseurl}}/attachments/8750139/8718767.png) (image/png)  
+![](images/icons/bullet_blue.gif) [Tony-PopupDemo-v5.2.0.tar]({{site.baseurl}}/attachments/8750139/8718768.tar) (application/x-tar)

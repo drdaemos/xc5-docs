@@ -1,4 +1,5 @@
 ---
+identifier: SyUfo-27w
 layout: article_with_sidebar
 lang: en
 title: Attributes and product filters in X-Cart 5
@@ -8,7 +9,7 @@ published: true
 order: 0
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

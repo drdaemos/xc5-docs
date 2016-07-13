@@ -1,12 +1,14 @@
 ---
+identifier: Bkj9n-3QP
 layout: article_with_sidebar
 lang: en
 title: 'Working with authorization'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -20,7 +22,7 @@ This article shows you can authenticate a user by login and password. It also sh
 
 # Implementation
 
-We start with [creating an external script]({{ baseurl_lang }}/basics/working_with_x-cart_externally.html) `<X-Cart>/test.php` with the following content: 
+We start with {% link "creating an external script" S1c53-nQD %} `<X-Cart>/test.php` with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

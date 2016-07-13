@@ -1,12 +1,14 @@
 ---
+identifier: H1h4sbnXP
 layout: article_with_sidebar
 lang: en
 title: 'Configuring payment methods in X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

@@ -1,21 +1,23 @@
 ---
+identifier: H1sh-nQw
 layout: article_with_sidebar
 lang: en
 title: 'Working with product attributes'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This guide aims to show some approach of working with product attributes. In this article we will create a mod that will hide certain attribute from being displayed in customer area.
 
 Imagine that we have a product with **hidden-value** attribute:  
-![]({{ site.baseurl }}/attachments/8225478/8356216.png)
+![]({{site.baseurl}}/attachments/8225478/8356216.png)
 
-We want to use this attribute in some modification, but we do not want to show its value to the customer. However, the value is shown by default in the **Specification** tab in storefront:![]({{ site.baseurl }}/attachments/8225478/8356217.png)
+We want to use this attribute in some modification, but we do not want to show its value to the customer. However, the value is shown by default in the **Specification** tab in storefront:![]({{site.baseurl}}/attachments/8225478/8356217.png)
 
 Our mod will hide this **hidden-value** attribute in storefront.
 
@@ -28,7 +30,7 @@ Our mod will hide this **hidden-value** attribute in storefront.
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **AttributeDemo**.
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **AttributeDemo**.
 
 Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default/en/product/details/parts/attribute.tpl` template – as we can find it via **Webmaster Kit** module. Here is a code of this template:
 
@@ -47,7 +49,7 @@ Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default
 {end:}
 {% endraw %}{% endhighlight %}
 
-It takes attributes from array returned by the `getAttrList()` method and then display them in cycle. If we want to hide the **hidden-value** attribute, we should remove it from array returned by the `getAttrList()` method, so we must [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\View\Product\Details\Customer\Attributes` class ([more info about classnames in X-Cart]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)). In order to do that we create the  
+It takes attributes from array returned by the `getAttrList()` method and then display them in cycle. If we want to hide the **hidden-value** attribute, we should remove it from array returned by the `getAttrList()` method, so we must {% link "decorate" rkE_3bnXw %} the `\XLite\View\Product\Details\Customer\Attributes` class ({% link "more info about classnames in X-Cart" S1RinW3Qv %}). In order to do that we create the  
 `<X-Cart>/classes/XLite/Module/Tony/AttributeDemo/View/Product/Details/Customer/Attributes.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -79,7 +81,7 @@ abstract class Attributes extends \XLite\View\Product\Details\Customer\Attribute
 
 We simply take attributes returned by parent class' `getAttrList()` method as array, walk through this array and if attribute's name is not **hidden-value**, then this attribute will be put into `$return` array.
 
-That is it. Now we need to re-deploy the store and check the results in storefront. If we open the same product's details page, we will not see the **hidden-value** attribute there, although it exists in admin area. ![]({{ site.baseurl }}/attachments/8225478/8356218.png)
+That is it. Now we need to re-deploy the store and check the results in storefront. If we open the same product's details page, we will not see the **hidden-value** attribute there, although it exists in admin area. ![]({{site.baseurl}}/attachments/8225478/8356218.png)
 
 # Module pack
 
@@ -87,6 +89,6 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [hidden-value-attribute-admin.png]({{ site.baseurl }}/attachments/8225478/8356216.png) (image/png)  
-![](images/icons/bullet_blue.gif) [hidden-value-customer.png]({{ site.baseurl }}/attachments/8225478/8356217.png) (image/png)  
-![](images/icons/bullet_blue.gif) [no-hidden-value-customer.png]({{ site.baseurl }}/attachments/8225478/8356218.png) (image/png)
+![](images/icons/bullet_blue.gif) [hidden-value-attribute-admin.png]({{site.baseurl}}/attachments/8225478/8356216.png) (image/png)  
+![](images/icons/bullet_blue.gif) [hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356217.png) (image/png)  
+![](images/icons/bullet_blue.gif) [no-hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356218.png) (image/png)

@@ -1,12 +1,14 @@
 ---
+identifier: Skl95W3QP
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 2 - 10 Apr 2014 - Design changes in X-Cart 5 (Custom Skins and Webmaster Kit modules intro)'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -62,9 +64,9 @@ Go to the **System settings** > **Look & feel** > **Custom CSS** section in you
 
 ### 1.2\. Via your own CSS file
 
-This is similar way to what I have [described earlier]({{ baseurl_lang }}/webinars_and_video_tutorials/webinar_2_-_10_apr_2014_-_design_changes_in_x-cart_5_(custom_skins_and_webmaster_kit_modules_intro).html). The only difference is that you do not need ThemeTweaker module in order to apply the change.
+This is similar way to what I have {% link "described earlier" Skl95W3QP %}. The only difference is that you do not need ThemeTweaker module in order to apply the change.
 
-1.  [Create your own module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) or enable default **CustomSkin** (XC/CustomSkin) one. I will be using CustomSkin in my example. The same approach will work for custom module as well, you will only need to adjust namespaces in PHP scripts.
+1.  {% link "Create your own module" H1Qu2b27w %} or enable default **CustomSkin** (XC/CustomSkin) one. I will be using CustomSkin in my example. The same approach will work for custom module as well, you will only need to adjust namespaces in PHP scripts.
 2.  Create the View/AView.php script inside your module with the following content: 
 
     {% highlight php %}{% raw %}
@@ -125,7 +127,7 @@ Although this method is more complex than ones above, it allows you to completel
 ### 2.1\. By overriding template
 
 1.  First step is to find what template contains the <div id="content">. The thorough explanation of how you can do it using **Webmaster Kit** module is given in video at ~18:00.
-2.  We can see that the **skins/default/en/layout/main.center.center.tpl** template contains this <div id="content"> and we can apply the approach described in [section 1.3](7504837.html) in order to change it.
+2.  We can see that the **skins/default/en/layout/main.center.center.tpl** template contains this <div id="content"> and we can apply the approach described in {% link "section 1.3" 7504837.html %} in order to change it.
 3.  Copy the **main.center.center.tpl** template to **skins/custom_skin/default/en/layout/main.center.center.tpl .** It should have the following content: 
 
     {% highlight php %}{% raw %}
@@ -168,7 +170,7 @@ Although, the approach shown above is easy, it has its downsides. If future vers
     This method unassigns **layout/main.center.center.tpl**from all view lists. 
 
 2.  The next step is to assign a custom template to the same view list and call **layout/main.center.center.tpl** inside this custom template.
-3.  Before next step please do not forget to remove the **skins/custom_skin/default/en/layout/main.center.center.tpl** template mentioned in [section 2.1](7504837.html).
+3.  Before next step please do not forget to remove the **skins/custom_skin/default/en/layout/main.center.center.tpl** template mentioned in {% link "section 2.1" 7504837.html %}.
 4.  Create the **skins/default/en/modules/XC/CustomSkin/main.custom_center.center.tpl** template with the following content: 
 
     {% highlight php %}{% raw %}
@@ -187,7 +189,7 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 
 ## 3. How can I change the logo depending on the selected language? Logo image should be defined as a language variable
 
-1.  Override the **skins/default/en/layout/header.logo.tpl** template with the **skins/custom_skin/default/en/layout/header.logo.tpl** one as described earlier ([section 2.1](7504837.html), [section 1.3](7504837.html))
+1.  Override the **skins/default/en/layout/header.logo.tpl** template with the **skins/custom_skin/default/en/layout/header.logo.tpl** one as described earlier ({% link "section 2.1" 7504837.html %}, {% link "section 1.3" 7504837.html %})
 2.  Define the code of this new template as follows and save the results. 
 
     {% highlight php %}{% raw %}
@@ -198,7 +200,7 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 
     The most important part here is that if you put any text between **t() **construction, then it can be translated via admin area.
 
-3.  Go to the **Store setup > Translations > Edit labels > Your language** > **Add new label** section in admin area and define the new URL for logo in other language (e.g. German) as shown on the snapshot below:![]({{ site.baseurl }}/attachments/7504837/7602607.png)
+3.  Go to the **Store setup > Translations > Edit labels > Your language** > **Add new label** section in admin area and define the new URL for logo in other language (e.g. German) as shown on the snapshot below:![]({{site.baseurl}}/attachments/7504837/7602607.png)
 4.  After you click **Save changes** button, the logo for German part of your store will be replaced with X-Cart logo as per definition above.
 
 ## 4\. How can I replace the menu added by SimpleCMS with my own menu?
@@ -331,16 +333,16 @@ Yes. X-Cart 5 designed in a way that every mod can overwrite every other mod. It
 
 ## How is TopMenu loaded after SimpleCMS menu?
 
-It was loaded after SimpleCMS because of the `@LC_Dependencies `construction used. Check the point 6 in the [section 4](7504837.html).
+It was loaded after SimpleCMS because of the `@LC_Dependencies `construction used. Check the point 6 in the {% link "section 4" 7504837.html %}.
 
 ## Why v5 is better than v4 if the skin overwrite is not easily upgraded? Isn't this exactly what v4 is?
 
-You can use approach described in the [section 2.2](7504837.html) in order to overcome problems with skin upgrade. You do not have such option in X-Cart 4.
+You can use approach described in the {% link "section 2.2" 7504837.html %} in order to overcome problems with skin upgrade. You do not have such option in X-Cart 4.
 
 ## How to add that <div id=homepage> to the homepage only, not store wide?
 
-In this case, you need to add a condition similar to one described in [section 5](7504837.html). According to this condition, you will either display <div id="homepage"> or not.
+In this case, you need to add a condition similar to one described in {% link "section 5" 7504837.html %}. According to this condition, you will either display <div id="homepage"> or not.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [image-language-variable.png]({{ site.baseurl }}/attachments/7504837/7602607.png) (image/png)
+![](images/icons/bullet_blue.gif) [image-language-variable.png]({{site.baseurl}}/attachments/7504837/7602607.png) (image/png)

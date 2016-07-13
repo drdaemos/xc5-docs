@@ -1,12 +1,14 @@
 ---
+identifier: Sy6p5W3mP
 layout: article_with_sidebar
 lang: en
 title: 'Booking module (video)'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

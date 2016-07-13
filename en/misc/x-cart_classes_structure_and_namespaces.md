@@ -1,12 +1,14 @@
 ---
+identifier: S1RinW3Qv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart classes structure and namespaces'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -24,13 +26,13 @@ This article describes the structure of X-Cart classes. Also, it describes how t
 All X-Cart classes are located in the `<X-Cart>/classes/` directory. Let us walk through each type of X-Cart classes:
 
 *   `<X-Cart>/classes/XLite.php` is the class of the whole application; you will never use it in new modules;
-*   `<X-Cart>/classes/Base/` directory contains definitions of basic X-Cart interfaces including **Decorator** interface that allows [applying changes to every part of X-Cart store]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) without modifying core classes;
-*   `<X-Cart>/classes/Controller/` directory contains definitions of classes that **handle requests** to X-Cart (controllers). Check [general X-Cart workflow](Step-3---applying-logic-changes_8224804.html#Step3-applyinglogicchanges-GeneralX-Cartworkflow) article in order to learn more about controller classes;
+*   `<X-Cart>/classes/Base/` directory contains definitions of basic X-Cart interfaces including **Decorator** interface that allows {% link "applying changes to every part of X-Cart store" rkE_3bnXw %} without modifying core classes;
+*   `<X-Cart>/classes/Controller/` directory contains definitions of classes that **handle requests** to X-Cart (controllers). Check {% link "general X-Cart workflow" Step-3---applying-logic-changes_8224804.html#Step3-applyinglogicchanges-GeneralX-Cartworkflow %} article in order to learn more about controller classes;
 *   `<X-Cart>/classes/Core/` directory contains definitions of core X-Cart entities, such as database, HTTP request, Mailer etc;
 *   `<X-Cart>/classes/DataSet/` directory includes the classes that defines different data structures; they are seldom used in the modules;
 *   `<X-Cart>/classes/Logic/` folder contains the classes that describe the business logic of complex routines: order calculation, import/export, etc;
 *   `<X-Cart>/classes/Model/` directory includes the classes that describe different X-Cart entities, such as products, orders, users, shipping and payment methods, menus etc;
-*   `<X-Cart>/classes/Module/` folder contains files added by modules (default and 3rd party ones); if you [write the module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html), you will put your files into this folder only; all module files (except templates) are stored in the `<X-Cart>/classes/Module/<developer-ID>/<module-ID>` directories;
+*   `<X-Cart>/classes/Module/` folder contains files added by modules (default and 3rd party ones); if you {% link "write the module" H1Qu2b27w %}, you will put your files into this folder only; all module files (except templates) are stored in the `<X-Cart>/classes/Module/<developer-ID>/<module-ID>` directories;
 *   `<X-Cart>/classes/Upgrade/` directory contains classes that are used during upgrade procedure;
 *   `<X-Cart>/classes/View/` folder contains classes that manage X-Cart's output.
 

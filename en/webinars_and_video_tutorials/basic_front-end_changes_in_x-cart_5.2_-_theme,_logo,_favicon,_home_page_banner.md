@@ -1,12 +1,14 @@
 ---
+identifier: H1p5b3mw
 layout: article_with_sidebar
 lang: en
 title: 'Basic front-end changes in X-Cart 5.2 - Theme, Logo, Favicon, Home Page Banner'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

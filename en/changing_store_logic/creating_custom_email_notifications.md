@@ -1,12 +1,14 @@
 ---
+identifier: BJE8sW37P
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom email notifications'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -24,8 +26,8 @@ This article describes how developers can configure and send custom **email noti
 
 # Implementation
 
-First of all, this task requires you to have a custom module. We'll [create a new module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with the developer ID **Tony** and the module ID **EmailDemo**.  
-Besides, we'll create a [custom page]({{ baseurl_lang }}/basics/creating_new_page.html) in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
+First of all, this task requires you to have a custom module. We'll {% link "create a new module" H1Qu2b27w %} with the developer ID **Tony** and the module ID **EmailDemo**.  
+Besides, we'll create a {% link "custom page" B1zwoW37P %} in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
 
 ## Creating the mailer method
 
@@ -104,7 +106,7 @@ An email message is composed from several parts such as _header_, _subject_, _b
 
 As you can see, we can mix some predefined content with the registered parameters. As a result, we will be able to send messages like this:
 
-![]({{ site.baseurl }}/attachments/8750179/8718796.png)
+![]({{site.baseurl}}/attachments/8750179/8718796.png)
 
 From now on, to send a message, you should call your newly created method like this:
 
@@ -172,7 +174,7 @@ Notification definition consists of several parameters:
 After writing this code to the file, you should load it into system. It can be done using one of the two methods:
 
 1.  by re-installing this module,
-2.  by [loading the YAML file manually]({{ baseurl_lang }}/misc/loading_yaml_file.html).
+2.  by {% link "loading the YAML file manually" HyO6s-3XP %}.
 
 You can also change the mail templates to make use of the default **subject** and **body** text, preset in the _translation_ parameter, like this:
 
@@ -196,11 +198,11 @@ You can also change the mail templates to make use of the default **subject** an
 
 This allows you to change the subject and body text in the admin area, without tampering with template files. The interface is shown on the picture below:
 
-![]({{ site.baseurl }}/attachments/8750179/8718799.png)  
+![]({{site.baseurl}}/attachments/8750179/8718799.png)  
 
 As a result of the above actions, you should be able to configure your custom method in the admin area:
 
-![]({{ site.baseurl }}/attachments/8750179/8718797.png)
+![]({{site.baseurl}}/attachments/8750179/8718797.png)
 
 # Module example
 
@@ -208,8 +210,8 @@ You can download this module example from here: [Tony-EmailDemo-v5.2.0.tar](att
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [demo msg]({{ site.baseurl }}/attachments/8750179/8718795) (application/octet-stream)  
-![](images/icons/bullet_blue.gif) [demo msg.png]({{ site.baseurl }}/attachments/8750179/8718796.png) (image/png)  
-![](images/icons/bullet_blue.gif) [X Cart online store builder Email notifications.png]({{ site.baseurl }}/attachments/8750179/8718797.png) (image/png)  
-![](images/icons/bullet_blue.gif) [X Cart online store builder Advanced demo notification sent Email Demo module .png]({{ site.baseurl }}/attachments/8750179/8718799.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Tony-EmailDemo-v5.2.0.tar]({{ site.baseurl }}/attachments/8750179/8718801.tar) (application/x-tar)
+![](images/icons/bullet_blue.gif) [demo msg]({{site.baseurl}}/attachments/8750179/8718795) (application/octet-stream)  
+![](images/icons/bullet_blue.gif) [demo msg.png]({{site.baseurl}}/attachments/8750179/8718796.png) (image/png)  
+![](images/icons/bullet_blue.gif) [X Cart online store builder Email notifications.png]({{site.baseurl}}/attachments/8750179/8718797.png) (image/png)  
+![](images/icons/bullet_blue.gif) [X Cart online store builder Advanced demo notification sent Email Demo module .png]({{site.baseurl}}/attachments/8750179/8718799.png) (image/png)  
+![](images/icons/bullet_blue.gif) [Tony-EmailDemo-v5.2.0.tar]({{site.baseurl}}/attachments/8750179/8718801.tar) (application/x-tar)

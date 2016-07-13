@@ -1,16 +1,18 @@
 ---
+identifier: B1fohZ3mv
 layout: article_with_sidebar
 lang: en
 title: 'Working with sessions'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by [decoration]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) of `\XLite\Core\Session` class.
+This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by {% link "decoration" rkE_3bnXw %} of `\XLite\Core\Session` class.
 
 For the sake of example, we will create a module with a page `cart.php?target=session_demo` and this page can be called with the `session_value` parameter. For the very first time this page will display the **Session value has not been specified yet** message and it will remain the same until the **session_value** parameter is passed. Once it is passed, the page will display the **Session value is: {session_value}** message. Even if you open this page without **session_value** parameter after that, the message **Session value is: {session_value}** message will be displayed with the latest **session_value** submitted.
 
@@ -23,7 +25,7 @@ For the sake of example, we will create a module with a page `cart.php?target=se
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **SessionDemo**. Then we [create a page]({{ baseurl_lang }}/basics/creating_new_page.html) `cart.php?target=session_demo` in our module. For that we create:
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **SessionDemo**. Then we {% link "create a page" B1zwoW37P %} `cart.php?target=session_demo` in our module. For that we create:
 
 *   an empty controller class `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`;
 *   a page viewer class `\XLite\Module\Tony\SessionDemo\View\Page\Customer\SessionDemo` with the following content: 
@@ -64,7 +66,7 @@ We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step
     {% endraw %}{% endhighlight %}
 *   an empty page template `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl`.
 
-Now we need to check each [request]({{ baseurl_lang }}/basics/retrieving_data_from_the_request.html) to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our [controller class]({{ baseurl_lang }}/basics/controller_class.html) `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
+Now we need to check each {% link "request" HyS2-hXP %} to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our {% link "controller class" Skb8obnQP %} `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
 
 {% highlight php %}{% raw %}
     public function handleRequest()
@@ -147,11 +149,11 @@ Session value has not been specified yet
 
 If `getSessionValue()` returns non-empty value – empty string is considered as an empty value – then we display the **Session value has not been specified yet** message, otherwise we display the message **Session value is: session_value**.
 
-That is it. Now we need to re-deploy the store and check the results. Go to your `cart.php?target=session_demo` page and you will see the following result:![]({{ site.baseurl }}/attachments/8225420/8356194.png)
+That is it. Now we need to re-deploy the store and check the results. Go to your `cart.php?target=session_demo` page and you will see the following result:![]({{site.baseurl}}/attachments/8225420/8356194.png)
 
-Then, try to open this page as `cart.php?target=session_demo&session_value=foo` and you will see the following result:![]({{ site.baseurl }}/attachments/8225420/8356195.png)
+Then, try to open this page as `cart.php?target=session_demo&session_value=foo` and you will see the following result:![]({{site.baseurl}}/attachments/8225420/8356195.png)
 
-If you try to open the same page as `cart.php?target=session_demo`, you will still see the result as follows: ![]({{ site.baseurl }}/attachments/8225420/8356195.png)
+If you try to open the same page as `cart.php?target=session_demo`, you will still see the result as follows: ![]({{site.baseurl}}/attachments/8225420/8356195.png)
 
 and in order to see the initial message, you will have to clean up your cookies.
 
@@ -161,5 +163,5 @@ This module pack can be downloaded from here: [https://dl.dropboxusercontent.co
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [no-session-value.png]({{ site.baseurl }}/attachments/8225420/8356194.png) (image/png)  
-![](images/icons/bullet_blue.gif) [session-value-foo.png]({{ site.baseurl }}/attachments/8225420/8356195.png) (image/png)
+![](images/icons/bullet_blue.gif) [no-session-value.png]({{site.baseurl}}/attachments/8225420/8356194.png) (image/png)  
+![](images/icons/bullet_blue.gif) [session-value-foo.png]({{site.baseurl}}/attachments/8225420/8356195.png) (image/png)

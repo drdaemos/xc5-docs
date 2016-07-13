@@ -1,20 +1,22 @@
 ---
+identifier: SJ4WiZh7w
 layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product - part 2 - value of this field must be saved after checkout'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-This article is a continuation of an article about [adding a new property to a product]({{ baseurl_lang }}/basics/adding_new_property_to_a_product/{{ baseurl_lang }}/index.html) and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).
+This article is a continuation of an article about {% link "adding a new property to a product" BJr-j-3Qv %} and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).
 
 This article will explain how to save the product property's value when you place an order and even if you change this property's value later on, old invoices would still use saved value.
 
-This article assumes that you are already familiar with the task described in the [Adding new property to a product](Adding-new-property-to-a-product_8225149.html) guide.
+This article assumes that you are already familiar with the task described in the {% link "Adding new property to a product" Adding-new-property-to-a-product_8225149.html %} guide.
 
 # Table of Contents
 
@@ -97,7 +99,7 @@ We start with creating a module similar to one from the first article.
 
 Now it is time to add this `$testField` property and its `getTestField()` accessor method to the `\XLite\Model\OrderItem` class and our mod will be ready.
 
-We [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\Model\OrderItem` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/OrderItem.php` file with the following content: 
+We {% link "decorate" rkE_3bnXw %} the `\XLite\Model\OrderItem` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/OrderItem.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -212,13 +214,13 @@ Let us have a look at key points of this class implementation:
 This mod is ready. Now we need to re-deploy the store and check the results.
 
 As a first step we go to an admin area and define the **Test Field** property for some product:  
-![]({{ site.baseurl }}/attachments/8225458/8356212.png)
+![]({{site.baseurl}}/attachments/8225458/8356212.png)
 
-then go to your storefront, add this product to cart, proceed to checkout and place an order. You will see the following picture there:![]({{ site.baseurl }}/attachments/8225458/8356213.png)
+then go to your storefront, add this product to cart, proceed to checkout and place an order. You will see the following picture there:![]({{site.baseurl}}/attachments/8225458/8356213.png)
 
 If you go to your admin area, change the **Test Field** property for this product again and then reload the **Thank you** page, you will still see old value.
 
-_Note: this mod does not display this property on invoice page in admin area and in email notifications. To get the idea of how to enhance this mod and show the value in admin area, please check the [Adding product images to order notifications]({{ baseurl_lang }}/design_changes/adding_product_images_to_order_notifications.html)__ guide._
+_Note: this mod does not display this property on invoice page in admin area and in email notifications. To get the idea of how to enhance this mod and show the value in admin area, please check the {% link "Adding product images to order notifications" ByOZoZh7w %}__ guide._
 
 # Module pack
 
@@ -226,5 +228,5 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [test-field-value-admin.png]({{ site.baseurl }}/attachments/8225458/8356212.png) (image/png)  
-![](images/icons/bullet_blue.gif) [test-field-value-customer.png]({{ site.baseurl }}/attachments/8225458/8356213.png) (image/png)
+![](images/icons/bullet_blue.gif) [test-field-value-admin.png]({{site.baseurl}}/attachments/8225458/8356212.png) (image/png)  
+![](images/icons/bullet_blue.gif) [test-field-value-customer.png]({{site.baseurl}}/attachments/8225458/8356213.png) (image/png)

@@ -1,12 +1,14 @@
 ---
+identifier: H1eo9Z2mw
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 development lectures (in Russian with English subtitles)'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

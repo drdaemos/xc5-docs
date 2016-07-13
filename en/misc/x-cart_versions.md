@@ -1,12 +1,14 @@
 ---
+identifier: B11eonWh7v
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart versions'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -27,7 +29,7 @@ X-Cart 5 has two numbers that identify the version of a core or a module. Let us
 
 For a module to be compatible with X-Cart core, the major versions of the core and the module must be the same. For example, **X-Cart 5.1.10** is compatible with Paypal module versions **5.1.0** or **5.1.1**. However **X-Cart** **5.1.10** is _not_ compatible with module versions **5.0.1** or **5.2.1**. The minor version of a module does not have to be the same as the core minor version in order to work properly.
 
-Module version is specified in the [`Main.php` file]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html):
+Module version is specified in the {% link "`Main.php` file" H1Qu2b27w %}:
 
 *   `getMajorVersion()` method defines the major version of a module, e.g. 5.1;
 *   `getMinorVersion()` method defines the minor version of a module, e.g. 10.

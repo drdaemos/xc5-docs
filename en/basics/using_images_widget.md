@@ -1,12 +1,14 @@
 ---
+identifier: By0K2bn7P
 layout: article_with_sidebar
 lang: en
 title: 'Using images widget'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -28,11 +30,11 @@ This article explains how to use image selection widget in X-Cart as well as how
 
 ## Create an empty module
 
-First of all, we [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ImageDemo**.
+First of all, we {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ImageDemo**.
 
 ## Decorate Product class
 
-Inside this module, we [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\Model\Product` class as we want to add a new property to it as follows: 
+Inside this module, we {% link "decorate" rkE_3bnXw %} the `\XLite\Model\Product` class as we want to add a new property to it as follows: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -59,7 +61,7 @@ abstract class Product extends \XLite\Model\Product implements \XLite\Base\IDeco
 
 Let us have a closer look at this implementation.
 
-1.  We [add a new property to a product object]({{ baseurl_lang }}/basics/adding_new_property_to_a_product/{{ baseurl_lang }}/index.html): 
+1.  We {% link "add a new property to a product object" BJr-j-3Qv %}: 
 
     {% highlight php %}{% raw %}
         /**
@@ -242,7 +244,7 @@ Let us have a look at each important moment of this **SecondaryImage** class:
 
 ## Tweaking design of admin and customer interfaces
 
-First, we need to allow merchant to upload secondary images for a product on product details page in admin area. Similar task is already described in [one of previous articles](Adding-new-property-to-a-product_8225149.html).
+First, we need to allow merchant to upload secondary images for a product on product details page in admin area. Similar task is already described in {% link "one of previous articles" Adding-new-property-to-a-product_8225149.html %}.
 
 We need to decorate `\XLite\View\Model\Product` class, so we create the `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/View/Model/Product.php` file with the following content: 
 
@@ -272,7 +274,7 @@ abstract class Product extends \XLite\View\Model\Product implements \XLite\Base\
 
 You should note that `SCHEMA_CLASS` param is defined as `\XLite\View\FormField\FileUploader\Image`. This class defines a widget that allows choosing files for upload and it only accepts images. Also, we specify the `\XLite\View\FormField\FileUploader\Image::PARAM_MULTIPLE` param as `true` in order to allow multiple images to be uploaded for a product.
 
-Besides that, we need to display secondary images in store-front. For that we [create a template]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html#Step2-applyingdesignchanges-Addingnewtemplatesandwidgets) that will be shown on product details page. We create the  
+Besides that, we need to display secondary images in store-front. For that we {% link "create a template" HkDO3Wh7v#Step2-applyingdesignchanges-Addingnewtemplatesandwidgets %} that will be shown on product details page. We create the  
 `<X-Cart>/skins/default/en/modules/Tony/ImageDemo/secondary-images.tpl` with the following content: 
 
 {% highlight php %}{% raw %}
@@ -293,9 +295,9 @@ In this template, we go through each secondary image object and then call `<widg
 
 ## Checking the results
 
-Now we need to re-deploy the store and check the results. First we go to a product details page in admin area and try to add secondary images: ![]({{ site.baseurl }}/attachments/8225295/8356163.png)
+Now we need to re-deploy the store and check the results. First we go to a product details page in admin area and try to add secondary images: ![]({{site.baseurl}}/attachments/8225295/8356163.png)
 
-After we save the changes, we go to this product details page in customer zone and should be able to see the following results:![]({{ site.baseurl }}/attachments/8225295/8356164.png)
+After we save the changes, we go to this product details page in customer zone and should be able to see the following results:![]({{site.baseurl}}/attachments/8225295/8356164.png)
 
 # Module pack
 
@@ -303,5 +305,5 @@ You can download the example of this module from here: [https://dl.dropboxuserc
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [secondary-images-admin.png]({{ site.baseurl }}/attachments/8225295/8356163.png) (image/png)  
-![](images/icons/bullet_blue.gif) [secondary-images-customer-area.png]({{ site.baseurl }}/attachments/8225295/8356164.png) (image/png)
+![](images/icons/bullet_blue.gif) [secondary-images-admin.png]({{site.baseurl}}/attachments/8225295/8356163.png) (image/png)  
+![](images/icons/bullet_blue.gif) [secondary-images-customer-area.png]({{site.baseurl}}/attachments/8225295/8356164.png) (image/png)

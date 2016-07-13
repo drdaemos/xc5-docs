@@ -1,4 +1,5 @@
 ---
+identifier: HkH2jb3Xv
 layout: article_with_sidebar
 lang: en
 title: How to set NetBeans
@@ -8,7 +9,7 @@ published: true
 order: 0
 ---
 
-
+{% include global.html %}
 
 # Настройки редактирования NetBeans
 

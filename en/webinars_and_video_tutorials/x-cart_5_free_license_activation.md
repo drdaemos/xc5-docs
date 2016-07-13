@@ -1,12 +1,14 @@
 ---
+identifier: ByEsnZ3mw
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Free License Activation'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

@@ -1,12 +1,14 @@
 ---
+identifier: BJr-j-3Qv
 layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -25,11 +27,11 @@ This guide teaches X-Cart developers how they can add their own field to product
 
 # Implementation
 
-First of all, [create a new module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **ProductFieldDemo**.
+First of all, {% link "create a new module" H1Qu2b27w %}. We are creating a module with developer ID **Tony** and module ID **ProductFieldDemo**.
 
 ## Adding new field to product model
 
-[Decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\Model\Product` class ([more info about X-Cart classnames]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)). We are creating the `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/Model/Product.php` file with the following content: 
+{% link "Decorate" rkE_3bnXw %} the `\XLite\Model\Product` class ({% link "more info about X-Cart classnames" S1RinW3Qv %}). We are creating the `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/Model/Product.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -87,13 +89,13 @@ class Product extends \XLite\View\Model\Product implements \XLite\Base\IDecorato
 }
 {% endraw %}{% endhighlight %}
 
-Such code will add a new field to the product details page in admin area. This field will be named **Test field **and its value will be saved into `testField` field of `xc_products` MySQL table. The [FormField class]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/creating_custom_setting_class.html) that defines an input field in the interface is default `\XLite\View\FormField\Input\Text` one.
+Such code will add a new field to the product details page in admin area. This field will be named **Test field **and its value will be saved into `testField` field of `xc_products` MySQL table. The {% link "FormField class" HkH8iZ3XP %} that defines an input field in the interface is default `\XLite\View\FormField\Input\Text` one.
 
-_Note: see an example of creating model editing form with more detailed explanation here: [Model editing page]({{ baseurl_lang }}/basics/model_editing_page.html)._
+_Note: see an example of creating model editing form with more detailed explanation here: {% link "Model editing page" SyLZ2WhmP %}._
 
 ## Showing this field value on thank you page
 
-Finally, we need to display the value of this field on thank you page after the order is placed. It should be displayed like this:![]({{ site.baseurl }}/attachments/8225149/8356106.png)
+Finally, we need to display the value of this field on thank you page after the order is placed. It should be displayed like this:![]({{site.baseurl}}/attachments/8225149/8356106.png)
 
 In order to achieve it, we create the `<X-Cart>/skins/default/en/modules/Tony/ProductFieldDemo/item.test-field.tpl` template with the following content: 
 
@@ -108,15 +110,15 @@ In order to achieve it, we create the `<X-Cart>/skins/default/en/modules/Tony/Pr
 </li>
 {% endraw %}{% endhighlight %}
 
-In this template, we tell template to be registered in the `invoice.item.name` view list (more about [template system in X-Cart]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html)).
+In this template, we tell template to be registered in the `invoice.item.name` view list (more about {% link "template system in X-Cart" HkDO3Wh7v %}).
 
 Another important part is that we just call value of **testField** property as `item.product.getTestField()`, even though we did not declare `getTestField()` method in the `\XLite\Model\Product`. X-Cart creates `get{PropertyName}()` methods for each property automatically, if it is not declared explicitly.
 
 ## Checking the results
 
-Now we need to re-deploy the store and after it is finished, we go to any product in admin area and we will be able to see our new field there: ![]({{ site.baseurl }}/attachments/8225149/8356107.png)
+Now we need to re-deploy the store and after it is finished, we go to any product in admin area and we will be able to see our new field there: ![]({{site.baseurl}}/attachments/8225149/8356107.png)
 
-Define it as you wish, then add this product to cart in customer zone and place an order with it. You will see a thank you page with this field's value there:![]({{ site.baseurl }}/attachments/8225149/8356108.png)
+Define it as you wish, then add this product to cart in customer zone and place an order with it. You will see a thank you page with this field's value there:![]({{site.baseurl}}/attachments/8225149/8356108.png)
 
 # Module pack
 
@@ -124,6 +126,6 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [new-field-on-invoice.png]({{ site.baseurl }}/attachments/8225149/8356106.png) (image/png)  
-![](images/icons/bullet_blue.gif) [product-details-custom-field.png]({{ site.baseurl }}/attachments/8225149/8356107.png) (image/png)  
-![](images/icons/bullet_blue.gif) [thank-you-page-with-custom-product-field.png]({{ site.baseurl }}/attachments/8225149/8356108.png) (image/png)
+![](images/icons/bullet_blue.gif) [new-field-on-invoice.png]({{site.baseurl}}/attachments/8225149/8356106.png) (image/png)  
+![](images/icons/bullet_blue.gif) [product-details-custom-field.png]({{site.baseurl}}/attachments/8225149/8356107.png) (image/png)  
+![](images/icons/bullet_blue.gif) [thank-you-page-with-custom-product-field.png]({{site.baseurl}}/attachments/8225149/8356108.png) (image/png)

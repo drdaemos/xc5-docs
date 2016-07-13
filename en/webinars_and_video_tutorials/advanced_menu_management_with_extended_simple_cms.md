@@ -1,12 +1,14 @@
 ---
+identifier: rkSMoZn7P
 layout: article_with_sidebar
 lang: en
 title: 'Advanced menu management with Extended Simple CMS'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

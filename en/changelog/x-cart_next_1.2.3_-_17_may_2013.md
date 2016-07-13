@@ -1,12 +1,14 @@
 ---
+identifier: Sk5jhb3mv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.3 - 17 May 2013'
-categories: [changelog]
+categories:
+  - Changelog
 
 ---
 
-
+{% include global.html %}
 
 **List of new modules**
 

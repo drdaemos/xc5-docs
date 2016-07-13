@@ -1,21 +1,23 @@
 ---
+identifier: B142cb3XP
 layout: article_with_sidebar
 lang: en
 title: 'Configuring the eBay Integration module (Outdated article)'
-categories: [drafts]
+categories:
+  - Drafts
 
 ---
 
-
+{% include global.html %}
 
 After the module has been installed and enabled, it needs to be configured.
 
 To configure the module:
 
 1.  In the Installed Modules section of your X-Cart store’s Admin area (**Extensions** >** Installed modules**), locate the entry for the eBay Integration module and click the **Settings **link below it:  
-    ![]({{ site.baseurl }}/attachments/8225587/8356505.png?effects=drop-shadow)  
+    ![]({{site.baseurl}}/attachments/8225587/8356505.png?effects=drop-shadow)  
     The "eBay Integration" module settings page opens:  
-    ![]({{ site.baseurl }}/attachments/8225587/8356506.png?effects=drop-shadow)  
+    ![]({{site.baseurl}}/attachments/8225587/8356506.png?effects=drop-shadow)  
 
 2.  Use the settings on the "eBay Integration” module settings page to adjust the module configuration.
     *   **Dev ID**,**App ID** and **Cert ID**:Copy and paste the application keys generated in your eBay Developers Program account.
@@ -25,7 +27,7 @@ To configure the module:
 
         Icon
 
-        Instructions for getting your application keys and auth token are available in the [Getting started with eBay Integration (Outdated article)]({{ baseurl_lang }}/drafts/getting_started_with_ebay_integration_(outdated_article).html) section of this manual.
+        Instructions for getting your application keys and auth token are available in the {% link "Getting started with eBay Integration (Outdated article)" rJrhcW2mv %} section of this manual.
 
     *   **Site ID**: Enter an identifier of the eBay website with which your products and orders should be synchronized. 
 
@@ -48,16 +50,16 @@ To configure the module:
 
 Once the module configuration is saved, your X-Cart store connects to eBay to validate the auth token that was entered. If the token is valid, the "eBay Integration" module settings page displays essential information about your auth token, including the **Token Status**, **Token Expiration Time** and**Token Revocation Time**:
 
-![]({{ site.baseurl }}/attachments/8225587/8356527.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/8225587/8356527.png?effects=drop-shadow)
 
 This allows you to know whether your token is valid and re-generage your token when necessary.
 
 _Related pages:_
 
-*   [Getting started with eBay Integration (Outdated article)](8225590.html)
+*   {% link "Getting started with eBay Integration (Outdated article)" 8225590.html %}
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [ebay_settings_link.png]({{ site.baseurl }}/attachments/8225587/8356505.png) (image/png)  
-![](images/icons/bullet_blue.gif) [ebay_confsettings.png]({{ site.baseurl }}/attachments/8225587/8356506.png) (image/png)  
-![](images/icons/bullet_blue.gif) [token_attr.png]({{ site.baseurl }}/attachments/8225587/8356527.png) (image/png)
+![](images/icons/bullet_blue.gif) [ebay_settings_link.png]({{site.baseurl}}/attachments/8225587/8356505.png) (image/png)  
+![](images/icons/bullet_blue.gif) [ebay_confsettings.png]({{site.baseurl}}/attachments/8225587/8356506.png) (image/png)  
+![](images/icons/bullet_blue.gif) [token_attr.png]({{site.baseurl}}/attachments/8225587/8356527.png) (image/png)

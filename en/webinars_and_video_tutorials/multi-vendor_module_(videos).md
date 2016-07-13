@@ -1,12 +1,14 @@
 ---
+identifier: Syu6cZ2mP
 layout: article_with_sidebar
 lang: en
 title: 'Multi-vendor module (videos)'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

@@ -1,6 +1,6 @@
 prose:
-  siteurl: 'http://devkb.xcart-service.com/'
-  baseurl: '/xc5-docs'
+  # siteurl: 'http://devkb.xcart-service.com/'
+  # baseurl: '/xc5-docs'
   media: 'attachments'
   ignore:
     - /_includes
@@ -24,6 +24,10 @@ prose:
         field:
           element: "hidden"
           value: "en"
+      - name: "id"
+        field:
+          element: "hidden"
+          value: ""
       - name: "layout"
         field:
           element: "hidden"
@@ -66,6 +70,10 @@ prose:
         field:
           element: "hidden"
           value: "ru"
+      - name: "id"
+        field:
+          element: "hidden"
+          value: ""
       - name: "layout"
         field:
           element: "hidden"

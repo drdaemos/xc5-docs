@@ -1,12 +1,14 @@
 ---
+identifier: BkeIsZ3mD
 layout: article_with_sidebar
 lang: en
 title: 'Connecting X-Payments 2.1 x with X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

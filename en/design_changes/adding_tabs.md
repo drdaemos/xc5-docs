@@ -1,18 +1,20 @@
 ---
+identifier: B1WfiW3Qw
 layout: article_with_sidebar
 lang: en
 title: 'Adding tabs'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article describes how you can tabs on a page in admin area. For instance, each order page has two tabs: **General info** and **Invoice**: 
 
-![]({{ site.baseurl }}/attachments/8225436/8356201.png)
+![]({{site.baseurl}}/attachments/8225436/8356201.png)
 
 For the sake of example, we will create our own tab on product details page.
 
@@ -25,9 +27,9 @@ For the sake of example, we will create our own tab on product details page.
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ProductTabDemo**.
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ProductTabDemo**.
 
-Tab section of a page is defined by the `getPages()` method of the page's [controller class]({{ baseurl_lang }}/basics/controller_class.html). Since we want to add our tab to product details page, we are going to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) its controller `\XLite\Controller\Admin\Product` ([more info about classnames in X-Cart]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)).  We create the `<X-Cart>/classes/XLite/Module/Tony/ProductTabDemo/Controller/Admin/Product.php` file with the following content: 
+Tab section of a page is defined by the `getPages()` method of the page's {% link "controller class" Skb8obnQP %}. Since we want to add our tab to product details page, we are going to {% link "decorate" rkE_3bnXw %} its controller `\XLite\Controller\Admin\Product` ({% link "more info about classnames in X-Cart" S1RinW3Qv %}).  We create the `<X-Cart>/classes/XLite/Module/Tony/ProductTabDemo/Controller/Admin/Product.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -66,7 +68,7 @@ Next, we need to add a new element to an array returned by the `getPageTemplate
 
 Since this template does not exist yet, we need to create it. We create the `<X-Cart>/skins/admin/en/modules/Tony/ProductTabDemo/tab/custom_tab.tpl` file and define its content as **Hello world!**. Of course, you can define this template as containing some form or widget.
 
-That is it with this mod. Now we need to re-deploy the store and check the results on any product details page, e.g. `admin.php?target=product&product_id=5&page=custom_tab`. It should look as follows: ![]({{ site.baseurl }}/attachments/8225436/8356202.png)
+That is it with this mod. Now we need to re-deploy the store and check the results on any product details page, e.g. `admin.php?target=product&product_id=5&page=custom_tab`. It should look as follows: ![]({{site.baseurl}}/attachments/8225436/8356202.png)
 
 # Module pack
 
@@ -74,5 +76,5 @@ You can download this mod from here: [https://dl.dropboxusercontent.com/u/23858
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [order-tabs.png]({{ site.baseurl }}/attachments/8225436/8356201.png) (image/png)  
-![](images/icons/bullet_blue.gif) [product-tab.png]({{ site.baseurl }}/attachments/8225436/8356202.png) (image/png)
+![](images/icons/bullet_blue.gif) [order-tabs.png]({{site.baseurl}}/attachments/8225436/8356201.png) (image/png)  
+![](images/icons/bullet_blue.gif) [product-tab.png]({{site.baseurl}}/attachments/8225436/8356202.png) (image/png)

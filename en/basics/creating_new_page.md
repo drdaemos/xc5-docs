@@ -1,12 +1,14 @@
 ---
+identifier: B1zwoW37P
 layout: article_with_sidebar
 lang: en
 title: 'Creating new page'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -24,13 +26,13 @@ This article describes how developers can create a new page in X-Cart. For insta
 
 # Before get started
 
-First thing to do is to [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **PageDemo**.
+First thing to do is to {% link "create an empty module" H1Qu2b27w %}. We are creating a module with developer ID **Tony** and module ID **PageDemo**.
 
 # Creating page in admin area
 
 For the sake of example, our task is to create the page which will be available at `admin.php?target=tony_custom` address and will display **Hello world!** text.
 
-1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look [here]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html#Step3-applyinglogicchanges-GeneralX-Cartworkflow). 
+1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look {% link "here" rkE_3bnXw#Step3-applyinglogicchanges-GeneralX-Cartworkflow %}. 
 2.  We create the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/Admin/TonyCustom.php` file with the following content: 
 
     {% highlight php %}{% raw %}
@@ -117,11 +119,11 @@ For the sake of example, our task is to create the page which will be available 
     {% endraw %}{% endhighlight %}
 6.  We are done with this mod. Now it is time to re-deploy the store and check the results. If you open the following URL in your store: `admin.php?target=tony_custom`, you will see the following result:
 
-![]({{ site.baseurl }}/attachments/8224999/8355981.png)
+![]({{site.baseurl}}/attachments/8224999/8355981.png)
 
 # Creating page via macro
 
-You can [create a page via macro]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-Creatingpage), so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
+You can {% link "create a page via macro" B1ni2bhQD#X-CartSDK-Creatingpage %}, so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
 
 # Creating page in customer area
 
@@ -192,7 +194,7 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
     The template for this viewer sits in other location. Aside from that, the implementation is the same.
 
 5.  Finally, we need to create the template mentioned in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/**default**/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` template (notice, that we create this template in the `skins/default/` directory, instead of `skins/admin/` one – it is so, because this template will be displayed in customer store-front) with **Hello world!** content.
-6.  Re-deploy the store and open the `cart.php?target=tony_custom` page after that. You will see the following result:![]({{ site.baseurl }}/attachments/8224999/8355982.png)
+6.  Re-deploy the store and open the `cart.php?target=tony_custom` page after that. You will see the following result:![]({{site.baseurl}}/attachments/8224999/8355982.png)
 
 # Module pack
 
@@ -200,5 +202,5 @@ You can download the module described here: [https://dl.dropboxusercontent.com/
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [tony_custom-admin-page.png]({{ site.baseurl }}/attachments/8224999/8355981.png) (image/png)  
-![](images/icons/bullet_blue.gif) [tony_custom-customer-page.png]({{ site.baseurl }}/attachments/8224999/8355982.png) (image/png)
+![](images/icons/bullet_blue.gif) [tony_custom-admin-page.png]({{site.baseurl}}/attachments/8224999/8355981.png) (image/png)  
+![](images/icons/bullet_blue.gif) [tony_custom-customer-page.png]({{site.baseurl}}/attachments/8224999/8355982.png) (image/png)

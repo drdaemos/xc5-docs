@@ -1,12 +1,14 @@
 ---
+identifier: H1to2Z27w
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.2 - 6 Mar 2013'
-categories: [changelog]
+categories:
+  - Changelog
 
 ---
 
-
+{% include global.html %}
 
 <a name="bugnotes" rel="nofollow"></a>
 

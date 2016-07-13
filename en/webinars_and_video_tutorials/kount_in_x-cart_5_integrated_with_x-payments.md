@@ -1,12 +1,14 @@
 ---
+identifier: S1wTiZnQP
 layout: article_with_sidebar
 lang: en
 title: 'Kount in X-Cart 5 integrated with X-Payments'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

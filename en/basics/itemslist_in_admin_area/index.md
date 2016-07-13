@@ -1,20 +1,22 @@
 ---
+identifier: B1majbn7D
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList in admin area'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 **ItemsList** is a type of X-Cart widget that displays records about entities in structured format. Examples of ItemsList widgets are below:
 
-![]({{ site.baseurl }}/attachments/8225372/8356178.png)
+![]({{site.baseurl}}/attachments/8225372/8356178.png)
 
-![]({{ site.baseurl }}/attachments/8225372/8356179.png)
+![]({{site.baseurl}}/attachments/8225372/8356179.png)
 
 This article will explain how to create such ItemsList. For the sake of example, we will create an ItemsList with products that has price more than $10 and this list can be sorted by price.
 
@@ -27,7 +29,7 @@ This article will explain how to create such ItemsList. For the sake of example,
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ItemsListAdminDemo**. Then we [create a new page]({{ baseurl_lang }}/basics/creating_new_page.html) `target=items_list_demo` in admin area. For that we create:
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ItemsListAdminDemo**. Then we {% link "create a new page" B1zwoW37P %} `target=items_list_demo` in admin area. For that we create:
 
 1.  empty controller class `\XLite\Module\Tony\ItemsListAdminDemo\Controller\Admin\ItemsListDemo`;
 2.  simple page viewer class `\XLite\Module\Tony\ItemsListAdminDemo\View\Page\Admin\ItemsListDemo` with the following content: 
@@ -138,7 +140,7 @@ Let us have a look at key parts of this widget implementation:
     {% highlight php %}{% raw %}
     class ItemsListDemo extends \XLite\View\ItemsList\Model\Table
     {% endraw %}{% endhighlight %}
-2.  We need to point our **ItemsList** to some [model]({{ baseurl_lang }}/basics/understanding_models.html). It will tell a widget what entities it must display. In our case, this entity is a **product**, so we point our ItemsList to `\XLite\Model\Product` model class: 
+2.  We need to point our **ItemsList** to some {% link "model" B1F3WnQv %}. It will tell a widget what entities it must display. In our case, this entity is a **product**, so we point our ItemsList to `\XLite\Model\Product` model class: 
 
     {% highlight php %}{% raw %}
         protected function defineRepositoryName()
@@ -204,7 +206,7 @@ Let us have a look at key parts of this widget implementation:
         }
     {% endraw %}{% endhighlight %}
 
-    We need to extend it in order to allow [search() method]({{ baseurl_lang }}/basics/searching_entities_in_repositories/search()_method.html) in the `\XLite\Model\Repo\Product` repository class to work properly.
+    We need to extend it in order to allow {% link "search() method" S1Qh5WhQP %} in the `\XLite\Model\Repo\Product` repository class to work properly.
 
 8.  First, we let it know that sorting must be done according to user's selected condition: 
 
@@ -267,7 +269,7 @@ abstract class Product extends \XLite\Model\Repo\Product implements \XLite\Base\
 }
 {% endraw %}{% endhighlight %}
 
-_Note: if you need more info about `search()` method implementation, please have a look here: [search() method](8225347.html)._
+_Note: if you need more info about `search()` method implementation, please have a look here: {% link "search() method" 8225347.html %}._
 
 Finally, we need to display our ItemsList widget on the page, so we go to the `<X-Cart>/skins/admin/en/modules/``Tony/ItemsListAdminDemo/page/items_list_demo/body.tpl` template and define its content as follows: 
 
@@ -275,7 +277,7 @@ Finally, we need to display our ItemsList widget on the page, so we go to the `
 <widget class="XLite\Module\Tony\ItemsListAdminDemo\View\ItemsList\ItemsListDemo" />
 {% endraw %}{% endhighlight %}
 
-That is it. Now we need to re-deploy the store and you will see our **ItemsList** that supports sorting by Price on `admin.php?target=items_list_demo` page.![]({{ site.baseurl }}/attachments/8225372/8356180.png)
+That is it. Now we need to re-deploy the store and you will see our **ItemsList** that supports sorting by Price on `admin.php?target=items_list_demo` page.![]({{site.baseurl}}/attachments/8225372/8356180.png)
 
 # Module pack
 
@@ -283,6 +285,6 @@ You can download this module's example from here: [https://dl.dropboxuserconten
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [items-list-example.png]({{ site.baseurl }}/attachments/8225372/8356178.png) (image/png)  
-![](images/icons/bullet_blue.gif) [items-list-example-1.png]({{ site.baseurl }}/attachments/8225372/8356179.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-items-list.png]({{ site.baseurl }}/attachments/8225372/8356180.png) (image/png)
+![](images/icons/bullet_blue.gif) [items-list-example.png]({{site.baseurl}}/attachments/8225372/8356178.png) (image/png)  
+![](images/icons/bullet_blue.gif) [items-list-example-1.png]({{site.baseurl}}/attachments/8225372/8356179.png) (image/png)  
+![](images/icons/bullet_blue.gif) [demo-items-list.png]({{site.baseurl}}/attachments/8225372/8356180.png) (image/png)

@@ -1,16 +1,18 @@
 ---
+identifier: SJ8ToWh7D
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList options in customer area'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-This article is in advanced explanation of how to use [ItemsLists in customer area]({{ baseurl_lang }}/basics/itemslist_introduction_--_showing_products_on_a_page/{{ baseurl_lang }}/index.html). It explains how to enable/disable pagination, sorting options, display options etc.
+This article is in advanced explanation of how to use {% link "ItemsLists in customer area" HkNpibnXv %}. It explains how to enable/disable pagination, sorting options, display options etc.
 
 # Table of Contents
 

@@ -1,12 +1,14 @@
 ---
+identifier: BJEa9b37v
 layout: article_with_sidebar
 lang: en
 title: 'Working with custom CSS in X-Cart 5: Tutorial by Mike White'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

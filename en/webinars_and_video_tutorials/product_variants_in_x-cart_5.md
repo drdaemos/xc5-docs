@@ -1,12 +1,14 @@
 ---
+identifier: SyO73bhXP
 layout: article_with_sidebar
 lang: en
 title: 'Product variants in X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

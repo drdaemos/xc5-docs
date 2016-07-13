@@ -1,12 +1,14 @@
 ---
+identifier: Skf5j-h7P
 layout: article_with_sidebar
 lang: en
 title: 'Forcing product quantity while adding to cart'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -21,9 +23,9 @@ This article aims to show how you can change the routine of adding product to ca
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **AddQuantityDemo**.
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **AddQuantityDemo**.
 
-When a product is added to cart, the request goes to `cart.php?target=cart` URL with **action=add** parameter, which means that [this request will be handled]({{ baseurl_lang }}/basics/controller_class.html) by `doActionAdd()` method of `\XLite\Controller\Customer\Cart` class ([more info about classnames in X-Cart]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)). The `doActionAdd()` method performs checks and then calls `addItem()` method of the same controller class – this method will actually add a product to a cart and then redirect a customer. In our module, we need to [decorate]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html) the `\XLite\Controller\Customer\Cart` class and enhance the `addItem()` method. This enhancement will make sure that quantity of product added is even. Otherwise, we will show an error message and the product will not be added to cart.
+When a product is added to cart, the request goes to `cart.php?target=cart` URL with **action=add** parameter, which means that {% link "this request will be handled" Skb8obnQP %} by `doActionAdd()` method of `\XLite\Controller\Customer\Cart` class ({% link "more info about classnames in X-Cart" S1RinW3Qv %}). The `doActionAdd()` method performs checks and then calls `addItem()` method of the same controller class – this method will actually add a product to a cart and then redirect a customer. In our module, we need to {% link "decorate" rkE_3bnXw %} the `\XLite\Controller\Customer\Cart` class and enhance the `addItem()` method. This enhancement will make sure that quantity of product added is even. Otherwise, we will show an error message and the product will not be added to cart.
 
 We decorate the `\XLite\Controller\Customer\Cart` class by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/Controller/Customer/Cart.php` file with the following content: 
 
@@ -73,7 +75,7 @@ $result = false;
 
 Basically, the mod is done here, but since we can check item's amount right in JavaScript, we want to add it as well.
 
-For that we [register a new JS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html) by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/View/AView.php` file with the following content: 
+For that we {% link "register a new JS file" rkvxo-3mP %} by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -113,9 +115,9 @@ $(".product-buttons .add2cart").click(
 )
 {% endraw %}{% endhighlight %}
 
-That is it. Now we need to re-deploy the store and check the results in customer area. If we add 2 quantity of a product to cart, everything will work as before. If we try to add 1 product, we will see this warning:![]({{ site.baseurl }}/attachments/8225442/8356203.png)
+That is it. Now we need to re-deploy the store and check the results in customer area. If we add 2 quantity of a product to cart, everything will work as before. If we try to add 1 product, we will see this warning:![]({{site.baseurl}}/attachments/8225442/8356203.png)
 
-If you want to see the PHP check in action, then go the JS file, comment out its entire content and reload the page. Try to add 1 product to a cart and you will see the following warning:![]({{ site.baseurl }}/attachments/8225442/8356204.png)
+If you want to see the PHP check in action, then go the JS file, comment out its entire content and reload the page. Try to add 1 product to a cart and you will see the following warning:![]({{site.baseurl}}/attachments/8225442/8356204.png)
 
 # Module pack
 
@@ -123,5 +125,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [js-warning.png]({{ site.baseurl }}/attachments/8225442/8356203.png) (image/png)  
-![](images/icons/bullet_blue.gif) [top-warning.png]({{ site.baseurl }}/attachments/8225442/8356204.png) (image/png)
+![](images/icons/bullet_blue.gif) [js-warning.png]({{site.baseurl}}/attachments/8225442/8356203.png) (image/png)  
+![](images/icons/bullet_blue.gif) [top-warning.png]({{site.baseurl}}/attachments/8225442/8356204.png) (image/png)

@@ -1,12 +1,14 @@
 ---
+identifier: SyDL2WhXP
 layout: article_with_sidebar
 lang: en
 title: 'Setting up cURL'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

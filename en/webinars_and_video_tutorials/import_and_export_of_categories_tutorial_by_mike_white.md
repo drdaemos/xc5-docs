@@ -1,12 +1,14 @@
 ---
+identifier: S1LscWnQD
 layout: article_with_sidebar
 lang: en
 title: 'Import and Export of Categories: Tutorial by Mike White'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

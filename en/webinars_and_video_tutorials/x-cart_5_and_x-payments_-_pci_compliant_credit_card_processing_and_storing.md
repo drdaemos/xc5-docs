@@ -1,12 +1,14 @@
 ---
+identifier: Sy8j2-nmv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 and X-Payments - PCI compliant credit card processing and storing'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

@@ -1,12 +1,14 @@
 ---
+identifier: SJgDhW2QP
 layout: article_with_sidebar
 lang: en
 title: 'Setting up shipping calculation in X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

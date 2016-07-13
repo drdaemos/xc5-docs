@@ -1,12 +1,14 @@
 ---
+identifier: H1Qu2b27w
 layout: article_with_sidebar
 lang: en
 title: 'Step 1 - creating simplest module'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -99,13 +101,13 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 
 3.  Define the `getDescription()`, `getModuleName()`, `getAuthorName()` methods so they would return your own module description, module name and module author.
 4.  Re-deploy your store via the admin area of your X-Cart:  
-    ![]({{ site.baseurl }}/attachments/524296/9437239.png?effects=drop-shadow) 
+    ![]({{site.baseurl}}/attachments/524296/9437239.png?effects=drop-shadow) 
 5.  After the re-deployment process is over, your module will show up among the installed modules in your store's admin area.
 
 # Module creation via SDK
 
-1.  [Obtain X-Cart SDK]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-ObtainingX-CartSDK)
-2.  Call [create module macro](X-Cart-SDK_7864338.html#X-CartSDK-Creatingmodule) with your developer and module IDs
+1.  {% link "Obtain X-Cart SDK" B1ni2bhQD#X-CartSDK-ObtainingX-CartSDK %}
+2.  Call {% link "create module macro" X-Cart-SDK_7864338.html#X-CartSDK-Creatingmodule %} with your developer and module IDs
 
 # Packing up your module
 
@@ -113,12 +115,12 @@ If you want to create the module's distributive pack, you need to
 
 1.  Edit your `<X-Cart>/etc/config.php `file and define the `developer_mode `option as `On` there.
 2.  After that you will see the Pack it link near each module in your Extensions > Installed modules section as shown on the snapshot below:  
-    ![]({{ site.baseurl }}/attachments/524296/1212420.png?effects=drop-shadow)
+    ![]({{site.baseurl}}/attachments/524296/1212420.png?effects=drop-shadow)
 3.  Clicking **Pack it** link will generate your module's distribution pack.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [1.png]({{ site.baseurl }}/attachments/524296/1212421.png) (image/png)  
-![](images/icons/bullet_blue.gif) [1.png]({{ site.baseurl }}/attachments/524296/1212420.png) (image/png)  
-![](images/icons/bullet_blue.gif) [redeploy-the-store.png]({{ site.baseurl }}/attachments/524296/7995397.png) (image/png)  
-![](images/icons/bullet_blue.gif) [xc5_cache_redeploy.png]({{ site.baseurl }}/attachments/524296/9437239.png) (image/png)
+![](images/icons/bullet_blue.gif) [1.png]({{site.baseurl}}/attachments/524296/1212421.png) (image/png)  
+![](images/icons/bullet_blue.gif) [1.png]({{site.baseurl}}/attachments/524296/1212420.png) (image/png)  
+![](images/icons/bullet_blue.gif) [redeploy-the-store.png]({{site.baseurl}}/attachments/524296/7995397.png) (image/png)  
+![](images/icons/bullet_blue.gif) [xc5_cache_redeploy.png]({{site.baseurl}}/attachments/524296/9437239.png) (image/png)

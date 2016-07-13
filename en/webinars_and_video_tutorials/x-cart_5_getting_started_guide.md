@@ -1,12 +1,14 @@
 ---
+identifier: r1vihW3QP
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 getting started guide'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

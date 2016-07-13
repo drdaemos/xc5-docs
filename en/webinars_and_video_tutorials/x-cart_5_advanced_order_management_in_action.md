@@ -1,12 +1,14 @@
 ---
+identifier: ByWo3WhmD
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Advanced Order Management in action'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

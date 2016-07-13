@@ -1,12 +1,14 @@
 ---
+identifier: Syl3i-nXD
 layout: article_with_sidebar
 lang: en
 title: 'How to create translation module'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 Translation module is an add-on that translates X-Cart store to another language. Most part of such module is not a code, but the list of translated labels, so we tried to ease the process for translators and all they need to do is to perform their translating job. After that you can run a special script that will wrap up their translation into the module.
 
@@ -21,13 +23,13 @@ This article describes the whole process of creating translation module.
 
 We assume that you already have X-Cart 5 installation. You can get the complete list of labels for translation by clicking **CSV icon** in the **Store setup** > **Translations** section in your admin area.
 
-![]({{ site.baseurl }}/attachments/7504191/7602235.png)
+![]({{site.baseurl}}/attachments/7504191/7602235.png)
 
 # Working with CSV
 
 Open this CSV file in your favourite spreadsheet editor (MS Excel, OpenOffice Calc, etc). You will see three columns there.
 
-![]({{ site.baseurl }}/attachments/7504191/7602236.png)
+![]({{site.baseurl}}/attachments/7504191/7602236.png)
 
 *   The first column contains the code of the English language. Remove this column entirely.
 *   The second column contains the key of the label. Our translation engine will use this key to identify what label should be pulled from the translation module.
@@ -49,9 +51,9 @@ Once you are done with the CSV file, you should go to the [http://www.x-cart.co
 
 Fill in the form of this script as:
 
-*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: [Step 1 - creating simplest module#Choosingidentifiers]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html#Step1-creatingsimplestmodule-Choosingidentifiers)
+*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: {% link "Step 1 - creating simplest module#Choosingidentifiers" H1Qu2b27w#Step1-creatingsimplestmodule-Choosingidentifiers %}
 *   **Module author** should contain the name of the translation author how it should be displayed to merchants.
-*   **Module service name** should contain the ID of your module in X-Cart. See more here: [Step 1 - creating simplest module#Choosingidentifiers](Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Choosingidentifiers)
+*   **Module service name** should contain the ID of your module in X-Cart. See more here: {% link "Step 1 - creating simplest module#Choosingidentifiers" Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Choosingidentifiers %}
 *   **Module name** should contain the name of your module how it is going to be displayed to merchants.
 *   **Module description** defines the description of the module that will be displayed to merchants.
 *   **Core version **field defines what X-Cart version is your module for.
@@ -62,12 +64,12 @@ Fill in the form of this script as:
 
 This script will process your translation file and will create a module out of it.
 
-![]({{ site.baseurl }}/attachments/7504191/8717039.png)
+![]({{site.baseurl}}/attachments/7504191/8717039.png)
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [translations-csv-icon.png]({{ site.baseurl }}/attachments/7504191/7602235.png) (image/png)  
-![](images/icons/bullet_blue.gif) [csv-translations.png]({{ site.baseurl }}/attachments/7504191/7602236.png) (image/png)  
-![](images/icons/bullet_blue.gif) [x-cart.com-translation-script.png]({{ site.baseurl }}/attachments/7504191/7602237.png) (image/png)  
-![](images/icons/bullet_blue.gif) [create-translation-module-form.png]({{ site.baseurl }}/attachments/7504191/7602772.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Screen Shot 2015-04-16 at 14.05.52 .png]({{ site.baseurl }}/attachments/7504191/8717039.png) (image/png)
+![](images/icons/bullet_blue.gif) [translations-csv-icon.png]({{site.baseurl}}/attachments/7504191/7602235.png) (image/png)  
+![](images/icons/bullet_blue.gif) [csv-translations.png]({{site.baseurl}}/attachments/7504191/7602236.png) (image/png)  
+![](images/icons/bullet_blue.gif) [x-cart.com-translation-script.png]({{site.baseurl}}/attachments/7504191/7602237.png) (image/png)  
+![](images/icons/bullet_blue.gif) [create-translation-module-form.png]({{site.baseurl}}/attachments/7504191/7602772.png) (image/png)  
+![](images/icons/bullet_blue.gif) [Screen Shot 2015-04-16 at 14.05.52 .png]({{site.baseurl}}/attachments/7504191/8717039.png) (image/png)

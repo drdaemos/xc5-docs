@@ -1,12 +1,14 @@
 ---
+identifier: SydZhW37P
 layout: article_with_sidebar
 lang: en
 title: 'Moving X-Cart to another location'
-categories: [migration_guides]
+categories:
+  - Migration guides
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

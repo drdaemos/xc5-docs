@@ -1,14 +1,13 @@
 ---
+identifier: SysTcZ3mw
 layout: article_with_sidebar
 lang: en
 title: 'Adding a New Page in X Cart 5: Tutorial by Mike White'
 categories:
-  - webinars_and_video_tutorials
-published: true
-order: 0
+  - Webinars and video tutorials
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

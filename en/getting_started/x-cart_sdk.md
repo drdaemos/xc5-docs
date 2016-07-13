@@ -1,12 +1,14 @@
 ---
+identifier: B1ni2bhQD
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart SDK'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -28,7 +30,7 @@ X-Cart SDK is a collection of macros that ease X-Cart 5 development. This articl
 # Obtaining X-Cart SDK
 
 1.  Download X-Cart SDK from [https://github.com/xcart/next-sdk](https://github.com/xcart/next-sdk) repository. If you are not familiar with GIT, you can simply download it as **.zip** archive.  
-    ![]({{ site.baseurl }}/attachments/7864338/7995398.png)
+    ![]({{site.baseurl}}/attachments/7864338/7995398.png)
 2.  Unpack it to the directory near to X-Cart's one. For instance, if your X-Cart lives in `~/www/xcart/` folder, then put your SDK's folder as `~/www/next-sdk/`.
 3.  Run macros from the X-Cart's folder, e.g. 
 
@@ -129,7 +131,7 @@ Call this macro as:
 
 Your YAML file must be located at the `path/to/yaml/file/install.yaml` path you pass to macro.
 
-There is an [alternative way to load YAML file]({{ baseurl_lang }}/misc/loading_yaml_file.html), if you prefer not to use X-Cart SDK.
+There is an {% link "alternative way to load YAML file" HyO6s-3XP %}, if you prefer not to use X-Cart SDK.
 
 ## Making demo dump for performance tests
 
@@ -166,4 +168,4 @@ _Note: you do not specify user number explicitly. You will have the same number 
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [git-download-zip.png]({{ site.baseurl }}/attachments/7864338/7995398.png) (image/png)
+![](images/icons/bullet_blue.gif) [git-download-zip.png]({{site.baseurl}}/attachments/7864338/7995398.png) (image/png)

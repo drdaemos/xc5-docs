@@ -1,12 +1,14 @@
 ---
+identifier: rkURq-nQP
 layout: article_with_sidebar
 lang: en
 title: 'Prolongation of access to updates (video)'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

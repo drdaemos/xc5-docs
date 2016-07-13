@@ -1,12 +1,14 @@
 ---
+identifier: SkHKhb37P
 layout: article_with_sidebar
 lang: en
 title: 'Upgrade hooks'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 In X-Cart 5.2.7 we added the ability to create upgrade hooks that can be run iteratively. This allows time consuming operations on the store's data to be performed without the fear that an operation may not be completed correctly due to exceeding a timeout value set in the web server settings.
 

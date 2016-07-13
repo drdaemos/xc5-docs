@@ -1,18 +1,20 @@
 ---
+identifier: SyZ3sWh7P
 layout: article_with_sidebar
 lang: en
 title: 'How to find out what page is currently running'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article teaches X-Cart developers how to determine what page is currently opened. For the sake of example, we will create a simple mod that will show different messages depending on whether **home**, **category** or **checkout** page is opened. If any other page is opened, then no message will be shown.
 
-This article assumes that you know [how to work with viewer classes]({{ baseurl_lang }}/basics/working_with_viewer_classes.html) in X-Cart.
+This article assumes that you know {% link "how to work with viewer classes" rkeo2b3XP %} in X-Cart.
 
 # Table of Contents
 
@@ -23,7 +25,7 @@ This article assumes that you know [how to work with viewer classes]({{ baseurl_
 
 # Implementation
 
-To get started we [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
+To get started we {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDetectionDemo/View/OurWidget.php` class with the following content:
 
 {% highlight php %}{% raw %}
@@ -131,9 +133,9 @@ Now, it is time to create a template defined in the `getDefaultTemplate()` metho
 
 We call our `getOurText()` method that will analyze current controller class and define a message for a customer.
 
-_Note: we could have also checked the current page by analyzing **target** parameter of `[\XLite\Core\Request]({{ baseurl_lang }}/basics/retrieving_data_from_the_request.html)` object._
+_Note: we could have also checked the current page by analyzing **target** parameter of `{% link "\XLite\Core\Request" HyS2-hXP %}` object._
 
-Now, we need to re-deploy the store and check the results in customer store-front. You should see messages similar to:![]({{ site.baseurl }}/attachments/524292/8356147.png)
+Now, we need to re-deploy the store and check the results in customer store-front. You should see messages similar to:![]({{site.baseurl}}/attachments/524292/8356147.png)
 
 # Module pack
 
@@ -141,4 +143,4 @@ You can download this module pack from here: [https://dl.dropboxusercontent.com
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [this-is-checkout-page.png]({{ site.baseurl }}/attachments/524292/8356147.png) (image/png)
+![](images/icons/bullet_blue.gif) [this-is-checkout-page.png]({{site.baseurl}}/attachments/524292/8356147.png) (image/png)

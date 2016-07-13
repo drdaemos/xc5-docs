@@ -1,14 +1,16 @@
 ---
+identifier: S1G2-37P
 layout: article_with_sidebar
 lang: en
 title: 'Multi changes'
-categories: [drafts]
+categories:
+  - Drafts
 
 ---
 
+{% include global.html %}
 
-
-1.  [Multi-vendor: Admin experience]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_admin_experience.html)  
+1.  {% link "Multi-vendor: Admin experience" rJFnqWh7w %}  
     <s>#6 access to classes and attributes:</s>  
     <s>can create product classes for vendors to use;</s>  
     <s>can edit product classes created by vendors;</s>  
@@ -30,11 +32,11 @@ categories: [drafts]
 
     #? - <s>can recognize products & product classes as created by vendors. For admin, product classes and attributes created by vendors appear marked with "Vendor: Vendor name [(vendor_email@example.com)](http://localhost/x-cart-5.2.8-en/admin.php?target=profile&profile_id=11)". Product list has a column "Vendor" showing vendor email address. Can admin see other items as created by vendors - maybe discounts</s> (No, admin sees, but does not know who they belong to)  
 
-2.  [Vendor access to orders and statistics]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_vendor_experience/vendor_access_to_orders_and_statistics.html)  
+2.  {% link "Vendor access to orders and statistics" B1kxFhb3QD %}  
     Tracking - vendors must have different capabilities in warehouse-non-warehouse modes - check  
     Do vendors see the selected shipping method in warehouse mode?  
 
-3.  [Multi-vendor: Customer experience]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_customer_experience.html)  
+3.  {% link "Multi-vendor: Customer experience" rk_hcWhQv %}  
     During checkout the list of shipping methods available for the order is formed from the shipping methods enabled by the vendors whose products are contained in the order. Note that the customer can see as selectable only the shipping methods that are enabled by all the participating vendors <- This probably only applies to warehouse   
     The order confirmation message and the order invoice do not split the order by vendor. All the items in the order are displayed in one list, and the shipping cost for the order is also displayed as a single amount: <- What about different modes?  
 
@@ -47,28 +49,28 @@ categories: [drafts]
     <s>Admin can edit c&d of vendors</s>  
     <s>vendors can see only their own c&d (c&d of admin and other vendors are not visible to them). </s>  
 
-7.  <s>[Configuring the Multi-vendor module]({{ baseurl_lang }}/user_manual/modules/multi-vendor/configuring_the_multi-vendor_module.html)</s>  
+7.  <s>{% link "Configuring the Multi-vendor module" S1VSj-nQv %}</s>  
     <s>new scrn - settings</s>  
 
-8.  <s>[Vendor registration]({{ baseurl_lang }}/user_manual/modules/multi-vendor/vendor_registration.html)</s>  
+8.  <s>{% link "Vendor registration" Syf9nbh7v %}</s>  
     <s>"Access level" Vendor = "Access level" Admin + "Roles" Vendor</s>  
 
 9.  <s>New article: </s>  
-    <s>[Specifying vendor ship-from address]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_vendor_experience/specifying_vendor_ship-from_address.html)</s>  
+    <s>{% link "Specifying vendor ship-from address" S1xu2-hXD %}</s>  
 
-10.  <s>[Vendor login and first steps]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_vendor_experience/vendor_login_and_first_steps.html)</s>  
+10.  <s>{% link "Vendor login and first steps" Hyl5hZ2XP %}</s>  
     <s>Financial info</s>  
     <s>Store setup > Store address</s>  
     <s>vendor shipping methods - select (Vendors as separate shops) or no access to selection (Warehouse mode)?</s>  
 
-11.  <s>[Managing vendor profile information]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_vendor_experience/managing_vendor_profile_information.html)</s>  
+11.  <s>{% link "Managing vendor profile information" H1fe3W3QP %}</s>  
     <s>Financial info</s>  
     <s>Store setup > Store address</s>  
 
-12.  <s>[Managing vendor shipping methods]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_vendor_experience/managing_vendor_shipping_methods.html)</s>  
+12.  <s>{% link "Managing vendor shipping methods" S1bnZ3QD %}</s>  
     <s>Vrendors only need to  set up shipping methods if mode not= warehouse?</s>  
 
-13.  <s>[Vendor access to product classes and attributes]({{ baseurl_lang }}/user_manual/modules/multi-vendor/multi-vendor_vendor_experience/vendor_access_to_product_classes_and_attributes.html)</s>  
+13.  <s>{% link "Vendor access to product classes and attributes" SJ5n-n7v %}</s>  
     <s>"Vendor access to global attributes" -> "Use existing values only" or "Use existing and add new values":</s>  
 
     <s>Both modes:</s>  

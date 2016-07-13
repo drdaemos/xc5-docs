@@ -1,18 +1,20 @@
 ---
+identifier: rkf_sbnmP
 layout: article_with_sidebar
 lang: en
 title: 'Creating sidebar menu in customer area'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article describes how you can create your own sidebar menu in customer store-front via module. This is a menu similar to **Categories** or **New** **Arrivals** ones you can see in default package.
 
-![]({{ site.baseurl }}/attachments/7505759/7602842.png)
+![]({{site.baseurl}}/attachments/7505759/7602842.png)
 
 # Table of Contents
 
@@ -26,7 +28,7 @@ This article describes how you can create your own sidebar menu in customer stor
 
 # Step 1\. Create an empty module
 
-You can simply do it according to [the guide]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
+You can simply do it according to {% link "the guide" H1Qu2b27w %}. For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
 
 Rebuild the cache and this module will appear in the **Extensions > Installed modules** section in your admin area. Enable this module.
 
@@ -81,7 +83,7 @@ Hello world!
 
 If you have done everything right, you will see the following results in customer store-front:
 
-![]({{ site.baseurl }}/attachments/7505759/7602844.png)
+![]({{site.baseurl}}/attachments/7505759/7602844.png)
 
 # Module pack
 
@@ -91,7 +93,7 @@ You can download this module pack for versions 5.2.x from here: [Tony-SidebarMe
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [sidebar-menus.png]({{ site.baseurl }}/attachments/7505759/7602842.png) (image/png)  
-![](images/icons/bullet_blue.gif) [custom-sidebar-in-storefront]({{ site.baseurl }}/attachments/7505759/7602843) (application/octet-stream)  
-![](images/icons/bullet_blue.gif) [custom-sidebar-in-storefront.png]({{ site.baseurl }}/attachments/7505759/7602844.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Tony-SidebarMenu-v5_2_0.tar]({{ site.baseurl }}/attachments/7505759/9438471.tar) (application/x-tar)
+![](images/icons/bullet_blue.gif) [sidebar-menus.png]({{site.baseurl}}/attachments/7505759/7602842.png) (image/png)  
+![](images/icons/bullet_blue.gif) [custom-sidebar-in-storefront]({{site.baseurl}}/attachments/7505759/7602843) (application/octet-stream)  
+![](images/icons/bullet_blue.gif) [custom-sidebar-in-storefront.png]({{site.baseurl}}/attachments/7505759/7602844.png) (image/png)  
+![](images/icons/bullet_blue.gif) [Tony-SidebarMenu-v5_2_0.tar]({{site.baseurl}}/attachments/7505759/9438471.tar) (application/x-tar)

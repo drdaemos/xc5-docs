@@ -1,12 +1,14 @@
 ---
+identifier: r1-S2ZnQD
 layout: article_with_sidebar
 lang: en
 title: 'Saving credit cards in X-Cart 5 integrated with X-Payments 2.x'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

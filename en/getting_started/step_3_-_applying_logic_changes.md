@@ -1,12 +1,14 @@
 ---
+identifier: rkE_3bnXw
 layout: article_with_sidebar
 lang: en
 title: 'Step 3 - applying logic changes'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -28,8 +30,8 @@ This article also contains the working example of changing X-Cart's logic.
 
 Before we start explaining general workflow of X-Cart, we must say that X-Cart uses **object-oriented paradigm**, which means that code is objects-based + code widely utilizes **inheritance** as well as uses polymorphism and encapsulation. We also can call X-Cart as **MVC** (Model - View - Controller) framework, because of three main class types in X-Cart:
 
-1.  [**Model** class]({{ baseurl_lang }}/basics/understanding_models.html) is a class that describes some entity. Products, orders, users, payment gateways, etc are all model objects. All model classes are defined in files of the `<X-Cart>/classes/XLite/Model/` folder.
-2.  [**Viewer** class]({{ baseurl_lang }}/basics/working_with_viewer_classes.html) is a class that handles the output of HTML code to the client. For example, in order to display an order page there is a bulk of viewer classes that takes info from order model, then processes it and finally outputs to the client. All viewer classes are defined in files of the `<X-Cart>/classes/XLite/View/` directory.
+1.  {% link "**Model** class" B1F3WnQv %} is a class that describes some entity. Products, orders, users, payment gateways, etc are all model objects. All model classes are defined in files of the `<X-Cart>/classes/XLite/Model/` folder.
+2.  {% link "**Viewer** class" rkeo2b3XP %} is a class that handles the output of HTML code to the client. For example, in order to display an order page there is a bulk of viewer classes that takes info from order model, then processes it and finally outputs to the client. All viewer classes are defined in files of the `<X-Cart>/classes/XLite/View/` directory.
 3.  **Controller** class aims to make a preparation of data and application before viewer class starts the output of content. All controller classes are described in files of the `<X-Cart>/classes/XLite/Controller/` folder.
 
 # General X-Cart workflow
@@ -54,7 +56,7 @@ It means, that we can tell X-Cart to use our own implementation of certain metho
 
 Let me show you how the real-life working example for better understanding. Assume we want to hide the quicklook magnifier icon from all product lists. This icon is marked on the snapshot below:
 
-![](attachments/8224804/8355865.png)Using the approach described in [Step 2 - applying design changes]({{ site.baseurl }}/{{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html) article, we can find that this icon is defined by the `<X-Cart>/skins/default/en/items_list/product/parts/common.quicklook-button.tpl` template. Its code is below: 
+![]({{site.baseurl}}/attachments/8224804/8355865.png)Using the approach described in {% link "Step 2 - applying design changes" HkDO3Wh7v %} article, we can find that this icon is defined by the `<X-Cart>/skins/default/en/items_list/product/parts/common.quicklook-button.tpl` template. Its code is below: 
 
 {% highlight php %}{% raw %}
 {* vim: set ts=2 sw=2 sts=2 et: *}
@@ -83,7 +85,7 @@ As you can see, the code is straight-forward: if `isQuickLookEnabled()` method 
 
 Here is how we can achieve it:
 
-1.  [Create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). I am creating it with developer ID as **Tony** and module ID as **DecoratorDemo**. Of course, you can use your own IDs.
+1.  {% link "Create an empty module" H1Qu2b27w %}. I am creating it with developer ID as **Tony** and module ID as **DecoratorDemo**. Of course, you can use your own IDs.
 2.  Create the `<Your-Module-Directory>/VIew/ItemsList/Product/Customer/ACustomer.php` file inside your module with the following content: 
 
     {% highlight php %}{% raw %}
@@ -164,5 +166,5 @@ Decoration approach is widely-used in X-Cart modules and here are few other mome
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [quicklook-icon.png]({{ site.baseurl }}/attachments/8224804/8355866.png) (image/png)  
-![](images/icons/bullet_blue.gif) [quicklook-icon.png]({{ site.baseurl }}/attachments/8224804/8355865.png) (image/png)
+![](images/icons/bullet_blue.gif) [quicklook-icon.png]({{site.baseurl}}/attachments/8224804/8355866.png) (image/png)  
+![](images/icons/bullet_blue.gif) [quicklook-icon.png]({{site.baseurl}}/attachments/8224804/8355865.png) (image/png)

@@ -1,12 +1,14 @@
 ---
+identifier: SJYls-2XP
 layout: article_with_sidebar
 lang: en
 title: 'Accessing data of current user profile'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -23,7 +25,7 @@ For the sake of example, we will create a new page that will be accessible via `
 
 # Implementation
 
-Before we get started, we [create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ProfileDemo**. Also, we [create a new page]({{ baseurl_lang }}/basics/creating_new_page.html#Creatingnewpage-Creatingpageincustomerarea) that will be accessible via `cart.php?target=profile_demo` URL.
+Before we get started, we {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ProfileDemo**. Also, we {% link "create a new page" B1zwoW37P#Creatingnewpage-Creatingpageincustomerarea %} that will be accessible via `cart.php?target=profile_demo` URL.
 
 Once it is done, we go to the `<X-Cart>/classes/XLite/Module/Tony/ProfileDemo/Controller/Customer/ProfileDemo.php` file and add the following method there:
 
@@ -41,7 +43,7 @@ This method will be used in the template of our page in order to determine wheth
 $profile = \XLite\Core\Auth::getInstance()->getProfile();
 {% endraw %}{% endhighlight %}
 
-and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see [more info about classnames]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html) in X-Cart).
+and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see {% link "more info about classnames" S1RinW3Qv %} in X-Cart).
 
 Now it is time to edit this page's template and we go to the `<X-Cart>/skins/default/en/modules/Tony/ProfileDemo/page/profile_demo/body.tpl` and define its content as follows: 
 
@@ -59,7 +61,7 @@ As you may have noticed, we did not really need the `isAnonymous()` method in ou
 
 After we save the template, we are done with this mod. Now we need to re-deploy the store and check the results in customer area by opening `cart.php?target=profile_demo` URL. It will return the following result:
 
-![]({{ site.baseurl }}/attachments/8225230/8356123.png)
+![]({{site.baseurl}}/attachments/8225230/8356123.png)
 
 # Module pack
 
@@ -67,4 +69,4 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [account-info-on-custom-page.png]({{ site.baseurl }}/attachments/8225230/8356123.png) (image/png)
+![](images/icons/bullet_blue.gif) [account-info-on-custom-page.png]({{site.baseurl}}/attachments/8225230/8356123.png) (image/png)

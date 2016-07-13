@@ -1,12 +1,14 @@
 ---
+identifier: SJCc2-h7v
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

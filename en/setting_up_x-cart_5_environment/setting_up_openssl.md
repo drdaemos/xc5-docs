@@ -1,12 +1,14 @@
 ---
+identifier: ryKUnbn7v
 layout: article_with_sidebar
 lang: en
 title: 'Setting up openSSL'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

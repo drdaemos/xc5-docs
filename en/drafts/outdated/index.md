@@ -1,10 +1,12 @@
 ---
+identifier: SJ4M3-nXD
 layout: article_with_sidebar
 lang: en
 title: 'Outdated'
-categories: [drafts]
+categories:
+  - Drafts
 
 ---
 
-
+{% include global.html %}
 

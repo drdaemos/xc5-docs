@@ -1,12 +1,14 @@
 ---
+identifier: rynFh-nQv
 layout: article_with_sidebar
 lang: en
 title: 'Using Webmaster Mode in X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

@@ -1,12 +1,14 @@
 ---
+identifier: Sk6thWh7v
 layout: article_with_sidebar
 lang: en
 title: 'Using X-Cart 5 AOM and X-Payments together'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

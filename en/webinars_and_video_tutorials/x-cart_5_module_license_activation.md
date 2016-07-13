@@ -1,12 +1,14 @@
 ---
+identifier: r1ro2W2Qv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Module License Activation'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

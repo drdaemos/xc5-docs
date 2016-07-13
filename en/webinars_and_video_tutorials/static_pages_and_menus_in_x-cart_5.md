@@ -1,12 +1,14 @@
 ---
+identifier: HkzOh-37v
 layout: article_with_sidebar
 lang: en
 title: 'Static pages and menus in X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

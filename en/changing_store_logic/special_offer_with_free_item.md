@@ -1,18 +1,20 @@
 ---
+identifier: B1nP2-n7P
 layout: article_with_sidebar
 lang: en
 title: 'Special offer with free item'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This guide explains how to create a module that implements a **special offer**: buy three items of the same product and the third one will be free for you. On top of that, this type of discount will be displayed as a **separate line** on the checkout.
 
-This guide is based on the previous one about [creating a discount]({{ baseurl_lang }}/changing_store_logic/creating_global_discount.html), so you might want to look at it first.
+This guide is based on the previous one about {% link "creating a discount" B1PsW37P %}, so you might want to look at it first.
 
 # Table of Contents
 
@@ -23,7 +25,7 @@ This guide is based on the previous one about [creating a discount]({{ baseurl_l
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the [discount module](Creating-global-discount_8225204.html). We create the  
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the {% link "discount module" Creating-global-discount_8225204.html %}. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/FreeItemDemo/Logic/Order/Modifier/FreeItem.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -103,9 +105,9 @@ XLite\Model\Order\Modifier:
   - { class: '\XLite\Module\Tony\FreeItemDemo\Logic\Order\Modifier\FreeItem', weight: 100 }
 {% endraw %}{% endhighlight %}
 
-and then [push it to the database]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-LoadingYAMLfile).
+and then {% link "push it to the database" B1ni2bhQD#X-CartSDK-LoadingYAMLfile %}.
 
-Now we need to re-deploy the store and then check the results. For that, go to your customer area and add three items of the same product to a cart. You will see the following picture at the cart page: ![]({{ site.baseurl }}/attachments/8225412/8356192.png)
+Now we need to re-deploy the store and then check the results. For that, go to your customer area and add three items of the same product to a cart. You will see the following picture at the cart page: ![]({{site.baseurl}}/attachments/8225412/8356192.png)
 
 # Module pack
 
@@ -113,4 +115,4 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [free-item.png]({{ site.baseurl }}/attachments/8225412/8356192.png) (image/png)
+![](images/icons/bullet_blue.gif) [free-item.png]({{site.baseurl}}/attachments/8225412/8356192.png) (image/png)

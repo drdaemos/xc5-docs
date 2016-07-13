@@ -1,18 +1,20 @@
 ---
+identifier: B1wnoW2Xv
 layout: article_with_sidebar
 lang: en
 title: 'Implementing horizontal attribute tabs'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-X-Cart 5.1.4 introduced **vertical product attribute tabs** that look as follows:![]({{ site.baseurl }}/attachments/8225427/8356199.png)
+X-Cart 5.1.4 introduced **vertical product attribute tabs** that look as follows:![]({{site.baseurl}}/attachments/8225427/8356199.png)
 
-If you are one of the clients, who want previous **horizontal** look of product tabs: ![]({{ site.baseurl }}/attachments/8225427/8356200.png)
+If you are one of the clients, who want previous **horizontal** look of product tabs: ![]({{site.baseurl}}/attachments/8225427/8356200.png)
 
 then this guide is for you.
 
@@ -25,7 +27,7 @@ then this guide is for you.
 
 # Implementation
 
-We start with [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to [register a new CSS file]({{ baseurl_lang }}/design_changes/adding_css_and_js_files.html). We create the  
+We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to {% link "register a new CSS file" rkvxo-3mP %}. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductTabsChange/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -98,5 +100,5 @@ You can download this module pack from here: [https://dl.dropboxusercontent.com
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [vertical-product-tabs.png]({{ site.baseurl }}/attachments/8225427/8356199.png) (image/png)  
-![](images/icons/bullet_blue.gif) [horizontal-product-tabs.png]({{ site.baseurl }}/attachments/8225427/8356200.png) (image/png)
+![](images/icons/bullet_blue.gif) [vertical-product-tabs.png]({{site.baseurl}}/attachments/8225427/8356199.png) (image/png)  
+![](images/icons/bullet_blue.gif) [horizontal-product-tabs.png]({{site.baseurl}}/attachments/8225427/8356200.png) (image/png)

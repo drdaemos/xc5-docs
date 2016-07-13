@@ -1,12 +1,14 @@
 ---
+identifier: HkNpibnXv
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList introduction -- showing products on a page'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -21,8 +23,8 @@ This article describes the process of creating page with products. For instance,
 
 # Implementation
 
-1.  [Create an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html). We are creating a module with developer ID **Tony** and module ID **ProductsDemo**.
-2.  [Create a page]({{ baseurl_lang }}/basics/creating_new_page.html) in this module. We are creating a page in customer area that will be accessible by `cart.php?target=all_products` URL.
+1.  {% link "Create an empty module" H1Qu2b27w %}. We are creating a module with developer ID **Tony** and module ID **ProductsDemo**.
+2.  {% link "Create a page" B1zwoW37P %} in this module. We are creating a page in customer area that will be accessible by `cart.php?target=all_products` URL.
 3.  Create new **ItemsList** class that will display all products in the center of this new page. We create the  
     `<X-Cart>/classes/XLite/Module/Tony/ProductsDemo/View/ItemsList/Product/Customer/AllProducts.php` file with the following content: 
 
@@ -74,7 +76,7 @@ This article describes the process of creating page with products. For instance,
 
     This line says that we will use `\XLite\View\ItemsList\Product\Customer\ACustomer` parent class as a template for our products output. This class is parent of all ItemsLists used for display of products in customer area, so the result will be rendered the same, but it will display all products instead of ones that defined by other ItemsLists.
 
-5.  `@ListChild (list="center.bottom", zone="customer", weight="300")` directive says that the output of this ItemsList [must be put]({{ baseurl_lang }}/basics/working_with_viewer_classes.html) into central area of the page.
+5.  `@ListChild (list="center.bottom", zone="customer", weight="300")` directive says that the output of this ItemsList {% link "must be put" rkeo2b3XP %} into central area of the page.
 
 6.  `getWidgetTarget()` method defines a target of a page where our ItemsList will sit. In our case, this page is `cart.php?target=all_products`.
 7.  `getAllowedTargets()` method defines what pages must display this widget: 
@@ -104,7 +106,7 @@ This article describes the process of creating page with products. For instance,
         }
     {% endraw %}{% endhighlight %}
 
-    **ItemsList** widgets use [`search()` method]({{ baseurl_lang }}/basics/searching_entities_in_repositories/search()_method.html) as an approach to pull entities from the database. `getData()` method is called through `getPageData()` and `getItemsCount()` methods of `\XLite\View\ItemsList\AItemsList` class. When it is called this way, `getData()` receives `$cnd` parameter returned from the `getSearchCondition()` method of `\XLite\View\ItemsList\AItemsList` class. By default it represents an empty array, so if we call `search()` method with it, it will return all products, which is what we need.
+    **ItemsList** widgets use {% link "`search()` method" S1Qh5WhQP %} as an approach to pull entities from the database. `getData()` method is called through `getPageData()` and `getItemsCount()` methods of `\XLite\View\ItemsList\AItemsList` class. When it is called this way, `getData()` receives `$cnd` parameter returned from the `getSearchCondition()` method of `\XLite\View\ItemsList\AItemsList` class. By default it represents an empty array, so if we call `search()` method with it, it will return all products, which is what we need.
 
 9.  `getPagerClass()` method is used in order to define a pagination look. X-Cart does not have a generic pager class, so we need to create it, luckily it is very easy. We just create the  
     `<X-Cart>/classes/XLite/Module/Tony/ProductsDemo/View/Pager/Customer/Product/Product.php` file with the following content: 
@@ -127,7 +129,7 @@ This article describes the process of creating page with products. For instance,
             return '\XLite\Module\Tony\ProductsDemo\View\Pager\Customer\Product\Product';
         }
     {% endraw %}{% endhighlight %}
-10.  That is it. Now we need to re-deploy the store and then open `cart.php?target=all_products` page in order to see the result of our mod work:![]({{ site.baseurl }}/attachments/8225226/8356122.png)
+10.  That is it. Now we need to re-deploy the store and then open `cart.php?target=all_products` page in order to see the result of our mod work:![]({{site.baseurl}}/attachments/8225226/8356122.png)
 
 # Module pack
 
@@ -135,4 +137,4 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [all-products-on-custom-page.png]({{ site.baseurl }}/attachments/8225226/8356122.png) (image/png)
+![](images/icons/bullet_blue.gif) [all-products-on-custom-page.png]({{site.baseurl}}/attachments/8225226/8356122.png) (image/png)

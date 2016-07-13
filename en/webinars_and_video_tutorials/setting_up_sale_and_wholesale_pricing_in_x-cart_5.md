@@ -1,12 +1,14 @@
 ---
+identifier: BJ982W3mP
 layout: article_with_sidebar
 lang: en
 title: 'Setting up sale and wholesale pricing in X-Cart 5'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

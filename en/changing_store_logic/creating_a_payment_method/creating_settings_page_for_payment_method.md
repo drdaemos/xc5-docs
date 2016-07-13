@@ -1,16 +1,18 @@
 ---
+identifier: rkWdsb37P
 layout: article_with_sidebar
 lang: en
 title: 'Creating settings page for payment method'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-This article is a continuation of the guide about [creating payment method]({{ baseurl_lang }}/changing_store_logic/creating_a_payment_method/{{ baseurl_lang }}/index.html). During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.
+This article is a continuation of the guide about {% link "creating payment method" S1XIsWh7P %}. During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.
 
 # Table of Contents
 
@@ -21,7 +23,7 @@ This article is a continuation of the guide about [creating payment method]({{ b
 
 # Implementation
 
-We start with creating an empty module with developer ID **Tony** and module ID **PaymentFormDemo** and then implement a [gateway described in the previous guide](Creating-a-payment-method_8225448.html).
+We start with creating an empty module with developer ID **Tony** and module ID **PaymentFormDemo** and then implement a {% link "gateway described in the previous guide" Creating-a-payment-method_8225448.html %}.
 
 1.  We create the `<X-Cart>/payment.php` file with the following code there: 
 
@@ -88,9 +90,9 @@ We start with creating an empty module with developer ID **Tony** and module ID 
     {% endraw %}{% endhighlight %}
 
     This file will register this payment method in the database.  
-    _Note: do not forget to [push this file into the database]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-LoadingYAMLfile)._
+    _Note: do not forget to {% link "push this file into the database" B1ni2bhQD#X-CartSDK-LoadingYAMLfile %}._
 
-Now we have the module described in [the previous guide](Creating-a-payment-method_8225448.html), but it has been created with module ID **PaymentFormDemo** and we want to add some settings to it. We will create a settings form that will contain three fields:
+Now we have the module described in {% link "the previous guide" Creating-a-payment-method_8225448.html %}, but it has been created with module ID **PaymentFormDemo** and we want to add some settings to it. We will create a settings form that will contain three fields:
 
 *   login
 *   password
@@ -125,7 +127,7 @@ XLite\Model\Payment\Method:
         value: live
 {% endraw %}{% endhighlight %}
 
-Once we are done with this, we need to [push renewed version of our YAML file](X-Cart-SDK_7864338.html#X-CartSDK-LoadingYAMLfile) to the database.
+Once we are done with this, we need to {% link "push renewed version of our YAML file" X-Cart-SDK_7864338.html#X-CartSDK-LoadingYAMLfile %} to the database.
 
 After that we go to the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/Model/Payment/Processor/DemoPayment.php` file and add following methods there: 
 
@@ -249,12 +251,12 @@ This template represents the form that will be displayed in the payment method s
 
 That is it with this module example. Now we need to re-deploy the store and check the results.
 
-First of all add our payment method on the **Store setup** > **Payment methods** page in admin area. Since the **login** and **password** fields are not specified yet, the payment methods list displays this method as **unconfigured **and **active/inactive** selector is disabled: ![]({{ site.baseurl }}/attachments/8225462/8356214.png)
+First of all add our payment method on the **Store setup** > **Payment methods** page in admin area. Since the **login** and **password** fields are not specified yet, the payment methods list displays this method as **unconfigured **and **active/inactive** selector is disabled: ![]({{site.baseurl}}/attachments/8225462/8356214.png)
 
 This is our `isConfigured()` method in action.
 
 Go to the payment method's settings page, input any values into **Login**/**Password** fields and set **Test** value for **Processing Mode** field. Save the results and check this payment method in the payment methods list. It will show you this method as enabled, but it will mark it as **in test mode**:  
-![]({{ site.baseurl }}/attachments/8225462/8356215.png)
+![]({{site.baseurl}}/attachments/8225462/8356215.png)
 
 Here we see the `isTestMode()` method in action.
 
@@ -264,5 +266,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [demo-payment-unconfigured.png]({{ site.baseurl }}/attachments/8225462/8356214.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-payment-test-mode.png]({{ site.baseurl }}/attachments/8225462/8356215.png) (image/png)
+![](images/icons/bullet_blue.gif) [demo-payment-unconfigured.png]({{site.baseurl}}/attachments/8225462/8356214.png) (image/png)  
+![](images/icons/bullet_blue.gif) [demo-payment-test-mode.png]({{site.baseurl}}/attachments/8225462/8356215.png) (image/png)

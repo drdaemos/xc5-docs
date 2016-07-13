@@ -1,12 +1,14 @@
 ---
+identifier: ByPK3-hmP
 layout: article_with_sidebar
 lang: en
 title: 'Upgrading X-Cart 5'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -47,16 +49,16 @@ Upgrade hooks may exist in the modules as well, if the module needs to synchroni
 Once per day, each store checks the marketplace for updates. The response from marketplace is cached for a day. If you need to delete this cache, you should open the `admin.php?target=addons_list_marketplace&action=clear_cache` link.
 
 If there is any kind of update available, the merchant will see the **Updates are available** link in the header of admin area.  
-![]({{ site.baseurl }}/attachments/7505469/7602688.png)
+![]({{site.baseurl}}/attachments/7505469/7602688.png)
 
 Click this link and proceed to upgrade. You can see possible warnings before upgrade.
 
 *   If your store does not have any license (free or paid), you will be prompted to buy one
 
-![]({{ site.baseurl }}/attachments/7505469/7602689.png)
+![]({{site.baseurl}}/attachments/7505469/7602689.png)
 
-*   If your store has modules that do not exist in the marketplace (e.g. you uploaded them via **Upload add-on** button) and you are doing a **minor upgrade, **you will be suggested to disable them, although it is not necessarily![]({{ site.baseurl }}/attachments/7505469/7602690.png)
-*   If your store has modules that do not exist in the marketplace (e.g. you uploaded them via **Upload add-on** button) and you are doing a **major upgrade,** you will be told that **they ****will be disabled automatically**![]({{ site.baseurl }}/attachments/7505469/7602691.png)
+*   If your store has modules that do not exist in the marketplace (e.g. you uploaded them via **Upload add-on** button) and you are doing a **minor upgrade, **you will be suggested to disable them, although it is not necessarily![]({{site.baseurl}}/attachments/7505469/7602690.png)
+*   If your store has modules that do not exist in the marketplace (e.g. you uploaded them via **Upload add-on** button) and you are doing a **major upgrade,** you will be told that **they ****will be disabled automatically**![]({{site.baseurl}}/attachments/7505469/7602691.png)
 
 After clicking **Continue **button, X-Cart will start downloading upgrade packs for core and modules.
 
@@ -64,16 +66,16 @@ NOTE: if this step times out because of bad connection, you can try to adjust th
 
 Once all upgrade packs are downloaded, you will be prompted to create a backup and there will be **Install updates** button. Clicking it will run the whole upgrade process that cannot be interrupted.
 
-![]({{ site.baseurl }}/attachments/7505469/7602771.png)
+![]({{site.baseurl}}/attachments/7505469/7602771.png)
 
 At this last step, you can also receive several types of warnings:
 
 *   If your store has any modified files, you will get warning like this
 
-![]({{ site.baseurl }}/attachments/7505469/7602770.png)
+![]({{site.baseurl}}/attachments/7505469/7602770.png)
 
 *   If your store has any modules that have upgrade hooks and these modules are disabled (not active), you will be prompted to either activate such modules or completely remove them. Module must be active in order to correctly run upgrade hooks and this is the reason why the module must be either enabled or deleted  
-    ![]({{ site.baseurl }}/attachments/7505469/7602769.png)
+    ![]({{site.baseurl}}/attachments/7505469/7602769.png)
 
 After clicking **Install updates** button, there will be the process as follows:
 
@@ -134,17 +136,17 @@ Below the description of full manual upgrade:
 
 _Related pages:_
 
-*   [X-Cart Upgrade General Steps]({{ baseurl_lang }}/misc/x-cart_upgrade_general_steps.html)
-*   [Upgrade hooks]({{ baseurl_lang }}/misc/upgrade_hooks.html)
+*   {% link "X-Cart Upgrade General Steps" r1pj2W37P %}
+*   {% link "Upgrade hooks" SkHKhb37P %}
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [updates-available]({{ site.baseurl }}/attachments/7505469/7602687) (application/octet-stream)  
-![](images/icons/bullet_blue.gif) [updates-available.png]({{ site.baseurl }}/attachments/7505469/7602688.png) (image/png)  
-![](images/icons/bullet_blue.gif) [upgrade-purchase-license.png]({{ site.baseurl }}/attachments/7505469/7602689.png) (image/png)  
-![](images/icons/bullet_blue.gif) [update-minor-upgrade.png]({{ site.baseurl }}/attachments/7505469/7602690.png) (image/png)  
-![](images/icons/bullet_blue.gif) [upgrade-major-update.png]({{ site.baseurl }}/attachments/7505469/7602691.png) (image/png)  
-![](images/icons/bullet_blue.gif) [modules-must-be-either-activated-or-disabled]({{ site.baseurl }}/attachments/7505469/7602768) (application/octet-stream)  
-![](images/icons/bullet_blue.gif) [modules-must-be-either-activated-or-disabled.png]({{ site.baseurl }}/attachments/7505469/7602769.png) (image/png)  
-![](images/icons/bullet_blue.gif) [some-files-are-modified.png]({{ site.baseurl }}/attachments/7505469/7602770.png) (image/png)  
-![](images/icons/bullet_blue.gif) [create-a-backup.png]({{ site.baseurl }}/attachments/7505469/7602771.png) (image/png)
+![](images/icons/bullet_blue.gif) [updates-available]({{site.baseurl}}/attachments/7505469/7602687) (application/octet-stream)  
+![](images/icons/bullet_blue.gif) [updates-available.png]({{site.baseurl}}/attachments/7505469/7602688.png) (image/png)  
+![](images/icons/bullet_blue.gif) [upgrade-purchase-license.png]({{site.baseurl}}/attachments/7505469/7602689.png) (image/png)  
+![](images/icons/bullet_blue.gif) [update-minor-upgrade.png]({{site.baseurl}}/attachments/7505469/7602690.png) (image/png)  
+![](images/icons/bullet_blue.gif) [upgrade-major-update.png]({{site.baseurl}}/attachments/7505469/7602691.png) (image/png)  
+![](images/icons/bullet_blue.gif) [modules-must-be-either-activated-or-disabled]({{site.baseurl}}/attachments/7505469/7602768) (application/octet-stream)  
+![](images/icons/bullet_blue.gif) [modules-must-be-either-activated-or-disabled.png]({{site.baseurl}}/attachments/7505469/7602769.png) (image/png)  
+![](images/icons/bullet_blue.gif) [some-files-are-modified.png]({{site.baseurl}}/attachments/7505469/7602770.png) (image/png)  
+![](images/icons/bullet_blue.gif) [create-a-backup.png]({{site.baseurl}}/attachments/7505469/7602771.png) (image/png)

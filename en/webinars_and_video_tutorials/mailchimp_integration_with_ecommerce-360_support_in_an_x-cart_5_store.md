@@ -1,12 +1,14 @@
 ---
+identifier: HkoTsZ2Qv
 layout: article_with_sidebar
 lang: en
 title: 'MailChimp Integration with Ecommerce-360 support in an X-Cart 5 Store'
-categories: [webinars_and_video_tutorials]
+categories:
+  - Webinars and video tutorials
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 

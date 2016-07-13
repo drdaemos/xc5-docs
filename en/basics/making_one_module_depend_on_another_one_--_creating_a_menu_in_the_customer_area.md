@@ -1,16 +1,18 @@
 ---
+identifier: Hy0s-nQD
 layout: article_with_sidebar
 lang: en
 title: 'Making one module depend on another one -- creating a menu in the customer area'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
-This article aims to show developers how to give priority to one class over another during the [decoration process]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html). It also shows how one module can require another one for proper work.
+This article aims to show developers how to give priority to one class over another during the {% link "decoration process" rkE_3bnXw %}. It also shows how one module can require another one for proper work.
 
 # Table of Contents
 
@@ -27,13 +29,13 @@ This article aims to show developers how to give priority to one class over anot
 
 Imagine the situation: You are writing a module that correlates with another one. A typical case – you want to override a customer menu on the storefront.
 
-The top menu is defined in the core class `\XLite\View\Menu\Customer\Top` (see the article about [class names]({{ baseurl_lang }}/misc/x-cart_classes_structure_and_namespaces.html)), and the module **SimpleCMS** overrides this class via `\XLite\Module\CDev\SimpleCMS\View\Menu\Customer\PrimaryMenu`. We want to show our items no matter whether the module SimpleCMS is enabled or not.
+The top menu is defined in the core class `\XLite\View\Menu\Customer\Top` (see the article about {% link "class names" S1RinW3Qv %}), and the module **SimpleCMS** overrides this class via `\XLite\Module\CDev\SimpleCMS\View\Menu\Customer\PrimaryMenu`. We want to show our items no matter whether the module SimpleCMS is enabled or not.
 
 In order to solve the problem, we must be sure that our module will decorate the core class `\XLite\View\Menu\Customer\Top` after the SimpleCMS' class, otherwise SimpleCMS will just ignore our implementation of the menu.
 
 # Solution
 
-1.  [Create a module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html).  I am creating it with the developer ID **Tony** and the module ID **OverridingTopMenu**.
+1.  {% link "Create a module" H1Qu2b27w %}.  I am creating it with the developer ID **Tony** and the module ID **OverridingTopMenu**.
 2.  In order to tell X-Cart what menu items must be shown on the storefront, we need to decorate the method `defineItems()` of the class `\XLite\View\Menu\Customer\Top`.
 3.  To achieve that, we will create the file `<X-Cart>/classes/XLite/Module/Tony/OverridingTopMenu/View/Menu/Customer/Top.php` with the following content: 
 
@@ -132,9 +134,9 @@ For example, we want to write a module that can work only if the module **Simpl
             return array('CDev\SimpleCMS');
         }
     {% endraw %}{% endhighlight %}
-3.  This method tells X-Cart that our DependenciesDemo module cannot work without the module SimpleCMS enabled. X-Cart will not even allow to enable it if SimpleCMS is not active. ![]({{ site.baseurl }}/attachments/8224842/8355885.png?effects=drop-shadow)
+3.  This method tells X-Cart that our DependenciesDemo module cannot work without the module SimpleCMS enabled. X-Cart will not even allow to enable it if SimpleCMS is not active. ![]({{site.baseurl}}/attachments/8224842/8355885.png?effects=drop-shadow)
 4.  Note that if the module DependenciesDemo is active, you cannot disable the module SimpleCMS either.  
-    ![]({{ site.baseurl }}/attachments/8224842/8355886.png?effects=drop-shadow)
+    ![]({{site.baseurl}}/attachments/8224842/8355886.png?effects=drop-shadow)
 
 # Second module pack
 
@@ -142,5 +144,5 @@ An example of the module DependenciesDemo can be downloaded from here: [https:/
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [cannot-enable-dependencies-demo.png]({{ site.baseurl }}/attachments/8224842/8355885.png) (image/png)  
-![](images/icons/bullet_blue.gif) [cannot-disable-simple-cms.png]({{ site.baseurl }}/attachments/8224842/8355886.png) (image/png)
+![](images/icons/bullet_blue.gif) [cannot-enable-dependencies-demo.png]({{site.baseurl}}/attachments/8224842/8355885.png) (image/png)  
+![](images/icons/bullet_blue.gif) [cannot-disable-simple-cms.png]({{site.baseurl}}/attachments/8224842/8355886.png) (image/png)

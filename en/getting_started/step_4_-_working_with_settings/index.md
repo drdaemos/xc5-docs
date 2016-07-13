@@ -1,20 +1,22 @@
 ---
+identifier: HyBu3W3XD
 layout: article_with_sidebar
 lang: en
 title: 'Step 4 - working with settings'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
 This article aims to teach developers how to create settings of their module and then use them in the code. This article assumes that you have already learnt three previous articles from **Getting started** section:
 
-*   [Step 1 - creating simplest module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html)
-*   [Step 2 - applying design changes]({{ baseurl_lang }}/getting_started/step_2_-_applying_design_changes.html)
-*   [Step 3 - applying logic changes]({{ baseurl_lang }}/getting_started/step_3_-_applying_logic_changes.html)
+*   {% link "Step 1 - creating simplest module" H1Qu2b27w %}
+*   {% link "Step 2 - applying design changes" HkDO3Wh7v %}
+*   {% link "Step 3 - applying logic changes" rkE_3bnXw %}
 
 For the sake of example, we will create a module that will have a textarea setting where you can put any HTML code and this HTML code will be added between `<head></head>` tags on each page in front-end. Also, this guide will contain code examples of how to create other setting types.
 
@@ -34,7 +36,7 @@ For the sake of example, we will create a module that will have a textarea setti
 
 # Creating module with settings
 
-1.  Create the module according to [step 1](Step-1---creating-simplest-module_524296.html) article. In my example, I am using developer ID as **Tony** and module ID as **SettingsDemo**.
+1.  Create the module according to {% link "step 1" Step-1---creating-simplest-module_524296.html %} article. In my example, I am using developer ID as **Tony** and module ID as **SettingsDemo**.
 2.  Put the following method into your `Main.php` file: 
 
     {% highlight php %}{% raw %}
@@ -45,7 +47,7 @@ For the sake of example, we will create a module that will have a textarea setti
     {% endraw %}{% endhighlight %}
 
     This method will tell X-Cart that it must show **Settings** link near the module in the **Extensions** > **Installed modules** section as follows:   
-    ![]({{ site.baseurl }}/attachments/8224795/8355862.png)
+    ![]({{site.baseurl}}/attachments/8224795/8355862.png)
 
 3.  Re-deploy your store and then enable this newly created module.
 
@@ -66,18 +68,18 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
             option_name: Put your HTML code here
             option_comment: I am comment to the option and I am here just for show that you can put some text into me
     {% endraw %}{% endhighlight %}
-3.  Once it is done, push the changes to the database using [load-yaml.php]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-LoadingYAMLfile) macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
+3.  Once it is done, push the changes to the database using {% link "load-yaml.php" B1ni2bhQD#X-CartSDK-LoadingYAMLfile %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
 
     {% highlight php %}{% raw %}
     ../../next-sdk/devkit/macros/load-yaml.php classes/XLite/Module/Tony/SettingsDemo/install.yaml
     {% endraw %}{% endhighlight %}
 4.  Go to the module settings and you will see the following page:  
-    ![]({{ site.baseurl }}/attachments/8224795/8355863.png)
+    ![]({{site.baseurl}}/attachments/8224795/8355863.png)
 5.  Now you can put your own HTML code into this textarea field. X-Cart can save it, yet does not know how to use it.
 
 # Using setting values in the code
 
-1.  Create the viewer class in your module as per [step 2](Step-2---applying-design-changes_8224787.html) article. Since my developer ID is **Tony** and module ID is **SettingsDemo**, I am creating the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/View/Header.php` file. You do not need to create .php file with Header name, it can be whatever you like, e.g. Code.php, HTML.php, etc.
+1.  Create the viewer class in your module as per {% link "step 2" Step-2---applying-design-changes_8224787.html %} article. Since my developer ID is **Tony** and module ID is **SettingsDemo**, I am creating the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/View/Header.php` file. You do not need to create .php file with Header name, it can be whatever you like, e.g. Code.php, HTML.php, etc.
 2.  Put the following content into your viewer class: 
 
     {% highlight php %}{% raw %}
@@ -134,7 +136,7 @@ This section will give an overview of how you can set up different option types 
 
 This is a type of setting we have used in our module already. It will allow to create multi-line text form setting.
 
-![]({{ site.baseurl }}/attachments/8224795/8355869.png)
+![]({{site.baseurl}}/attachments/8224795/8355869.png)
 
 YAML code example:
 
@@ -168,7 +170,7 @@ These parameters are common for all setting types.
 
 This is a type of setting that will be represented as a single-line text field.
 
-![]({{ site.baseurl }}/attachments/8224795/8355870.png)
+![]({{site.baseurl}}/attachments/8224795/8355870.png)
 
 YAML code example:
 
@@ -190,7 +192,7 @@ Parameters are the same as for **Textarea** setting.
 
 This is a setting type that will be represented – obviously – as a checkbox.
 
-![]({{ site.baseurl }}/attachments/8224795/8355871.png)
+![]({{site.baseurl}}/attachments/8224795/8355871.png)
 
 YAML code example:
 
@@ -212,7 +214,7 @@ Parameters are the same as for **Textarea** option.
 
 This is an element that is used on settings page in order to separate option groups.
 
-![]({{ site.baseurl }}/attachments/8224795/8355872.png)
+![]({{site.baseurl}}/attachments/8224795/8355872.png)
 
 YAML code example:
 
@@ -234,7 +236,7 @@ Sometimes simple options – as shown above – are not enough for your task an
 
 For the sake of example, let us add a selectbox of timezone to our module.
 
-![]({{ site.baseurl }}/attachments/8224795/8355873.png)
+![]({{site.baseurl}}/attachments/8224795/8355873.png)
 
 YAML code example:
 
@@ -253,7 +255,7 @@ Parameters are almost common with only difference: you specify the class name in
 
 Another example is **Yes/No **selector:
 
-![]({{ site.baseurl }}/attachments/8224795/8355874.png)
+![]({{site.baseurl}}/attachments/8224795/8355874.png)
 
 {% highlight php %}{% raw %}
   - name: yesno_selectbox
@@ -269,17 +271,17 @@ Another example is **Yes/No **selector:
 
 Again, parameters are the same, but you specify the class name in the **type** field.
 
-You can use all classes from the `<X-Cart>/classes/XLite/View/FormField/` folder in your settings or [create your own one]({{ baseurl_lang }}/getting_started/step_4_-_working_with_settings/creating_custom_setting_class.html).
+You can use all classes from the `<X-Cart>/classes/XLite/View/FormField/` folder in your settings or {% link "create your own one" HkH8iZ3XP %}.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [module-settings.png]({{ site.baseurl }}/attachments/8224795/8355862.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{ site.baseurl }}/attachments/8224795/8355864.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{ site.baseurl }}/attachments/8224795/8355868.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{ site.baseurl }}/attachments/8224795/8355863.png) (image/png)  
-![](images/icons/bullet_blue.gif) [textarea-field-example.png]({{ site.baseurl }}/attachments/8224795/8355869.png) (image/png)  
-![](images/icons/bullet_blue.gif) [text-setting-example.png]({{ site.baseurl }}/attachments/8224795/8355870.png) (image/png)  
-![](images/icons/bullet_blue.gif) [checkbox-setting-example.png]({{ site.baseurl }}/attachments/8224795/8355871.png) (image/png)  
-![](images/icons/bullet_blue.gif) [separator-setting-example.png]({{ site.baseurl }}/attachments/8224795/8355872.png) (image/png)  
-![](images/icons/bullet_blue.gif) [timezone-setting-example.png]({{ site.baseurl }}/attachments/8224795/8355873.png) (image/png)  
-![](images/icons/bullet_blue.gif) [yes-no-setting-example.png]({{ site.baseurl }}/attachments/8224795/8355874.png) (image/png)
+![](images/icons/bullet_blue.gif) [module-settings.png]({{site.baseurl}}/attachments/8224795/8355862.png) (image/png)  
+![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355864.png) (image/png)  
+![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355868.png) (image/png)  
+![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355863.png) (image/png)  
+![](images/icons/bullet_blue.gif) [textarea-field-example.png]({{site.baseurl}}/attachments/8224795/8355869.png) (image/png)  
+![](images/icons/bullet_blue.gif) [text-setting-example.png]({{site.baseurl}}/attachments/8224795/8355870.png) (image/png)  
+![](images/icons/bullet_blue.gif) [checkbox-setting-example.png]({{site.baseurl}}/attachments/8224795/8355871.png) (image/png)  
+![](images/icons/bullet_blue.gif) [separator-setting-example.png]({{site.baseurl}}/attachments/8224795/8355872.png) (image/png)  
+![](images/icons/bullet_blue.gif) [timezone-setting-example.png]({{site.baseurl}}/attachments/8224795/8355873.png) (image/png)  
+![](images/icons/bullet_blue.gif) [yes-no-setting-example.png]({{site.baseurl}}/attachments/8224795/8355874.png) (image/png)

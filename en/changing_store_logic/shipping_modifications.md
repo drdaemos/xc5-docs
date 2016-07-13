@@ -1,12 +1,14 @@
 ---
+identifier: H1UP2ZhXv
 layout: article_with_sidebar
 lang: en
 title: 'Shipping modifications'
-categories: [developer_docs]
+categories:
+  - Developer docs
 
 ---
 
-
+{% include global.html %}
 
 # Introduction
 
@@ -22,7 +24,7 @@ This article describes the process of creating a simple shipping method. In our 
 
 # Implementation
 
-We start by [creating an empty module]({{ baseurl_lang }}/getting_started/step_1_-_creating_simplest_module.html) with the developer ID **XCExample **and the module ID **ShippingDemo**. Then, we create the file  
+We start by {% link "creating an empty module" H1Qu2b27w %} with the developer ID **XCExample **and the module ID **ShippingDemo**. Then, we create the file  
 <X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php: 
 
 {% highlight php %}{% raw %}
@@ -89,7 +91,7 @@ This is the simplest implementation of a shipping processor class. We extend the
 
 *   First, we define `$getProcessorId` property as MyProcessor;
 *   `getProcessorName()` method must return a string that will identify this shipping carrier in the admin area. In our case, it will look as follows:  
-    ![]({{ site.baseurl }}/attachments/8225333/9633889.png?effects=drop-shadow)
+    ![]({{site.baseurl}}/attachments/8225333/9633889.png?effects=drop-shadow)
 *   `getRates()` method is the most important one – this method returns an array of `\XLite\Model\Shipping\Rate` object, and each of them represents a shipping option at checkout. Each shipping rate must contain a link to `\XLite\Model\Shipping\Method` object and a rate value. In our module, we will have **My Shipping Method** shipping method (it will be created a bit later), and this shipping method can be found via `getShippingMethod()` method in this class: 
 
 {% highlight php %}{% raw %}
@@ -155,7 +157,7 @@ We add records to the shipping methods repository about the new shipping methods
 
 The first method is a parent method; its name **My Shipping Method(parent) **will be used as the name of the method in the admin area of the site. The second method is a child method, its name will be visible to customers.. It is **enabled** and has **carrier** field as **M****yProcessor** and **processor** field as **MyProcessor**.
 
-_Note: if you have already activated the module, do not forget to [push this install.yaml]({{ baseurl_lang }}/getting_started/x-cart_sdk.html#X-CartSDK-LoadingYAMLfile) to the database._
+_Note: if you have already activated the module, do not forget to {% link "push this install.yaml" B1ni2bhQD#X-CartSDK-LoadingYAMLfile %} to the database._
 
 Then, we need to create the file XLite/Module/XCExample/ShippingDemo/Controller/Admin/MyProcessor.php
 
@@ -199,19 +201,19 @@ Now our module is ready and we need to re-deploy the store. Once this process is
 
 There we need to add new shipping method:
 
-![]({{ site.baseurl }}/attachments/8225333/9633890.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/8225333/9633890.png?effects=drop-shadow)
 
 And activate it:
 
-![]({{ site.baseurl }}/attachments/8225333/9633889.png?effects=drop-shadow)
+![]({{site.baseurl}}/attachments/8225333/9633889.png?effects=drop-shadow)
 
 If everything is fine, you can see it on the list:
 
-![]({{ site.baseurl }}/attachments/8225333/9633892.png?effects=drop-shadow)  
+![]({{site.baseurl}}/attachments/8225333/9633892.png?effects=drop-shadow)  
 
 Then go to customer area, add some product to a cart and proceed to checkout. You should be able to see our shipping method there:
 
-![]({{ site.baseurl }}/attachments/8225333/9633893.png?effects=drop-shadow)  
+![]({{site.baseurl}}/attachments/8225333/9633893.png?effects=drop-shadow)  
 
 # Module pack
 
@@ -219,12 +221,12 @@ You can download this module example from here: [XCExample-ShippingDemo-v5_2_0.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [my-processor.png]({{ site.baseurl }}/attachments/8225333/8356175.png) (image/png)  
-![](images/icons/bullet_blue.gif) [my-processor-methods.png]({{ site.baseurl }}/attachments/8225333/8356176.png) (image/png)  
-![](images/icons/bullet_blue.gif) [my-shipping-method.png]({{ site.baseurl }}/attachments/8225333/8356177.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image03.png]({{ site.baseurl }}/attachments/8225333/9633891.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image01.png]({{ site.baseurl }}/attachments/8225333/9633890.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image03.png]({{ site.baseurl }}/attachments/8225333/9633889.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image02.png]({{ site.baseurl }}/attachments/8225333/9633892.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image00.png]({{ site.baseurl }}/attachments/8225333/9633893.png) (image/png)  
-![](images/icons/bullet_blue.gif) [XCExample-ShippingDemo-v5_2_0.tar]({{ site.baseurl }}/attachments/8225333/9633894.tar) (application/x-tar)
+![](images/icons/bullet_blue.gif) [my-processor.png]({{site.baseurl}}/attachments/8225333/8356175.png) (image/png)  
+![](images/icons/bullet_blue.gif) [my-processor-methods.png]({{site.baseurl}}/attachments/8225333/8356176.png) (image/png)  
+![](images/icons/bullet_blue.gif) [my-shipping-method.png]({{site.baseurl}}/attachments/8225333/8356177.png) (image/png)  
+![](images/icons/bullet_blue.gif) [image03.png]({{site.baseurl}}/attachments/8225333/9633891.png) (image/png)  
+![](images/icons/bullet_blue.gif) [image01.png]({{site.baseurl}}/attachments/8225333/9633890.png) (image/png)  
+![](images/icons/bullet_blue.gif) [image03.png]({{site.baseurl}}/attachments/8225333/9633889.png) (image/png)  
+![](images/icons/bullet_blue.gif) [image02.png]({{site.baseurl}}/attachments/8225333/9633892.png) (image/png)  
+![](images/icons/bullet_blue.gif) [image00.png]({{site.baseurl}}/attachments/8225333/9633893.png) (image/png)  
+![](images/icons/bullet_blue.gif) [XCExample-ShippingDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225333/9633894.tar) (application/x-tar)
