@@ -1,11 +1,13 @@
 ---
 layout: article_with_sidebar
 lang: en
-title: 'Webinars and video tutorials'
-categories: [home]
+title: Webinars and video tutorials
+categories:
+  - home
 order: 10
 icon: youtube play
 description: Live video from our developers and associates
+published: true
 ---
 
 
@@ -76,7 +78,7 @@ In this section you will find webinars and video tutorials for X-Cart 5.
 ## Popular modules
 
 *   [Booking module (video)]({{ baseurl_lang }}/webinars_and_video_tutorials/booking_module_(video).html)
-*   [Infinite Scroll module (video)]({{ baseurl_lang }}/webinars_and_video_tutorials/infinite_scroll_module_(video).html)
+*   [Infinite Scroll module (video)]({{ baseurl_lang }}/webinars_and_video_tutorials/infinite_scroll_module_(video_guide).html)
 *   [Multi-vendor module (videos)]({{ baseurl_lang }}/webinars_and_video_tutorials/multi-vendor_module_(videos).html)
 
 ## Webinars
