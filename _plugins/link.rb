@@ -30,7 +30,7 @@ module Jekyll
 
     class IndexGenerator < Jekyll::Generator
       def generate(site)
-        path = Pathname.new(site.source) + site.config['index_path']
+        path = Pathname.new(site.dest) + site.config['index_path']
 
         index = site.pages.inject(Hash.new) do |memo, page|
           if page['title'] && page['identifier'] && page['path']
