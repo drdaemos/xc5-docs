@@ -18,6 +18,8 @@ prose:
     - .gitignore
     - .gitmodules
     - _prose.yml
+    - _links.yml
+    - .nojekyll
   metadata:
     en:
       - name: "lang"
