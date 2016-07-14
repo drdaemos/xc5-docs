@@ -26,10 +26,16 @@ prose:
         field:
           element: "hidden"
           value: "en"
-      - name: "id"
+      - name: "identifier"
+        field:
+          element: "text"
+          label: "Page identifier"
+          help: "Generate unique id for this page to be used as reference for link tag (Base64 preferred)"
+          value: ""
+      - name: "updated_at"
         field:
           element: "hidden"
-          value: ""
+          value: CURRENT_DATETIME
       - name: "layout"
         field:
           element: "hidden"
@@ -41,7 +47,7 @@ prose:
           value: ""
       - name: "description"
         field:
-          element: "text"
+          element: "textarea"
           label: "Description"
           value: ""
       - name: "icon"
@@ -72,10 +78,16 @@ prose:
         field:
           element: "hidden"
           value: "ru"
-      - name: "id"
+      - name: "identifier"
+        field:
+          element: "text"
+          label: "Page identifier"
+          help: "Generate unique id for this page to be used as reference for link tag (Base64 preferred)"
+          value: ""
+      - name: "updated_at"
         field:
           element: "hidden"
-          value: ""
+          value: CURRENT_DATETIME
       - name: "layout"
         field:
           element: "hidden"
@@ -87,7 +99,7 @@ prose:
           value: ""
       - name: "description"
         field:
-          element: "text"
+          element: "textarea"
           label: "Description"
           value: ""
       - name: "icon"
