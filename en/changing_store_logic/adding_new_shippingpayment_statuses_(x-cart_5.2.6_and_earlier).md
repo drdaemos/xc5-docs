@@ -1,20 +1,20 @@
 ---
-identifier: rJcocW2QD
 layout: article_with_sidebar
+updated_at: '2016-07-14 16:48 +0400'
 lang: en
-title: 'Adding new shipping/payment statuses (X-Cart 5.2.6 and earlier)'
+identifier: rJcocW2QD
+title: Adding new shipping/payment statuses (X-Cart 5.2.6 and earlier)
 categories:
   - Developer docs
-
+published: true
+order: 0
 ---
-
-{% include global.html %}
-
 # Introduction
 
 This article shows developers how they can create new shipping and payment statuses for orders. The process is as easy as running 3 MySQL queries.
 
-Icon
+![2760966695.jpg]({{site.baseurl}}/attachments/2760966695.jpg)
+
 
 The solution provided in this article should be used for X-Cart versions 5.2.6 and earlier. Starting with X-Cart version 5.2.7, a special module is available allowing you to manage X-Cart order statuses directly from the store's Admin area. For details, see the {% link "Managing X-Cart order statuses (X-Cart 5.2.7 and later)" SJzR9ZnXP %} section of this manual.
 
@@ -30,9 +30,9 @@ The solution provided in this article should be used for X-Cart versions 5.2.6 a
 
 **Step 1**. Run the following MySQL query to X-Cart database:
 
-{% highlight php %}{% raw %}
+{% highlight php %}
 INSERT INTO xc_order_payment_statuses (code, position) VALUES ("YOUR-CODE", "80");
-{% endraw %}{% endhighlight %}
+{% endhighlight %}
 
 **YOUR-CODE** value defines the identifier of new payment status for X-Cart. Usually, it is 1 or 2 letters value, like **A** or **PP**, but can be up to 4 symbols long. "**80**" defines the location of new payment status in the list. The higher the value, the lower the new payment status in the list.
 
@@ -90,9 +90,11 @@ If you need to translate payment or shipping statuses to another language, then 
 
 If you translate shipping status, the run the following MySQL query: 
 
-{% highlight php %}{% raw %}
+{% highlight php %}
+{% raw %}
 INSERT INTO xc_order_shipping_status_translations (id, name, customerName, code) VALUES ("SHIPPING-STATUS-ID", "Admin shipping name in your language", "Customer shipping name in your language", "YOUR-LANGUAGE-CODE");
-{% endraw %}{% endhighlight %}
+{% endraw %}
+{% endhighlight %}
 
 **YOUR-LANGUAGE-CODE** must be replaced with your language code – e.g. **en** is English language code – and **SHIPPING-STATUS-ID** must be an ID of shipping status taken from the `xc_order_shipping_statuses` table.
 
