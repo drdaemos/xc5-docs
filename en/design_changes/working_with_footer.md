@@ -1,5 +1,5 @@
 ---
-identifier: Sy39n-hQD
+identifier: SyE-LVfSv
 layout: article_with_sidebar
 lang: en
 title: 'Working with footer'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -84,7 +83,7 @@ Once we apply this change to footer's HTML code, we will be able to specify `flo
 
 Content of `<div id="footer-area>` section is defined by the `<X-Cart>/skins/default/en/layout/main.footer.tpl` template. Our module should alter its content as it was described in the **Introduction** section.
 
-We {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **FooterDemo**. Our **Main.php** file must contain a directive to {% link "remove the default implementation" HkDO3Wh7v#Step2-applyingdesignchanges-Hidingtemplatesandwidgets %} of   
+We {% link "create an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **FooterDemo**. Our **Main.php** file must contain a directive to {% link "remove the default implementation" Skx6SNzHP#Step2-applyingdesignchanges-Hidingtemplatesandwidgets %} of   
 `<X-Cart>/skins/default/en/layout/main.footer.tpl` template as we would like to create our own version of it, so we add the following method into the  
 `<X-Cart>/classes/XLite/Module/Tony/FooterDemo/Main.php` file: 
 
@@ -138,7 +137,7 @@ We change it a little, so it would fit our requirements for HTML code from **Int
 
 Of course, do not forget to upload **visa.jpg** image into the `<X-Cart>/skins/default/en/modules/Tony/FooterDemo/img/` folder.
 
-Our mod is almost done and we only need to apply several CSS rules in order to make the appearance of updated footer smooth. We are going to {% link "add new CSS file" rkvxo-3mP %} to our mod.
+Our mod is almost done and we only need to apply several CSS rules in order to make the appearance of updated footer smooth. We are going to {% link "add new CSS file" SJXTmNfrD %} to our mod.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/FooterDemo/View/AView.php` file with the following content: 
 

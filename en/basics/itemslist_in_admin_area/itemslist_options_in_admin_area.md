@@ -1,5 +1,5 @@
 ---
-identifier: rJB6oWh7P
+identifier: SyMxHNfrP
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList options in admin area'
@@ -8,11 +8,10 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
-This article explains main options of {% link "ItemsList widget in admin area" B1majbn7D %}: how to create **Remove** and **Create** buttons, define look of columns etc.
+This article explains main options of {% link "ItemsList widget in admin area" r1gxrVzSv %}: how to create **Remove** and **Create** buttons, define look of columns etc.
 
 This guide will have two parts:
 
@@ -43,14 +42,14 @@ You can also define other parameters of a column:
 *   `static::COLUMN_TEMPLATE` – value type: **string** – defines a specific template for displaying column cell. Typical value is: `modules/Developer/Module/tempalte.tpl` and it will pick up the  
     `<X-Cart>/skins/admin/en/modules/Developer/Module/tempalte.tpl` template;
 *   `static::COLUMN_HEAD_TEMPLATE` – value type: **string** – similar to above, defines a specific template for displaying head cell of a table;
-*   `static::COLUMN_CLASS` – value type: **string** – defines a {% link "FormField class" HkH8iZ3XP %} that will be used for displaying of editable field. E.g. `\XLite\View\FormField\Inline\Input\Text\Float`. If you need more info about creating editable ItemsList in admin area, please have a look at {% link "Creating new entity -- Introduction of editable ItemsList in admin area" ryWDjW3Qw %} guide;
+*   `static::COLUMN_CLASS` – value type: **string** – defines a {% link "FormField class" r1-U4VMSv %} that will be used for displaying of editable field. E.g. `\XLite\View\FormField\Inline\Input\Text\Float`. If you need more info about creating editable ItemsList in admin area, please have a look at {% link "Creating new entity -- Introduction of editable ItemsList in admin area" rJQL4NfBv %} guide;
 *   `static::COLUMN_PARAMS` – value type: **array** – defines parameters for **FormField** class defined in `static::COLUMN_CLASS` param.
 
 # ItemsList parameters
 
 ItemsList parameters are defined as methods and the mandatory methods are:
 
-*   `defineRepositoryName()` method that points an ItemsList to a {% link "Model" B1F3WnQv %} class;
+*   `defineRepositoryName()` method that points an ItemsList to a {% link "Model" ryb0BNzHv %} class;
 *   `defineColumns()` method defines what columns will exist in this ItemsList.
 
 Aside from these two, you can define:

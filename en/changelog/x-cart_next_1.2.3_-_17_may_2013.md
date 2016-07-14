@@ -1,5 +1,5 @@
 ---
-identifier: Sk5jhb3mv
+identifier: BJMQ8EMHP
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.3 - 17 May 2013'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 **List of new modules**
 

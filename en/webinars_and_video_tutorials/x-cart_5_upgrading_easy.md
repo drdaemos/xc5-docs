@@ -1,5 +1,5 @@
 ---
-identifier: B1dj3W3QD
+identifier: SkZmU4zSv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 upgrading easy'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

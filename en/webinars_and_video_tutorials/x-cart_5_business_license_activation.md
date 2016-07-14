@@ -1,5 +1,5 @@
 ---
-identifier: HJ7inZhmD
+identifier: SkGfU4frD
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Business License Activation'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

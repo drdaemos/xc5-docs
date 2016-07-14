@@ -1,5 +1,5 @@
 ---
-identifier: B1majbn7D
+identifier: r1gxrVzSv
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList in admin area'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -29,7 +28,7 @@ This article will explain how to create such ItemsList. For the sake of example,
 
 # Implementation
 
-We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ItemsListAdminDemo**. Then we {% link "create a new page" B1zwoW37P %} `target=items_list_demo` in admin area. For that we create:
+We start with {% link "creating an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **ItemsListAdminDemo**. Then we {% link "create a new page" rJlvE4frP %} `target=items_list_demo` in admin area. For that we create:
 
 1.  empty controller class `\XLite\Module\Tony\ItemsListAdminDemo\Controller\Admin\ItemsListDemo`;
 2.  simple page viewer class `\XLite\Module\Tony\ItemsListAdminDemo\View\Page\Admin\ItemsListDemo` with the following content: 
@@ -140,7 +139,7 @@ Let us have a look at key parts of this widget implementation:
     {% highlight php %}{% raw %}
     class ItemsListDemo extends \XLite\View\ItemsList\Model\Table
     {% endraw %}{% endhighlight %}
-2.  We need to point our **ItemsList** to some {% link "model" B1F3WnQv %}. It will tell a widget what entities it must display. In our case, this entity is a **product**, so we point our ItemsList to `\XLite\Model\Product` model class: 
+2.  We need to point our **ItemsList** to some {% link "model" ryb0BNzHv %}. It will tell a widget what entities it must display. In our case, this entity is a **product**, so we point our ItemsList to `\XLite\Model\Product` model class: 
 
     {% highlight php %}{% raw %}
         protected function defineRepositoryName()
@@ -206,7 +205,7 @@ Let us have a look at key parts of this widget implementation:
         }
     {% endraw %}{% endhighlight %}
 
-    We need to extend it in order to allow {% link "search() method" S1Qh5WhQP %} in the `\XLite\Model\Repo\Product` repository class to work properly.
+    We need to extend it in order to allow {% link "search() method" Sk7u7NfBD %} in the `\XLite\Model\Repo\Product` repository class to work properly.
 
 8.  First, we let it know that sorting must be done according to user's selected condition: 
 

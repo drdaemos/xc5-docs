@@ -1,5 +1,5 @@
 ---
-identifier: BkeIsZ3mD
+identifier: H1ZBN4zHD
 layout: article_with_sidebar
 lang: en
 title: 'Connecting X-Payments 2.1 x with X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

@@ -1,5 +1,5 @@
 ---
-identifier: r1vihW3QP
+identifier: BJ8GIEMrv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 getting started guide'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

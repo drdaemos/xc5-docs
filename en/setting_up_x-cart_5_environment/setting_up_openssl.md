@@ -1,5 +1,5 @@
 ---
-identifier: ryKUnbn7v
+identifier: BkiH4GHP
 layout: article_with_sidebar
 lang: en
 title: 'Setting up openSSL'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

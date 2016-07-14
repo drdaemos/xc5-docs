@@ -1,13 +1,13 @@
 ---
-identifier: Hynpq-27P
+identifier: r1x9XNMrv
 layout: article_with_sidebar
 lang: en
 title: 'Infinite Scroll module (video)'
 categories:
   - Webinars and video tutorials
+
 ---
 
-{% include global.html %}
 
 # Introduction
 

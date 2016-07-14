@@ -1,5 +1,5 @@
 ---
-identifier: Sydoc-2mD
+identifier: H18D7VfSD
 layout: article_with_sidebar
 lang: en
 title: 'Building a custom skin in X-Cart 5: Tutorial by Mike White'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 Thanks to Mike White who created this video guide: [http://xcartguru.com/tutorials/x-cart-5-tutorials/building-a-custom-skin-in-x-cart-5/](http://xcartguru.com/tutorials/x-cart-5-tutorials/building-a-custom-skin-in-x-cart-5/)
 

@@ -1,5 +1,5 @@
 ---
-identifier: H1Qu2b27w
+identifier: H1ar4zrP
 layout: article_with_sidebar
 lang: en
 title: 'Step 1 - creating simplest module'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -106,7 +105,7 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 
 # Module creation via SDK
 
-1.  {% link "Obtain X-Cart SDK" B1ni2bhQD#X-CartSDK-ObtainingX-CartSDK %}
+1.  {% link "Obtain X-Cart SDK" S17mLEfHD#X-CartSDK-ObtainingX-CartSDK %}
 2.  Call {% link "create module macro" X-Cart-SDK_7864338.html#X-CartSDK-Creatingmodule %} with your developer and module IDs
 
 # Packing up your module

@@ -1,13 +1,13 @@
 ---
-identifier: Syg25bh7w
+identifier: BkedX4GBD
 layout: article_with_sidebar
 lang: en
 title: 'Installing X-Cart (video guide)'
 categories:
   - Webinars and video tutorials
+
 ---
 
-{% include global.html %}
 
 Icon
 

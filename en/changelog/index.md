@@ -1,5 +1,5 @@
 ---
-identifier: ByG4iZnXv
+identifier: BJQz44zrP
 layout: article_with_sidebar
 lang: en
 title: 'Changelog'
@@ -10,6 +10,5 @@ icon: announcement
 description: Discover new features and bugfixes
 ---
 
-{% include global.html %}
 
 X-Cart 5 Changelog

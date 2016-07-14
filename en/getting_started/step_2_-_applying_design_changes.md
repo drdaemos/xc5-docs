@@ -1,5 +1,5 @@
 ---
-identifier: HkDO3Wh7v
+identifier: Skx6SNzHP
 layout: article_with_sidebar
 lang: en
 title: 'Step 2 - applying design changes'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -187,7 +186,7 @@ In order to remove the template from its view list, you must specify the `runBu
     }
 {% endraw %}{% endhighlight %}
 
-_Note: if you are not sure how to create the module and Main.php file there, please check our {% link "previous guide" H1Qu2b27w %} out._
+_Note: if you are not sure how to create the module and Main.php file there, please check our {% link "previous guide" H1ar4zrP %} out._
 
 As you can see, we are passing first parameter to `removeTemplateFromList()` method as template path and second parameter as **view list name**.
 

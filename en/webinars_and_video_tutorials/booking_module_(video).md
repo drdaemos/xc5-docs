@@ -1,5 +1,5 @@
 ---
-identifier: Sy6p5W3mP
+identifier: r1bc7EMSw
 layout: article_with_sidebar
 lang: en
 title: 'Booking module (video)'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

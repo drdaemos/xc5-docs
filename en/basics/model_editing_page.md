@@ -1,5 +1,5 @@
 ---
-identifier: SyLZ2WhmP
+identifier: SJMHS4MHD
 layout: article_with_sidebar
 lang: en
 title: 'Model editing page'
@@ -8,11 +8,10 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
-During module creation developers sometimes {% link "create complex entities" B1F3WnQv %} that require a **separate** page for editing of its properties, instead of doing it via {% link "ItemsList" ryWDjW3Qw %}. This article will explain how you can create a page where you can edit certain fields of a model. For the sake of example, we will create a simple mod that will implement a new page where you can edit a product, but the same principles apply to all other entities as well.
+During module creation developers sometimes {% link "create complex entities" ryb0BNzHv %} that require a **separate** page for editing of its properties, instead of doing it via {% link "ItemsList" rJQL4NfBv %}. This article will explain how you can create a page where you can edit certain fields of a model. For the sake of example, we will create a simple mod that will implement a new page where you can edit a product, but the same principles apply to all other entities as well.
 
 # Table of Contents
 
@@ -23,9 +22,9 @@ During module creation developers sometimes {% link "create complex entities" B1
 
 # Implementation
 
-We start with {% link "creating a simple module" H1Qu2b27w %} with developer ID **Tony** and module ID **ModelEditingDemo**. Then, we create a page **target=product_edit** in admin area. For that we create:
+We start with {% link "creating a simple module" H1ar4zrP %} with developer ID **Tony** and module ID **ModelEditingDemo**. Then, we create a page **target=product_edit** in admin area. For that we create:
 
-*   an empty {% link "controller" Skb8obnQP %} class `\XLite\Module\Tony\ModelEditingDemo\Controller\Admin\ProductEdit`;
+*   an empty {% link "controller" HJ7rV4GHD %} class `\XLite\Module\Tony\ModelEditingDemo\Controller\Admin\ProductEdit`;
 *   page widget class `\XLite\Module\Tony\ModelEditingDemo\View\Page\Admin\ProductEdit` with the following content: 
 
     {% highlight php %}{% raw %}
@@ -154,7 +153,7 @@ Let us have a closer look at this implementation: 
         );
     {% endraw %}{% endhighlight %}
 
-    This property is an array. **Key** of its elements is a **name** of Model **property** that will be defined in this widget. In our case, they are **sku**, **name**, **price** and **description**. Value of array's elements is an array of parameters that define each field. There are three params: `self::SCHEMA_CLASS` defines a {% link "FormField class" HkH8iZ3XP %} that will represent this field; `self::SCHEMA_LABEL` defines a label next to model's property field; `self::SCHEMA_REQUIRED` defines whether this field's value is required or not.  
+    This property is an array. **Key** of its elements is a **name** of Model **property** that will be defined in this widget. In our case, they are **sku**, **name**, **price** and **description**. Value of array's elements is an array of parameters that define each field. There are three params: `self::SCHEMA_CLASS` defines a {% link "FormField class" r1-U4VMSv %} that will represent this field; `self::SCHEMA_LABEL` defines a label next to model's property field; `self::SCHEMA_REQUIRED` defines whether this field's value is required or not.  
     Construction like `\XLite\View\FormField\Textarea\Advanced::PARAM_STYLE => 'product-description'` defines additional parameters for FormField class defined in the `self::SCHEMA_CLASS` param.
 
 3.  After that, we implement the `getDefaultModelObject()` method that will define initial values in fields of our widget: 
@@ -175,7 +174,7 @@ Let us have a closer look at this implementation: 
         }
     {% endraw %}{% endhighlight %}
 
-    The properties of an object returned by `getDefaultModelObject()` method will be put into widget's form as default values. In the `getDefaultModelObject()` method we just {% link "pull `\XLite\Model\Product` model" S1GH2-nmv %} based on the **product_id** parameter in the request. If there is no **product_id** parameter in the request –`{% link "\XLite\Core\Request::getInstance()->product_id" HyS2-hXP %}` returns `false` –  we assume that we are going to create a new product, not edit existing one, that is why we create new empty `\XLite\Model\Product` object.
+    The properties of an object returned by `getDefaultModelObject()` method will be put into widget's form as default values. In the `getDefaultModelObject()` method we just {% link "pull `\XLite\Model\Product` model" Hy7KSNzSD %} based on the **product_id** parameter in the request. If there is no **product_id** parameter in the request –`{% link "\XLite\Core\Request::getInstance()->product_id" SkxtrEMSD %}` returns `false` –  we assume that we are going to create a new product, not edit existing one, that is why we create new empty `\XLite\Model\Product` object.
 
 4.  Finally, we implement the `getFormClass()` method that will define a form around our widget: 
 

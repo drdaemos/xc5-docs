@@ -1,5 +1,5 @@
 ---
-identifier: H1h4sbnXP
+identifier: ry874Efrv
 layout: article_with_sidebar
 lang: en
 title: 'Configuring payment methods in X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

@@ -1,5 +1,5 @@
 ---
-identifier: SJgDhW2QP
+identifier: rkQsS4fHP
 layout: article_with_sidebar
 lang: en
 title: 'Setting up shipping calculation in X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

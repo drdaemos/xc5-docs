@@ -1,5 +1,5 @@
 ---
-identifier: SJNW3Wn7P
+identifier: rybSrVzHD
 layout: article_with_sidebar
 lang: en
 title: 'Migration guides'
@@ -10,5 +10,4 @@ icon: retweet
 description: Get a grip on the process of migrating your shopping cart and customization modules.
 ---
 
-{% include global.html %}
 

@@ -1,5 +1,5 @@
 ---
-identifier: Bk99Wn7w
+identifier: H1e8QNfSv
 layout: article_with_sidebar
 lang: en
 title: 'Removing the Primary Menu In X-Cart 5 (with the help of WebmasterKit): Tutorial by Mike White'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

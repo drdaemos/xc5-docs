@@ -1,5 +1,5 @@
 ---
-identifier: HkoTsZ2Qv
+identifier: SkbrNGBw
 layout: article_with_sidebar
 lang: en
 title: 'MailChimp Integration with Ecommerce-360 support in an X-Cart 5 Store'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

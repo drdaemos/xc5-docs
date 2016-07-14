@@ -1,5 +1,5 @@
 ---
-identifier: ByOZoZh7w
+identifier: BkeJNNMBD
 layout: article_with_sidebar
 lang: en
 title: 'Adding product images to order notifications'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -24,7 +23,7 @@ This guide explains how you can add product images to order notifications. It al
 
 # How it is going to work
 
-Before we get started we have to understand what templates {% link "render an invoice page" HkDO3Wh7v %}. The responsible {% link "viewer class" rkeo2b3XP %} for invoice display is `\XLite\View\Invoice` ({% link "more info about classnames in X-Cart" S1RinW3Qv %}) and as we can see in its code, it starts rendering the invoice from the `order/invoice/body.tpl` template (see `getDefaultTemplate()` method of the class) depending on the area:
+Before we get started we have to understand what templates {% link "render an invoice page" Skx6SNzHP %}. The responsible {% link "viewer class" S1xfIEMSD %} for invoice display is `\XLite\View\Invoice` ({% link "more info about classnames in X-Cart" SJSmIEfSD %}) and as we can see in its code, it starts rendering the invoice from the `order/invoice/body.tpl` template (see `getDefaultTemplate()` method of the class) depending on the area:
 
 *   **Customer area**: if you are on the **Thank you** page after successful checkout, then the invoice will be displayed by the `<X-Cart>/skins/<u>default</u>/en/**order/invoice/body.tpl**` template;
 *   **Admin area**: if you are viewing an invoice in **Invoice** section of the order details page, then the invoice will be displayed by the `<X-Cart>/skins/<u>admin</u>/en/**order/invoice/body.tpl**` template;
@@ -89,7 +88,7 @@ We create the `<X-Cart>/skins/admin/en/modules/Tony/InvoiceChangeDemo/invoice-pa
     <td class="item"><widget class="\XLite\View\Image" image="{item.getImage()}" maxWidth="80" maxHeight="80" /></td>
     {% endraw %}{% endhighlight %}
 
-    This code inserts an image wrapped into `<td></td>` element. This image is inserted via `\XLite\View\Image` widget as this widget performs {% link "on-fly resizing routine" rk692-2Xw %} according to `maxWidth` and `maxHeight` params. Again, since we insert this template with weight as **5**, it will be displayed at beginning of table's row.
+    This code inserts an image wrapped into `<td></td>` element. This image is inserted via `\XLite\View\Image` widget as this widget performs {% link "on-fly resizing routine" HySb8VMBw %} according to `maxWidth` and `maxHeight` params. Again, since we insert this template with weight as **5**, it will be displayed at beginning of table's row.
 
 Now we can re-deploy the store and check preliminary results in admin area. A new **Invoice** section should look as follows: ![]({{site.baseurl}}/attachments/8225446/8356205.png)
 

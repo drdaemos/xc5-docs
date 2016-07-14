@@ -1,5 +1,5 @@
 ---
-identifier: H1eo9Z2mw
+identifier: SkDQEGrv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 development lectures (in Russian with English subtitles)'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

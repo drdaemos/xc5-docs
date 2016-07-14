@@ -1,5 +1,5 @@
 ---
-identifier: rk692-2Xw
+identifier: HySb8VMBw
 layout: article_with_sidebar
 lang: en
 title: 'Working with image resizing routine'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -27,8 +26,8 @@ To illustrate the image-resizing process, imagine that you uploaded 5000px x 500
 
 In order to disable image resizing routine in a whole store you can apply the following simple mod:
 
-1.  {% link "Create an empty module" H1Qu2b27w %}. We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
-2.  {% link "Decorate" rkE_3bnXw %} the `\XLite\View\Image` class ({% link "more info about classnames" S1RinW3Qv %}), so that your class would look as follows: 
+1.  {% link "Create an empty module" H1ar4zrP %}. We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
+2.  {% link "Decorate" H1G6r4zSD %} the `\XLite\View\Image` class ({% link "more info about classnames" SJSmIEfSD %}), so that your class would look as follows: 
 
     {% highlight php %}{% raw %}
     <?php

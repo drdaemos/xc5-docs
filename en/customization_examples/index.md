@@ -1,5 +1,5 @@
 ---
-identifier: HJBdj-n7w
+identifier: S1MuNVfHP
 layout: article_with_sidebar
 lang: en
 title: 'Customization examples'
@@ -10,9 +10,8 @@ icon: pencil square o
 description: Take a look at some of the customizations, made for our clients
 ---
 
-{% include global.html %}
 
 _In this section:_
 
-*   {% link "Inserting an X-Cart 'Add to cart' button in a new page" SkxiW3XD %}
-*   {% link "Resetting the search parameter from "any word" to "all words"" HklgoW3mw %}
+*   {% link "Inserting an X-Cart 'Add to cart' button in a new page" ByMnQ4zBD %}
+*   {% link "Resetting the search parameter from "any word" to "all words"" BJm3mEMBv %}

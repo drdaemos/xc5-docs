@@ -1,5 +1,5 @@
 ---
-identifier: r1XGs-27w
+identifier: rJ-eEVGSD
 layout: article_with_sidebar
 lang: en
 title: 'Adding third column'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -23,12 +22,12 @@ This article gives an example of how to create the right sidebar and hide the le
 
 # Implementation
 
-We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **RightColumnDemo**. The fact whether to show left and right sidebars is defined in the `\XLite\View\Controller` ({% link "more about classnames" S1RinW3Qv %} in X-Cart) class: 
+We start with {% link "creating an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **RightColumnDemo**. The fact whether to show left and right sidebars is defined in the `\XLite\View\Controller` ({% link "more about classnames" SJSmIEfSD %} in X-Cart) class: 
 
 *   `isSidebarFirstVisible()` defines whether to show left sidebar;
 *   `isSidebarSecondVisible()` defines whether to show right sidebar.
 
-In our module we need to {% link "decorate" rkE_3bnXw %} this class and override these methods. For that we create the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/View/Controller.php` file with the following content: 
+In our module we need to {% link "decorate" H1G6r4zSD %} this class and override these methods. For that we create the `<X-Cart>/classes/XLite/Module/Tony/RightColumnDemo/View/Controller.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -72,7 +71,7 @@ Now we need to move all widgets from left to right sidebar and we can achieve it
 
 and it will move all templates and widget classes from `sidebar.first` (left column) to `sidebar.second` (right column) view list.
 
-Finally, we need to {% link "add CSS file" rkvxo-3mP %} that will make look of right column smooth. We create the `<X-Cart>/skins/default/en/modules/Tony/RightColumnDemo/css/style.css` file with the following content: 
+Finally, we need to {% link "add CSS file" SJXTmNfrD %} that will make look of right column smooth. We create the `<X-Cart>/skins/default/en/modules/Tony/RightColumnDemo/css/style.css` file with the following content: 
 
 {% highlight php %}{% raw %}
 #sidebar-second {

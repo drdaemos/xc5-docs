@@ -1,5 +1,5 @@
 ---
-identifier: S1wTiZnQP
+identifier: HyVeBNzSv
 layout: article_with_sidebar
 lang: en
 title: 'Kount in X-Cart 5 integrated with X-Payments'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

@@ -1,5 +1,5 @@
 ---
-identifier: BJE8sW37P
+identifier: H1EH4VMBv
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom email notifications'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -26,8 +25,8 @@ This article describes how developers can configure and send custom **email noti
 
 # Implementation
 
-First of all, this task requires you to have a custom module. We'll {% link "create a new module" H1Qu2b27w %} with the developer ID **Tony** and the module ID **EmailDemo**.  
-Besides, we'll create a {% link "custom page" B1zwoW37P %} in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
+First of all, this task requires you to have a custom module. We'll {% link "create a new module" H1ar4zrP %} with the developer ID **Tony** and the module ID **EmailDemo**.  
+Besides, we'll create a {% link "custom page" rJlvE4frP %} in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
 
 ## Creating the mailer method
 
@@ -174,7 +173,7 @@ Notification definition consists of several parameters:
 After writing this code to the file, you should load it into system. It can be done using one of the two methods:
 
 1.  by re-installing this module,
-2.  by {% link "loading the YAML file manually" HyO6s-3XP %}.
+2.  by {% link "loading the YAML file manually" rkBxHEfHw %}.
 
 You can also change the mail templates to make use of the default **subject** and **body** text, preset in the _translation_ parameter, like this:
 

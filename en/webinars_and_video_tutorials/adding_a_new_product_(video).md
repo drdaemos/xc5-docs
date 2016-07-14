@@ -1,5 +1,5 @@
 ---
-identifier: SJxTcbhmw
+identifier: ryZKQEfSw
 layout: article_with_sidebar
 lang: en
 title: 'Adding a new product (video)'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

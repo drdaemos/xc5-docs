@@ -1,5 +1,5 @@
 ---
-identifier: ByEsnZ3mw
+identifier: H17G84MSD
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Free License Activation'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

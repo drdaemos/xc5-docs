@@ -1,5 +1,5 @@
 ---
-identifier: HkH8iZ3XP
+identifier: r1-U4VMSv
 layout: article_with_sidebar
 lang: en
 title: 'Creating custom setting class'
@@ -8,11 +8,10 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
-This article describes how developer can create a {% link "complex setting class" HyBu3W3XD %} in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
+This article describes how developer can create a {% link "complex setting class" H1Z6SNGSw %} in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
 
 # Table of Contents
 
@@ -24,7 +23,7 @@ This article describes how developer can create a {% link "complex setting class
 
 # Implementation
 
-We start with {% link "creating a module" H1Qu2b27w %} with developer ID **Tony** and module ID **FormFieldDemo**. Then, we {% link "create a page" B1zwoW37P %} **target=form_field** in admin area. During this process, we create:
+We start with {% link "creating a module" H1ar4zrP %} with developer ID **Tony** and module ID **FormFieldDemo**. Then, we {% link "create a page" rJlvE4frP %} **target=form_field** in admin area. During this process, we create:
 
 *   empty controller class `\XLite\Module\Tony\FormFieldDemo\Controller\Admin\FormField`;
 *   viewer class `\XLite\Module\Tony\FormFieldDemo\View\Page\Admin\FormField` with the following content:

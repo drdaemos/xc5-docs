@@ -1,5 +1,5 @@
 ---
-identifier: SyO73bhXP
+identifier: H1VwHVzBw
 layout: article_with_sidebar
 lang: en
 title: 'Product variants in X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

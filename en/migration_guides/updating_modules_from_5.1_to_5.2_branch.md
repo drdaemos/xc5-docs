@@ -1,5 +1,5 @@
 ---
-identifier: Hk7Y2W2mP
+identifier: SJ8CSNfHw
 layout: article_with_sidebar
 lang: en
 title: 'Updating modules from 5.1 to 5.2 branch'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -25,7 +24,7 @@ This article describes the major change each module developer must apply to thei
 
 Your module is a subject to hot-fix change if any of conditions below were triggered during module adaptation from 5.1 to 5.2 version:
 
-1.  You changed any {% link "Model" B1F3WnQv %} class' properties from `uinteger` to `integer` type.
+1.  You changed any {% link "Model" ryb0BNzHv %} class' properties from `uinteger` to `integer` type.
 
 2.  You used `integer` properties in your Model classes .
 
@@ -74,7 +73,7 @@ You need to release the next version of your module that will contain the follow
 
     The reason for this change is that previous Doctrine version assumed `nullable=true` even if it was not specified. This change will allow backward compatibility.
 
-Aside from that, your module must {% link "decorate" rkE_3bnXw %} the `postprocessSchema()` method of the  `\XLite\Core\Database` class as follows: 
+Aside from that, your module must {% link "decorate" H1G6r4zSD %} the `postprocessSchema()` method of the  `\XLite\Core\Database` class as follows: 
 
 {% highlight php %}{% raw %}
 abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDecorator
@@ -107,7 +106,7 @@ abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDec
 }
 {% endraw %}{% endhighlight %}
 
-and your module must include the following {% link "pre-upgrade hook" ByPK3-hmP %}: 
+and your module must include the following {% link "pre-upgrade hook" BygJLNfBP %}: 
 
 {% highlight php %}{% raw %}
 <?php

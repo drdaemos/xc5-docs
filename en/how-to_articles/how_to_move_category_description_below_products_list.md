@@ -1,5 +1,5 @@
 ---
-identifier: H1VnsbhXD
+identifier: S1eREEzBv
 layout: article_with_sidebar
 lang: en
 title: 'How to move category description below products list'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 This article describes how to move category description below products list.
 

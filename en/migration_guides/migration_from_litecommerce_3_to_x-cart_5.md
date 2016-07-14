@@ -1,5 +1,5 @@
 ---
-identifier: r1f-n-37D
+identifier: H1LVrEzSD
 layout: article_with_sidebar
 lang: en
 title: 'Migration from Litecommerce 3 to X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

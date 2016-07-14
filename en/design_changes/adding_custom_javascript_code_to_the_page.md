@@ -1,5 +1,5 @@
 ---
-identifier: rkWZjbhXP
+identifier: SyeRmVfSw
 layout: article_with_sidebar
 lang: en
 title: 'Adding custom JavaScript code to the page'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 If you want to add some custom JavaScript code or load additional scripts to store pages, there are several ways of doing that.
 
@@ -42,7 +41,7 @@ This example code will be executed only on the **order_list** page in the Admin 
 
 _See also:_
 
-*   {% link "Basic guide to theme creation: Using Custom Skin module" SJ5fj-hmw#Basicguidetothemecreation-UsingCustomSkinmodule %}
+*   {% link "Basic guide to theme creation: Using Custom Skin module" r1deN4Grw#Basicguidetothemecreation-UsingCustomSkinmodule %}
 
 ## Attachments:
 

@@ -1,5 +1,5 @@
 ---
-identifier: SJriWhXw
+identifier: HkEQEEGrD
 layout: article_with_sidebar
 lang: en
 title: 'Configuring sales tax in X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

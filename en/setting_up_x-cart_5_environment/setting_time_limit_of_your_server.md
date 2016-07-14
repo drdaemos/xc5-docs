@@ -1,5 +1,5 @@
 ---
-identifier: rk7ShW3XP
+identifier: SyNYrNfSP
 layout: article_with_sidebar
 lang: en
 title: 'Setting time limit of your server'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 Every web server has a **time limit** within which the request can be processed. For instance, if **time limit** is set to 30 seconds, each request to X-Cart 5 can last no longer than 30 seconds and it will be terminated after that. It is not a problem for quick requests like opening the product page or logging in, but it may become a problem when you are running a long process like product import or cache rebuilding.
 

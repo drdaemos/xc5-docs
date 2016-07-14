@@ -1,5 +1,5 @@
 ---
-identifier: SJb1j-2Xw
+identifier: rkriXVGrP
 layout: article_with_sidebar
 lang: en
 title: 'How to add Facebook Pixel Сode to X-Cart pages'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 This article describes how to add Facebook Pixel code to X-Cart pages.
 

@@ -1,5 +1,5 @@
 ---
-identifier: H1to2Z27w
+identifier: Bkx784MSv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.2 - 6 Mar 2013'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 <a name="bugnotes" rel="nofollow"></a>
 

@@ -1,5 +1,5 @@
 ---
-identifier: H1_On-h7P
+identifier: SJEaHVMrw
 layout: article_with_sidebar
 lang: en
 title: 'Subscriptions in X-Cart 5 powered by X-Payments'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

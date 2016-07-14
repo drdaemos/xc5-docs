@@ -1,5 +1,5 @@
 ---
-identifier: BJLdsWhQD
+identifier: rkmdVEzBD
 layout: article_with_sidebar
 lang: en
 title: 'Customizing the Admin and Vendor Signup pages'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 To change the logo and the logo link for the Admin and Vendor Signup pages, use the **Custom skin** module and create a custom version of the default template:
 
@@ -36,4 +35,4 @@ If you also need to change the Admin Signup Page footer link "Official Website"
 
 _See also:_
 
-*   {% link "Using Custom Skin module" SJ5fj-hmw#Basicguidetothemecreation-UsingCustomSkinmodule %}
+*   {% link "Using Custom Skin module" r1deN4Grw#Basicguidetothemecreation-UsingCustomSkinmodule %}

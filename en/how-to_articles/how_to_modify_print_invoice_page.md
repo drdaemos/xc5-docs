@@ -1,5 +1,5 @@
 ---
-identifier: BymJj-nmv
+identifier: ry2X4zrv
 layout: article_with_sidebar
 lang: en
 title: 'How to modify &quot;Print Invoice&quot; page'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 I would like make some minor CSS changes to the print invoice page in the admin section of the store. How do I do that?
 

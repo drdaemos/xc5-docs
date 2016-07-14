@@ -1,5 +1,5 @@
 ---
-identifier: ByPK3-hmP
+identifier: BygJLNfBP
 layout: article_with_sidebar
 lang: en
 title: 'Upgrading X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -136,8 +135,8 @@ Below the description of full manual upgrade:
 
 _Related pages:_
 
-*   {% link "X-Cart Upgrade General Steps" r1pj2W37P %}
-*   {% link "Upgrade hooks" SkHKhb37P %}
+*   {% link "X-Cart Upgrade General Steps" ByNQIVGrD %}
+*   {% link "Upgrade hooks" BkkU4fSw %}
 
 ## Attachments:
 

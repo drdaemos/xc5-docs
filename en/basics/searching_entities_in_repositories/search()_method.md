@@ -1,5 +1,5 @@
 ---
-identifier: S1Qh5WhQP
+identifier: Sk7u7NfBD
 layout: article_with_sidebar
 lang: en
 title: 'search() method'
@@ -8,16 +8,15 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
 This article describes another approach of searching entities in the database and then pulling data. We already know two approaches:
 
-1.  {% link "method find()" S1GH2-nmv %} for simple queries
-2.  {% link "queryBuilder object" r1E3Znmw %} for complex queries
+1.  {% link "method find()" Hy7KSNzSD %} for simple queries
+2.  {% link "queryBuilder object" HyPvH4fHP %} for complex queries
 
-Method **search()** is used primarily in {% link "ItemsLists objects" HkNpibnXv %}, because it uses and extends **queryBuilder** object and allows convenient way of adding conditions to a query.
+Method **search()** is used primarily in {% link "ItemsLists objects" r1WgHEMrv %}, because it uses and extends **queryBuilder** object and allows convenient way of adding conditions to a query.
 
 For the sake of example, we will create a mod that will display names of products that have IDs less than 20.
 
@@ -30,7 +29,7 @@ For the sake of example, we will create a mod that will display names of product
 
 # Implementation
 
-We start with {% link "creating an external" S1c53-nQD %} `test.php` script inside X-Cart folder. We put the following code inside this script: 
+We start with {% link "creating an external" ByzbINMrv %} `test.php` script inside X-Cart folder. We put the following code inside this script: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -67,7 +66,7 @@ However, since it is an object, you can take benefits of it. For instance, add l
 
 Since `\XLite\Core\CommonCell` object behaves as an array, you can think of `search()` method's first parameter as an array that represents conditions that must be handled. The second parameter of the method is a boolean flag that defines whether objects or number of objects must be returned.
 
-Now it is time to implement handling of our **myCond** condition in the `\XLite\Model\Repo\Product` class. We {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **SearchRepoDemo**. Inside this module, we {% link "decorate" rkE_3bnXw %} the `\XLite\Model\Repo\Product` class, so we create the `<X-Cart>/classes/XLite/Module/Tony/SearchRepoDemo/Model/Repo/Product.php` file with the following content: 
+Now it is time to implement handling of our **myCond** condition in the `\XLite\Model\Repo\Product` class. We {% link "create an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **SearchRepoDemo**. Inside this module, we {% link "decorate" H1G6r4zSD %} the `\XLite\Model\Repo\Product` class, so we create the `<X-Cart>/classes/XLite/Module/Tony/SearchRepoDemo/Model/Repo/Product.php` file with the following content: 
 
 {% highlight php %}{% raw %}
  <?php
@@ -170,7 +169,7 @@ It will return all products with ID less than 20\. If we comment the `$cnd->myC
 
 Imagine that you have dozen of conditions for pulling products. In this case, this approach will be very helpful for you.
 
-_Note: if you need to create search() method for your own entity, use {% link "this guide" ryWDjW3Qw#Creatingnewentity--IntroductionofeditableItemsListinadminarea-CreatingRepositoryclass %}_ _for its general implementation._
+_Note: if you need to create search() method for your own entity, use {% link "this guide" rJQL4NfBv#Creatingnewentity--IntroductionofeditableItemsListinadminarea-CreatingRepositoryclass %}_ _for its general implementation._
 
 # Module pack
 

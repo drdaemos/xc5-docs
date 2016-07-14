@@ -1,5 +1,5 @@
 ---
-identifier: r1ro2W2Qv
+identifier: BJBGIEGrw
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Module License Activation'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

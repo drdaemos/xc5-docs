@@ -1,5 +1,5 @@
 ---
-identifier: By-RoZ3XD
+identifier: Hkz-BVMBP
 layout: article_with_sidebar
 lang: en
 title: 'Making requests to external services'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -22,7 +21,7 @@ Sometimes developers need to make a request to some external server and get a re
 
 # Implementation
 
-In order to show you the facility of making requests, we do not need a new module as we can show it via {% link "external X-Cart script" S1c53-nQD %}. We create the `<X-Cart>/test.php` script with the following content: 
+In order to show you the facility of making requests, we do not need a new module as we can show it via {% link "external X-Cart script" ByzbINMrv %}. We create the `<X-Cart>/test.php` script with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

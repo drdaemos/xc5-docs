@@ -1,5 +1,5 @@
 ---
-identifier: S1ZKj-3Qv
+identifier: HyZY44MHP
 layout: article_with_sidebar
 lang: en
 title: 'Design changes'
@@ -10,23 +10,22 @@ icon: paint brush
 description: Learn how to make your X-Cart store eye pretty. Discover design patterns for making X-Cart themes.
 ---
 
-{% include global.html %}
 
 The Design changes cover typical tasks for design integrator.
 
 If you have not read anything from previous sections, then you should start with three basic guides:
 
-*   {% link "Creating typical design mod" HkDO3Wh7v %};
-*   {% link "Understanding viewer classes in X-Cart" rkeo2b3XP %};
-*   {% link "Basic guide to theme creation" SJ5fj-hmw %}.
+*   {% link "Creating typical design mod" Skx6SNzHP %};
+*   {% link "Understanding viewer classes in X-Cart" S1xfIEMSD %};
+*   {% link "Basic guide to theme creation" r1deN4Grw %}.
 
 After that, you will get better understanding of approaching more specific tasks:
 
-*   {% link "Registering your JS/CSS files" rkvxo-3mP %} and {% link "adding them for Mobile skin" BJOesZn7w %};
-*   Creating menus in {% link "customer" rkf_sbnmP %} and {% link "admin" B1lPiZ27v %} areas;
-*   Creating {% link "second level navigation" B1WfiW3Qw %} in admin area;
-*   {% link "Changing column layout of storefront" r1XGs-27w %};
-*   {% link "Applying cache to your widgets" H1GAiWhmD %} so that it would work faster;
-*   {% link "Working with footer" Sy39n-hQD %};
-*   {% link "Implementing horizontal tabs" B1wnoW2Xv %} in customer area;
-*   {% link "Changing order invoices" ByOZoZh7w %}.
+*   {% link "Registering your JS/CSS files" SJXTmNfrD %} and {% link "adding them for Mobile skin" B1Ga74MrP %};
+*   Creating menus in {% link "customer" SkuEVzBD %} and {% link "admin" rkG844fSP %} areas;
+*   Creating {% link "second level navigation" S1xVVzrD %} in admin area;
+*   {% link "Changing column layout of storefront" rJ-eEVGSD %};
+*   {% link "Applying cache to your widgets" B1QbB4zHv %} so that it would work faster;
+*   {% link "Working with footer" SyE-LVfSv %};
+*   {% link "Implementing horizontal tabs" HyNCVNGSw %} in customer area;
+*   {% link "Changing order invoices" BkeJNNMBD %}.

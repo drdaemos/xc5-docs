@@ -1,5 +1,5 @@
 ---
-identifier: SyDL2WhXP
+identifier: BkY5H4fHD
 layout: article_with_sidebar
 lang: en
 title: 'Setting up cURL'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

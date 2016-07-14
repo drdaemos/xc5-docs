@@ -1,5 +1,5 @@
 ---
-identifier: SydZhW37P
+identifier: SJVHHNfSw
 layout: article_with_sidebar
 lang: en
 title: 'Moving X-Cart to another location'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

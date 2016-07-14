@@ -1,5 +1,5 @@
 ---
-identifier: B1ni2bhQD
+identifier: S17mLEfHD
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart SDK'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -131,7 +130,7 @@ Call this macro as:
 
 Your YAML file must be located at the `path/to/yaml/file/install.yaml` path you pass to macro.
 
-There is an {% link "alternative way to load YAML file" HyO6s-3XP %}, if you prefer not to use X-Cart SDK.
+There is an {% link "alternative way to load YAML file" rkBxHEfHw %}, if you prefer not to use X-Cart SDK.
 
 ## Making demo dump for performance tests
 

@@ -1,5 +1,5 @@
 ---
-identifier: rynFh-nQv
+identifier: HJL18VzSD
 layout: article_with_sidebar
 lang: en
 title: 'Using Webmaster Mode in X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

@@ -1,5 +1,5 @@
 ---
-identifier: SJ5fj-hmw
+identifier: r1deN4Grw
 layout: article_with_sidebar
 lang: en
 title: 'Basic guide to theme creation'
@@ -8,13 +8,12 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
 This article aims to teach designers how they can create X-Cart skin using preemptive (or substitutional) template model. This guide will also introduce **Custom Skin** module and will give real life example of how to work with preemptive templates in X-Cart.
 
-Before you get started, we recommend learning the {% link "basic designer guide" HkDO3Wh7v %} from **Getting started** section.
+Before you get started, we recommend learning the {% link "basic designer guide" Skx6SNzHP %} from **Getting started** section.
 
 # Table of Contents
 
@@ -28,7 +27,7 @@ Before you get started, we recommend learning the {% link "basic designer guide"
 
 If we want to make our module to be a skin and dramatically change the X-Cart appearance, there is a special way how to do it:
 
-1.  {% link "Create an empty module" H1Qu2b27w %}. In this article, I will be using module with developer ID as **Tony** and module ID as **SkinDemo**.
+1.  {% link "Create an empty module" H1ar4zrP %}. In this article, I will be using module with developer ID as **Tony** and module ID as **SkinDemo**.
 2.  Add the following method into your `Main.php` file 
 
     {% highlight php %}{% raw %}

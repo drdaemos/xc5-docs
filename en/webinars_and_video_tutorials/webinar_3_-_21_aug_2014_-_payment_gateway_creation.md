@@ -1,5 +1,5 @@
 ---
-identifier: ry8qnbnQP
+identifier: B1wgI4GBv
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 3 - 21 Aug 2014 - Payment gateway creation'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -63,7 +62,7 @@ Dwolla has already changed their API, so this integration no longer works, altho
 
 ## Creating an empty module
 
-I am {% link "creating the module" H1Qu2b27w %} with module ID **Dwolla** and developer ID **Tony**.
+I am {% link "creating the module" H1ar4zrP %} with module ID **Dwolla** and developer ID **Tony**.
 
 # Creating integration
 
@@ -269,7 +268,7 @@ XLite\Model\Payment\Method:
         value: live
 {% endraw %}{% endhighlight %}
 
-We specified 4 options and option mode is set to **live** by default. After this changes, you need to {% link "load this yaml file" B1ni2bhQD#X-CartSDK-LoadingYAMLfile %} to database again.
+We specified 4 options and option mode is set to **live** by default. After this changes, you need to {% link "load this yaml file" S17mLEfHD#X-CartSDK-LoadingYAMLfile %} to database again.
 
 ## Changing Dwolla.php file
 

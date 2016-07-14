@@ -1,5 +1,5 @@
 ---
-identifier: Bkj9n-3QP
+identifier: SkmZIEfHw
 layout: article_with_sidebar
 lang: en
 title: 'Working with authorization'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -22,7 +21,7 @@ This article shows you can authenticate a user by login and password. It also sh
 
 # Implementation
 
-We start with {% link "creating an external script" S1c53-nQD %} `<X-Cart>/test.php` with the following content: 
+We start with {% link "creating an external script" ByzbINMrv %} `<X-Cart>/test.php` with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

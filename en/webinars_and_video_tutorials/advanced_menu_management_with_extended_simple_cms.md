@@ -1,5 +1,5 @@
 ---
-identifier: rkSMoZn7P
+identifier: HyQlEVzHw
 layout: article_with_sidebar
 lang: en
 title: 'Advanced menu management with Extended Simple CMS'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

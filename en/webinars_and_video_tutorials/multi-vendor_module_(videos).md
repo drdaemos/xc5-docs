@@ -1,5 +1,5 @@
 ---
-identifier: Syu6cZ2mP
+identifier: SJtK7Ezrv
 layout: article_with_sidebar
 lang: en
 title: 'Multi-vendor module (videos)'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

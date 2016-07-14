@@ -1,5 +1,5 @@
 ---
-identifier: H1LLiWhmD
+identifier: rJBVVGHw
 layout: article_with_sidebar
 lang: en
 title: 'Configuring volume discounts and coupons in X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -20,5 +19,5 @@ The video below shows how to use the _volume discounts_ and _coupons_ features
 
 _Related pages:_
 
-*   {% link "Setting up discount coupons" SJO8hbnQv %}
-*   {% link "Setting up volume discounts for products" Sk7D2Zhmw %}
+*   {% link "Setting up discount coupons" r1q9BVMHw %}
+*   {% link "Setting up volume discounts for products" r1IoHEzrP %}

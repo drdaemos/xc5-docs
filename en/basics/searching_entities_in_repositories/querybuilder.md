@@ -1,5 +1,5 @@
 ---
-identifier: r1E3Znmw
+identifier: HyPvH4fHP
 layout: article_with_sidebar
 lang: en
 title: 'QueryBuilder'
@@ -8,11 +8,10 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
-This article is an introduction of **QueryBuilder** object – a special object that is used in order to pull info about {% link "Models" B1F3WnQv %} from the database.
+This article is an introduction of **QueryBuilder** object – a special object that is used in order to pull info about {% link "Models" ryb0BNzHv %} from the database.
 
 X-Cart uses [Doctrine 2](http://www.doctrine-project.org/) framework in order to work with database. Since this is [ORM](http://en.wikipedia.org/wiki/Object-relational_mapping) framework, it greatly eases developer's life. You do not have to worry about tables' structure or related objects.
 
@@ -114,7 +113,7 @@ Let us have a closer look at commands:
 
     Important part is that the result will be an array of `\XLite\Model\Product` objects – since we generated queryBuilder based of `\XLite\Model\Product` repository.
 
-Let us try to run this code. We {% link "create an external script" S1c53-nQD %} `test.php` in X-Cart's root and put the following content there: 
+Let us try to run this code. We {% link "create an external script" ByzbINMrv %} `test.php` in X-Cart's root and put the following content there: 
 
 {% highlight php %}{% raw %}
 <?php

@@ -1,5 +1,5 @@
 ---
-identifier: H1GAiWhmD
+identifier: B1QbB4zHv
 layout: article_with_sidebar
 lang: en
 title: 'Making your custom widget cached'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -25,7 +24,7 @@ This article explains developers how they can enable widget cache for their cust
 
 # Implementation
 
-Imagine a situation that we have added a {% link "custom sidebar widget" rkf_sbnmP %}. We know that this widget never changes, that is why we can generate its content (HTML code) only once and then insert this HTML code without running PHP process. Let us mark this widget as available for cache.
+Imagine a situation that we have added a {% link "custom sidebar widget" SkuEVzBD %}. We know that this widget never changes, that is why we can generate its content (HTML code) only once and then insert this HTML code without running PHP process. Let us mark this widget as available for cache.
 
 1.  Before we get started install the module from {% link "here" Creating-sidebar-menu-in-customer-area_7505759.html#Creatingsidebarmenuincustomerarea-Modulepack %}.
 2.  In order to mark a widget as available for caching you should simply add the `isCacheAvailable()` to your viewer class as follows:

@@ -1,5 +1,5 @@
 ---
-identifier: Skf5j-h7P
+identifier: ByNcEVfSP
 layout: article_with_sidebar
 lang: en
 title: 'Forcing product quantity while adding to cart'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -23,9 +22,9 @@ This article aims to show how you can change the routine of adding product to ca
 
 # Implementation
 
-We start with {% link "creating an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **AddQuantityDemo**.
+We start with {% link "creating an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **AddQuantityDemo**.
 
-When a product is added to cart, the request goes to `cart.php?target=cart` URL with **action=add** parameter, which means that {% link "this request will be handled" Skb8obnQP %} by `doActionAdd()` method of `\XLite\Controller\Customer\Cart` class ({% link "more info about classnames in X-Cart" S1RinW3Qv %}). The `doActionAdd()` method performs checks and then calls `addItem()` method of the same controller class – this method will actually add a product to a cart and then redirect a customer. In our module, we need to {% link "decorate" rkE_3bnXw %} the `\XLite\Controller\Customer\Cart` class and enhance the `addItem()` method. This enhancement will make sure that quantity of product added is even. Otherwise, we will show an error message and the product will not be added to cart.
+When a product is added to cart, the request goes to `cart.php?target=cart` URL with **action=add** parameter, which means that {% link "this request will be handled" HJ7rV4GHD %} by `doActionAdd()` method of `\XLite\Controller\Customer\Cart` class ({% link "more info about classnames in X-Cart" SJSmIEfSD %}). The `doActionAdd()` method performs checks and then calls `addItem()` method of the same controller class – this method will actually add a product to a cart and then redirect a customer. In our module, we need to {% link "decorate" H1G6r4zSD %} the `\XLite\Controller\Customer\Cart` class and enhance the `addItem()` method. This enhancement will make sure that quantity of product added is even. Otherwise, we will show an error message and the product will not be added to cart.
 
 We decorate the `\XLite\Controller\Customer\Cart` class by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/Controller/Customer/Cart.php` file with the following content: 
 
@@ -75,7 +74,7 @@ $result = false;
 
 Basically, the mod is done here, but since we can check item's amount right in JavaScript, we want to add it as well.
 
-For that we {% link "register a new JS file" rkvxo-3mP %} by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/View/AView.php` file with the following content: 
+For that we {% link "register a new JS file" SJXTmNfrD %} by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

@@ -1,5 +1,5 @@
 ---
-identifier: ryEkjZ37P
+identifier: Hkg37NGrw
 layout: article_with_sidebar
 lang: en
 title: 'How to add Google Adwords Conversion Tracking Code to &quot;Thank you for your order&quot; page'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 This article describes how to add Google Adwords Conversion Tracking code to X-Car's order confirmation page ("Thank you for your order" page).
 

@@ -1,5 +1,5 @@
 ---
-identifier: SJCc2-h7v
+identifier: B1UgL4fSw
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

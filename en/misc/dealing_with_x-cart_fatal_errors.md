@@ -1,5 +1,5 @@
 ---
-identifier: HkPuiZ3Xv
+identifier: By4_44fBD
 layout: article_with_sidebar
 lang: en
 title: 'Dealing with X-Cart fatal errors'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

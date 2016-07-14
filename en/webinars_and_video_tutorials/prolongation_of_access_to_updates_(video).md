@@ -1,5 +1,5 @@
 ---
-identifier: rkURq-nQP
+identifier: BkliQEzrD
 layout: article_with_sidebar
 lang: en
 title: 'Prolongation of access to updates (video)'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

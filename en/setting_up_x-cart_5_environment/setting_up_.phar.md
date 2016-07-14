@@ -1,5 +1,5 @@
 ---
-identifier: H1VH2Z27P
+identifier: HyStB4GSw
 layout: article_with_sidebar
 lang: en
 title: 'Setting up .phar'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 **.phar** lib is used for creating PHP archives. PHP 5.3 always has this extension built-in, but hosting teams may disable it for some reason.
 

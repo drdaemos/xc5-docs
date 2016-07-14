@@ -1,5 +1,5 @@
 ---
-identifier: Sk6thWh7v
+identifier: rJHJLNMrw
 layout: article_with_sidebar
 lang: en
 title: 'Using X-Cart 5 AOM and X-Payments together'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

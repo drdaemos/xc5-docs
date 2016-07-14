@@ -1,5 +1,5 @@
 ---
-identifier: Byg09-nQv
+identifier: rymcXVfSD
 layout: article_with_sidebar
 lang: en
 title: 'PayPal&amp;X-Cart joint webinar: 4 payment trends driving more sales in 2014'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

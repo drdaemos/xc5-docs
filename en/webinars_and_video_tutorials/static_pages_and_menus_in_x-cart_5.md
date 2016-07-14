@@ -1,5 +1,5 @@
 ---
-identifier: HkzOh-37v
+identifier: HJq2H4GrP
 layout: article_with_sidebar
 lang: en
 title: 'Static pages and menus in X-Cart 5'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 

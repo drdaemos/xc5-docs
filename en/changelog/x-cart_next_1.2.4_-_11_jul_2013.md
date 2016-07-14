@@ -1,5 +1,5 @@
 ---
-identifier: SkiohW3Qv
+identifier: BJ7IVMHv
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.4 - 11 Jul 2013'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 **List of new modules**
 

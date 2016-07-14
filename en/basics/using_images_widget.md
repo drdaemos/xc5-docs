@@ -1,5 +1,5 @@
 ---
-identifier: By0K2bn7P
+identifier: r1tJLEzSv
 layout: article_with_sidebar
 lang: en
 title: 'Using images widget'
@@ -8,7 +8,6 @@ categories:
 
 ---
 
-{% include global.html %}
 
 # Introduction
 
@@ -30,11 +29,11 @@ This article explains how to use image selection widget in X-Cart as well as how
 
 ## Create an empty module
 
-First of all, we {% link "create an empty module" H1Qu2b27w %} with developer ID **Tony** and module ID **ImageDemo**.
+First of all, we {% link "create an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **ImageDemo**.
 
 ## Decorate Product class
 
-Inside this module, we {% link "decorate" rkE_3bnXw %} the `\XLite\Model\Product` class as we want to add a new property to it as follows: 
+Inside this module, we {% link "decorate" H1G6r4zSD %} the `\XLite\Model\Product` class as we want to add a new property to it as follows: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -61,7 +60,7 @@ abstract class Product extends \XLite\Model\Product implements \XLite\Base\IDeco
 
 Let us have a closer look at this implementation.
 
-1.  We {% link "add a new property to a product object" BJr-j-3Qv %}: 
+1.  We {% link "add a new property to a product object" HkNRX4fHD %}: 
 
     {% highlight php %}{% raw %}
         /**
@@ -274,7 +273,7 @@ abstract class Product extends \XLite\View\Model\Product implements \XLite\Base\
 
 You should note that `SCHEMA_CLASS` param is defined as `\XLite\View\FormField\FileUploader\Image`. This class defines a widget that allows choosing files for upload and it only accepts images. Also, we specify the `\XLite\View\FormField\FileUploader\Image::PARAM_MULTIPLE` param as `true` in order to allow multiple images to be uploaded for a product.
 
-Besides that, we need to display secondary images in store-front. For that we {% link "create a template" HkDO3Wh7v#Step2-applyingdesignchanges-Addingnewtemplatesandwidgets %} that will be shown on product details page. We create the  
+Besides that, we need to display secondary images in store-front. For that we {% link "create a template" Skx6SNzHP#Step2-applyingdesignchanges-Addingnewtemplatesandwidgets %} that will be shown on product details page. We create the  
 `<X-Cart>/skins/default/en/modules/Tony/ImageDemo/secondary-images.tpl` with the following content: 
 
 {% highlight php %}{% raw %}
