@@ -1,7 +1,7 @@
 prose:
   # siteurl: 'http://devkb.xcart-service.com/'
   # baseurl: '/xc5-docs'
-  reference: 'http://devkb.xcart-service.com/xc5-docs/_links.yml'
+  reference: 'http://devkb.xcart-service.com/xc5-docs/links.xml'
   media: 'attachments'
   ignore:
     - /_includes
