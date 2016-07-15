@@ -1,5 +1,5 @@
 ---
-identifier: ryZKQEfSw
+identifier: ref_yuO3J8nF
 layout: article_with_sidebar
 lang: en
 title: 'Adding a new product (video)'

@@ -1,5 +1,5 @@
 ---
-identifier: SJXTmNfrD
+identifier: ref_viHdCWm0
 layout: article_with_sidebar
 lang: en
 title: 'Adding CSS and JS files'
@@ -9,7 +9,7 @@ categories:
 ---
 
 
-In order to register some CSS/JS resources in your viewer class (more about this in {% link "Working with viewer classes" S1xfIEMSD %}), it should implement two specific methods: `getCSSFiles() and ``getJSFiles().`
+In order to register some CSS/JS resources in your viewer class (more about this in {% link "Working with viewer classes" ref_lSwzIJDv %}), it should implement two specific methods: `getCSSFiles() and ``getJSFiles().`
 
 `**getCSSFiles()**`
 

@@ -1,5 +1,5 @@
 ---
-identifier: H1LZL4fBw
+identifier: ref_J6yGtklA
 layout: article_with_sidebar
 lang: en
 title: 'Working with product attributes'
@@ -29,7 +29,7 @@ Our mod will hide this **hidden-value** attribute in storefront.
 
 # Implementation
 
-We start with {% link "creating an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **AttributeDemo**.
+We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **AttributeDemo**.
 
 Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default/en/product/details/parts/attribute.tpl` template – as we can find it via **Webmaster Kit** module. Here is a code of this template:
 
@@ -48,7 +48,7 @@ Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default
 {end:}
 {% endraw %}{% endhighlight %}
 
-It takes attributes from array returned by the `getAttrList()` method and then display them in cycle. If we want to hide the **hidden-value** attribute, we should remove it from array returned by the `getAttrList()` method, so we must {% link "decorate" H1G6r4zSD %} the `\XLite\View\Product\Details\Customer\Attributes` class ({% link "more info about classnames in X-Cart" SJSmIEfSD %}). In order to do that we create the  
+It takes attributes from array returned by the `getAttrList()` method and then display them in cycle. If we want to hide the **hidden-value** attribute, we should remove it from array returned by the `getAttrList()` method, so we must {% link "decorate" ref_FyW2p51q %} the `\XLite\View\Product\Details\Customer\Attributes` class ({% link "more info about classnames in X-Cart" ref_1E0yUfyC %}). In order to do that we create the  
 `<X-Cart>/classes/XLite/Module/Tony/AttributeDemo/View/Product/Details/Customer/Attributes.php` file with the following content: 
 
 {% highlight php %}{% raw %}

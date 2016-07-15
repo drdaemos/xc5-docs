@@ -1,5 +1,5 @@
 ---
-identifier: B1fPEEfSD
+identifier: ref_Dcp9DsIO
 layout: article_with_sidebar
 lang: en
 title: 'Creating self-signed SSL certificate'
@@ -11,7 +11,7 @@ categories:
 
 # Why do I need self-signed SSL certificate?
 
-SSL certificate is used by {% link "openSSL" BkiH4GHP %} in order to encrypt data passed via {% link "cURL" BkY5H4fHD %}. If you are testing X-Cart 5 on local machine and your web-server does not have any SSL certificate, then your store will not be able to connect to marketplace. If this is your case, you need to generate self-signed SSL certificate in order to be able to install modules. The way you can do it will depend on what type of server you are using.
+SSL certificate is used by {% link "openSSL" ref_orcIg5OV %} in order to encrypt data passed via {% link "cURL" ref_AcqpgorP %}. If you are testing X-Cart 5 on local machine and your web-server does not have any SSL certificate, then your store will not be able to connect to marketplace. If this is your case, you need to generate self-signed SSL certificate in order to be able to install modules. The way you can do it will depend on what type of server you are using.
 
 # Creating self-signed SSL certificate
 

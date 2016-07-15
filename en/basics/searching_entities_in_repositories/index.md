@@ -1,5 +1,5 @@
 ---
-identifier: Hy7KSNzSD
+identifier: ref_KnAVgqwp
 layout: article_with_sidebar
 lang: en
 title: 'Searching entities in repositories'
@@ -90,4 +90,4 @@ $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findBy($condit
 
 # Pulling products by complex condition
 
-If you need more complex queries to the database, please learn how to use {% link "QueryBuilder" HyPvH4fHP %} object.
+If you need more complex queries to the database, please learn how to use {% link "QueryBuilder" ref_iPvrMnmJ %} object.

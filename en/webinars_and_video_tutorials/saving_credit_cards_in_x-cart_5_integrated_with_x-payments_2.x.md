@@ -1,5 +1,5 @@
 ---
-identifier: rJztBNzSv
+identifier: ref_s8Z0f8q3
 layout: article_with_sidebar
 lang: en
 title: 'Saving credit cards in X-Cart 5 integrated with X-Payments 2.x'

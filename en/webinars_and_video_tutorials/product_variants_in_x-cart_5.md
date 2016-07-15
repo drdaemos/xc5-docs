@@ -1,5 +1,5 @@
 ---
-identifier: H1VwHVzBw
+identifier: ref_1g1l5K9W
 layout: article_with_sidebar
 lang: en
 title: 'Product variants in X-Cart 5'

@@ -1,5 +1,5 @@
 ---
-identifier: HyVeBNzSv
+identifier: ref_7ntGTdhi
 layout: article_with_sidebar
 lang: en
 title: 'Kount in X-Cart 5 integrated with X-Payments'

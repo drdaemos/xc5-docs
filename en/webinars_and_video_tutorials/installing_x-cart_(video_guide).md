@@ -1,5 +1,5 @@
 ---
-identifier: BkedX4GBD
+identifier: ref_3PaLIN4J
 layout: article_with_sidebar
 lang: en
 title: 'Installing X-Cart (video guide)'

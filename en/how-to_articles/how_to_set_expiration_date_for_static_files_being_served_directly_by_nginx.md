@@ -1,5 +1,5 @@
 ---
-identifier: r1XREEzHP
+identifier: ref_2XwgybMU
 layout: article_with_sidebar
 lang: en
 title: 'How to set expiration date for static files being served directly by Nginx'

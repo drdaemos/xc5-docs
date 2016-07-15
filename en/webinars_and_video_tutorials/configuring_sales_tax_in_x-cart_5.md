@@ -1,5 +1,5 @@
 ---
-identifier: HkEQEEGrD
+identifier: ref_KDvc2ZJn
 layout: article_with_sidebar
 lang: en
 title: 'Configuring sales tax in X-Cart 5'

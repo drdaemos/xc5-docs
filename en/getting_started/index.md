@@ -1,5 +1,5 @@
 ---
-identifier: BkP34NGSv
+identifier: ref_hCWGdAhX
 layout: article_with_sidebar
 lang: en
 title: 'Getting started'
@@ -17,9 +17,9 @@ This section teaches developers how to work with X-Cart 5.
 
 You start with basic guides about X-Cart development process:
 
-1.  {% link "Creating an empty module" H1ar4zrP %};
-2.  {% link "Changing design" Skx6SNzHP %};
-3.  {% link "Changing logic" H1G6r4zSD %};
-4.  {% link "Working with settings" H1Z6SNGSw %}.
+1.  {% link "Creating an empty module" ref_KLBakhPi %};
+2.  {% link "Changing design" ref_s0pEdaWQ %};
+3.  {% link "Changing logic" ref_FyW2p51q %};
+4.  {% link "Working with settings" ref_y2oAwps5 %}.
 
-Also, there is an article about {% link "X-Cart SDK" S17mLEfHD %} that eases and speeds up the development process.
+Also, there is an article about {% link "X-Cart SDK" ref_sOOo7DOJ %} that eases and speeds up the development process.

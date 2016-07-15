@@ -1,5 +1,5 @@
 ---
-identifier: S1VG8EGrP
+identifier: ref_DTm5o2M3
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 and X-Payments - PCI compliant credit card processing and storing'

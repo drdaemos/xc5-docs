@@ -1,5 +1,5 @@
 ---
-identifier: Hk_TE4MBw
+identifier: ref_SOJkLPib
 layout: article_with_sidebar
 lang: en
 title: 'How to hide left-hand bar for static pages only'

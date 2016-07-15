@@ -20,7 +20,7 @@ markdown: kramdown
 incremental: false
 lsi: true
 
-index_path: "_links.yml"
+index_path: "links.xml"
 
 gems:
   - jekyll-redirect-from

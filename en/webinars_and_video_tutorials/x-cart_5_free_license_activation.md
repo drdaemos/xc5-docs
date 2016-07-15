@@ -1,5 +1,5 @@
 ---
-identifier: H17G84MSD
+identifier: ref_yVGoL1id
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Free License Activation'

@@ -1,5 +1,5 @@
 ---
-identifier: SJVHHNfSw
+identifier: ref_lggB8kuK
 layout: article_with_sidebar
 lang: en
 title: 'Moving X-Cart to another location'

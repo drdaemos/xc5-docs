@@ -1,5 +1,5 @@
 ---
-identifier: ryVv7NMrv
+identifier: ref_t27fMMJH
 layout: article_with_sidebar
 lang: en
 title: 'Editing templates on the example of Adding Market Price to Products List in X-Сart 5: Tutorial by Mike White'

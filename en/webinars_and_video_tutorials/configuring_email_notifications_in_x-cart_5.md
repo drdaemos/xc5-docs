@@ -1,5 +1,5 @@
 ---
-identifier: H1QQENzSv
+identifier: ref_o4d2diJb
 layout: article_with_sidebar
 lang: en
 title: 'Configuring email notifications in X-Cart 5'

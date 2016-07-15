@@ -1,5 +1,5 @@
 ---
-identifier: r1bc7EMSw
+identifier: ref_dU8Rrd8i
 layout: article_with_sidebar
 lang: en
 title: 'Booking module (video)'

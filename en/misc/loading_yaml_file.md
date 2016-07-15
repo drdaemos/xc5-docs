@@ -1,5 +1,5 @@
 ---
-identifier: rkBxHEfHw
+identifier: ref_D0r2w4WN
 layout: article_with_sidebar
 lang: en
 title: 'Loading YAML file'
@@ -11,7 +11,7 @@ categories:
 
 # Introduction
 
-This guide describes how developers can load updated YAML file of your module without running {% link "X-Cart SDK macro" S17mLEfHD#X-CartSDK-LoadingYAMLfile %}.
+This guide describes how developers can load updated YAML file of your module without running {% link "X-Cart SDK macro" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %}.
 
 Sometimes developers cannot use X-Cart SDK, because for some reason they cannot run console commands. They can still accomplish other tasks that are eased by macros except loading YAML file. This guide shows a way to load YAML file without having to uninstall/reinstall the module.
 

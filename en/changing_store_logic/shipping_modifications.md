@@ -1,5 +1,5 @@
 ---
-identifier: HJZhSVfHD
+identifier: ref_FDofB2yn
 layout: article_with_sidebar
 lang: en
 title: 'Shipping modifications'
@@ -23,7 +23,7 @@ This article describes the process of creating a simple shipping method. In our 
 
 # Implementation
 
-We start by {% link "creating an empty module" H1ar4zrP %} with the developer ID **XCExample **and the module ID **ShippingDemo**. Then, we create the file  
+We start by {% link "creating an empty module" ref_KLBakhPi %} with the developer ID **XCExample **and the module ID **ShippingDemo**. Then, we create the file  
 <X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php: 
 
 {% highlight php %}{% raw %}
@@ -156,7 +156,7 @@ We add records to the shipping methods repository about the new shipping methods
 
 The first method is a parent method; its name **My Shipping Method(parent) **will be used as the name of the method in the admin area of the site. The second method is a child method, its name will be visible to customers.. It is **enabled** and has **carrier** field as **M****yProcessor** and **processor** field as **MyProcessor**.
 
-_Note: if you have already activated the module, do not forget to {% link "push this install.yaml" S17mLEfHD#X-CartSDK-LoadingYAMLfile %} to the database._
+_Note: if you have already activated the module, do not forget to {% link "push this install.yaml" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %} to the database._
 
 Then, we need to create the file XLite/Module/XCExample/ShippingDemo/Controller/Admin/MyProcessor.php
 

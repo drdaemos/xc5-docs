@@ -1,5 +1,5 @@
 ---
-identifier: Bkx784MSv
+identifier: ref_T1hIDxN4
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.2 - 6 Mar 2013'

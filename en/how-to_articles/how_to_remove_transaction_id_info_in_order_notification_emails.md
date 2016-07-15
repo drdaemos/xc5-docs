@@ -1,5 +1,5 @@
 ---
-identifier: r1b3QVGBD
+identifier: ref_8sz9N0JG
 layout: article_with_sidebar
 lang: en
 title: 'How to remove Transaction ID info in order notification emails?'

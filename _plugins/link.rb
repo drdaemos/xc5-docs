@@ -1,5 +1,5 @@
 require 'pathname'
-require 'yaml'
+require 'xmlsimple'
 
 module Jekyll
   module ReferencePlugin
@@ -28,6 +28,12 @@ module Jekyll
       end
     end
 
+    class ReferenceIndex < Jekyll::StaticFile
+      def write(dest)
+        true
+      end
+    end
+
     class IndexGenerator < Jekyll::Generator
       def generate(site)
         path = Pathname.new(site.dest) + site.config['index_path']
@@ -42,11 +48,14 @@ module Jekyll
           memo
         end
 
+        site.data['links'] = index
+
         File.open(path, 'w+') do |h|
-          h.write index.to_yaml
+          h.write XmlSimple.xml_out(index, {'NoAttr' => true, "RootName" => "refs", "XmlDeclaration" => true})
         end
 
-        site.data['links'] = index
+        # Keep the sitemap.xml file from being cleaned by Jekyll
+        site.static_files << Jekyll::ReferencePlugin::ReferenceIndex.new(site, site.dest, "/", site.config['index_path'])
       end
     end
 

@@ -1,5 +1,5 @@
 ---
-identifier: By4_44fBD
+identifier: ref_bGLdtGNT
 layout: article_with_sidebar
 lang: en
 title: 'Dealing with X-Cart fatal errors'

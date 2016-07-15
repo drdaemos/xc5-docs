@@ -1,5 +1,5 @@
 ---
-identifier: S1xVVzrD
+identifier: ref_m7Mi6CK1
 layout: article_with_sidebar
 lang: en
 title: 'Adding tabs'
@@ -26,9 +26,9 @@ For the sake of example, we will create our own tab on product details page.
 
 # Implementation
 
-We start with {% link "creating an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **ProductTabDemo**.
+We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **ProductTabDemo**.
 
-Tab section of a page is defined by the `getPages()` method of the page's {% link "controller class" HJ7rV4GHD %}. Since we want to add our tab to product details page, we are going to {% link "decorate" H1G6r4zSD %} its controller `\XLite\Controller\Admin\Product` ({% link "more info about classnames in X-Cart" SJSmIEfSD %}).  We create the `<X-Cart>/classes/XLite/Module/Tony/ProductTabDemo/Controller/Admin/Product.php` file with the following content: 
+Tab section of a page is defined by the `getPages()` method of the page's {% link "controller class" ref_RKbC8TCE %}. Since we want to add our tab to product details page, we are going to {% link "decorate" ref_FyW2p51q %} its controller `\XLite\Controller\Admin\Product` ({% link "more info about classnames in X-Cart" ref_1E0yUfyC %}).  We create the `<X-Cart>/classes/XLite/Module/Tony/ProductTabDemo/Controller/Admin/Product.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

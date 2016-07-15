@@ -1,5 +1,5 @@
 ---
-identifier: H1ZBN4zHD
+identifier: ref_NfpeOnyp
 layout: article_with_sidebar
 lang: en
 title: 'Connecting X-Payments 2.1 x with X-Cart 5'

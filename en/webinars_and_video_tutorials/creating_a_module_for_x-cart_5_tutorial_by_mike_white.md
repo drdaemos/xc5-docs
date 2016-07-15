@@ -1,5 +1,5 @@
 ---
-identifier: rJIUXVfSP
+identifier: ref_MsMvhogH
 layout: article_with_sidebar
 lang: en
 title: 'Creating a module for X-Cart 5: Tutorial by Mike White'

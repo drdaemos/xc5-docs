@@ -1,5 +1,5 @@
 ---
-identifier: BJWLEzrv
+identifier: ref_Zo7dETx2
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 4 - 11 Nov 2014 - Basic principles of CMS integration'
@@ -59,7 +59,7 @@ echo $product->getName();
     echo $product->getName();
     {% endraw %}{% endhighlight %}
 
-    _More information about pulling data from database is {% link "here" Hy7KSNzSD %}._
+    _More information about pulling data from database is {% link "here" ref_KnAVgqwp %}._
 
 The same way you can use absolutely all public methods of X-Cart in your scripts: create and update objects, get data out of these objects.
 
@@ -110,7 +110,7 @@ $widget->display();
     </div>
     </div>
     {% endraw %}{% endhighlight %}
-4.  The same approach can be used for every other X-Cart viewer class. All {% link "viewer classes" S1xfIEMSD %} are located in `<X-Cart>/classes/XLite/Viewer` folder. Here is working example:
+4.  The same approach can be used for every other X-Cart viewer class. All {% link "viewer classes" ref_lSwzIJDv %} are located in `<X-Cart>/classes/XLite/Viewer` folder. Here is working example:
 
     {% highlight php %}{% raw %}
     <?php
@@ -164,13 +164,13 @@ In order to overcome these problems, we will need an integration module in the X
 
 ## Step 1\. Create an empty module
 
-There is already {% link "an article" H1ar4zrP %} describing how you can achieve it. I already have a module with developer ID **Tony** and module ID **CMSIntegration**.
+There is already {% link "an article" ref_KLBakhPi %} describing how you can achieve it. I already have a module with developer ID **Tony** and module ID **CMSIntegration**.
 
 ## Step 2\. Point links to X-Cart installation
 
 It can be achieved by decoration of the `\XLite\Core\Converter` class that contains `buildURL()` method. This method is used throughout entire X-Cart code in order to build proper X-Cart URLs.
 
-We are running the {% link "following macro" S17mLEfHD#X-CartSDK-Decoratingclass %}:
+We are running the {% link "following macro" ref_sOOo7DOJ#X-CartSDK-Decoratingclass %}:
 
 {% highlight php %}{% raw %}
 ../../next-sdk/devkit/macros/decorate.php --module=Tony\\CMSIntegration --class=classes/XLite/Core/Converter.php

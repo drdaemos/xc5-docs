@@ -1,5 +1,5 @@
 ---
-identifier: H1G6r4zSD
+identifier: ref_FyW2p51q
 layout: article_with_sidebar
 lang: en
 title: 'Step 3 - applying logic changes'
@@ -29,8 +29,8 @@ This article also contains the working example of changing X-Cart's logic.
 
 Before we start explaining general workflow of X-Cart, we must say that X-Cart uses **object-oriented paradigm**, which means that code is objects-based + code widely utilizes **inheritance** as well as uses polymorphism and encapsulation. We also can call X-Cart as **MVC** (Model - View - Controller) framework, because of three main class types in X-Cart:
 
-1.  {% link "**Model** class" ryb0BNzHv %} is a class that describes some entity. Products, orders, users, payment gateways, etc are all model objects. All model classes are defined in files of the `<X-Cart>/classes/XLite/Model/` folder.
-2.  {% link "**Viewer** class" S1xfIEMSD %} is a class that handles the output of HTML code to the client. For example, in order to display an order page there is a bulk of viewer classes that takes info from order model, then processes it and finally outputs to the client. All viewer classes are defined in files of the `<X-Cart>/classes/XLite/View/` directory.
+1.  {% link "**Model** class" ref_MVBTmPq1 %} is a class that describes some entity. Products, orders, users, payment gateways, etc are all model objects. All model classes are defined in files of the `<X-Cart>/classes/XLite/Model/` folder.
+2.  {% link "**Viewer** class" ref_lSwzIJDv %} is a class that handles the output of HTML code to the client. For example, in order to display an order page there is a bulk of viewer classes that takes info from order model, then processes it and finally outputs to the client. All viewer classes are defined in files of the `<X-Cart>/classes/XLite/View/` directory.
 3.  **Controller** class aims to make a preparation of data and application before viewer class starts the output of content. All controller classes are described in files of the `<X-Cart>/classes/XLite/Controller/` folder.
 
 # General X-Cart workflow
@@ -55,7 +55,7 @@ It means, that we can tell X-Cart to use our own implementation of certain metho
 
 Let me show you how the real-life working example for better understanding. Assume we want to hide the quicklook magnifier icon from all product lists. This icon is marked on the snapshot below:
 
-![]({{site.baseurl}}/attachments/8224804/8355865.png)Using the approach described in {% link "Step 2 - applying design changes" Skx6SNzHP %} article, we can find that this icon is defined by the `<X-Cart>/skins/default/en/items_list/product/parts/common.quicklook-button.tpl` template. Its code is below: 
+![]({{site.baseurl}}/attachments/8224804/8355865.png)Using the approach described in {% link "Step 2 - applying design changes" ref_s0pEdaWQ %} article, we can find that this icon is defined by the `<X-Cart>/skins/default/en/items_list/product/parts/common.quicklook-button.tpl` template. Its code is below: 
 
 {% highlight php %}{% raw %}
 {* vim: set ts=2 sw=2 sts=2 et: *}
@@ -84,7 +84,7 @@ As you can see, the code is straight-forward: if `isQuickLookEnabled()` method 
 
 Here is how we can achieve it:
 
-1.  {% link "Create an empty module" H1ar4zrP %}. I am creating it with developer ID as **Tony** and module ID as **DecoratorDemo**. Of course, you can use your own IDs.
+1.  {% link "Create an empty module" ref_KLBakhPi %}. I am creating it with developer ID as **Tony** and module ID as **DecoratorDemo**. Of course, you can use your own IDs.
 2.  Create the `<Your-Module-Directory>/VIew/ItemsList/Product/Customer/ACustomer.php` file inside your module with the following content: 
 
     {% highlight php %}{% raw %}

@@ -1,5 +1,5 @@
 ---
-identifier: BJmxHNMHD
+identifier: ref_00Zt6BXm
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList options in customer area'
@@ -11,7 +11,7 @@ categories:
 
 # Introduction
 
-This article is in advanced explanation of how to use {% link "ItemsLists in customer area" r1WgHEMrv %}. It explains how to enable/disable pagination, sorting options, display options etc.
+This article is in advanced explanation of how to use {% link "ItemsLists in customer area" ref_oiPWRgK7 %}. It explains how to enable/disable pagination, sorting options, display options etc.
 
 # Table of Contents
 

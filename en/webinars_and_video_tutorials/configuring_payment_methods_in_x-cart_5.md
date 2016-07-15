@@ -1,5 +1,5 @@
 ---
-identifier: ry874Efrv
+identifier: ref_ZOUsudSm
 layout: article_with_sidebar
 lang: en
 title: 'Configuring payment methods in X-Cart 5'

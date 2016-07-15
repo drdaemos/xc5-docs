@@ -1,5 +1,5 @@
 ---
-identifier: H1LVrEzSD
+identifier: ref_TLXNDrrw
 layout: article_with_sidebar
 lang: en
 title: 'Migration from Litecommerce 3 to X-Cart 5'

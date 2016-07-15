@@ -1,5 +1,5 @@
 ---
-identifier: BkIl44zrP
+identifier: ref_2d2o1K1f
 layout: article_with_sidebar
 lang: en
 title: 'Attributes and product filters in X-Cart 5'

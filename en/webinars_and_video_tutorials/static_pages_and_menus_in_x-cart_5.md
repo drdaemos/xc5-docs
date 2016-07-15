@@ -1,5 +1,5 @@
 ---
-identifier: HJq2H4GrP
+identifier: ref_BzXIoeOr
 layout: article_with_sidebar
 lang: en
 title: 'Static pages and menus in X-Cart 5'

@@ -1,5 +1,5 @@
 ---
-identifier: SJva44GHD
+identifier: ref_BXgouQ4F
 layout: article_with_sidebar
 lang: en
 title: 'How to create translation module'
@@ -50,7 +50,7 @@ Once you are done with the CSV file, you should go to the [http://www.x-cart.co
 
 Fill in the form of this script as:
 
-*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: {% link "Step 1 - creating simplest module#Choosingidentifiers" H1ar4zrP#Step1-creatingsimplestmodule-Choosingidentifiers %}
+*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: {% link "Step 1 - creating simplest module#Choosingidentifiers" ref_KLBakhPi#Step1-creatingsimplestmodule-Choosingidentifiers %}
 *   **Module author** should contain the name of the translation author how it should be displayed to merchants.
 *   **Module service name** should contain the ID of your module in X-Cart. See more here: {% link "Step 1 - creating simplest module#Choosingidentifiers" Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Choosingidentifiers %}
 *   **Module name** should contain the name of your module how it is going to be displayed to merchants.

@@ -1,5 +1,5 @@
 ---
-identifier: BkwEEGrw
+identifier: ref_E9TQmXpH
 layout: article_with_sidebar
 lang: en
 title: 'Creating popup widget'
@@ -28,8 +28,8 @@ This article describes how developers can create a popup widget in X-Cart. For i
 
 # Some necessary preparations
 
-First of all, you should have your custom module. We are {% link "creating a new module" H1ar4zrP %} with developer ID **Tony** and module ID **PopupDemo**.  
-Secondly, we'll create a {% link "custom page" rJlvE4frP %} to have our popup button. This page will be available at `cart.php?target=tony_custom` address.
+First of all, you should have your custom module. We are {% link "creating a new module" ref_KLBakhPi %} with developer ID **Tony** and module ID **PopupDemo**.  
+Secondly, we'll create a {% link "custom page" ref_hTAS4T58 %} to have our popup button. This page will be available at `cart.php?target=tony_custom` address.
 
 # Implementation
 
@@ -37,7 +37,7 @@ Through this course we will define our custom button, which will be used to open
 
 ## Creating popup button
 
-X-Cart has `\XLite\View\Button\APopupButton` class, which defines popup button. In order to use it, you should extend it with your custom button class (this thing is thoroughly explained in {% link "Working with viewer classes" S1xfIEMSD %}). To do this, we are creating a file `<X-Cart>/classes/XLite/Module/Tony/PopupDemo/View/Button/DemoPopupButton.php` with the following content:
+X-Cart has `\XLite\View\Button\APopupButton` class, which defines popup button. In order to use it, you should extend it with your custom button class (this thing is thoroughly explained in {% link "Working with viewer classes" ref_lSwzIJDv %}). To do this, we are creating a file `<X-Cart>/classes/XLite/Module/Tony/PopupDemo/View/Button/DemoPopupButton.php` with the following content:
 
 {% highlight php %}{% raw %}
 <?php
@@ -213,7 +213,7 @@ Let's get quick overview of methods, featuring this viewer class (more about thi
 </div>
 {% endraw %}{% endhighlight %}
 
-This template uses several {% link "Flexy" By7c4NMSw %} features to show cart quantity, unordered list of items in the cart and subtotal in user currency. 
+This template uses several {% link "Flexy" ref_9W1MWCTr %} features to show cart quantity, unordered list of items in the cart and subtotal in user currency. 
 
 This is basically everything that we need to make a simple popup widget. We're only step away from finishing our work.
 

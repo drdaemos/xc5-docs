@@ -1,5 +1,5 @@
 ---
-identifier: BkliQEzrD
+identifier: ref_OsG6nnx7
 layout: article_with_sidebar
 lang: en
 title: 'Prolongation of access to updates (video)'

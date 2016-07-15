@@ -1,5 +1,5 @@
 ---
-identifier: SkGfU4frD
+identifier: ref_xvTc4knL
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Business License Activation'

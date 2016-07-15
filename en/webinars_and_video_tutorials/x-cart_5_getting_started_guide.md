@@ -1,5 +1,5 @@
 ---
-identifier: BJ8GIEMrv
+identifier: ref_1HHQp9QW
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 getting started guide'

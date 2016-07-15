@@ -1,5 +1,5 @@
 ---
-identifier: BJeWBNzHv
+identifier: ref_D53Px4LB
 layout: article_with_sidebar
 lang: en
 title: 'Making one module depend on another one -- creating a menu in the customer area'
@@ -11,7 +11,7 @@ categories:
 
 # Introduction
 
-This article aims to show developers how to give priority to one class over another during the {% link "decoration process" H1G6r4zSD %}. It also shows how one module can require another one for proper work.
+This article aims to show developers how to give priority to one class over another during the {% link "decoration process" ref_FyW2p51q %}. It also shows how one module can require another one for proper work.
 
 # Table of Contents
 
@@ -28,13 +28,13 @@ This article aims to show developers how to give priority to one class over anot
 
 Imagine the situation: You are writing a module that correlates with another one. A typical case – you want to override a customer menu on the storefront.
 
-The top menu is defined in the core class `\XLite\View\Menu\Customer\Top` (see the article about {% link "class names" SJSmIEfSD %}), and the module **SimpleCMS** overrides this class via `\XLite\Module\CDev\SimpleCMS\View\Menu\Customer\PrimaryMenu`. We want to show our items no matter whether the module SimpleCMS is enabled or not.
+The top menu is defined in the core class `\XLite\View\Menu\Customer\Top` (see the article about {% link "class names" ref_1E0yUfyC %}), and the module **SimpleCMS** overrides this class via `\XLite\Module\CDev\SimpleCMS\View\Menu\Customer\PrimaryMenu`. We want to show our items no matter whether the module SimpleCMS is enabled or not.
 
 In order to solve the problem, we must be sure that our module will decorate the core class `\XLite\View\Menu\Customer\Top` after the SimpleCMS' class, otherwise SimpleCMS will just ignore our implementation of the menu.
 
 # Solution
 
-1.  {% link "Create a module" H1ar4zrP %}.  I am creating it with the developer ID **Tony** and the module ID **OverridingTopMenu**.
+1.  {% link "Create a module" ref_KLBakhPi %}.  I am creating it with the developer ID **Tony** and the module ID **OverridingTopMenu**.
 2.  In order to tell X-Cart what menu items must be shown on the storefront, we need to decorate the method `defineItems()` of the class `\XLite\View\Menu\Customer\Top`.
 3.  To achieve that, we will create the file `<X-Cart>/classes/XLite/Module/Tony/OverridingTopMenu/View/Menu/Customer/Top.php` with the following content: 
 

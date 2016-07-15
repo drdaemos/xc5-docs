@@ -1,5 +1,5 @@
 ---
-identifier: rJQL4NfBv
+identifier: ref_bLTPBiUl
 layout: article_with_sidebar
 lang: en
 title: 'Creating new entity -- Introduction of editable ItemsList in admin area'
@@ -28,7 +28,7 @@ This article describes how developers can create new entity in X-Cart store. Thi
 
 # Implementation
 
-First of all we {% link "create an empty module" H1ar4zrP %} with developer ID **Tony** and module ID **NewEntityDemo**. In this module, we {% link "create a page" rJlvE4frP %} `target=quick_messages` in admin area. We create:
+First of all we {% link "create an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **NewEntityDemo**. In this module, we {% link "create a page" ref_hTAS4T58 %} `target=quick_messages` in admin area. We create:
 
 *   empty controller class `\XLite\Module\Tony\NewEntityDemo\Controller\Admin\QuickMessages`
 *   viewer class `\XLite\Module\Tony\NewEntityDemo\View\Page\Admin\QuickMessages` with the following content: 
@@ -71,7 +71,7 @@ First of all we {% link "create an empty module" H1ar4zrP %} with developer ID *
 
 ## Creating Quick Message entity
 
-In order to create a new entity in X-Cart, we have to create a new {% link "Model class" SJSmIEfSD %}. We create `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/QuickMessage.php` file with the following content: 
+In order to create a new entity in X-Cart, we have to create a new {% link "Model class" ref_1E0yUfyC %}. We create `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/QuickMessage.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -168,7 +168,7 @@ We have created the **Model** class and now we need to create **repository** cla
 
 ## Creating Repository class
 
-Repository class is used in order to pull entities' info from the database. We need an implementation of {% link "`search()` method" Sk7u7NfBD %} in it in order to allow proper work with ItemsList.
+Repository class is used in order to pull entities' info from the database. We need an implementation of {% link "`search()` method" ref_fDIL6sVa %} in it in order to allow proper work with ItemsList.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/Repo/QuickMessage.php` file with the following content: 
 
@@ -435,9 +435,9 @@ Once you add some quick messages, do not forget to save results by clicking **Sa
 
 ## Showing quick messages in customer area
 
-We will show three latest quick messages in {% link "sidebar box" SkuEVzBD %} in the left-hand side menu in storefront.
+We will show three latest quick messages in {% link "sidebar box" ref_KeySwUkh %} in the left-hand side menu in storefront.
 
-First, we create the {% link "viewer class" S1xfIEMSD %}. For that we create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/QuickMessageMenu.php` file with the following content: 
+First, we create the {% link "viewer class" ref_lSwzIJDv %}. For that we create the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/View/QuickMessageMenu.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

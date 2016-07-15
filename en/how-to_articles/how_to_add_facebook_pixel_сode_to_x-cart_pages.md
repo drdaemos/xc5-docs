@@ -1,5 +1,5 @@
 ---
-identifier: rkriXVGrP
+identifier: ref_nhU7UgaL
 layout: article_with_sidebar
 lang: en
 title: 'How to add Facebook Pixel Сode to X-Cart pages'

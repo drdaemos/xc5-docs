@@ -1,5 +1,5 @@
 ---
-identifier: SkotQVfHw
+identifier: ref_auW5nDCD
 layout: article_with_sidebar
 lang: en
 title: 'Adding a New Page in X Cart 5: Tutorial by Mike White'

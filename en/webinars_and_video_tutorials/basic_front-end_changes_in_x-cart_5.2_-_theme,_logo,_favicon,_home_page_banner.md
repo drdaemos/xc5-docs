@@ -1,5 +1,5 @@
 ---
-identifier: rketXVfSP
+identifier: ref_8eF8GH1h
 layout: article_with_sidebar
 lang: en
 title: 'Basic front-end changes in X-Cart 5.2 - Theme, Logo, Favicon, Home Page Banner'

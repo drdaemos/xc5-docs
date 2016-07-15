@@ -1,5 +1,5 @@
 ---
-identifier: HkfYQ4zrw
+identifier: ref_chCC9vGu
 layout: article_with_sidebar
 lang: en
 title: 'Specifying your company info, changing the text on the Add to Cart button and editing the Contact Us page in X-Cart 5'

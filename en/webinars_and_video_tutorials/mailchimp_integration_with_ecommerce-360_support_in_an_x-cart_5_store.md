@@ -1,5 +1,5 @@
 ---
-identifier: SkbrNGBw
+identifier: ref_78MNJ9kR
 layout: article_with_sidebar
 lang: en
 title: 'MailChimp Integration with Ecommerce-360 support in an X-Cart 5 Store'

@@ -1,5 +1,5 @@
 ---
-identifier: BygJLNfBP
+identifier: ref_0sIRxBlU
 layout: article_with_sidebar
 lang: en
 title: 'Upgrading X-Cart 5'
@@ -135,8 +135,8 @@ Below the description of full manual upgrade:
 
 _Related pages:_
 
-*   {% link "X-Cart Upgrade General Steps" ByNQIVGrD %}
-*   {% link "Upgrade hooks" BkkU4fSw %}
+*   {% link "X-Cart Upgrade General Steps" ref_h5APuWyU %}
+*   {% link "Upgrade hooks" ref_tHvklZug %}
 
 ## Attachments:
 

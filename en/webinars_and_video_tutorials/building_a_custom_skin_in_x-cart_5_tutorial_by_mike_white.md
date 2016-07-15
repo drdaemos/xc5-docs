@@ -1,5 +1,5 @@
 ---
-identifier: H18D7VfSD
+identifier: ref_mtpNvE3N
 layout: article_with_sidebar
 lang: en
 title: 'Building a custom skin in X-Cart 5: Tutorial by Mike White'

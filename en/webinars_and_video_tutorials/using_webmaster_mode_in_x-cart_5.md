@@ -1,5 +1,5 @@
 ---
-identifier: HJL18VzSD
+identifier: ref_QNW5QuE1
 layout: article_with_sidebar
 lang: en
 title: 'Using Webmaster Mode in X-Cart 5'

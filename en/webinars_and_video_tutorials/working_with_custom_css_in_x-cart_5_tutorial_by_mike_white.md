@@ -1,5 +1,5 @@
 ---
-identifier: HkSFXNzrw
+identifier: ref_KmxFpnDz
 layout: article_with_sidebar
 lang: en
 title: 'Working with custom CSS in X-Cart 5: Tutorial by Mike White'

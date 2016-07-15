@@ -1,5 +1,5 @@
 ---
-identifier: r1LV4zHP
+identifier: ref_bZm0T7yO
 layout: article_with_sidebar
 lang: en
 title: 'Creating a payment method'
@@ -50,7 +50,7 @@ die();
 
 # Payment gateway module implementation
 
-We start the creation of the payment gateway by {% link "creating an empty module" H1ar4zrP %} with the developer ID **Tony** and the module ID **PaymentDemo**. Then, we create the file  
+We start the creation of the payment gateway by {% link "creating an empty module" ref_KLBakhPi %} with the developer ID **Tony** and the module ID **PaymentDemo**. Then, we create the file  
 `<X-Cart>/classes/XLite/Module/Tony/PaymentDemo/Model/Payment/Processor/DemoPayment.php` with the following content: 
 
 {% highlight php %}{% raw %}
@@ -158,7 +158,7 @@ Your YAML file will probably contain just one of the above fields.
 
 The list of allowed countries / exceptions in the YAML file will be used to filter payment methods in the payment method selection popup in the admin area.
 
-Once the YAML file has been created, do not forget to {% link "push it to the database" S17mLEfHD#X-CartSDK-LoadingYAMLfile %}.
+Once the YAML file has been created, do not forget to {% link "push it to the database" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %}.
 
 The mod is completed, and we need to re-deploy the store in order to test it in action.
 
