@@ -1,5 +1,6 @@
 ---
-identifier: ref_3PaLIN4J
+identifier: ref_Mo2kvXDl
+updated_at: 2015-08-13 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Installing X-Cart (video guide)'

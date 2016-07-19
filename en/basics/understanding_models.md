@@ -1,5 +1,6 @@
 ---
-identifier: ref_MVBTmPq1
+identifier: ref_yzmkyyfu
+updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Understanding Models'
@@ -24,7 +25,7 @@ For the sake of example, we will create a **TestEntity** class which will have t
 
 # Implementation
 
-We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **RepoDemo**.
+We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **RepoDemo**.
 
 Once it is created, we create our **Model** class. For that, we create `<X-Cart>/classes/XLite/Module/Tony/RepoDemo/Model/TestEntity.php` file with the following content: 
 
@@ -56,7 +57,7 @@ class TestEntity extends \XLite\Model\AEntity
 
 Let us have a closer look at what we are doing here:
 
-1.  We start with defining {% link "namespace" ref_1E0yUfyC %}: 
+1.  We start with defining {% link "namespace" ref_ddaUT3B3 %}: 
 
     {% highlight php %}{% raw %}
     namespace XLite\Module\Tony\RepoDemo\Model;

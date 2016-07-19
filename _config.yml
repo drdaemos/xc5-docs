@@ -6,21 +6,26 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: X-Cart 5 Development
-email: daemos@xcart.com
+title: X-Cart 5 Knowledge Base
+email: daemos@x-cart.com
 description: X-Cart is the free shopping cart software & solutions for high‑performing online stores
-baseurl: "/xc5-docs" # the subpath of your site, e.g. /blog
-url: "http://drdaemos.github.io" # the base hostname & protocol for your site
-twitter_username: drdaemos
-github_username:  drdaemos
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://kb5.x-cart.com" # the base hostname & protocol for your site
 encoding: utf-8
+repository: xcart/xc5-docs
 
 # Build settings
+safe: false
 markdown: kramdown
 incremental: false
 lsi: true
 
 index_path: "links.xml"
+
+elasticsearch:
+    host: "localhost:9200"
+    index: "knowledgebase"
+    type: "articles"
 
 gems:
   - jekyll-redirect-from

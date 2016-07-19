@@ -1,5 +1,6 @@
 ---
-identifier: ref_ToTIUvbF
+identifier: ref_Bans6pJS
+updated_at: 2015-01-20 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating product discount'
@@ -11,7 +12,7 @@ categories:
 
 # Introduction
 
-Previously we have learned how to create a {% link "global discount" ref_BANTfyWU %} and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as
+Previously we have learned how to create a {% link "global discount" ref_AbgL72Jq %} and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as
 
 *   a **10% off** label on product lists;
 *   an **old price** label with crossed old price near product price.
@@ -33,7 +34,7 @@ The main difference between this module and {% link "one that described global d
 
 Such an approach is quite convenient, because you can enable such module for a sale period, it will automatically apply needed discounts and once the sale is over, you just disable the module. No import/export for updating prices will be needed.
 
-We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **ProductDiscountDemo**. Now we need to {% link "decorate" ref_FyW2p51q %} product {% link "model" ref_MVBTmPq1 %} class `\XLite\Model\Product`, so we create the  
+We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **ProductDiscountDemo**. Now we need to {% link "decorate" ref_0xIAMJyA %} product {% link "model" ref_yzmkyyfu %} class `\XLite\Model\Product`, so we create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/Model/Product.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -136,7 +137,7 @@ Now the discount will be applied to products that start with A and we need to ad
 *   display **10% off** label near such products on product lists;
 *   display **Old price** label near such product prices.
 
-In order to display **10% off** label on product lists, we have to decorate the `\XLite\View\ItemsList\Product\Customer\ACustomer` {% link "ItemsList class" ref_oiPWRgK7 %}. We create the  
+In order to display **10% off** label on product lists, we have to decorate the `\XLite\View\ItemsList\Product\Customer\ACustomer` {% link "ItemsList class" ref_1n8lHHNV %}. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/ItemsList/Product/Customer/ACustomer.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -186,7 +187,7 @@ Now, let us add **Old price** label near price display of discounted products. W
 <li IF="{isMyDiscount()}" class="old-price">Old price: <span class="price old-price">{formatPrice(getOldPrice(),null,1):h}</span></li>
 {% endraw %}{% endhighlight %}
 
-and it will be assigned to the `product.plain_price` {% link "view list" ref_s0pEdaWQ %}, so it will be displayed below main product price in store-front. Since we use two methods – `isMyDiscount()` and `getOldPrice()` – that do not exist in the default implementation of the `\XLite\View\Price` {% link "viewer class" ref_lSwzIJDv %}– this viewer class manages the display of `product.plain_price` view list –, we have to create such methods by decorating `\XLite\View\Price` viewer. We create the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/Price.php` file with the following content: 
+and it will be assigned to the `product.plain_price` {% link "view list" ref_rwQykwuT %}, so it will be displayed below main product price in store-front. Since we use two methods – `isMyDiscount()` and `getOldPrice()` – that do not exist in the default implementation of the `\XLite\View\Price` {% link "viewer class" ref_qIifNQNq %}– this viewer class manages the display of `product.plain_price` view list –, we have to create such methods by decorating `\XLite\View\Price` viewer. We create the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/Price.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -213,7 +214,7 @@ abstract class Price extends \XLite\View\Price implements \XLite\Base\IDecorator
 
 This implementation is just proxying product methods – `isMyDiscount()` and `getPriceBeforeMyProductDiscount()` – from our enhanced version of `\XLite\Model\Product` class.
 
-Finally, we need to apply several CSS styles in order to make our **Old price** label look smooth. We {% link "add CSS file" ref_viHdCWm0 %} by creating the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/AView.php` file with the following content: 
+Finally, we need to apply several CSS styles in order to make our **Old price** label look smooth. We {% link "add CSS file" ref_omMqRbnh %} by creating the `<X-Cart>/classes/XLite/Module/Tony/ProductDiscountDemo/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

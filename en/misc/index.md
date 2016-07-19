@@ -1,5 +1,6 @@
 ---
-identifier: ref_Aw9Xub19
+identifier: ref_TxqSxVXw
+updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Misc'
@@ -11,9 +12,9 @@ categories:
 
 This section contains useful guides that could not be categorized to previous sections:
 
-*   {% link "Rules of naming X-Cart classes" ref_1E0yUfyC %};
-*   {% link "How to deal with X-Cart fatal errors" ref_bGLdtGNT %} and {% link "debug other problems" ref_JBVGM3fo %};
-*   {% link "How to put your module in our marketplace" ref_QZXWhav9 %} and {% link "our code requirements to 3rd party modules" ref_1rPVmqFm %};
-*   {% link "Creating translation modules" ref_BXgouQ4F %};
-*   {% link "Understanding X-Cart versioning" ref_Tv7Fo0wf %};
-*   {% link "Alternative way of loading YAML files" ref_D0r2w4WN %}.
+*   {% link "Rules of naming X-Cart classes" ref_ddaUT3B3 %};
+*   {% link "How to deal with X-Cart fatal errors" ref_JpScwThn %} and {% link "debug other problems" ref_pWb0TZ7H %};
+*   {% link "How to put your module in our marketplace" ref_eRnso4vH %} and {% link "our code requirements to 3rd party modules" ref_OhTA3lk4 %};
+*   {% link "Creating translation modules" ref_bnXgC3Vv %};
+*   {% link "Understanding X-Cart versioning" ref_HCib8slB %};
+*   {% link "Alternative way of loading YAML files" ref_xmWqJ8zE %}.

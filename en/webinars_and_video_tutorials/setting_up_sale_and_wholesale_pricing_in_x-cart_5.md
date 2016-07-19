@@ -1,5 +1,6 @@
 ---
-identifier: ref_7DfUqmCT
+identifier: ref_67hVaX4E
+updated_at: 2015-05-14 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Setting up sale and wholesale pricing in X-Cart 5'

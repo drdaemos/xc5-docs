@@ -1,7 +1,7 @@
 prose:
-  # siteurl: 'http://devkb.xcart-service.com/'
+  # siteurl: 'https://kb5.x-cart.com/'
   # baseurl: '/xc5-docs'
-  reference: 'http://devkb.xcart-service.com/xc5-docs/links.xml'
+  reference: 'https://kb5.x-cart.com/links.xml'
   media: 'attachments'
   ignore:
     - /_includes
@@ -23,10 +23,6 @@ prose:
     - .nojekyll
   metadata:
     en:
-      - name: "lang"
-        field:
-          element: "hidden"
-          value: "en"
       - name: "identifier"
         field:
           element: "text"
@@ -41,6 +37,10 @@ prose:
         field:
           element: "hidden"
           value: "article_with_sidebar"
+      - name: "lang"
+        field:
+          element: "hidden"
+          value: "en"
       - name: "title"
         field:
           element: "text"
@@ -51,18 +51,36 @@ prose:
           element: "textarea"
           label: "Description"
           value: ""
+      - name: "version"
+        field:
+          element: "text"
+          label: "Suitable X-Cart version"
+          help: "Enter a message to distinct this page as valid only for some X-Cart versions. Update accordingly to the changes in the software."
+          placeholder: "X-Cart 5.2.1 - 5.2.15"
+          value: ""
       - name: "icon"
         field:
           element: "text"
           label: "Icon name"
-          help: "Icon name for this page (used in index menu). Refer to Semantic-UI iconset."
+          help: "Icon name for this page (used in index menu). Refer to the Semantic-UI iconset."
           value: ""
       - name: "order"
         field:
           element: "number"
           label: "Page position"
-          help: "Enables sorting if set to any non-negative number. Lower values mean higher position in sort order."
-          value: ""
+          help: "Enables sorting if set to any non-negative number. Lower values mean higher position in sort order. Default value is 100"
+          value: "100"
+      - name: "keywords"
+        field:
+          element: "multiselect"
+          label: "Add keywords"
+          placeholder: "e.g. 'for starters', 'x-cart 5.3', ..."
+          alterable: true
+          options:
+            - name: "x-cart 5.2"
+              value: "x-cart 5.2"
+            - name: "x-cart 5.3"
+              value: "x-cart 5.3"
       - name: "categories"
         field:
           element: "multiselect"
@@ -75,10 +93,6 @@ prose:
             - name: "Top panel"
               value: "top"
     ru:
-      - name: "lang"
-        field:
-          element: "hidden"
-          value: "ru"
       - name: "identifier"
         field:
           element: "text"
@@ -93,6 +107,10 @@ prose:
         field:
           element: "hidden"
           value: "article_with_sidebar"
+      - name: "lang"
+        field:
+          element: "hidden"
+          value: "ru"
       - name: "title"
         field:
           element: "text"
@@ -103,18 +121,36 @@ prose:
           element: "textarea"
           label: "Description"
           value: ""
+      - name: "version"
+        field:
+          element: "text"
+          label: "Suitable X-Cart version"
+          help: "Enter a message to distinct this page as valid only for some X-Cart versions. Update accordingly to the changes in the software."
+          placeholder: "X-Cart 5.2.1 - 5.2.15"
+          value: ""
       - name: "icon"
         field:
           element: "text"
           label: "Icon name"
-          help: "Icon name for this page (used in index menu). Refer to Semantic-UI iconset."
+          help: "Icon name for this page (used in index menu). Refer to the Semantic-UI iconset."
           value: ""
       - name: "order"
         field:
           element: "number"
           label: "Page position"
-          help: "Enables sorting if set to any non-negative number. Lower values mean higher position in sort order."
-          value: ""
+          help: "Enables sorting if set to any non-negative number. Lower values mean higher position in sort order. Default value is 100"
+          value: "100"
+      - name: "keywords"
+        field:
+          element: "multiselect"
+          label: "Add keywords"
+          placeholder: "e.g. 'для начинающих', 'x-cart 5.3', ..."
+          alterable: true
+          options:
+            - name: "x-cart 5.2"
+              value: "x-cart 5.2"
+            - name: "x-cart 5.3"
+              value: "x-cart 5.3"
       - name: "categories"
         field:
           element: "multiselect"

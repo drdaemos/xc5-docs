@@ -1,5 +1,6 @@
 ---
-identifier: ref_hTAS4T58
+identifier: ref_OkHzgi1f
+updated_at: 2014-12-18 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating new page'
@@ -25,13 +26,13 @@ This article describes how developers can create a new page in X-Cart. For insta
 
 # Before get started
 
-First thing to do is to {% link "create an empty module" ref_KLBakhPi %}. We are creating a module with developer ID **Tony** and module ID **PageDemo**.
+First thing to do is to {% link "create an empty module" ref_TZnqVJsw %}. We are creating a module with developer ID **Tony** and module ID **PageDemo**.
 
 # Creating page in admin area
 
 For the sake of example, our task is to create the page which will be available at `admin.php?target=tony_custom` address and will display **Hello world!** text.
 
-1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look {% link "here" ref_FyW2p51q#Step3-applyinglogicchanges-GeneralX-Cartworkflow %}. 
+1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look {% link "here" ref_0xIAMJyA#Step3-applyinglogicchanges-GeneralX-Cartworkflow %}. 
 2.  We create the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/Admin/TonyCustom.php` file with the following content: 
 
     {% highlight php %}{% raw %}
@@ -122,7 +123,7 @@ For the sake of example, our task is to create the page which will be available 
 
 # Creating page via macro
 
-You can {% link "create a page via macro" ref_sOOo7DOJ#X-CartSDK-Creatingpage %}, so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
+You can {% link "create a page via macro" ref_HMDeHiJ8#X-CartSDK-Creatingpage %}, so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
 
 # Creating page in customer area
 

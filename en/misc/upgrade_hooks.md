@@ -1,5 +1,6 @@
 ---
-identifier: ref_tHvklZug
+identifier: ref_ePtzSg4L
+updated_at: 2015-09-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Upgrade hooks'

@@ -1,5 +1,6 @@
 ---
-identifier: ref_qX8wi1o9
+identifier: ref_HXefaAox
+updated_at: 2015-06-30 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Infinite Scroll module (video)'

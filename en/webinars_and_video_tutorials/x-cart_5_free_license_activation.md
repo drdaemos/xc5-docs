@@ -1,5 +1,6 @@
 ---
-identifier: ref_yVGoL1id
+identifier: ref_KMF3khuT
+updated_at: 2014-12-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Free License Activation'

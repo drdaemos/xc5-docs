@@ -1,5 +1,6 @@
 ---
-identifier: ref_HTGDb22T
+identifier: ref_ebDEkpTT
+updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Basics'
@@ -13,16 +14,16 @@ description: Understand what technologies and approaches used in the X-Cart core
 
 The Basics section shows how to achieve typical tasks when you edit your X-Cart store:
 
-*   {% link "Creating new page" ref_hTAS4T58 %} and {% link "How to find out what page is currently running" ref_NSX80pbi %} from the PHP script;
-*   Understanding what is a {% link "controller" ref_RKbC8TCE %}, {% link "model" ref_MVBTmPq1 %} and {% link "viewer" ref_lSwzIJDv %} classes in terms of X-Cart;
-*   How to {% link "access data" ref_GEZTuiXU %} submitted in the request;
-*   Introduction to {% link "Flexy template engine" ref_9W1MWCTr %} used in X-Cart;
-*   Understanding how to {% link "initialize X-Cart" ref_5xBROryM %} in the external script and then use its functions there;
-*   {% link "Pulling info from X-Cart database" ref_KnAVgqwp %};
-*   How to work with products in customer and admin areas: {% link "adding new property to a product" ref_3JZ7G9pX %}, {% link "showing set of products on a page" ref_oiPWRgK7 %}, {% link "working with product attributes" ref_J6yGtklA %};
-*   How to create new entities and work with them: {% link "creating new entity" ref_bLTPBiUl %}, {% link "displaying list of entities in admin area" ref_ll2CSeNK %}, {% link "creating a page for an entity editing" ref_G9sr7Iig %};
-*   How to work with images: {% link "using image widget" ref_24TXeJ3l %} and {% link "working with image resizing routine" ref_2lXyWqK6 %};
-*   How to work with {% link "user info" ref_VakqbUeT %} and {% link "authorization" ref_77b71Fax %};
-*   {% link "How to work with sessions" ref_qr5mhX2y %};
-*   {% link "Making request to external services" ref_8ugTVMAd %};
-*   {% link "Making dependencies between modules" ref_D53Px4LB %}.
+*   {% link "Creating new page" ref_OkHzgi1f %} and {% link "How to find out what page is currently running" ref_EPhpzI6F %} from the PHP script;
+*   Understanding what is a {% link "controller" ref_6UXvhZZc %}, {% link "model" ref_yzmkyyfu %} and {% link "viewer" ref_qIifNQNq %} classes in terms of X-Cart;
+*   How to {% link "access data" ref_HgL8OQ5w %} submitted in the request;
+*   Introduction to {% link "Flexy template engine" ref_eE7vr4SD %} used in X-Cart;
+*   Understanding how to {% link "initialize X-Cart" ref_PTzG8qs6 %} in the external script and then use its functions there;
+*   {% link "Pulling info from X-Cart database" ref_c8as4Qfi %};
+*   How to work with products in customer and admin areas: {% link "adding new property to a product" ref_9yb8oW90 %}, {% link "showing set of products on a page" ref_1n8lHHNV %}, {% link "working with product attributes" ref_3610VPdz %};
+*   How to create new entities and work with them: {% link "creating new entity" ref_ky0LMava %}, {% link "displaying list of entities in admin area" ref_c7RSyvR6 %}, {% link "creating a page for an entity editing" ref_yEOvMaNA %};
+*   How to work with images: {% link "using image widget" ref_li3I7XBu %} and {% link "working with image resizing routine" ref_8sKuldQ6 %};
+*   How to work with [user info](http://kb.x-cart.com/display/XDD/Editing+user+profile+fields) and {% link "authorization" ref_e1LGA319 %};
+*   {% link "How to work with sessions" ref_yyaQoRh1 %};
+*   {% link "Making request to external services" ref_fATMXD23 %};
+*   {% link "Making dependencies between modules" ref_xq8ZHVys %}.

@@ -1,5 +1,6 @@
 ---
-identifier: ref_nhU7UgaL
+identifier: ref_Vu33Tgm6
+updated_at: 2016-05-05 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to add Facebook Pixel Сode to X-Cart pages'
@@ -115,9 +116,9 @@ See also:
 
 ## Related articles
 
-*   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
 *   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
+*   Page:{% link "How to move category description below the product list" /display/XDD/How+to+move+category+description+below+the+product+list %}
+*   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
 *   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
 *   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
 

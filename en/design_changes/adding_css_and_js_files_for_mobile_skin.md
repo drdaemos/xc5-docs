@@ -1,5 +1,6 @@
 ---
-identifier: ref_wZo1HzLx
+identifier: ref_PM7z4ZZD
+updated_at: 2014-12-01 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding CSS and JS files for Mobile Skin'
@@ -11,7 +12,7 @@ categories:
 
 # Introduction
 
-This article describes how developers can include CSS/JS files to X-Cart which has the [Mobile Skin](http://www.x-cart.com/extensions/addons/mobile.html) module enabled. The problem is that Mobile Skin module removes all CSS/JS files that were registered via {% link "regular approach of adding CSS/JS files" ref_viHdCWm0 %}, so we must work around it in this case.
+This article describes how developers can include CSS/JS files to X-Cart which has the [Mobile Skin](http://www.x-cart.com/extensions/addons/mobile.html) module enabled. The problem is that Mobile Skin module removes all CSS/JS files that were registered via {% link "regular approach of adding CSS/JS files" ref_omMqRbnh %}, so we must work around it in this case.
 
 # Table of Contents
 
@@ -22,7 +23,7 @@ This article describes how developers can include CSS/JS files to X-Cart which h
 
 # Implementation
 
-1.  {% link "Create an empty module" ref_KLBakhPi %}. We are creating a module with developer ID **Tony** and module ID **MobileCSS**.
+1.  {% link "Create an empty module" ref_TZnqVJsw %}. We are creating a module with developer ID **Tony** and module ID **MobileCSS**.
 2.  Since we cannot use the `getThemeFiles()` method of `\XLite\View\AView` object, because CSS/JS files from it will be cleaned up anyway, we need to decorate the `registerResources()` method of the `\XLite\Core\Layout` class.
 3.  We create the `<X-Cart>/classes/XLite/Module/Tony/MobileCSS/Core/Layout.php` file with the following content: 
 

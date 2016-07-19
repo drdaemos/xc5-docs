@@ -1,5 +1,6 @@
 ---
-identifier: ref_KeySwUkh
+identifier: ref_4b7Ny6KH
+updated_at: 2016-01-21 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating sidebar menu in customer area'
@@ -27,7 +28,7 @@ This article describes how you can create your own sidebar menu in customer stor
 
 # Step 1\. Create an empty module
 
-You can simply do it according to {% link "the guide" ref_KLBakhPi %}. For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
+You can simply do it according to {% link "the guide" ref_TZnqVJsw %}. For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
 
 Rebuild the cache and this module will appear in the **Extensions > Installed modules** section in your admin area. Enable this module.
 

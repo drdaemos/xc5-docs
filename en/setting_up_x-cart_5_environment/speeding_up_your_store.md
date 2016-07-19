@@ -1,5 +1,6 @@
 ---
-identifier: ref_lhD3WalG
+identifier: ref_bVCOHs2e
+updated_at: 2016-02-28 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Speeding up your store'
@@ -50,7 +51,7 @@ The former two options allow X-Cart to compound most CSS files into a single one
 
 The **Use widget cache** option enables the internal cache of viewer classes, which is a great way to speed up the opening of pages that have static data, like product or category pages. This allows to skip some calculations if no changes have been made to the content.
 
-If you have custom mods, you may consider {% link "making some of their widgets cached" ref_aE1101eZ %} as well.
+If you have custom mods, you may consider {% link "making some of their widgets cached" ref_h091enmc %} as well.
 
 ![]({{site.baseurl}}/attachments/8224875/9437214.png?effects=drop-shadow)
 

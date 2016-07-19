@@ -1,5 +1,6 @@
 ---
-identifier: ref_NfpeOnyp
+identifier: ref_ufX0wfTm
+updated_at: 2015-05-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Connecting X-Payments 2.1 x with X-Cart 5'

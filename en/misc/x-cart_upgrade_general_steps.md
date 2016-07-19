@@ -1,5 +1,6 @@
 ---
-identifier: ref_h5APuWyU
+identifier: ref_Ips4iO7l
+updated_at: 2016-01-08 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Upgrade General Steps'
@@ -25,4 +26,4 @@ If the installation of updates has been completed successfully (without errors),
 
 _Related pages:_
 
-*   {% link "Upgrading X-Cart 5" ref_0sIRxBlU %}
+*   {% link "Upgrading X-Cart 5" ref_e7hPRwXR %}

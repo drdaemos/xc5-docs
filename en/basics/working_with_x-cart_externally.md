@@ -1,5 +1,6 @@
 ---
-identifier: ref_5xBROryM
+identifier: ref_PTzG8qs6
+updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Working with X-Cart externally'
@@ -37,7 +38,7 @@ Now X-Cart is initialized in this file and we can start using its functions here
 echo \XLite\Core\Config::getInstance()->Company->company_name;
 {% endraw %}{% endhighlight %}
 
-and it will display company name from {% link "X-Cart settings" ref_y2oAwps5 %}.
+and it will display company name from {% link "X-Cart settings" ref_Ox5XLSck %}.
 
 # Full code
 

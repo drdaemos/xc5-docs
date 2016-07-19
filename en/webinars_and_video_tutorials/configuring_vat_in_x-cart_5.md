@@ -1,5 +1,6 @@
 ---
-identifier: ref_EU5tbqxV
+identifier: ref_GqldHUma
+updated_at: 2015-05-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Configuring VAT in X-Cart 5'

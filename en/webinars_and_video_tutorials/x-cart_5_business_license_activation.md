@@ -1,5 +1,6 @@
 ---
-identifier: ref_xvTc4knL
+identifier: ref_2BLkxWM9
+updated_at: 2014-10-28 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Business License Activation'

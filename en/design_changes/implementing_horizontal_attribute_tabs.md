@@ -1,5 +1,6 @@
 ---
-identifier: ref_sBThKceq
+identifier: ref_ErPeUW2v
+updated_at: 2015-01-20 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Implementing horizontal attribute tabs'
@@ -26,7 +27,7 @@ then this guide is for you.
 
 # Implementation
 
-We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to {% link "register a new CSS file" ref_viHdCWm0 %}. We create the  
+We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to {% link "register a new CSS file" ref_omMqRbnh %}. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ProductTabsChange/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}

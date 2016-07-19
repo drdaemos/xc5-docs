@@ -1,5 +1,6 @@
 ---
-identifier: ref_ZOUsudSm
+identifier: ref_BgTVC4hA
+updated_at: 2015-05-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Configuring payment methods in X-Cart 5'

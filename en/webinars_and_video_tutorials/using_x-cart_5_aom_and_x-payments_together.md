@@ -1,5 +1,6 @@
 ---
-identifier: ref_mpuZi1gn
+identifier: ref_1UMHtd5T
+updated_at: 2014-10-29 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Using X-Cart 5 AOM and X-Payments together'

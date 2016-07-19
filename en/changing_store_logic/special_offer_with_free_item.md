@@ -1,5 +1,6 @@
 ---
-identifier: ref_m9yTT5E1
+identifier: ref_tRSvQBT0
+updated_at: 2015-01-19 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Special offer with free item'
@@ -13,7 +14,7 @@ categories:
 
 This guide explains how to create a module that implements a **special offer**: buy three items of the same product and the third one will be free for you. On top of that, this type of discount will be displayed as a **separate line** on the checkout.
 
-This guide is based on the previous one about {% link "creating a discount" ref_BANTfyWU %}, so you might want to look at it first.
+This guide is based on the previous one about {% link "creating a discount" ref_AbgL72Jq %}, so you might want to look at it first.
 
 # Table of Contents
 
@@ -24,7 +25,7 @@ This guide is based on the previous one about {% link "creating a discount" ref_
 
 # Implementation
 
-We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the {% link "discount module" Creating-global-discount_8225204.html %}. We create the  
+We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the {% link "discount module" Creating-global-discount_8225204.html %}. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/FreeItemDemo/Logic/Order/Modifier/FreeItem.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -104,7 +105,7 @@ XLite\Model\Order\Modifier:
   - { class: '\XLite\Module\Tony\FreeItemDemo\Logic\Order\Modifier\FreeItem', weight: 100 }
 {% endraw %}{% endhighlight %}
 
-and then {% link "push it to the database" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %}.
+and then {% link "push it to the database" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %}.
 
 Now we need to re-deploy the store and then check the results. For that, go to your customer area and add three items of the same product to a cart. You will see the following picture at the cart page: ![]({{site.baseurl}}/attachments/8225412/8356192.png)
 

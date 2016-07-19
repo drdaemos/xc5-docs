@@ -1,5 +1,6 @@
 ---
-identifier: ref_Hv5qVa6p
+identifier: ref_2z1WNgds
+updated_at: 2015-03-11 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Accessing data of current user profile'
@@ -24,7 +25,7 @@ For the sake of example, we will create a new page that will be accessible via `
 
 # Implementation
 
-Before we get started, we {% link "create an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **ProfileDemo**. Also, we {% link "create a new page" ref_hTAS4T58#Creatingnewpage-Creatingpageincustomerarea %} that will be accessible via `cart.php?target=profile_demo` URL.
+Before we get started, we {% link "create an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **ProfileDemo**. Also, we {% link "create a new page" ref_OkHzgi1f#Creatingnewpage-Creatingpageincustomerarea %} that will be accessible via `cart.php?target=profile_demo` URL.
 
 Once it is done, we go to the `<X-Cart>/classes/XLite/Module/Tony/ProfileDemo/Controller/Customer/ProfileDemo.php` file and add the following method there:
 
@@ -42,7 +43,7 @@ This method will be used in the template of our page in order to determine wheth
 $profile = \XLite\Core\Auth::getInstance()->getProfile();
 {% endraw %}{% endhighlight %}
 
-and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see {% link "more info about classnames" ref_1E0yUfyC %} in X-Cart).
+and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see {% link "more info about classnames" ref_ddaUT3B3 %} in X-Cart).
 
 Now it is time to edit this page's template and we go to the `<X-Cart>/skins/default/en/modules/Tony/ProfileDemo/page/profile_demo/body.tpl` and define its content as follows: 
 

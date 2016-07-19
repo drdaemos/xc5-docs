@@ -1,5 +1,6 @@
 ---
-identifier: ref_7ntGTdhi
+identifier: ref_hVKcRCtX
+updated_at: 2015-09-21 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Kount in X-Cart 5 integrated with X-Payments'

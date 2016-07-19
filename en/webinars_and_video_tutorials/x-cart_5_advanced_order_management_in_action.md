@@ -1,5 +1,6 @@
 ---
-identifier: ref_NQwlNkbw
+identifier: ref_X7eOCJkx
+updated_at: 2015-05-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 Advanced Order Management in action'

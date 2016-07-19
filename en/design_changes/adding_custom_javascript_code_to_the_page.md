@@ -1,5 +1,6 @@
 ---
-identifier: ref_AlL7tKkB
+identifier: ref_RkM3FDRV
+updated_at: 2015-09-25 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding custom JavaScript code to the page'
@@ -41,7 +42,7 @@ This example code will be executed only on the **order_list** page in the Admin 
 
 _See also:_
 
-*   {% link "Basic guide to theme creation: Using Custom Skin module" ref_dw0Ckv6c#Basicguidetothemecreation-UsingCustomSkinmodule %}
+*   {% link "Basic guide to theme creation: Using Custom Skin module" ref_AwGTLXzr#Basicguidetothemecreation-UsingCustomSkinmodule %}
 
 ## Attachments:
 

@@ -1,5 +1,6 @@
 ---
-identifier: ref_9W1MWCTr
+identifier: ref_eE7vr4SD
+updated_at: 2015-01-19 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Flexy Guide'
@@ -36,7 +37,7 @@ Generally, Flexy template is a file where you specify plain text that will be di
 My name is {getMyName()}
 {% endraw %}{% endhighlight %}
 
-`{getMyName()}` is a call of function `getMyName()` function {% link "defined" ref_s0pEdaWQ#Step2-applyingdesignchanges-UnderstandingX-Cartlayoutsystem %} in the current viewer class or controller class.
+`{getMyName()}` is a call of function `getMyName()` function {% link "defined" ref_rwQykwuT#Step2-applyingdesignchanges-UnderstandingX-Cartlayoutsystem %} in the current viewer class or controller class.
 
 If you need to pass some string value to a function, it will look as follows: 
 
@@ -146,7 +147,7 @@ If you want to include another template into your one, you can do it as follows:
 {* in this case, {foo} variable in the path/to/another/template.tpl template will have value "bar" *}
 {% endraw %}{% endhighlight %}
 
-The same way you can include {% link "viewer classes" ref_lSwzIJDv %} into templates: 
+The same way you can include {% link "viewer classes" ref_qIifNQNq %} into templates: 
 
 {% highlight php %}{% raw %}
 <widget class="\XLite\View\Header" />
@@ -168,9 +169,9 @@ This section introduces a module that will show you an example of creating Flexy
 
 ## Implementation
 
-We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **OutputFilterDemo**. Then we {% link "create a `target=output_filter` page" ref_hTAS4T58 %} in customer area in this module. For that we create: 
+We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **OutputFilterDemo**. Then we {% link "create a `target=output_filter` page" ref_OkHzgi1f %} in customer area in this module. For that we create: 
 
-*   an empty controller class `\XLite\Module\Tony\OutputFilterDemo\Controller\Customer\OutputFilter` ({% link "more about classnames in X-Cart" ref_1E0yUfyC %});
+*   an empty controller class `\XLite\Module\Tony\OutputFilterDemo\Controller\Customer\OutputFilter` ({% link "more about classnames in X-Cart" ref_ddaUT3B3 %});
 *   a page viewer class `\XLite\Module\Tony\OutputFilterDemo\View\Page\Customer\OutputFilter` with the following content: 
 
     {% highlight php %}{% raw %}
@@ -209,7 +210,7 @@ We start with {% link "creating an empty module" ref_KLBakhPi %} with developer 
     {% endraw %}{% endhighlight %}
 *   an empty page template `<X-Cart>/skins/default/en/modules/Tony/OutputFilterDemo/page/output_filter/body.tpl`.
 
-Now we need to {% link "decorate" ref_FyW2p51q %} the `\XLite\View\AView` class and implement our Flexy output filter. We create the `<X-Cart>/classes/XLite/Module/Tony/OutputFilterDemo/View/AView.php` file with the following content: 
+Now we need to {% link "decorate" ref_0xIAMJyA %} the `\XLite\View\AView` class and implement our Flexy output filter. We create the `<X-Cart>/classes/XLite/Module/Tony/OutputFilterDemo/View/AView.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

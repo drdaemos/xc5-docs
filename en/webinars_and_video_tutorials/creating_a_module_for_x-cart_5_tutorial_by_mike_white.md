@@ -1,5 +1,6 @@
 ---
-identifier: ref_MsMvhogH
+identifier: ref_V9PX4kb2
+updated_at: 2014-07-09 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating a module for X-Cart 5: Tutorial by Mike White'

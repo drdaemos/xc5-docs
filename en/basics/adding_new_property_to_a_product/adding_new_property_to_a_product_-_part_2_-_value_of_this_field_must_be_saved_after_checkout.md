@@ -1,5 +1,6 @@
 ---
-identifier: ref_cTpl2Ul1
+identifier: ref_zC1wFqgT
+updated_at: 2015-01-22 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product - part 2 - value of this field must be saved after checkout'
@@ -11,7 +12,7 @@ categories:
 
 # Introduction
 
-This article is a continuation of an article about {% link "adding a new property to a product" ref_3JZ7G9pX %} and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).
+This article is a continuation of an article about {% link "adding a new property to a product" ref_9yb8oW90 %} and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).
 
 This article will explain how to save the product property's value when you place an order and even if you change this property's value later on, old invoices would still use saved value.
 
@@ -98,7 +99,7 @@ We start with creating a module similar to one from the first article.
 
 Now it is time to add this `$testField` property and its `getTestField()` accessor method to the `\XLite\Model\OrderItem` class and our mod will be ready.
 
-We {% link "decorate" ref_FyW2p51q %} the `\XLite\Model\OrderItem` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/OrderItem.php` file with the following content: 
+We {% link "decorate" ref_0xIAMJyA %} the `\XLite\Model\OrderItem` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/OrderItem.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php
@@ -219,7 +220,7 @@ then go to your storefront, add this product to cart, proceed to checkout and pl
 
 If you go to your admin area, change the **Test Field** property for this product again and then reload the **Thank you** page, you will still see old value.
 
-_Note: this mod does not display this property on invoice page in admin area and in email notifications. To get the idea of how to enhance this mod and show the value in admin area, please check the {% link "Adding product images to order notifications" ref_CkJVaqFI %}__ guide._
+_Note: this mod does not display this property on invoice page in admin area and in email notifications. To get the idea of how to enhance this mod and show the value in admin area, please check the {% link "Adding product images to order notifications" ref_tCEUuqgs %}__ guide._
 
 # Module pack
 

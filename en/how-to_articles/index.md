@@ -1,5 +1,6 @@
 ---
-identifier: ref_IvEyvITy
+identifier: ref_0WR1u8gl
+updated_at: 2015-12-08 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How-To Articles'
@@ -35,31 +36,31 @@ description: Study different guides to achieve features that you need
 
 <tr>
 
+<td class="title">{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}</td>
+
+<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
+
+<td class="modified" data-sortable-date="1467290194616">Jun 30, 2016</td>
+
+</tr>
+
+<tr>
+
+<td class="title">{% link "How to move category description below the product list" /display/XDD/How+to+move+category+description+below+the+product+list %}</td>
+
+<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
+
+<td class="modified" data-sortable-date="1467131843878">Jun 28, 2016</td>
+
+</tr>
+
+<tr>
+
 <td class="title">{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}</td>
 
 <td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
 
 <td class="modified" data-sortable-date="1464274793209">May 26, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1464274747643">May 26, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1463564031186">May 18, 2016</td>
 
 </tr>
 

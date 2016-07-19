@@ -1,5 +1,6 @@
 ---
-identifier: ref_EMxFEEk1
+identifier: ref_DmxZ8Spd
+updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating settings page for payment method'
@@ -11,7 +12,7 @@ categories:
 
 # Introduction
 
-This article is a continuation of the guide about {% link "creating payment method" ref_bZm0T7yO %}. During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.
+This article is a continuation of the guide about {% link "creating payment method" ref_zGFXvqDA %}. During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.
 
 # Table of Contents
 
@@ -89,7 +90,7 @@ We start with creating an empty module with developer ID **Tony** and module ID 
     {% endraw %}{% endhighlight %}
 
     This file will register this payment method in the database.  
-    _Note: do not forget to {% link "push this file into the database" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %}._
+    _Note: do not forget to {% link "push this file into the database" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %}._
 
 Now we have the module described in {% link "the previous guide" Creating-a-payment-method_8225448.html %}, but it has been created with module ID **PaymentFormDemo** and we want to add some settings to it. We will create a settings form that will contain three fields:
 

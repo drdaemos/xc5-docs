@@ -1,5 +1,6 @@
 ---
-identifier: ref_1HHQp9QW
+identifier: ref_DUDOWRat
+updated_at: 2015-05-14 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 getting started guide'

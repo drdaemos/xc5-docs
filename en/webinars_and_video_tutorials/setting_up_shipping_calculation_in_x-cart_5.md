@@ -1,5 +1,6 @@
 ---
-identifier: ref_zUNwtncz
+identifier: ref_4qcUeoIU
+updated_at: 2015-05-14 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Setting up shipping calculation in X-Cart 5'

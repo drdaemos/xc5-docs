@@ -1,5 +1,6 @@
 ---
-identifier: ref_RKbC8TCE
+identifier: ref_6UXvhZZc
+updated_at: 2015-01-13 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Controller class'
@@ -37,7 +38,7 @@ If you make a request to `admin.php`, script X-Cart identifies a controller clas
 If you make a request to `cart.php`, X-Cart identifies a controller class name and then looks for it in the `<X-Cart>/classes/XLite/Controller/Customer/` folder and then in the  
 `<X-Cart>/classes/XLite/Module/<DEV-ID>/<MODULE-ID>/Controller/Customer/` folders of each module as well.
 
-When, controller class is found, X-Cart calls its `handleRequest()` method – see an implementation of the `processRequest()` method in the `\XLite` class ({% link "more about classnames in X-Cart" ref_1E0yUfyC %}).
+When, controller class is found, X-Cart calls its `handleRequest()` method – see an implementation of the `processRequest()` method in the `\XLite` class ({% link "more about classnames in X-Cart" ref_ddaUT3B3 %}).
 
 Let us have a look at what exactly `handleRequest()` method does. See its implementation in the `\XLite\Controller\AController` class.
 
@@ -104,7 +105,7 @@ We will create a mod that will create `cart.php?target=controller_demo` page. It
 SELECT * FROM xc_config WHERE category = "Tony\\ControllerDemo";
 {% endraw %}{% endhighlight %}
 
-We start with {% link "creating an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **ControllerDemo**. Then, we create the `<X-Cart>/classes/XLite/Module/Tony/ControllerDemo/install.yaml` file with the following content: 
+We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **ControllerDemo**. Then, we create the `<X-Cart>/classes/XLite/Module/Tony/ControllerDemo/install.yaml` file with the following content: 
 
 {% highlight php %}{% raw %}
 XLite\Model\Config:
@@ -116,9 +117,9 @@ XLite\Model\Config:
     value: 0
 {% endraw %}{% endhighlight %}
 
-This **install.yaml** file will create **no_action** and **test_action** {% link "settings in the database" ref_y2oAwps5 %}, which will track opening of our page with no action and with action=test.
+This **install.yaml** file will create **no_action** and **test_action** {% link "settings in the database" ref_Ox5XLSck %}, which will track opening of our page with no action and with action=test.
 
-_Note: do not forget to {% link "push the content of this YAML file" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %}_ _to the database._
+_Note: do not forget to {% link "push the content of this YAML file" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %}_ _to the database._
 
 Now we need to create the page in customer area that will be available by `cart.php?target=controller_demo` URL. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDemo/Controller/Customer/ControllerDemo.php` file with the following content: 

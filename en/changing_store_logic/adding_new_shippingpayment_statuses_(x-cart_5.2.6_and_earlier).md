@@ -1,5 +1,6 @@
 ---
-identifier: ref_ibgKxS1L
+identifier: ref_F7fpeFEq
+updated_at: 2015-10-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding new shipping/payment statuses (X-Cart 5.2.6 and earlier)'
@@ -15,7 +16,7 @@ This article shows developers how they can create new shipping and payment statu
 
 Icon
 
-The solution provided in this article should be used for X-Cart versions 5.2.6 and earlier. Starting with X-Cart version 5.2.7, a special module is available allowing you to manage X-Cart order statuses directly from the store's Admin area. For details, see the {% link "Managing X-Cart order statuses (X-Cart 5.2.7 and later)" ref_FGm2QZmD %} section of this manual.
+The solution provided in this article should be used for X-Cart versions 5.2.6 and earlier. Starting with X-Cart version 5.2.7, a special module is available allowing you to manage X-Cart order statuses directly from the store's Admin area. For details, see the [Managing X-Cart order statuses (X-Cart 5.2.7 and later)](http://kb.x-cart.com/pages/viewpage.action?pageId=8750763) section of this manual.
 
 # Table of Contents
 
@@ -99,4 +100,4 @@ If you need to translate payment status, you should do the same, but you will wo
 
 _Related pages:_
 
-*   {% link "Managing X-Cart order statuses (X-Cart 5.2.7 and later)" 8750763.html %}
+*   [Managing X-Cart order statuses (X-Cart 5.2.7 and later)](http://kb.x-cart.com/pages/viewpage.action?pageId=8750763)

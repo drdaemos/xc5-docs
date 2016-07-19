@@ -1,5 +1,6 @@
 ---
-identifier: ref_VSnqpQGs
+identifier: ref_NtxNHQ8N
+updated_at: 2015-01-06 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Making payment method depend on shipping method'
@@ -36,7 +37,7 @@ We need to start with setting up payment and shipping methods in the store. We w
 We go to **Store setup** > **Shipping** section in your admin area and create these two shipping methods as follows:  
 ![]({{site.baseurl}}/attachments/8225320/8356171.png)
 
-Do not forget to {% link "assign some shipping rates" ref_F3cfnFdh %} to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
+Do not forget to {% link "assign some shipping rates" ref_fpVluFMM %} to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
 
 {% highlight php %}{% raw %}
 admin.php?target=shipping_rates&methodid=2
@@ -58,7 +59,7 @@ The value right after `method_id=` part is the payment method ID. In my case, it
 
 Now we can start creating our mod.
 
-We {% link "create an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **PaymentShippingDependencyDemo**. Inside this module, we decorate the `getPaymentMethods()` method of the `\XLite\Model\Order` class. We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentShippingDependencyDemo/Model/Order.php` file with the following content: 
+We {% link "create an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **PaymentShippingDependencyDemo**. Inside this module, we decorate the `getPaymentMethods()` method of the `\XLite\Model\Order` class. We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentShippingDependencyDemo/Model/Order.php` file with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

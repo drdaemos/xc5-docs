@@ -1,5 +1,6 @@
 ---
-identifier: ref_lggB8kuK
+identifier: ref_IyMXKrbT
+updated_at: 2015-05-26 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Moving X-Cart to another location'

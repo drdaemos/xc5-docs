@@ -1,5 +1,6 @@
 ---
-identifier: ref_MW9TFHOt
+identifier: ref_nesPuldQ
+updated_at: 2014-07-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 development lectures (in Russian with English subtitles)'

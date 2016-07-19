@@ -1,5 +1,6 @@
 ---
-identifier: ref_gB55EJ8M
+identifier: ref_r0PQU0xk
+updated_at: 2014-12-11 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating menu in admin area'
@@ -14,7 +15,7 @@ categories:
 This article describes how developers can create/change menu items in admin area.  
  ![]({{site.baseurl}}/attachments/8225143/8356087.png)
 
-The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class ({% link "more info about X-Cart classnames" ref_1E0yUfyC %}) and this guide describes how you can apply changes to it.
+The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class ({% link "more info about X-Cart classnames" ref_ddaUT3B3 %}) and this guide describes how you can apply changes to it.
 
 # Table of Contents
 
@@ -25,8 +26,8 @@ The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class 
 
 # Implementation
 
-1.  {% link "Create an empty module" ref_KLBakhPi %}. We are creating module with developer ID **Tony** and module ID **AdminMenuDemo**.
-2.  {% link "Decorate" ref_FyW2p51q %} the `\XLite\View\Menu\Admin\TopMenu` class in your module. We are creating the `<X-Cart>/classes/XLite/Module/Tony/AdminMenuDemo/View/Menu/Admin/TopMenu.php` file with the following content:
+1.  {% link "Create an empty module" ref_TZnqVJsw %}. We are creating module with developer ID **Tony** and module ID **AdminMenuDemo**.
+2.  {% link "Decorate" ref_0xIAMJyA %} the `\XLite\View\Menu\Admin\TopMenu` class in your module. We are creating the `<X-Cart>/classes/XLite/Module/Tony/AdminMenuDemo/View/Menu/Admin/TopMenu.php` file with the following content:
 
     {% highlight php %}{% raw %}
     <?php

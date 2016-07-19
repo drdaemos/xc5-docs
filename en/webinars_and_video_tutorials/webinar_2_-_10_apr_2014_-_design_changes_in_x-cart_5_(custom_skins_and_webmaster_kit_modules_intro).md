@@ -1,5 +1,6 @@
 ---
-identifier: ref_byU0PZ6Q
+identifier: ref_TMVisbVp
+updated_at: 2015-03-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 2 - 10 Apr 2014 - Design changes in X-Cart 5 (Custom Skins and Webmaster Kit modules intro)'
@@ -63,9 +64,9 @@ Go to the **System settings** > **Look & feel** > **Custom CSS** section in you
 
 ### 1.2\. Via your own CSS file
 
-This is similar way to what I have {% link "described earlier" ref_byU0PZ6Q %}. The only difference is that you do not need ThemeTweaker module in order to apply the change.
+This is similar way to what I have {% link "described earlier" ref_TMVisbVp %}. The only difference is that you do not need ThemeTweaker module in order to apply the change.
 
-1.  {% link "Create your own module" ref_KLBakhPi %} or enable default **CustomSkin** (XC/CustomSkin) one. I will be using CustomSkin in my example. The same approach will work for custom module as well, you will only need to adjust namespaces in PHP scripts.
+1.  {% link "Create your own module" ref_TZnqVJsw %} or enable default **CustomSkin** (XC/CustomSkin) one. I will be using CustomSkin in my example. The same approach will work for custom module as well, you will only need to adjust namespaces in PHP scripts.
 2.  Create the View/AView.php script inside your module with the following content: 
 
     {% highlight php %}{% raw %}

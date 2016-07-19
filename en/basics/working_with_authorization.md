@@ -1,5 +1,6 @@
 ---
-identifier: ref_77b71Fax
+identifier: ref_e1LGA319
+updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Working with authorization'
@@ -21,7 +22,7 @@ This article shows you can authenticate a user by login and password. It also sh
 
 # Implementation
 
-We start with {% link "creating an external script" ref_5xBROryM %} `<X-Cart>/test.php` with the following content: 
+We start with {% link "creating an external script" ref_PTzG8qs6 %} `<X-Cart>/test.php` with the following content: 
 
 {% highlight php %}{% raw %}
 <?php

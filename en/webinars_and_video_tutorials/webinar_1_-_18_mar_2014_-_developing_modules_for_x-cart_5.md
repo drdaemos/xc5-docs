@@ -1,5 +1,6 @@
 ---
-identifier: ref_UKR0qX8h
+identifier: ref_ll7PdMFE
+updated_at: 2014-08-19 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'

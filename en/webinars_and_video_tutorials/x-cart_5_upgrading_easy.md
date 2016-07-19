@@ -1,5 +1,6 @@
 ---
-identifier: ref_AeJu9p57
+identifier: ref_RGTqFhzy
+updated_at: 2015-09-21 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 upgrading easy'

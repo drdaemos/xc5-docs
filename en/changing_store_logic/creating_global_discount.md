@@ -1,5 +1,6 @@
 ---
-identifier: ref_BANTfyWU
+identifier: ref_AbgL72Jq
+updated_at: 2015-01-20 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating global discount'
@@ -27,7 +28,7 @@ This article teaches X-Cart developers how they can create discounts via custom 
 
 # Implementation
 
-As a first step, {% link "create an empty module" ref_KLBakhPi %}. We are creating the module with developer ID **Tony** and module ID **DiscountDemo**.
+As a first step, {% link "create an empty module" ref_TZnqVJsw %}. We are creating the module with developer ID **Tony** and module ID **DiscountDemo**.
 
 You can create a discount in X-Cart by extending the `\XLite\Logic\Order\Modifier\Discount` class. The `\XLite\Logic\Order\Modifier` type of classes define different types of order surcharges, e.g. shipping, taxes, discounts, etc. We use one that is typical discount: `\XLite\Logic\Order\Modifier\Discount`.
 
@@ -111,7 +112,7 @@ This way we tell X-Cart that our class described above must be registered as ord
 
 _Note: if you want to check all currently registered order modifiers, you can pull this info from the xc_order_modifiers MySQL table._
 
-Once our **install.yaml** file is ready, we need to {% link "push it to the database" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %}. After that re-deploy the store and check the results: add any product to a cart and go to cart page. You will see a discount applied there:![]({{site.baseurl}}/attachments/8225204/8356110.png)
+Once our **install.yaml** file is ready, we need to {% link "push it to the database" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %}. After that re-deploy the store and check the results: add any product to a cart and go to cart page. You will see a discount applied there:![]({{site.baseurl}}/attachments/8225204/8356110.png)
 
 # Module pack
 

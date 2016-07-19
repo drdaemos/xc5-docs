@@ -1,5 +1,6 @@
 ---
-identifier: ref_T1hIDxN4
+identifier: ref_XEczmGq2
+updated_at: 2014-07-31 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart Next 1.2.2 - 6 Mar 2013'

@@ -1,5 +1,6 @@
 ---
-identifier: ref_DTm5o2M3
+identifier: ref_F0LId5G1
+updated_at: 2015-09-21 00:00
 layout: article_with_sidebar
 lang: en
 title: 'X-Cart 5 and X-Payments - PCI compliant credit card processing and storing'

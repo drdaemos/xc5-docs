@@ -1,5 +1,6 @@
 ---
-identifier: ref_QZXWhav9
+identifier: ref_eRnso4vH
+updated_at: 2014-11-24 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How do I submit my extension to X-Cart marketplace'
@@ -52,7 +53,7 @@ There you will be able to find a key for your development purposes.
 
 Next step is to write the module you want. We have several simple requirements to your module's code:
 
-1.  PHP code must comply to {% link "PSR2 standard" ref_1rPVmqFm %}
+1.  PHP code must comply to {% link "PSR2 standard" ref_OhTA3lk4 %}
 2.  PHP code must not use any encryption
 3.  Your module must not compromise store's owner and must not contain malicious code. If we find an attempt to use malicious code in your module, you will not be allowed to post modules to the marketplace ever since and your existing modules will be removed from it as well.
 4.  The initial version of your module must be 0, i.e. 5.0.0, 5.1.0, etc depending on what version of X-Cart you module is going to be compatible with.

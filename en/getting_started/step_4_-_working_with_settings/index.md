@@ -1,5 +1,6 @@
 ---
-identifier: ref_y2oAwps5
+identifier: ref_Ox5XLSck
+updated_at: 2015-01-05 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Step 4 - working with settings'
@@ -13,9 +14,9 @@ categories:
 
 This article aims to teach developers how to create settings of their module and then use them in the code. This article assumes that you have already learnt three previous articles from **Getting started** section:
 
-*   {% link "Step 1 - creating simplest module" ref_KLBakhPi %}
-*   {% link "Step 2 - applying design changes" ref_s0pEdaWQ %}
-*   {% link "Step 3 - applying logic changes" ref_FyW2p51q %}
+*   {% link "Step 1 - creating simplest module" ref_TZnqVJsw %}
+*   {% link "Step 2 - applying design changes" ref_rwQykwuT %}
+*   {% link "Step 3 - applying logic changes" ref_0xIAMJyA %}
 
 For the sake of example, we will create a module that will have a textarea setting where you can put any HTML code and this HTML code will be added between `<head></head>` tags on each page in front-end. Also, this guide will contain code examples of how to create other setting types.
 
@@ -67,7 +68,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
             option_name: Put your HTML code here
             option_comment: I am comment to the option and I am here just for show that you can put some text into me
     {% endraw %}{% endhighlight %}
-3.  Once it is done, push the changes to the database using {% link "load-yaml.php" ref_sOOo7DOJ#X-CartSDK-LoadingYAMLfile %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
+3.  Once it is done, push the changes to the database using {% link "load-yaml.php" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
 
     {% highlight php %}{% raw %}
     ../../next-sdk/devkit/macros/load-yaml.php classes/XLite/Module/Tony/SettingsDemo/install.yaml
@@ -270,7 +271,7 @@ Another example is **Yes/No **selector:
 
 Again, parameters are the same, but you specify the class name in the **type** field.
 
-You can use all classes from the `<X-Cart>/classes/XLite/View/FormField/` folder in your settings or {% link "create your own one" ref_c5fC2WsB %}.
+You can use all classes from the `<X-Cart>/classes/XLite/View/FormField/` folder in your settings or {% link "create your own one" ref_9HKpu5vk %}.
 
 ## Attachments:
 

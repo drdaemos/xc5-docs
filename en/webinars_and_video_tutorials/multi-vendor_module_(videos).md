@@ -1,5 +1,6 @@
 ---
-identifier: ref_po14enZ3
+identifier: ref_KFHtVmL9
+updated_at: 2015-11-10 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Multi-vendor module (videos)'

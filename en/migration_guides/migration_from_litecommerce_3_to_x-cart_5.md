@@ -1,5 +1,6 @@
 ---
-identifier: ref_TLXNDrrw
+identifier: ref_un5puQw8
+updated_at: 2014-05-14 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Migration from Litecommerce 3 to X-Cart 5'

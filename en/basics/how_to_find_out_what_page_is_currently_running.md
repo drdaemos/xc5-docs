@@ -1,5 +1,6 @@
 ---
-identifier: ref_NSX80pbi
+identifier: ref_EPhpzI6F
+updated_at: 2014-12-22 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to find out what page is currently running'
@@ -13,7 +14,7 @@ categories:
 
 This article teaches X-Cart developers how to determine what page is currently opened. For the sake of example, we will create a simple mod that will show different messages depending on whether **home**, **category** or **checkout** page is opened. If any other page is opened, then no message will be shown.
 
-This article assumes that you know {% link "how to work with viewer classes" ref_lSwzIJDv %} in X-Cart.
+This article assumes that you know {% link "how to work with viewer classes" ref_qIifNQNq %} in X-Cart.
 
 # Table of Contents
 
@@ -24,7 +25,7 @@ This article assumes that you know {% link "how to work with viewer classes" ref
 
 # Implementation
 
-To get started we {% link "create an empty module" ref_KLBakhPi %} with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
+To get started we {% link "create an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the  
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDetectionDemo/View/OurWidget.php` class with the following content:
 
 {% highlight php %}{% raw %}
@@ -132,7 +133,7 @@ Now, it is time to create a template defined in the `getDefaultTemplate()` metho
 
 We call our `getOurText()` method that will analyze current controller class and define a message for a customer.
 
-_Note: we could have also checked the current page by analyzing **target** parameter of `{% link "\XLite\Core\Request" ref_GEZTuiXU %}` object._
+_Note: we could have also checked the current page by analyzing **target** parameter of `{% link "\XLite\Core\Request" ref_HgL8OQ5w %}` object._
 
 Now, we need to re-deploy the store and check the results in customer store-front. You should see messages similar to:![]({{site.baseurl}}/attachments/524292/8356147.png)
 

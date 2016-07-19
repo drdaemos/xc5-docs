@@ -1,5 +1,6 @@
 ---
-identifier: ref_GEZTuiXU
+identifier: ref_HgL8OQ5w
+updated_at: 2014-11-25 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Retrieving data from the request'
@@ -13,7 +14,7 @@ categories:
 
 This article teaches X-Cart developers how to retrive data from request to end-points. For the sake of example, we will create a mod that will work as follows:
 
-1.  There will be a page that can be accessed as `cart.php?target=tony`. Please, check the {% link "previous guide" ref_hTAS4T58 %} in order to learn how to approach such tasks.
+1.  There will be a page that can be accessed as `cart.php?target=tony`. Please, check the {% link "previous guide" ref_OkHzgi1f %} in order to learn how to approach such tasks.
 2.  You can call this page as `cart.php?target=tony&**param**=foo&**param2**=bar` and this page will display values of these parameters as shown below:![]({{site.baseurl}}/attachments/524294/8355983.png)
 
 # Table of Contents
@@ -25,7 +26,7 @@ This article teaches X-Cart developers how to retrive data from request to end-p
 
 # Implementation
 
-1.  We {% link "create a module" ref_KLBakhPi %} with developer ID **Tony** and module ID **RequesDemo**.
+1.  We {% link "create a module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **RequesDemo**.
 2.  We {% link "create a page" Creating-new-page_8224999.html %} with **target=tony** customer area. Eventually, we will have three files in the module:  
     - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/Controller/Customer/Tony.php  
     `- `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`  

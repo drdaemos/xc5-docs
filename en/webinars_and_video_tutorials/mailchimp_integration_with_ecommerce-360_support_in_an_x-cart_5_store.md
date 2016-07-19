@@ -1,5 +1,6 @@
 ---
-identifier: ref_78MNJ9kR
+identifier: ref_T2XHwQyR
+updated_at: 2015-06-14 00:00
 layout: article_with_sidebar
 lang: en
 title: 'MailChimp Integration with Ecommerce-360 support in an X-Cart 5 Store'

@@ -1,5 +1,6 @@
 ---
-identifier: ref_suIMSCP0
+identifier: ref_sRpQl5hl
+updated_at: 2015-03-18 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding new sort by option to ItemsList'
@@ -11,7 +12,7 @@ categories:
 
 # Introduction
 
-This article aims to teach X-Cart developers how they can add a sorting option to their {% link "ItemsLists" ref_oiPWRgK7 %}.
+This article aims to teach X-Cart developers how they can add a sorting option to their {% link "ItemsLists" ref_1n8lHHNV %}.
 
 For the sake of example we will add **Sort by date** option to all product ItemsLists as shown on the snapshot below:
 
@@ -28,7 +29,7 @@ Similar option already exists in [Product Advisor](http://www.x-cart.com/extensi
 
 # Implementation
 
-We start with {% link "creating a module" ref_KLBakhPi %} with developer ID **Tony** and module ID **SortingByDate**. In this module we are going to {% link "decorate" ref_FyW2p51q %} the `\XLite\View\ItemsList\Product\Customer\ACustomer` class, so we create the  
+We start with {% link "creating a module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **SortingByDate**. In this module we are going to {% link "decorate" ref_0xIAMJyA %} the `\XLite\View\ItemsList\Product\Customer\ACustomer` class, so we create the  
 `<X-Cart>/classes/XLite/Module/Tony/SortingByDate/View/ItemsList/Product/Customer/ACustomer.php` file with the following content: 
 
 {% highlight php %}{% raw %}
@@ -66,7 +67,7 @@ As you can see, we call parent's constructor and then adding one more record to 
         ) + $this->sortByModes;
 {% endraw %}{% endhighlight %}
 
-*   This new record's key is a field that will be used by {% link "queryBuilder" ref_iPvrMnmJ %} object for sorting results. In our case we are going to sort by date and key is `p.arrivalDate`.
+*   This new record's key is a field that will be used by {% link "queryBuilder" ref_uZW9kVOM %} object for sorting results. In our case we are going to sort by date and key is `p.arrivalDate`.
 *   The value of new record is a name of sorting option, which will be displayed to a customer. In our case it is **Sort by date**.
 
 That is it. Now we can re-deploy the store and check the results in store-front. It will look as follows:![]({{site.baseurl}}/attachments/8749095/8716415.png)

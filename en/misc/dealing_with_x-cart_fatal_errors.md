@@ -1,5 +1,6 @@
 ---
-identifier: ref_bGLdtGNT
+identifier: ref_JpScwThn
+updated_at: 2014-09-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Dealing with X-Cart fatal errors'

@@ -1,5 +1,6 @@
 ---
-identifier: ref_K7aqbLKk
+identifier: ref_MXLaoeAZ
+updated_at: 2015-09-21 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Subscriptions in X-Cart 5 powered by X-Payments'

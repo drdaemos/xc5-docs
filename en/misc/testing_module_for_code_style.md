@@ -1,5 +1,6 @@
 ---
-identifier: ref_1rPVmqFm
+identifier: ref_OhTA3lk4
+updated_at: 2014-02-26 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Testing module for code style'

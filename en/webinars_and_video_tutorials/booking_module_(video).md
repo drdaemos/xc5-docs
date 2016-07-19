@@ -1,5 +1,6 @@
 ---
-identifier: ref_dU8Rrd8i
+identifier: ref_1GTtUkGb
+updated_at: 2015-07-13 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Booking module (video)'

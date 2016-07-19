@@ -1,5 +1,6 @@
 ---
-identifier: ref_4y2mSuh1
+identifier: ref_zhQV9dkP
+updated_at: 2016-02-12 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Customizing the Admin and Vendor Signup pages'
@@ -35,4 +36,4 @@ If you also need to change the Admin Signup Page footer link "Official Website"
 
 _See also:_
 
-*   {% link "Using Custom Skin module" ref_dw0Ckv6c#Basicguidetothemecreation-UsingCustomSkinmodule %}
+*   {% link "Using Custom Skin module" ref_AwGTLXzr#Basicguidetothemecreation-UsingCustomSkinmodule %}

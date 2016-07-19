@@ -1,5 +1,6 @@
 ---
-identifier: ref_QNW5QuE1
+identifier: ref_ZbVLxEpU
+updated_at: 2015-05-22 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Using Webmaster Mode in X-Cart 5'

@@ -1,5 +1,6 @@
 ---
-identifier: ref_m6CcLCoa
+identifier: ref_fTphPncb
+updated_at: 2015-09-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Advanced menu management with Extended Simple CMS'
