@@ -16,13 +16,15 @@
         {% endfor %}
 
         <!-- Search panel -->
-        <div class="ui search item site-search">
-          <div class="ui transparent inverted icon input">
-            <input class="prompt" type="text" placeholder="Search...">
-            <i class="search icon"></i>
+        <form class="ui item" action="{{ '/search/' | prepend: baseurl_lang }}">
+          <div class="ui search site-search">
+            <div class="ui transparent inverted icon input">
+              <input class="prompt" type="text" placeholder="Search..." name="q">
+              <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
           </div>
-          <div class="results"></div>
-        </div>
+        </form>
 
         <!-- Language selector -->
         <div class="ui language floating dropdown link item" id="language-selector">

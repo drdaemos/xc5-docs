@@ -1,18 +1,18 @@
 <script src="//code.jquery.com/jquery-2.2.2.min.js"></script>
-<script type='text/javascript' src="{{ "/js/jquery.xml2json.js" | prepend: site.baseurl }}"></script>
+<script type='text/javascript' src="{{ "/js/underscore-min.js" | prepend: site.baseurl }}"></script>
+<script type='text/javascript' src="{{ "/js/elasticsearch.jquery.js" | prepend: site.baseurl }}"></script>
+<script type='text/javascript' src="{{ "/js/elasticsearch.wrapper.js" | prepend: site.baseurl }}"></script>
+<script type='text/javascript' src="{{ "/js/object_hash.js" | prepend: site.baseurl }}"></script>
 <script type='text/javascript' src="{{ "/js/semantic.js" | prepend: site.baseurl }}"></script>
 <script type='text/javascript' src="{{ "/js/search.js" | prepend: site.baseurl }}"></script>
 <script type='text/javascript' src="{{ "/js/language.js" | prepend: site.baseurl }}"></script>
 
-<script>
-  (function() {
-    var cx = '008838052741622288824:v2tv_ezreve';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+{% if page.search_script %}
+
+<script type='text/javascript'>
+$(document).ready(function() {
+    Search.runQuery();
+});
 </script>
+
+{% endif %}

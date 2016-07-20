@@ -24,6 +24,7 @@ index_path: "links.xml"
 
 elasticsearch:
     host: "localhost:9200"
+    js_host: "127.0.0.1:9200"
     index: "knowledgebase"
     type: "articles"
 

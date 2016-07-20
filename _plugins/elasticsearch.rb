@@ -11,6 +11,7 @@ require 'elasticsearch'
 require 'oj'
 require 'digest/md5'
 require 'date'
+require "nokogiri"
 
 module Jekyll
 
@@ -143,6 +144,17 @@ module Jekyll
     end
   end
 
+  class BareHtml < Page
+    def initialize(site, base, page)
+      @site = site
+      @base = base
+      @dest_name = page.basename
+      file_name = "#{page.basename}_BARE.html"
+      self.process(file_name)
+      self.read_yaml(base, page.path)
+      self.data['layout'] = nil
+    end
+  end
 
   class ElasticSearchGenerator < Generator
     priority :low
@@ -193,8 +205,8 @@ module Jekyll
             "title" => page.data.fetch('title', ''),
             "description" => page.data.fetch('description', ''),
             "keywords" => page.data.fetch('keywords', ''),
-            "url" => "#{site.config['baseurl']}/#{page_lang}/#{page.url}",
-            "content" => page.content
+            "url" => "#{site.config['url']}#{page.url}",
+            "content" => get_page_content(site, page)
           }
 
           es.refresh
@@ -205,6 +217,18 @@ module Jekyll
       es.refresh
       es.delete_old_pages (now - 1).strftime("%FT%T%z")
 
+    end
+
+    # Generates contents for a file
+    def get_page_content(site, page)
+      converter = site.find_converter_instance(Jekyll::Converters::Markdown)
+
+      bare = BareHtml.new(site, site.source, page)
+      bare.content = converter.convert(bare.content)
+      bare.render(site.layouts, site.site_payload)
+
+      doc = Nokogiri::HTML(bare.output)
+      doc.xpath("//text()").to_s
     end
 
   end
