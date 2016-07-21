@@ -144,5 +144,5 @@ An example of the module DependenciesDemo can be downloaded from here: [https:/
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [cannot-enable-dependencies-demo.png]({{site.baseurl}}/attachments/8224842/8355885.png) (image/png)  
-![](images/icons/bullet_blue.gif) [cannot-disable-simple-cms.png]({{site.baseurl}}/attachments/8224842/8355886.png) (image/png)
+* [cannot-enable-dependencies-demo.png]({{site.baseurl}}/attachments/8224842/8355885.png) (image/png)  
+* [cannot-disable-simple-cms.png]({{site.baseurl}}/attachments/8224842/8355886.png) (image/png)

@@ -307,5 +307,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [product-edit.png]({{site.baseurl}}/attachments/8225393/8356184.png) (image/png)  
-![](images/icons/bullet_blue.gif) [product-edit-2.png]({{site.baseurl}}/attachments/8225393/8356185.png) (image/png)
+* [product-edit.png]({{site.baseurl}}/attachments/8225393/8356184.png) (image/png)  
+* [product-edit-2.png]({{site.baseurl}}/attachments/8225393/8356185.png) (image/png)

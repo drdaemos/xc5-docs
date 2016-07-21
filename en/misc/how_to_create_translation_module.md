@@ -68,8 +68,8 @@ This script will process your translation file and will create a module out of i
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [translations-csv-icon.png]({{site.baseurl}}/attachments/7504191/7602235.png) (image/png)  
-![](images/icons/bullet_blue.gif) [csv-translations.png]({{site.baseurl}}/attachments/7504191/7602236.png) (image/png)  
-![](images/icons/bullet_blue.gif) [x-cart.com-translation-script.png]({{site.baseurl}}/attachments/7504191/7602237.png) (image/png)  
-![](images/icons/bullet_blue.gif) [create-translation-module-form.png]({{site.baseurl}}/attachments/7504191/7602772.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Screen Shot 2015-04-16 at 14.05.52 .png]({{site.baseurl}}/attachments/7504191/8717039.png) (image/png)
+* [translations-csv-icon.png]({{site.baseurl}}/attachments/7504191/7602235.png) (image/png)  
+* [csv-translations.png]({{site.baseurl}}/attachments/7504191/7602236.png) (image/png)  
+* [x-cart.com-translation-script.png]({{site.baseurl}}/attachments/7504191/7602237.png) (image/png)  
+* [create-translation-module-form.png]({{site.baseurl}}/attachments/7504191/7602772.png) (image/png)  
+* [Screen Shot 2015-04-16 at 14.05.52 .png]({{site.baseurl}}/attachments/7504191/8717039.png) (image/png)

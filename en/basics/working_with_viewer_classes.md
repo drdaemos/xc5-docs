@@ -75,6 +75,6 @@ You can download the module pack here: [https://dl.dropboxusercontent.com/u/238
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [enable-clean-urls-button.png]({{site.baseurl}}/attachments/8224836/8355894.png) (image/png)  
-![](images/icons/bullet_blue.gif) [custom-html-code-via-viewer-2.png]({{site.baseurl}}/attachments/8224836/8355895.png) (image/png)  
-![](images/icons/bullet_blue.gif) [custom-html-via-viewer.png]({{site.baseurl}}/attachments/8224836/8355896.png) (image/png)
+* [enable-clean-urls-button.png]({{site.baseurl}}/attachments/8224836/8355894.png) (image/png)  
+* [custom-html-code-via-viewer-2.png]({{site.baseurl}}/attachments/8224836/8355895.png) (image/png)  
+* [custom-html-via-viewer.png]({{site.baseurl}}/attachments/8224836/8355896.png) (image/png)

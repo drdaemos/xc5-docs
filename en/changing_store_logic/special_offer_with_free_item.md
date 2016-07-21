@@ -115,4 +115,4 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [free-item.png]({{site.baseurl}}/attachments/8225412/8356192.png) (image/png)
+* [free-item.png]({{site.baseurl}}/attachments/8225412/8356192.png) (image/png)

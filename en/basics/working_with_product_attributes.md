@@ -89,6 +89,6 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [hidden-value-attribute-admin.png]({{site.baseurl}}/attachments/8225478/8356216.png) (image/png)  
-![](images/icons/bullet_blue.gif) [hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356217.png) (image/png)  
-![](images/icons/bullet_blue.gif) [no-hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356218.png) (image/png)
+* [hidden-value-attribute-admin.png]({{site.baseurl}}/attachments/8225478/8356216.png) (image/png)  
+* [hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356217.png) (image/png)  
+* [no-hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356218.png) (image/png)

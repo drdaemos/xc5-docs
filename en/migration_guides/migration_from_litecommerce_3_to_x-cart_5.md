@@ -119,13 +119,13 @@ Try to clear the browser's cache.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step1.png]({{site.baseurl}}/attachments/3309570/7602238.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step2.png]({{site.baseurl}}/attachments/3309570/7602239.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step3.png]({{site.baseurl}}/attachments/3309570/7602240.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step4.png]({{site.baseurl}}/attachments/3309570/7602241.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step5.png]({{site.baseurl}}/attachments/3309570/7602242.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step6.png]({{site.baseurl}}/attachments/3309570/7602243.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step7.png]({{site.baseurl}}/attachments/3309570/7602244.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step8.png]({{site.baseurl}}/attachments/3309570/7602245.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step9.png]({{site.baseurl}}/attachments/3309570/7602246.png) (image/png)  
-![](images/icons/bullet_blue.gif) [migration-lc3-xc5-step10.png]({{site.baseurl}}/attachments/3309570/7602247.png) (image/png)
+* [migration-lc3-xc5-step1.png]({{site.baseurl}}/attachments/3309570/7602238.png) (image/png)  
+* [migration-lc3-xc5-step2.png]({{site.baseurl}}/attachments/3309570/7602239.png) (image/png)  
+* [migration-lc3-xc5-step3.png]({{site.baseurl}}/attachments/3309570/7602240.png) (image/png)  
+* [migration-lc3-xc5-step4.png]({{site.baseurl}}/attachments/3309570/7602241.png) (image/png)  
+* [migration-lc3-xc5-step5.png]({{site.baseurl}}/attachments/3309570/7602242.png) (image/png)  
+* [migration-lc3-xc5-step6.png]({{site.baseurl}}/attachments/3309570/7602243.png) (image/png)  
+* [migration-lc3-xc5-step7.png]({{site.baseurl}}/attachments/3309570/7602244.png) (image/png)  
+* [migration-lc3-xc5-step8.png]({{site.baseurl}}/attachments/3309570/7602245.png) (image/png)  
+* [migration-lc3-xc5-step9.png]({{site.baseurl}}/attachments/3309570/7602246.png) (image/png)  
+* [migration-lc3-xc5-step10.png]({{site.baseurl}}/attachments/3309570/7602247.png) (image/png)

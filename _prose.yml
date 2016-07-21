@@ -1,7 +1,7 @@
 prose:
   # siteurl: 'https://kb5.x-cart.com/'
   # baseurl: '/xc5-docs'
-  reference: 'https://kb5.x-cart.com/links.xml'
+  reference: 'https://devs.x-cart.com/links.xml'
   media: 'attachments'
   ignore:
     - /_includes
@@ -21,6 +21,8 @@ prose:
     - _prose.yml
     - _links.yml
     - .nojekyll
+    - Gemfile
+    - Gemfile.lock
   metadata:
     en:
       - name: "identifier"

@@ -27,28 +27,28 @@ This article explains developers how they can enable widget cache for their cust
 
 Imagine a situation that we have added a {% link "custom sidebar widget" ref_4b7Ny6KH %}. We know that this widget never changes, that is why we can generate its content (HTML code) only once and then insert this HTML code without running PHP process. Let us mark this widget as available for cache.
 
-1.  Before we get started install the module from {% link "here" Creating-sidebar-menu-in-customer-area_7505759.html#Creatingsidebarmenuincustomerarea-Modulepack %}.
-2.  In order to mark a widget as available for caching you should simply add the `isCacheAvailable()` to your viewer class as follows:
+1\.  Before we get started install the module from {% link "here" Creating-sidebar-menu-in-customer-area_7505759.html#Creatingsidebarmenuincustomerarea-Modulepack %}.
+2\.  In order to mark a widget as available for caching you should simply add the `isCacheAvailable()` to your viewer class as follows:
 
-    {% highlight php %}{% raw %}
-        protected function isCacheAvailable()
-        {
-            return true;
-        }
-    {% endraw %}{% endhighlight %}
-3.  If you want to add some logic whether or not enable caching depending on some condition (e.g. cache widget on home page only and do not cache them on category page), then you can also add `isCacheAllowed()` method. Example of its implementation: 
+{% highlight php %}{% raw %}
+    protected function isCacheAvailable()
+    {
+        return true;
+    }
+{% endraw %}{% endhighlight %}
+3\.  If you want to add some logic whether or not enable caching depending on some condition (e.g. cache widget on home page only and do not cache them on category page), then you can also add `isCacheAllowed()` method. Example of its implementation: 
 
-    {% highlight php %}{% raw %}
-        protected function isCacheAllowed($template)
-        {
-    			// we must call parent's method for backward compatibility
-            return parent::isCacheAllowed($template) 
-    			// this way we make sure that we are on some category page. home page is a category page for X-Cart
-                && \XLite::getController() instanceof \XLite\Controller\Customer\Category 
-    			// if category's ID is root category ID, then we are on home page
-                && \XLite::getController()->getCategoryId() == \XLite::getController()->getRootCategoryId();
-        }
-    {% endraw %}{% endhighlight %}
+{% highlight php %}{% raw %}
+    protected function isCacheAllowed($template)
+    {
+			// we must call parent's method for backward compatibility
+        return parent::isCacheAllowed($template) 
+			// this way we make sure that we are on some category page. home page is a category page for X-Cart
+            && \XLite::getController() instanceof \XLite\Controller\Customer\Category 
+			// if category's ID is root category ID, then we are on home page
+            && \XLite::getController()->getCategoryId() == \XLite::getController()->getRootCategoryId();
+    }
+{% endraw %}{% endhighlight %}
 4.  That is it. Now it is time to re-deploy the store and check the results.
 5.  _Important: widget's cache works only if you enable the **Use view cache** option in the **System Settings** > **Look & feel** > **Performance** section in admin area.![]({{site.baseurl}}/attachments/8225080/8356028.png)_
 
@@ -58,4 +58,4 @@ If you feel that your widget changes quite often – for instance, you display 
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [use-view-cache.png]({{site.baseurl}}/attachments/8225080/8356028.png) (image/png)
+* [use-view-cache.png]({{site.baseurl}}/attachments/8225080/8356028.png) (image/png)

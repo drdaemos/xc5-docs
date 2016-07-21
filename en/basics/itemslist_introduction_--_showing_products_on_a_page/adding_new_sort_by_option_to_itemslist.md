@@ -78,5 +78,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [sorting-options.png]({{site.baseurl}}/attachments/8749095/8716414.png) (image/png)  
-![](images/icons/bullet_blue.gif) [new-sorting-option-result.png]({{site.baseurl}}/attachments/8749095/8716415.png) (image/png)
+* [sorting-options.png]({{site.baseurl}}/attachments/8749095/8716414.png) (image/png)  
+* [new-sorting-option-result.png]({{site.baseurl}}/attachments/8749095/8716415.png) (image/png)

@@ -12,7 +12,7 @@ categories:
 
 In order to register some CSS/JS resources in your viewer class (more about this in {% link "Working with viewer classes" ref_qIifNQNq %}), it should implement two specific methods: `getCSSFiles() and ``getJSFiles().`
 
-`**getCSSFiles()**`
+## getCSSFiles()
 
 Via this method the widget registers its CSS files. During the initialization of viewer classes these CSS files are collected into the static storage.
 
@@ -31,11 +31,9 @@ public function getCSSFiles()
 }
 {% endraw %}{% endhighlight %}
 
-LESS resource usage
+### LESS resource usage
 
-Icon
-
-You can also use the less resources along with the CSS ones. The LESS resources will be compiled into CSS. However you can merge your LESS resource with another one using `**'merge'**` parameter. It must contain the file path to the parent LESS file, in this case the resources will be linked into one LESS file with the **`'@import'`** LESS instruction.
+You can also use the less resources along with the CSS ones. The LESS resources will be compiled into CSS. However you can merge your LESS resource with another one using **`'merge'`** parameter. It must contain the file path to the parent LESS file, in this case the resources will be linked into one LESS file with the **`'@import'`** LESS instruction.
 
 Please note that right now only one parent is supported, so you cannot link the resources in LESS chain. The best practice is to merge LESS resources with `'bootstrap/css/bootstrap.less'` file.
 
@@ -54,7 +52,9 @@ public function getCSSFiles()
         ),
     );
 }
-{% endraw %}{% endhighlight %}`**getJSFiles()**`
+{% endraw %}{% endhighlight %}
+
+## getJSFiles()
 
 Via this method the widget registers its JS files. During the initialization of viewer classes these JS files are collected into the static storage.
 
@@ -71,46 +71,48 @@ public function getJSFiles()
 		)
 	);
 }
-{% endraw %}{% endhighlight %}Icon
+{% endraw %}{% endhighlight %}
 
-You shouldn't add the widget as a list child of `**'body'**` view list because it won't have its CSS and JS resources loaded that way.
+You shouldn't add the widget as a list child of **`'body'`** view list because it won't have its CSS and JS resources loaded that way.
 
 That happens because resources container is a list child of 'body' view list itself, and in such case your widget will be added later.
 
-Use `**'layout.main'**` or `**'layout.footer'**` instead. Also, you can use another method to load your resources, which is described in the following section.
+Use **`'layout.main'`** or **`'layout.footer'`** instead. Also, you can use another method to load your resources, which is described in the following section.
 
 There is an alternative way to add a new JS/CSS file to the layout and it requires you to decorate `\XLite\View\AView` class in your module.
 
-1.  Create `View/AView.php` file in your module with the following content: 
+1\.  Create `View/AView.php` file in your module with the following content: 
 
-    **classes/XLite/Module/<Developer>/<Module>/View/AView.php**{% highlight php %}{% raw %}
-    namespace XLite\Module\<Developer ID>\<Module ID>\View;
-    abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
+**classes/XLite/Module/<\Developer>/<\Module>/View/AView.php**
+{% highlight php %}{% raw %}
+
+namespace XLite\Module\<Developer ID>\<Module ID>\View;
+abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
+{
+    protected function getThemeFiles($adminZone = null)
     {
-        protected function getThemeFiles($adminZone = null)
-        {
-            $list = parent::getThemeFiles($adminZone);
+        $list = parent::getThemeFiles($adminZone);
 
-    		// example of internal JS file
-            $list[static::RESOURCE_JS][] = 'modules/<Developer ID>/<Module ID>/script.js';
+		// example of internal JS file
+        $list[static::RESOURCE_JS][] = 'modules/<Developer ID>/<Module ID>/script.js';
 
-    		// example of external JS file
-            $list[static::RESOURCE_JS][] = 'http://example.com/path/to/script.js';
+		// example of external JS file
+        $list[static::RESOURCE_JS][] = 'http://example.com/path/to/script.js';
 
-    		// example of internal CSS file
-            $list[static::RESOURCE_CSS][] = 'modules/<Developer ID>/<Module ID>/style.css';
-            return $list;
-        }
+		// example of internal CSS file
+        $list[static::RESOURCE_CSS][] = 'modules/<Developer ID>/<Module ID>/style.css';
+        return $list;
     }
+}
 
-    {% endraw %}{% endhighlight %}
+{% endraw %}{% endhighlight %}
 
-    Of course you need to use real developer and module IDs in the namespace.
+Of course you need to use real developer and module IDs in the namespace.
 
-2.  If you include internal CSS/JS files, then you need to create such files in the corresponding skin directories. For instance, in order to make first example in the code above work
+2\.  If you include internal CSS/JS files, then you need to create such files in the corresponding skin directories. For instance, in order to make first example in the code above work.
 
-    {% highlight php %}{% raw %}
-    $list[static::RESOURCE_JS][] = 'modules/<Developer ID>/<Module ID>/script.js';
-    {% endraw %}{% endhighlight %}
+{% highlight php %}{% raw %}
+$list[static::RESOURCE_JS][] = 'modules/<Developer ID>/<Module ID>/script.js';
+{% endraw %}{% endhighlight %}
 
-     the `skins/default/en/modules/<Developer ID>/<Module ID>/script.js` file must exist.
+the `skins/default/en/modules/<Developer ID>/<Module ID>/script.js` file must exist.

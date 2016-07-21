@@ -126,6 +126,6 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [new-field-on-invoice.png]({{site.baseurl}}/attachments/8225149/8356106.png) (image/png)  
-![](images/icons/bullet_blue.gif) [product-details-custom-field.png]({{site.baseurl}}/attachments/8225149/8356107.png) (image/png)  
-![](images/icons/bullet_blue.gif) [thank-you-page-with-custom-product-field.png]({{site.baseurl}}/attachments/8225149/8356108.png) (image/png)
+* [new-field-on-invoice.png]({{site.baseurl}}/attachments/8225149/8356106.png) (image/png)  
+* [product-details-custom-field.png]({{site.baseurl}}/attachments/8225149/8356107.png) (image/png)  
+* [thank-you-page-with-custom-product-field.png]({{site.baseurl}}/attachments/8225149/8356108.png) (image/png)

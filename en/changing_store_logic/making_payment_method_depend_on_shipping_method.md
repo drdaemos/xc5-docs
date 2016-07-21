@@ -125,7 +125,7 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [shipping-methods.png]({{site.baseurl}}/attachments/8225320/8356171.png) (image/png)  
-![](images/icons/bullet_blue.gif) [payment-methods.png]({{site.baseurl}}/attachments/8225320/8356172.png) (image/png)  
-![](images/icons/bullet_blue.gif) [checkout-shipping-method-1.png]({{site.baseurl}}/attachments/8225320/8356173.png) (image/png)  
-![](images/icons/bullet_blue.gif) [checkout-payment-method-2.png]({{site.baseurl}}/attachments/8225320/8356174.png) (image/png)
+* [shipping-methods.png]({{site.baseurl}}/attachments/8225320/8356171.png) (image/png)  
+* [payment-methods.png]({{site.baseurl}}/attachments/8225320/8356172.png) (image/png)  
+* [checkout-shipping-method-1.png]({{site.baseurl}}/attachments/8225320/8356173.png) (image/png)  
+* [checkout-payment-method-2.png]({{site.baseurl}}/attachments/8225320/8356174.png) (image/png)

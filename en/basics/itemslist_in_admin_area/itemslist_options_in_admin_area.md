@@ -77,6 +77,6 @@ Aside from these two, you can define:
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [switcher-icon.png]({{site.baseurl}}/attachments/8225369/8356181.png) (image/png)  
-![](images/icons/bullet_blue.gif) [delete-icon.png]({{site.baseurl}}/attachments/8225369/8356182.png) (image/png)  
-![](images/icons/bullet_blue.gif) [add-button.png]({{site.baseurl}}/attachments/8225369/8356183.png) (image/png)
+* [switcher-icon.png]({{site.baseurl}}/attachments/8225369/8356181.png) (image/png)  
+* [delete-icon.png]({{site.baseurl}}/attachments/8225369/8356182.png) (image/png)  
+* [add-button.png]({{site.baseurl}}/attachments/8225369/8356183.png) (image/png)

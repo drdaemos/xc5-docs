@@ -305,5 +305,5 @@ You can download the example of this module from here: [https://dl.dropboxuserc
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [secondary-images-admin.png]({{site.baseurl}}/attachments/8225295/8356163.png) (image/png)  
-![](images/icons/bullet_blue.gif) [secondary-images-customer-area.png]({{site.baseurl}}/attachments/8225295/8356164.png) (image/png)
+* [secondary-images-admin.png]({{site.baseurl}}/attachments/8225295/8356163.png) (image/png)  
+* [secondary-images-customer-area.png]({{site.baseurl}}/attachments/8225295/8356164.png) (image/png)

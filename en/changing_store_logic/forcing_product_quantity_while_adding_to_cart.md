@@ -125,5 +125,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [js-warning.png]({{site.baseurl}}/attachments/8225442/8356203.png) (image/png)  
-![](images/icons/bullet_blue.gif) [top-warning.png]({{site.baseurl}}/attachments/8225442/8356204.png) (image/png)
+* [js-warning.png]({{site.baseurl}}/attachments/8225442/8356203.png) (image/png)  
+* [top-warning.png]({{site.baseurl}}/attachments/8225442/8356204.png) (image/png)

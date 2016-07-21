@@ -345,4 +345,4 @@ In this case, you need to add a condition similar to one described in {% link "s
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [image-language-variable.png]({{site.baseurl}}/attachments/7504837/7602607.png) (image/png)
+* [image-language-variable.png]({{site.baseurl}}/attachments/7504837/7602607.png) (image/png)

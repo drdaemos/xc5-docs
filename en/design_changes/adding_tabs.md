@@ -76,5 +76,5 @@ You can download this mod from here: [https://dl.dropboxusercontent.com/u/23858
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [order-tabs.png]({{site.baseurl}}/attachments/8225436/8356201.png) (image/png)  
-![](images/icons/bullet_blue.gif) [product-tab.png]({{site.baseurl}}/attachments/8225436/8356202.png) (image/png)
+* [order-tabs.png]({{site.baseurl}}/attachments/8225436/8356201.png) (image/png)  
+* [product-tab.png]({{site.baseurl}}/attachments/8225436/8356202.png) (image/png)

@@ -184,5 +184,5 @@ You can download this mod's example from here: [https://dl.dropboxusercontent.c
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [default-footer.png]({{site.baseurl}}/attachments/8225291/8356161.png) (image/png)  
-![](images/icons/bullet_blue.gif) [custom-footer-in-customer-area.png]({{site.baseurl}}/attachments/8225291/8356162.png) (image/png)
+* [default-footer.png]({{site.baseurl}}/attachments/8225291/8356161.png) (image/png)  
+* [custom-footer-in-customer-area.png]({{site.baseurl}}/attachments/8225291/8356162.png) (image/png)

@@ -114,4 +114,4 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [right-column.png]({{site.baseurl}}/attachments/524300/8356186.png) (image/png)
+* [right-column.png]({{site.baseurl}}/attachments/524300/8356186.png) (image/png)

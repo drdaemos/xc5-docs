@@ -120,7 +120,7 @@ If you want to create the module's distributive pack, you need to
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [1.png]({{site.baseurl}}/attachments/524296/1212421.png) (image/png)  
-![](images/icons/bullet_blue.gif) [1.png]({{site.baseurl}}/attachments/524296/1212420.png) (image/png)  
-![](images/icons/bullet_blue.gif) [redeploy-the-store.png]({{site.baseurl}}/attachments/524296/7995397.png) (image/png)  
-![](images/icons/bullet_blue.gif) [xc5_cache_redeploy.png]({{site.baseurl}}/attachments/524296/9437239.png) (image/png)
+* [1.png]({{site.baseurl}}/attachments/524296/1212421.png) (image/png)  
+* [1.png]({{site.baseurl}}/attachments/524296/1212420.png) (image/png)  
+* [redeploy-the-store.png]({{site.baseurl}}/attachments/524296/7995397.png) (image/png)  
+* [xc5_cache_redeploy.png]({{site.baseurl}}/attachments/524296/9437239.png) (image/png)

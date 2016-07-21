@@ -256,4 +256,4 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [output-filter.png]({{site.baseurl}}/attachments/8225410/8356193.png) (image/png)
+* [output-filter.png]({{site.baseurl}}/attachments/8225410/8356193.png) (image/png)

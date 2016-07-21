@@ -78,7 +78,7 @@ In order to publish such page, please write us a message {% link "alliance@x-car
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [module_template.psd]({{site.baseurl}}/attachments/7504739/7602402.psd) (image/vnd.adobe.photoshop)  
-![](images/icons/bullet_blue.gif) [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602840.png) (image/png)  
-![](images/icons/bullet_blue.gif) [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602839.png) (image/png)  
-![](images/icons/bullet_blue.gif) [upload-module-myxcartcom.png]({{site.baseurl}}/attachments/7504739/7602841.png) (image/png)
+* [module_template.psd]({{site.baseurl}}/attachments/7504739/7602402.psd) (image/vnd.adobe.photoshop)  
+* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602840.png) (image/png)  
+* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602839.png) (image/png)  
+* [upload-module-myxcartcom.png]({{site.baseurl}}/attachments/7504739/7602841.png) (image/png)

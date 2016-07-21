@@ -228,5 +228,5 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [test-field-value-admin.png]({{site.baseurl}}/attachments/8225458/8356212.png) (image/png)  
-![](images/icons/bullet_blue.gif) [test-field-value-customer.png]({{site.baseurl}}/attachments/8225458/8356213.png) (image/png)
+* [test-field-value-admin.png]({{site.baseurl}}/attachments/8225458/8356212.png) (image/png)  
+* [test-field-value-customer.png]({{site.baseurl}}/attachments/8225458/8356213.png) (image/png)

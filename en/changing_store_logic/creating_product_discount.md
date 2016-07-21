@@ -265,6 +265,6 @@ You can download this module pack from here: [https://dl.dropboxusercontent.com
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [discount-items-list.png]({{site.baseurl}}/attachments/8225422/8356196.png) (image/png)  
-![](images/icons/bullet_blue.gif) [product-details-page-discount.png]({{site.baseurl}}/attachments/8225422/8356197.png) (image/png)  
-![](images/icons/bullet_blue.gif) [customers-who-bought-discount.png]({{site.baseurl}}/attachments/8225422/8356198.png) (image/png)
+* [discount-items-list.png]({{site.baseurl}}/attachments/8225422/8356196.png) (image/png)  
+* [product-details-page-discount.png]({{site.baseurl}}/attachments/8225422/8356197.png) (image/png)  
+* [customers-who-bought-discount.png]({{site.baseurl}}/attachments/8225422/8356198.png) (image/png)

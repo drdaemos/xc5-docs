@@ -266,8 +266,8 @@ You can download the module example described above here: [https://dl.dropboxus
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [home-page-my-account.png]({{site.baseurl}}/attachments/8224787/8355857.png) (image/png)  
-![](images/icons/bullet_blue.gif) [webmaster-kit-module.png]({{site.baseurl}}/attachments/8224787/8355858.png) (image/png)  
-![](images/icons/bullet_blue.gif) [webmaster-kit-module-settings.png]({{site.baseurl}}/attachments/8224787/8355859.png) (image/png)  
-![](images/icons/bullet_blue.gif) [enable-tracing.png]({{site.baseurl}}/attachments/8224787/8355860.png) (image/png)  
-![](images/icons/bullet_blue.gif) [path-to-template.png]({{site.baseurl}}/attachments/8224787/8355861.png) (image/png)
+* [home-page-my-account.png]({{site.baseurl}}/attachments/8224787/8355857.png) (image/png)  
+* [webmaster-kit-module.png]({{site.baseurl}}/attachments/8224787/8355858.png) (image/png)  
+* [webmaster-kit-module-settings.png]({{site.baseurl}}/attachments/8224787/8355859.png) (image/png)  
+* [enable-tracing.png]({{site.baseurl}}/attachments/8224787/8355860.png) (image/png)  
+* [path-to-template.png]({{site.baseurl}}/attachments/8224787/8355861.png) (image/png)

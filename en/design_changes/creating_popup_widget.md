@@ -234,5 +234,5 @@ You can download this module example from here: [Tony-PopupDemo-v5.2.0.tar](att
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [daemos xcart cart.php target tony_custom.png]({{site.baseurl}}/attachments/8750139/8718767.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Tony-PopupDemo-v5.2.0.tar]({{site.baseurl}}/attachments/8750139/8718768.tar) (application/x-tar)
+* [daemos xcart cart.php target tony_custom.png]({{site.baseurl}}/attachments/8750139/8718767.png) (image/png)  
+* [Tony-PopupDemo-v5.2.0.tar]({{site.baseurl}}/attachments/8750139/8718768.tar) (application/x-tar)

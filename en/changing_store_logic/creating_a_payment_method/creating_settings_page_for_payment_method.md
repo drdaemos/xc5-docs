@@ -266,5 +266,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [demo-payment-unconfigured.png]({{site.baseurl}}/attachments/8225462/8356214.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-payment-test-mode.png]({{site.baseurl}}/attachments/8225462/8356215.png) (image/png)
+* [demo-payment-unconfigured.png]({{site.baseurl}}/attachments/8225462/8356214.png) (image/png)  
+* [demo-payment-test-mode.png]({{site.baseurl}}/attachments/8225462/8356215.png) (image/png)

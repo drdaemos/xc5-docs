@@ -511,7 +511,7 @@ You can download the code of this module from here: [https://dl.dropboxusercont
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [quick-messages-items-list.png]({{site.baseurl}}/attachments/8225303/8356165.png) (image/png)  
-![](images/icons/bullet_blue.gif) [empty-quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356166.png) (image/png)  
-![](images/icons/bullet_blue.gif) [quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356167.png) (image/png)  
-![](images/icons/bullet_blue.gif) [quick-messages-customer.png]({{site.baseurl}}/attachments/8225303/8356168.png) (image/png)
+* [quick-messages-items-list.png]({{site.baseurl}}/attachments/8225303/8356165.png) (image/png)  
+* [empty-quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356166.png) (image/png)  
+* [quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356167.png) (image/png)  
+* [quick-messages-customer.png]({{site.baseurl}}/attachments/8225303/8356168.png) (image/png)

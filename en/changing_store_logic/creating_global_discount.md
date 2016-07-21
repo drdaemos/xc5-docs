@@ -120,4 +120,4 @@ You can download this module's example from here: [https://dl.dropboxuserconten
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [custom-discount-applied.png]({{site.baseurl}}/attachments/8225204/8356110.png) (image/png)
+* [custom-discount-applied.png]({{site.baseurl}}/attachments/8225204/8356110.png) (image/png)

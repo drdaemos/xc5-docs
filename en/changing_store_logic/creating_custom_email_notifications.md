@@ -76,8 +76,8 @@ The method we will be using to send our notifications is `sendEmailDemoMessage(
 *   $advanced_mode param defines which mail templates will be used. It is just an example of some custom logic, so you don't have to use it in your method. 
 *   Finally, to send the message we are calling the method `XLite\Core\Mailer::compose()` with a set of arguments:
 
-    1.  _string_ **$type** - is used to preprocess the **$to**, **$from**, **$dir** and **$customHeaders** params. You can provide a set of methods, called like `**prepare<param><$type>;**` for example, `prepareCustomHeadersDemoMail($customHeaders)` or `prepareToDemoMail($to).` If these methods exist, they will be called automatically during message composing.
-    2.  _string _**$from** - email `**From:**` field.
+    1.  _string_ **$type** - is used to preprocess the **$to**, **$from**, **$dir** and **$customHeaders** params. You can provide a set of methods, called like **`prepare<param><$type>;`** for example, `prepareCustomHeadersDemoMail($customHeaders)` or `prepareToDemoMail($to).` If these methods exist, they will be called automatically during message composing.
+    2.  _string _**$from** - email **`From:`** field.
     3.  _string _**$to** - email **`To:`** field. For example, we can use the default site administrator email here.
     4.  _string _**$dir** - directory where mail templates are located. The parent folder for this directory is `<X-Cart>/skins/mail/<language (e.g. **en**)>/.`
     5.  (optional) _array_**$customHeaders** - an array of key-value pairs with additional headers (**Cc:**, **Bcc:**, **Reply-To:,** etc.).
@@ -210,8 +210,8 @@ You can download this module example from here: [Tony-EmailDemo-v5.2.0.tar](att
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [demo msg]({{site.baseurl}}/attachments/8750179/8718795) (application/octet-stream)  
-![](images/icons/bullet_blue.gif) [demo msg.png]({{site.baseurl}}/attachments/8750179/8718796.png) (image/png)  
-![](images/icons/bullet_blue.gif) [X Cart online store builder Email notifications.png]({{site.baseurl}}/attachments/8750179/8718797.png) (image/png)  
-![](images/icons/bullet_blue.gif) [X Cart online store builder Advanced demo notification sent Email Demo module .png]({{site.baseurl}}/attachments/8750179/8718799.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Tony-EmailDemo-v5.2.0.tar]({{site.baseurl}}/attachments/8750179/8718801.tar) (application/x-tar)
+* [demo msg]({{site.baseurl}}/attachments/8750179/8718795) (application/octet-stream)  
+* [demo msg.png]({{site.baseurl}}/attachments/8750179/8718796.png) (image/png)  
+* [X Cart online store builder Email notifications.png]({{site.baseurl}}/attachments/8750179/8718797.png) (image/png)  
+* [X Cart online store builder Advanced demo notification sent Email Demo module .png]({{site.baseurl}}/attachments/8750179/8718799.png) (image/png)  
+* [Tony-EmailDemo-v5.2.0.tar]({{site.baseurl}}/attachments/8750179/8718801.tar) (application/x-tar)

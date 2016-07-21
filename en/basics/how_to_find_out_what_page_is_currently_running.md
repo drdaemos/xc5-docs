@@ -143,4 +143,4 @@ You can download this module pack from here: [https://dl.dropboxusercontent.com
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [this-is-checkout-page.png]({{site.baseurl}}/attachments/524292/8356147.png) (image/png)
+* [this-is-checkout-page.png]({{site.baseurl}}/attachments/524292/8356147.png) (image/png)

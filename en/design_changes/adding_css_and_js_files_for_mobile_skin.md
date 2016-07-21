@@ -23,36 +23,36 @@ This article describes how developers can include CSS/JS files to X-Cart which h
 
 # Implementation
 
-1.  {% link "Create an empty module" ref_TZnqVJsw %}. We are creating a module with developer ID **Tony** and module ID **MobileCSS**.
-2.  Since we cannot use the `getThemeFiles()` method of `\XLite\View\AView` object, because CSS/JS files from it will be cleaned up anyway, we need to decorate the `registerResources()` method of the `\XLite\Core\Layout` class.
-3.  We create the `<X-Cart>/classes/XLite/Module/Tony/MobileCSS/Core/Layout.php` file with the following content: 
+1\.  {% link "Create an empty module" ref_TZnqVJsw %}. We are creating a module with developer ID **Tony** and module ID **MobileCSS**.
+2\.  Since we cannot use the `getThemeFiles()` method of `\XLite\View\AView` object, because CSS/JS files from it will be cleaned up anyway, we need to decorate the `registerResources()` method of the `\XLite\Core\Layout` class.
+3\.  We create the `<X-Cart>/classes/XLite/Module/Tony/MobileCSS/Core/Layout.php` file with the following content: 
 
-    {% highlight php %}{% raw %}
-    <?php
+{% highlight php %}{% raw %}
+<?php
 
-    namespace XLite\Module\Tony\MobileCSS\Core;
+namespace XLite\Module\Tony\MobileCSS\Core;
 
-    class Layout extends \XLite\Core\Layout implements \XLite\Base\IDecorator
+class Layout extends \XLite\Core\Layout implements \XLite\Base\IDecorator
+{
+    public function registerResources(array $resources, $index, $interface = null)
     {
-        public function registerResources(array $resources, $index, $interface = null)
-        {
-            parent::registerResources($resources, $index, $interface);
+        parent::registerResources($resources, $index, $interface);
 
-            if (\XLite\Core\Request::isMobileDevice()) {
-                $files = array(
-                    'modules/Tony/MobileCSS/css/custom.css',
-                );
+        if (\XLite\Core\Request::isMobileDevice()) {
+            $files = array(
+                'modules/Tony/MobileCSS/css/custom.css',
+            );
 
-                $this->registerResourcesByType($files, 100, $interface, \XLite\View\AView::RESOURCE_CSS);
-            }
+            $this->registerResourcesByType($files, 100, $interface, \XLite\View\AView::RESOURCE_CSS);
         }
     }
-    {% endraw %}{% endhighlight %}
+}
+{% endraw %}{% endhighlight %}
 
-    This code means that if X-Cart is called by mobile device, then we must register the `<X-Cart>/skins/default/en/modules/Tony/MobileCSS/css/custom.css` CSS file and call parent object's `registerResources()` method.
+This code means that if X-Cart is called by mobile device, then we must register the `<X-Cart>/skins/default/en/modules/Tony/MobileCSS/css/custom.css` CSS file and call parent object's `registerResources()` method.
 
-4.  Obviously, now we need to create this `<X-Cart>/skins/default/en/modules/Tony/MobileCSS/css/custom.css` file that will be added to customer store-front's pages.
-5.  That is it. Now if we re-deploy the store, this CSS file will be included into all pages of customer area.
+4\.  Obviously, now we need to create this `<X-Cart>/skins/default/en/modules/Tony/MobileCSS/css/custom.css` file that will be added to customer store-front's pages.
+5\.  That is it. Now if we re-deploy the store, this CSS file will be included into all pages of customer area.
 
 # Module pack
 

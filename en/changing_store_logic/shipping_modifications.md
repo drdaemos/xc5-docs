@@ -221,12 +221,12 @@ You can download this module example from here: [XCExample-ShippingDemo-v5_2_0.
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [my-processor.png]({{site.baseurl}}/attachments/8225333/8356175.png) (image/png)  
-![](images/icons/bullet_blue.gif) [my-processor-methods.png]({{site.baseurl}}/attachments/8225333/8356176.png) (image/png)  
-![](images/icons/bullet_blue.gif) [my-shipping-method.png]({{site.baseurl}}/attachments/8225333/8356177.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image03.png]({{site.baseurl}}/attachments/8225333/9633891.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image01.png]({{site.baseurl}}/attachments/8225333/9633890.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image03.png]({{site.baseurl}}/attachments/8225333/9633889.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image02.png]({{site.baseurl}}/attachments/8225333/9633892.png) (image/png)  
-![](images/icons/bullet_blue.gif) [image00.png]({{site.baseurl}}/attachments/8225333/9633893.png) (image/png)  
-![](images/icons/bullet_blue.gif) [XCExample-ShippingDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225333/9633894.tar) (application/x-tar)
+* [my-processor.png]({{site.baseurl}}/attachments/8225333/8356175.png) (image/png)  
+* [my-processor-methods.png]({{site.baseurl}}/attachments/8225333/8356176.png) (image/png)  
+* [my-shipping-method.png]({{site.baseurl}}/attachments/8225333/8356177.png) (image/png)  
+* [image03.png]({{site.baseurl}}/attachments/8225333/9633891.png) (image/png)  
+* [image01.png]({{site.baseurl}}/attachments/8225333/9633890.png) (image/png)  
+* [image03.png]({{site.baseurl}}/attachments/8225333/9633889.png) (image/png)  
+* [image02.png]({{site.baseurl}}/attachments/8225333/9633892.png) (image/png)  
+* [image00.png]({{site.baseurl}}/attachments/8225333/9633893.png) (image/png)  
+* [XCExample-ShippingDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225333/9633894.tar) (application/x-tar)

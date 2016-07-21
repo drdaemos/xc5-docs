@@ -202,5 +202,5 @@ You can download the module described here: [https://dl.dropboxusercontent.com/
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [tony_custom-admin-page.png]({{site.baseurl}}/attachments/8224999/8355981.png) (image/png)  
-![](images/icons/bullet_blue.gif) [tony_custom-customer-page.png]({{site.baseurl}}/attachments/8224999/8355982.png) (image/png)
+* [tony_custom-admin-page.png]({{site.baseurl}}/attachments/8224999/8355981.png) (image/png)  
+* [tony_custom-customer-page.png]({{site.baseurl}}/attachments/8224999/8355982.png) (image/png)

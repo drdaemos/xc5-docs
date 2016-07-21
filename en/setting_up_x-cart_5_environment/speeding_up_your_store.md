@@ -109,6 +109,6 @@ Alternatively, you can adjust these settings in the MySQL configuration file. A 
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [aggregate-css.png]({{site.baseurl}}/attachments/8224875/8355887.png) (image/png)  
-![](images/icons/bullet_blue.gif) [use-view-cache.png]({{site.baseurl}}/attachments/8224875/8355888.png) (image/png)  
-![](images/icons/bullet_blue.gif) [X Cart online store builder Look Feel.png]({{site.baseurl}}/attachments/8224875/9437214.png) (image/png)
+* [aggregate-css.png]({{site.baseurl}}/attachments/8224875/8355887.png) (image/png)  
+* [use-view-cache.png]({{site.baseurl}}/attachments/8224875/8355888.png) (image/png)  
+* [X Cart online store builder Look Feel.png]({{site.baseurl}}/attachments/8224875/9437214.png) (image/png)

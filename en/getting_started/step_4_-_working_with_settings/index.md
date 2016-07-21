@@ -275,13 +275,13 @@ You can use all classes from the `<X-Cart>/classes/XLite/View/FormField/` folder
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [module-settings.png]({{site.baseurl}}/attachments/8224795/8355862.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355864.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355868.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355863.png) (image/png)  
-![](images/icons/bullet_blue.gif) [textarea-field-example.png]({{site.baseurl}}/attachments/8224795/8355869.png) (image/png)  
-![](images/icons/bullet_blue.gif) [text-setting-example.png]({{site.baseurl}}/attachments/8224795/8355870.png) (image/png)  
-![](images/icons/bullet_blue.gif) [checkbox-setting-example.png]({{site.baseurl}}/attachments/8224795/8355871.png) (image/png)  
-![](images/icons/bullet_blue.gif) [separator-setting-example.png]({{site.baseurl}}/attachments/8224795/8355872.png) (image/png)  
-![](images/icons/bullet_blue.gif) [timezone-setting-example.png]({{site.baseurl}}/attachments/8224795/8355873.png) (image/png)  
-![](images/icons/bullet_blue.gif) [yes-no-setting-example.png]({{site.baseurl}}/attachments/8224795/8355874.png) (image/png)
+* [module-settings.png]({{site.baseurl}}/attachments/8224795/8355862.png) (image/png)  
+* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355864.png) (image/png)  
+* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355868.png) (image/png)  
+* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355863.png) (image/png)  
+* [textarea-field-example.png]({{site.baseurl}}/attachments/8224795/8355869.png) (image/png)  
+* [text-setting-example.png]({{site.baseurl}}/attachments/8224795/8355870.png) (image/png)  
+* [checkbox-setting-example.png]({{site.baseurl}}/attachments/8224795/8355871.png) (image/png)  
+* [separator-setting-example.png]({{site.baseurl}}/attachments/8224795/8355872.png) (image/png)  
+* [timezone-setting-example.png]({{site.baseurl}}/attachments/8224795/8355873.png) (image/png)  
+* [yes-no-setting-example.png]({{site.baseurl}}/attachments/8224795/8355874.png) (image/png)

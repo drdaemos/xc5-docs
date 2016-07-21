@@ -137,4 +137,4 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [all-products-on-custom-page.png]({{site.baseurl}}/attachments/8225226/8356122.png) (image/png)
+* [all-products-on-custom-page.png]({{site.baseurl}}/attachments/8225226/8356122.png) (image/png)

@@ -34,32 +34,32 @@ Rebuild the cache and this module will appear in the **Extensions > Installed mo
 
 # Step 2\. Create viewer class for your sidebar 
 
-1.  Create `View` folder in your module.
-2.  Put `MySidebar.php` script into this folder with the following content: 
+1\.  Create `View` folder in your module.
+2\.  Put `MySidebar.php` script into this folder with the following content: 
 
-    {% highlight php %}{% raw %}
-    <?php
+{% highlight php %}{% raw %}
+<?php
 
-    namespace XLite\Module\Tony\SidebarMenu\View;
+namespace XLite\Module\Tony\SidebarMenu\View;
 
-    /**
-     * @ListChild (list="sidebar.single", zone="customer", weight="500")
-     * @ListChild (list="sidebar.first", zone="customer", weight="500")
-     */
+/**
+ * @ListChild (list="sidebar.single", zone="customer", weight="500")
+ * @ListChild (list="sidebar.first", zone="customer", weight="500")
+ */
 
-    class MySidebar extends \XLite\View\SideBarBox
+class MySidebar extends \XLite\View\SideBarBox
+{
+    protected function getHead()
     {
-        protected function getHead()
-        {
-            return 'My header';
-        }
-
-        protected function getDir()
-        {
-            return 'modules/Tony/SidebarMenu/menu';
-        }
+        return 'My header';
     }
-    {% endraw %}{% endhighlight %}
+
+    protected function getDir()
+    {
+        return 'modules/Tony/SidebarMenu/menu';
+    }
+}
+{% endraw %}{% endhighlight %}
 
 Let's walk through each line of its code:
 
@@ -93,7 +93,7 @@ You can download this module pack for versions 5.2.x from here: [Tony-SidebarMe
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [sidebar-menus.png]({{site.baseurl}}/attachments/7505759/7602842.png) (image/png)  
-![](images/icons/bullet_blue.gif) [custom-sidebar-in-storefront]({{site.baseurl}}/attachments/7505759/7602843) (application/octet-stream)  
-![](images/icons/bullet_blue.gif) [custom-sidebar-in-storefront.png]({{site.baseurl}}/attachments/7505759/7602844.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Tony-SidebarMenu-v5_2_0.tar]({{site.baseurl}}/attachments/7505759/9438471.tar) (application/x-tar)
+* [sidebar-menus.png]({{site.baseurl}}/attachments/7505759/7602842.png) (image/png)  
+* [custom-sidebar-in-storefront]({{site.baseurl}}/attachments/7505759/7602843) (application/octet-stream)  
+* [custom-sidebar-in-storefront.png]({{site.baseurl}}/attachments/7505759/7602844.png) (image/png)  
+* [Tony-SidebarMenu-v5_2_0.tar]({{site.baseurl}}/attachments/7505759/9438471.tar) (application/x-tar)

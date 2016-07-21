@@ -69,4 +69,4 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [account-info-on-custom-page.png]({{site.baseurl}}/attachments/8225230/8356123.png) (image/png)
+* [account-info-on-custom-page.png]({{site.baseurl}}/attachments/8225230/8356123.png) (image/png)

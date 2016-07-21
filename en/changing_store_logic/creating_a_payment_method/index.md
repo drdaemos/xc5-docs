@@ -185,9 +185,9 @@ Module example (with the settings page) for X-Cart v5.2.x: [Tony-PaymentDemo-v5_
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [choose-payment-method.png]({{site.baseurl}}/attachments/8225448/8356207.png) (image/png)  
-![](images/icons/bullet_blue.gif) [enable-payment-method.png]({{site.baseurl}}/attachments/8225448/8356208.png) (image/png)  
-![](images/icons/bullet_blue.gif) [payment-method-checkout.png]({{site.baseurl}}/attachments/8225448/8356209.png) (image/png)  
-![](images/icons/bullet_blue.gif) [add_demo_payment.png]({{site.baseurl}}/attachments/8225448/8718902.png) (image/png)  
-![](images/icons/bullet_blue.gif) [enable-demo-payment-method.png]({{site.baseurl}}/attachments/8225448/8718903.png) (image/png)  
-![](images/icons/bullet_blue.gif) [Tony-PaymentDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225448/9439206.tar) (application/x-tar)
+* [choose-payment-method.png]({{site.baseurl}}/attachments/8225448/8356207.png) (image/png)  
+* [enable-payment-method.png]({{site.baseurl}}/attachments/8225448/8356208.png) (image/png)  
+* [payment-method-checkout.png]({{site.baseurl}}/attachments/8225448/8356209.png) (image/png)  
+* [add_demo_payment.png]({{site.baseurl}}/attachments/8225448/8718902.png) (image/png)  
+* [enable-demo-payment-method.png]({{site.baseurl}}/attachments/8225448/8718903.png) (image/png)  
+* [Tony-PaymentDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225448/9439206.tar) (application/x-tar)

@@ -103,7 +103,7 @@ Showing first 5 of 8 results
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [2016-05-05 14-35-51 - Webmaster mode - Category description.png]({{site.baseurl}}/attachments/9307060/9439716.png) (image/png)  
-![](images/icons/bullet_blue.gif) [2016-05-05 14-50-29 - Webmaster mode - Category products.png]({{site.baseurl}}/attachments/9307060/9439717.png) (image/png)  
-![](images/icons/bullet_blue.gif) [2016-05-05 15-34-10 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439718.png) (image/png)  
-![](images/icons/bullet_blue.gif) [2016-05-05 15-35-25 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439719.png) (image/png)
+* [2016-05-05 14-35-51 - Webmaster mode - Category description.png]({{site.baseurl}}/attachments/9307060/9439716.png) (image/png)  
+* [2016-05-05 14-50-29 - Webmaster mode - Category products.png]({{site.baseurl}}/attachments/9307060/9439717.png) (image/png)  
+* [2016-05-05 15-34-10 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439718.png) (image/png)  
+* [2016-05-05 15-35-25 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439719.png) (image/png)

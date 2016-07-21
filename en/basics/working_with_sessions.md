@@ -163,5 +163,5 @@ This module pack can be downloaded from here: [https://dl.dropboxusercontent.co
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [no-session-value.png]({{site.baseurl}}/attachments/8225420/8356194.png) (image/png)  
-![](images/icons/bullet_blue.gif) [session-value-foo.png]({{site.baseurl}}/attachments/8225420/8356195.png) (image/png)
+* [no-session-value.png]({{site.baseurl}}/attachments/8225420/8356194.png) (image/png)  
+* [session-value-foo.png]({{site.baseurl}}/attachments/8225420/8356195.png) (image/png)

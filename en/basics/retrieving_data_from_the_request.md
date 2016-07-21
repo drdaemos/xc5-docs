@@ -74,4 +74,4 @@ You can download this module sample from here: [https://dl.dropboxusercontent.c
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [data-in-request.png]({{site.baseurl}}/attachments/524294/8355983.png) (image/png)
+* [data-in-request.png]({{site.baseurl}}/attachments/524294/8355983.png) (image/png)

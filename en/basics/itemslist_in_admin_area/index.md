@@ -285,6 +285,6 @@ You can download this module's example from here: [https://dl.dropboxuserconten
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [items-list-example.png]({{site.baseurl}}/attachments/8225372/8356178.png) (image/png)  
-![](images/icons/bullet_blue.gif) [items-list-example-1.png]({{site.baseurl}}/attachments/8225372/8356179.png) (image/png)  
-![](images/icons/bullet_blue.gif) [demo-items-list.png]({{site.baseurl}}/attachments/8225372/8356180.png) (image/png)
+* [items-list-example.png]({{site.baseurl}}/attachments/8225372/8356178.png) (image/png)  
+* [items-list-example-1.png]({{site.baseurl}}/attachments/8225372/8356179.png) (image/png)  
+* [demo-items-list.png]({{site.baseurl}}/attachments/8225372/8356180.png) (image/png)

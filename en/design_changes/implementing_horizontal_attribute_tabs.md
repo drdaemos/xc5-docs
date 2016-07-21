@@ -100,5 +100,5 @@ You can download this module pack from here: [https://dl.dropboxusercontent.com
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [vertical-product-tabs.png]({{site.baseurl}}/attachments/8225427/8356199.png) (image/png)  
-![](images/icons/bullet_blue.gif) [horizontal-product-tabs.png]({{site.baseurl}}/attachments/8225427/8356200.png) (image/png)
+* [vertical-product-tabs.png]({{site.baseurl}}/attachments/8225427/8356199.png) (image/png)  
+* [horizontal-product-tabs.png]({{site.baseurl}}/attachments/8225427/8356200.png) (image/png)

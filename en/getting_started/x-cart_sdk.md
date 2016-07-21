@@ -168,4 +168,4 @@ _Note: you do not specify user number explicitly. You will have the same number 
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [git-download-zip.png]({{site.baseurl}}/attachments/7864338/7995398.png) (image/png)
+* [git-download-zip.png]({{site.baseurl}}/attachments/7864338/7995398.png) (image/png)

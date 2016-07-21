@@ -166,5 +166,5 @@ Decoration approach is widely-used in X-Cart modules and here are few other mome
 
 ## Attachments:
 
-![](images/icons/bullet_blue.gif) [quicklook-icon.png]({{site.baseurl}}/attachments/8224804/8355866.png) (image/png)  
-![](images/icons/bullet_blue.gif) [quicklook-icon.png]({{site.baseurl}}/attachments/8224804/8355865.png) (image/png)
+* [quicklook-icon.png]({{site.baseurl}}/attachments/8224804/8355866.png) (image/png)  
+* [quicklook-icon.png]({{site.baseurl}}/attachments/8224804/8355865.png) (image/png)
