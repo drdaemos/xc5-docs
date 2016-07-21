@@ -20,7 +20,7 @@ module Jekyll
       if host == nil ||index == nil || type == nil
         raise "argument error"
       end
-      @es = Elasticsearch::Client.new hosts: "#{host}", log: true, reload_on_failure: true
+      @es = Elasticsearch::Client.new hosts: "#{host}", log: false, reload_on_failure: true
       @index = index
       @type = type
     end
@@ -161,7 +161,6 @@ module Jekyll
     safe true
 
     def generate(site)
-      return true
       #config
       es_config = site.config['elasticsearch']
       unless es_config
@@ -217,6 +216,8 @@ module Jekyll
       # delete removed page from elasticsearch
       es.refresh
       es.delete_old_pages (now - 1).strftime("%FT%T%z")
+
+      puts 'Updated elasticsearch index'
 
     end
 
