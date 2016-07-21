@@ -10,7 +10,7 @@ title: X-Cart 5 Developer Documentation
 email: daemos@x-cart.com
 description: X-Cart is the free shopping cart software & solutions for high‑performing online stores
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://devs.x-cart.com" # the base hostname & protocol for your site
+url: "https://devs.x-cart.com" # the base hostname & protocol for your site
 encoding: utf-8
 repository: xcart/xc5-docs
 
