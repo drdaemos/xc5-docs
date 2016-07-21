@@ -1,14 +1,17 @@
 ---
-layout: article_with_sidebar
 lang: ru
+layout: article_with_sidebar
+updated_at: '2016-07-21 11:54 +0400'
 title: С чего начать
-categories: [home]
+categories:
+  - home
 order: 1
 icon: rocket
-description: Build addons for 35 000+ X-Cart merchants. Get your store up and running fast without any hassle нун.
+description: >-
+  Build addons for 35 000+ X-Cart merchants. Get your store up and running fast
+  without any hassle нун.
+published: true
 ---
-фыв
-фыв
 X-Cart is a highly customizable e-commerce platform and content management system that you can use to build online storefronts or web sites for selling merchandise. X-Cart provides common e-commerce features, such as shopping carts and inventory management, and encourages extensive customization to meet your organization’s specific goals.
 
 The essential principles of X-Cart’s powerful and highly scalable product architecture include:
