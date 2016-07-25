@@ -1,5 +1,5 @@
 ---
-identifier: ref_hCeHSrz0
+identifier: ref_g6nU3zbt
 updated_at: 2014-11-11 00:00
 layout: article_with_sidebar
 lang: en
@@ -35,7 +35,7 @@ The aim of this webinar is to show developers how they can work with X-Cart from
 
 Initializing X-Cart is as easy as including two files into your PHP project. Here is working example – сreate `test.php` file inside your X-Cart folder with the following code:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 require_once 'top.inc.php';
@@ -44,23 +44,24 @@ require_once 'top.inc.additional.php';
 $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array('product_id' => 1));
 
 echo $product->getName();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 1.  This part initializes X-Cart and allows to use its public methods in our test PHP script
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     require_once 'top.inc.php';
     require_once 'top.inc.additional.php';
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 2.  This code pulls a product object and display its name
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array('product_id' => 1));
 
     echo $product->getName();
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
-    _More information about pulling data from database is {% link "here" ref_c8as4Qfi %}._
+    _More information about pulling data from database is {% link "here" ref_L1zWfWvw %}._
 
 The same way you can use absolutely all public methods of X-Cart in your scripts: create and update objects, get data out of these objects.
 
@@ -70,7 +71,7 @@ X-Cart allows to show entire widgets in 3rd party scripts in very concise way.
 
 Let us edit the `test.php` script in root directory of X-Cart and define it like this:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 require_once 'top.inc.php';
 require_once 'top.inc.additional.php';
@@ -78,24 +79,26 @@ require_once 'top.inc.additional.php';
 $widget = new \XLite\View\TopCategories();
 
 $widget->display();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 1.  X-Cart initialization remains the same:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     require_once 'top.inc.php';
     require_once 'top.inc.additional.php';
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 2.  This way we are pulling a widget object and tell them that it must be displayed now: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     $widget = new \XLite\View\TopCategories();
 
     $widget->display();
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  This code will result in the following HTML code: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <div class="block block-block block-top-categories">
       <div class="head-h2" >Categories</div>  <div class="content"><ul class="menu menu-list catalog-categories catalog-categories-path">
           <li  class="leaf first">
@@ -110,10 +113,11 @@ $widget->display();
         </ul>
     </div>
     </div>
-    {% endraw %}{% endhighlight %}
-4.  The same approach can be used for every other X-Cart viewer class. All {% link "viewer classes" ref_qIifNQNq %} are located in `<X-Cart>/classes/XLite/Viewer` folder. Here is working example:
+    ```{% endraw %}
 
-    {% highlight php %}{% raw %}
+4.  The same approach can be used for every other X-Cart viewer class. All {% link "viewer classes" ref_6dMJsZ63 %} are located in `<X-Cart>/classes/XLite/Viewer` folder. Here is working example:
+
+    {% raw %}```php
     <?php
 
     require_once 'top.inc.php';
@@ -126,10 +130,11 @@ $widget->display();
     // display of footer menu
     $footerMenu = new \XLite\View\Menu\Customer\Footer();
     $footerMenu->display();
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 5.  Finally, you can even render a template with all its children in an external script.
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
 
     require_once 'top.inc.php';
@@ -137,7 +142,8 @@ $widget->display();
 
     $content = new \XLite\View\Content();
     $content->display('layout/main.header.tpl');
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 6.  Using these approaches you can display almost any part of X-Cart interface – from a little <div> to entire page – in your script.
 
 # What if my script is not in X-Cart folder
@@ -146,7 +152,7 @@ $widget->display();
 
 Let us imagine that we want to integrate X-Cart into a blog. The blog is installed on [http://localhost/](http://localhost/) and our X-Cart is in [http://localhost/next/src](http://localhost/next/src). In order to reproduce the situation, I am creating `test.php` file in the web-root of my localhost with the following content:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 require_once 'next/src/top.inc.php';
@@ -154,7 +160,7 @@ require_once 'next/src/top.inc.additional.php';
 
 $widget = new \XLite\View\TopCategories();
 $widget->display();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 It works, but there are two problems:
 
@@ -165,31 +171,31 @@ In order to overcome these problems, we will need an integration module in the X
 
 ## Step 1\. Create an empty module
 
-There is already {% link "an article" ref_TZnqVJsw %} describing how you can achieve it. I already have a module with developer ID **Tony** and module ID **CMSIntegration**.
+There is already {% link "an article" ref_G2mlgckf %} describing how you can achieve it. I already have a module with developer ID **Tony** and module ID **CMSIntegration**.
 
 ## Step 2\. Point links to X-Cart installation
 
 It can be achieved by decoration of the `\XLite\Core\Converter` class that contains `buildURL()` method. This method is used throughout entire X-Cart code in order to build proper X-Cart URLs.
 
-We are running the {% link "following macro" ref_HMDeHiJ8#X-CartSDK-Decoratingclass %}:
+We are running the {% link "following macro" ref_HvrXVNvJ#X-CartSDK-Decoratingclass %}:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ../../next-sdk/devkit/macros/decorate.php --module=Tony\\CMSIntegration --class=classes/XLite/Core/Converter.php
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 and it creates the `Core/Converter.php` file inside my module's folder.
 
 Then, we go to my `test.php` script and define a constant there: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 define('CMS_INTEGRATION', true);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 We will use it in order to determine whether X-Cart methods are called from our script or through default X-Cart routine.
 
 Now we can implement new version of `buildURL()` method in the `<X-Cart>/classes/XLite/Module/Tony/CMSIntegration/Core/Converter.php` file:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
     public static function buildURL($target = '', $action = '', array $params = array(), $interface = null, $forceCleanURL = false, $forceCuFlag = null)
     {
     	$return = parent::buildURL($target, $action, $params, $interface, $forceCleanURL, $forceCuFlag);
@@ -198,7 +204,7 @@ Now we can implement new version of `buildURL()` method in the `<X-Cart>/classes
         }
         return $return;
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This implementation is straight-forward, if `CMS_INTEGRATION` constant is defined, then we prepend 'next/src' part to all URLs. Otherwise, we keep URLs as they are.
 
@@ -208,13 +214,13 @@ The root of the problem is if our script is called outside of X-Cart folder, X-C
 
 We decorate the `\XLite\Core\Request` class by running this macro:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ../../next-sdk/devkit/macros/decorate.php --module=Tony\\CMSIntegration --class=classes/XLite/Core/Request.php
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Now we go to the `Core/Request.php` file inside the module and implement our version of the `getCookieURL()` method: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 	protected function getCookieURL($secure = false)
 	{
 		$url = $secure
@@ -225,7 +231,7 @@ Now we go to the `Core/Request.php` file inside the module and implement our ver
 
 		return $return;
 	}	
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This implementation means that if the method is called from our script, then X-Cart sets cookie to `/` (web-root), otherwise it works as usual.
 
@@ -243,7 +249,7 @@ Final point of today's webinar is how to create, log in and log off users throug
 
 The following code will create a user with **bit-bucket@x-cart.com** email and **tester** password:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 require_once 'next/src/top.inc.php';
@@ -256,32 +262,32 @@ $profile->setPassword(\XLite\Core\Auth::encryptPassword('tester'));
 $profile->setForceChangePassword(false);
 
 $profile->update();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 We create a profile object:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $profile = new \XLite\Model\Profile();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Assign mandatory fields to it:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $profile->setLogin('bit-bucket@x-cart.com');
 $profile->setPassword(\XLite\Core\Auth::encryptPassword('tester'));
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 We tell this profile that it must not ask for changing password after first login:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $profile->setForceChangePassword(false);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Save the results:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $profile->update();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 If we check an admin area right now, we will see a user with **bit-bucket@x-cart.com** email there.
 
@@ -289,7 +295,7 @@ If we check an admin area right now, we will see a user with **bit-bucket@x-car
 
 Here is a code sample:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 require_once 'next/src/top.inc.php';
@@ -302,39 +308,39 @@ if ($profile !== \XLite\Core\Auth::RESULT_ACCESS_DENIED) {
 } else {
 	echo 'User could not be logged in';
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This code is logging in a customer with **bit-bucket@x-cart.com** email and **tester** password:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $profile = \XLite\Core\Auth::getInstance()->login('bit-bucket@x-cart.com', 'tester');
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This piece of code just checks whether logging in went properly or not:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 if ($profile !== \XLite\Core\Auth::RESULT_ACCESS_DENIED) {
 	echo 'User is logged in';
 } else {
 	echo 'User could not be logged in';
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 ## Logging user off
 
 This is code sample of logging the currently logged in user off:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 require_once 'next/src/top.inc.php';
 require_once 'next/src/top.inc.additional.php';
 
 \XLite\Core\Auth::getInstance()->logoff();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This is as easy as running one line of code:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 \XLite\Core\Auth::getInstance()->logoff();
-{% endraw %}{% endhighlight %}
+```{% endraw %}

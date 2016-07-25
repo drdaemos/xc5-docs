@@ -1,5 +1,5 @@
 ---
-identifier: ref_eRnso4vH
+identifier: ref_uGQn5pNX
 updated_at: 2014-11-24 00:00
 layout: article_with_sidebar
 lang: en
@@ -41,7 +41,7 @@ First of all, if you decide to write extensions for X-Cart 5 (theme or module), 
 
 4.  Email for your partner account
 
-5.  Developer ID you prefer ([learn more about developer ID](http://kb.x-cart.com/display/XDD/How+to+create+a+module#Howtocreateamodule-Choosingidentifiers))
+5.  Developer ID you prefer ({% link "learn more about developer ID" http://kb.x-cart.com/display/XDD/How+to+create+a+module#Howtocreateamodule-Choosingidentifiers %})
 
 Once you send us this info, we will create you a partner account and you will be able to log into it at [http://my.x-cart.com/](http://my.x-cart.com/) 
 
@@ -53,7 +53,7 @@ There you will be able to find a key for your development purposes.
 
 Next step is to write the module you want. We have several simple requirements to your module's code:
 
-1.  PHP code must comply to {% link "PSR2 standard" ref_OhTA3lk4 %}
+1.  PHP code must comply to {% link "PSR2 standard" ref_2RV1BTPq %}
 2.  PHP code must not use any encryption
 3.  Your module must not compromise store's owner and must not contain malicious code. If we find an attempt to use malicious code in your module, you will not be allowed to post modules to the marketplace ever since and your existing modules will be removed from it as well.
 4.  The initial version of your module must be 0, i.e. 5.0.0, 5.1.0, etc depending on what version of X-Cart you module is going to be compatible with.
@@ -78,7 +78,7 @@ In order to publish such page, please write us a message {% link "alliance@x-car
 
 ## Attachments:
 
-* [module_template.psd]({{site.baseurl}}/attachments/7504739/7602402.psd) (image/vnd.adobe.photoshop)  
-* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602840.png) (image/png)  
-* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602839.png) (image/png)  
+* [module_template.psd]({{site.baseurl}}/attachments/7504739/7602402.psd) (image/vnd.adobe.photoshop)
+* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602840.png) (image/png)
+* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602839.png) (image/png)
 * [upload-module-myxcartcom.png]({{site.baseurl}}/attachments/7504739/7602841.png) (image/png)

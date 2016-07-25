@@ -1,5 +1,5 @@
 ---
-identifier: ref_9yb8oW90
+identifier: ref_2bJSTtR3
 updated_at: 2015-01-22 00:00
 layout: article_with_sidebar
 lang: en
@@ -27,13 +27,13 @@ This guide teaches X-Cart developers how they can add their own field to product
 
 # Implementation
 
-First of all, {% link "create a new module" ref_TZnqVJsw %}. We are creating a module with developer ID **Tony** and module ID **ProductFieldDemo**.
+First of all, {% link "create a new module" ref_G2mlgckf %}. We are creating a module with developer ID **Tony** and module ID **ProductFieldDemo**.
 
 ## Adding new field to product model
 
-{% link "Decorate" ref_0xIAMJyA %} the `\XLite\Model\Product` class ({% link "more info about X-Cart classnames" ref_ddaUT3B3 %}). We are creating the `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/Model/Product.php` file with the following content: 
+{% link "Decorate" ref_AF6bmvL6 %} the `\XLite\Model\Product` class ({% link "more info about X-Cart classnames" ref_FAgFbEx9 %}). We are creating the `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/Model/Product.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -46,16 +46,16 @@ class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 	 */
 	protected $testField;
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 *   `protected $testField` says that now product objects will have a new property that can be accessed like `$product->testField`
 *   this piece of code 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     	/**
     	 * @Column (type="string", length=32)
     	 */
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     specifies parameters of this field, i.e. that this field is a **string** and can be up to **32 symbols**.
 
@@ -63,10 +63,10 @@ That is it. If we re-deploy the store right now, X-Cart will create a new field 
 
 ## Creating interface for editing this field
 
-Now we need to be able to specify value of this property on product details page in admin area. We decorate `\XLite\View\Model\Product` class and create  
+Now we need to be able to specify value of this property on product details page in admin area. We decorate `\XLite\View\Model\Product` class and create
 `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/View/Model/Product.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -87,11 +87,11 @@ class Product extends \XLite\View\Model\Product implements \XLite\Base\IDecorato
         	);
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-Such code will add a new field to the product details page in admin area. This field will be named **Test field **and its value will be saved into `testField` field of `xc_products` MySQL table. The {% link "FormField class" ref_9HKpu5vk %} that defines an input field in the interface is default `\XLite\View\FormField\Input\Text` one.
+Such code will add a new field to the product details page in admin area. This field will be named **Test field **and its value will be saved into `testField` field of `xc_products` MySQL table. The {% link "FormField class" ref_fxJxv6rf %} that defines an input field in the interface is default `\XLite\View\FormField\Input\Text` one.
 
-_Note: see an example of creating model editing form with more detailed explanation here: {% link "Model editing page" ref_yEOvMaNA %}._
+_Note: see an example of creating model editing form with more detailed explanation here: {% link "Model editing page" ref_LanG54L9 %}._
 
 ## Showing this field value on thank you page
 
@@ -99,7 +99,7 @@ Finally, we need to display the value of this field on thank you page after the 
 
 In order to achieve it, we create the `<X-Cart>/skins/default/en/modules/Tony/ProductFieldDemo/item.test-field.tpl` template with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * @ListChild (list="invoice.item.name", weight="20")
@@ -108,9 +108,9 @@ In order to achieve it, we create the `<X-Cart>/skins/default/en/modules/Tony/Pr
   <span class="name">{t(#Test field#)}</span>
   <span class="test-field-value">{item.product.getTestField()}</span>
 </li>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-In this template, we tell template to be registered in the `invoice.item.name` view list (more about {% link "template system in X-Cart" ref_rwQykwuT %}).
+In this template, we tell template to be registered in the `invoice.item.name` view list (more about {% link "template system in X-Cart" ref_E88KCMDD %}).
 
 Another important part is that we just call value of **testField** property as `item.product.getTestField()`, even though we did not declare `getTestField()` method in the `\XLite\Model\Product`. X-Cart creates `get{PropertyName}()` methods for each property automatically, if it is not declared explicitly.
 
@@ -126,6 +126,6 @@ You can download this module from here: [https://dl.dropboxusercontent.com/u/23
 
 ## Attachments:
 
-* [new-field-on-invoice.png]({{site.baseurl}}/attachments/8225149/8356106.png) (image/png)  
-* [product-details-custom-field.png]({{site.baseurl}}/attachments/8225149/8356107.png) (image/png)  
+* [new-field-on-invoice.png]({{site.baseurl}}/attachments/8225149/8356106.png) (image/png)
+* [product-details-custom-field.png]({{site.baseurl}}/attachments/8225149/8356107.png) (image/png)
 * [thank-you-page-with-custom-product-field.png]({{site.baseurl}}/attachments/8225149/8356108.png) (image/png)

@@ -20,6 +20,9 @@ markdown: kramdown
 incremental: false
 lsi: true
 
+kramdown:
+  input: GFM
+
 index_path: "links.xml"
 
 elasticsearch:

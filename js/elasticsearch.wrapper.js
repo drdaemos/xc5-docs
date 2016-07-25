@@ -87,27 +87,32 @@ layout: null
         },
       }
     }).then(this.onSuccess.bind(this), this.onFail.bind(this));
+
   }
 
   Search.prototype.onSuccess = function (response) {
-    var pages = [];
-    var hits = response.hits.hits;
+    try {
+      var pages = [];
+      var hits = response.hits.hits;
 
-    for (var i=0; i<hits.length; i++) {
-      var title = hits[i].fields.title[0];
-      var url = hits[i].fields.url[0];
-      var date = hits[i].fields.page_date[0];
-      var highlight = hits[i].highlight.content[0];
-      var page = {
-        title: title,
-        url:   url,
-        date:  date,
-        highlight: _.unescape(highlight)
-      };
-      pages.push(page);
+      for (var i=0; i<hits.length; i++) {
+        var title = hits[i].fields.title[0];
+        var url = hits[i].fields.url[0];
+        var date = hits[i].fields.page_date[0];
+        var highlight = _.isUndefined(hits[i].highlight) ? '' : hits[i].highlight.content[0];
+        var page = {
+          title: title,
+          url:   url,
+          date:  date,
+          highlight: _.unescape(highlight)
+        };
+        pages.push(page);
+      }
+      // show result
+      this.renderResult(pages);
+    } catch (e) {
+      console.error(e.message);
     }
-    // show result
-    this.renderResult(pages);
   }
 
   Search.prototype.onFail = function (err) {
@@ -129,7 +134,7 @@ layout: null
 
   Search.prototype.renderResult = function (pages) {
     if (pages.length == 0) {
-      this.elements.resultsContainer.append("No result were found.");
+      this.elements.resultsContainer.append("No results were found.");
     } else {
       var str = "<section class='ui very relaxed items search-results-list'>";
       for (var i = 0; i < pages.length; i++) {

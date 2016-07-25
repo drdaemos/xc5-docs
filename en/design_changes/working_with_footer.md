@@ -1,5 +1,5 @@
 ---
-identifier: ref_Pkzprcbf
+identifier: ref_EQShsqNJ
 updated_at: 2014-12-24 00:00
 layout: article_with_sidebar
 lang: en
@@ -16,7 +16,7 @@ This article describes how X-Cart developers can change content of footer area i
 
 For the sake of example, let us add a **Visa/MasterCard** logo to the left part of the footer. First we have to have a look at how default HTML code of the footer area look like:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <div id="footer-area">
 
 	<div id="secondary-menu" class="clearfix">
@@ -34,11 +34,11 @@ For the sake of example, let us add a **Visa/MasterCard** logo to the left part
 	</div>
 
 </div>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Eventually, we want to have a code as follows:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <div id="footer-area">
 
 	<div id="visa-logo">
@@ -64,7 +64,7 @@ Eventually, we want to have a code as follows:
 	</div>
 
 </div>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 In details, we want to 
 
@@ -84,23 +84,23 @@ Once we apply this change to footer's HTML code, we will be able to specify `flo
 
 Content of `<div id="footer-area>` section is defined by the `<X-Cart>/skins/default/en/layout/main.footer.tpl` template. Our module should alter its content as it was described in the **Introduction** section.
 
-We {% link "create an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **FooterDemo**. Our **Main.php** file must contain a directive to {% link "remove the default implementation" ref_rwQykwuT#Step2-applyingdesignchanges-Hidingtemplatesandwidgets %} of   
-`<X-Cart>/skins/default/en/layout/main.footer.tpl` template as we would like to create our own version of it, so we add the following method into the  
+We {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **FooterDemo**. Our **Main.php** file must contain a directive to {% link "remove the default implementation" ref_E88KCMDD#Step2-applyingdesignchanges-Hidingtemplatesandwidgets %} of 
+`<X-Cart>/skins/default/en/layout/main.footer.tpl` template as we would like to create our own version of it, so we add the following method into the
 `<X-Cart>/classes/XLite/Module/Tony/FooterDemo/Main.php` file: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 public static function runBuildCacheHandler()
 {
     parent::runBuildCacheHandler();
 
     \XLite\Core\Layout::getInstance()->removeTemplateFromLists('layout/main.footer.tpl');
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-Then, we create our implementation of the same template. We create the `<X-Cart>/skins/default/en/modules/Tony/FooterDemo/footer.tpl` file and insert the default version of   
+Then, we create our implementation of the same template. We create the `<X-Cart>/skins/default/en/modules/Tony/FooterDemo/footer.tpl` file and insert the default version of 
 `<X-Cart>/skins/default/en/layout/main.footer.tpl` template's code as a beginning: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 
 {**
@@ -117,11 +117,11 @@ Then, we create our implementation of the same template. We create the `<X-Cart>
 <div id="footer-area">
 <list name="layout.main.footer">
 </div>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 We change it a little, so it would fit our requirements for HTML code from **Introduction** section: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * @ListChild (list="layout.footer", weight="500")
@@ -134,15 +134,15 @@ We change it a little, so it would fit our requirements for HTML code from **Int
 		<list name="layout.main.footer">
 	</div>
 </div>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Of course, do not forget to upload **visa.jpg** image into the `<X-Cart>/skins/default/en/modules/Tony/FooterDemo/img/` folder.
 
-Our mod is almost done and we only need to apply several CSS rules in order to make the appearance of updated footer smooth. We are going to {% link "add new CSS file" ref_omMqRbnh %} to our mod.
+Our mod is almost done and we only need to apply several CSS rules in order to make the appearance of updated footer smooth. We are going to {% link "add new CSS file" ref_p0CRZmMS %} to our mod.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/FooterDemo/View/AView.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -159,11 +159,11 @@ abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
         return $list;
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 In addition to that, we have to create aforementioned CSS file and we create the `<X-Cart>/skins/default/en/modules/Tony/FooterDemo/css/style.css` file with the following content:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 #visa-logo {
 	float: left;
 }
@@ -174,7 +174,7 @@ In addition to that, we have to create aforementioned CSS file and we create the
 	float: left;
 	margin-left: 40px;
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 That is it. Now we need to re-deploy the store and check the results in customer store-front. It should be as follows:![]({{site.baseurl}}/attachments/8225291/8356162.png)
 
@@ -184,5 +184,5 @@ You can download this mod's example from here: [https://dl.dropboxusercontent.c
 
 ## Attachments:
 
-* [default-footer.png]({{site.baseurl}}/attachments/8225291/8356161.png) (image/png)  
+* [default-footer.png]({{site.baseurl}}/attachments/8225291/8356161.png) (image/png)
 * [custom-footer-in-customer-area.png]({{site.baseurl}}/attachments/8225291/8356162.png) (image/png)

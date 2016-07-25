@@ -1,5 +1,5 @@
 ---
-identifier: ref_bnXgC3Vv
+identifier: ref_haeJE8rQ
 updated_at: 2015-04-16 00:00
 layout: article_with_sidebar
 lang: en
@@ -51,7 +51,7 @@ Once you are done with the CSV file, you should go to the [http://www.x-cart.co
 
 Fill in the form of this script as:
 
-*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: {% link "Step 1 - creating simplest module#Choosingidentifiers" ref_TZnqVJsw#Step1-creatingsimplestmodule-Choosingidentifiers %}
+*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: {% link "Step 1 - creating simplest module#Choosingidentifiers" ref_G2mlgckf#Step1-creatingsimplestmodule-Choosingidentifiers %}
 *   **Module author** should contain the name of the translation author how it should be displayed to merchants.
 *   **Module service name** should contain the ID of your module in X-Cart. See more here: {% link "Step 1 - creating simplest module#Choosingidentifiers" Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Choosingidentifiers %}
 *   **Module name** should contain the name of your module how it is going to be displayed to merchants.
@@ -68,8 +68,8 @@ This script will process your translation file and will create a module out of i
 
 ## Attachments:
 
-* [translations-csv-icon.png]({{site.baseurl}}/attachments/7504191/7602235.png) (image/png)  
-* [csv-translations.png]({{site.baseurl}}/attachments/7504191/7602236.png) (image/png)  
-* [x-cart.com-translation-script.png]({{site.baseurl}}/attachments/7504191/7602237.png) (image/png)  
-* [create-translation-module-form.png]({{site.baseurl}}/attachments/7504191/7602772.png) (image/png)  
+* [translations-csv-icon.png]({{site.baseurl}}/attachments/7504191/7602235.png) (image/png)
+* [csv-translations.png]({{site.baseurl}}/attachments/7504191/7602236.png) (image/png)
+* [x-cart.com-translation-script.png]({{site.baseurl}}/attachments/7504191/7602237.png) (image/png)
+* [create-translation-module-form.png]({{site.baseurl}}/attachments/7504191/7602772.png) (image/png)
 * [Screen Shot 2015-04-16 at 14.05.52 .png]({{site.baseurl}}/attachments/7504191/8717039.png) (image/png)

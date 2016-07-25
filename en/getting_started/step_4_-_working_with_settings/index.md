@@ -1,5 +1,5 @@
 ---
-identifier: ref_Ox5XLSck
+identifier: ref_qFCH64Dt
 updated_at: 2015-01-05 00:00
 layout: article_with_sidebar
 lang: en
@@ -14,9 +14,9 @@ categories:
 
 This article aims to teach developers how to create settings of their module and then use them in the code. This article assumes that you have already learnt three previous articles from **Getting started** section:
 
-*   {% link "Step 1 - creating simplest module" ref_TZnqVJsw %}
-*   {% link "Step 2 - applying design changes" ref_rwQykwuT %}
-*   {% link "Step 3 - applying logic changes" ref_0xIAMJyA %}
+*   {% link "Step 1 - creating simplest module" ref_G2mlgckf %}
+*   {% link "Step 2 - applying design changes" ref_E88KCMDD %}
+*   {% link "Step 3 - applying logic changes" ref_AF6bmvL6 %}
 
 For the sake of example, we will create a module that will have a textarea setting where you can put any HTML code and this HTML code will be added between `<head></head>` tags on each page in front-end. Also, this guide will contain code examples of how to create other setting types.
 
@@ -39,14 +39,14 @@ For the sake of example, we will create a module that will have a textarea setti
 1.  Create the module according to {% link "step 1" Step-1---creating-simplest-module_524296.html %} article. In my example, I am using developer ID as **Tony** and module ID as **SettingsDemo**.
 2.  Put the following method into your `Main.php` file: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     public static function showSettingsForm() 
     {
         return true;
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
-    This method will tell X-Cart that it must show **Settings** link near the module in the **Extensions** > **Installed modules** section as follows:   
+    This method will tell X-Cart that it must show **Settings** link near the module in the **Extensions** > **Installed modules** section as follows: 
     ![]({{site.baseurl}}/attachments/8224795/8355862.png)
 
 3.  Re-deploy your store and then enable this newly created module.
@@ -56,7 +56,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 1.  Create the `install.yaml` file in the root folder of your module. I am creating it in the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/` folder.
 2.  Put the following content there: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     XLite\Model\Config:
       - name: html_code
         category: Tony\SettingsDemo
@@ -67,13 +67,15 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
           - code: en
             option_name: Put your HTML code here
             option_comment: I am comment to the option and I am here just for show that you can put some text into me
-    {% endraw %}{% endhighlight %}
-3.  Once it is done, push the changes to the database using {% link "load-yaml.php" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
+    ```{% endraw %}
 
-    {% highlight php %}{% raw %}
+3.  Once it is done, push the changes to the database using {% link "load-yaml.php" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
+
+    {% raw %}```php
     ../../next-sdk/devkit/macros/load-yaml.php classes/XLite/Module/Tony/SettingsDemo/install.yaml
-    {% endraw %}{% endhighlight %}
-4.  Go to the module settings and you will see the following page:  
+    ```{% endraw %}
+
+4.  Go to the module settings and you will see the following page:
     ![]({{site.baseurl}}/attachments/8224795/8355863.png)
 5.  Now you can put your own HTML code into this textarea field. X-Cart can save it, yet does not know how to use it.
 
@@ -82,7 +84,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 1.  Create the viewer class in your module as per {% link "step 2" Step-2---applying-design-changes_8224787.html %} article. Since my developer ID is **Tony** and module ID is **SettingsDemo**, I am creating the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/View/Header.php` file. You do not need to create .php file with Header name, it can be whatever you like, e.g. Code.php, HTML.php, etc.
 2.  Put the following content into your viewer class: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
     namespace XLite\Module\Tony\SettingsDemo\View;
     /**
@@ -100,7 +102,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
     		return \XLite\Core\Config::getInstance()->Tony->SettingsDemo->html_code;
     	}
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     _Note: if you are using your own developer and module IDs, you should change the namespace part of this PHP code to namespace XLite\Module\<Your-Developer-ID>\<Your-Module-ID>\View;_
 
@@ -108,19 +110,19 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 
 3.  Now we need to create the template that was defined the `getDefaultTemplate()` method of the viewer class. Create the `<X-Cart>/skins/default/en/modules/Tony/SettingsDemo/html_code.tpl` file with the following content: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     {getHtmlCode():h}
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     This code simply calls `getHtmlCode()` method of our viewer class and output its result **without** applying [htmlentites()](http://php.net/function.htmlentities.php) function to the result. If we omit **:h** modifier, then all special symbols like <, >, etc will be converted to HTML entities.
 
 4.  Re-deploy the store and check the results. The HTML code specified in the setting field will be added to `<head></head>` section of all pages in store-front.
 5.  _Note: you can ask why do we need specify HTML code, not pure JS or CSS one? The answer is: quite often web-services provide integration code like this _
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <script type="text/javascript">var some_var="value";</script> 
     <script type="text/javascript" src="http://link.to/some/javascript/file.js"></script> 
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     _and you cannot insert it into the web-page code using custom JS/CSS code fields from Theme Tweaker module. In this case, our module would work perfectly._
 
@@ -140,7 +142,8 @@ This is a type of setting we have used in our module already. It will allow to c
 
 YAML code example:
 
-**Textarea setting**{% highlight php %}{% raw %}
+**Textarea setting**
+{% raw %}```php
   - name: textarea_variable
     category: Tony\SettingsDemo
     type: textarea
@@ -150,7 +153,7 @@ YAML code example:
       - code: en
         option_name: I am textarea setting
         option_comment: Description of textarea setting
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Here is the list of parameters you can specify for it:
 
@@ -174,7 +177,8 @@ This is a type of setting that will be represented as a single-line text field.
 
 YAML code example:
 
-**Text setting**{% highlight php %}{% raw %}
+**Text setting**
+{% raw %}```php
   - name: text_variable
     category: Tony\SettingsDemo
     type: text
@@ -184,7 +188,7 @@ YAML code example:
       - code: en
         option_name: I am text setting
         option_comment: Description of text setting
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Parameters are the same as for **Textarea** setting.
 
@@ -196,7 +200,8 @@ This is a setting type that will be represented – obviously – as a checkbox.
 
 YAML code example:
 
-**Checkbox setting**{% highlight php %}{% raw %}
+**Checkbox setting**
+{% raw %}```php
   - name: checkbox_variable
     category: Tony\SettingsDemo
     type: checkbox
@@ -206,7 +211,7 @@ YAML code example:
       - code: en
         option_name: I am checkbox
         option_comment: Checkbox description
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Parameters are the same as for **Textarea** option.
 
@@ -218,7 +223,8 @@ This is an element that is used on settings page in order to separate option gro
 
 YAML code example:
 
-**Separator**{% highlight php %}{% raw %}
+**Separator**
+{% raw %}```php
   - name: separator_delimiter
     category: Tony\SettingsDemo
     type: separator
@@ -226,7 +232,7 @@ YAML code example:
     translations:
       - code: en
         option_name: I am separator  
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Parameters available are only **orderby** and **option_name** out of common ones (see **Textarea** parameters).
 
@@ -240,7 +246,8 @@ For the sake of example, let us add a selectbox of timezone to our module.
 
 YAML code example:
 
-**Time zone selectbox**{% highlight php %}{% raw %}
+**Time zone selectbox**
+{% raw %}```php
   - name: timezone_selectbox
     category: Tony\SettingsDemo
     type: \XLite\View\FormField\Select\TimeZone
@@ -249,7 +256,7 @@ YAML code example:
       - code: en
         option_name: I am timezone selectbox
         option_comment: Description of timezone selectbox
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Parameters are almost common with only difference: you specify the class name in the **type** field. This class defines the representation of how exactly your setting should behave.
 
@@ -257,7 +264,7 @@ Another example is **Yes/No **selector:
 
 ![]({{site.baseurl}}/attachments/8224795/8355874.png)
 
-{% highlight php %}{% raw %}
+{% raw %}```php
   - name: yesno_selectbox
     category: Tony\SettingsDemo
     type: \XLite\View\FormField\Select\YesNo
@@ -267,21 +274,21 @@ Another example is **Yes/No **selector:
       - code: en
         option_name: I am Yes-No selectbox
         option_comment: Description of Yes-No selectbox
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Again, parameters are the same, but you specify the class name in the **type** field.
 
-You can use all classes from the `<X-Cart>/classes/XLite/View/FormField/` folder in your settings or {% link "create your own one" ref_9HKpu5vk %}.
+You can use all classes from the `<X-Cart>/classes/XLite/View/FormField/` folder in your settings or {% link "create your own one" ref_fxJxv6rf %}.
 
 ## Attachments:
 
-* [module-settings.png]({{site.baseurl}}/attachments/8224795/8355862.png) (image/png)  
-* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355864.png) (image/png)  
-* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355868.png) (image/png)  
-* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355863.png) (image/png)  
-* [textarea-field-example.png]({{site.baseurl}}/attachments/8224795/8355869.png) (image/png)  
-* [text-setting-example.png]({{site.baseurl}}/attachments/8224795/8355870.png) (image/png)  
-* [checkbox-setting-example.png]({{site.baseurl}}/attachments/8224795/8355871.png) (image/png)  
-* [separator-setting-example.png]({{site.baseurl}}/attachments/8224795/8355872.png) (image/png)  
-* [timezone-setting-example.png]({{site.baseurl}}/attachments/8224795/8355873.png) (image/png)  
+* [module-settings.png]({{site.baseurl}}/attachments/8224795/8355862.png) (image/png)
+* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355864.png) (image/png)
+* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355868.png) (image/png)
+* [demo-settings-settings.png]({{site.baseurl}}/attachments/8224795/8355863.png) (image/png)
+* [textarea-field-example.png]({{site.baseurl}}/attachments/8224795/8355869.png) (image/png)
+* [text-setting-example.png]({{site.baseurl}}/attachments/8224795/8355870.png) (image/png)
+* [checkbox-setting-example.png]({{site.baseurl}}/attachments/8224795/8355871.png) (image/png)
+* [separator-setting-example.png]({{site.baseurl}}/attachments/8224795/8355872.png) (image/png)
+* [timezone-setting-example.png]({{site.baseurl}}/attachments/8224795/8355873.png) (image/png)
 * [yes-no-setting-example.png]({{site.baseurl}}/attachments/8224795/8355874.png) (image/png)

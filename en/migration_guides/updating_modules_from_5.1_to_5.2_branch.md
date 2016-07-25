@@ -1,5 +1,5 @@
 ---
-identifier: ref_KLtcTFm6
+identifier: ref_cz32Z9u5
 updated_at: 2015-06-09 00:00
 layout: article_with_sidebar
 lang: en
@@ -25,7 +25,7 @@ This article describes the major change each module developer must apply to thei
 
 Your module is a subject to hot-fix change if any of conditions below were triggered during module adaptation from 5.1 to 5.2 version:
 
-1.  You changed any {% link "Model" ref_yzmkyyfu %} class' properties from `uinteger` to `integer` type.
+1.  You changed any {% link "Model" ref_wmExvPDD %} class' properties from `uinteger` to `integer` type.
 
 2.  You used `integer` properties in your Model classes .
 
@@ -39,44 +39,45 @@ You need to release the next version of your module that will contain the follow
 
 1.  If you changed `uinteger` properties to `integer` ones. Then, you need to specify new `integer` properties as follows: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         /**
          * @Column         (type="integer", options={ "unsigned": true })
          */
         protected $id;
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     not just 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         /**
          * @Column         (type="integer")
          */
         protected $id;
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 2.  If you used `integer` properties in your Models and these properties **are not** used as **indexes**, then you must replace such properties with the following directive: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         /**
          * @Column         (type="integer", nullable=true)
          */
         protected $id;
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     not just 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         /**
          * @Column         (type="integer")
          */
         protected $id;
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     The reason for this change is that previous Doctrine version assumed `nullable=true` even if it was not specified. This change will allow backward compatibility.
 
-Aside from that, your module must {% link "decorate" ref_0xIAMJyA %} the `postprocessSchema()` method of the  `\XLite\Core\Database` class as follows: 
+Aside from that, your module must {% link "decorate" ref_AF6bmvL6 %} the `postprocessSchema()` method of the  `\XLite\Core\Database` class as follows: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDecorator
 {
     /**
@@ -105,11 +106,11 @@ abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDec
         return array_merge($tmp1, $tmp2);
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-and your module must include the following {% link "pre-upgrade hook" ref_e7hPRwXR %}: 
+and your module must include the following {% link "pre-upgrade hook" ref_pQQ1CLe1 %}: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -139,7 +140,7 @@ return function()
         }
     }
 };
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 where `$tables` variable must contain all tables of your module.
 

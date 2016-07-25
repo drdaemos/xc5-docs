@@ -1,5 +1,5 @@
 ---
-identifier: ref_1ysvAzwS
+identifier: ref_Q0TivL1v
 updated_at: 2016-06-21 00:00
 layout: article_with_sidebar
 lang: en
@@ -12,11 +12,11 @@ categories:
 
 Search via the search form in X-Cart is performed based on the "any word" parameter; it is possible, however, to change the default behavior so the search is performed by "all words". To do so, follow the steps below:
 
-1.  Create the simplest module as described in the section {% link "Step 1 - creating simplest module" ref_TZnqVJsw %} of this manual.
+1.  Create the simplest module as described in the section {% link "Step 1 - creating simplest module" ref_G2mlgckf %} of this manual.
 
 2.  In this module, add a new class:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     namespace XLite\Module\<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>\View\Form\Product\Search\Customer;
     class SimpleForm extends \XLite\View\Form\Product\Search\Customer\SimpleForm implements \XLite\Base\IDecorator
     {
@@ -27,7 +27,7 @@ Search via the search form in X-Cart is performed based on the "any word" parame
            return $params;
        }
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     The function getDefaultParams, as you might expect from its name, is responsible for the default parameters of this "View". 
 

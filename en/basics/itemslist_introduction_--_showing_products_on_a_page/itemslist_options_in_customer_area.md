@@ -1,5 +1,5 @@
 ---
-identifier: ref_eDIp0JOK
+identifier: ref_uW8ghAid
 updated_at: 2015-01-12 00:00
 layout: article_with_sidebar
 lang: en
@@ -12,7 +12,7 @@ categories:
 
 # Introduction
 
-This article is in advanced explanation of how to use {% link "ItemsLists in customer area" ref_1n8lHHNV %}. It explains how to enable/disable pagination, sorting options, display options etc.
+This article is in advanced explanation of how to use {% link "ItemsLists in customer area" ref_MRidEzuz %}. It explains how to enable/disable pagination, sorting options, display options etc.
 
 # Table of Contents
 
@@ -24,7 +24,7 @@ This article is in advanced explanation of how to use {% link "ItemsLists in cus
 
 Main method that defines what options that exist in an **ItemsList** is `defineWidgetParams()`. See its implementation in the `\XLite\View\ItemsList\Product\Customer\ACustomer` class as an example: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
     protected function defineWidgetParams()
     {
         parent::defineWidgetParams();
@@ -53,7 +53,7 @@ Main method that defines what options that exist in an **ItemsList** is `defineW
             ),
         );
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Definition of parameters is done during widget initialization and if you want to override some values, you can do this in the `setWidgetParams()` method. We will take a look at this method a bit later, but for now let us have a look at default parameters of product **ItemsList**:
 
@@ -71,7 +71,7 @@ Definition of parameters is done during widget initialization and if you want to
 
 In our mods, we sometimes want to disable some of these parameters or define another default value. It can be done in the `setWidgetParams()` method of an ItemsList widget: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 public function setWidgetParams(array $params)
 {
 	parent::setWidgetParams($params);
@@ -87,4 +87,4 @@ public function setWidgetParams(array $params)
 	$this->widgetParams[self::PARAM_SHOW_SORT_BY_SELECTOR]->setValue(false);
 }
 
-{% endraw %}{% endhighlight %}
+```{% endraw %}

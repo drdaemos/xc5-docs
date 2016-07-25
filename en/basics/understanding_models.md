@@ -1,5 +1,5 @@
 ---
-identifier: ref_yzmkyyfu
+identifier: ref_wmExvPDD
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
@@ -25,11 +25,11 @@ For the sake of example, we will create a **TestEntity** class which will have t
 
 # Implementation
 
-We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **RepoDemo**.
+We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **RepoDemo**.
 
 Once it is created, we create our **Model** class. For that, we create `<X-Cart>/classes/XLite/Module/Tony/RepoDemo/Model/TestEntity.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 namespace XLite\Module\Tony\RepoDemo\Model;
@@ -53,52 +53,55 @@ class TestEntity extends \XLite\Model\AEntity
      */
     protected $text;
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Let us have a closer look at what we are doing here:
 
-1.  We start with defining {% link "namespace" ref_ddaUT3B3 %}: 
+1.  We start with defining {% link "namespace" ref_FAgFbEx9 %}: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     namespace XLite\Module\Tony\RepoDemo\Model;
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 2.  Then in [DocBlocks](http://www.phpdoc.org/docs/latest/guides/docblocks.html) comments we define that this class is a new entity: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     @Entity
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     and it must be stored in the `xc_**test_entities**` table (assuming you have not changed table prefix in `<X-Cart/etc/config.php`): 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     @Table (name="test_entities")
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  Our class is the basic one that is why it extends `\XLite\Model\AEntity` class: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     class TestEntity extends \XLite\Model\AEntity
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 4.  Our **TestEntity** has two properties. First is `$id` that is unique identifier of TestEntity in the database: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         /**
          * @Id
          * @GeneratedValue (strategy="AUTO")
          * @Column         (type="integer")
          */
     	protected $id; 
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     That is why we mark this property with `@Id` tag. We also specify that it has in an **integer** type and its value must be **automatically** **generated** upon creating a new object.
 
 5.  The second property is `$text` that must have **TEXT** MySQL type: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         /**
          * @Column (type="text")
          */
         protected $text;
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
 We are done with creating an entity class.
 
@@ -106,7 +109,7 @@ When we re-deploy the store X-Cart will create `xc_test_entities` table with nee
 
 Now, we create the `test.php` script in X-Cart's root and start experimenting with our **TestEntity** class. Here is a content of the `test.php` file: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 //X-Cart initializtion
@@ -140,22 +143,22 @@ $result = \XLite\Core\Database::getRepo('\XLite\Module\Tony\RepoDemo\Model\TestE
 foreach ($result as $entity) {
 	echo 'entity text: ' . $entity->getText() . '<br />';
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 After running this script you should get the following results: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 there should be no records array ( )
 entity text: test value
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 If you run the script the second time, you will see that first pulling of **NewEntities** will actually get you some results and the output will be a bit different as there are two TestEntities in the database now: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 there should be no records array ( 0 => XLite\Module\Tony\RepoDemo\Model\TestEntity::__set_state(array( 'id' => 1, 'text' => 'test value', )), )
 entity text: test value
 entity text: test value
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Module pack
 

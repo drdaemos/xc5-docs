@@ -1,5 +1,5 @@
 ---
-identifier: ref_pWb0TZ7H
+identifier: ref_7BMuAMXk
 updated_at: 2015-01-22 00:00
 layout: article_with_sidebar
 lang: en
@@ -39,7 +39,7 @@ Good approaches are:
 
 1.  Look at the source code of the problem element and search for some key wordings near it in the X-Cart code, e.g. **CSS classes** and **CSS ids** near the problem element. Such searching will give you a template that generates the problem element. Then, you can search for this template name or template path and find a viewer class that handles this template or another template that includes it. Searching this way, you will be able to find exact template or PHP function that generates the incorrect output.
 2.  If you cannot find the right template, because searching for CSS class name outputs too many results, you can try to find the template by using **Webmaster Kit** module. In order to use it, enable the module itself and tick on the **Profiler enabled** and **Mark templates** options in its settings. Then, go to the problem part of the store and hover your pointer over the problem element. It will tell you what templates or viewer class were used for displaying it.
-3.  If you could find the template, but cannot find where exactly it has been included into, then the most likely this template is a part of some {% link "view list" ref_rwQykwuT %} and you should search for the name of view list it is included into. For that check the **@ListChild** directive in the top comments of template or class.
+3.  If you could find the template, but cannot find where exactly it has been included into, then the most likely this template is a part of some {% link "view list" ref_E88KCMDD %} and you should search for the name of view list it is included into. For that check the **@ListChild** directive in the top comments of template or class.
 
 Once you identified (or suspect) a problem piece of code, then you should use the same approach as with fatal errors: go to the `<X-Cart>var/run/` folder and start adding debug code ([var_dump()](http://php.net/var_dump), [var_export()](http://php.net/var_export) or [print_r()](http://php.net/print_r) functions) to this piece of software.
 
@@ -47,12 +47,12 @@ Once you identified (or suspect) a problem piece of code, then you should use th
 
 If you need to dump some variable during script execution and you cannot call `die()`, then you can log the variable during execution by using the following method: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 \XLite\Logger::logCustom($log_name, $string_to_log, $whether_to_add_backtrace);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 1.  `$log_name` defines a file name where log will be saved. If you specify `$log_name = 'tony';` then your logs will be collected in `<X-Cart>/var/log/tony.log.YYYY-MM-DD.php` file.
-2.  `$string_to_log` defines a message that will be put into the log file. If you pass `$string_to_log` variable with non-string value, then X-Cart will run `var_export()` function on it and then save the result.  
+2.  `$string_to_log` defines a message that will be put into the log file. If you pass `$string_to_log` variable with non-string value, then X-Cart will run `var_export()` function on it and then save the result.
     _Note: do not log entire objects, because your store will go down while doing var_export() on the object and your log will be empty._
 3.  `$whether_to_add_backtrace` defines whether backtrace should be put into log file. Backtrace is useful, but if you log a lot of info, this will be an overkill.
 

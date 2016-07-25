@@ -1,5 +1,5 @@
 ---
-identifier: ref_RiX9uSqq
+identifier: ref_TVWpzWfL
 updated_at: 2016-06-17 00:00
 layout: article_with_sidebar
 lang: en
@@ -24,10 +24,10 @@ This article describes the process of creating a simple shipping method. In our 
 
 # Implementation
 
-We start by {% link "creating an empty module" ref_TZnqVJsw %} with the developer ID **XCExample **and the module ID **ShippingDemo**. Then, we create the file  
+We start by {% link "creating an empty module" ref_G2mlgckf %} with the developer ID **XCExample **and the module ID **ShippingDemo**. Then, we create the file
 <X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 namespace XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor;
@@ -85,16 +85,16 @@ class MyProcessor extends \XLite\Model\Shipping\Processor\AProcessor
        ]);
    }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This is the simplest implementation of a shipping processor class. We extend the class \XLite\Model\Shipping\Processor\AProcessor as every shipping processor must do it. In our class, we must have getProcessorName(), getProcessorId() and getRates().
 
 *   First, we define `$getProcessorId` property as MyProcessor;
-*   `getProcessorName()` method must return a string that will identify this shipping carrier in the admin area. In our case, it will look as follows:  
+*   `getProcessorName()` method must return a string that will identify this shipping carrier in the admin area. In our case, it will look as follows:
     ![]({{site.baseurl}}/attachments/8225333/9633889.png?effects=drop-shadow)
 *   `getRates()` method is the most important one – this method returns an array of `\XLite\Model\Shipping\Rate` object, and each of them represents a shipping option at checkout. Each shipping rate must contain a link to `\XLite\Model\Shipping\Method` object and a rate value. In our module, we will have **My Shipping Method** shipping method (it will be created a bit later), and this shipping method can be found via `getShippingMethod()` method in this class: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 protected function getShippingMethod()
 {
    return \XLite\Core\Database::getRepo('\XLite\Model\Shipping\Method')->findOneBy([
@@ -102,25 +102,25 @@ protected function getShippingMethod()
        'carrier'   => $this->getProcessorId()
    ]);
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Let us have a closer look at the method `getRates()`. First, we create an empty shipping rate object: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $rate = new \XLite\Model\Shipping\Rate();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 then, we assign a shipping method to it: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $rate->setMethod($this->getShippingMethod());
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 and finally assign a shipping rate to it: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $rate->setBaseRate(10.00);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 After that, we want to have this shipping rate object as an element of an array and return this array from the `getRates()` method.
 
@@ -130,7 +130,7 @@ We are almost done with the mod. We only need to create a shipping method in the
 
 Creating a shipping method is as easy as creating a YAML file. We create `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/install.yaml` with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 XLite\Model\Shipping\Method:
  - processor: MyProcessor
    carrier: ''
@@ -151,17 +151,17 @@ XLite\Model\Shipping\Method:
    translations:
      - code: en
        name: "My Shipping Method"
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 We add records to the shipping methods repository about the new shipping methods with the names **My Shipping Method** and **My Shipping Method(parent)**.
 
 The first method is a parent method; its name **My Shipping Method(parent) **will be used as the name of the method in the admin area of the site. The second method is a child method, its name will be visible to customers.. It is **enabled** and has **carrier** field as **M****yProcessor** and **processor** field as **MyProcessor**.
 
-_Note: if you have already activated the module, do not forget to {% link "push this install.yaml" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %} to the database._
+_Note: if you have already activated the module, do not forget to {% link "push this install.yaml" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %} to the database._
 
 Then, we need to create the file XLite/Module/XCExample/ShippingDemo/Controller/Admin/MyProcessor.php
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 class MyProcessor extends \XLite\Controller\Admin\ShippingSettings
 {
    /**
@@ -174,7 +174,7 @@ class MyProcessor extends \XLite\Controller\Admin\ShippingSettings
        return new ();
    }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 The method **getProcessor()** returns a new instance of the class \XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor\MyProcessor.
 
@@ -182,7 +182,7 @@ It is needed to activate the method.
 
 Finally, we need to register our shipping processor in the system. For that purpose, we go to the `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Main.php` file and add the following method there: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
    public static function init()
 {
    parent::init();
@@ -191,7 +191,7 @@ Finally, we need to register our shipping processor in the system. For that purp
        '\XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor\MyProcessor'
    );
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 **`\XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor\MyProcessor`** is the name of our shipping processor class.
 
@@ -209,11 +209,11 @@ And activate it:
 
 If everything is fine, you can see it on the list:
 
-![]({{site.baseurl}}/attachments/8225333/9633892.png?effects=drop-shadow)  
+![]({{site.baseurl}}/attachments/8225333/9633892.png?effects=drop-shadow)
 
 Then go to customer area, add some product to a cart and proceed to checkout. You should be able to see our shipping method there:
 
-![]({{site.baseurl}}/attachments/8225333/9633893.png?effects=drop-shadow)  
+![]({{site.baseurl}}/attachments/8225333/9633893.png?effects=drop-shadow)
 
 # Module pack
 
@@ -221,12 +221,12 @@ You can download this module example from here: [XCExample-ShippingDemo-v5_2_0.
 
 ## Attachments:
 
-* [my-processor.png]({{site.baseurl}}/attachments/8225333/8356175.png) (image/png)  
-* [my-processor-methods.png]({{site.baseurl}}/attachments/8225333/8356176.png) (image/png)  
-* [my-shipping-method.png]({{site.baseurl}}/attachments/8225333/8356177.png) (image/png)  
-* [image03.png]({{site.baseurl}}/attachments/8225333/9633891.png) (image/png)  
-* [image01.png]({{site.baseurl}}/attachments/8225333/9633890.png) (image/png)  
-* [image03.png]({{site.baseurl}}/attachments/8225333/9633889.png) (image/png)  
-* [image02.png]({{site.baseurl}}/attachments/8225333/9633892.png) (image/png)  
-* [image00.png]({{site.baseurl}}/attachments/8225333/9633893.png) (image/png)  
+* [my-processor.png]({{site.baseurl}}/attachments/8225333/8356175.png) (image/png)
+* [my-processor-methods.png]({{site.baseurl}}/attachments/8225333/8356176.png) (image/png)
+* [my-shipping-method.png]({{site.baseurl}}/attachments/8225333/8356177.png) (image/png)
+* [image03.png]({{site.baseurl}}/attachments/8225333/9633891.png) (image/png)
+* [image01.png]({{site.baseurl}}/attachments/8225333/9633890.png) (image/png)
+* [image03.png]({{site.baseurl}}/attachments/8225333/9633889.png) (image/png)
+* [image02.png]({{site.baseurl}}/attachments/8225333/9633892.png) (image/png)
+* [image00.png]({{site.baseurl}}/attachments/8225333/9633893.png) (image/png)
 * [XCExample-ShippingDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225333/9633894.tar) (application/x-tar)

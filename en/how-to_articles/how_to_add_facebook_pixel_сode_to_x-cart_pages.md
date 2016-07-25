@@ -1,5 +1,5 @@
 ---
-identifier: ref_Vu33Tgm6
+identifier: ref_dENrdWxT
 updated_at: 2016-05-05 00:00
 layout: article_with_sidebar
 lang: en
@@ -16,13 +16,13 @@ This article describes how to add Facebook Pixel code to X-Cart pages.
 
 Steps involved:
 
-1.  Create a new custom template file (for example, via FTP):  
+1.  Create a new custom template file (for example, via FTP):
 
-    skins/theme_tweaker/default/en/header/parts/fb_pixel_code.tpl  
+    skins/theme_tweaker/default/en/header/parts/fb_pixel_code.tpl
 
-2.  Add your Facebook Pixel Сode to the custom template:  
+2.  Add your Facebook Pixel Сode to the custom template:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
     {**
      * @ListChild (list="head", weight="999000")
@@ -48,10 +48,11 @@ Steps involved:
     /></noscript>
 
     <!-- End Facebook Pixel Code -->
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  (Optional) If you would like to report _ViewContent_ standard event, add the following code to your custom template:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     {if:getTarget()=#product#}
     <script>
     // ViewContent
@@ -66,10 +67,11 @@ Steps involved:
     });
     </script>
     {end:}
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 4.  (Optional) If you would like to report _InitiateCheckout_ and _Purchase_ standard events, add the following code to your custom template:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     {if:getTarget()=#checkout#}
     <script>
     // InitiateCheckout
@@ -89,10 +91,11 @@ Steps involved:
     });
     </script>
     {end:}
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 5.  (Optional) If you would like to report _Search_ standard event, add the following code to your custom template:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     {if:getTarget()=#search#}
     <script>
     // Search
@@ -100,12 +103,14 @@ Steps involved:
     fbq('track', 'Search');
     </script>
     {end:}
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 6.  Apply the following SQL patch to your X-Cart database:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/header/parts/fb_pixel_code.tpl", UNIX_TIMESTAMP());
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 7.  Re-generate X-Cart cache.
 
 Icon
@@ -116,9 +121,9 @@ See also:
 
 ## Related articles
 
-*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below the product list" /display/XDD/How+to+move+category+description+below+the+product+list %}
 *   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
+*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
+*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
 *   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
 *   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
 

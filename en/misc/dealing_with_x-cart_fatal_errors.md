@@ -1,5 +1,5 @@
 ---
-identifier: ref_JpScwThn
+identifier: ref_nI5Nu52p
 updated_at: 2014-09-23 00:00
 layout: article_with_sidebar
 lang: en
@@ -39,9 +39,9 @@ If you request a help on forums or send us a message, please specify as much inf
 
 Typical PHP syntax error looks like this:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 Parse error: syntax error, unexpected 'typo' (T_STRING), expecting function (T_FUNCTION) in /Applications/MAMP/htdocs/next/src/classes/XLite/Module/CDev/AmazonS3Images/Main.php on line 97
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 In this case you should check the file mentioned in the error message (e.g. `/Applications/MAMP/htdocs/next/src/classes/XLite/Module/CDev/AmazonS3Images/Main.php`) at the line 97 (as mentioned in the error message) and find the code that causes this problem.
 
@@ -49,22 +49,22 @@ This type of problem usually happens in user modules, so you can fix the problem
 
 # Problem with database connection
 
-Check [this guide](http://kb.x-cart.com/pages/viewpage.action?pageId=524295#InstallationGuide-1.Problemswithconnectiontodatabase) in order to find how you can fix this problem.
+Check {% link "this guide" http://kb.x-cart.com/pages/viewpage.action?pageId=524295#InstallationGuide-1.Problemswithconnectiontodatabase %} in order to find how you can fix this problem.
 
 # Problem with Doctrine entities relationship
 
 Such typical error message looks like this:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 A new entity was found through the relationship 'XLite\Model\Attribute#product' that was not configured to cascade persist operations for entity: XLite\Model\Product@0000000043bd29bd000000000dc64c73\. To solve this issue: Either explicitly call EntityManager#persist() on this unknown entity or configure cascade persist this association in the mapping for example @ManyToOne(..,cascade={"persist"}). If you cannot find out which entity causes the problem implement 'XLite\Model\Product#__toString()' to get a clue.
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This problem is most likely caused by the fact that the store data (products, categories, etc) was migrated to X-Cart incorrectly and some entities are not linked properly. In this particular cases, the database contains some product attributes that linked to a product and this product does not exist. You need to find such attributes and delete them in order to let your store work properly.
 
 You can find problem entities by running the following MySQL query:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 SELECT * from xc_attributes LEFT JOIN xc_products ON xc_products.product_id = xc_attributes.product__id WHERE xc_products.product_id IS NULL;
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 If you feel that you do not have enough tech knowledge to solve the problem yourself, please contact developers who migrated your data or our [support service](http://www.x-cart.com/contact-us.html).

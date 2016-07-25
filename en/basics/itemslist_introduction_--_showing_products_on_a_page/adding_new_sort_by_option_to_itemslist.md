@@ -1,5 +1,5 @@
 ---
-identifier: ref_sRpQl5hl
+identifier: ref_Dwd0HwPQ
 updated_at: 2015-03-18 00:00
 layout: article_with_sidebar
 lang: en
@@ -12,7 +12,7 @@ categories:
 
 # Introduction
 
-This article aims to teach X-Cart developers how they can add a sorting option to their {% link "ItemsLists" ref_1n8lHHNV %}.
+This article aims to teach X-Cart developers how they can add a sorting option to their {% link "ItemsLists" ref_MRidEzuz %}.
 
 For the sake of example we will add **Sort by date** option to all product ItemsLists as shown on the snapshot below:
 
@@ -29,10 +29,10 @@ Similar option already exists in [Product Advisor](http://www.x-cart.com/extensi
 
 # Implementation
 
-We start with {% link "creating a module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **SortingByDate**. In this module we are going to {% link "decorate" ref_0xIAMJyA %} the `\XLite\View\ItemsList\Product\Customer\ACustomer` class, so we create the  
+We start with {% link "creating a module" ref_G2mlgckf %} with developer ID **Tony** and module ID **SortingByDate**. In this module we are going to {% link "decorate" ref_AF6bmvL6 %} the `\XLite\View\ItemsList\Product\Customer\ACustomer` class, so we create the
 `<X-Cart>/classes/XLite/Module/Tony/SortingByDate/View/ItemsList/Product/Customer/ACustomer.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -44,11 +44,11 @@ namespace XLite\Module\Tony\SortingByDate\View\ItemsList\Product\Customer;
 abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
 {
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Adding of new sorting option is as easy as changing the `__construct()` method in this class:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
     public function __construct(array $params = array())
     {
         parent::__construct($params);
@@ -57,17 +57,17 @@ Adding of new sorting option is as easy as changing the `__construct()` method i
             'p.arrivalDate' => 'Sort by date',
         ) + $this->sortByModes;
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 As you can see, we call parent's constructor and then adding one more record to the `$this->sortByModes` array: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 		$this->sortByModes = array(
             'p.arrivalDate' => 'Sort by date',
         ) + $this->sortByModes;
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-*   This new record's key is a field that will be used by {% link "queryBuilder" ref_uZW9kVOM %} object for sorting results. In our case we are going to sort by date and key is `p.arrivalDate`.
+*   This new record's key is a field that will be used by {% link "queryBuilder" ref_FJyeE9lP %} object for sorting results. In our case we are going to sort by date and key is `p.arrivalDate`.
 *   The value of new record is a name of sorting option, which will be displayed to a customer. In our case it is **Sort by date**.
 
 That is it. Now we can re-deploy the store and check the results in store-front. It will look as follows:![]({{site.baseurl}}/attachments/8749095/8716415.png)
@@ -78,5 +78,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-* [sorting-options.png]({{site.baseurl}}/attachments/8749095/8716414.png) (image/png)  
+* [sorting-options.png]({{site.baseurl}}/attachments/8749095/8716414.png) (image/png)
 * [new-sorting-option-result.png]({{site.baseurl}}/attachments/8749095/8716415.png) (image/png)

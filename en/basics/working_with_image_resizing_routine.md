@@ -1,5 +1,5 @@
 ---
-identifier: ref_8sKuldQ6
+identifier: ref_5XhuExQ3
 updated_at: 2014-12-03 00:00
 layout: article_with_sidebar
 lang: en
@@ -27,10 +27,10 @@ To illustrate the image-resizing process, imagine that you uploaded 5000px x 500
 
 In order to disable image resizing routine in a whole store you can apply the following simple mod:
 
-1.  {% link "Create an empty module" ref_TZnqVJsw %}. We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
-2.  {% link "Decorate" ref_0xIAMJyA %} the `\XLite\View\Image` class ({% link "more info about classnames" ref_ddaUT3B3 %}), so that your class would look as follows: 
+1.  {% link "Create an empty module" ref_G2mlgckf %}. We are creating a module with developer ID **Tony** and module ID **DisableImageResize**.
+2.  {% link "Decorate" ref_AF6bmvL6 %} the `\XLite\View\Image` class ({% link "more info about classnames" ref_FAgFbEx9 %}), so that your class would look as follows: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -43,14 +43,15 @@ In order to disable image resizing routine in a whole store you can apply the fo
     		$this->widgetParams[self::PARAM_USE_CACHE] = new \XLite\Model\WidgetParam\Bool('Use cache', 0);
     	}
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  The only thing we change is we set `PARAM_USE_CACHE` to false. If you check default `\XLite\View\Image` class, you will see that this `PARAM_USE_CACHE` triggers this condition: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     $url = $this->getParam(self::PARAM_USE_CACHE)
                     ? $this->resizedURL
                     : $this->getParam(self::PARAM_IMAGE)->getFrontURL();
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     so if `PARAM_USE_CACHE` is true, then X-Cart returns a resized image, otherwise it returns default image URL.
 

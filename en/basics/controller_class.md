@@ -1,5 +1,5 @@
 ---
-identifier: ref_6UXvhZZc
+identifier: ref_hkVaxgds
 updated_at: 2015-01-13 00:00
 layout: article_with_sidebar
 lang: en
@@ -32,13 +32,13 @@ When X-Cart identifies controller class name based on the target parameter passe
 *   If **target=main**, then controller class name will be **Main**;
 *   If **target=featured_products**, then controller name will become **FeaturedProducts** and so on.
 
-If you make a request to `admin.php`, script X-Cart identifies a controller class name and after that looks for it in the `<X-Cart>/classes/XLite/Controller/Admin/` folder and then in the  
+If you make a request to `admin.php`, script X-Cart identifies a controller class name and after that looks for it in the `<X-Cart>/classes/XLite/Controller/Admin/` folder and then in the
 `<X-Cart>/classes/XLite/Module/<DEV-ID>/<MODULE-ID>/Controller/Admin/` folders of each module.
 
-If you make a request to `cart.php`, X-Cart identifies a controller class name and then looks for it in the `<X-Cart>/classes/XLite/Controller/Customer/` folder and then in the  
+If you make a request to `cart.php`, X-Cart identifies a controller class name and then looks for it in the `<X-Cart>/classes/XLite/Controller/Customer/` folder and then in the
 `<X-Cart>/classes/XLite/Module/<DEV-ID>/<MODULE-ID>/Controller/Customer/` folders of each module as well.
 
-When, controller class is found, X-Cart calls its `handleRequest()` method – see an implementation of the `processRequest()` method in the `\XLite` class ({% link "more about classnames in X-Cart" ref_ddaUT3B3 %}).
+When, controller class is found, X-Cart calls its `handleRequest()` method – see an implementation of the `processRequest()` method in the `\XLite` class ({% link "more about classnames in X-Cart" ref_FAgFbEx9 %}).
 
 Let us have a look at what exactly `handleRequest()` method does. See its implementation in the `\XLite\Controller\AController` class.
 
@@ -46,7 +46,7 @@ Let us have a look at what exactly `handleRequest()` method does. See its implem
 
 Its implementation: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
     public function handleRequest()
     {
         if (!$this->checkAccess()) {
@@ -66,12 +66,12 @@ Its implementation: 
             $this->doRedirect();
         }
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 1.  It checks whether you are allowed to access this resource – `if (!$this->checkAccess())` – whether this page is visible –  `elseif (!$this->isVisible())` – and whether we need a redirect to HTTPS – `elseif ($this->needSecure())` 
 2.  If everything is good, then it calls `run()` method, which is implemented as follows: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         protected function run()
         {
             if ($this->getAction() && $this->isValid()) {
@@ -86,7 +86,8 @@ Its implementation: 
                 $this->restoreFormId();
             }
         }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  This method looks for **action** parameter in the request and if it is there, it tries to find a method for handling this action. If **action=create**, then it will search for `doActionCreate()` method, i.e. it uppercases the first letter in action parameter and prepend it with **do** prefix.
 4.  If no action parameter passed, then X-Cart will call `doNoAction()` method.
 5.  That is it with `run()` method and we get back to `handleReques()` method implementation. X-Cart checks the `isRedirectNeeded()` method and performs redirect if needed.
@@ -101,13 +102,13 @@ Let us try to create some simple module that will show `doAction()` method work 
 
 We will create a mod that will create `cart.php?target=controller_demo` page. It will also create two records in **xc_config** table: one will count number of opening this page with no action, another record will track number of page opening with **action=test** parameter. We will be able to see these option values via direct request to MySQL: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 SELECT * FROM xc_config WHERE category = "Tony\\ControllerDemo";
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **ControllerDemo**. Then, we create the `<X-Cart>/classes/XLite/Module/Tony/ControllerDemo/install.yaml` file with the following content: 
+We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ControllerDemo**. Then, we create the `<X-Cart>/classes/XLite/Module/Tony/ControllerDemo/install.yaml` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 XLite\Model\Config:
   - name: no_action
     category: Tony\ControllerDemo
@@ -115,16 +116,16 @@ XLite\Model\Config:
   - name: test_action
     category: Tony\ControllerDemo
     value: 0
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-This **install.yaml** file will create **no_action** and **test_action** {% link "settings in the database" ref_Ox5XLSck %}, which will track opening of our page with no action and with action=test.
+This **install.yaml** file will create **no_action** and **test_action** {% link "settings in the database" ref_qFCH64Dt %}, which will track opening of our page with no action and with action=test.
 
-_Note: do not forget to {% link "push the content of this YAML file" ref_HMDeHiJ8#X-CartSDK-LoadingYAMLfile %}_ _to the database._
+_Note: do not forget to {% link "push the content of this YAML file" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %}_ _to the database._
 
-Now we need to create the page in customer area that will be available by `cart.php?target=controller_demo` URL. We create the  
+Now we need to create the page in customer area that will be available by `cart.php?target=controller_demo` URL. We create the
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDemo/Controller/Customer/ControllerDemo.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 namespace XLite\Module\Tony\ControllerDemo\Controller\Customer;
@@ -154,22 +155,22 @@ class ControllerDemo extends \XLite\Controller\Customer\ACustomer
         }
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Here are key points of this class implementation:
 
 1.  Class name represents the converted **target** parameter as **controller_demo**. We just uppercased first letter of each word separated by underscore – **controller_demo** became **Controller_Demo** – and removed underscores, so it became **ControllerDemo**.
 2.  Our class extends abstract controller of customer area (`\XLite\Controller\Customer\ACustomer`):
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     class ControllerDemo extends \XLite\Controller\Customer\ACustomer
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     If we created a controller for admin area, we would extend `\XLite\Controller\Admin\AAdmin` class.
 
 3.  We implemented two methods – `doNoAction()` and `doActionTest()`: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         protected function doNoAction() 
         {
             $this->increaseCounter('no_action');
@@ -179,13 +180,13 @@ Here are key points of this class implementation:
         {
             $this->increaseCounter('test_action');
         }  
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     As mentioned earlier, `doNoAction()` is run when no action parameter passed in the request and `doActionTest()` method is run when **action=test** is passed in the request.
 
 4.  We also implemented `increaseCounter()` method that actually increment counters in settings based on the option name give: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         protected function increaseCounter($name)
         {
             if (in_array($name, array('no_action', 'test_action'))) {
@@ -198,14 +199,14 @@ Here are key points of this class implementation:
                     );
             }
         }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
-The mod is done now and we need to re-deploy the store and then check the results. You just need to go to your store and open `cart.php?target=controller_demo` and  
+The mod is done now and we need to re-deploy the store and then check the results. You just need to go to your store and open `cart.php?target=controller_demo` and
 `cart.php?target=controller_demo&action=test` URLs. After that, make a request to your database and check the counters: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 SELECT * FROM xc_config WHERE category = "Tony\\ControllerDemo";
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Module pack
 

@@ -1,5 +1,5 @@
 ---
-identifier: ref_VGB5Hntc
+identifier: ref_a5KAeMkw
 updated_at: 2015-01-21 00:00
 layout: article_with_sidebar
 lang: en
@@ -23,13 +23,13 @@ This article aims to show how you can change the routine of adding product to ca
 
 # Implementation
 
-We start with {% link "creating an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **AddQuantityDemo**.
+We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **AddQuantityDemo**.
 
-When a product is added to cart, the request goes to `cart.php?target=cart` URL with **action=add** parameter, which means that {% link "this request will be handled" ref_6UXvhZZc %} by `doActionAdd()` method of `\XLite\Controller\Customer\Cart` class ({% link "more info about classnames in X-Cart" ref_ddaUT3B3 %}). The `doActionAdd()` method performs checks and then calls `addItem()` method of the same controller class – this method will actually add a product to a cart and then redirect a customer. In our module, we need to {% link "decorate" ref_0xIAMJyA %} the `\XLite\Controller\Customer\Cart` class and enhance the `addItem()` method. This enhancement will make sure that quantity of product added is even. Otherwise, we will show an error message and the product will not be added to cart.
+When a product is added to cart, the request goes to `cart.php?target=cart` URL with **action=add** parameter, which means that {% link "this request will be handled" ref_hkVaxgds %} by `doActionAdd()` method of `\XLite\Controller\Customer\Cart` class ({% link "more info about classnames in X-Cart" ref_FAgFbEx9 %}). The `doActionAdd()` method performs checks and then calls `addItem()` method of the same controller class – this method will actually add a product to a cart and then redirect a customer. In our module, we need to {% link "decorate" ref_AF6bmvL6 %} the `\XLite\Controller\Customer\Cart` class and enhance the `addItem()` method. This enhancement will make sure that quantity of product added is even. Otherwise, we will show an error message and the product will not be added to cart.
 
 We decorate the `\XLite\Controller\Customer\Cart` class by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/Controller/Customer/Cart.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -52,32 +52,32 @@ abstract class Cart extends \XLite\Controller\Customer\Cart implements \XLite\Ba
         return $result;
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 As you can see, there is only `addItem()` method implemented. We check whether an item adding has even amount: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 if (0 == $item->getAmount() % 2)
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 and if so, we just call a parent's `addItem()` method: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $result = parent::addItem($item);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 If item's amount is odd, then we do not call parent's `addItem()`, set `$result` as `false` and add warning message: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $result = false;
 \XLite\Core\TopMessage::addWarning('You can add only even number of this product (2, 4, 6, etc).');
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Basically, the mod is done here, but since we can check item's amount right in JavaScript, we want to add it as well.
 
-For that we {% link "register a new JS file" ref_omMqRbnh %} by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/View/AView.php` file with the following content: 
+For that we {% link "register a new JS file" ref_p0CRZmMS %} by creating the `<X-Cart>/classes/XLite/Module/Tony/AddQuantityDemo/View/AView.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -99,11 +99,11 @@ abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
         return $list;
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This implementation will add our JS file to **product** **pages** only. Then, we create the `<X-Cart>/skins/default/en/modules/Tony/AddQuantityDemo/js/script.js` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $(".product-buttons .add2cart").click(
     function() 
     {
@@ -113,7 +113,7 @@ $(".product-buttons .add2cart").click(
         }
     }
 )
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 That is it. Now we need to re-deploy the store and check the results in customer area. If we add 2 quantity of a product to cart, everything will work as before. If we try to add 1 product, we will see this warning:![]({{site.baseurl}}/attachments/8225442/8356203.png)
 
@@ -125,5 +125,5 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-* [js-warning.png]({{site.baseurl}}/attachments/8225442/8356203.png) (image/png)  
+* [js-warning.png]({{site.baseurl}}/attachments/8225442/8356203.png) (image/png)
 * [top-warning.png]({{site.baseurl}}/attachments/8225442/8356204.png) (image/png)

@@ -1,5 +1,5 @@
 ---
-identifier: ref_xq8ZHVys
+identifier: ref_xdDPawlG
 updated_at: 2015-12-02 00:00
 layout: article_with_sidebar
 lang: en
@@ -12,7 +12,7 @@ categories:
 
 # Introduction
 
-This article aims to show developers how to give priority to one class over another during the {% link "decoration process" ref_0xIAMJyA %}. It also shows how one module can require another one for proper work.
+This article aims to show developers how to give priority to one class over another during the {% link "decoration process" ref_AF6bmvL6 %}. It also shows how one module can require another one for proper work.
 
 # Table of Contents
 
@@ -29,17 +29,17 @@ This article aims to show developers how to give priority to one class over anot
 
 Imagine the situation: You are writing a module that correlates with another one. A typical case – you want to override a customer menu on the storefront.
 
-The top menu is defined in the core class `\XLite\View\Menu\Customer\Top` (see the article about {% link "class names" ref_ddaUT3B3 %}), and the module **SimpleCMS** overrides this class via `\XLite\Module\CDev\SimpleCMS\View\Menu\Customer\PrimaryMenu`. We want to show our items no matter whether the module SimpleCMS is enabled or not.
+The top menu is defined in the core class `\XLite\View\Menu\Customer\Top` (see the article about {% link "class names" ref_FAgFbEx9 %}), and the module **SimpleCMS** overrides this class via `\XLite\Module\CDev\SimpleCMS\View\Menu\Customer\PrimaryMenu`. We want to show our items no matter whether the module SimpleCMS is enabled or not.
 
 In order to solve the problem, we must be sure that our module will decorate the core class `\XLite\View\Menu\Customer\Top` after the SimpleCMS' class, otherwise SimpleCMS will just ignore our implementation of the menu.
 
 # Solution
 
-1.  {% link "Create a module" ref_TZnqVJsw %}.  I am creating it with the developer ID **Tony** and the module ID **OverridingTopMenu**.
+1.  {% link "Create a module" ref_G2mlgckf %}.  I am creating it with the developer ID **Tony** and the module ID **OverridingTopMenu**.
 2.  In order to tell X-Cart what menu items must be shown on the storefront, we need to decorate the method `defineItems()` of the class `\XLite\View\Menu\Customer\Top`.
 3.  To achieve that, we will create the file `<X-Cart>/classes/XLite/Module/Tony/OverridingTopMenu/View/Menu/Customer/Top.php` with the following content: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
 
     namespace XLite\Module\Tony\OverridingTopMenu\View\Menu\Customer;
@@ -64,14 +64,14 @@ In order to solve the problem, we must be sure that our module will decorate the
             return $this->getMyItems();
         }
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     We decorate the method `defineItems()`, so it would return items declared in the method `getMyItems()`. This is straightforward.
 
 4.  If we leave this code as is, our module will work properly with the module SimpleCMS disabled, but if it is enabled, then SimpleCMS will still override our change.
 5.  In order to overcome the situation, we will create the file `<X-Cart>/classes/XLite/Module/Tony/OverridingTopMenu/View/Menu/Customer/TopAfterSimpleCMS.php` with the following content: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
 
     namespace XLite\Module\Tony\OverridingTopMenu\View\Menu\Customer;
@@ -89,18 +89,18 @@ In order to solve the problem, we must be sure that our module will decorate the
         }
 
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
-    _Note: The viewer class name can be whatever you want – it does not have to be TopAfterSimpleCMS, but its name has to be the same as the .php filename it is declared_ _in._  
+    _Note: The viewer class name can be whatever you want – it does not have to be TopAfterSimpleCMS, but its name has to be the same as the .php filename it is declared_ _in._
     Asyou can see, its implementation is similar, we are overriding the method `defineItems()` that calls the method `getMyItems()` which was declared in our first viewer class. However, there is the directive 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     /**
      * @LC_Dependencies ("CDev\SimpleCMS")
      */
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
-    which tells X-Cart that this class (TopAfterSimpleCMS) must decorate the `\XLite\View\Menu\Customer\Top` one only after all the viewer classes of the SimpleCMS module. On the other hand, if there is no SimpleCMS module enabled in the system, then this decoration will never happen, but our first class will still apply the needed change.  
+    which tells X-Cart that this class (TopAfterSimpleCMS) must decorate the `\XLite\View\Menu\Customer\Top` one only after all the viewer classes of the SimpleCMS module. On the other hand, if there is no SimpleCMS module enabled in the system, then this decoration will never happen, but our first class will still apply the needed change.
     The directive `@LC_Dependencies ()` has to be put into PHP comments according to [DocBlock standard](http://www.phpdoc.org/docs/latest/getting-started/your-first-set-of-documentation.html#what-does-a-docblock-look-like); in other words, it must start with the `/**` construction, end with the `*/` construction, and every line between those must start with the `*` symbol. If the `@LC_Dependencies` directive is put in any other format, X-Cart will not be able to fetch and use it.
 
 6.  Re-deploy the store and check the results. You should see only the **Google menu** item in the storefront, no matter if the module SimpleCMS is enabled or not.
@@ -128,14 +128,15 @@ For example, we want to write a module that can work only if the module **Simpl
 1.  Create the module. I am creating the module with the developer ID **Tony** and the module ID **DependenciesDemo**.
 2.  Add the following method to the file `Main.php` of your module: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
         public static function getDependencies()
         {
             return array('CDev\SimpleCMS');
         }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  This method tells X-Cart that our DependenciesDemo module cannot work without the module SimpleCMS enabled. X-Cart will not even allow to enable it if SimpleCMS is not active. ![]({{site.baseurl}}/attachments/8224842/8355885.png?effects=drop-shadow)
-4.  Note that if the module DependenciesDemo is active, you cannot disable the module SimpleCMS either.  
+4.  Note that if the module DependenciesDemo is active, you cannot disable the module SimpleCMS either.
     ![]({{site.baseurl}}/attachments/8224842/8355886.png?effects=drop-shadow)
 
 # Second module pack
@@ -144,5 +145,5 @@ An example of the module DependenciesDemo can be downloaded from here: [https:/
 
 ## Attachments:
 
-* [cannot-enable-dependencies-demo.png]({{site.baseurl}}/attachments/8224842/8355885.png) (image/png)  
+* [cannot-enable-dependencies-demo.png]({{site.baseurl}}/attachments/8224842/8355885.png) (image/png)
 * [cannot-disable-simple-cms.png]({{site.baseurl}}/attachments/8224842/8355886.png) (image/png)

@@ -1,5 +1,5 @@
 ---
-identifier: ref_TZnqVJsw
+identifier: ref_G2mlgckf
 updated_at: 2015-12-25 00:00
 layout: article_with_sidebar
 lang: en
@@ -39,7 +39,7 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 1.  Create `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` directory inside your installation. Of course, you should use your own developer and module IDs instead of `<YOUR-DEVELOPER-ID>` and `<YOUR-MODULE-ID>` parts of the path.
 2.  Create `Main.php` file inside `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` folder with the following content: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
     namespace XLite\Module\<YOUR-DEVELOPER-ID>\<YOUR-MODULE-ID>;
 
@@ -95,18 +95,18 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
             return 'Your module description';
         }
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     Change `namespace` section in this file and replace `<YOUR-DEVELOPER-ID>` and `<YOUR-MODULE-ID>` placeholders with your actual developer and module IDs.
 
 3.  Define the `getDescription()`, `getModuleName()`, `getAuthorName()` methods so they would return your own module description, module name and module author.
-4.  Re-deploy your store via the admin area of your X-Cart:  
+4.  Re-deploy your store via the admin area of your X-Cart:
     ![]({{site.baseurl}}/attachments/524296/9437239.png?effects=drop-shadow) 
 5.  After the re-deployment process is over, your module will show up among the installed modules in your store's admin area.
 
 # Module creation via SDK
 
-1.  {% link "Obtain X-Cart SDK" ref_HMDeHiJ8#X-CartSDK-ObtainingX-CartSDK %}
+1.  {% link "Obtain X-Cart SDK" ref_HvrXVNvJ#X-CartSDK-ObtainingX-CartSDK %}
 2.  Call {% link "create module macro" X-Cart-SDK_7864338.html#X-CartSDK-Creatingmodule %} with your developer and module IDs
 
 # Packing up your module
@@ -114,13 +114,13 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 If you want to create the module's distributive pack, you need to
 
 1.  Edit your `<X-Cart>/etc/config.php `file and define the `developer_mode `option as `On` there.
-2.  After that you will see the Pack it link near each module in your Extensions > Installed modules section as shown on the snapshot below:  
+2.  After that you will see the Pack it link near each module in your Extensions > Installed modules section as shown on the snapshot below:
     ![]({{site.baseurl}}/attachments/524296/1212420.png?effects=drop-shadow)
 3.  Clicking **Pack it** link will generate your module's distribution pack.
 
 ## Attachments:
 
-* [1.png]({{site.baseurl}}/attachments/524296/1212421.png) (image/png)  
-* [1.png]({{site.baseurl}}/attachments/524296/1212420.png) (image/png)  
-* [redeploy-the-store.png]({{site.baseurl}}/attachments/524296/7995397.png) (image/png)  
+* [1.png]({{site.baseurl}}/attachments/524296/1212421.png) (image/png)
+* [1.png]({{site.baseurl}}/attachments/524296/1212420.png) (image/png)
+* [redeploy-the-store.png]({{site.baseurl}}/attachments/524296/7995397.png) (image/png)
 * [xc5_cache_redeploy.png]({{site.baseurl}}/attachments/524296/9437239.png) (image/png)

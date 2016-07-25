@@ -1,5 +1,5 @@
 ---
-identifier: ref_m4oOrMhE
+identifier: ref_dQZEma4K
 updated_at: 2016-06-20 00:00
 layout: article_with_sidebar
 lang: en
@@ -14,28 +14,28 @@ Sometimes the standard 'Add to cart' buttons you get in your X-Cart  store are 
 
 There are two methods to do so:
 
-*   {% link "Method 1" ref_m4oOrMhE %} (can be used both for pages outside and inside X-Cart);
+*   {% link "Method 1" ref_dQZEma4K %} (can be used both for pages outside and inside X-Cart);
 *   {% link "Method 2" 9666687.html %} (can be used only inside X-Cart).
 
 # Method 1
 
 1.  In the file `etc/config.php`, add the line
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     HTML.Trusted = On
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     right after the line 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     [html_purifier]
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag <buttob> - from code.
 
 2.  Add the following code to the page where you need to insert your 'Add to cart' button:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <form action="?target=cart" method="post" accept-charset="utf-8" class="custom-add2cart">
        <input type="hidden" name="target" value="cart" />
        <input type="hidden" name="action" value="add" />
@@ -46,7 +46,7 @@ There are two methods to do so:
            </button>
        </div>
     </form>
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     where:
 
@@ -60,21 +60,21 @@ This method can be used to create a button that will add a product to cart witho
 
 1.  In the file `etc/config.php`, add the line
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     HTML.Trusted = On
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     right after the line 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     [html_purifier]
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag <buttob> - from code.
 
 2.  Add the following code to the page where you need to insert your 'Add to cart' button:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <script type="text/javascript">
        window.onload = function () {
            $('form.custom-add2cart').each(function () {
@@ -85,6 +85,6 @@ This method can be used to create a button that will add a product to cart witho
            })
        };
     </script>
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
 Please note that this method will not work for X-Cart static pages in stores using the module TinyMCE integration, because this module will strip <script> from code. Also note that this method will not work for pages located on other sites outside X-Cart.

@@ -1,5 +1,5 @@
 ---
-identifier: ref_e1LGA319
+identifier: ref_fKauw8Cw
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
@@ -22,9 +22,9 @@ This article shows you can authenticate a user by login and password. It also sh
 
 # Implementation
 
-We start with {% link "creating an external script" ref_PTzG8qs6 %} `<X-Cart>/test.php` with the following content: 
+We start with {% link "creating an external script" ref_ogmCiRWZ %} `<X-Cart>/test.php` with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 //X-Cart initializtion
 require_once 'top.inc.php';
@@ -45,23 +45,23 @@ if ($_GET['mode'] == 'login') {
 
     echo 'You are logged off';
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 As you can see, this script can work in two modes: logging in – `if ($_GET['mode'] == 'login')` – and logging off – `elseif ($_GET['mode'] == 'logoff')`.
 
 When we pass `mode=login` in request, then we try to log a user in with `$login` and `$password` credentials. Logging in is as simple as calling one function: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $profile = \XLite\Core\Auth::getInstance()->login($login, $password);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 If result equals to `\XLite\Core\Auth::RESULT_ACCESS_DENIED` constant, it means that we failed to log this user in and you need to make sure that a user with given login exists and the password is correct.
 
 When we pass `mode=logoff` in request, we log off the current user and this operation is simple as well: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 \XLite\Core\Auth::getInstance()->logoff();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Now, you can check this script in action:
 

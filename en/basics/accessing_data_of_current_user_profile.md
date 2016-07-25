@@ -1,5 +1,5 @@
 ---
-identifier: ref_2z1WNgds
+identifier: ref_xJBqLBws
 updated_at: 2015-03-11 00:00
 layout: article_with_sidebar
 lang: en
@@ -25,35 +25,35 @@ For the sake of example, we will create a new page that will be accessible via `
 
 # Implementation
 
-Before we get started, we {% link "create an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **ProfileDemo**. Also, we {% link "create a new page" ref_OkHzgi1f#Creatingnewpage-Creatingpageincustomerarea %} that will be accessible via `cart.php?target=profile_demo` URL.
+Before we get started, we {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ProfileDemo**. Also, we {% link "create a new page" ref_0VgqyxB8#Creatingnewpage-Creatingpageincustomerarea %} that will be accessible via `cart.php?target=profile_demo` URL.
 
 Once it is done, we go to the `<X-Cart>/classes/XLite/Module/Tony/ProfileDemo/Controller/Customer/ProfileDemo.php` file and add the following method there:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 	public function isAnonymous()
 	{
 		$profile = \XLite\Core\Auth::getInstance()->getProfile();
 		return $profile ? $profile->getAnonymous() : true;
 	}
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This method will be used in the template of our page in order to determine whether the current user is logged in. The implementation of this method shows you how you can access data of the current profile in the PHP code. You simply call this construction: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $profile = \XLite\Core\Auth::getInstance()->getProfile();
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see {% link "more info about classnames" ref_ddaUT3B3 %} in X-Cart).
+and the info about current account will be pulled into `$profile` variable that is an instance of `\XLite\Model\Profile` class (see {% link "more info about classnames" ref_FAgFbEx9 %} in X-Cart).
 
 Now it is time to edit this page's template and we go to the `<X-Cart>/skins/default/en/modules/Tony/ProfileDemo/page/profile_demo/body.tpl` and define its content as follows: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 {if:isAnonymous()}
 	This is a guest account
 {else:}
 	This is user: {profile.getName()} ({profile.getLogin()})
 {end:}
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 In `if` condition we use the method we defined in the controller class, if it is `true`, then we output plain text as **This is a guest account.** Otherwise, we pull info about current profile by calling `{profile.getName}` and `{profile.getLogin}` constructions. These constructions are equal to calling `getProfile()->getName()` and `getProfile()->getLogin()` out of our controller class.
 

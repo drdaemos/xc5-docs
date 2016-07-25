@@ -1,5 +1,5 @@
 ---
-identifier: ref_32rQTvVs
+identifier: ref_GuFOdboA
 updated_at: 2014-02-05 00:00
 layout: article_with_sidebar
 lang: en
@@ -31,24 +31,26 @@ If you face this problem on your local machine, check tips below. Solution will 
 
 1.  Edit the **C:\Program Files\xampp\apache\conf\httpd.conf **file and replace there the following piece of code:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     #LoadModule ssl_module modules/mod_ssl.so
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     with the next one:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     LoadModule ssl_module modules/mod_ssl.so
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 2.  Edit the **C:\Program Files\xampp\php\php.ini** file and replace there the following piece of code:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     ;extension=php_openssl.dll
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     with the next one:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     extension=php_openssl.dll
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  Restart Apache.

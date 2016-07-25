@@ -1,5 +1,5 @@
 ---
-identifier: ref_H4JdJOTr
+identifier: ref_sshnMtN7
 updated_at: 2014-02-05 00:00
 layout: article_with_sidebar
 lang: en
@@ -37,29 +37,32 @@ In this case, the solution will be different depending on the type of your web-s
 
 1.  Find three files on your PC:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     C:\Program Files\xampp\apache\bin\php.ini
     C:\Program Files\xampp\php\php.ini
     C:\Program Files\xampp\php\php4\php.ini
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 2.  Edit each of them and replace there the following piece of code:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     ;extension=php_curl.dll
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     with the next one:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     extension=php_curl.dll
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  Restart Apache.
 
 ## Ubuntu/Debian + Apache
 
 1.  Run the following command in your console
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     sudo apt-get install php5-curl
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 2.  Restart Apache.

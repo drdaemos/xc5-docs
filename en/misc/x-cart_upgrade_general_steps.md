@@ -1,5 +1,5 @@
 ---
-identifier: ref_Ips4iO7l
+identifier: ref_xCPLmTHT
 updated_at: 2016-01-08 00:00
 layout: article_with_sidebar
 lang: en
@@ -26,4 +26,4 @@ If the installation of updates has been completed successfully (without errors),
 
 _Related pages:_
 
-*   {% link "Upgrading X-Cart 5" ref_e7hPRwXR %}
+*   {% link "Upgrading X-Cart 5" ref_pQQ1CLe1 %}

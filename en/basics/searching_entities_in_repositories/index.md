@@ -1,5 +1,5 @@
 ---
-identifier: ref_c8as4Qfi
+identifier: ref_L1zWfWvw
 updated_at: 2015-01-09 00:00
 layout: article_with_sidebar
 lang: en
@@ -32,11 +32,11 @@ Repository method: `find()`
 
 Code sample: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
 
 //$product now contains product object
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Pulling all products
 
@@ -44,11 +44,11 @@ Repository method: `findAll()`
 
 Code sample: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findAll();
 
 //$products now contains an array of product objects
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Pulling one product by condition
 
@@ -56,7 +56,7 @@ Repository method: `findOneBy()`
 
 Code sample:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 // $condition defines what products exactly you want to pull.
 // This condition defines that we need to pull all enabled products, 
 // i.e. they all must have enabled field set as true.
@@ -69,7 +69,7 @@ $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy($cond
 
 $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array('product_id' => $id));
 // the same as $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Pulling many products by condition
 
@@ -77,7 +77,7 @@ Repository method: `findBy()`
 
 Code:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 // $condition defines what products exactly you want to pull.
 // This condition defines that we need to pull all enabled products, 
 // i.e. they all must have enabled field set as true.
@@ -87,8 +87,8 @@ $condition = array('enabled' => 1);
 $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findBy($condition);
 
 //$products now contains array of product objects and all of these products are enabled 
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Pulling products by complex condition
 
-If you need more complex queries to the database, please learn how to use {% link "QueryBuilder" ref_uZW9kVOM %} object.
+If you need more complex queries to the database, please learn how to use {% link "QueryBuilder" ref_FJyeE9lP %} object.

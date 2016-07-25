@@ -1,6 +1,6 @@
 ---
-identifier: ref_tBqT80iH
-updated_at: 2016-06-30 00:00
+identifier: ref_qhLz2Kb9
+updated_at: 2016-05-26 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to modify &quot;Print Invoice&quot; page'
@@ -16,15 +16,15 @@ I would like make some minor CSS changes to the print invoice page in the admin 
 
 Here are the steps involved:
 
-1.  Install and activate "Custom Skin" module.  
+1.  Install and activate "Custom Skin" module.
 
-2.  Create the following custom script in your X-Cart installation:  
+2.  Create the following custom script in your X-Cart installation:
 
-    _classes/XLite/Module/XC/CustomSkin/View/AView.php_  
+    _classes/XLite/Module/XC/CustomSkin/View/AView.php_
 
 3.  Add the following code to the custom script:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
     namespace XLite\Module\XC\CustomSkin\View;
     abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
@@ -43,44 +43,42 @@ Here are the steps involved:
             return $list;
         }
     }
-    {% endraw %}{% endhighlight %}
-4.  Create your custom CSS files:  
-    - for admin back-end: _skins/admin/en/modules/XC/CustomSkin/custom_style.css_  
-    - for customer front-end: _skins/default/en/modules/XC/CustomSkin/custom_style.css_  
+    ```{% endraw %}
+
+4.  Create your custom CSS files:
+    - for admin back-end: _skins/admin/en/modules/XC/CustomSkin/custom_style.css_
+    - for customer front-end: _skins/default/en/modules/XC/CustomSkin/custom_style.css_
 
 5.  Add your custom code to the CSS files created, for example:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     .invoice-box .header .address strong{
       font-size: 27px !important;
       margin: 10px 10px 10px 14px;
     }
+    ```{% endraw %}
 
-    .invoice-box .header .address p{
-      font-size: 16px !important;
-    }
-    {% endraw %}{% endhighlight %}
-6.  Re-generate X-Cart cache.  
+6.  Re-generate X-Cart cache.
 
 Icon
 
-You can also view the source code of the print invoice page using a special URL, for example:  
+You can also view the source code of the print invoice page using a special URL, for example:
 
-[http://demostore.x-cart.com/admin/admin.php?target=order&order_number=1&mode=invoice](http://demostore.x-cart.com/admin/admin.php?target=order&order_number=1&mode=invoice)  
+[http://demostore.x-cart.com/admin/admin.php?target=order&order_number=1&mode=invoice](http://demostore.x-cart.com/admin/admin.php?target=order&order_number=1&mode=invoice)
 
-Where:  
+Where:
 
-_target=order_  
-_order_number=1_  
-_mode=invoice_  
+_target=order_
+_order_number=1_
+_mode=invoice_
 
 are the required parameters to view the print out customer receipt page.
 
 ## Related articles
 
-*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below the product list" /display/XDD/How+to+move+category+description+below+the+product+list %}
 *   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
+*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
+*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
 *   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
 *   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
 

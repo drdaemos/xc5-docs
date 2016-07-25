@@ -1,5 +1,5 @@
 ---
-identifier: ref_leUiBZRo
+identifier: ref_i7rWMCdQ
 updated_at: 2015-05-14 00:00
 layout: article_with_sidebar
 lang: en
@@ -16,12 +16,12 @@ Thanks to Mike White who created this video guide: [http://xcartguru.com/tutori
 
 # Topics Covered
 
-Creating the Theme/Module folder - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=1m4s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=1m4s)  
-Creating Main.php - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=2m45s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=2m45s)  
-Creating Skin Directory - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=5m45s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=5m45s)  
-Activating the Skin Module - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=7m45s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=7m45s)  
-Creating style.css - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=10m32s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=10m32s)  
-Creating Viewer Class - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=12m12s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=12m12s)  
-Editing the CSS - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m00s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m00s)  
-Using Webmaster Kit - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m42s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m42s)  
+Creating the Theme/Module folder - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=1m4s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=1m4s)
+Creating Main.php - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=2m45s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=2m45s)
+Creating Skin Directory - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=5m45s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=5m45s)
+Activating the Skin Module - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=7m45s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=7m45s)
+Creating style.css - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=10m32s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=10m32s)
+Creating Viewer Class - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=12m12s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=12m12s)
+Editing the CSS - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m00s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m00s)
+Using Webmaster Kit - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m42s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=15m42s)
 Overriding a Default Template - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=16m37s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=16m37s)

@@ -1,5 +1,5 @@
 ---
-identifier: ref_9HKpu5vk
+identifier: ref_fxJxv6rf
 updated_at: 2015-01-05 00:00
 layout: article_with_sidebar
 lang: en
@@ -12,7 +12,7 @@ categories:
 
 # Introduction
 
-This article describes how developer can create a {% link "complex setting class" ref_Ox5XLSck %} in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
+This article describes how developer can create a {% link "complex setting class" ref_qFCH64Dt %} in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
 
 # Table of Contents
 
@@ -24,12 +24,12 @@ This article describes how developer can create a {% link "complex setting class
 
 # Implementation
 
-We start with {% link "creating a module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **FormFieldDemo**. Then, we {% link "create a page" ref_OkHzgi1f %} **target=form_field** in admin area. During this process, we create:
+We start with {% link "creating a module" ref_G2mlgckf %} with developer ID **Tony** and module ID **FormFieldDemo**. Then, we {% link "create a page" ref_0VgqyxB8 %} **target=form_field** in admin area. During this process, we create:
 
 *   empty controller class `\XLite\Module\Tony\FormFieldDemo\Controller\Admin\FormField`;
 *   viewer class `\XLite\Module\Tony\FormFieldDemo\View\Page\Admin\FormField` with the following content:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -62,12 +62,13 @@ We start with {% link "creating a module" ref_TZnqVJsw %} with developer ID **To
             return 'modules/Tony/FormFieldDemo/page/form_field/body.tpl';
         }
     }
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 *   empty template `<X-Cart>/skins/admin/en/modules/Tony/FormField/page/form_field/body.tpl`.
 
 Next step is to create a select-box class. We create the `<X-Cart>/classes/XLite/Module/Tony/FormField/View/FormField/Select/CustomSelect.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 
 namespace XLite\Module\Tony\FormFieldDemo\View\FormField\Select;
@@ -83,30 +84,30 @@ class CustomSelect extends \XLite\View\FormField\Select\Regular
         );
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This is an implementation of simple select-box class. We just define options of this select-box in the `getDefaultOptions()` method. Our select-box will have three options: **First value**, **Second value** and **Third value**.
 
 In order to display this setting widget on our page, we go to the `<X-Cart>/skins/admin/en/modules/Tony/FormField/page/form_field/body.tpl` template and add the following code there: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" />
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-If we leave the code like this, X-Cart will display this setting with missed label:   
+If we leave the code like this, X-Cart will display this setting with missed label: 
 ![]({{site.baseurl}}/attachments/1048617/8356169.png)
 
 Instead, we can either define this setting to be displayed without label: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" fieldOnly="true" />
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 or define some label for it: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" label="Some label" />
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Our module pack will contain both variants.
 
@@ -120,14 +121,14 @@ You can download an example of this module from here: [https://dl.dropboxuserco
 
 ## Attachments:
 
-* [1.png]({{site.baseurl}}/attachments/1048617/1572866.png) (image/png)  
-* [1.png]({{site.baseurl}}/attachments/1048617/1572870.png) (image/png)  
-* [2.png]({{site.baseurl}}/attachments/1048617/1572867.png) (image/png)  
-* [3.png]({{site.baseurl}}/attachments/1048617/1572868.png) (image/png)  
-* [4.png]({{site.baseurl}}/attachments/1048617/1572869.png) (image/png)  
-* [1.png]({{site.baseurl}}/attachments/1048617/1572865.png) (image/png)  
-* [5.png]({{site.baseurl}}/attachments/1048617/1572871.png) (image/png)  
-* [6.png]({{site.baseurl}}/attachments/1048617/1572872.png) (image/png)  
-* [7.png]({{site.baseurl}}/attachments/1048617/1572873.png) (image/png)  
-* [setting-with-missed-label.png]({{site.baseurl}}/attachments/1048617/8356169.png) (image/png)  
+* [1.png]({{site.baseurl}}/attachments/1048617/1572866.png) (image/png)
+* [1.png]({{site.baseurl}}/attachments/1048617/1572870.png) (image/png)
+* [2.png]({{site.baseurl}}/attachments/1048617/1572867.png) (image/png)
+* [3.png]({{site.baseurl}}/attachments/1048617/1572868.png) (image/png)
+* [4.png]({{site.baseurl}}/attachments/1048617/1572869.png) (image/png)
+* [1.png]({{site.baseurl}}/attachments/1048617/1572865.png) (image/png)
+* [5.png]({{site.baseurl}}/attachments/1048617/1572871.png) (image/png)
+* [6.png]({{site.baseurl}}/attachments/1048617/1572872.png) (image/png)
+* [7.png]({{site.baseurl}}/attachments/1048617/1572873.png) (image/png)
+* [setting-with-missed-label.png]({{site.baseurl}}/attachments/1048617/8356169.png) (image/png)
 * [custom-setting.png]({{site.baseurl}}/attachments/1048617/8356170.png) (image/png)

@@ -1,5 +1,5 @@
 ---
-identifier: ref_fATMXD23
+identifier: ref_HK4ekS1u
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
@@ -22,9 +22,9 @@ Sometimes developers need to make a request to some external server and get a re
 
 # Implementation
 
-In order to show you the facility of making requests, we do not need a new module as we can show it via {% link "external X-Cart script" ref_PTzG8qs6 %}. We create the `<X-Cart>/test.php` script with the following content: 
+In order to show you the facility of making requests, we do not need a new module as we can show it via {% link "external X-Cart script" ref_ogmCiRWZ %}. We create the `<X-Cart>/test.php` script with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 //X-Cart initializtion
 require_once 'top.inc.php';
@@ -56,6 +56,6 @@ $response = $request->sendRequest();
 
 // printing result
 var_dump($response->body);
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This script makes a request to [x-cart.com](http://www.x-cart.com) and then prints **HTML code** of its main page as a result.

@@ -1,5 +1,5 @@
 ---
-identifier: ref_OHleDrFd
+identifier: ref_9bIzlU4u
 updated_at: 2015-07-07 00:00
 layout: article_with_sidebar
 lang: en
@@ -26,14 +26,14 @@ This article describes how developers can configure and send custom **email noti
 
 # Implementation
 
-First of all, this task requires you to have a custom module. We'll {% link "create a new module" ref_TZnqVJsw %} with the developer ID **Tony** and the module ID **EmailDemo**.  
-Besides, we'll create a {% link "custom page" ref_OkHzgi1f %} in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
+First of all, this task requires you to have a custom module. We'll {% link "create a new module" ref_G2mlgckf %} with the developer ID **Tony** and the module ID **EmailDemo**.
+Besides, we'll create a {% link "custom page" ref_0VgqyxB8 %} in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
 
 ## Creating the mailer method
 
 X-Cart offers a convenient and expandable interface to send emails -`XLite\Core\Mailer` class. This class contains a lot of functions designed to build and send messages step by step. In order to use it, we decorate the class `XLite\Core\Mailer `and add a method to send our notification. We create a file `<X-Cart>/classes/XLite/Module/Tony/EmailDemo/Core/Mailer.php `with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 namespace XLite\Module\Tony\EmailDemo\Core;
 /**
@@ -68,7 +68,7 @@ abstract class Mailer extends \XLite\Core\Mailer implements \XLite\Base\IDecorat
         return static::getMailer()->getLastError();
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 The method we will be using to send our notifications is `sendEmailDemoMessage().` Be sure to define it as a static method and choose a unique name so it doesn't override any existing mailer methods. Let's get an overview of its features:
 
@@ -76,8 +76,8 @@ The method we will be using to send our notifications is `sendEmailDemoMessage(
 *   $advanced_mode param defines which mail templates will be used. It is just an example of some custom logic, so you don't have to use it in your method. 
 *   Finally, to send the message we are calling the method `XLite\Core\Mailer::compose()` with a set of arguments:
 
-    1.  _string_ **$type** - is used to preprocess the **$to**, **$from**, **$dir** and **$customHeaders** params. You can provide a set of methods, called like **`prepare<param><$type>;`** for example, `prepareCustomHeadersDemoMail($customHeaders)` or `prepareToDemoMail($to).` If these methods exist, they will be called automatically during message composing.
-    2.  _string _**$from** - email **`From:`** field.
+    1.  _string_ **$type** - is used to preprocess the **$to**, **$from**, **$dir** and **$customHeaders** params. You can provide a set of methods, called like `**prepare<param><$type>;**` for example, `prepareCustomHeadersDemoMail($customHeaders)` or `prepareToDemoMail($to).` If these methods exist, they will be called automatically during message composing.
+    2.  _string _**$from** - email `**From:**` field.
     3.  _string _**$to** - email **`To:`** field. For example, we can use the default site administrator email here.
     4.  _string _**$dir** - directory where mail templates are located. The parent folder for this directory is `<X-Cart>/skins/mail/<language (e.g. **en**)>/.`
     5.  (optional) _array_**$customHeaders** - an array of key-value pairs with additional headers (**Cc:**, **Bcc:**, **Reply-To:,** etc.).
@@ -92,17 +92,17 @@ An email message is composed from several parts such as _header_, _subject_, _b
 
 **subject.tpl**
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 {subject}
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 **body.tpl**
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <p>
   The text is - {custom_param}
 </p>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 As you can see, we can mix some predefined content with the registered parameters. As a result, we will be able to send messages like this:
 
@@ -110,7 +110,7 @@ As you can see, we can mix some predefined content with the registered parameter
 
 From now on, to send a message, you should call your newly created method like this:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 /**
  * Action to send test email notification
  *
@@ -133,7 +133,7 @@ protected function doActionSendEmail()
         $this->buildURL('tony_custom_email', '', array())
     );
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Please note that the above way is simply an example of usage; you can send messages during certain events or logic processing, if needed. This example sends a message on form submit.
 
@@ -141,7 +141,7 @@ Please note that the above way is simply an example of usage; you can send messa
 
 The admin area of an X-Cart store allows you to turn off certain notifications for admin or for customer. You can configure that on the <u>Store setup</u> -> <u>Email notifications</u> -> <u>Settings</u> page. This page contains a list of different notification types and provides switches allowing the user to enable/disable specific notification types for administrator and customer. For a custom notification to appear in the mentioned list, it should be registered in the module file `install.yaml`. For instance, we will add the following content:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 XLite\Model\Notification:
   - templatesDirectory: modules/Tony/EmailDemo/message
     availableForAdmin: true
@@ -154,7 +154,7 @@ XLite\Model\Notification:
         description: 'This notification is sent from testing page with preset subject and text'
         adminSubject: Someone has sent advanced demo notification
         adminText: "This is the body of your advanced demo notification"
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Notification definition consists of several parameters:
 
@@ -174,19 +174,19 @@ Notification definition consists of several parameters:
 After writing this code to the file, you should load it into system. It can be done using one of the two methods:
 
 1.  by re-installing this module,
-2.  by {% link "loading the YAML file manually" ref_xmWqJ8zE %}.
+2.  by {% link "loading the YAML file manually" ref_8BPAwaEG %}.
 
 You can also change the mail templates to make use of the default **subject** and **body** text, preset in the _translation_ parameter, like this:
 
 **subject.tpl**
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 {getNotificationSubject()}
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 **body.tpl**
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <p>
   {getNotificationText():h}
 </p>
@@ -194,11 +194,11 @@ You can also change the mail templates to make use of the default **subject** an
 	Custom parameter:<br>
 	{custom_param}
 </p>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 This allows you to change the subject and body text in the admin area, without tampering with template files. The interface is shown on the picture below:
 
-![]({{site.baseurl}}/attachments/8750179/8718799.png)  
+![]({{site.baseurl}}/attachments/8750179/8718799.png)
 
 As a result of the above actions, you should be able to configure your custom method in the admin area:
 
@@ -210,8 +210,8 @@ You can download this module example from here: [Tony-EmailDemo-v5.2.0.tar](att
 
 ## Attachments:
 
-* [demo msg]({{site.baseurl}}/attachments/8750179/8718795) (application/octet-stream)  
-* [demo msg.png]({{site.baseurl}}/attachments/8750179/8718796.png) (image/png)  
-* [X Cart online store builder Email notifications.png]({{site.baseurl}}/attachments/8750179/8718797.png) (image/png)  
-* [X Cart online store builder Advanced demo notification sent Email Demo module .png]({{site.baseurl}}/attachments/8750179/8718799.png) (image/png)  
+* [demo msg]({{site.baseurl}}/attachments/8750179/8718795) (application/octet-stream)
+* [demo msg.png]({{site.baseurl}}/attachments/8750179/8718796.png) (image/png)
+* [X Cart online store builder Email notifications.png]({{site.baseurl}}/attachments/8750179/8718797.png) (image/png)
+* [X Cart online store builder Advanced demo notification sent Email Demo module .png]({{site.baseurl}}/attachments/8750179/8718799.png) (image/png)
 * [Tony-EmailDemo-v5.2.0.tar]({{site.baseurl}}/attachments/8750179/8718801.tar) (application/x-tar)

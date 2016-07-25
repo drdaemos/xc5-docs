@@ -1,5 +1,5 @@
 ---
-identifier: ref_ePtzSg4L
+identifier: ref_WOuwAgsI
 updated_at: 2015-09-15 00:00
 layout: article_with_sidebar
 lang: en
@@ -14,18 +14,19 @@ In X-Cart 5.2.7 we added the ability to create upgrade hooks that can be run ite
 
 If you want to use iterative upgrade hooks, you need to know the following:
 
-1.  The following types of upgrade hooks may be iterative:  
+1.  The following types of upgrade hooks may be iterative:
 
-    *   pre_upgrade.php (run before replacing the files with new ones)  
+    *   pre_upgrade.php (run before replacing the files with new ones)
 
     *   post_rebuild.php (run after the upgrade has been completed and the cache of classes has been generated)
-2.  If an iterative hook has not completed its operation and needs to be run again, it must return a number greater than 0 (zero). In this case the execution of the current queue of hooks will be interrupted, and the same hook will be called with a parameter - the number it returned the previous time. The parameter may be used by the hook to get information regarding the point at which the interrupted operation needs to be resumed.  
+2.  If an iterative hook has not completed its operation and needs to be run again, it must return a number greater than 0 (zero). In this case the execution of the current queue of hooks will be interrupted, and the same hook will be called with a parameter - the number it returned the previous time. The parameter may be used by the hook to get information regarding the point at which the interrupted operation needs to be resumed.
 
 3.  If you are creating an iterative pre_upgrade hook for a version from the 5.2.x branch, you need to take into account that it was not until version 5.2.7 that the code supporting iterative hooks was implemented in the core. In this case you need to provide both the options in the hook body: you need to implement a check for the current core version, and - if the version is 5.2.7 or later - allow the use of the iterative algorithm, or - otherwise - run the operations on the whole body of data in one go. This is essential for updating the store's data correctly when upgrading from versions 5.2.6 and earlier.
 
 Below is an example of iterative hooks performing the operations of updating products' clean URLs (See the original version in upgrade/5.2/1):
 
-**pre_upgrade.php**{% highlight php %}{% raw %}
+**pre_upgrade.php**
+{% raw %}```php
 return function()
 {
     // Initial iteration position
@@ -95,7 +96,9 @@ return function()
     // Return current iteration position or zero (if end of products list has been reached)
     return $result;
 };
-{% endraw %}{% endhighlight %}**post_rebuild.php**{% highlight php %}{% raw %}
+```{% endraw %}
+**post_rebuild.php**
+{% raw %}```php
 return function()
 {
     // Initial iteration position
@@ -169,4 +172,4 @@ return function()
     // Return current iteration position or zero (if end of products list has been reached)
     return $result;
 };
-{% endraw %}{% endhighlight %}
+```{% endraw %}

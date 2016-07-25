@@ -1,5 +1,5 @@
 ---
-identifier: ref_rwQykwuT
+identifier: ref_E88KCMDD
 updated_at: 2016-01-11 00:00
 layout: article_with_sidebar
 lang: en
@@ -32,7 +32,7 @@ Let us start with basic explanation of how X-Cart starts outputting HTML code to
 
 When it is time to output the content, X-Cart starts rendering `<X-Cart>/skins/default/en/body.tpl` template if you are in frontend (`cart.php` end-point) or `<X-Cart>/skins/admin/en/body.tpl` template if you are in admin area (`admin.php` end-point). Have a close look at `<X-Cart>skins/default/en/body.tpl` template:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
   "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{currentLanguage.getCode()}" version="XHTML+RDFa 1.0"
@@ -52,11 +52,11 @@ When it is time to output the content, X-Cart starts rendering `<X-Cart>/skins/d
 <list name="body" />
 </body>
 </html>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Now we will walk through each part of this template and see what each piece of code does.
 
-1.  {% highlight php %}{% raw %}
+1.  {% raw %}```php
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
       "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{currentLanguage.getCode()}" version="XHTML+RDFa 1.0"
@@ -70,48 +70,48 @@ Now we will walk through each part of this template and see what each piece of c
       xmlns:sioct="http://rdfs.org/sioc/types#"
       xmlns:skos="http://www.w3.org/2004/02/skos/core#"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
-    This piece of code is almost purely HTML, so X-Cart will output it as is. However, there is` {currentLanguage.getCode()}` code. This way the store language is dynamically put into the HTML code.  
+    This piece of code is almost purely HTML, so X-Cart will output it as is. However, there is` {currentLanguage.getCode()}` code. This way the store language is dynamically put into the HTML code.
 
     It calls `getCode()` method out of the result of `getCurrentLanguage()` method. `getCurrentLanguage()` method is called out of the current template scope. In other words X-Cart will search for `getCurrentLanguage()` method in `XLite/View/Controller` and `XLite/Controller/Main` classes, assuming that we are on home page (otherwise the controller class –  `XLite/Controller/Main `– will be different). 
 
-2.  {% highlight php %}{% raw %}
+2.  {% raw %}```php
     <widget class="\XLite\View\Header" />
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     Now X-Cart basically says: "Hey, `\XLite\View\Header` viewer class, you must display your widget here". **Viewer** is a class that meant to output something. The process of its creation will be described later on.
 
-3.  {% highlight php %}{% raw %}
+3.  {% raw %}```php
     <body {if:getBodyClass()}class="{getBodyClass()}"{end:}>
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     This piece of code is also HTML, but with Flexy condition. Template calls `getBodyClass()` method out of the current template scope (`XLite/View/Controller` and `XLite/Controller/Main` classes) and if the result is not empty, it will add **class** property to the `<body>` tag.
 
-4.  {% highlight php %}{% raw %}
+4.  {% raw %}```php
     {displayCommentedData(getCommonJSData()):s}
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     This is a call of X-Cart functions in the current template scope as described above.
 
-5.  {% highlight php %}{% raw %}
+5.  {% raw %}```php
     <list name="body" />
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     This is a call of "body" view list. X-Cart tells: "Hey, **body** view list, you must display all your content here". **View list** is a collection of templates and viewers classes. You can always read this instruction as: "Hey, **body** view list, now you must display all templates and viewer classes assigned to you".
 
-6.  {% highlight php %}{% raw %}
+6.  {% raw %}```php
     </body>
     </html>
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     This is a piece of pure HTML code as well.
 
 7.  Although there is no such code in the `body.tpl` template, but you can directly call another template from the current one, e.g.
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <widget template="noscript.tpl" />
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
 As you can see, there are tools for **static** (pure HTML code) and **dynamic** (Flexy structure, calls of X-Cart functions and widgets, view lists) output generating in X-Cart templates. Additionally, you have an ability to include another templates: view lists, template calls.
 
@@ -125,13 +125,13 @@ As a real life example, let us find what template is responsible for display of 
 
 1.  Enable **Webmaster Kit** module in your admin area.![]({{site.baseurl}}/attachments/8224787/8355858.png)
 2.  Tick the **Profiler enabled** and **Mark templates** options on in its settings.![]({{site.baseurl}}/attachments/8224787/8355859.png)
-3.  Click **Enable tracing** and Webmaster Kit will start showing treelike structure of X-Cart templates.  
+3.  Click **Enable tracing** and Webmaster Kit will start showing treelike structure of X-Cart templates.
     ![]({{site.baseurl}}/attachments/8224787/8355860.png)
-4.  Go to your home page and hover your pointer over the **My account** area. The top path is a path where the template responsible for display of this area is located.![]({{site.baseurl}}/attachments/8224787/8355861.png)  
+4.  Go to your home page and hover your pointer over the **My account** area. The top path is a path where the template responsible for display of this area is located.![]({{site.baseurl}}/attachments/8224787/8355861.png)
 
 5.  `skins/``default/en/layout/header.bar.links.logged.account.tpl` is the template we were looking for. Its content is below: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
     {**
      * Account link
@@ -148,7 +148,7 @@ As a real life example, let us find what template is responsible for display of 
       <a href="{buildURL(#order_list#,##)}" class="register">{t(#My account#)}</a>
       <span class="email">({auth.profile.login})</span>
     </li>
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     Our task is to put the `<a href="{buildURL(#order_list#,##)}" class="register">{t(#My account#)}</a>` code between `<span></span>` tags.
 
@@ -161,16 +161,16 @@ First you need to know what views list contains the certain template/widget. The
 1.  Look at `@ListChild` directive in the comments of the template/widget code. Record like this `@ListChild (list="layout.header.bar.links.logged", weight="200")` says that the template is assigned to the `layout.header.bar.links.logged` view lists with **200** weight. The bigger the weight, the below it sits.
 2.  Run the MySQL query to your database like this: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     SELECT * FROM xc_view_lists WHERE tpl="layout/header.bar.links.logged.account.tpl";
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
-    where **tpl** parameter must be equal a path to your template.  
+    where **tpl** parameter must be equal a path to your template.
     If you are looking for view list of the **widget**, the query will be quite similar:  
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     SELECT * FROM xlite_view_lists WHERE child="XLite\\View\\PoweredBy";
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     but you need to pass name of the class as **child** parameter.
 
@@ -178,35 +178,35 @@ In case of our task – hiding **My account** link from home page –  view l
 
 In order to remove the template from its view list, you must specify the `runBuildCacheHandler()` method in the `Main.php` file of your module like this:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 	public static function runBuildCacheHandler()
     {
         parent::runBuildCacheHandler();
 
         \XLite\Core\Layout::getInstance()->removeTemplateFromList('layout/header.bar.links.logged.account.tpl', 'layout.header.bar.links.logged');
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
-_Note: if you are not sure how to create the module and Main.php file there, please check our {% link "previous guide" ref_TZnqVJsw %} out._
+_Note: if you are not sure how to create the module and Main.php file there, please check our {% link "previous guide" ref_G2mlgckf %} out._
 
 As you can see, we are passing first parameter to `removeTemplateFromList()` method as template path and second parameter as **view list name**.
 
 If you want to remove template from all view lists, then you can call it like this:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 	public static function runBuildCacheHandler()
     {
         parent::runBuildCacheHandler();
 
         \XLite\Core\Layout::getInstance()->removeTemplateFromLists('layout/header.bar.links.logged.account.tpl');
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 As you can see, we are calling `removeTemplateFromList**s**()` method instead of `removeTemplateFromList()` one. It has **s** character at the end, so it remove template from **lists.**
 
 Similar approaches are available for removing of widgets instead of templates, e.g.
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 	public static function runBuildCacheHandler()
     {
         parent::runBuildCacheHandler();
@@ -217,11 +217,11 @@ Similar approaches are available for removing of widgets instead of templates, e
 		// removing widget form all view lists
         \XLite\Core\Layout::getInstance()->removeClassFromLists('XLite\View\PoweredBy');
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Finally, you can call multiple removals of templates/widgets in a single `runBuildCacheHandler()` method like this:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 	public static function runBuildCacheHandler()
     {
         parent::runBuildCacheHandler();
@@ -230,7 +230,7 @@ Finally, you can call multiple removals of templates/widgets in a single `runBu
         \XLite\Core\Layout::getInstance()->removeClassFromList('XLite\View\PoweredBy', 'sidebar.footer');
         \XLite\Core\Layout::getInstance()->removeClassFromLists('XLite\View\Dashboard');
     }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Adding new templates and widgets
 
@@ -240,7 +240,7 @@ Since we need to add HTML code to front-end, we are creating template in the `<X
 
 Template name can be whatever you like, but must have **.tpl** extension. So, I am creating the template `<X-Cart>/skins/default/en/modules/Tony/DesignChanges/account.tpl` with almost exactly the same content as in default one:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * @ListChild (list="layout.header.bar.links.logged", weight="200")
@@ -250,7 +250,7 @@ Template name can be whatever you like, but must have **.tpl** extension. So, I 
   <span><strong><a href="{buildURL(#order_list#,##)}" class="register">{t(#My account#)}</a></strong></span>
   <span class="email">({auth.profile.login})</span>
 </li>
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 The only differences are:
 
@@ -266,8 +266,8 @@ You can download the module example described above here: [https://dl.dropboxus
 
 ## Attachments:
 
-* [home-page-my-account.png]({{site.baseurl}}/attachments/8224787/8355857.png) (image/png)  
-* [webmaster-kit-module.png]({{site.baseurl}}/attachments/8224787/8355858.png) (image/png)  
-* [webmaster-kit-module-settings.png]({{site.baseurl}}/attachments/8224787/8355859.png) (image/png)  
-* [enable-tracing.png]({{site.baseurl}}/attachments/8224787/8355860.png) (image/png)  
+* [home-page-my-account.png]({{site.baseurl}}/attachments/8224787/8355857.png) (image/png)
+* [webmaster-kit-module.png]({{site.baseurl}}/attachments/8224787/8355858.png) (image/png)
+* [webmaster-kit-module-settings.png]({{site.baseurl}}/attachments/8224787/8355859.png) (image/png)
+* [enable-tracing.png]({{site.baseurl}}/attachments/8224787/8355860.png) (image/png)
 * [path-to-template.png]({{site.baseurl}}/attachments/8224787/8355861.png) (image/png)

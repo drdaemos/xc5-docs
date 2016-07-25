@@ -1,5 +1,5 @@
 ---
-identifier: ref_5r0oIBzp
+identifier: ref_g8xO0UNP
 updated_at: 2016-05-06 00:00
 layout: article_with_sidebar
 lang: en
@@ -16,13 +16,13 @@ This article describes how to add Google Adwords Conversion Tracking code to X-
 
 Steps involved:
 
-1.  Create a new custom template file (for example, via FTP):  
+1.  Create a new custom template file (for example, via FTP):
 
-    _skins/theme_tweaker/default/en/body/js/google_ads_coversion_tracking.tpl_  
+    _skins/theme_tweaker/default/en/body/js/google_ads_coversion_tracking.tpl_
 
 2.  Add your Google Adwords Conversion Tracking Code to the custom template, for example:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
     {**
      * @ListChild (list="body", weight="999100")
@@ -49,31 +49,34 @@ Steps involved:
     </div>
     </noscript>
     {end:}
-    {% endraw %}{% endhighlight %}Icon
+    ```{% endraw %}
+    Icon
 
     Please note, you will need to adjust your original tracking code, in order to pass order total and currency values properly, for example:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     var google_conversion_value = {order.getTotal()};
     var google_conversion_currency = {order.currency.getCode()};
 
     value={order.getTotal()}
     currency_code={order.currency.getCode()}
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  Apply the following SQL patch to your X-Cart database:
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/body/js/google_ads_coversion_tracking.tpl", UNIX_TIMESTAMP());
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 4.  Re-generate X-Cart cache.
 
 Icon
 
 ## Related articles
 
-*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below the product list" /display/XDD/How+to+move+category+description+below+the+product+list %}
 *   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
+*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
+*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
 *   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
 *   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
 

@@ -1,5 +1,5 @@
 ---
-identifier: ref_NtxNHQ8N
+identifier: ref_Z6mwXUDg
 updated_at: 2015-01-06 00:00
 layout: article_with_sidebar
 lang: en
@@ -34,14 +34,14 @@ We need to start with setting up payment and shipping methods in the store. We w
 1.  Pick up at store
 2.  Courier
 
-We go to **Store setup** > **Shipping** section in your admin area and create these two shipping methods as follows:  
+We go to **Store setup** > **Shipping** section in your admin area and create these two shipping methods as follows:
 ![]({{site.baseurl}}/attachments/8225320/8356171.png)
 
-Do not forget to {% link "assign some shipping rates" ref_fpVluFMM %} to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
+Do not forget to {% link "assign some shipping rates" ref_zJgAefeE %} to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 admin.php?target=shipping_rates&methodid=2
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 The value right after `methodid=` part is the shipping method ID. In my case, it is **2**.
 
@@ -49,9 +49,9 @@ We also have to have two payment methods, that is why we go to **Store setup** >
 
 We need to know ID of **Credit Card** payment method that is why we click its **Configure** button and then look at browser's address bar again. It will be something like: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 admin.php?target=payment_method&method_id=132
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 The value right after `method_id=` part is the payment method ID. In my case, it is **132**.
 
@@ -59,9 +59,9 @@ The value right after `method_id=` part is the payment method ID. In my case, it
 
 Now we can start creating our mod.
 
-We {% link "create an empty module" ref_TZnqVJsw %} with developer ID **Tony** and module ID **PaymentShippingDependencyDemo**. Inside this module, we decorate the `getPaymentMethods()` method of the `\XLite\Model\Order` class. We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentShippingDependencyDemo/Model/Order.php` file with the following content: 
+We {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **PaymentShippingDependencyDemo**. Inside this module, we decorate the `getPaymentMethods()` method of the `\XLite\Model\Order` class. We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentShippingDependencyDemo/Model/Order.php` file with the following content: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -92,19 +92,19 @@ abstract class Order extends \XLite\Model\Order implements \XLite\Base\IDecorato
         return $list;
     }
 }
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Right now, `getPaymentMethods()` method looks default. We want to disable the **Credit Card** payment method for **Courier** shipping method that is why we should alter the condition: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method))
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 and if chosen shipping method is **Courier** – `$this->getShippingId() == 2` – then payment method with ID 132 (**Credit Card**) must be unset – `$method->getMethodId() == 132`. So, the final condition will be as follows: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method) || $this->getShippingId() == 2 && $method->getMethodId() == 132)
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 That is it. Now we need to re-deploy the store and check the results at checkout.
 
@@ -114,7 +114,7 @@ _Note: if your module does not work properly, please make sure that you are usin
 
 Once the store is re-deployed, you should add some product to a cart and go to checkout. When you choose **Pick up at store** shipping method, then you should see the following result:![]({{site.baseurl}}/attachments/8225320/8356173.png)
 
-If you switch shipping method to **Courier**, you should see the following result:  
+If you switch shipping method to **Courier**, you should see the following result:
  ![]({{site.baseurl}}/attachments/8225320/8356174.png)
 
 As you can see, the **Credit Card** payment method is hidden now.
@@ -125,7 +125,7 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 ## Attachments:
 
-* [shipping-methods.png]({{site.baseurl}}/attachments/8225320/8356171.png) (image/png)  
-* [payment-methods.png]({{site.baseurl}}/attachments/8225320/8356172.png) (image/png)  
-* [checkout-shipping-method-1.png]({{site.baseurl}}/attachments/8225320/8356173.png) (image/png)  
+* [shipping-methods.png]({{site.baseurl}}/attachments/8225320/8356171.png) (image/png)
+* [payment-methods.png]({{site.baseurl}}/attachments/8225320/8356172.png) (image/png)
+* [checkout-shipping-method-1.png]({{site.baseurl}}/attachments/8225320/8356173.png) (image/png)
 * [checkout-payment-method-2.png]({{site.baseurl}}/attachments/8225320/8356174.png) (image/png)

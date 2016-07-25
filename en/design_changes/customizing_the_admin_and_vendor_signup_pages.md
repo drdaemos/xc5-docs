@@ -1,5 +1,5 @@
 ---
-identifier: ref_zhQV9dkP
+identifier: ref_f4ohXara
 updated_at: 2016-02-12 00:00
 layout: article_with_sidebar
 lang: en
@@ -36,4 +36,4 @@ If you also need to change the Admin Signup Page footer link "Official Website"
 
 _See also:_
 
-*   {% link "Using Custom Skin module" ref_AwGTLXzr#Basicguidetothemecreation-UsingCustomSkinmodule %}
+*   {% link "Using Custom Skin module" ref_bC2TThPi#Basicguidetothemecreation-UsingCustomSkinmodule %}

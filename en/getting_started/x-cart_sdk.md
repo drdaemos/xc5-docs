@@ -1,5 +1,5 @@
 ---
-identifier: ref_HMDeHiJ8
+identifier: ref_HvrXVNvJ
 updated_at: 2014-12-17 00:00
 layout: article_with_sidebar
 lang: en
@@ -29,14 +29,14 @@ X-Cart SDK is a collection of macros that ease X-Cart 5 development. This articl
 
 # Obtaining X-Cart SDK
 
-1.  Download X-Cart SDK from [https://github.com/xcart/next-sdk](https://github.com/xcart/next-sdk) repository. If you are not familiar with GIT, you can simply download it as **.zip** archive.  
+1.  Download X-Cart SDK from [https://github.com/xcart/next-sdk](https://github.com/xcart/next-sdk) repository. If you are not familiar with GIT, you can simply download it as **.zip** archive.
     ![]({{site.baseurl}}/attachments/7864338/7995398.png)
 2.  Unpack it to the directory near to X-Cart's one. For instance, if your X-Cart lives in `~/www/xcart/` folder, then put your SDK's folder as `~/www/next-sdk/`.
 3.  Run macros from the X-Cart's folder, e.g. 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     ./../next-sdk/devkit/macros/create-module.php --module=Test\\Test
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     Note: this macro call will create module with developer ID **Test** and module ID **Test**.
 
@@ -44,9 +44,9 @@ X-Cart SDK is a collection of macros that ease X-Cart 5 development. This articl
 
 1.  If you are using Mac and PHP is run as a part of MAMP, you may need to run the script as 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     /Applications/MAMP/bin/php/php5.4.10/bin/php ./../next-sdk/devkit/macros/load-yaml.php path/to/yaml/file/install.yaml
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
     i.e. you need to explicitly call MAMP's PHP binary instead of relying on default PHP binary.
 
@@ -54,9 +54,9 @@ X-Cart SDK is a collection of macros that ease X-Cart 5 development. This articl
 
 The most actual information about how to run macro can be found by calling it with `--help` parameter, e.g.
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/create-module.php --help
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Let us take a closer look at macros available.
 
@@ -64,9 +64,9 @@ Let us take a closer look at macros available.
 
 Call this macro as:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/create-module.php --module=DeveloperID\\ModuleID
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 `--module` parameter must be passed and contain module's developer and module IDs separated by `\\` characters.
 
@@ -79,9 +79,9 @@ Aside from that, you can specify the following parameters:
 
 Call this macro as: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/create-page.php --module=Tony\\PageDemo --target=tony --interface=admin
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Mandatory parameters:
 
@@ -103,9 +103,9 @@ In case of example macro call, the following files will be created:
 
 Call this macro as:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/decorate.php --module=DeveloperID\\ModuleID --class=classes/XLite/Path/To/File.php
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 `--class` parameter must be passed and it defines what class is going to be decorated in the module passed in the `--module` parameter. You should specify a path to a file starting with `classes/` directory.
 
@@ -113,9 +113,9 @@ Call this macro as:
 
 Example 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/decorate.php --module=Tony\\DecoratorDemo --class=classes/XLite/View/Minicart.php
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 After running this command, the macro will create `<X-Cart>/classes/XLite/Module/Tony/DecoratorDemo/View/Minicart.php` file that will define a class that decorates the `\XLite\View\Minicart` one.
 
@@ -125,13 +125,13 @@ You can use this macro in case you need to load YAML file without uninstalling/i
 
 Call this macro as:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/load-yaml.php path/to/yaml/file/install.yaml
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 Your YAML file must be located at the `path/to/yaml/file/install.yaml` path you pass to macro.
 
-There is an {% link "alternative way to load YAML file" ref_xmWqJ8zE %}, if you prefer not to use X-Cart SDK.
+There is an {% link "alternative way to load YAML file" ref_8BPAwaEG %}, if you prefer not to use X-Cart SDK.
 
 ## Making demo dump for performance tests
 
@@ -139,9 +139,9 @@ In case you want to test your module or whole X-Cart's performance and you want 
 
 Call this macro as follows:
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/generate-dump-etalon.php
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 You can specify following parameters:
 
@@ -160,9 +160,9 @@ You can specify following parameters:
 
 Example of a macro call that will create **10 root categories** with **10 subcategories** for each root category (resulted in 100 categories). Each category will have an **image** and **30 featured products**. Each category will contain **100 products** (resulted in 10 000 products). Each product will have **8 attributes**, **5 of them allows selection** (product option) with **3 choices** (resulted in 80 000 attributes and 150 000 option choices). Each product will have **3 product images** and **4 wholesale prices**. Besides that the demo dump will contain **5000 orders** with **3 products per order**.
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 ./../next-sdk/devkit/macros/generate-dump-etalon.php --categories=10 --depth=2 --categoryImage -featuredProducts=30 --products=100 --attributes=8 --options=5 --optionValues=3 --productImages=3 --wholesalePrices=4 --orders=5000 --orderItems=3
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 _Note: you do not specify user number explicitly. You will have the same number of users as number of orders._
 

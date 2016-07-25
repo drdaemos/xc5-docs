@@ -1,5 +1,5 @@
 ---
-identifier: ref_4b7Ny6KH
+identifier: ref_Z0IrS8PW
 updated_at: 2016-01-21 00:00
 layout: article_with_sidebar
 lang: en
@@ -28,38 +28,38 @@ This article describes how you can create your own sidebar menu in customer stor
 
 # Step 1\. Create an empty module
 
-You can simply do it according to {% link "the guide" ref_TZnqVJsw %}. For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
+You can simply do it according to {% link "the guide" ref_G2mlgckf %}. For the sake of example, I have created a module with developer ID **Tony **and module ID **SidebarMenu**, so it will be sitting in the `<X-Cart 5>/XLite/Module/Tony/SidebarMenu/` folder.
 
 Rebuild the cache and this module will appear in the **Extensions > Installed modules** section in your admin area. Enable this module.
 
 # Step 2\. Create viewer class for your sidebar 
 
-1\.  Create `View` folder in your module.
-2\.  Put `MySidebar.php` script into this folder with the following content: 
+1.  Create `View` folder in your module.
+2.  Put `MySidebar.php` script into this folder with the following content: 
 
-{% highlight php %}{% raw %}
-<?php
+    {% raw %}```php
+    <?php
 
-namespace XLite\Module\Tony\SidebarMenu\View;
+    namespace XLite\Module\Tony\SidebarMenu\View;
 
-/**
- * @ListChild (list="sidebar.single", zone="customer", weight="500")
- * @ListChild (list="sidebar.first", zone="customer", weight="500")
- */
+    /**
+     * @ListChild (list="sidebar.single", zone="customer", weight="500")
+     * @ListChild (list="sidebar.first", zone="customer", weight="500")
+     */
 
-class MySidebar extends \XLite\View\SideBarBox
-{
-    protected function getHead()
+    class MySidebar extends \XLite\View\SideBarBox
     {
-        return 'My header';
-    }
+        protected function getHead()
+        {
+            return 'My header';
+        }
 
-    protected function getDir()
-    {
-        return 'modules/Tony/SidebarMenu/menu';
+        protected function getDir()
+        {
+            return 'modules/Tony/SidebarMenu/menu';
+        }
     }
-}
-{% endraw %}{% endhighlight %}
+    ```{% endraw %}
 
 Let's walk through each line of its code:
 
@@ -75,9 +75,9 @@ Let's walk through each line of its code:
 
 Create the template `<X-Cart 5>/skins/default/en/modules/Tony/SidebarMenu/menu/body.tpl` mentioned above. Its content will be what you want to display in the sidebar box, e.g.: 
 
-{% highlight php %}{% raw %}
+{% raw %}```php
 Hello world!
-{% endraw %}{% endhighlight %}
+```{% endraw %}
 
 # Step 4\. Rebuild the cache and check the results.
 
@@ -93,7 +93,7 @@ You can download this module pack for versions 5.2.x from here: [Tony-SidebarMe
 
 ## Attachments:
 
-* [sidebar-menus.png]({{site.baseurl}}/attachments/7505759/7602842.png) (image/png)  
-* [custom-sidebar-in-storefront]({{site.baseurl}}/attachments/7505759/7602843) (application/octet-stream)  
-* [custom-sidebar-in-storefront.png]({{site.baseurl}}/attachments/7505759/7602844.png) (image/png)  
+* [sidebar-menus.png]({{site.baseurl}}/attachments/7505759/7602842.png) (image/png)
+* [custom-sidebar-in-storefront]({{site.baseurl}}/attachments/7505759/7602843) (application/octet-stream)
+* [custom-sidebar-in-storefront.png]({{site.baseurl}}/attachments/7505759/7602844.png) (image/png)
 * [Tony-SidebarMenu-v5_2_0.tar]({{site.baseurl}}/attachments/7505759/9438471.tar) (application/x-tar)

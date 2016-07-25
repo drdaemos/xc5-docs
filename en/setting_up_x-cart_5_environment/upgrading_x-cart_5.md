@@ -1,5 +1,5 @@
 ---
-identifier: ref_e7hPRwXR
+identifier: ref_pQQ1CLe1
 updated_at: 2016-01-08 00:00
 layout: article_with_sidebar
 lang: en
@@ -48,7 +48,7 @@ Upgrade hooks may exist in the modules as well, if the module needs to synchroni
 
 Once per day, each store checks the marketplace for updates. The response from marketplace is cached for a day. If you need to delete this cache, you should open the `admin.php?target=addons_list_marketplace&action=clear_cache` link.
 
-If there is any kind of update available, the merchant will see the **Updates are available** link in the header of admin area.  
+If there is any kind of update available, the merchant will see the **Updates are available** link in the header of admin area.
 ![]({{site.baseurl}}/attachments/7505469/7602688.png)
 
 Click this link and proceed to upgrade. You can see possible warnings before upgrade.
@@ -74,7 +74,7 @@ At this last step, you can also receive several types of warnings:
 
 ![]({{site.baseurl}}/attachments/7505469/7602770.png)
 
-*   If your store has any modules that have upgrade hooks and these modules are disabled (not active), you will be prompted to either activate such modules or completely remove them. Module must be active in order to correctly run upgrade hooks and this is the reason why the module must be either enabled or deleted  
+*   If your store has any modules that have upgrade hooks and these modules are disabled (not active), you will be prompted to either activate such modules or completely remove them. Module must be active in order to correctly run upgrade hooks and this is the reason why the module must be either enabled or deleted
     ![]({{site.baseurl}}/attachments/7505469/7602769.png)
 
 After clicking **Install updates** button, there will be the process as follows:
@@ -98,7 +98,7 @@ Below the description of full manual upgrade:
 1.  How to get new files? First of all, you should check `<X-Cart 5>/var/tmp` folder and all new files should be there. If this folder is empty, you should install the X-Cart 5 version you are upgrading to on the same server (you can freely get it on [http://www.x-cart.com)](http://www.x-cart.com)) and activate all paid add-ons using your license keys. After that, this installation will have all needed files.
 2.  You need to run all pre-upgrade hooks (core's and modules'). The code example of how to run one hook is below: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
     require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'top.inc.php');
 
@@ -106,7 +106,8 @@ Below the description of full manual upgrade:
     $func();
 
     ?>
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 3.  Overwrite all files manually. You can put files from the new version distributive pack to your store's folder.
 
 4.  Run all post-upgrade hooks. The code will be the same as in the point 2, but it will point to the post-upgrade hooks file.
@@ -117,7 +118,7 @@ Below the description of full manual upgrade:
 
 7.  Run hooks for updating language variables. The code example for one hook is below: 
 
-    {% highlight php %}{% raw %}
+    {% raw %}```php
     <?php
         require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'top.inc.php');
 
@@ -131,22 +132,23 @@ Below the description of full manual upgrade:
 
         \XLite\Core\Translation::getInstance()->reset();
     ?>
-    {% endraw %}{% endhighlight %}
+    ```{% endraw %}
+
 8.  Upgrade is finished.
 
 _Related pages:_
 
-*   {% link "X-Cart Upgrade General Steps" ref_Ips4iO7l %}
-*   {% link "Upgrade hooks" ref_ePtzSg4L %}
+*   {% link "X-Cart Upgrade General Steps" ref_xCPLmTHT %}
+*   {% link "Upgrade hooks" ref_WOuwAgsI %}
 
 ## Attachments:
 
-* [updates-available]({{site.baseurl}}/attachments/7505469/7602687) (application/octet-stream)  
-* [updates-available.png]({{site.baseurl}}/attachments/7505469/7602688.png) (image/png)  
-* [upgrade-purchase-license.png]({{site.baseurl}}/attachments/7505469/7602689.png) (image/png)  
-* [update-minor-upgrade.png]({{site.baseurl}}/attachments/7505469/7602690.png) (image/png)  
-* [upgrade-major-update.png]({{site.baseurl}}/attachments/7505469/7602691.png) (image/png)  
-* [modules-must-be-either-activated-or-disabled]({{site.baseurl}}/attachments/7505469/7602768) (application/octet-stream)  
-* [modules-must-be-either-activated-or-disabled.png]({{site.baseurl}}/attachments/7505469/7602769.png) (image/png)  
-* [some-files-are-modified.png]({{site.baseurl}}/attachments/7505469/7602770.png) (image/png)  
+* [updates-available]({{site.baseurl}}/attachments/7505469/7602687) (application/octet-stream)
+* [updates-available.png]({{site.baseurl}}/attachments/7505469/7602688.png) (image/png)
+* [upgrade-purchase-license.png]({{site.baseurl}}/attachments/7505469/7602689.png) (image/png)
+* [update-minor-upgrade.png]({{site.baseurl}}/attachments/7505469/7602690.png) (image/png)
+* [upgrade-major-update.png]({{site.baseurl}}/attachments/7505469/7602691.png) (image/png)
+* [modules-must-be-either-activated-or-disabled]({{site.baseurl}}/attachments/7505469/7602768) (application/octet-stream)
+* [modules-must-be-either-activated-or-disabled.png]({{site.baseurl}}/attachments/7505469/7602769.png) (image/png)
+* [some-files-are-modified.png]({{site.baseurl}}/attachments/7505469/7602770.png) (image/png)
 * [create-a-backup.png]({{site.baseurl}}/attachments/7505469/7602771.png) (image/png)

@@ -1,5 +1,5 @@
 ---
-identifier: ref_0WR1u8gl
+identifier: ref_mBdZQvEu
 updated_at: 2015-12-08 00:00
 layout: article_with_sidebar
 lang: en
@@ -16,104 +16,13 @@ description: Study different guides to achieve features that you need
 
 * * *
 
-<table class="aui content-report-table-macro">
-
-<thead>
-
-<tr>
-
-<th>Title</th>
-
-<th>Creator</th>
-
-<th>Modified</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td class="title">{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1467290194616">Jun 30, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to move category description below the product list" /display/XDD/How+to+move+category+description+below+the+product+list %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1467131843878">Jun 28, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1464274793209">May 26, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1462549854685">May 06, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1462454813749">May 05, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to hide left-hand bar for static pages only" /display/XDD/How+to+hide+left-hand+bar+for+static+pages+only %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1460983337559">Apr 18, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "How to set expiration date for static files being served directly by Nginx" /display/XDD/How+to+set+expiration+date+for+static+files+being+served+directly+by+Nginx %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1456671632499">Feb 28, 2016</td>
-
-</tr>
-
-<tr>
-
-<td class="title">{% link "X-Cart Upgrade General Steps" /display/XDD/X-Cart+Upgrade+General+Steps %}</td>
-
-<td class="creator">{% link "Sergey Fomin" /display/~seyfin %}</td>
-
-<td class="modified" data-sortable-date="1452239038710">Jan 08, 2016</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Title | Creator | Modified |
+| --- | --- | --- |
+| {% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %} | {% link "Sergey Fomin" /display/~seyfin %} | May 26, 2016 |
+| {% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %} | {% link "Sergey Fomin" /display/~seyfin %} | May 26, 2016 |
+| {% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %} | {% link "Sergey Fomin" /display/~seyfin %} | May 18, 2016 |
+| {% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %} | {% link "Sergey Fomin" /display/~seyfin %} | May 06, 2016 |
+| {% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %} | {% link "Sergey Fomin" /display/~seyfin %} | May 05, 2016 |
+| {% link "How to hide left-hand bar for static pages only" /display/XDD/How+to+hide+left-hand+bar+for+static+pages+only %} | {% link "Sergey Fomin" /display/~seyfin %} | Apr 18, 2016 |
+| {% link "How to set expiration date for static files being served directly by Nginx" /display/XDD/How+to+set+expiration+date+for+static+files+being+served+directly+by+Nginx %} | {% link "Sergey Fomin" /display/~seyfin %} | Feb 28, 2016 |
+| {% link "X-Cart Upgrade General Steps" /display/XDD/X-Cart+Upgrade+General+Steps %} | {% link "Sergey Fomin" /display/~seyfin %} | Jan 08, 2016 |

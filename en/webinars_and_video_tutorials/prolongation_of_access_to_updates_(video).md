@@ -1,5 +1,5 @@
 ---
-identifier: ref_4TUkZTiE
+identifier: ref_pIvO4FGU
 updated_at: 2015-11-16 00:00
 layout: article_with_sidebar
 lang: en
@@ -18,10 +18,10 @@ When you purchase a license for one of X-Cart 5 packages or modules, you get one
 
 Expired license keys have been found that do not allow to proceed
 
-Warning:X-Cart license key has been activated. However, this key is expired and does not allow getting upgrade packs from the Marketplace.  
+Warning:X-Cart license key has been activated. However, this key is expired and does not allow getting upgrade packs from the Marketplace.
 See log file for details
 
-Warning:The license key for the module "name" by "author" has been successfully verified and activated. However, this key is expired and does not allow getting module upgrade packs from the Marketplace.  
+Warning:The license key for the module "name" by "author" has been successfully verified and activated. However, this key is expired and does not allow getting module upgrade packs from the Marketplace.
 See log file for details
 
 Error:Not all the upgrade packs have been downloaded. This may have been caused by one of the following:

@@ -1,5 +1,5 @@
 ---
-identifier: ref_un5puQw8
+identifier: ref_zmxLrxlu
 updated_at: 2014-05-14 00:00
 layout: article_with_sidebar
 lang: en
@@ -41,7 +41,7 @@ Once you have installed the Migrate2XCN module, go to its settings:
 
 **** ![]({{site.baseurl}}/attachments/3309570/7602239.png?effects=drop-shadow)****
 
-and insert your X-Cart 5 license key there (you should have received this license key by email from X-Cart team)****  
+and insert your X-Cart 5 license key there (you should have received this license key by email from X-Cart team)****
  ![]({{site.baseurl}}/attachments/3309570/7602240.png?effects=drop-shadow)****
 
 # Step 3\. Change the marketplace URL in the file config.php.
@@ -97,9 +97,9 @@ It is recommended to adjust the config.php file after upgrade.
 1.  Create a backup of the <litecommerce-dir>/etc/config.php file (e.g. copy this to file config.bak.php)
 2.  Copy the file <litecommerce-dir>/etc/config.default.php to config.php
 3.  Open both the files <litecommerce-dir>/etc/config.php and config.bak.php in a text editor.
-4.  Copy the contents of the following sections from config.bak.php to <litecommerce-dir>/etc/config.php file:  
-    [database_details]  
-    [host_details]  
+4.  Copy the contents of the following sections from config.bak.php to <litecommerce-dir>/etc/config.php file:
+    [database_details]
+    [host_details]
     [installer_details]
 5.  If any other sections in your config.php file have been changed, e.g. [clean_urls], [skin_details], etc, transfer them to the new config.php as well.
 
@@ -119,13 +119,13 @@ Try to clear the browser's cache.
 
 ## Attachments:
 
-* [migration-lc3-xc5-step1.png]({{site.baseurl}}/attachments/3309570/7602238.png) (image/png)  
-* [migration-lc3-xc5-step2.png]({{site.baseurl}}/attachments/3309570/7602239.png) (image/png)  
-* [migration-lc3-xc5-step3.png]({{site.baseurl}}/attachments/3309570/7602240.png) (image/png)  
-* [migration-lc3-xc5-step4.png]({{site.baseurl}}/attachments/3309570/7602241.png) (image/png)  
-* [migration-lc3-xc5-step5.png]({{site.baseurl}}/attachments/3309570/7602242.png) (image/png)  
-* [migration-lc3-xc5-step6.png]({{site.baseurl}}/attachments/3309570/7602243.png) (image/png)  
-* [migration-lc3-xc5-step7.png]({{site.baseurl}}/attachments/3309570/7602244.png) (image/png)  
-* [migration-lc3-xc5-step8.png]({{site.baseurl}}/attachments/3309570/7602245.png) (image/png)  
-* [migration-lc3-xc5-step9.png]({{site.baseurl}}/attachments/3309570/7602246.png) (image/png)  
+* [migration-lc3-xc5-step1.png]({{site.baseurl}}/attachments/3309570/7602238.png) (image/png)
+* [migration-lc3-xc5-step2.png]({{site.baseurl}}/attachments/3309570/7602239.png) (image/png)
+* [migration-lc3-xc5-step3.png]({{site.baseurl}}/attachments/3309570/7602240.png) (image/png)
+* [migration-lc3-xc5-step4.png]({{site.baseurl}}/attachments/3309570/7602241.png) (image/png)
+* [migration-lc3-xc5-step5.png]({{site.baseurl}}/attachments/3309570/7602242.png) (image/png)
+* [migration-lc3-xc5-step6.png]({{site.baseurl}}/attachments/3309570/7602243.png) (image/png)
+* [migration-lc3-xc5-step7.png]({{site.baseurl}}/attachments/3309570/7602244.png) (image/png)
+* [migration-lc3-xc5-step8.png]({{site.baseurl}}/attachments/3309570/7602245.png) (image/png)
+* [migration-lc3-xc5-step9.png]({{site.baseurl}}/attachments/3309570/7602246.png) (image/png)
 * [migration-lc3-xc5-step10.png]({{site.baseurl}}/attachments/3309570/7602247.png) (image/png)
