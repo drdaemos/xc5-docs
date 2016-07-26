@@ -19,7 +19,12 @@ layout: null
   }
 
   Search.prototype.connection = {
-    host: '{{ site.elasticsearch.js_host }}',
+    host: [
+      {
+        host: '{{ site.elasticsearch.js_host }}' + (window.location.protocol === 'https:' ? ':8443' : ':8000'),
+        auth: 'kbuser:53cr37p4'
+      }
+    ],
     log:  'trace',
     apiVersion: '2.0'
   }
