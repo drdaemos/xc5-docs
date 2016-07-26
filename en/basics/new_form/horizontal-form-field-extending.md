@@ -4,7 +4,7 @@ layout: article_with_sidebar
 updated_at: '2016-07-26 17:14 +0400'
 identifier: ref_v732d5P3
 order: 100
-published: false
+published: true
 title: Horizontal form field extending
 ---
 Horizontal extending form field can halp you to add field to same line as extendig one.
@@ -53,12 +53,15 @@ protected function defineFields()
 ```{% endraw %}
 
 So we transform
+
 {% raw %}```
 'prices_and_inventory' => [
     'price' => =FIELD DEFINITION=
 ]
 ```{% endraw %}
+
 to
+
 {% raw %}```
 'prices_and_inventory' => [
     'price' => [
@@ -79,6 +82,7 @@ to
 ### init
 
 As in form view in DTO you can use `\XLite\Model\DTO\Base\ADTO::compose()` in `\XLite\Model\DTO\Product\Info::init()`
+
 {% raw %}```php
 /**
  * @param mixed|\XLite\Model\Product $object

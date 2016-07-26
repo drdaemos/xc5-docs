@@ -4,7 +4,7 @@ layout: article_with_sidebar
 updated_at: '2016-07-26 16:34 +0400'
 identifier: ref_SlIeQwQo
 order: 100
-published: false
+published: true
 title: From fields
 ---
 Each form section must contain at least one field.
@@ -54,14 +54,17 @@ Available constrains see in `/vendor/symfony/validator/Constraints` and `/classe
 ### Frontend validation
 
 Frontend validation must be defined for selected constraints, if so it will be invoked automaticly
+
 {% raw %}```js
 Vue.validator('NotBlank', function (value, rule) {
     return !!value && 0 !== value.length;
 });
 ```{% endraw %}
+
 *todo: howto add frontend validation*
 
 ## Horizontal fields
+
 *todo: link to horizontal extending article*
 
 To define horizontal fields (several field on one row) you must set `XLite\View\FormModel\Type\Base\CompositeType` as type option and define subfields as **value** of `fields` option. Fields definition must be equal to simple field definition.

@@ -4,7 +4,7 @@ layout: article_with_sidebar
 updated_at: '2016-07-26 17:07 +0400'
 identifier: ref_S60wDZGW
 order: 100
-published: false
+published: true
 title: Form model DTO
 ---
 DTO used to transfer data to the form and get data from it.
