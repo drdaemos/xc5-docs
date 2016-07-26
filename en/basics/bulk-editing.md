@@ -82,120 +82,120 @@ protected function doActionStart()
 
 ## Добавление проля в сценарий (пример)
 
-`\XLite\Module\XC\ProductTags\Logic\BulkEdit\Scenario` - добавляем поле в сценарий (В данном примере еще и изменение лэйбла сценария)
+*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Scenario` - добавляем поле в сценарий (В данном примере еще и изменение лэйбла сценария)
 
-{% raw %}```php
-/**
- + @return array
- */
-protected static function defineScenario()
-{
-    $result = parent::defineScenario();
-    $result['product_categories']['title'] = \XLite\Core\Translation::getInstance()->translate('Categories and tags');
-
-    $result['product_categories']['fields']['default']['tags'] = [
-        'class'   => 'XLite\Module\XC\ProductTags\Logic\BulkEdit\Field\Product\Tag',
-        'options' => [
-            'position' => 200,
-        ],
-    ];
-
-    return $result;
-}
-```{% endraw %}
-
-`\XLite\Module\XC\ProductTags\Logic\BulkEdit\Field\Product\Tag` - объявление самого поля.
-
-{% raw %}```php
-class Tag extends \XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\AField
-{
-    public static function getSchema($name, $options)
+    {% raw %}```php
+    /**
+     * @return array
+     */
+    protected static function defineScenario()
     {
-        $position = isset($options['position']) ? $options['position'] : 0;
+        $result = parent::defineScenario();
+        $result['product_categories']['title'] = \XLite\Core\Translation::getInstance()->translate('Categories and tags');
 
-        return [
-            $name                => [
-                'label'    => static::t('Tags'),
-                'type'     => 'XLite\Module\XC\ProductTags\View\FormModel\Type\TagsType',
-                'multiple' => true,
-                'position' => $position,
+        $result['product_categories']['fields']['default']['tags'] = [
+            'class'   => 'XLite\Module\XC\ProductTags\Logic\BulkEdit\Field\Product\Tag',
+            'options' => [
+                'position' => 200,
             ],
-            $name . '_edit_mode' => [
-                'type'              => 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
-                'choices'           => [
-                    static::t('Add')       => 'add',
-                    static::t('Remove')    => 'remove',
-                    static::t('Replace with') => 'replace_with',
+        ];
+
+        return $result;
+    }
+    ```{% endraw %}
+
+*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Field\Product\Tag` - объявление самого поля.
+
+    {% raw %}```php
+    class Tag extends \XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\AField
+    {
+        public static function getSchema($name, $options)
+        {
+            $position = isset($options['position']) ? $options['position'] : 0;
+
+            return [
+                $name                => [
+                    'label'    => static::t('Tags'),
+                    'type'     => 'XLite\Module\XC\ProductTags\View\FormModel\Type\TagsType',
+                    'multiple' => true,
+                    'position' => $position,
                 ],
-                'choices_as_values' => true,
-                'placeholder'       => false,
-                'multiple'          => false,
-                'expanded'          => true,
-                'is_data_field'     => false,
-                'position'          => $position + 1,
-            ],
-        ];
-    }
-
-    public static function getData($name, $object)
-    {
-        return [
-            $name . '_edit_mode' => 'add',
-            $name                => [],
-        ];
-    }
-
-    public static function populateData($name, $object, $data)
-    {
-        $repo = \XLite\Core\Database::getRepo('XLite\Module\XC\ProductTags\Model\Tag');
-        $tags = $repo->getListByIdOrName($data->tags);
-
-        $tagsEditMode = $data->tags_edit_mode;
-        if ($tagsEditMode === 'remove') {
-            $object->removeTagsByTags($tags);
-
-        } elseif ($tagsEditMode === 'replace_with') {
-            $object->replaceTagsByTags($tags);
-
-        } else {
-            $object->addTagsByTags($tags);
-        }
-    }
-
-    /**
-     * @param string $name
-     * @param array  $options
-     *
-     * @return array
-     */
-    public static function getViewColumns($name, $options)
-    {
-        return [
-            $name => [
-                'name'    => static::t('Tags'),
-                'orderBy' => isset($options['position']) ? $options['position'] : 0,
-            ],
-        ];
-    }
-
-    /**
-     * @param $name
-     * @param $object
-     *
-     * @return array
-     */
-    public static function getViewValue($name, $object)
-    {
-        $result = [];
-        /** @var \XLite\Module\XC\ProductTags\Model\Tag $tag */
-        foreach ($object->getTags() as $tag) {
-            $result[] = $tag->getName();
+                $name . '_edit_mode' => [
+                    'type'              => 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
+                    'choices'           => [
+                        static::t('Add')       => 'add',
+                        static::t('Remove')    => 'remove',
+                        static::t('Replace with') => 'replace_with',
+                    ],
+                    'choices_as_values' => true,
+                    'placeholder'       => false,
+                    'multiple'          => false,
+                    'expanded'          => true,
+                    'is_data_field'     => false,
+                    'position'          => $position + 1,
+                ],
+            ];
         }
 
-        return $result ? implode(', ', $result) : static::t('Not set');
+        public static function getData($name, $object)
+        {
+            return [
+                $name . '_edit_mode' => 'add',
+                $name                => [],
+            ];
+        }
+
+        public static function populateData($name, $object, $data)
+        {
+            $repo = \XLite\Core\Database::getRepo('XLite\Module\XC\ProductTags\Model\Tag');
+            $tags = $repo->getListByIdOrName($data->tags);
+
+            $tagsEditMode = $data->tags_edit_mode;
+            if ($tagsEditMode === 'remove') {
+                $object->removeTagsByTags($tags);
+
+            } elseif ($tagsEditMode === 'replace_with') {
+                $object->replaceTagsByTags($tags);
+
+            } else {
+                $object->addTagsByTags($tags);
+            }
+        }
+
+        /**
+         - @param string $name
+         - @param array  $options
+         *
+         - @return array
+         */
+        public static function getViewColumns($name, $options)
+        {
+            return [
+                $name => [
+                    'name'    => static::t('Tags'),
+                    'orderBy' => isset($options['position']) ? $options['position'] : 0,
+                ],
+            ];
+        }
+
+        /**
+         - @param $name
+         - @param $object
+         *
+         - @return array
+         */
+        public static function getViewValue($name, $object)
+        {
+            $result = [];
+            /** @var \XLite\Module\XC\ProductTags\Model\Tag $tag */
+            foreach ($object->getTags() as $tag) {
+                $result[] = $tag->getName();
+            }
+
+            return $result ? implode(', ', $result) : static::t('Not set');
+        }
     }
-}
-```{% endraw %}
+    ```{% endraw %}
 
 ## Сохраниение данных в базу
 
