@@ -3,7 +3,7 @@ lang: en
 layout: article_with_sidebar
 updated_at: '2016-07-26 15:55 +0400'
 order: 100
-published: false
+published: true
 title: Model editing
 identifier: ref_8MoO0Ob
 ---
