@@ -5,6 +5,7 @@ updated_at: '2016-07-26 15:55 +0400'
 order: 100
 published: false
 title: Model editing
+identifier: ref_8MoO0Ob
 ---
 
 This article describes new way to create form to edit model entity. Original article with old implementation: {% link "Model editing page" ref_LanG54L9 %}
