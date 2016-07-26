@@ -9,16 +9,16 @@ title: Form model DTO
 ---
 DTO used to transfer data to the form and get data from it.
 
-##Definition
+## Definition
 
 DTO must extend `\XLite\Model\DTO\Base\ADTO` class
 
 You must define at least two methods:
-* `init` - to get data from given object and store it to DTO.
+*   `init` - to get data from given object and store it to DTO.
     
     Data must be stored at DTO class properties by section name as `\XLite\Model\DTO\Base\CommonCell`. `CommonCell` is object access to **key** -> **value** pairs represented form model fields for each section, If horizontal field used its value in DTO must be also `CommonCell`.
 
-	{% raw %}```php
+    {% raw %}```php
     protected function init($object)
     {
         $this->default = new CommonCell([
@@ -41,9 +41,9 @@ You must define at least two methods:
     }
     ```{% endraw %}
 
-* `populateTo` - to transfer data from DTO to given object.
+*   `populateTo` - to transfer data from DTO to given object.
 
-##Validation
+## Validation
 
 You can define DTO level backend validation to check the entire DTO. To do this you can define `\XLite\Model\DTO\Base\ADTO::validate()` static method:
 
@@ -62,6 +62,6 @@ You can define DTO level backend validation to check the entire DTO. To do this 
 
 If there is invalid state you mast call `\XLite\Model\DTO\Base\ADTO::addViolation()` method with 3 params:
 
-* $context - the second param of `validate` method.
-* $field - full field name in dot notation (`[section].[field]` or `[section].[field].[subfield]`).
-* $message - message described the error.
+*   $context - the second param of `validate` method.
+*   $field - full field name in dot notation (`[section].[field]` or `[section].[field].[subfield]`).
+*   $message - message described the error.

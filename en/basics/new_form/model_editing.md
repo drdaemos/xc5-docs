@@ -10,13 +10,13 @@ identifier: ref_8MoO0Ob
 
 This article describes new way to create form to edit model entity. Original article with old implementation: {% link "Model editing page" ref_LanG54L9 %}
 
-##Implementation
+## Implementation
 
 We start with creating a simple module with developer ID **XCExample** and module ID **ModelEditing**. Then, we create a page target=example_product_edit in admin area. For that we create:
 
-* an empty controller class `\XLite\Module\XCExample\ModelEditing\Controller\Admin\ExampleProductEdit`;
-* page widget class `\XLite\Module\XCExample\ModelEditing\View\Page\Admin\ProductEdit` with the following content: 
-	{% raw %}```php
+*   an empty controller class `\XLite\Module\XCExample\ModelEditing\Controller\Admin\ExampleProductEdit`;
+*   page widget class `\XLite\Module\XCExample\ModelEditing\View\Page\Admin\ProductEdit` with the following content: 
+    {% raw %}```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -56,134 +56,134 @@ We start with creating a simple module with developer ID **XCExample** and modul
     }
     ```{% endraw %}
 
-* an empty page template `<X-Cart>/skins/admin/modules/XCExample/ModelEditing/page/product_edit/body.twig`.
+*   an empty page template `<X-Cart>/skins/admin/modules/XCExample/ModelEditing/page/product_edit/body.twig`.
 
 Now we start creating a widget for model editing. For that we create the `<X-Cart>classes/XLite/Module/XCExample/ModelEditing/View/FormModel/ExampleProductEdit.php` file with the following code: 
     
-    {% raw %}```php
-    <?php
-    // vim: set ts=4 sw=4 sts=4 et:
+{% raw %}```php
+<?php
+// vim: set ts=4 sw=4 sts=4 et:
+
+/**
+ + Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
+ + See https://www.x-cart.com/license-agreement.html for license details.
+ */
+
+namespace XLite\Module\XCExample\ModelEditing\View\FormModel;
+
+class ExampleProductEdit extends \XLite\View\FormModel\AFormModel
+{
+    /**
+     + Do not render form_start and form_end in null returned
+     *
+     + @return string|null
+     */
+    protected function getTarget()
+    {
+        return 'example_product_edit';
+    }
 
     /**
-     * Copyright (c) 2011-present Qualiteam software Ltd. All rights reserved.
-     * See https://www.x-cart.com/license-agreement.html for license details.
+     + @return string
      */
-
-    namespace XLite\Module\XCExample\ModelEditing\View\FormModel;
-
-    class ExampleProductEdit extends \XLite\View\FormModel\AFormModel
+    protected function getAction()
     {
-        /**
-         * Do not render form_start and form_end in null returned
-         *
-         * @return string|null
-         */
-        protected function getTarget()
-        {
-            return 'example_product_edit';
-        }
-
-        /**
-         * @return string
-         */
-        protected function getAction()
-        {
-            return 'update';
-        }
-
-        /**
-         * @return array
-         */
-        protected function getActionParams()
-        {
-            $identity = $this->getDataObject()->default->identity;
-
-            return $identity ? ['product_id' => $identity] : [];
-        }
-
-        /**
-         * @return array
-         */
-        protected function defineFields()
-        {
-            $skuMaxLength = \XLite\Core\Database::getRepo('XLite\Model\Product')->getFieldInfo('sku', 'length');
-            $nameMaxLength = 255;
-
-            $currency = \XLite::getInstance()->getCurrency();
-            $currencySymbol = $currency->getCurrencySymbol(false);
-
-
-            $schema = [
-                self::SECTION_DEFAULT => [
-                    'sku'         => [
-                        'label'       => static::t('SKU'),
-                        'constraints' => [
-                            'XLite\Core\Validator\Constraints\MaxLength' => [
-                                'length'  => $skuMaxLength,
-                                'message' =>
-                                    static::t('SKU length must be less then {{length}}', ['length' => $skuMaxLength]),
-                            ],
-                        ],
-                        'position'    => 100,
-                    ],
-                    'name'        => [
-                        'label'       => static::t('Product name'),
-                        'required'    => true,
-                        'constraints' => [
-                            'Symfony\Component\Validator\Constraints\NotBlank' => [
-                                'message' => static::t('This field is required'),
-                            ],
-                            'XLite\Core\Validator\Constraints\MaxLength'       => [
-                                'length'  => $nameMaxLength,
-                                'message' =>
-                                    static::t('Name length must be less then {{length}}', ['length' => $nameMaxLength]),
-                            ],
-                        ],
-                        'position'    => 200,
-                    ],
-                    'price'       => [
-                        'label'       => static::t('Price'),
-                        'type'        => 'XLite\View\FormModel\Type\SymbolType',
-                        'symbol'      => $currencySymbol,
-                        'pattern'     => [
-                            'alias'          => 'currency',
-                            'prefix'         => '',
-                            'rightAlign'     => false,
-                            'groupSeparator' => $currency->getThousandDelimiter(),
-                            'radixPoint'     => $currency->getDecimalDelimiter(),
-                            'digits'         => $currency->getE(),
-                        ],
-                        'constraints' => [
-                            'Symfony\Component\Validator\Constraints\GreaterThanOrEqual' => [
-                                'value'   => 0,
-                                'message' => static::t('Minimum value is X', ['value' => 0]),
-                            ],
-                        ],
-                        'position'    => 300,
-                    ],
-                    'full_description' => [
-                        'label'    => static::t('Description'),
-                        'type'     => 'XLite\View\FormModel\Type\TextareaAdvancedType',
-                        'position' => 400,
-                    ],
-                ],
-            ];
-
-            return $schema;
-        }
+        return 'update';
     }
-    ```{% endraw %}
+
+    /**
+     + @return array
+     */
+    protected function getActionParams()
+    {
+        $identity = $this->getDataObject()->default->identity;
+
+        return $identity ? ['product_id' => $identity] : [];
+    }
+
+    /**
+     + @return array
+     */
+    protected function defineFields()
+    {
+        $skuMaxLength = \XLite\Core\Database::getRepo('XLite\Model\Product')->getFieldInfo('sku', 'length');
+        $nameMaxLength = 255;
+
+        $currency = \XLite::getInstance()->getCurrency();
+        $currencySymbol = $currency->getCurrencySymbol(false);
+
+
+        $schema = [
+            self::SECTION_DEFAULT => [
+                'sku'         => [
+                    'label'       => static::t('SKU'),
+                    'constraints' => [
+                        'XLite\Core\Validator\Constraints\MaxLength' => [
+                            'length'  => $skuMaxLength,
+                            'message' =>
+                                static::t('SKU length must be less then {{length}}', ['length' => $skuMaxLength]),
+                        ],
+                    ],
+                    'position'    => 100,
+                ],
+                'name'        => [
+                    'label'       => static::t('Product name'),
+                    'required'    => true,
+                    'constraints' => [
+                        'Symfony\Component\Validator\Constraints\NotBlank' => [
+                            'message' => static::t('This field is required'),
+                        ],
+                        'XLite\Core\Validator\Constraints\MaxLength'       => [
+                            'length'  => $nameMaxLength,
+                            'message' =>
+                                static::t('Name length must be less then {{length}}', ['length' => $nameMaxLength]),
+                        ],
+                    ],
+                    'position'    => 200,
+                ],
+                'price'       => [
+                    'label'       => static::t('Price'),
+                    'type'        => 'XLite\View\FormModel\Type\SymbolType',
+                    'symbol'      => $currencySymbol,
+                    'pattern'     => [
+                        'alias'          => 'currency',
+                        'prefix'         => '',
+                        'rightAlign'     => false,
+                        'groupSeparator' => $currency->getThousandDelimiter(),
+                        'radixPoint'     => $currency->getDecimalDelimiter(),
+                        'digits'         => $currency->getE(),
+                    ],
+                    'constraints' => [
+                        'Symfony\Component\Validator\Constraints\GreaterThanOrEqual' => [
+                            'value'   => 0,
+                            'message' => static::t('Minimum value is X', ['value' => 0]),
+                        ],
+                    ],
+                    'position'    => 300,
+                ],
+                'full_description' => [
+                    'label'    => static::t('Description'),
+                    'type'     => 'XLite\View\FormModel\Type\TextareaAdvancedType',
+                    'position' => 400,
+                ],
+            ],
+        ];
+
+        return $schema;
+    }
+}
+```{% endraw %}
 
 Let us have a closer look at this implementation:
-1. Our class extends an abstract implementation model editing widget (`\XLite\View\FormModel\AFormModel`):
+1.  Our class extends an abstract implementation model editing widget (`\XLite\View\FormModel\AFormModel`):
     {% raw %}```php
     class ExampleProductEdit extends \XLite\View\FormModel\AFormModel
     {...}
     ```{% endraw %}
-2. Next we implement methods to configure form action: (`getTarget`, `getAction`, `getActionParams`). This needs to submit form to appropriate controller and action with correct parameters.
-3. After that, we define what fields will be displayed in this widget by implementing method `defineFields()`:
-	{% raw %}```php
-	/**
+2.  Next we implement methods to configure form action: (`getTarget`, `getAction`, `getActionParams`). This needs to submit form to appropriate controller and action with correct parameters.
+3.  After that, we define what fields will be displayed in this widget by implementing method `defineFields()`:
+    {% raw %}```php
+    /**
      * @return array
      */
     protected function defineFields()
@@ -253,7 +253,7 @@ Let us have a closer look at this implementation:
 
         return $schema;
     }
-	```{% endraw %}
+    ```{% endraw %}
 
 The form must contain at least one section (`self::SECTION_DEFAULT` section is defined by default) so in this method we return an array: **key** of its elements is a **name** of the section and **value** is the array of section fields. Each **key** of section fields is the name of the field. In our case, they are **sku**, **name**, **price** and **full_description**. The value of array's elements is an array of parameters that define each field.
 
@@ -340,9 +340,9 @@ class ExampleProductEdit extends \XLite\Model\DTO\Base\ADTO
 }
 ```{% endraw %}
 
-* `static::validate()` method need to implement DTO leavel validation (for field level validation `constraint` field param used)
-* `init()` method used to transfer data to DTO
-* `populateTo` method used to transfer data from DTO
+*   `static::validate()` method need to implement DTO leavel validation (for field level validation `constraint` field param used)
+*   `init()` method used to transfer data to DTO
+*   `populateTo` method used to transfer data from DTO
 
 Now we are good with the model editing widget and we need to add it to the page template. We go to the `<X-Cart>/skins/admin/modules/XCExample/ModelEditing/page/product_edit/body.twig` template and define its content as follows: 
 {% raw %}```twig
@@ -444,8 +444,8 @@ We define $params property as:
 protected $params = array('target', 'product_id');
 ```{% endraw %}
 and it will tell controller class that only **target** and **product_id** parameters can be accepted.
-* `getFormModelObject()` method should return the DTO.
-* `doActionUpdate()` method defines a routine that will be run after we submit a form with the model editing widget values. The main processing happens in this lines:
+*   `getFormModelObject()` method should return the DTO.
+*   `doActionUpdate()` method defines a routine that will be run after we submit a form with the model editing widget values. The main processing happens in this lines:
     {% raw %}```php
     $form->submit($data[$this->formName]);
 
@@ -471,5 +471,5 @@ $this->setReturnURL($this->buildURL('example_product_edit', '', $params));
 
 We are done with this mod and now we have to re-deploy the store. After that try to open the admin.php?target=example_product_edit page.
 
-##Module pack
+## Module pack
 `XCExample\ModelEditing`
