@@ -16,6 +16,7 @@ We start with creating a simple module with developer ID **XCExample** and modul
 
 *   an empty controller class `\XLite\Module\XCExample\ModelEditing\Controller\Admin\ExampleProductEdit`;
 *   page widget class `\XLite\Module\XCExample\ModelEditing\View\Page\Admin\ProductEdit` with the following content: 
+
     {% raw %}```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
