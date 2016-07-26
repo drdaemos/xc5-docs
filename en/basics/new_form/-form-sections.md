@@ -21,6 +21,28 @@ Sections must be defined in method `\XLite\View\FormModel\AFormModel::defineSect
 * **expanded** - is section expanded by default (only with **collapse** equal **true**) (*default - **true***)
 * **position** - order position
 
+{% raw %}```php
+/**
+ * @return array
+ */
+protected function defineSections()
+{
+	$list = parent::defineSections();
+    $list['price'] = [
+        'label'       => static::t('Price'),
+        'help'        => static::t('In this section you can define product price.'),
+        'description' => static::t('Sections for price.'),
+        'collapse'    => true,
+        'expanded'    => false,
+        'position'    => 100,
+    ];
+
+    return $list;
+}
+```{% endraw %}
+
+see `XCExample\ModelEditingAdvanced` for complete example
+
 ##Section fields
 
 Section fields must be defined in method `\XLite\View\FormModel\AFormModel::defineFields()`. It must return **key** -> **value** pairs with **key** as section name and **value** as fields definition.
