@@ -53,7 +53,7 @@ Available constrains see in `/vendor/symfony/validator/Constraints` and `/classe
 
 ### Frontend validation
 
-Frontend validation must be defined for selected constraints, if so it will be invoked automaticly
+Frontend validation must be defined for selected constraints, if so it will be invoked automaticly. You can use only constraint with `message` option defined in backend.
 
 {% raw %}```js
 Vue.validator('NotBlank', function (value, rule) {
