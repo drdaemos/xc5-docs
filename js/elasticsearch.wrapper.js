@@ -22,7 +22,7 @@ layout: null
     host: [
       {
         host: '{{ site.elasticsearch.js_host }}',
-        auth: 'kbuser:53cr37p4'
+        auth: 'kbuser:53cr37p4',
         port: (window.location.protocol === 'https:' ? ':8443' : ':8000')
       }
     ],
