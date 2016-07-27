@@ -21,7 +21,7 @@ layout: null
   Search.prototype.connection = {
     host: {
       host: '{{ site.elasticsearch.js_host }}',
-      auth: 'kbuser:53cr37p4',
+      auth: '{{ site.elasticsearch.js_user }}:{{ site.elasticsearch.js_pass }}',
       port: (window.location.protocol === 'https:' ? 8443 : 8000),
       protocol: (window.location.protocol === 'https:' ? 'https' : 'http')
     },
