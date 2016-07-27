@@ -11,5 +11,4 @@ icon: announcement
 description: Discover new features and bugfixes
 ---
 
-
-X-Cart 5 Changelog
+X-Cart 5 Changelogs

@@ -3,6 +3,7 @@ identifier: ref_M5uOsTCG
 updated_at: 2014-07-31 00:00
 layout: article_with_sidebar
 lang: en
+order: 1001
 title: 'X-Cart Next 1.2.4 - 11 Jul 2013'
 categories:
   - Changelog
