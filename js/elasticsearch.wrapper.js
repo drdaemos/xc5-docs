@@ -21,8 +21,9 @@ layout: null
   Search.prototype.connection = {
     host: [
       {
-        host: '{{ site.elasticsearch.js_host }}' + (window.location.protocol === 'https:' ? ':8443' : ':8000'),
+        host: '{{ site.elasticsearch.js_host }}',
         auth: 'kbuser:53cr37p4'
+        port: (window.location.protocol === 'https:' ? ':8443' : ':8000')
       }
     ],
     log:  'trace',
