@@ -256,9 +256,9 @@ Let us have a closer look at this implementation:
     }
     ```{% endraw %}
 
-The form must contain at least one section (`self::SECTION_DEFAULT` section is defined by default) so in this method we return an array: **key** of its elements is a **name** of the section and **value** is the array of section fields. Each **key** of section fields is the name of the field. In our case, they are **sku**, **name**, **price** and **full_description**. The value of array's elements is an array of parameters that define each field.
+The form must contain at least one section (`self::SECTION_DEFAULT` section is defined by default) so in this method we return an array: **key** is a **name** of the section and **value** is the array of section fields. Each **key** of section fields is the name of the field. In our case, they are **sku**, **name**, **price** and **full_description**. The value of array's elements is an array of parameters that define each field.
 
-Параметры поля должны соответсвовать опциям выбранного типа (тип задается полем **type** в параметрах поля, если тип не задан используется `Symfony\Component\Form\Extension\Core\Type\TextType`), исключение: параметроы **type** и **position** - эти параметры не используются внутри типов.
+Field's parameters must match parameters of the field's type. For example, if you have **sku** field in example above, you cannot define a parameter **pattern** for it as we did for **price** one, because **sku**'s type will not know what to do with it and it will result in error. Exception are **type** и **position** parameters, which applicable to all fields
 
 Now we need to create the `\XLite\Module\XCExample\ModelEditing\Model\DTO\ExampleProductEdit` it need to validate data and trasfer data to and from form. For that, we create the
 `<X-Cart>/classes/XLite/Module/XCExample/ModelEditing/Model/DTO/ExampleProductEdit.php` file with the following content: 
