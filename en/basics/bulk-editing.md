@@ -7,9 +7,7 @@ order: 100
 published: true
 title: Bulk editing
 ---
-Групповое редактирование представляет собой списки полей объеденненые в сценарии редактирования.
-Сценарии описаны в `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Scenario::defineScenario()`
-ключи - название сценария, значения - опции сценария
+Bulk editing is essentially a list of fields to be edited combined into editing scenarios. Scenarios are described in `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Scenario::defineScenario()` method, which returns an array. Keys of the array are names of the scenarios and values are their settings. Let us have a look at scenario of bulk editing of products in categories:
 
 {% raw %}```php
 'product_categories'           => [
@@ -31,26 +29,24 @@ title: Bulk editing
 ],
 ```{% endraw %}
 
-`title` - заголовок сценария
-`formModel`, `view`, `DTO` и `step` - технические настройки сценария
-`fields` - список полей сценария объединенных в секции (тут нельзя 
-использовать горизонтальное объединение полей)
-Здесь каждое поле должно содержать класс где оно описано и дополнительные опции (сейчас у нас используется только position)
+`title` - title of the scenario;
+`formModel`, `view`, `DTO` и `step` - tech settings used in the scenario;
+`fields` - a list of fields divided into sections. Each field must contain a class and options (we only use `position` one in the example.
 
-## Поля
+## Fields
 
-Каждое поле должно быть описано в классе унаследованном от `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\AField`
-*   `getSchema()` - возвращает описание схемы поля, причем нужно вренуть как массив с ключем - имя поля и значением - описание этого поля. Это необходимо для того, что бы можно было использовать в рамках одного описания несколько полей формы (`\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\Product\Category`)
-*   `getData()` - значение поля (полей) по умеолчанию. Это не должно быть какое-то реаьное занчение из моделей, это пустое дефолтное значение которое может зависить от типа поля.
-*   `populateData()` - перенос данных в модель (используется в `\XLite\Model\DTO\Base\ADTO::populateTo`)
-*   `getViewColumns()` - объявляюется колонка (или несколько) отображения текущих значений поля. По ним формируется таблица с текущими значениями
-*   `getViewValue()` - Возвращается текущее значение поля для таблицы выбранных элементов. При этом, если в таблицу поле добавляет несколько колонок, то этот метод быдет вызван для каждой колонки отдельно с передачей в него названия колонки и объекта из которого нужно получить значение.
+Each field must be defined by a class inherited from `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\AField`
+*   `getSchema()` returns a definition of the field. Returned value must be an array, where key is name of the field and value is its definition. This is required in order to allow several fields defined by one definition (`\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\Product\Category`)
+*   `getData()` defines a value for a field (or fields) by default. It must not be a value taken from a model and must be a simple constant.
+*   `populateData()` defines how data will be moved into model (the method is used in `\XLite\Model\DTO\Base\ADTO::populateTo`)
+*   `getViewColumns()` defines a column (or columns) to display curent values of the field. The display table will be built based on this method.
+*   `getViewValue()` returns a current value of the field. If a field adds several columns to the table, then this method will be called for each column independently. During this call, X-Cart will pass a name of the column and object to take the value from for each column.
 
 ## Initialisation
 
 ### ItemsList
 
-Для перехода на групповое редактирование в панель списка продуктов добавлена кнопка `\XLite\Module\XC\BulkEditing\View\Button\Product` с селектором сценария. Суть в том, что нужно сохранить критерий поиска в текущем списке продуктов и список выбранных продуктов (если они есть) `\XLite\Module\XC\BulkEditing\Controller\Admin\BulkEdit`:
+In order to switch to bulk editing, the `\XLite\Module\XC\BulkEditing\View\Button\Product` button was aded to product list panel. The idea is to save a search criteria used in current product list as well as a list of selected products (if there are any) `\XLite\Module\XC\BulkEditing\Controller\Admin\BulkEdit`:
 
 {% raw %}```php
 /**
@@ -80,9 +76,9 @@ protected function doActionStart()
 }
 ```
 
-## Добавление проля в сценарий (пример)
+## Example of adding field into scenario
 
-*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Scenario` - добавляем поле в сценарий (В данном примере еще и изменение лэйбла сценария)
+*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Scenario` adds field into a scenario (as well as changes scenario's label)
 
     {% raw %}```php
     /**
@@ -104,7 +100,7 @@ protected function doActionStart()
     }
     ```{% endraw %}
 
-*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Field\Product\Tag` - объявление самого поля.
+*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Field\Product\Tag` is a definition of the field.
 
     {% raw %}```php
     class Tag extends \XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\AField
@@ -197,6 +193,5 @@ protected function doActionStart()
     }
     ```{% endraw %}
 
-## Сохраниение данных в базу
-
-Заполнение происходит итеративно, по принципу импорта, таким образом работоспособность не зависит от количества выбранных объектов для редактирование.
+## Saving data into DB
+Saving data happens in batches (the same as import), so it will not crash because we save a lot of objects.
