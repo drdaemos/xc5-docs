@@ -15,12 +15,12 @@ Our new skin uses [12-column Bootstrap grid](http://www.w3schools.com/bootstrap/
 
 ![Bootstrap grid]({{site.baseurl}}/attachments/baseline-grid.jpg)
 
-It has 40px gutter (gap between column content) and baseline grid with 20px line-height. See example below:
-
-- margin between the main banner and the title is 3 rhythms (60px);
-- margin between the title and the description is 2 rhythms (40px).
+It has 40px gutter (gap between column content) and baseline grid with 20px line-height. See screenshot below.
 
 ![Example of baseline grid]({{site.baseurl}}/attachments/vertical-rhythm.png)
+
+- Margin between the main banner and the title is 3 rhythms (60px);
+- Margin between the title and the description is 2 rhythms (40px).
 
 The grid makes pages easier to perceive and here is when you want to use it:
 
