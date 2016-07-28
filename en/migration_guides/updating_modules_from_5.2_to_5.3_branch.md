@@ -17,6 +17,7 @@ This is a guide that will help you to adapt your module to X-Cart 5.3 version. P
 - Decorators of abstract classes must be explicitly defined as abstract.
 - Replace `@LC_Dependencies` directive with `@Decorator\Depend`. Note that right syntax is `@Decorator\Depend({‘a’, ‘b’})`, not `@Decorator\Depend(‘a’, ‘b’)`.
 - Change widget types in module settings:
+
 -- `\XLite\View\FormField\Inline\Input\Text\Float` => `\XLite\View\FormField\Inline\Input\Text\FloatInput`
 -- `\XLite\View\FormField\Input\Base\String` => `\XLite\View\FormField\Input\Base\StringInput`
 -- `\XLite\View\FormField\Input\Text\Float` => `\XLite\View\FormField\Input\Text\FloatInput`
