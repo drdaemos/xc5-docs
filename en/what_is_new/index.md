@@ -16,12 +16,14 @@ Our new skin uses [12-column Bootstrap grid](http://www.w3schools.com/bootstrap/
 ![Bootstrap grid]({{site.baseurl}}/attachments/baseline-grid.jpg)
 
 It has 40px gutter (gap between column content) and baseline grid with 20px line-height. See example below:
+
 - margin between the main banner and the title is 3 rhythms (60px);
 - margin between the title and the description is 2 rhythms (40px).
 
 ![Example of baseline grid]({{site.baseurl}}/attachments/vertical-rhythm.png)
 
 The grid makes pages easier to perceive and here is when you want to use it:
+
 - When you create a design concept, take our [template](http://static.x-cart.com/download/%D0%A1risp_white_template_v1.sketch "What is new in 5.3") as a starting point. You will find all main pages with already defined baseline grid there. The template is in .sketch format and you need [Sketch app](https://www.sketchapp.com/ "What is new in 5.3") to use it.
 - When you want tweak existing design and want to move some elements. For that, download [Baseliner](https://chrome.google.com/webstore/detail/baseliner/agoopbiflnjadjfbhimhlmcbgmdgldld "What is new in 5.3") plugin for Google Chrome, define line-height as 20px (second parameter) and you will always be sure to place elements according to a grid.
 
