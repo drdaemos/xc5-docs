@@ -47,7 +47,8 @@ Of course, live store must not be in developer mode, because it slows down the p
 ## Backward compatibility
 In new core decorating and decorated classes are not [MappedSuperclass](http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3")'es by default as it was in previous branches. Doctrine's documentation does not explicitly tell, but Doctrine takes into account metadata only of private properties of MappedSuperclasses. This change means that metadata of private properties of decorating and decorated classes will be disregarded in 5.3, because those classes are not MappedSuperclasses any more. For example, if we have a private property with one-to-many association, the code will fail with the error.
 
-In X-Cart 5.2, you did not worry about these moments, but you could come to a pitfall described in [Doctrine documentation](http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3"): 
+In X-Cart 5.2, you did not worry about these moments, but you could come to a pitfall described in [Doctrine documentation](http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3"):
+
 > A mapped superclass cannot be an entity, it is not query-able and persistent relationships defined by a mapped superclass must be unidirectional (with an owning side only). This means that One-To-Many associations are not possible on a mapped superclass at all. Furthermore Many-To-Many associations are only possible if the mapped superclass is only used in exactly one entity at the moment. For further support of inheritance, the single or joined table inheritance features have to be used.
 
 New approach works around this problem and it is faster, because it does not walk through parent classes and you could not make a class non-MappedSuperclass earlier. Also, in old core you could not make a class non-MappedSuperclass, which makes new system more flexible. However, you have to be cautious about metadata. Properties with metadata must be defined as protected, not private. Or you need to explicitly define a class as MappedSuperclass by adding `@MappedSuperclass` directive, for example if you want to add indexes to decorator as {% raw %}`@Table(@Index)`{% endraw %}. 
@@ -88,10 +89,10 @@ If you just used **ThemeTweaker** or **CustomSkin** to modify the templates you 
 - {% raw %}`{{ url }}`{% endraw %} function is the same as {% raw %}`AView::buildURL()`{% endraw %};
 - {% raw %}`{{ asset }}`{% endraw %} function allows paths from skin's root and it returns URL of the file depending on the skin. Earlier the same routine was called implcitly for _src_ and _background_ attributes and for paths started with _images/_;
 - {% raw %}`{{ widget }}`{% endraw %} function supports 2 ways to call it:
--- with named arguments:
-{% raw %}`{{ widget('\\XLite\\View\\Abc', fieldName='currency_id', fieldId='currency-id', fieldOnly='1') }}`{% endraw %}
--- with hash argument:
-{% raw %}`{{ widget('\\XLite\\View\\Abc', {'data-filter': '1', fieldName: 'currency_id', fieldId: 'currency-id', fieldOnly: '1'}) }}`{% endraw %}
+    - with named arguments:
+    {% raw %}`{{ widget('\\XLite\\View\\Abc', fieldName='currency_id', fieldId='currency-id', fieldOnly='1') }}`{% endraw %}
+    - with hash argument:
+    {% raw %}`{{ widget('\\XLite\\View\\Abc', {'data-filter': '1', fieldName: 'currency_id', fieldId: 'currency-id', fieldOnly: '1'}) }}`{% endraw %}
 
 A call with hash argument is used when a name of an argument is not alphanumeric, e.g. contains hyphen. Named arguments must be alphanumeric in Twig. {% raw %}`{{ widget_list }}`{% endraw %} supports the same two ways of call.
 - {% raw %}`AView::getSafeValue()`{% endraw %} wraps a string into a special object, which will be output without escaping. This way, you can add HTML code into template and output it without a filter.
@@ -154,6 +155,7 @@ More info is here: {% link 'http://devs.x-cart.com/en/basics/bulk-editing.html' 
 ## New templates structure
 
 X-Cart 5.3 has the new structure of the templates. “default” directory was renamed to “customer”, “en” directory is removed, all mail templates moved to “mail” directory:
+
 - skins/default/en/ -> skins/customer/ 
 - skins/admin/en/ -> skins/admin/
 - skins/admin/ru/ -> skins/admin_ru/
@@ -163,11 +165,12 @@ X-Cart 5.3 has the new structure of the templates. “default” directory was r
 - skins/crisp_white/customer/en -> skins/crisp_white/customer
 
 Also, there are the following minor changes in the _skins/customer_ folder:
+
 - _authentication_ folder was renamed to _authorization_, because its templates are handled by Authorization class and we wanted name consistency.
 - _checkout_ folder
--- JS files were moved to _checkout/js sub-folder_;
--- CSS files were moved to _checkout/css_;
--- _checkout/check_cc.js_ file was removed;
+    - JS files were moved to _checkout/js sub-folder_;
+    - CSS files were moved to _checkout/css_;
+    - _checkout/check_cc.js_ file was removed;
 - _header_ folder were renamed to _meta_;
 - _layout_ folder now contains more templates, which were moved from _skins/default/en_. Also all templates inside are distributed between three sub-folders: _header_, _content_ and _footer_ except _sidebar.tpl_ template which is still in the root of _layout_ directory;
 - _recover_password_ directory. All templates were moved into _recover_password/parts_ directory;
