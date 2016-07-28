@@ -11,7 +11,7 @@ version: X-Cart 5.3.x
 
 ## “Crisp White” Skin
 
-Our new skin now uses [12-column Bootstrap grid](http://www.w3schools.com/bootstrap/bootstrap_grid_system.asp "What is new in 5.3"). 
+Our new skin uses [12-column Bootstrap grid](http://www.w3schools.com/bootstrap/bootstrap_grid_system.asp "What is new in 5.3"). 
 
 ![Bootstrap grid]({{site.baseurl}}/attachments/baseline-grid.jpg)
 
