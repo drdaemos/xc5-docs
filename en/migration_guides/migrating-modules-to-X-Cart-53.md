@@ -3,9 +3,9 @@ lang: en
 layout: article_with_sidebar
 updated_at: '2016-07-28 18:33 +0400'
 identifier: ref_u8kJ3imU
-title: Migrating modules to X-Cart 5.3
+title: Updating modules from 5.2 to 5.3 branch
 order: 100
-published: false
+published: true
 ---
 This is a guide that will help you to adopt your module to X-Cart 5.3 version. Please be sure to apply those changes only on dev copy of your store.
 
