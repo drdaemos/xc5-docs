@@ -23,9 +23,6 @@ layout: null
       host: '{{ site.elasticsearch.js_host }}',
       port: (window.location.protocol === 'https:' ? 8443 : 8000),
       protocol: (window.location.protocol === 'https:' ? 'https' : 'http'),
-      headers: {
-        'Authorization': 'Basic ' + btoa('{{ site.elasticsearch.js_user }}' + ':' + '{{ site.elasticsearch.js_pass }}')
-      }
     },
     log:  'trace',
     apiVersion: '2.0'
