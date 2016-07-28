@@ -1,6 +1,6 @@
 ---
 lang: en
-layout: article_with_sidebar
+layout: article
 updated_at: '2016-07-27 12:44 +0400'
 identifier: ref_MJEGoA0S
 order: 20
@@ -50,12 +50,12 @@ In new core decorating and decorated classes are not [MappedSuperclass]({{baseur
 In X-Cart 5.2, you did not worry about these moments, but you could come to a pitfall described in [Doctrine documentation]({{baseurl_lang}}/http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3"): 
 > A mapped superclass cannot be an entity, it is not query-able and persistent relationships defined by a mapped superclass must be unidirectional (with an owning side only). This means that One-To-Many associations are not possible on a mapped superclass at all. Furthermore Many-To-Many associations are only possible if the mapped superclass is only used in exactly one entity at the moment. For further support of inheritance, the single or joined table inheritance features have to be used.
 
-New approach works around this problem and it is faster, because it does not walk through parent classes and you could not make a class non-MappedSuperclass earlier. Also, in old core you could not make a class non-MappedSuperclass, which makes new system more flexible. However, you have to be cautious about metadata. Properties with metadata must be defined as protected, not private. Or you need to explicitly define a class as MappedSuperclass by adding `@MappedSuperclass` directive, for example if you want to add indexes to decorator as `@Table(@Index)`. 
+New approach works around this problem and it is faster, because it does not walk through parent classes and you could not make a class non-MappedSuperclass earlier. Also, in old core you could not make a class non-MappedSuperclass, which makes new system more flexible. However, you have to be cautious about metadata. Properties with metadata must be defined as protected, not private. Or you need to explicitly define a class as MappedSuperclass by adding `@MappedSuperclass` directive, for example if you want to add indexes to decorator as {% raw %}`@Table(@Index)`{% endraw %}. 
 
 - Metadata is parsed now by `Doctrine/Annotations` and thus parsing results may differ from previous ones. Syntax of the following annotation is incorrect according to this library:
-`LC_Dependencies(“a”, “b”)`
+{% raw %}`LC_Dependencies(“a”, “b”)`{% endraw %}
 and the right one is:
-`LC_Dependencies({“a”, “b”})`
+{% raw %}`LC_Dependencies({“a”, “b”})`{% endraw %}
 
 - For backward compatibility old-style annotations will still work, but this syntax is deprecated and your code must be changed according to new syntax.
 - Topological sort is implemented by [https://github.com/marcj/topsort.php]({{baseurl_lang}}/https://github.com/marcj/topsort.php "What is new in 5.3")
@@ -82,19 +82,19 @@ If you just used **ThemeTweaker** or **CustomSkin** to modify the templates you 
 
 ## Native Twig’s syntax was extended
 - form / endform tags are parsed together, so you will never forget to close the form;
-- `{{ widget }}` function is the same as Flexy's `<widget />`, but most of their calls were converted to simple `{% include %}`, which is faster;
-- `{{ widget_list }}` function is the same as Flexy's tag `<list />`;
-- `{{ t }}` function is the same as `Translation::translate()`;
-- `{{ url }}` function is the same as `AView::buildURL()`;
-- `{{ asset }}` function allows paths from skin's root and it returns URL of the file depending on the skin. Earlier the same routine was called implcitly for _src_ and _background_ attributes and for paths started with _images/_;
-- `{{ widget }}` function supports 2 ways to call it:
+- {% raw %}`{{ widget }}`{% endraw %} function is the same as Flexy's {% raw %}`<widget />`{% endraw %}, but most of their calls were converted to simple {% raw %}`{% include %}`{% endraw %}, which is faster;
+- {% raw %}`{{ widget_list }}`{% endraw %} function is the same as Flexy's tag {% raw %}`<list />`{% endraw %};
+- {% raw %}`{{ t }}`{% endraw %} function is the same as {% raw %}`Translation::translate()`{% endraw %};
+- {% raw %}`{{ url }}`{% endraw %} function is the same as {% raw %}`AView::buildURL()`{% endraw %};
+- {% raw %}`{{ asset }}`{% endraw %} function allows paths from skin's root and it returns URL of the file depending on the skin. Earlier the same routine was called implcitly for _src_ and _background_ attributes and for paths started with _images/_;
+- {% raw %}`{{ widget }}`{% endraw %} function supports 2 ways to call it:
 -- with named arguments:
-`{{ widget('\\XLite\\View\\Abc', fieldName='currency_id', fieldId='currency-id', fieldOnly='1') }}`
+{% raw %}`{{ widget('\\XLite\\View\\Abc', fieldName='currency_id', fieldId='currency-id', fieldOnly='1') }}`{% endraw %}
 -- with hash argument:
-`{{ widget('\\XLite\\View\\Abc', {'data-filter': '1', fieldName: 'currency_id', fieldId: 'currency-id', fieldOnly: '1'}) }}`
+{% raw %}`{{ widget('\\XLite\\View\\Abc', {'data-filter': '1', fieldName: 'currency_id', fieldId: 'currency-id', fieldOnly: '1'}) }}`{% endraw %}
 
-A call with hash argument is used when a name of an argument is not alphanumeric, e.g. contains hyphen. Named arguments must be alphanumeric in Twig. `{{ widget_list }}` supports the same two ways of call.
-- `AView::getSafeValue()` wraps a string into a special object, which will be output without escaping. This way, you can add HTML code into template and output it without a filter.
+A call with hash argument is used when a name of an argument is not alphanumeric, e.g. contains hyphen. Named arguments must be alphanumeric in Twig. {% raw %}`{{ widget_list }}`{% endraw %} supports the same two ways of call.
+- {% raw %}`AView::getSafeValue()`{% endraw %} wraps a string into a special object, which will be output without escaping. This way, you can add HTML code into template and output it without a filter.
 
 
 ## Improved widget-cache
@@ -109,9 +109,9 @@ Here is a comparison table:
 - [X-Cart 5.2 benchmark details]({{baseurl_lang}}/http://glorious-voyage.surge.sh/loadsimulation52-1459780419152/index.html "What is new in 5.3");
 - [X-Cart 5.3 behchmark details]({{baseurl_lang}}/http://glorious-voyage.surge.sh/loadsimulation53-1459781135239/index.html "What is new in 5.3").
 
-- `AView::executeCached()` method caches a value returned by a function, name of which is passed as an argument. It is used when you need to cache a value in addition to a body of the widget. Most often, you need it to cache some data for `isVisible()` method, e.g. number of elements in the list. Caching rules are the same as caching rules the widget: cache on/off and TTL.
+- {% raw %}`AView::executeCached()`{% endraw %} method caches a value returned by a function, name of which is passed as an argument. It is used when you need to cache a value in addition to a body of the widget. Most often, you need it to cache some data for {% raw %}`isVisible()`{% endraw %} method, e.g. number of elements in the list. Caching rules are the same as caching rules the widget: cache on/off and TTL.
 
-More comprehensive and robust approach is to make complicated logic of `isVisible()` being cached alongside widget's body.
+More comprehensive and robust approach is to make complicated logic of {% raw %}`isVisible()`{% endraw %} being cached alongside widget's body.
 
 - PageQueryCountTest test was added to Performance's suite. It simulates number of requests to home, category, product pages on warm-up cache (guest user, empty cart). Simulation is done from random IPs in order to see how cache is shared between users.
 
