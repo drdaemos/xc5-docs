@@ -15,7 +15,7 @@ Our new skin now uses [12-column Bootstrap grid]({{baseurl_lang}}/http://www.w3s
 - margin between the main banner and the title is 3 rhythms (60px);
 - margin between the title and the description is 2 rhythms (40px).
 
-![Example of vertical rhythms]({{site.baseurl}}/attachments/image00.png)
+![Example of vertical rhythms]({{site.baseurl}}/attachments/vertical-rhythm.png)
 
 The grid makes pages easier to perceive and here is when you want to use it:
 - When you create a design concept, take our template as a starting point. You will find all main pages with already defined grid there.
@@ -194,4 +194,3 @@ Also, there are the following minor changes in the _skins/customer_ folder:
 
 ## ItemsList improvements and new features
 In X-Cart 5.0 you had to create around 20 files in order to properly create ItemsList, now 2 files are enough.
-
