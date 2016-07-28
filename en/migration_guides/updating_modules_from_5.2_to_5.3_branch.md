@@ -7,7 +7,7 @@ title: Updating modules from 5.2 to 5.3 branch
 order: 200
 published: true
 ---
-This is a guide that will help you to adopt your module to X-Cart 5.3 version. Please be sure to apply those changes only on dev copy of your store.
+This is a guide that will help you to adapt your module to X-Cart 5.3 version. Please be sure to apply those changes only on dev copy of your store.
 
 ## Code changes
 - Install [composer](https://getcomposer.org/download/ "Migrating modules to X-Cart 5.3") and call `composer install` in `<X-Cart>/src/` in your console, in order to install all required components.
