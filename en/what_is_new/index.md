@@ -1,6 +1,6 @@
 ---
 lang: en
-layout: article
+layout: article  
 updated_at: '2016-07-27 12:44 +0400'
 identifier: ref_MJEGoA0S
 order: 20
@@ -9,9 +9,9 @@ title: What is new in 5.3
 version: X-Cart 5.3.x
 ---
 
-##“Crisp White” Skin
+## “Crisp White” Skin
 
-Our new skin now uses [12-column Bootstrap grid]({{baseurl_lang}}/http://www.w3schools.com/bootstrap/bootstrap_grid_system.asp "What is new in 5.3"). It has 40px gutter (gap between columns) and 20px vertical rhythm (all elements heights are 20px, 40px or X times 20px). For instance, see example below:
+Our new skin now uses [12-column Bootstrap grid](http://www.w3schools.com/bootstrap/bootstrap_grid_system.asp "What is new in 5.3"). It has 40px gutter (gap between columns) and 20px vertical rhythm (all elements heights are 20px, 40px or X times 20px). For instance, see example below:
 - margin between the main banner and the title is 3 rhythms (60px);
 - margin between the title and the description is 2 rhythms (40px).
 
@@ -19,12 +19,12 @@ Our new skin now uses [12-column Bootstrap grid]({{baseurl_lang}}/http://www.w3s
 
 The grid makes pages easier to perceive and here is when you want to use it:
 - When you create a design concept, take our template as a starting point. You will find all main pages with already defined grid there.
-- When you want tweak existing design and move some elements. For that, download [Baseliner]({{baseurl_lang}}/https://chrome.google.com/webstore/detail/baseliner/agoopbiflnjadjfbhimhlmcbgmdgldld "What is new in 5.3") plugin for Google Chrome, define vertical rhythm as 20px (second parameter) and you will always be sure to place elements according to a grid.
+- When you want tweak existing design and move some elements. For that, download [Baseliner](https://chrome.google.com/webstore/detail/baseliner/agoopbiflnjadjfbhimhlmcbgmdgldld "What is new in 5.3") plugin for Google Chrome, define vertical rhythm as 20px (second parameter) and you will always be sure to place elements according to a grid.
 
 Sure, it is up to you what size of margins to use, but if you use grid, your design will look more professional.
 
 ## PHP 5.4 as minimum version, PHP7 and MySQL 5.7
-The minimal required PHP version is 5.4. Do not forget the “new” features of this version: [http://php.net/manual/en/migration54.new-features.php]({{baseurl_lang}}/http://php.net/manual/en/migration54.new-features.php "What is new in 5.3")
+The minimal required PHP version is 5.4. Do not forget the “new” features of this version: [http://php.net/manual/en/migration54.new-features.php](http://php.net/manual/en/migration54.new-features.php "What is new in 5.3")
 
 However, we recommend to use PHP 5.6 and especially PHP 7 for better performance.
 
@@ -45,9 +45,9 @@ developer_mode = On
 Of course, live store must not be in developer mode, because it slows down the performance.
 
 ## Backward compatibility
-In new core decorating and decorated classes are not [MappedSuperclass]({{baseurl_lang}}/http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3")'es by default as it was in previous branches. Doctrine's documentation does not explicitly tell, but Doctrine takes into account metadata only of private properties of MappedSuperclasses. This change means that metadata of private properties of decorating and decorated classes will be disregarded in 5.3, because those classes are not MappedSuperclasses any more. For example, if we have a private property with one-to-many association, the code will fail with the error.
+In new core decorating and decorated classes are not [MappedSuperclass](http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3")'es by default as it was in previous branches. Doctrine's documentation does not explicitly tell, but Doctrine takes into account metadata only of private properties of MappedSuperclasses. This change means that metadata of private properties of decorating and decorated classes will be disregarded in 5.3, because those classes are not MappedSuperclasses any more. For example, if we have a private property with one-to-many association, the code will fail with the error.
 
-In X-Cart 5.2, you did not worry about these moments, but you could come to a pitfall described in [Doctrine documentation]({{baseurl_lang}}/http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3"): 
+In X-Cart 5.2, you did not worry about these moments, but you could come to a pitfall described in [Doctrine documentation](http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3"): 
 > A mapped superclass cannot be an entity, it is not query-able and persistent relationships defined by a mapped superclass must be unidirectional (with an owning side only). This means that One-To-Many associations are not possible on a mapped superclass at all. Furthermore Many-To-Many associations are only possible if the mapped superclass is only used in exactly one entity at the moment. For further support of inheritance, the single or joined table inheritance features have to be used.
 
 New approach works around this problem and it is faster, because it does not walk through parent classes and you could not make a class non-MappedSuperclass earlier. Also, in old core you could not make a class non-MappedSuperclass, which makes new system more flexible. However, you have to be cautious about metadata. Properties with metadata must be defined as protected, not private. Or you need to explicitly define a class as MappedSuperclass by adding `@MappedSuperclass` directive, for example if you want to add indexes to decorator as {% raw %}`@Table(@Index)`{% endraw %}. 
@@ -58,7 +58,7 @@ and the right one is:
 {% raw %}`LC_Dependencies({“a”, “b”})`{% endraw %}
 
 - For backward compatibility old-style annotations will still work, but this syntax is deprecated and your code must be changed according to new syntax.
-- Topological sort is implemented by [https://github.com/marcj/topsort.php]({{baseurl_lang}}/https://github.com/marcj/topsort.php "What is new in 5.3")
+- Topological sort is implemented by [https://github.com/marcj/topsort.php](https://github.com/marcj/topsort.php "What is new in 5.3")
 - If you defined wrong FQCN repository in metadata in old code, it would be still work. New code will no longer accept it and fire an error.
 
 ## New annotations to decorate classes
@@ -73,10 +73,10 @@ Examples:
 * @Decorator\Before("XC\ProductVariants")
 
 ## Replace Flexy with Twig
-Finally, we upgraded our template-engine to [Twig]({{baseurl_lang}}/http://twig.sensiolabs.org/ "What is new in 5.3"). We thoroughly reviewed Smarty 3 and Twig and decided to use the latter, since it is more powerful and flexible. Although it already has huge community, it continues growing very fast. Twig is very similar to Smarty in syntax and developers who are familiar with Smarty will be able to switch to Twig in a couple of hours. If you are a developer, you can see it for yourself in [Twig’s documentation]({{baseurl_lang}}/http://twig.sensiolabs.org/documentation "What is new in 5.3").
+Finally, we upgraded our template-engine to [Twig](http://twig.sensiolabs.org/ "What is new in 5.3"). We thoroughly reviewed Smarty 3 and Twig and decided to use the latter, since it is more powerful and flexible. Although it already has huge community, it continues growing very fast. Twig is very similar to Smarty in syntax and developers who are familiar with Smarty will be able to switch to Twig in a couple of hours. If you are a developer, you can see it for yourself in [Twig’s documentation](http://twig.sensiolabs.org/documentation "What is new in 5.3").
 
 By using the following resources you will find how to convert your custom flexy code to twig:
-[http://xcart.github.io/flexy-to-twig/]({{baseurl_lang}}/http://xcart.github.io/flexy-to-twig/ "What is new in 5.3")
+[http://xcart.github.io/flexy-to-twig/](http://xcart.github.io/flexy-to-twig/ "What is new in 5.3")
 
 If you just used **ThemeTweaker** or **CustomSkin** to modify the templates you are able to convert flexy modified templates to twig by using the default convertor on the “Look & Feel” > “Webmaster mode” page after upgrading your store to 5.3.x.
 
@@ -106,8 +106,8 @@ Improved widget cache allowed huge boost in load speed. Key changes that allowed
 Here is a comparison table:
 ![Performance comparison]({{site.baseurl}}/attachments/performance.png)
 
-- [X-Cart 5.2 benchmark details]({{baseurl_lang}}/http://glorious-voyage.surge.sh/loadsimulation52-1459780419152/index.html "What is new in 5.3");
-- [X-Cart 5.3 behchmark details]({{baseurl_lang}}/http://glorious-voyage.surge.sh/loadsimulation53-1459781135239/index.html "What is new in 5.3").
+- [X-Cart 5.2 benchmark details](http://glorious-voyage.surge.sh/loadsimulation52-1459780419152/index.html "What is new in 5.3");
+- [X-Cart 5.3 behchmark details](http://glorious-voyage.surge.sh/loadsimulation53-1459781135239/index.html "What is new in 5.3").
 
 - {% raw %}`AView::executeCached()`{% endraw %} method caches a value returned by a function, name of which is passed as an argument. It is used when you need to cache a value in addition to a body of the widget. Most often, you need it to cache some data for {% raw %}`isVisible()`{% endraw %} method, e.g. number of elements in the list. Caching rules are the same as caching rules the widget: cache on/off and TTL.
 
@@ -115,7 +115,7 @@ More comprehensive and robust approach is to make complicated logic of {% raw %}
 
 - PageQueryCountTest test was added to Performance's suite. It simulates number of requests to home, category, product pages on warm-up cache (guest user, empty cart). Simulation is done from random IPs in order to see how cache is shared between users.
 
-- PHP-DI container was added using abstraction [https://github.com/container-interop/container-interop]({{baseurl_lang}}/https://github.com/container-interop/container-interop "What is new in 5.3")
+- PHP-DI container was added using abstraction [https://github.com/container-interop/container-interop](https://github.com/container-interop/container-interop "What is new in 5.3")
 
 - `symfony/event-dispatcher` libarary was added and is used for tracking start and finish of widget rendering events in Debug Bar. You can use it for other event as well.
 
@@ -134,21 +134,22 @@ By using PHP Storm you will get additional hint for  Database::getRepo(‘…’
 When you install a module that adds new tables or edit existing ones, the store will not be locked until 12th step during building the class cache. When you disable such module, a store will not be locked, since tables and fields will remain in DB. If you delete disabled module and it only added new tables (did not alter existing ones), the store will not be locked either, because locked tables are no longer used. Only if you delete enabled module, the store will be locked.
 
 ## PHP dependency management
-You can use [composer]({{baseurl_lang}}/https://getcomposer.org/ "What is new in 5.3") if you get X-Cart from github. Anyway, X-Cart 5 was added to github with already necessary pre-installed components. 
+You can use [composer](https://getcomposer.org/ "What is new in 5.3") if you get X-Cart from github. Anyway, X-Cart 5 was added to github with already necessary pre-installed components. 
 
 ## Dependency injection and IoC container
-X-Cart now supports [PHP-DI]({{baseurl_lang}}/http://php-di.org/ "What is new in 5.3") container, which is used by the following structure: [https://github.com/container-interop/container-interop]({{baseurl_lang}}/https://github.com/container-interop/container-interop "What is new in 5.3")
+X-Cart now supports [PHP-DI](http://php-di.org/ "What is new in 5.3") container, which is used by the following structure: [https://github.com/container-interop/container-interop](https://github.com/container-interop/container-interop "What is new in 5.3")
 
 We recommend to use it for more transparent dependencies, clearer code and cheaper maintenance. Singleton pattern is deprecated in 53x.
 
 ## New FormFields and Bulk Edit
+
 ### New FormFields
-X-Cart 5.3's forms use DTO instead of Entity, and the system control data transferring from Entity to DTO and vice versa. Entity gets data only if it is validated by DTO. Form fields now are described and generated by SimfonyForm. Dependencies are defined by [vueJS]({{baseurl_lang}}/https://vuejs.org/ "What is new in 5.3").
+X-Cart 5.3's forms use DTO instead of Entity, and the system control data transferring from Entity to DTO and vice versa. Entity gets data only if it is validated by DTO. Form fields now are described and generated by SimfonyForm. Dependencies are defined by [vueJS](https://vuejs.org/ "What is new in 5.3").
 
 ### Bulk edit
 Each field is described in a separate class, which can be compound in various order. This way scenarios of their editing are just a list of fields. Bulk editing of other entities is easy too: you need to describe fields (schemes of display and data handling) and then wrap them into scenarios.
 
-More info is here: [http://devs.x-cart.com/en/basics/bulk-editing.html]({{baseurl_lang}}/http://devs.x-cart.com/en/basics/bulk-editing.html "What is new in 5.3")
+More info is here: {% link 'http://devs.x-cart.com/en/basics/bulk-editing.html' ref_HnaTNuQc %}
 
 ## New templates structure
 
