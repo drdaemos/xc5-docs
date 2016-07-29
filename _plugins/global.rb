@@ -18,8 +18,22 @@ module Jekyll
   class Page
     include Comparable
 
-    def <=> (other) #1 if self>other; 0 if self==other; -1 if self<other
-      self.data.fetch('order', self.data.fetch('title', '')) <=> other.data.fetch('order', other.data.fetch('title', ''))
+    def try_compare_by(field, other, default)
+      ours = self.data.fetch(field, default)
+      theirs = other.data.fetch(field, default)
+      ours <=> theirs
+    end
+
+    def <=> (other)
+      sort_by = @site.config['sort_default']
+
+      # try default sorting
+      result = try_compare_by(sort_by, other, 100)
+      if result === 0 then
+        result = try_compare_by('title', other, '')
+      end
+
+      result
     end
 
   end

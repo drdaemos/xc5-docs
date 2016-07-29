@@ -43,4 +43,8 @@ lang:
     en: English
     ru: Russian
 
-# Translations
+# Sort orders
+
+sort_default: order
+sorts:
+    Changelog: updated_at

@@ -17,7 +17,7 @@ module Jekyll
         baseurl = context[@baseurl.strip]
 
         @menu_items = @site.pages.select { |item| item.data.fetch('lang', '') == @page.fetch('lang', @config['lang_default']) }
-        # @menu_items = @menu_items.sort { |a, b| a <=> b }
+        @menu_items = @menu_items.sort { |a, b| a <=> b }
         markup = render_level(2, baseurl)
 
         return markup
