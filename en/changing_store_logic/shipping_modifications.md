@@ -25,7 +25,7 @@ This article describes the process of creating a simple shipping method. In our 
 
 # Implementation
 
-We start by {% link "creating an empty module" ref_G2mlgckf %} with the developer ID **XCExample **and the module ID **ShippingDemo**. Then, we create the file
+We start by {% link "creating an empty module" ref_G2mlgckf %} with the developer ID **XCExample** and the module ID **ShippingDemo**. Then, we create the file
 `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php`: 
 
 {% raw %}```php
