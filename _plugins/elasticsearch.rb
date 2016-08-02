@@ -4,8 +4,8 @@
 # Add page to elasticsearch
 # See readme file for documenation
 #
-# Author: Junichiro Takagi
-# Source:
+# Author: Junichiro Takagi, Eugene Dementjev
+# Version: 0.1.3
 
 require 'elasticsearch'
 require 'oj'
@@ -161,7 +161,6 @@ module Jekyll
     safe true
 
     def generate(site)
-      return true
       #config
       es_config = site.config['elasticsearch']
       unless es_config
@@ -227,8 +226,20 @@ module Jekyll
       converter = site.find_converter_instance(Jekyll::Converters::Markdown)
 
       bare = BareHtml.new(site, site.source, page)
+
+      # prevent liquid from executing
+      unless bare.content.nil? then
+        bare.content = bare.content.gsub('{', '&#123;').gsub('}', '&#125;').gsub('%', '&#37;')
+      end
       bare.content = converter.convert(bare.content)
-      bare.render(site.layouts, site.site_payload)
+
+      # catch possible render errors
+      begin
+        bare.render(site.layouts, site.site_payload)
+      rescue Exception => e
+        puts e.message
+        puts 'in file ' + page['path']
+      end
 
       doc = Nokogiri::HTML(bare.output)
       doc.xpath("//text()").to_s

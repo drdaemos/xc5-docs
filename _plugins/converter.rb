@@ -1,27 +1,11 @@
 # encoding: utf-8
 
-# Jekyll plugin for elasticsearch.
-# Add page to elasticsearch
-# See readme file for documenation
+# Jekyll plugin to automatically wrap code blocks with {% raw %} tag
 #
-# Author: Junichiro Takagi
-# Source:
+# Author: Eugene Dementjev
+# Version: 0.1.0
 
 module Jekyll
-    # module Converters
-    #     class Markdown < Converter
-    #         alias md_convert convert
-
-    #         def convert(content)
-    #             if (@page.data.fetch('identifier') == 'ref_MJEGoA0S')
-    #                 md_convert(Jekyll::CodeBlockWrapper.new.convert(content))
-    #             else
-    #                 md_convert(content)
-    #             end
-    #         end
-    #     end
-
-    # end
 
     class CodeBlockWrapper
         def convert(content)
