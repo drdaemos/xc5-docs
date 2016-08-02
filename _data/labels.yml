@@ -21,3 +21,7 @@
 'Search':
     en: 'Search'
     ru: 'Искать'
+
+'This article applies to the specific versions of X-Cart':
+    en: 'This article applies to the specific versions of software:'
+    ru: 'Данная статья применима к следующим версиям:'

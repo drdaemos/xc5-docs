@@ -6,6 +6,7 @@ identifier: ref_S60wDZGW
 order: 100
 published: true
 title: Form model DTO
+version: X-Cart 5.3.x
 ---
 DTO used to transfer data to the form and get data from it.
 

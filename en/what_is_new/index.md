@@ -6,7 +6,6 @@ identifier: ref_MJEGoA0S
 order: 20
 published: true
 title: What is new in 5.3
-version: X-Cart 5.3.x
 ---
 
 ## “Crisp White” Skin
