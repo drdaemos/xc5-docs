@@ -28,7 +28,7 @@ This article assumes that you know {% link "how to work with viewer classes" ref
 To get started we {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDetectionDemo/View/OurWidget.php` class with the following content:
 
-{% raw %}```php
+```php
 <?php
 
 namespace XLite\Module\Tony\ControllerDetectionDemo\View;
@@ -70,30 +70,30 @@ class OurWidget extends \XLite\View\AView
 		return $return;
 	}
 }
-```{% endraw %}
+```
 
 Let us have a closer look at this class implementation:
 
 1.  `@ListChild` directive says that our widget will be displayed right after `</head>` tag: 
 
-    {% raw %}```php
+    ```php
     /**
      * @ListChild (list="body", weight="1", zone="customer")
      */
-    ```{% endraw %}
+    ```
 
 2.  `getDefaultTemplate()` method defines that our viewer class will use `<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` template in order to output the result:
 
-    {% raw %}```php
+    ```php
     	public function getDefaultTemplate() 
     	{
     		return 'modules/Tony/ControllerDetectionDemo/text.tpl';
     	}
-    ```{% endraw %}
+    ```
 
 3.  `getAllowedTargets()` method tells X-Cart that this widget must be displayed on home, category and checkout pages only:
 
-    {% raw %}```php
+    ```php
     	public static function getAllowedTargets() 
     	{
     		$list = parent::getAllowedTargets();
@@ -104,11 +104,11 @@ Let us have a closer look at this class implementation:
 
     		return $list;
     	}
-    ```{% endraw %}
+    ```
 
 4.  `getOurText()` method defines the message that will be shown to a customer: 
 
-    {% raw %}```php
+    ```php
     	public function getOurText()
     	{
     		$return = 'no text';
@@ -123,16 +123,16 @@ Let us have a closer look at this class implementation:
 
     		return $return;
     	}
-    ```{% endraw %}
+    ```
 
     As you can see, we analyze the **controller** that is fetched by calling `\XLite::getController()` method.
 
 Now, it is time to create a template defined in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` template with the following content: 
 
-{% raw %}```php
+```php
 <div>{getOurText()}</div>
 
-```{% endraw %}
+```
 
 We call our `getOurText()` method that will analyze current controller class and define a message for a customer.
 

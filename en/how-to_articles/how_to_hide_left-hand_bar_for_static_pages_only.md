@@ -24,7 +24,7 @@ Here are the steps involved:
 
 3.  Add the following code to the custom script:
 
-    {% raw %}```php
+    ```php
     <?php
     namespace XLite\Module\XC\CustomSkin\Core;
     class Layout extends \XLite\Core\Layout implements \XLite\Base\IDecorator
@@ -40,7 +40,7 @@ Here are the steps involved:
             );
         }
     }
-    ```{% endraw %}
+    ```
 
 4.  Rebuild the X-Cart cache.
 

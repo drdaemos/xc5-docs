@@ -36,7 +36,7 @@ First of all, we {% link "create an empty module" ref_G2mlgckf %} with developer
 
 Inside this module, we {% link "decorate" ref_AF6bmvL6 %} the `\XLite\Model\Product` class as we want to add a new property to it as follows: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -57,62 +57,62 @@ abstract class Product extends \XLite\Model\Product implements \XLite\Base\IDeco
 		$this->secondaryImages = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 }
-```{% endraw %}
+```
 
 Let us have a closer look at this implementation.
 
 1.  We {% link "add a new property to a product object" ref_2bJSTtR3 %}: 
 
-    {% raw %}```php
+    ```php
         /**
          * @OneToMany (targetEntity="\XLite\Module\Tony\ImageDemo\Model\Image\Product\SecondaryImage", mappedBy="product", cascade={"all"})
          * @OrderBy   ({"orderby" = "ASC"})
          */	
     	protected $secondaryImages;
-    ```{% endraw %}
+    ```
 
     We define it as `OneToMany`, which means that one product can have many secondary images, while a secondary image is always have a single relation to a product.
 
-    {% raw %}```php
+    ```php
     @OneToMany
-    ```{% endraw %}
+    ```
 
     The secondary image object is defined by the `\XLite\Module\Tony\ImageDemo\Model\Image\Product\SecondaryImage` class:
 
-    {% raw %}```php
+    ```php
     targetEntity="\XLite\Module\Tony\ImageDemo\Model\Image\Product\SecondaryImage"
-    ```{% endraw %}
+    ```
 
     This class does not exist yet, so we will have to create it as a next step. Then, we specify that each record about **SecondaryImage** object must contain a reference to its product object: 
 
-    {% raw %}```php
+    ```php
     mappedBy="product"
-    ```{% endraw %}
+    ```
 
     Learn more about `[mappedBy](http://doctrine-orm.readthedocs.org/en/latest/reference/association-mapping.html#one-to-many-bidirectional)` in Doctrine 2 docs. Also, using `mappedBy` in **Product** class means that we will have to use `inversedBy` directive in **SecondaryImage** class in order to create **bidirectional** relation. This way we will be able to access **SecondaryImage** object from **Product** object `$product->getSecondaryImages()` as well as access **Product** object from **SecondaryImage** object `$secondaryImage->getProduct()`. 
 
-    {% raw %}```php
+    ```php
     cascade={"all"}
-    ```{% endraw %}
+    ```
 
     This directive defines that **SecondaryImage** objects are associated with its **Product** object and if we remove, clone, etc Product entity, the same will happen to SecondaryImage objects linked to it. Learn more about [cascade](http://doctrine-orm.readthedocs.org/en/latest/reference/working-with-associations.html#transitive-persistence-cascade-operations) in Doctrine 2 docs. 
 
-    {% raw %}```php
+    ```php
     @OrderBy   ({"orderby" = "ASC"})
-    ```{% endraw %}
+    ```
 
     This directive means that SecondaryImage objects will be ordered by SecondaryImage's `orderby` field.
 
 2.  We also alter constructor method a bit: 
 
-    {% raw %}```php
+    ```php
     	public function __construct(array $data = array())
     	{
     		parent::__construct($data);
 
     		$this->secondaryImages = new \Doctrine\Common\Collections\ArrayCollection();
     	}
-    ```{% endraw %}
+    ```
 
     telling Product class that `secondaryImages` property is an array.
 
@@ -120,7 +120,7 @@ Let us have a closer look at this implementation.
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/Model/Image/Product/SecondaryImage.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -148,60 +148,60 @@ class SecondaryImage extends \XLite\Model\Base\Image
      */
     protected $alt = '';
 }
-```{% endraw %}
+```
 
 Let us have a look at each important moment of this **SecondaryImage** class:
 
 1.  The directive: 
 
-    {% raw %}```php
+    ```php
     @Entity
-    ```{% endraw %}
+    ```
 
     means that this class defines a new entity.
 
 2.  We define the name of the table where info about these objects will be stored: 
 
-    {% raw %}```php
+    ```php
     @Table  (name="product_secondary_images")
-    ```{% endraw %}
+    ```
 
     In our case, this table will be `xc**_****product_secondary_images**`, assuming you have not changed table prefix in config.
 
 3.  We create our `SecondaryImage` class based on standard `\XLite\Model\Base\Image` image class: 
 
-    {% raw %}```php
+    ```php
     class SecondaryImage extends \XLite\Model\Base\Image
-    ```{% endraw %}
+    ```
 
 4.  Our image class will have three additional properties: `$orderby` field for sorting facilities, `$product` property as a link to a parent product object and `$alt` field that will define a text for HTML alt property.
 5.  Implementation of `$orderby` and `$alt` properties is quite straight-forwart, while `$product` is more complex: 
 
-    {% raw %}```php
+    ```php
         /**
          * @ManyToOne  (targetEntity="\XLite\Model\Product", inversedBy="secondaryImages")
          * @JoinColumn (name="product_id", referencedColumnName="product_id")
          */
-    ```{% endraw %}
+    ```
 
     We create a backward relation to `\XLite\Model\Product` class similar to `$secondaryImages` property in `\XLite\Module\Tony\ImageDemo\Model\Product` class.
 
 6.  We define `$product` property as `@ManyToOne` – because one secondary image can be assigned to a single product, while a product can have multiple secondary images assigned – and link it to `$secondaryImages` property of the `\XLite\Model\Product` class:
 
-    {% raw %}```php
+    ```php
     @ManyToOne  (targetEntity="\XLite\Model\Product", inversedBy="secondaryImages")
-    ```{% endraw %}
+    ```
 
      We also specify that MySQL table where secondary images are stored must contain the `product_id` column with value of parent image's ID in order to create this relation: 
 
-    {% raw %}```php
+    ```php
     @JoinColumn (name="product_id", referencedColumnName="product_id")
-    ```{% endraw %}
+    ```
 
 7.  Now it is time to create the repository class that will handle pulling info about **SecondaryImage** objects from the database. We create the
     `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/Model/Repo/Image/Product/SecondaryImage.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -219,28 +219,28 @@ Let us have a look at each important moment of this **SecondaryImage** class:
             return 'product_secondary';
         }
     }
-    ```{% endraw %}
+    ```
 
     We extend the standard `\XLite\Model\Repo\Base\Image` repository class and use it as a template: 
 
-    {% raw %}```php
+    ```php
     class SecondaryImage extends \XLite\Model\Repo\Base\Image
-    ```{% endraw %}
+    ```
 
     We define that a filed that will be used for sorting by default is `orderby`: 
 
-    {% raw %}```php
+    ```php
     protected $defaultOrderBy = 'orderby';
-    ```{% endraw %}
+    ```
 
     Also, we define a folder where secondary image files will be stored as `<X-Cart>/images/product_secondary/` 
 
-    {% raw %}```php
+    ```php
         public function getStorageName()
         {
             return 'product_secondary';
         }
-    ```{% endraw %}
+    ```
 
     We are done with creating **SecondaryImage** entity.
 
@@ -250,7 +250,7 @@ First, we need to allow merchant to upload secondary images for a product on pro
 
 We need to decorate `\XLite\View\Model\Product` class, so we create the `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/View/Model/Product.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -272,14 +272,14 @@ abstract class Product extends \XLite\View\Model\Product implements \XLite\Base\
         );
 	}
 }
-```{% endraw %}
+```
 
 You should note that `SCHEMA_CLASS` param is defined as `\XLite\View\FormField\FileUploader\Image`. This class defines a widget that allows choosing files for upload and it only accepts images. Also, we specify the `\XLite\View\FormField\FileUploader\Image::PARAM_MULTIPLE` param as `true` in order to allow multiple images to be uploaded for a product.
 
 Besides that, we need to display secondary images in store-front. For that we {% link "create a template" ref_E88KCMDD#Step2-applyingdesignchanges-Addingnewtemplatesandwidgets %} that will be shown on product details page. We create the
 `<X-Cart>/skins/default/en/modules/Tony/ImageDemo/secondary-images.tpl` with the following content: 
 
-{% raw %}```php
+```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 
 {**
@@ -291,7 +291,7 @@ Besides that, we need to display secondary images in store-front. For that we {%
 		<widget class="\XLite\View\Image" image="{image}" maxWidth="200" maxHeight="200" />
 	</div>
 </div>
-```{% endraw %}
+```
 
 In this template, we go through each secondary image object and then call `<widget class="\XLite\View\Image" image="{image}" />` in order to build proper HTML code for it. This widget also performs image resize on-the-fly if needed.
 

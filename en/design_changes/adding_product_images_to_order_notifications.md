@@ -38,7 +38,7 @@ _Note: the structure of templates in this view list can be seen via Webmaster Ki
 
 Here is a code of the `order/invoice/parts/items/items.tpl` template: 
 
-{% raw %}```php
+```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 
 {**
@@ -52,7 +52,7 @@ Here is a code of the `order/invoice/parts/items/items.tpl` template: 
   {end:}
   <tr FOREACH="getViewList(#invoice.items#),w">{w.display()}</tr>
 </table>
-```{% endraw %}
+```
 
 If we want to add a new element into header of this table, then we must put our template into the `invoice.items.head` view list. If we want to put a new element into product lines of the table, then we must insert our template into the `invoice.item` view list. Note that the `order/invoice/parts/items/items.tpl` template passes `{item}` parameter into display of the `invoice.item` view list, which means that we will be able to access `\XLite\Model\OrderItem` object in the template inserted into this view list. It will be handy, because we need to access its image URL.
 
@@ -66,20 +66,20 @@ We create the `<X-Cart>/skins/admin/en/modules/Tony/InvoiceChangeDemo/invoice-pa
 
 1.  `head.tpl` template with the following content: 
 
-    {% raw %}```php
+    ```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
 
     {**
      * @ListChild (list="invoice.items.head", weight="5")
      *}
     <th class="item">Image</th>
-    ```{% endraw %}
+    ```
 
     This code inserts an **Image** cell into product table on invoice page and since its weight is **5**, this cell will be displayed at beginning of the header row.
 
 2.  `image.tpl` template with the following content: 
 
-    {% raw %}```php
+    ```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
 
     {**
@@ -87,7 +87,7 @@ We create the `<X-Cart>/skins/admin/en/modules/Tony/InvoiceChangeDemo/invoice-pa
      *}
 
     <td class="item"><widget class="\XLite\View\Image" image="{item.getImage()}" maxWidth="80" maxHeight="80" /></td>
-    ```{% endraw %}
+    ```
 
     This code inserts an image wrapped into `<td></td>` element. This image is inserted via `\XLite\View\Image` widget as this widget performs {% link "on-fly resizing routine" ref_5XhuExQ3 %} according to `maxWidth` and `maxHeight` params. Again, since we insert this template with weight as **5**, it will be displayed at beginning of table's row.
 
@@ -102,7 +102,7 @@ In order to apply this change to invoices sent via email, create a `<X-Cart>/sk
 
 1.  `head.tpl` template with the following content: 
 
-    {% raw %}```php
+    ```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
 
     {**
@@ -110,13 +110,13 @@ In order to apply this change to invoices sent via email, create a `<X-Cart>/sk
      *}
 
     <th style="border-width:1px;border-collapse: collapse;border-spacing: 0px;border-style: solid;border-color: #c4c4c4;text-align: left;background: #f9f9f9 none;font-weight: normal;padding: 12px 22px;white-space: nowrap;color: #000000;font-size: 16px;">Image</th>
-    ```{% endraw %}
+    ```
 
     The idea behind this template is the same as `head.tpl` template explained above, but we apply inline styles, because **GMail** does not support external CSS files.
 
 2.  `image.tpl` template with the following content: 
 
-    {% raw %}```php
+    ```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
 
     {**
@@ -124,13 +124,13 @@ In order to apply this change to invoices sent via email, create a `<X-Cart>/sk
      *}
 
     <td style="text-align: center;vertical-align: top;border-width:1px;border-collapse: collapse;border-spacing: 0px;border-style: solid;border-color: #c4c4c4;padding: 10px 20px;vertical-align: top;"><img src="{item.getImageURL()}" width="80" height="80" /></td>
-    ```{% endraw %}
+    ```
 
     The idea is the same, but we also apply inline CSS styles and the code for image display is a bit different: 
 
-    {% raw %}```php
+    ```php
     <img src="{item.getImageURL()}" width="80" height="80" />
-    ```{% endraw %}
+    ```
 
     We have to specify full image URL here, because otherwise the mailer installed on your server will not be able to pick up an image during email sending.
 

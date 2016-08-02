@@ -22,7 +22,7 @@ Steps involved:
 
 2.  Add your Google Adwords Conversion Tracking Code to the custom template, for example:
 
-    {% raw %}```php
+    ```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
     {**
      * @ListChild (list="body", weight="999100")
@@ -49,24 +49,24 @@ Steps involved:
     </div>
     </noscript>
     {end:}
-    ```{% endraw %}
+    ```
     Icon
 
     Please note, you will need to adjust your original tracking code, in order to pass order total and currency values properly, for example:
 
-    {% raw %}```php
+    ```php
     var google_conversion_value = {order.getTotal()};
     var google_conversion_currency = {order.currency.getCode()};
 
     value={order.getTotal()}
     currency_code={order.currency.getCode()}
-    ```{% endraw %}
+    ```
 
 3.  Apply the following SQL patch to your X-Cart database:
 
-    {% raw %}```php
+    ```php
     INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/body/js/google_ads_coversion_tracking.tpl", UNIX_TIMESTAMP());
-    ```{% endraw %}
+    ```
 
 4.  Re-generate X-Cart cache.
 

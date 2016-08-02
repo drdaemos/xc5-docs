@@ -32,11 +32,11 @@ Repository method: `find()`
 
 Code sample: 
 
-{% raw %}```php
+```php
 $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
 
 //$product now contains product object
-```{% endraw %}
+```
 
 # Pulling all products
 
@@ -44,11 +44,11 @@ Repository method: `findAll()`
 
 Code sample: 
 
-{% raw %}```php
+```php
 $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findAll();
 
 //$products now contains an array of product objects
-```{% endraw %}
+```
 
 # Pulling one product by condition
 
@@ -56,7 +56,7 @@ Repository method: `findOneBy()`
 
 Code sample:
 
-{% raw %}```php
+```php
 // $condition defines what products exactly you want to pull.
 // This condition defines that we need to pull all enabled products, 
 // i.e. they all must have enabled field set as true.
@@ -69,7 +69,7 @@ $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy($cond
 
 $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array('product_id' => $id));
 // the same as $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
-```{% endraw %}
+```
 
 # Pulling many products by condition
 
@@ -77,7 +77,7 @@ Repository method: `findBy()`
 
 Code:
 
-{% raw %}```php
+```php
 // $condition defines what products exactly you want to pull.
 // This condition defines that we need to pull all enabled products, 
 // i.e. they all must have enabled field set as true.
@@ -87,7 +87,7 @@ $condition = array('enabled' => 1);
 $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findBy($condition);
 
 //$products now contains array of product objects and all of these products are enabled 
-```{% endraw %}
+```
 
 # Pulling products by complex condition
 

@@ -47,9 +47,9 @@ Once you identified (or suspect) a problem piece of code, then you should use th
 
 If you need to dump some variable during script execution and you cannot call `die()`, then you can log the variable during execution by using the following method: 
 
-{% raw %}```php
+```php
 \XLite\Logger::logCustom($log_name, $string_to_log, $whether_to_add_backtrace);
-```{% endraw %}
+```
 
 1.  `$log_name` defines a file name where log will be saved. If you specify `$log_name = 'tony';` then your logs will be collected in `<X-Cart>/var/log/tony.log.YYYY-MM-DD.php` file.
 2.  `$string_to_log` defines a message that will be put into the log file. If you pass `$string_to_log` variable with non-string value, then X-Cart will run `var_export()` function on it and then save the result.

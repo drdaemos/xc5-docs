@@ -14,7 +14,7 @@ In case all static files are served directly by Nginx on your site, you may want
 
 To do it, specify additional directives in your nginx configuration file, within the "http" section, for example:
 
-{% raw %}```php
+```php
 map $sent_http_content_type $expires {
     default    off;
 
@@ -34,7 +34,7 @@ map $sent_http_content_type $expires {
     text/javascript 1y;
     application/javascript 1y;
 }
-```{% endraw %}
+```
 
 See also:
 

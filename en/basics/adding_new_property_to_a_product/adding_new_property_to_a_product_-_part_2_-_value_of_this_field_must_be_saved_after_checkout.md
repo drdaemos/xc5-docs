@@ -32,7 +32,7 @@ We start with creating a module similar to one from the first article.
 1.  We create an empty module with developer ID **Tony** and module ID **ProductOrderPropertyDemo**.
 2.  We decorate the `\XLite\Model\Product` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/Product.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -48,13 +48,13 @@ We start with creating a module similar to one from the first article.
          */
         protected $testField;
     }
-    ```{% endraw %}
+    ```
 
     This code will add new field to a product class. The same as in the previous guide.
 
 3.  We decorate the `\XLite\View\Model\Product` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/View/Model/Product.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -78,13 +78,13 @@ We start with creating a module similar to one from the first article.
                 );
         }
     }
-    ```{% endraw %}
+    ```
 
     This code will create a new field on product details page in admin area, where you can specify a value of this property for a product. The same as in the previous guide.
 
 4.  We create the `<X-Cart>/skins/default/en/modules/Tony/ProductOrderPropertyDemo/item.test-field.tpl` template that will be responsible for displaying this property on the invoice page. It will have the following content: 
 
-    {% raw %}```php
+    ```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
     {**
      * @ListChild (list="invoice.item.name", weight="20")
@@ -93,7 +93,7 @@ We start with creating a module similar to one from the first article.
       <span class="name">{t(#Test field#)}:</span>
       <span class="test-field-value">{item.getTestField()}</span>
     </li>
-    ```{% endraw %}
+    ```
 
     It is very similar to the template from the previous guide, but there is a key difference: we call the **testField** property as `{item.getTestField()}` instead of `{item.product.getTestField()}`. In other words, now we call this property from the `\XLite\Model\OrderItem` object, not from the `\XLite\Model\Product` one. The difference is that properties of `\XLite\Model\OrderItem` object are saved when you place an order and then they are not changed, even if you change the product's properties in admin area.
 
@@ -101,7 +101,7 @@ Now it is time to add this `$testField` property and its `getTestField()` access
 
 We {% link "decorate" ref_AF6bmvL6 %} the `\XLite\Model\OrderItem` class and create the `<X-Cart>/classes/XLite/Module/Tony/ProductOrderPropertyDemo/Model/OrderItem.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -154,36 +154,36 @@ abstract class OrderItem extends \XLite\Model\OrderItem implements \XLite\Base\I
     }
 }
 
-```{% endraw %}
+```
 
 Let us have a look at key points of this class implementation:
 
 1.  We create the `$testField` property with the same parameters as we did in the `\XLite\Model\Product` class: 
 
-    {% raw %}```php
+    ```php
         /**
          * @Column (type="string", length=32)
          */
         protected $testField;
-    ```{% endraw %}
+    ```
 
 2.  `getTestField()` method returns this property from the product object if an order has not been placed yet: 
 
-    {% raw %}```php
+    ```php
     $this->getProduct()->getTestField()
-    ```{% endraw %}
+    ```
 
     otherwise the value is returned as a `\XLite\Model\OrderItem` class' property: 
 
-    {% raw %}```php
+    ```php
     $this->testField
-    ```{% endraw %}
+    ```
 
     because at this point `xc_order_items` table already contains info about this field.
 
 3.  These three methods: 
 
-    {% raw %}```php
+    ```php
         public function renew()
         {
             $result = parent::renew();
@@ -206,7 +206,7 @@ Let us have a look at key points of this class implementation:
             parent::resetItemState();
             $this->testField = '';
         }
-    ```{% endraw %}
+    ```
 
     are implemented as follows, because they are called when `\XLite\Model\OrderItem` object has not yet taken property values from an `\XLite\Model\Product` object. That is why we define `$this->testField` property explicitly here.
 

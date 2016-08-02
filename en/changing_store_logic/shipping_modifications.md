@@ -28,7 +28,7 @@ This article describes the process of creating a simple shipping method. In our 
 We start by {% link "creating an empty module" ref_G2mlgckf %} with the developer ID **XCExample** and the module ID **ShippingDemo**. Then, we create the file
 `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php`: 
 
-{% raw %}```php
+```php
 <?php
 
 namespace XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor;
@@ -86,7 +86,7 @@ class MyProcessor extends \XLite\Model\Shipping\Processor\AProcessor
        ]);
    }
 }
-```{% endraw %}
+```
 
 This is the simplest implementation of a shipping processor class. We extend the class \XLite\Model\Shipping\Processor\AProcessor as every shipping processor must do it. In our class, we must have getProcessorName(), getProcessorId() and getRates().
 
@@ -95,7 +95,7 @@ This is the simplest implementation of a shipping processor class. We extend the
     ![]({{site.baseurl}}/attachments/8225333/9633889.png?effects=drop-shadow)
 *   `getRates()` method is the most important one – this method returns an array of `\XLite\Model\Shipping\Rate` object, and each of them represents a shipping option at checkout. Each shipping rate must contain a link to `\XLite\Model\Shipping\Method` object and a rate value. In our module, we will have **My Shipping Method** shipping method (it will be created a bit later), and this shipping method can be found via `getShippingMethod()` method in this class: 
 
-{% raw %}```php
+```php
 protected function getShippingMethod()
 {
    return \XLite\Core\Database::getRepo('\XLite\Model\Shipping\Method')->findOneBy([
@@ -103,25 +103,25 @@ protected function getShippingMethod()
        'carrier'   => $this->getProcessorId()
    ]);
 }
-```{% endraw %}
+```
 
 Let us have a closer look at the method `getRates()`. First, we create an empty shipping rate object: 
 
-{% raw %}```php
+```php
 $rate = new \XLite\Model\Shipping\Rate();
-```{% endraw %}
+```
 
 then, we assign a shipping method to it: 
 
-{% raw %}```php
+```php
 $rate->setMethod($this->getShippingMethod());
-```{% endraw %}
+```
 
 and finally assign a shipping rate to it: 
 
-{% raw %}```php
+```php
 $rate->setBaseRate(10.00);
-```{% endraw %}
+```
 
 After that, we want to have this shipping rate object as an element of an array and return this array from the `getRates()` method.
 
@@ -131,7 +131,7 @@ We are almost done with the mod. We only need to create a shipping method in the
 
 Creating a shipping method is as easy as creating a YAML file. We create `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/install.yaml` with the following content: 
 
-{% raw %}```php
+```php
 XLite\Model\Shipping\Method:
  - processor: MyProcessor
    carrier: ''
@@ -152,7 +152,7 @@ XLite\Model\Shipping\Method:
    translations:
      - code: en
        name: "My Shipping Method"
-```{% endraw %}
+```
 
 We add records to the shipping methods repository about the new shipping methods with the names **My Shipping Method** and **My Shipping Method(parent)**.
 
@@ -162,7 +162,7 @@ _Note: if you have already activated the module, do not forget to {% link "push 
 
 Then, we need to create the file XLite/Module/XCExample/ShippingDemo/Controller/Admin/MyProcessor.php
 
-{% raw %}```php
+```php
 class MyProcessor extends \XLite\Controller\Admin\ShippingSettings
 {
    /**
@@ -175,7 +175,7 @@ class MyProcessor extends \XLite\Controller\Admin\ShippingSettings
        return new ();
    }
 }
-```{% endraw %}
+```
 
 The method **getProcessor()** returns a new instance of the class \XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor\MyProcessor.
 
@@ -183,7 +183,7 @@ It is needed to activate the method.
 
 Finally, we need to register our shipping processor in the system. For that purpose, we go to the `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Main.php` file and add the following method there: 
 
-{% raw %}```php
+```php
    public static function init()
 {
    parent::init();
@@ -192,7 +192,7 @@ Finally, we need to register our shipping processor in the system. For that purp
        '\XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor\MyProcessor'
    );
 }
-```{% endraw %}
+```
 
 **`\XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor\MyProcessor`** is the name of our shipping processor class.
 

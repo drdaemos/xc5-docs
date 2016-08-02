@@ -33,28 +33,28 @@ This article teaches X-Cart developers how to retrive data from request to end-p
     - `<X-Cart>/skins/default/en/modules/Tony/RequestDemo/page/tony/body.tpl`
 3.  We define the template's content as follows: 
 
-    {% raw %}```php
+    ```php
     <div>
     Param: {getParamValue()} <br />
     Param2: {getParam2Value()}
     </div>
-    ```{% endraw %}
+    ```
 
 4.  Now we need to define these two methods: `getParamValue()` and `getParam2Value()` in the viewer class (`<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`), so that the template could use them.
 5.  We edit the `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php` file and define a new `getParamValue()` method there as follows: 
 
-    {% raw %}```php
+    ```php
         public function getParamValue()
         {
             return \XLite\Core\Request::getInstance()->param;
         }
-    ```{% endraw %}
+    ```
 
     This is how easy you can pull the parameter's value from the HTTP request.
 
 6.  We define the `getParam2Value()` method in the same file as follows: 
 
-    {% raw %}```php
+    ```php
         public function getParam2Value()
         {
             $return = 'none';
@@ -63,7 +63,7 @@ This article teaches X-Cart developers how to retrive data from request to end-p
             }
             return $return;
         }
-    ```{% endraw %}
+    ```
 
     As you can see, X-Cart allows to `$_GET` array directly, but in this case you need to handle errors manually.
 

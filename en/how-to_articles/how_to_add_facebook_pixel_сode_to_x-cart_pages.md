@@ -22,7 +22,7 @@ Steps involved:
 
 2.  Add your Facebook Pixel Сode to the custom template:
 
-    {% raw %}```php
+    ```php
     {* vim: set ts=2 sw=2 sts=2 et: *}
     {**
      * @ListChild (list="head", weight="999000")
@@ -48,11 +48,11 @@ Steps involved:
     /></noscript>
 
     <!-- End Facebook Pixel Code -->
-    ```{% endraw %}
+    ```
 
 3.  (Optional) If you would like to report _ViewContent_ standard event, add the following code to your custom template:
 
-    {% raw %}```php
+    ```php
     {if:getTarget()=#product#}
     <script>
     // ViewContent
@@ -67,11 +67,11 @@ Steps involved:
     });
     </script>
     {end:}
-    ```{% endraw %}
+    ```
 
 4.  (Optional) If you would like to report _InitiateCheckout_ and _Purchase_ standard events, add the following code to your custom template:
 
-    {% raw %}```php
+    ```php
     {if:getTarget()=#checkout#}
     <script>
     // InitiateCheckout
@@ -91,11 +91,11 @@ Steps involved:
     });
     </script>
     {end:}
-    ```{% endraw %}
+    ```
 
 5.  (Optional) If you would like to report _Search_ standard event, add the following code to your custom template:
 
-    {% raw %}```php
+    ```php
     {if:getTarget()=#search#}
     <script>
     // Search
@@ -103,13 +103,13 @@ Steps involved:
     fbq('track', 'Search');
     </script>
     {end:}
-    ```{% endraw %}
+    ```
 
 6.  Apply the following SQL patch to your X-Cart database:
 
-    {% raw %}```php
+    ```php
     INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/header/parts/fb_pixel_code.tpl", UNIX_TIMESTAMP());
-    ```{% endraw %}
+    ```
 
 7.  Re-generate X-Cart cache.
 

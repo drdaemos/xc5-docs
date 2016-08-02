@@ -25,11 +25,11 @@ Here are the steps involved:
     _
 3.  Modify the custom template as you need - for example, remove the code that is used to display Transaction ID info:
 
-    {% raw %}```php
+    ```php
       {if:order.getPaymentTransactionId()}
         {t(#Transaction ID#)}: {order.getPaymentTransactionId()}
       {end:}
-    ```{% endraw %}
+    ```
 
 4.  Re-generate X-Cart cache.
 

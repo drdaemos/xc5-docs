@@ -37,7 +37,7 @@ Rebuild the cache and this module will appear in the **Extensions > Installed mo
 1.  Create `View` folder in your module.
 2.  Put `MySidebar.php` script into this folder with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
 
     namespace XLite\Module\Tony\SidebarMenu\View;
@@ -59,7 +59,7 @@ Rebuild the cache and this module will appear in the **Extensions > Installed mo
             return 'modules/Tony/SidebarMenu/menu';
         }
     }
-    ```{% endraw %}
+    ```
 
 Let's walk through each line of its code:
 
@@ -75,9 +75,9 @@ Let's walk through each line of its code:
 
 Create the template `<X-Cart 5>/skins/default/en/modules/Tony/SidebarMenu/menu/body.tpl` mentioned above. Its content will be what you want to display in the sidebar box, e.g.: 
 
-{% raw %}```php
+```php
 Hello world!
-```{% endraw %}
+```
 
 # Step 4\. Rebuild the cache and check the results.
 

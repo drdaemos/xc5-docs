@@ -75,7 +75,7 @@ If you manage your host by yourself, you should enable the [zlib](http://php.n
 
 Besides, in case all static files are served directly by Nginx on your site, you can enable gzip compression for static files, by specifying additional directives in your nginx configuration file, for example: 
 
-{% raw %}```php
+```php
 # enable gzip compression
 gzip on;
 gzip_min_length  1100;
@@ -83,7 +83,7 @@ gzip_buffers  4 32k;
 gzip_types    text/plain application/x-javascript application/javascript text/xml text/css;
 gzip_vary on;
 # end gzip configuration
-```{% endraw %}
+```
 
 ## Step 5\. Use a recent PHP version (5.5+)
 
@@ -99,11 +99,11 @@ Unfortunately, X-Cart does not support PHP 7.0 yet. The reason for that is that 
 
 MySQL provides a convenient feature that can be used to speed up any queries to the database - Query Cache. To get an optimized and speedy response from your MySQL server, you may want to add the following configuration directives to your MySQL server:
 
-{% raw %}```php
+```php
 SET GLOBAL query_cache_size  = 268435456;
 SET GLOBAL query_cache_type  = 1;
 SET GLOBAL query_cache_limit = 1048576;
-```{% endraw %}
+```
 
 Alternatively, you can adjust these settings in the MySQL configuration file. A good article explaining each aspect of Query Cache configuration is available at [http://dev.mysql.com/doc/refman/5.7/en/query-cache-configuration.html](http://dev.mysql.com/doc/refman/5.7/en/query-cache-configuration.html)
 

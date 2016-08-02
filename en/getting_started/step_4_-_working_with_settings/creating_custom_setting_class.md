@@ -29,7 +29,7 @@ We start with {% link "creating a module" ref_G2mlgckf %} with developer ID **To
 *   empty controller class `\XLite\Module\Tony\FormFieldDemo\Controller\Admin\FormField`;
 *   viewer class `\XLite\Module\Tony\FormFieldDemo\View\Page\Admin\FormField` with the following content:
 
-    {% raw %}```php
+    ```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -62,13 +62,13 @@ We start with {% link "creating a module" ref_G2mlgckf %} with developer ID **To
             return 'modules/Tony/FormFieldDemo/page/form_field/body.tpl';
         }
     }
-    ```{% endraw %}
+    ```
 
 *   empty template `<X-Cart>/skins/admin/en/modules/Tony/FormField/page/form_field/body.tpl`.
 
 Next step is to create a select-box class. We create the `<X-Cart>/classes/XLite/Module/Tony/FormField/View/FormField/Select/CustomSelect.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 
 namespace XLite\Module\Tony\FormFieldDemo\View\FormField\Select;
@@ -84,30 +84,30 @@ class CustomSelect extends \XLite\View\FormField\Select\Regular
         );
     }
 }
-```{% endraw %}
+```
 
 This is an implementation of simple select-box class. We just define options of this select-box in the `getDefaultOptions()` method. Our select-box will have three options: **First value**, **Second value** and **Third value**.
 
 In order to display this setting widget on our page, we go to the `<X-Cart>/skins/admin/en/modules/Tony/FormField/page/form_field/body.tpl` template and add the following code there: 
 
-{% raw %}```php
+```php
 <widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" />
-```{% endraw %}
+```
 
 If we leave the code like this, X-Cart will display this setting with missed label: 
 ![]({{site.baseurl}}/attachments/1048617/8356169.png)
 
 Instead, we can either define this setting to be displayed without label: 
 
-{% raw %}```php
+```php
 <widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" fieldOnly="true" />
-```{% endraw %}
+```
 
 or define some label for it: 
 
-{% raw %}```php
+```php
 <widget class="\XLite\Module\Tony\FormFieldDemo\View\FormField\Select\CustomSelect" label="Some label" />
-```{% endraw %}
+```
 
 Our module pack will contain both variants.
 

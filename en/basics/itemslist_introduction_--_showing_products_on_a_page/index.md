@@ -28,7 +28,7 @@ This article describes the process of creating page with products. For instance,
 3.  Create new **ItemsList** class that will display all products in the center of this new page. We create the
     `<X-Cart>/classes/XLite/Module/Tony/ProductsDemo/View/ItemsList/Product/Customer/AllProducts.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php 
 
     namespace XLite\Module\Tony\ProductsDemo\View\ItemsList\Product\Customer; 
@@ -67,13 +67,13 @@ This article describes the process of creating page with products. For instance,
             return '\XLite\Module\Tony\ProductsDemo\View\Pager\Customer\Product\Product';
         }
     }
-    ```{% endraw %}
+    ```
 
 4.  Let us have a look at key parts of this class implementation. First is the class declaration: 
 
-    {% raw %}```php
+    ```php
     class AllProducts extends \XLite\View\ItemsList\Product\Customer\ACustomer
-    ```{% endraw %}
+    ```
 
     This line says that we will use `\XLite\View\ItemsList\Product\Customer\ACustomer` parent class as a template for our products output. This class is parent of all ItemsLists used for display of products in customer area, so the result will be rendered the same, but it will display all products instead of ones that defined by other ItemsLists.
 
@@ -82,7 +82,7 @@ This article describes the process of creating page with products. For instance,
 6.  `getWidgetTarget()` method defines a target of a page where our ItemsList will sit. In our case, this page is `cart.php?target=all_products`.
 7.  `getAllowedTargets()` method defines what pages must display this widget: 
 
-    {% raw %}```php
+    ```php
         public static function getAllowedTargets()  
         {  
             $result = parent::getAllowedTargets();
@@ -91,13 +91,13 @@ This article describes the process of creating page with products. For instance,
 
             return $result;
         }  
-    ```{% endraw %}
+    ```
 
     In our case, only `cart.php?target=all_products` page must contain this widget and any other page must not display it.
 
 8.  `getData()` method is the most important one in this implementation: 
 
-    {% raw %}```php
+    ```php
         protected function getData(\XLite\Core\CommonCell $cnd, $countOnly = false) 
         { 
             return \XLite\Core\Database::getRepo('\XLite\Model\Product')->search(
@@ -105,14 +105,14 @@ This article describes the process of creating page with products. For instance,
                 $countOnly
             ); 
         }
-    ```{% endraw %}
+    ```
 
-    **ItemsList** widgets use {% link "`search()` method" ref_ehDn4NIi %} as an approach to pull entities from the database. `getData()` method is called through `getPageData()` and `getItemsCount()` methods of `\XLite\View\ItemsList\AItemsList` class. When it is called this way, `getData()` receives `$cnd` parameter returned from the `getSearchCondition()` method of `\XLite\View\ItemsList\AItemsList` class. By default it represents an empty array, so if we call `search()` method with it, it will return all products, which is what we need.
+    **ItemsList** widgets use {% link "search() method" ref_ehDn4NIi %} as an approach to pull entities from the database. `getData()` method is called through `getPageData()` and `getItemsCount()` methods of `\XLite\View\ItemsList\AItemsList` class. When it is called this way, `getData()` receives `$cnd` parameter returned from the `getSearchCondition()` method of `\XLite\View\ItemsList\AItemsList` class. By default it represents an empty array, so if we call `search()` method with it, it will return all products, which is what we need.
 
 9.  `getPagerClass()` method is used in order to define a pagination look. X-Cart does not have a generic pager class, so we need to create it, luckily it is very easy. We just create the
     `<X-Cart>/classes/XLite/Module/Tony/ProductsDemo/View/Pager/Customer/Product/Product.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
 
     namespace XLite\Module\Tony\ProductsDemo\View\Pager\Customer\Product;
@@ -120,16 +120,16 @@ This article describes the process of creating page with products. For instance,
     class Product extends \XLite\View\Pager\Customer\Product\AProduct
     {
     }
-    ```{% endraw %}
+    ```
 
     As you can see, we just extend an abstract class `\XLite\View\Pager\Customer\Product\AProduct`. Once it is done we define our `getPagerClass()` method as: 
 
-    {% raw %}```php
+    ```php
         protected function getPagerClass()
         {
             return '\XLite\Module\Tony\ProductsDemo\View\Pager\Customer\Product\Product';
         }
-    ```{% endraw %}
+    ```
 
 10.  That is it. Now we need to re-deploy the store and then open `cart.php?target=all_products` page in order to see the result of our mod work:![]({{site.baseurl}}/attachments/8225226/8356122.png)
 

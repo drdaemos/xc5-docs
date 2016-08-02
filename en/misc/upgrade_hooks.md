@@ -26,7 +26,7 @@ If you want to use iterative upgrade hooks, you need to know the following:
 Below is an example of iterative hooks performing the operations of updating products' clean URLs (See the original version in upgrade/5.2/1):
 
 **pre_upgrade.php**
-{% raw %}```php
+```php
 return function()
 {
     // Initial iteration position
@@ -96,9 +96,9 @@ return function()
     // Return current iteration position or zero (if end of products list has been reached)
     return $result;
 };
-```{% endraw %}
+```
 **post_rebuild.php**
-{% raw %}```php
+```php
 return function()
 {
     // Initial iteration position
@@ -172,4 +172,4 @@ return function()
     // Return current iteration position or zero (if end of products list has been reached)
     return $result;
 };
-```{% endraw %}
+```

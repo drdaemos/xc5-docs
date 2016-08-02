@@ -27,7 +27,7 @@ This article describes how developers can include CSS/JS files to X-Cart which h
 2.  Since we cannot use the `getThemeFiles()` method of `\XLite\View\AView` object, because CSS/JS files from it will be cleaned up anyway, we need to decorate the `registerResources()` method of the `\XLite\Core\Layout` class.
 3.  We create the `<X-Cart>/classes/XLite/Module/Tony/MobileCSS/Core/Layout.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
 
     namespace XLite\Module\Tony\MobileCSS\Core;
@@ -47,7 +47,7 @@ This article describes how developers can include CSS/JS files to X-Cart which h
             }
         }
     }
-    ```{% endraw %}
+    ```
 
     This code means that if X-Cart is called by mobile device, then we must register the `<X-Cart>/skins/default/en/modules/Tony/MobileCSS/css/custom.css` CSS file and call parent object's `registerResources()` method.
 

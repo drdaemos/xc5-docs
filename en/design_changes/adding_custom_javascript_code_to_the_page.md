@@ -24,19 +24,19 @@ However, if you need to load your code in the <head> tag or want to limit its us
 
 If you choose to put your code in the <body> tag, you should enable the **Custom Skin** module, then copy the default template "`skins/admin/en/body.tpl`" to "`skins/custom_skin/admin/en/body.tpl`", and add your code using the following <script> element:
 
-{% raw %}```php
+```php
 <script IF="getTarget()=#order_list#">
 <!– PLACE YOUR CODE BELOW THIS LINE –>
 </script>
-```{% endraw %}
+```
 
 For the head template, it can be implemented as follows: you can copy the default template "skins/admin/en/header/body.tpl" to "skins/custom_skin/admin/en/header/body.tpl", then add your custom code using the following bit of code:
 
-{% raw %}```php
+```php
 <script IF="getTarget()=#order_list#">
 <!– PLACE YOUR CODE BELOW THIS LINE –>
 </script>
-```{% endraw %}
+```
 
 This example code will be executed only on the **order_list** page in the Admin back end. You can see the result here: **<u>http://<store domain>/admin.php?target=order_list</u>**.
 

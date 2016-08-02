@@ -17,7 +17,7 @@ You must define at least two methods:
 *   `init` - to get data from given object and store it to DTO.
     Data must be stored at DTO class properties by section name as `\XLite\Model\DTO\Base\CommonCell`. `CommonCell` is object access to **key** -> **value** pairs represented form model fields for each section, If horizontal field used its value in DTO must be also `CommonCell`.
 
-    {% raw %}```php
+    ```php
     protected function init($object)
     {
         $this->default = new CommonCell([
@@ -38,7 +38,7 @@ You must define at least two methods:
             ]),
         ]);
     }
-    ```{% endraw %}
+    ```
 
 *   `populateTo` - to transfer data from DTO to given object.
 
@@ -46,7 +46,7 @@ You must define at least two methods:
 
 You can define DTO level backend validation to check the entire DTO. To do this you can define `\XLite\Model\DTO\Base\ADTO::validate()` static method:
 
-{% raw %}```php
+```php
 /**
  + @param Info                      $dto
  + @param ExecutionContextInterface $context
@@ -57,7 +57,7 @@ public static function validate($dto, ExecutionContextInterface $context)
         static::addViolation($context, 'default.sku', Translation::lbl('SKU must be unique'));
     }
 }
-```{% endraw %}
+```
 
 If there is invalid state you mast call `\XLite\Model\DTO\Base\ADTO::addViolation()` method with 3 params:
 

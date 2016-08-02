@@ -58,7 +58,7 @@ Let me show you how the real-life working example for better understanding. Assu
 
 ![]({{site.baseurl}}/attachments/8224804/8355865.png)Using the approach described in {% link "Step 2 - applying design changes" ref_E88KCMDD %} article, we can find that this icon is defined by the `<X-Cart>/skins/default/en/items_list/product/parts/common.quicklook-button.tpl` template. Its code is below: 
 
-{% raw %}```php
+```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * Overlapping box
@@ -79,7 +79,7 @@ Let me show you how the real-life working example for better understanding. Assu
     <div class="quicklook-view">&nbsp;</div>
   </a>
 </div>
-```{% endraw %}
+```
 
 As you can see, the code is straight-forward: if `isQuickLookEnabled()` method returns true, then this icon is displayed. Of course, we can hide this icon by **overriding** the template as it was described previously in step 2 article, but we can also hide it by **decorating the viewer class** of this template – this class is `\XLite\View\ItemsList\Product\Customer` – and changing the `isQuickLookEnabled()` method to always return false.
 
@@ -88,7 +88,7 @@ Here is how we can achieve it:
 1.  {% link "Create an empty module" ref_G2mlgckf %}. I am creating it with developer ID as **Tony** and module ID as **DecoratorDemo**. Of course, you can use your own IDs.
 2.  Create the `<Your-Module-Directory>/VIew/ItemsList/Product/Customer/ACustomer.php` file inside your module with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     namespace XLite\Module\Tony\DecoratorDemo\View\ItemsList\Product\Customer;
     abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
@@ -98,40 +98,40 @@ Here is how we can achieve it:
             return false;
         }
     }
-    ```{% endraw %}
+    ```
 
     Of course, if you are using your own IDs, you must change the namespace.
 
 3.  Let me walk through each line of this code and explain what it does.
-4.  {% raw %}```php
+4.  ```php
     namespace XLite\Module\Tony\DecoratorDemo\View\ItemsList\Product\Customer;
-    ```{% endraw %}
+    ```
 
     This is just a definition of the class' **namespace**.
 
-5.  {% raw %}```php
+5.  ```php
     abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
-    ```{% endraw %}
+    ```
 
     Here we specifiy that our class decorates the `\XLite\View\ItemsList\Product\Customer\ACustomer` one of default X-Cart. It means that X-Cart will use the implementation of the `isQuickLookEnabled()` method defined in our class instead of implementation of the `isQuickLookEnabled()` method defined in the `\XLite\View\ItemsList\Product\Customer\ACustomer` class. However, X-Cart will keep using other methods of `\XLite\View\ItemsList\Product\Customer\ACustomer` class as they were defined, unless these methods were decorated as well (by other modules, for example).
     _Note: decorating class must always be abstract, no matter what class it decorates._
 
-6.  {% raw %}```php
+6.  ```php
         protected function isQuickLookEnabled()
         {
             return false;
         }
-    ```{% endraw %}
+    ```
 
     Our implementation of the `isQuickLookEnabled()` method. Quite often, you want to keep existing functionality and just extend it with your own routines. In this case, you can decorate certain methods like this: 
 
-    {% raw %}```php
+    ```php
         protected function isQuickLookEnabled()
         {
         	myMethod();
             return parent::isQuickLookEnabled();
         }
-    ```{% endraw %}
+    ```
 
     In other words, you may want to call **parent** class in order to keep existing functionality in place.
     _Note: again the signature of the method (accessibility and argument types and number) must remain the same during decoration._
@@ -148,7 +148,7 @@ Decoration approach is widely-used in X-Cart modules and here are few other mome
 
 1.  You can decorate class' **properties** the same way you do with methods. For example, this code will decorate `\XLite\Model\Product` object and add `$myProperty` field to each product.
 
-    {% raw %}```php
+    ```php
     <?php
     namespace XLite\Module\Tony\DecoratorChanges\Model;
     class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
@@ -158,7 +158,7 @@ Decoration approach is widely-used in X-Cart modules and here are few other mome
          */
         protected $myProperty;
     }
-    ```{% endraw %}
+    ```
 
     Of course, this code assumes that this code is placed in the `<X-Cart>/classes/Module/Tony/DecoratorChanges/Model/Product.php` file. Otherwise, you should change namespace accordingly.
 

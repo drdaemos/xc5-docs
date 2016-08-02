@@ -25,18 +25,18 @@ Imagine the situation that you want to pull some info from X-Cart and then displ
 
 We create `test.php` file in X-Cart's root with the following content: 
 
-{% raw %}```php
+```php
 <?php
 
 //X-Cart initializtion
 require_once 'top.inc.php';
-```{% endraw %}
+```
 
 Now X-Cart is initialized in this file and we can start using its functions here. Add the following line into this file: 
 
-{% raw %}```php
+```php
 echo \XLite\Core\Config::getInstance()->Company->company_name;
-```{% endraw %}
+```
 
 and it will display company name from {% link "X-Cart settings" ref_qFCH64Dt %}.
 
@@ -44,7 +44,7 @@ and it will display company name from {% link "X-Cart settings" ref_qFCH64Dt %}.
 
 The entire code of our `test.php` file is: 
 
-{% raw %}```php
+```php
 <?php
 
 //X-Cart initializtion
@@ -52,4 +52,4 @@ require_once 'top.inc.php';
 
 // displaying company name
 echo \XLite\Core\Config::getInstance()->Company->company_name;
-```{% endraw %}
+```

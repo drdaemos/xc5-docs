@@ -51,10 +51,10 @@ In order to help with this task, we designed a special script that generates pro
 2.  Put this script into the root of your X-Cart 4 installation.
 3.  Define the authorization key in this **xcn-export.php** script. This is a secret key that makes sure that nobody else can access this script. Please change it in the **xcn-export.php** script for security reasons. In order to do that you should find the following piece of code in the **xcn-export.php** script:
 
-    {% raw %}```php
+    ```php
     // Authorization key
     define('XCN_EXPORT_KEY', 'testsuperkey');
-    ```{% endraw %}
+    ```
 
     and replace **testsuperkey** value with your own one.
 

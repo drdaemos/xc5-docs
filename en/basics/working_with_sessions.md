@@ -30,7 +30,7 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
 *   an empty controller class `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`;
 *   a page viewer class `\XLite\Module\Tony\SessionDemo\View\Page\Customer\SessionDemo` with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -63,13 +63,13 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
             return 'modules/Tony/SessionDemo/page/session_demo/body.tpl';
         }
     }
-    ```{% endraw %}
+    ```
 
 *   an empty page template `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl`.
 
 Now we need to check each {% link "request" ref_pvZ8nad3 %} to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our {% link "controller class" ref_hkVaxgds %} `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
 
-{% raw %}```php
+```php
     public function handleRequest()
     {
         $sessionValue = \XLite\Core\Request::getInstance()->session_value;
@@ -80,13 +80,13 @@ Now we need to check each {% link "request" ref_pvZ8nad3 %} to `cart.php?target
 
         parent::handleRequest();
     }
-```{% endraw %}
+```
 
 The code that saves the `session_value` param into a session is `\XLite\Core\Session::getInstance()->s_value = $sessionValue;`. As you can see, saving variable into a session is as simple as assigning a value.
 
 Now, we need to add a method to our controller that will fetch a value of this session variable. It will be as follows: 
 
-{% raw %}```php
+```php
     public function getSessionValue() 
     {
         $return = '';
@@ -97,13 +97,13 @@ Now, we need to add a method to our controller that will fetch a value of this s
 
         return $return;
     }
-```{% endraw %}
+```
 
 By default it returns an **empty string**, but if there is any value stored in the **s_value** session variable, then it will return this value.
 
 The final version of `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo` class will be as follows: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -136,17 +136,17 @@ class SessionDemo extends \XLite\Controller\Customer\ACustomer
         return $return;
     }
 }
-```{% endraw %}
+```
 
 Now we need to define dynamically generated content of our page and mod will be done. We go to the `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl` template and define its content as follows: 
 
-{% raw %}```php
+```php
 {if:getSessionValue()}
 Session value is: {getSessionValue()}
 {else:}
 Session value has not been specified yet
 {end:}
-```{% endraw %}
+```
 
 If `getSessionValue()` returns non-empty value – empty string is considered as an empty value – then we display the **Session value has not been specified yet** message, otherwise we display the message **Session value is: session_value**.
 

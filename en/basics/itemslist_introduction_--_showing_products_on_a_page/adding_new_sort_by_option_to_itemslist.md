@@ -32,7 +32,7 @@ Similar option already exists in [Product Advisor](http://www.x-cart.com/extensi
 We start with {% link "creating a module" ref_G2mlgckf %} with developer ID **Tony** and module ID **SortingByDate**. In this module we are going to {% link "decorate" ref_AF6bmvL6 %} the `\XLite\View\ItemsList\Product\Customer\ACustomer` class, so we create the
 `<X-Cart>/classes/XLite/Module/Tony/SortingByDate/View/ItemsList/Product/Customer/ACustomer.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -44,11 +44,11 @@ namespace XLite\Module\Tony\SortingByDate\View\ItemsList\Product\Customer;
 abstract class ACustomer extends \XLite\View\ItemsList\Product\Customer\ACustomer implements \XLite\Base\IDecorator
 {
 }
-```{% endraw %}
+```
 
 Adding of new sorting option is as easy as changing the `__construct()` method in this class:
 
-{% raw %}```php
+```php
     public function __construct(array $params = array())
     {
         parent::__construct($params);
@@ -57,15 +57,15 @@ Adding of new sorting option is as easy as changing the `__construct()` method i
             'p.arrivalDate' => 'Sort by date',
         ) + $this->sortByModes;
     }
-```{% endraw %}
+```
 
 As you can see, we call parent's constructor and then adding one more record to the `$this->sortByModes` array: 
 
-{% raw %}```php
+```php
 		$this->sortByModes = array(
             'p.arrivalDate' => 'Sort by date',
         ) + $this->sortByModes;
-```{% endraw %}
+```
 
 *   This new record's key is a field that will be used by {% link "queryBuilder" ref_FJyeE9lP %} object for sorting results. In our case we are going to sort by date and key is `p.arrivalDate`.
 *   The value of new record is a name of sorting option, which will be displayed to a customer. In our case it is **Sort by date**.

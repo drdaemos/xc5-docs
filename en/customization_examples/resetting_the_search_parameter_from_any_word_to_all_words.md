@@ -16,7 +16,7 @@ Search via the search form in X-Cart is performed based on the "any word" parame
 
 2.  In this module, add a new class:
 
-    {% raw %}```php
+    ```php
     namespace XLite\Module\<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>\View\Form\Product\Search\Customer;
     class SimpleForm extends \XLite\View\Form\Product\Search\Customer\SimpleForm implements \XLite\Base\IDecorator
     {
@@ -27,7 +27,7 @@ Search via the search form in X-Cart is performed based on the "any word" parame
            return $params;
        }
     }
-    ```{% endraw %}
+    ```
 
     The function getDefaultParams, as you might expect from its name, is responsible for the default parameters of this "View". 
 

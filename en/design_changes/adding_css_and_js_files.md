@@ -18,7 +18,7 @@ Via this method the widget registers its CSS files. During the initialization of
 
 The method must return the array of the CSS file paths and because any viewer class extends `\XLite\View\AView`, the best practice is to merge your files with parent result. Typical implementation looks like this:
 
-{% raw %}```php
+```php
 public function getCSSFiles()
 {
 	return array_merge(
@@ -29,7 +29,7 @@ public function getCSSFiles()
 		)
 	);
 }
-```{% endraw %}
+```
 
 LESS resource usage
 
@@ -40,7 +40,7 @@ You can also use the less resources along with the CSS ones. The LESS resources 
 Please note that right now only one parent is supported, so you cannot link the resources in LESS chain. The best practice is to merge LESS resources with `'bootstrap/css/bootstrap.less'` file.
 
 **LESS example**
-{% raw %}```php
+```php
 public function getCSSFiles()
 {
     return array_merge(
@@ -55,14 +55,14 @@ public function getCSSFiles()
         ),
     );
 }
-```{% endraw %}
+```
 `**getJSFiles()**`
 
 Via this method the widget registers its JS files. During the initialization of viewer classes these JS files are collected into the static storage.
 
 This method must return the array of the JS file paths and because any viewer class extends `\XLite\View\AView`, the best practice is to merge your files with parent result. Typical implementation looks like this:
 
-{% raw %}```php
+```php
 public function getJSFiles()
 {
 	return array_merge(
@@ -73,7 +73,7 @@ public function getJSFiles()
 		)
 	);
 }
-```{% endraw %}
+```
 Icon
 
 You shouldn't add the widget as a list child of `**'body'**` view list because it won't have its CSS and JS resources loaded that way.
@@ -87,7 +87,7 @@ There is an alternative way to add a new JS/CSS file to the layout and it requir
 1.  Create `View/AView.php` file in your module with the following content: 
 
     **classes/XLite/Module/<Developer>/<Module>/View/AView.php**
-    {% raw %}```php
+    ```php
     namespace XLite\Module\<Developer ID>\<Module ID>\View;
     abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
     {
@@ -107,14 +107,14 @@ There is an alternative way to add a new JS/CSS file to the layout and it requir
         }
     }
 
-    ```{% endraw %}
+    ```
 
     Of course you need to use real developer and module IDs in the namespace.
 
 2.  If you include internal CSS/JS files, then you need to create such files in the corresponding skin directories. For instance, in order to make first example in the code above work
 
-    {% raw %}```php
+    ```php
     $list[static::RESOURCE_JS][] = 'modules/<Developer ID>/<Module ID>/script.js';
-    ```{% endraw %}
+    ```
 
      the `skins/default/en/modules/<Developer ID>/<Module ID>/script.js` file must exist.

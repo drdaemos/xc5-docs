@@ -31,7 +31,7 @@ http://symfony.com/doc/current/components/form/introduction.html#component-form-
 To attach validation to field you mast specify `constraints` option. You must define **key** -> **value** pairs with **key** as constraint class and **value** as constraint options.
 Available constrains see in `/vendor/symfony/validator/Constraints` and `/classes/XLite/Core/Validator/Constraints`
 
-{% raw %}```php
+```php
 ...
 'constraints' => [
     'Symfony\Component\Validator\Constraints\GreaterThanOrEqual' => [
@@ -47,7 +47,7 @@ Available constrains see in `/vendor/symfony/validator/Constraints` and `/classe
             static::t('SKU length must be less then {{length}}', ['length' => $skuMaxLength]),
     ],
 ],
-```{% endraw %}
+```
 
 *todo: howto create new validation constraint*
 
@@ -55,11 +55,11 @@ Available constrains see in `/vendor/symfony/validator/Constraints` and `/classe
 
 Frontend validation must be defined for selected constraints, if so it will be invoked automaticly. You can use only constraint with `message` option defined in backend.
 
-{% raw %}```js
+```js
 Vue.validator('NotBlank', function (value, rule) {
     return !!value && 0 !== value.length;
 });
-```{% endraw %}
+```
 
 *todo: howto add frontend validation*
 
@@ -69,7 +69,7 @@ Vue.validator('NotBlank', function (value, rule) {
 
 To define horizontal fields (several field on one row) you must set `XLite\View\FormModel\Type\Base\CompositeType` as type option and define subfields as **value** of `fields` option. Fields definition must be equal to simple field definition.
 
-{% raw %}```php
+```php
 ...
 'inventory_tracking' => [
     'label'       => static::t('Inventory tracking is'),
@@ -100,7 +100,7 @@ To define horizontal fields (several field on one row) you must set `XLite\View\
     'position'    => 400,
 ],
 ...
-```{% endraw %}
+```
 
 ## Conditional field visible and enable
 

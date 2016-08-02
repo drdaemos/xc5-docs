@@ -31,7 +31,7 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
 1.  {% link "Create an empty module" ref_G2mlgckf %}. In this article, I will be using module with developer ID as **Tony** and module ID as **SkinDemo**.
 2.  Add the following method into your `Main.php` file 
 
-    {% raw %}```php
+    ```php
         public static function getSkins()
         {
             return array(
@@ -43,7 +43,7 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
                 ),
             );
         }
-    ```{% endraw %}
+    ```
 
     This method tells X-Cart that this module registers new templates for customer area (they are located in the `<X-Cart>/skins/TonyTheme/customer/en/` folder) and new templates for admin area (they are located in the `<X-Cart>/skins/TonyTheme/admin/en/` folder)
 
@@ -52,9 +52,9 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
 5.  In order to make sure that everything works as we expect, let us try to override `<X-Cart>/skins/default/en/welcome.tpl` template which is responsible for display of welcome message in store-front.
 6.  We just create the template `<X-Cart>/skins/TonyTheme/customer/en/welcome.tpl` with the following text: 
 
-    {% raw %}```php
+    ```php
     Hello world! This is a piece of text to display as welcome message.
-    ```{% endraw %}
+    ```
 
 7.  Check the store-front with re-deploying the store. It should display our welcome message there, while rest of the layout will be the same.![]({{site.baseurl}}/attachments/8224814/8355867.png)
 8.  _Important note: if you override templates that contain @ListChild directives, do not keep this directive in the overriding template. Otherwise X-Cart will include this template twice._
@@ -81,9 +81,9 @@ Let us assume a task that you want to get rid of exclamation marks from notifica
     - `skins/custom_skin/mail/en/` for email notifications interface
 4.  We create the `<X-Cart>/skins/custom_skin/mail/en/order_advanced_changed/subject.tpl` with the following content: 
 
-    {% raw %}```php
+    ```php
     {config.Company.company_name:h}: {t(#Order receipt#)} #{order.getOrderNumber()}
-    ```{% endraw %}
+    ```
 
     in other words, we just remove the exclamation mark from the notification. The same way create three other overriding templates.
 

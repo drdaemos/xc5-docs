@@ -14,7 +14,7 @@ You can see example in `CDev\Sale` module
 
 To define filed in same line with the existing field you can use `\XLite\View\FormModel\AFormModel::compose()` static method in `\XLite\Module\CDev\Sale\View\FormModel\Product\Info::defineFields()` definition:
 
-{% raw %}```php
+```php
 /**
  * @return array
  */
@@ -50,19 +50,19 @@ protected function defineFields()
 
     return $schema;
 }
-```{% endraw %}
+```
 
 So we transform
 
-{% raw %}```
+```
 'prices_and_inventory' => [
     'price' => =FIELD DEFINITION=
 ]
-```{% endraw %}
+```
 
 to
 
-{% raw %}```
+```
 'prices_and_inventory' => [
     'price' => [
         'type' => 'XLite\View\FormModel\Type\Base\CompositeType',
@@ -73,7 +73,7 @@ to
         ],
     ],
 ]
-```{% endraw %}
+```
 
 `show_when` and `enable_when` fields options will be corrected automaticly.
 
@@ -83,7 +83,7 @@ to
 
 As in form view in DTO you can use `\XLite\Model\DTO\Base\ADTO::compose()` in `\XLite\Model\DTO\Product\Info::init()`
 
-{% raw %}```php
+```php
 /**
  * @param mixed|\XLite\Model\Product $object
  */
@@ -106,13 +106,13 @@ protected function init($object)
         ]
     );
 }
-```{% endraw %}
+```
 
 ### populateTo
 
 if you use `\XLite\Model\DTO\Base\ADTO::compose()` in `\XLite\Model\DTO\Product\Info::init()` you **must** call `\XLite\Model\DTO\Base\ADTO::deCompose()`  in `\XLite\Model\DTO\Product\Info::populateTo`:
 
-{% raw %}```php
+```php
 /**
  * @param \XLite\Model\Product $object
  * @param array|null           $rawData
@@ -130,6 +130,6 @@ public function populateTo($object, $rawData = null)
 
     parent::populateTo($object, $rawData);
 }
-```{% endraw %}
+```
 
 Keep in mind that parant call `parent::populateTo($object, $rawData);` must be **after** all `static::deCompose()` calls!

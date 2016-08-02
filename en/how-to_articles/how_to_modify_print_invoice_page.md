@@ -24,7 +24,7 @@ Here are the steps involved:
 
 3.  Add the following code to the custom script:
 
-    {% raw %}```php
+    ```php
     <?php
     namespace XLite\Module\XC\CustomSkin\View;
     abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
@@ -43,7 +43,7 @@ Here are the steps involved:
             return $list;
         }
     }
-    ```{% endraw %}
+    ```
 
 4.  Create your custom CSS files:
     - for admin back-end: _skins/admin/en/modules/XC/CustomSkin/custom_style.css_
@@ -51,12 +51,12 @@ Here are the steps involved:
 
 5.  Add your custom code to the CSS files created, for example:
 
-    {% raw %}```php
+    ```php
     .invoice-box .header .address strong{
       font-size: 27px !important;
       margin: 10px 10px 10px 14px;
     }
-    ```{% endraw %}
+    ```
 
 6.  Re-generate X-Cart cache.
 

@@ -28,15 +28,15 @@ This guide will help you achieve this task.
 2.  Transfer X-Cart files from origin folder to destination one.
     In case of transferring from [http://localhost/xcart/](http://localhost/xcart/,) to [http://localhost/xcart5/](http://localhost/xcart/,), I am just renaming the folder by running this command on Linux/Mac: 
 
-    {% raw %}```php
+    ```php
     cd ~/www/;
     mv xcart xcart5;
-    ```{% endraw %}
+    ```
 
 3.  **[optional]** if you transfer your X-Cart between servers or create a dev copy of your store, you need to create a new database on destination server from the MySQL backup created at step 1.
 4.  **[optional]** if you create a new database, then define the database **host**, **name**, **user** and **password** parameters in the `<X-Cart>/etc/config.php` file at your destination installation. Such details are specified in the `[database_details]` section in `<X-Cart>/etc/config.php` file, which looks similar to follows: 
 
-    {% raw %}```php
+    ```php
     [database_details]
     hostspec = "localhost"
     socket   = ""
@@ -45,16 +45,16 @@ This guide will help you achieve this task.
     username = "username"
     password = "password"
     table_prefix = "xc_"
-    ```{% endraw %}
+    ```
 
 5.  Edit the `<X-Cart>/etc/config.php` file and define new path to X-Cart installation in the `[host_details]` section: 
 
-    {% raw %}```php
+    ```php
     [host_details]
     http_host = "localhost"
     https_host = "localhost"
     web_dir = "/xcart"
-    ```{% endraw %}
+    ```
 
     - You need to specify HTTP and HTTPS hosts. If you transfer X-Cart within the bounds of one server, keep these values as they are.
     - Define new `web_dir` parameter. If I move X-Cart from [http://localhost/xcart/](http://localhost/xcart/,) to [http://localhost/xcart5/](http://localhost/xcart/,), I will change its value from **/xcart** to **/xcart5**. If I transferred X-Cart [http://localhost/xcart/](http://localhost/xcart/,) to [http://localhost/](http://localhost/xcart/,), then I would change this value from **/xcart** to **/**.
@@ -62,27 +62,27 @@ This guide will help you achieve this task.
 6.  Edit the `<X-Cart>/.htaccess` file and change the `RewriteBase` parameter there.
     - If I move X-Cart from [http://localhost/xcart/](http://localhost/xcart/,) to [http://localhost/xcart5/](http://localhost/xcart/,), I will replace the following string in the `<X-Cart>/.htaccess` file 
 
-    {% raw %}```php
+    ```php
     RewriteBase /xcart
-    ```{% endraw %}
+    ```
 
     with the following one: 
 
-    {% raw %}```php
+    ```php
     RewriteBase /xcart5
-    ```{% endraw %}
+    ```
 
     - If I moved X-Cart from [http://localhost/xcart/](http://localhost/xcart/,) to [http://localhost/](http://localhost/xcart/,), I would replace the following string in the `<X-Cart>/.htaccess` file: 
 
-    {% raw %}```php
+    ```php
     RewriteBase /xcart
-    ```{% endraw %}
+    ```
 
     with the following one: 
 
-    {% raw %}```php
+    ```php
     RewriteBase /
-    ```{% endraw %}
+    ```
 
 7.  Remove the `<X-Cart>/var/datacache/` folder.
 

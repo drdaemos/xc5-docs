@@ -21,7 +21,7 @@ Sections must be defined in method `\XLite\View\FormModel\AFormModel::defineSect
 *   **expanded** - is section expanded by default (only with **collapse** equal **true**) (*default - **true***)
 *   **position** - order position
 
-{% raw %}```php
+```php
 /**
  * @return array
  */
@@ -39,7 +39,7 @@ protected function defineSections()
 
     return $list;
 }
-```{% endraw %}
+```
 
 see `XCExample\ModelEditingAdvanced` for complete example
 

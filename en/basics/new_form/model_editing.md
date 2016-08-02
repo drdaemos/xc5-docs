@@ -6,6 +6,8 @@ order: 100
 published: true
 title: Model editing
 identifier: ref_8MoO0Ob
+version: X-Cart 5.3.x
+description: During module creation developers sometimes create complex entities that require a separate page for editing of its properties. This article will explain a new way to create a page where you can edit certain fields of a model.
 ---
 
 This article describes new way to create form to edit model entity. Original article with old implementation: {% link "Model editing page" ref_LanG54L9 %}
@@ -17,7 +19,7 @@ We start with creating a simple module with developer ID **XCExample** and modul
 *   an empty controller class `\XLite\Module\XCExample\ModelEditing\Controller\Admin\ExampleProductEdit`;
 *   page widget class `\XLite\Module\XCExample\ModelEditing\View\Page\Admin\ProductEdit` with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -55,13 +57,13 @@ We start with creating a simple module with developer ID **XCExample** and modul
             return 'modules/XCExample/ModelEditing/page/product_edit/body.twig';
         }
     }
-    ```{% endraw %}
+    ```
 
 *   an empty page template `<X-Cart>/skins/admin/modules/XCExample/ModelEditing/page/product_edit/body.twig`.
 
-Now we start creating a widget for model editing. For that we create the `<X-Cart>classes/XLite/Module/XCExample/ModelEditing/View/FormModel/ExampleProductEdit.php` file with the following code: 
-    
-{% raw %}```php
+Now we start creating a widget for model editing. For that we create the `<X-Cart>classes/XLite/Module/XCExample/ModelEditing/View/FormModel/ExampleProductEdit.php` file with the following code:
+
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -173,17 +175,20 @@ class ExampleProductEdit extends \XLite\View\FormModel\AFormModel
         return $schema;
     }
 }
-```{% endraw %}
+```
 
 Let us have a closer look at this implementation:
 1.  Our class extends an abstract implementation model editing widget (`\XLite\View\FormModel\AFormModel`):
-    {% raw %}```php
+
+    ```php
     class ExampleProductEdit extends \XLite\View\FormModel\AFormModel
     {...}
-    ```{% endraw %}
+    ```
+
 2.  Next we implement methods to configure form action: (`getTarget`, `getAction`, `getActionParams`). This needs to submit form to appropriate controller and action with correct parameters.
 3.  After that, we define what fields will be displayed in this widget by implementing method `defineFields()`:
-    {% raw %}```php
+
+    ```php
     /**
      * @return array
      */
@@ -254,15 +259,16 @@ Let us have a closer look at this implementation:
 
         return $schema;
     }
-    ```{% endraw %}
+    ```
 
 The form must contain at least one section (`self::SECTION_DEFAULT` section is defined by default) so in this method we return an array: **key** is a **name** of the section and **value** is the array of section fields. Each **key** of section fields is the name of the field. In our case, they are **sku**, **name**, **price** and **full_description**. The value of array's elements is an array of parameters that define each field.
 
 Field's parameters must match parameters of the field's type. For example, if you have **sku** field in example above, you cannot define a parameter **pattern** for it as we did for **price** one, because **sku**'s type will not know what to do with it and it will result in error. Exception are **type** и **position** parameters, which applicable to all fields
 
 Now we need to create the `\XLite\Module\XCExample\ModelEditing\Model\DTO\ExampleProductEdit` it need to validate data and trasfer data to and from form. For that, we create the
-`<X-Cart>/classes/XLite/Module/XCExample/ModelEditing/Model/DTO/ExampleProductEdit.php` file with the following content: 
-{% raw %}```php
+`<X-Cart>/classes/XLite/Module/XCExample/ModelEditing/Model/DTO/ExampleProductEdit.php` file with the following content:
+
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -339,20 +345,21 @@ class ExampleProductEdit extends \XLite\Model\DTO\Base\ADTO
         $object->setDescription((string) $default->full_description);
     }
 }
-```{% endraw %}
+```
 
 *   `static::validate()` method need to implement DTO leavel validation (for field level validation `constraint` field param used)
 *   `init()` method used to transfer data to DTO
 *   `populateTo` method used to transfer data from DTO
 
-Now we are good with the model editing widget and we need to add it to the page template. We go to the `<X-Cart>/skins/admin/modules/XCExample/ModelEditing/page/product_edit/body.twig` template and define its content as follows: 
-{% raw %}```twig
+Now we are good with the model editing widget and we need to add it to the page template. We go to the `<X-Cart>/skins/admin/modules/XCExample/ModelEditing/page/product_edit/body.twig` template and define its content as follows:
+
+```twig
 {{ widget('\\XLite\\Module\\XCExample\\ModelEditing\\View\\FormModel\\ExampleProductEdit') }}
-```{% endraw %}
+```
 
 Finally, we have to adjust our `\XLite\Module\XCExample\ModelEditing\Controller\Admin\ExampleProductEdit` controller class in order to process requests about saving product model – implement aforementioned `doActionUpdate()` method. We go to the `<X-Cart>/classes/XLite/Module/XCExample/ModelEditing/Controller/Admin/ExampleProductEdit.php` file and define its content as follows:
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -438,16 +445,18 @@ class ExampleProductEdit extends \XLite\Controller\Admin\AAdmin
         $this->setReturnURL($this->buildURL('example_product_edit', '', $params));
     }
 }
-```{% endraw %}
+```
 
-We define $params property as: 
-{% raw %}```php
+We define $params property as:
+
+```php
 protected $params = array('target', 'product_id');
-```{% endraw %}
+```
+
 and it will tell controller class that only **target** and **product_id** parameters can be accepted.
 *   `getFormModelObject()` method should return the DTO.
 *   `doActionUpdate()` method defines a routine that will be run after we submit a form with the model editing widget values. The main processing happens in this lines:
-    {% raw %}```php
+    ```php
     $form->submit($data[$this->formName]);
 
     if ($form->isValid()) {
@@ -458,17 +467,17 @@ and it will tell controller class that only **target** and **product_id** parame
     } else {
         $this->saveFormModelTmpData($rawData[$this->formName]);
     }
-    ```{% endraw %}
+    ```
 `$form->submit(...)` - move data from request to DTO and validate it
 `$dto->populateTo(...)` - move data from DTO to Entity
 `$this->saveFormModelTmpData(...)` - saves data to session if error occured. It will be used when form with unsewed data and error will be shown.
 
 Also, if we create a new product, we need to properly redirect merchant to this newly created product page, that is why we pull new product id – `$productId = $product->getProductId() ?: $this->getProductId();` – and redirect customer as follows: 
 
-{% raw %}```php
+```php
 $params = $productId ? ['product_id' => $productId] : [];
 $this->setReturnURL($this->buildURL('example_product_edit', '', $params));
-```{% endraw %}
+```
 
 We are done with this mod and now we have to re-deploy the store. After that try to open the admin.php?target=example_product_edit page.
 

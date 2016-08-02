@@ -37,23 +37,23 @@ In this case, the solution will be different depending on the type of your web-s
 
 1.  Find three files on your PC:
 
-    {% raw %}```php
+    ```php
     C:\Program Files\xampp\apache\bin\php.ini
     C:\Program Files\xampp\php\php.ini
     C:\Program Files\xampp\php\php4\php.ini
-    ```{% endraw %}
+    ```
 
 2.  Edit each of them and replace there the following piece of code:
 
-    {% raw %}```php
+    ```php
     ;extension=php_curl.dll
-    ```{% endraw %}
+    ```
 
     with the next one:
 
-    {% raw %}```php
+    ```php
     extension=php_curl.dll
-    ```{% endraw %}
+    ```
 
 3.  Restart Apache.
 
@@ -61,8 +61,8 @@ In this case, the solution will be different depending on the type of your web-s
 
 1.  Run the following command in your console
 
-    {% raw %}```php
+    ```php
     sudo apt-get install php5-curl
-    ```{% endraw %}
+    ```
 
 2.  Restart Apache.

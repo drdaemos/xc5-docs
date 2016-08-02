@@ -28,7 +28,7 @@ This guide is based on the previous one about {% link "creating a discount" ref_
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the {% link "discount module" Creating-global-discount_8225204.html %}. We create the
 `<X-Cart>/classes/XLite/Module/Tony/FreeItemDemo/Logic/Order/Modifier/FreeItem.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 
 namespace XLite\Module\Tony\FreeItemDemo\Logic\Order\Modifier;
@@ -62,32 +62,32 @@ class FreeItem extends \XLite\Logic\Order\Modifier\Discount
         return $info;
     }
 }
-```{% endraw %}
+```
 
 As you can see, this implementation has the required `calculate()` method that walks through order items and if item's amount is more than 2, then it applies a discount to this item: 
 
-{% raw %}```php
+```php
         foreach ($this->getOrder()->getItems() as $item) {
             if ($item->getAmount() > 2) {
                 $discount += $item->getPrice();
                 $item->setDiscountedSubtotal($item->getSubtotal() - $item->getPrice());
             }
         }
-```{% endraw %}
+```
 
 However, there are two differences compared to the implementation of usual discount order modifier.
 
 1.  `$code` variable is not defined as `DISCOUNT`:
 
-    {% raw %}```php
+    ```php
     protected $code = 'FREEITEM';
-    ```{% endraw %}
+    ```
 
     It is done in order to distinguish this discount from other ones.
 
 2.  We need to define some text label for our separate line (different from just **Discount**), so we have to implement the `getSurchargeInfo()` method as follows: 
 
-    {% raw %}```php
+    ```php
         public function getSurchargeInfo(\XLite\Model\Base\Surcharge $surcharge)
         {
             $info = new \XLite\DataSet\Transport\Order\Surcharge;
@@ -96,14 +96,14 @@ However, there are two differences compared to the implementation of usual disco
 
             return $info;
         }
-    ```{% endraw %}
+    ```
 
 We are done with the order modifier implementation. As a final step, we need to register this order modifier in the system, so we create the `<X-Cart>/classes/XLite/Module/Tony/FreeItemDemo/install.yaml` file with the following content: 
 
-{% raw %}```php
+```php
 XLite\Model\Order\Modifier:
   - { class: '\XLite\Module\Tony\FreeItemDemo\Logic\Order\Modifier\FreeItem', weight: 100 }
-```{% endraw %}
+```
 
 and then {% link "push it to the database" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %}.
 

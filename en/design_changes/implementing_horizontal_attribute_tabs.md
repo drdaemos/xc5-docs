@@ -30,7 +30,7 @@ then this guide is for you.
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to {% link "register a new CSS file" ref_p0CRZmMS %}. We create the
 `<X-Cart>/classes/XLite/Module/Tony/ProductTabsChange/View/AView.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -50,11 +50,11 @@ abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
         return $list;
     }
 }
-```{% endraw %}
+```
 
 and then create the `<X-Cart>/skins/default/en/modules/Tony/ProductTabsChange/css/style.css` file with the following content: 
 
-{% raw %}```php
+```php
 .product-details-tabs div.tabs ul.tabs {
     width: 100%;
     margin-bottom:10px;
@@ -90,7 +90,7 @@ and then create the `<X-Cart>/skins/default/en/modules/Tony/ProductTabsChange/cs
     border-radius:0px;
     border:1px solid #E5E5E5;
 }
-```{% endraw %}
+```
 
 That is it. Now you need to re-deploy the store and check the results in store-front.
 

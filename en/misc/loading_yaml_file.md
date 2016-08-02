@@ -26,7 +26,7 @@ Sometimes developers cannot use X-Cart SDK, because for some reason they cannot 
 
 We need to create simple PHP script as follows: 
 
-{% raw %}```php
+```php
 <?php
 
 require_once 'top.inc.php';
@@ -34,6 +34,6 @@ require_once 'top.inc.php';
 $path = 'path/to/your/yaml/file.yaml';
 
 \XLite\Core\Database::getInstance()->loadFixturesFromYaml($path);
-```{% endraw %}
+```
 
 and run it through the browser. Of course `$path` variable must contain an actual path to your YAML file.

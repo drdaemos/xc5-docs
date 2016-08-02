@@ -71,14 +71,14 @@ I am {% link "creating the module" ref_G2mlgckf %} with module ID **Dwolla** and
 
 I am creating the `Model/Payment/Processor/Dwolla.php` file that will define the details of our payment gateway integration. At this point, the file is almost empty:
 
-{% raw %}```php
+```php
 <?php
 namespace XLite\Module\Tony\Dwolla\Model\Payment\Processor;
 
 class Dwolla extends \XLite\Model\Payment\Base\WebBased
 {
 }
-```{% endraw %}
+```
 
 The only meaningful thing here is that our integration is going to be web-based one (when customer is redirected to payment gateway side). We specify it by extending `\XLite\Model\Payment\Base\WebBased` class.
 
@@ -86,7 +86,7 @@ The only meaningful thing here is that our integration is going to be web-based 
 
 `install.yaml` for our payment gateway module will be as follows:
 
-{% raw %}```php
+```php
 XLite\Model\Payment\Method:
   - service_name: Dwolla
     class: Module\Tony\Dwolla\Model\Payment\Processor\Dwolla
@@ -94,7 +94,7 @@ XLite\Model\Payment\Method:
     translations:
       - code: en
         name: Dwolla
-```{% endraw %}
+```
 
 *   `service_name` field defines name of the payment method in the system, while `translations` field defines how it should be shown in English;
 *   `class` field tells X-Cart where details of such payment method implementation are located, it is the PHP file we created earlier;
@@ -122,7 +122,7 @@ The purpose of this routine in our integration is to send order data to Dwolla, 
 
 For our integration, the only thing we need to do here is to identify right URL and submit GET request to it. So, we need to define our own `getFormURL()` method.
 
-{% raw %}```php
+```php
 	protected $checkoutURL = null;
 	protected function getFormURL()
 	{
@@ -177,7 +177,7 @@ For our integration, the only thing we need to do here is to identify right URL 
 	{
 		return self::FORM_METHOD_GET;
 	}
-```{% endraw %}
+```
 
 Most part of `getFormURL()` method is a code from Dwolla tutorial here [https://developers.dwolla.com/dev/pages/guides/receiving_money](https://developers.dwolla.com/dev/pages/guides/receiving_money).
 
@@ -197,7 +197,7 @@ If you call `getReturnURL()` with second parameter as true, it will return strin
 
 After customer redirected back to store, X-Cart will understand what transaction it processes, because transaction ID is explicitly specified in return URL. Once it understands this fact, it will run method `processReturn()` in our payment method object and will pass the transaction to it as a parameter. Our implementation of `processReturn()` method is:
 
-{% raw %}```php
+```php
 	public function processReturn(\XLite\Model\Payment\Transaction $transaction)
 	{
 		parent::processReturn($transaction);
@@ -215,7 +215,7 @@ After customer redirected back to store, X-Cart will understand what transaction
 
         $this->transaction->setStatus($status);
 	}
-```{% endraw %}
+```
 
 The main process here is to identify whether the transaction is successful or not based on status field in the return URL and switch transaction status to Processed or Failed.
 
@@ -227,15 +227,15 @@ Another portion of code is a routine of handling errors:
 
 Typical Success return query from Dwolla:
 
-{% raw %}```php
+```php
 cart.php?target=payment_return&txn_id_name=txnId&txnId=15&fake_field&signature=a96c007ebd4ea2701812b9fbee3efd53f0e3580f&orderId=30&amount=2199.00&checkoutId=612f1337-9198-4c40-b880-3e16dfe157ce&status=Completed&clearingDate=2014-08-19T12:43:12Z&transaction=324974&destinationTransaction=324973;
-```{% endraw %}
+```
 
 Typical Failed return query from Dwolla:
 
-{% raw %}```php
+```php
 cart.php?target=payment_return&txn_id_name=txnId&txnId=16&fake_fieldcheckoutId=2e35e3a0-ba9f-4049-9555-85c4cb65e606&error=failure&error_description=There+are+insufficient+funds+for+this+transaction.
-```{% endraw %}
+```
 
 ## Payment is ready
 
@@ -253,7 +253,7 @@ We need to define what settings Dwolla is going to have and we do it in install.
 
 Its final version will be as follows:
 
-{% raw %}```php
+```php
 XLite\Model\Payment\Method:
   - service_name: Dwolla
     class: Module\Tony\Dwolla\Model\Payment\Processor\Dwolla
@@ -267,7 +267,7 @@ XLite\Model\Payment\Method:
       - name: apisecret
       - name: mode
         value: live
-```{% endraw %}
+```
 
 We specified 4 options and option mode is set to **live** by default. After this changes, you need to {% link "load this yaml file" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %} to database again.
 
@@ -275,18 +275,18 @@ We specified 4 options and option mode is set to **live** by default. After this
 
 We should edit `classes/XLite/Module/Tony/Dwolla/Model/Payment/Processor/Dwolla.php` file and add method` getSettingsWidget()` that will return the template that is responsible for displaying Dwolla's settings.
 
-{% raw %}```php
+```php
 	public function getSettingsWidget()
 	{
 		return 'modules/Tony/Dwolla/config.tpl';
 	}
-```{% endraw %}
+```
 
 ## Creating template
 
 Now we create skins/admin/en/modules/Tony/Dwolla/config.tpl template with the following content:
 
-{% raw %}```php
+```php
 <table cellspacing="1" cellpadding="5" class="settings-table">
   <tr>
     <td class="setting-name">
@@ -324,7 +324,7 @@ Now we create skins/admin/en/modules/Tony/Dwolla/config.tpl template with the fo
     </td>
   </tr>
 </table>
-```{% endraw %}
+```
 
 This template basically defines the whole form of Dwolla's settings.
 
@@ -332,7 +332,7 @@ This template basically defines the whole form of Dwolla's settings.
 
 This time we are editing getDwollaSettings() method and replace settings that were previously hard-coded so that they would be taken from Dwolla's settings form.
 
-{% raw %}```php
+```php
 	protected function getDwollaSettings()
 	{
 		return array(
@@ -347,11 +347,11 @@ This time we are editing getDwollaSettings() method and replace settings that we
 			'sandboxMode' => $this->getSetting('mode') == 'live' ? false : true,
 			);
 	}
-```{% endraw %}
+```
 
 Besides that we are adding couple of new methods in order to give X-Cart idea when Dwolla payment is in test mode and when it is configure properly.
 
-{% raw %}```php
+```php
 	public function isTestMode(\XLite\Model\Payment\Method $method)
     {
         return $method->getSetting('mode') != 'live';
@@ -363,7 +363,7 @@ Besides that we are adding couple of new methods in order to give X-Cart idea wh
             && $method->getSetting('apikey')
             && $method->getSetting('apisecret');
     }
-```{% endraw %}
+```
 
 *   If mode setting is not live, then Dwolla is in test mode;
 *   If Dwolla ID or API key or API secret are not specified, then Dwolla is not fully configured.

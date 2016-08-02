@@ -98,7 +98,7 @@ Below the description of full manual upgrade:
 1.  How to get new files? First of all, you should check `<X-Cart 5>/var/tmp` folder and all new files should be there. If this folder is empty, you should install the X-Cart 5 version you are upgrading to on the same server (you can freely get it on [http://www.x-cart.com)](http://www.x-cart.com)) and activate all paid add-ons using your license keys. After that, this installation will have all needed files.
 2.  You need to run all pre-upgrade hooks (core's and modules'). The code example of how to run one hook is below: 
 
-    {% raw %}```php
+    ```php
     <?php
     require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'top.inc.php');
 
@@ -106,7 +106,7 @@ Below the description of full manual upgrade:
     $func();
 
     ?>
-    ```{% endraw %}
+    ```
 
 3.  Overwrite all files manually. You can put files from the new version distributive pack to your store's folder.
 
@@ -118,7 +118,7 @@ Below the description of full manual upgrade:
 
 7.  Run hooks for updating language variables. The code example for one hook is below: 
 
-    {% raw %}```php
+    ```php
     <?php
         require_once (dirname(__FILE__) . DIRECTORY_SEPARATOR . 'top.inc.php');
 
@@ -132,7 +132,7 @@ Below the description of full manual upgrade:
 
         \XLite\Core\Translation::getInstance()->reset();
     ?>
-    ```{% endraw %}
+    ```
 
 8.  Upgrade is finished.
 

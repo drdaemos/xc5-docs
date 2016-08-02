@@ -33,7 +33,7 @@ Besides, we'll create a {% link "custom page" ref_0VgqyxB8 %} in the admin are
 
 X-Cart offers a convenient and expandable interface to send emails -`XLite\Core\Mailer` class. This class contains a lot of functions designed to build and send messages step by step. In order to use it, we decorate the class `XLite\Core\Mailer `and add a method to send our notification. We create a file `<X-Cart>/classes/XLite/Module/Tony/EmailDemo/Core/Mailer.php `with the following content: 
 
-{% raw %}```php
+```php
 <?php
 namespace XLite\Module\Tony\EmailDemo\Core;
 /**
@@ -68,7 +68,7 @@ abstract class Mailer extends \XLite\Core\Mailer implements \XLite\Base\IDecorat
         return static::getMailer()->getLastError();
     }
 }
-```{% endraw %}
+```
 
 The method we will be using to send our notifications is `sendEmailDemoMessage().` Be sure to define it as a static method and choose a unique name so it doesn't override any existing mailer methods. Let's get an overview of its features:
 
@@ -92,17 +92,17 @@ An email message is composed from several parts such as _header_, _subject_, _b
 
 **subject.tpl**
 
-{% raw %}```php
+```php
 {subject}
-```{% endraw %}
+```
 
 **body.tpl**
 
-{% raw %}```php
+```php
 <p>
   The text is - {custom_param}
 </p>
-```{% endraw %}
+```
 
 As you can see, we can mix some predefined content with the registered parameters. As a result, we will be able to send messages like this:
 
@@ -110,7 +110,7 @@ As you can see, we can mix some predefined content with the registered parameter
 
 From now on, to send a message, you should call your newly created method like this:
 
-{% raw %}```php
+```php
 /**
  * Action to send test email notification
  *
@@ -133,7 +133,7 @@ protected function doActionSendEmail()
         $this->buildURL('tony_custom_email', '', array())
     );
 }
-```{% endraw %}
+```
 
 Please note that the above way is simply an example of usage; you can send messages during certain events or logic processing, if needed. This example sends a message on form submit.
 
@@ -141,7 +141,7 @@ Please note that the above way is simply an example of usage; you can send messa
 
 The admin area of an X-Cart store allows you to turn off certain notifications for admin or for customer. You can configure that on the <u>Store setup</u> -> <u>Email notifications</u> -> <u>Settings</u> page. This page contains a list of different notification types and provides switches allowing the user to enable/disable specific notification types for administrator and customer. For a custom notification to appear in the mentioned list, it should be registered in the module file `install.yaml`. For instance, we will add the following content:
 
-{% raw %}```php
+```php
 XLite\Model\Notification:
   - templatesDirectory: modules/Tony/EmailDemo/message
     availableForAdmin: true
@@ -154,7 +154,7 @@ XLite\Model\Notification:
         description: 'This notification is sent from testing page with preset subject and text'
         adminSubject: Someone has sent advanced demo notification
         adminText: "This is the body of your advanced demo notification"
-```{% endraw %}
+```
 
 Notification definition consists of several parameters:
 
@@ -180,13 +180,13 @@ You can also change the mail templates to make use of the default **subject** an
 
 **subject.tpl**
 
-{% raw %}```php
+```php
 {getNotificationSubject()}
-```{% endraw %}
+```
 
 **body.tpl**
 
-{% raw %}```php
+```php
 <p>
   {getNotificationText():h}
 </p>
@@ -194,7 +194,7 @@ You can also change the mail templates to make use of the default **subject** an
 	Custom parameter:<br>
 	{custom_param}
 </p>
-```{% endraw %}
+```
 
 This allows you to change the subject and body text in the admin area, without tampering with template files. The interface is shown on the picture below:
 

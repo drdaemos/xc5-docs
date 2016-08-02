@@ -66,12 +66,12 @@ Aside from these two, you can define:
 
 *   `getCreateURL()` method is used in conjunction with `isInlineCreation()` method and it defines URL of the page where new record will be created. If it is the same page, where your ItemsList sits on, then a new item will be created right in the table without reloading the page. Otherwise, you will be redirected to the page returned by the `getCreateURL()` method. Typical implementation of this method is:
 
-    {% raw %}```php
+    ```php
        protected function getCreateURL()
        {
            return \XLite\Core\Converter::buildUrl('your_target');
        }
-    ```{% endraw %}
+    ```
 
     where **your_target** is a target of a page.
 

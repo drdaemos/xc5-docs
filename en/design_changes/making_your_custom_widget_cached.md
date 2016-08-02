@@ -30,16 +30,16 @@ Imagine a situation that we have added a {% link "custom sidebar widget" ref_Z0I
 1.  Before we get started install the module from {% link "here" Creating-sidebar-menu-in-customer-area_7505759.html#Creatingsidebarmenuincustomerarea-Modulepack %}.
 2.  In order to mark a widget as available for caching you should simply add the `isCacheAvailable()` to your viewer class as follows:
 
-    {% raw %}```php
+    ```php
         protected function isCacheAvailable()
         {
             return true;
         }
-    ```{% endraw %}
+    ```
 
 3.  If you want to add some logic whether or not enable caching depending on some condition (e.g. cache widget on home page only and do not cache them on category page), then you can also add `isCacheAllowed()` method. Example of its implementation: 
 
-    {% raw %}```php
+    ```php
         protected function isCacheAllowed($template)
         {
     			// we must call parent's method for backward compatibility
@@ -49,7 +49,7 @@ Imagine a situation that we have added a {% link "custom sidebar widget" ref_Z0I
     			// if category's ID is root category ID, then we are on home page
                 && \XLite::getController()->getCategoryId() == \XLite::getController()->getRootCategoryId();
         }
-    ```{% endraw %}
+    ```
 
 4.  That is it. Now it is time to re-deploy the store and check the results.
 5.  _Important: widget's cache works only if you enable the **Use view cache** option in the **System Settings** > **Look & feel** > **Performance** section in admin area.![]({{site.baseurl}}/attachments/8225080/8356028.png)_

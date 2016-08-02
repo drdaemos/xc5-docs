@@ -24,22 +24,22 @@ To implement the necessary changes, you will need to modify X-Cart templates as 
 
     Here is the content of the new template:
 
-    {% highlight php %}{% raw %}
+    {% highlight php %}
     {**
      * @ListChild (list="center.bottom", weight="300")
      *}
     {if:getTarget()=#category#}
     <div class="category-description">{getDescription():h}</div>
     {end:}
-    {% endraw %}{% endhighlight %}
+    {% endhighlight %}
 
     The new template will be used to display category description in the center bottom part of the page within the "center.bottom" list.  
 
     1.2\. Run the following SQL query on your X-Cart database:
 
-    {% highlight php %}{% raw %}
+    {% highlight php %}
     INSERT INTO xc_theme_tweaker_template (template, date) VALUES ("theme_tweaker/default/en/center/bottom/category_description.tpl", UNIX_TIMESTAMP());
-    {% endraw %}{% endhighlight %}
+    {% endhighlight %}
 
     After doing so you will be able to edit the new template directly in the Admin area of your X-Cart store, on the "Look & Feel" page in the "Webmaster mode" section, or while using the "Webmaster mode" tool.  
 
@@ -49,11 +49,11 @@ To implement the necessary changes, you will need to modify X-Cart templates as 
 
     Comment out the code responsible for the output of category description by placing it inside the special tags {* *}; for example:
 
-    {% highlight php %}{% raw %}
+    {% highlight php %}
     {*
     <div class="category-description">{getDescription():h}</div>
     *}
-    {% endraw %}{% endhighlight %}
+    {% endhighlight %}
 
     This will remove category description from the center top part of the page.  
 
@@ -75,15 +75,15 @@ Please note that the new template is included into the "center.bottom" list with
 
  _classes/XLite/View/ItemsList/Product/Customer/Category/Main.php_
 
-{% highlight php %}{% raw %}
+{% highlight php %}
 * @ListChild (list="center.bottom", zone="customer", weight="200")
-{% endraw %}{% endhighlight %}
+{% endhighlight %}
 
 _classes/XLite/Module/CDev/Bestsellers/View/Bestsellers.php_
 
-{% highlight php %}{% raw %}
+{% highlight php %}
 * @ListChild (list="center.bottom", zone="customer", weight="400")
-{% endraw %}{% endhighlight %}
+{% endhighlight %}
 
 On the screenshots below, it is shown how to use the "Webmaster mode" tool to determine what widgets and templates are used to display data on a category page:
 

@@ -31,7 +31,7 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
 
 Tab section of a page is defined by the `getPages()` method of the page's {% link "controller class" ref_hkVaxgds %}. Since we want to add our tab to product details page, we are going to {% link "decorate" ref_AF6bmvL6 %} its controller `\XLite\Controller\Admin\Product` ({% link "more info about classnames in X-Cart" ref_FAgFbEx9 %}).  We create the `<X-Cart>/classes/XLite/Module/Tony/ProductTabDemo/Controller/Admin/Product.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 namespace XLite\Module\Tony\ProductTabDemo\Controller\Admin;
@@ -59,7 +59,7 @@ abstract class Product extends \XLite\Controller\Admin\Product implements \XLite
         return $list;
     }
 }
-```{% endraw %}
+```
 
 First, we add a new element to an array returned by the `getPages()` method. This element has key as **custom_tab **– this means that this tab will be accessed by
 `admin.php?target=product&product_id=5&**page=custom_tab**` URL – and value as **My Custom Tab** – this text will be displayed on the tab.

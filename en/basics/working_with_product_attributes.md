@@ -34,7 +34,7 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
 
 Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default/en/product/details/parts/attribute.tpl` template – as we can find it via **Webmaster Kit** module. Here is a code of this template:
 
-{% raw %}```php
+```php
 {if:getAttributeGroup()}
 <li><div class="head-h3">{getTitle()}</div>
   <ul>
@@ -47,12 +47,12 @@ Attributes in the **Specification** tab are shown by the `<X-Cart>/skins/default
   </ul>
 </li>
 {end:}
-```{% endraw %}
+```
 
 It takes attributes from array returned by the `getAttrList()` method and then display them in cycle. If we want to hide the **hidden-value** attribute, we should remove it from array returned by the `getAttrList()` method, so we must {% link "decorate" ref_AF6bmvL6 %} the `\XLite\View\Product\Details\Customer\Attributes` class ({% link "more info about classnames in X-Cart" ref_FAgFbEx9 %}). In order to do that we create the
 `<X-Cart>/classes/XLite/Module/Tony/AttributeDemo/View/Product/Details/Customer/Attributes.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -77,7 +77,7 @@ abstract class Attributes extends \XLite\View\Product\Details\Customer\Attribute
         return $return;
     }
 }
-```{% endraw %}
+```
 
 We simply take attributes returned by parent class' `getAttrList()` method as array, walk through this array and if attribute's name is not **hidden-value**, then this attribute will be put into `$return` array.
 

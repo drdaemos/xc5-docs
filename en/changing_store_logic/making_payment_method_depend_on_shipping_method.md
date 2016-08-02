@@ -39,9 +39,9 @@ We go to **Store setup** > **Shipping** section in your admin area and create th
 
 Do not forget to {% link "assign some shipping rates" ref_zJgAefeE %} to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
 
-{% raw %}```php
+```php
 admin.php?target=shipping_rates&methodid=2
-```{% endraw %}
+```
 
 The value right after `methodid=` part is the shipping method ID. In my case, it is **2**.
 
@@ -49,9 +49,9 @@ We also have to have two payment methods, that is why we go to **Store setup** >
 
 We need to know ID of **Credit Card** payment method that is why we click its **Configure** button and then look at browser's address bar again. It will be something like: 
 
-{% raw %}```php
+```php
 admin.php?target=payment_method&method_id=132
-```{% endraw %}
+```
 
 The value right after `method_id=` part is the payment method ID. In my case, it is **132**.
 
@@ -61,7 +61,7 @@ Now we can start creating our mod.
 
 We {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **PaymentShippingDependencyDemo**. Inside this module, we decorate the `getPaymentMethods()` method of the `\XLite\Model\Order` class. We create the `<X-Cart>/classes/XLite/Module/Tony/PaymentShippingDependencyDemo/Model/Order.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -92,19 +92,19 @@ abstract class Order extends \XLite\Model\Order implements \XLite\Base\IDecorato
         return $list;
     }
 }
-```{% endraw %}
+```
 
 Right now, `getPaymentMethods()` method looks default. We want to disable the **Credit Card** payment method for **Courier** shipping method that is why we should alter the condition: 
 
-{% raw %}```php
+```php
 if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method))
-```{% endraw %}
+```
 
 and if chosen shipping method is **Courier** – `$this->getShippingId() == 2` – then payment method with ID 132 (**Credit Card**) must be unset – `$method->getMethodId() == 132`. So, the final condition will be as follows: 
 
-{% raw %}```php
+```php
 if (!$method->isEnabled() || !$method->getProcessor()->isApplicable($this, $method) || $this->getShippingId() == 2 && $method->getMethodId() == 132)
-```{% endraw %}
+```
 
 That is it. Now we need to re-deploy the store and check the results at checkout.
 

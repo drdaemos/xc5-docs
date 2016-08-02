@@ -31,26 +31,26 @@ If you face this problem on your local machine, check tips below. Solution will 
 
 1.  Edit the **C:\Program Files\xampp\apache\conf\httpd.conf **file and replace there the following piece of code:
 
-    {% raw %}```php
+    ```php
     #LoadModule ssl_module modules/mod_ssl.so
-    ```{% endraw %}
+    ```
 
     with the next one:
 
-    {% raw %}```php
+    ```php
     LoadModule ssl_module modules/mod_ssl.so
-    ```{% endraw %}
+    ```
 
 2.  Edit the **C:\Program Files\xampp\php\php.ini** file and replace there the following piece of code:
 
-    {% raw %}```php
+    ```php
     ;extension=php_openssl.dll
-    ```{% endraw %}
+    ```
 
     with the next one:
 
-    {% raw %}```php
+    ```php
     extension=php_openssl.dll
-    ```{% endraw %}
+    ```
 
 3.  Restart Apache.

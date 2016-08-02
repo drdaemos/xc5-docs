@@ -22,9 +22,9 @@ SSL certificate is used by {% link "openSSL" ref_GuFOdboA %} in order to encrypt
 2.  Save it as you wish, for instance **C:\Windows\ca-bundle.crt**. Yes, you need to change its extension from **.pem** to **.crt**.
 3.  Add the following line to your **xampp\php\php.ini** file under **[PHP]** header
 
-    {% raw %}```php
+    ```php
     curl.cainfo = c:\windows\ca-bundle.crt
-    ```{% endraw %}
+    ```
 
 4.  Restart Apache and this certificate file should be picked up properly.
 

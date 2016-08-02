@@ -39,45 +39,45 @@ You need to release the next version of your module that will contain the follow
 
 1.  If you changed `uinteger` properties to `integer` ones. Then, you need to specify new `integer` properties as follows: 
 
-    {% raw %}```php
+    ```php
         /**
          * @Column         (type="integer", options={ "unsigned": true })
          */
         protected $id;
-    ```{% endraw %}
+    ```
 
     not just 
 
-    {% raw %}```php
+    ```php
         /**
          * @Column         (type="integer")
          */
         protected $id;
-    ```{% endraw %}
+    ```
 
 2.  If you used `integer` properties in your Models and these properties **are not** used as **indexes**, then you must replace such properties with the following directive: 
 
-    {% raw %}```php
+    ```php
         /**
          * @Column         (type="integer", nullable=true)
          */
         protected $id;
-    ```{% endraw %}
+    ```
 
     not just 
 
-    {% raw %}```php
+    ```php
         /**
          * @Column         (type="integer")
          */
         protected $id;
-    ```{% endraw %}
+    ```
 
     The reason for this change is that previous Doctrine version assumed `nullable=true` even if it was not specified. This change will allow backward compatibility.
 
 Aside from that, your module must {% link "decorate" ref_AF6bmvL6 %} the `postprocessSchema()` method of the  `\XLite\Core\Database` class as follows: 
 
-{% raw %}```php
+```php
 abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDecorator
 {
     /**
@@ -106,11 +106,11 @@ abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDec
         return array_merge($tmp1, $tmp2);
     }
 }
-```{% endraw %}
+```
 
 and your module must include the following {% link "pre-upgrade hook" ref_pQQ1CLe1 %}: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -140,7 +140,7 @@ return function()
         }
     }
 };
-```{% endraw %}
+```
 
 where `$tables` variable must contain all tables of your module.
 

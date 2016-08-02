@@ -14,8 +14,8 @@ Before submitting a module to X-Cart 5 marketplace, you need to verify its code 
 
 You can verify the module's code by running the following command in your command line:
 
-{% raw %}```php
+```php
 phpcs --standard=PSR2 path/to/your/files
-```{% endraw %}
+```
 
 Of course, [PHP codesniffer](https://github.com/squizlabs/PHP_CodeSniffer) must be installed in your system in order to successfully run this command.

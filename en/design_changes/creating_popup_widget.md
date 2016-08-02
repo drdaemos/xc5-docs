@@ -40,7 +40,7 @@ Through this course we will define our custom button, which will be used to open
 
 X-Cart has `\XLite\View\Button\APopupButton` class, which defines popup button. In order to use it, you should extend it with your custom button class (this thing is thoroughly explained in {% link "Working with viewer classes" ref_6dMJsZ63 %}). To do this, we are creating a file `<X-Cart>/classes/XLite/Module/Tony/PopupDemo/View/Button/DemoPopupButton.php` with the following content:
 
-{% raw %}```php
+```php
 <?php
 namespace XLite\Module\Tony\PopupDemo\View\Button;
 /**
@@ -81,7 +81,7 @@ class DemoPopupButton extends \XLite\View\Button\APopupButton
         return parent::getClass() . ' demo-popup';
     }
 }
-```{% endraw %}
+```
 
 By extending, we set some parameters, which will be used to get access to our popup widget. Let's walk through each method in order to understand these parameters:
 
@@ -93,7 +93,7 @@ By extending, we set some parameters, which will be used to get access to our po
 
 Apart from viewer class we should create an additional script in `<X-Cart>/modules/Tony/PopupDemo/page/tony_custom/popup_button.js` file with the following content:
 
-{% raw %}```php
+```php
 /**
  * Demo popup button controller
  */
@@ -109,7 +109,7 @@ DemoPopupButton.prototype.callback = function(selector)
   // You could add some inner widget autoloading here
 }
 core.autoload(DemoPopupButton);
-```{% endraw %}
+```
 
 This script describes JavaScript controller for our button and we aren't doing much work here, just extending the X-Cart `PopupButton`. Let's walk through each line of its code:
 
@@ -127,7 +127,7 @@ This script describes JavaScript controller for our button and we aren't doing m
 
 Another viewer class that we should create is the popup widget. This class will define the content of our popup window. Please note that you can use potentially any viewer class as popup widget, but for instance we will create it from scratch. Our viewer class will be a mini-overview of a current cart, similar to **Minicart** core widget, done by writing the following code in <`X-Cart>/skins/default/en``/classes/XLite/Module/Tony/PopupDemo/View/DemoWidget.php` file:
 
-{% raw %}```php
+```php
 <?php
 namespace XLite\Module\Tony\PopupDemo\View;
 /**
@@ -179,7 +179,7 @@ class DemoWidget extends \XLite\View\AView
         );
     }
 }
-```{% endraw %}
+```
 
 Let's get quick overview of methods, featuring this viewer class (more about this in {% link "Working with viewer classes" Working-with-viewer-classes_8224836.html %}):
 
@@ -193,7 +193,7 @@ Let's get quick overview of methods, featuring this viewer class (more about thi
 
  Now we need to create a template defined in the `getDefaultTemplate()` method. We are creating `<X-Cart>/skins/default/en/modules/Tony/PopupDemo/page/tony_custom/demo_widget.tpl `template with the following content: 
 
-{% raw %}```php
+```php
 {* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * Demo widget block
@@ -212,7 +212,7 @@ Let's get quick overview of methods, featuring this viewer class (more about thi
     <span>{formatPrice(getDisplaySubtotal(),getCurrency(),1)}</span>
   </p>
 </div>
-```{% endraw %}
+```
 
 This template uses several {% link "Flexy" ref_VcuME8xW %} features to show cart quantity, unordered list of items in the cart and subtotal in user currency. 
 
@@ -222,9 +222,9 @@ This is basically everything that we need to make a simple popup widget. We're o
 
 To use newly-created widget, we should add the following code on target page template:
 
-{% raw %}```php
+```php
 <widget class="\XLite\Module\Tony\PopupDemo\View\Button\DemoPopupButton" label="Demo popup!" />
-```{% endraw %}
+```
 
 The **class** parameter defines a viewer class to use as a widget (it is our popup button), and the **label** parameter is the text on the button. After doing this, we have to re-deploy the store with our module **PopupDemo** set as enabled and once the process is finished, we should add some items to the cart and go to the `cart.php?target=tony_custom` page. As a result, we should be able to see a page, similar to the picture in the **Introduction** section.
 

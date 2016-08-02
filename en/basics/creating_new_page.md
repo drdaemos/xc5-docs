@@ -35,7 +35,7 @@ For the sake of example, our task is to create the page which will be available 
 1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look {% link "here" ref_AF6bmvL6#Step3-applyinglogicchanges-GeneralX-Cartworkflow %}. 
 2.  We create the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/Admin/TonyCustom.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
 
     namespace XLite\Module\Tony\PageDemo\Controller\Admin;
@@ -44,13 +44,13 @@ For the sake of example, our task is to create the page which will be available 
     {
 
     }
-    ```{% endraw %}
+    ```
 
     As you can see, it is pretty empty, but since no data should be processed from the request, we do not need any extra methods here.
 
 3.  Create new viewer class that will manage the data output. This viewer class must sit in the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Admin/` directory and it must be named the same as its controller class. This way X-Cart can pick it up automatically. We are creating the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Admin/TonyCustom.php` file with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
 
     namespace XLite\Module\Tony\PageDemo\View\Page\Admin;
@@ -71,53 +71,53 @@ For the sake of example, our task is to create the page which will be available 
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
         }
     }
-    ```{% endraw %}
+    ```
 
 4.  Let us walk through each line of this code. 
 
-    {% raw %}```php
+    ```php
     namespace XLite\Module\Tony\PageDemo\View\Page\Admin;
-    ```{% endraw %}
+    ```
 
     This is just a namespace definition. 
 
-    {% raw %}```php
+    ```php
     /**
      * @ListChild (list="admin.center", zone="admin")
      */
-    ```{% endraw %}
+    ```
 
     This part is very important. It registers this viewer class to be displayed in the central area of admin area. 
 
-    {% raw %}```php
+    ```php
     class TonyCustom extends \XLite\View\AView
-    ```{% endraw %}
+    ```
 
     Just a class definition. 
 
-    {% raw %}```php
+    ```php
     	public static function getAllowedTargets()
         {
             return array_merge(parent::getAllowedTargets(), array('tony_custom'));
         }
-    ```{% endraw %}
+    ```
 
     The `getAllowedTargets()` method defines which targets will trigger this viewer class. The current implementation means that, if **target=tony_custom**, then this viewer class will display its content in the central area. If there is any other target, than this viewer class will not be even run. 
 
-    {% raw %}```php
+    ```php
         protected function getDefaultTemplate()
         {
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
         }
-    ```{% endraw %}
+    ```
 
     The `getDefaultTemplate()` method defines what template will be used in order to output the content. The template path can be whatever you prefer.
 
 5.  Now it is time to create the template defined in the `getDefaultTemplate()` method, so it would display **Hello world!** text. We are creating the `<X-Cart>/skins/admin/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` file with the following content: 
 
-    {% raw %}```php
+    ```php
     Hello world!
-    ```{% endraw %}
+    ```
 
 6.  We are done with this mod. Now it is time to re-deploy the store and check the results. If you open the following URL in your store: `admin.php?target=tony_custom`, you will see the following result:
 
@@ -135,7 +135,7 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
 
 2.  The content of the controller class will be as follows: 
 
-    {% raw %}```php
+    ```php
     <?php
 
     namespace XLite\Module\Tony\PageDemo\Controller\Customer;
@@ -143,13 +143,13 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
     class TonyCustom extends \XLite\Controller\Customer\ACustomer
     {
     }
-    ```{% endraw %}
+    ```
 
     The implementation of the controller class is similar to admin's one, but it has different namespace (`XLite\Module\Tony\PageDemo\Controller\**Customer**`) and it extends different class (`\XLite\Controller\**Customer\ACustomer**`)
 
 3.  We create new viewer class: `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/**Customer**/TonyCustom.php` (again, notice change from `Page/**Admin**/TonyCustom.php` to `Page/**Customer**/TonyCustom.php` in the path) with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
 
     namespace XLite\Module\Tony\PageDemo\View\Page\Customer;
@@ -169,30 +169,30 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
         }
     }
-    ```{% endraw %}
+    ```
 
 4.  As you can see this implementation has only few differences: 
 
-    {% raw %}```php
+    ```php
     namespace XLite\Module\Tony\PageDemo\View\Page\Customer;
-    ```{% endraw %}
+    ```
 
     namespace is a bit different;
 
-    {% raw %}```php
+    ```php
     /**
      * @ListChild (list="center")
      */
-    ```{% endraw %}
+    ```
 
     We use this `@ListChild` directive in order to insert this viewer class into central area of customer area, instead of admin one;
 
-    {% raw %}```php
+    ```php
     	protected function getDefaultTemplate()
         {
             return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
         }
-    ```{% endraw %}
+    ```
 
     The template for this viewer sits in other location. Aside from that, the implementation is the same.
 

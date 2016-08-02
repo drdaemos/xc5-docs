@@ -9,7 +9,7 @@ title: Bulk editing
 ---
 Bulk editing is essentially a list of fields to be edited combined into editing scenarios. Scenarios are described in `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Scenario::defineScenario()` method, which returns an array. Keys of the array are names of the scenarios and values are their settings. Let us have a look at scenario of bulk editing of products in categories:
 
-{% raw %}```php
+```php
 'product_categories'           => [
     'title'     => \XLite\Core\Translation::getInstance()->translate('Categories'),
     'formModel' => 'XLite\Module\XC\BulkEditing\View\FormModel\Product\Categories',
@@ -27,7 +27,7 @@ Bulk editing is essentially a list of fields to be edited combined into editing 
         ],
     ],
 ],
-```{% endraw %}
+```
 
 `title` - title of the scenario;
 `formModel`, `view`, `DTO` и `step` - tech settings used in the scenario;
@@ -48,7 +48,7 @@ Each field must be defined by a class inherited from `\XLite\Module\XC\BulkEditi
 
 In order to switch to bulk editing, the `\XLite\Module\XC\BulkEditing\View\Button\Product` button was aded to product list panel. The idea is to save a search criteria used in current product list as well as a list of selected products (if there are any) `\XLite\Module\XC\BulkEditing\Controller\Admin\BulkEdit`:
 
-{% raw %}```php
+```php
 /**
  + Before bulk edit form
  */
@@ -80,7 +80,7 @@ protected function doActionStart()
 
 *   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Scenario` adds field into a scenario (as well as changes scenario's label)
 
-    {% raw %}```php
+    ```php
     /**
      * @return array
      */
@@ -98,11 +98,11 @@ protected function doActionStart()
 
         return $result;
     }
-    ```{% endraw %}
+    ```
 
 *   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Field\Product\Tag` is a definition of the field.
 
-    {% raw %}```php
+    ```php
     class Tag extends \XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\AField
     {
         public static function getSchema($name, $options)
@@ -191,7 +191,7 @@ protected function doActionStart()
             return $result ? implode(', ', $result) : static::t('Not set');
         }
     }
-    ```{% endraw %}
+    ```
 
 ## Saving data into DB
 Saving data happens in batches (the same as import), so it will not crash because we save a lot of objects.

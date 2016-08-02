@@ -34,7 +34,7 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
 1.  empty controller class `\XLite\Module\Tony\ItemsListAdminDemo\Controller\Admin\ItemsListDemo`;
 2.  simple page viewer class `\XLite\Module\Tony\ItemsListAdminDemo\View\Page\Admin\ItemsListDemo` with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     // vim: set ts=4 sw=4 sts=4 et:
 
@@ -67,13 +67,13 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
             return 'modules/Tony/ItemsListAdminDemo/page/items_list_demo/body.tpl';
         }
     }
-    ```{% endraw %}
+    ```
 
 3.  empty page template `<X-Cart>/skins/admin/en/modules/Tony/ItemsListAdminDemo/page/items_list_demo/body.tpl`.
 
 Now we start creating our **ItemsList** widget. We create the `<X-Cart>/classes/XLite/Module/Tony/ItemsListAdminDemo/View/ItemsList/ItemsListDemo.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 
 namespace XLite\Module\Tony\ItemsListAdminDemo\View\ItemsList;
@@ -132,28 +132,28 @@ class ItemsListDemo extends \XLite\View\ItemsList\Model\Table
         return static::SORT_BY_MODE_PRICE;
     }
 }
-```{% endraw %}
+```
 
 Let us have a look at key parts of this widget implementation:
 
 1.  Every single ItemsList in admin area extends`\XLite\View\ItemsList\Model\Table class`, so do we: 
 
-    {% raw %}```php
+    ```php
     class ItemsListDemo extends \XLite\View\ItemsList\Model\Table
-    ```{% endraw %}
+    ```
 
 2.  We need to point our **ItemsList** to some {% link "model" ref_wmExvPDD %}. It will tell a widget what entities it must display. In our case, this entity is a **product**, so we point our ItemsList to `\XLite\Model\Product` model class: 
 
-    {% raw %}```php
+    ```php
         protected function defineRepositoryName()
         {
             return '\XLite\Model\Product';
         }
-    ```{% endraw %}
+    ```
 
 3.  Next step is to define what columns must be displayed in our ItemsList. We want to display **SKU**, **Product Name** as a link to a product details page and **Price**. Price field must support sorting option. In order to implement this configuration, we define the following `defineColumns()` method: 
 
-    {% raw %}```php
+    ```php
         protected function defineColumns()
         {
             return array(
@@ -174,20 +174,20 @@ Let us have a look at key parts of this widget implementation:
                 ),
             );
         }
-    ```{% endraw %}
+    ```
 
 4.  Key of an array's element must be one of Model properties, so that X-Cart could pick up value automatically. The value must be an **array()** that describes the column. SKU column is very simple, we just define its column name as **SKU** and its orderby as **100**.
 5.  Name column is a bit more complex. It also has `COLUMN_NAME` and `COLUMN_ORDERBY`, but it additionally has `COLUMN_MAIN = true` param, which defines that this column must be widest across ones in the ItemsList. It also has `COLUMN_LINK` parameter that defines a link where you can see product details. As you can, see we just define target parameter as **product** and X-Cart will build a proper URL for a particular product itself, so it would become `admin.php?target=product&product_id=ID`.
 6.  Price column is a bit more complex also. Although, it has the same `COLUMN_NAME` and `COLUMN_ORDERBY` parameters, it supports sorting as defined by the `COLUMN_SORT` param. Aside from specifying this param in column, we must also create constant called `SORT_BY_MODE_PRICE` as it refers to it:
 
-    {% raw %}```php
+    ```php
     const SORT_BY_MODE_PRICE = 'p.price';
-    ```{% endraw %}
+    ```
 
     The value of this constant will be passed into `getOrderBy()` method of ItemsList class (see implementation of `\XLite\View\ItemsList\AItemsList` class) and then it will be used in `getSearchCondition()` method (we will have a look at it a bit later in this article).
     Also, we must add this sorting option to `sortByModes()` method, so we extend `__construct()` method: 
 
-    {% raw %}```php
+    ```php
         public function __construct(array $params = array())
         {
             $this->sortByModes += array(
@@ -195,11 +195,11 @@ Let us have a look at key parts of this widget implementation:
             );
             parent::__construct($params);
         }
-    ```{% endraw %}
+    ```
 
 7.  Finally, we need to implement the `getSearchCondition()` method in our ItemsList: 
 
-    {% raw %}```php
+    ```php
         protected function getSearchCondition()
         {
             $result = parent::getSearchCondition();
@@ -209,36 +209,36 @@ Let us have a look at key parts of this widget implementation:
 
             return $result;
         }
-    ```{% endraw %}
+    ```
 
     We need to extend it in order to allow {% link "search() method" ref_ehDn4NIi %} in the `\XLite\Model\Repo\Product` repository class to work properly.
 
 8.  First, we let it know that sorting must be done according to user's selected condition: 
 
-    {% raw %}```php
+    ```php
     $result->{\XLite\Model\Repo\Product::P_ORDER_BY} = $this->getOrderBy();
-    ```{% endraw %}
+    ```
 
     Here we use the `getOrderBy()` method mentioned earlier.
 
 9.  Then, we also add our condition of displaying products, which is it must display only product that are more expensive than $10: 
 
-    {% raw %}```php
+    ```php
     $result->moreThan10 = true;
-    ```{% endraw %}
+    ```
 
 10.  Finally, we need to add the `getSortByModeDefault()` method that will define a sorting option when it has not been chosen yet: 
 
-    {% raw %}```php
+    ```php
         protected function getSortByModeDefault()
         {
             return static::SORT_BY_MODE_PRICE;
         }
-    ```{% endraw %}
+    ```
 
 Everything is good except `search()` method of `\XLite\Model\Repo\Produc`t class cannot yet handle our **moreThan10** condition. In order to fix this, we need to decorate the `\XLite\Model\Repo\Product` class. We create the `<X-Cart>/classes/XLite/Module/Tony/ItemsListAdminDemo/Model/Repo/Product.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
 
@@ -273,15 +273,15 @@ abstract class Product extends \XLite\Model\Repo\Product implements \XLite\Base\
         return $result;
     }
 }
-```{% endraw %}
+```
 
 _Note: if you need more info about `search()` method implementation, please have a look here: {% link "search() method" 8225347.html %}._
 
 Finally, we need to display our ItemsList widget on the page, so we go to the `<X-Cart>/skins/admin/en/modules/``Tony/ItemsListAdminDemo/page/items_list_demo/body.tpl` template and define its content as follows: 
 
-{% raw %}```php
+```php
 <widget class="XLite\Module\Tony\ItemsListAdminDemo\View\ItemsList\ItemsListDemo" />
-```{% endraw %}
+```
 
 That is it. Now we need to re-deploy the store and you will see our **ItemsList** that supports sorting by Price on `admin.php?target=items_list_demo` page.![]({{site.baseurl}}/attachments/8225372/8356180.png)
 

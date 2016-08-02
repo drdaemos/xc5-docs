@@ -39,7 +39,7 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 1.  Create `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` directory inside your installation. Of course, you should use your own developer and module IDs instead of `<YOUR-DEVELOPER-ID>` and `<YOUR-MODULE-ID>` parts of the path.
 2.  Create `Main.php` file inside `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` folder with the following content: 
 
-    {% raw %}```php
+    ```php
     <?php
     namespace XLite\Module\<YOUR-DEVELOPER-ID>\<YOUR-MODULE-ID>;
 
@@ -95,7 +95,7 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
             return 'Your module description';
         }
     }
-    ```{% endraw %}
+    ```
 
     Change `namespace` section in this file and replace `<YOUR-DEVELOPER-ID>` and `<YOUR-MODULE-ID>` placeholders with your actual developer and module IDs.
 

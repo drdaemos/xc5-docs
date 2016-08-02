@@ -39,12 +39,12 @@ For the sake of example, we will create a module that will have a textarea setti
 1.  Create the module according to {% link "step 1" Step-1---creating-simplest-module_524296.html %} article. In my example, I am using developer ID as **Tony** and module ID as **SettingsDemo**.
 2.  Put the following method into your `Main.php` file: 
 
-    {% raw %}```php
+    ```php
     public static function showSettingsForm() 
     {
         return true;
     }
-    ```{% endraw %}
+    ```
 
     This method will tell X-Cart that it must show **Settings** link near the module in the **Extensions** > **Installed modules** section as follows: 
     ![]({{site.baseurl}}/attachments/8224795/8355862.png)
@@ -56,7 +56,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 1.  Create the `install.yaml` file in the root folder of your module. I am creating it in the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/` folder.
 2.  Put the following content there: 
 
-    {% raw %}```php
+    ```php
     XLite\Model\Config:
       - name: html_code
         category: Tony\SettingsDemo
@@ -67,13 +67,13 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
           - code: en
             option_name: Put your HTML code here
             option_comment: I am comment to the option and I am here just for show that you can put some text into me
-    ```{% endraw %}
+    ```
 
 3.  Once it is done, push the changes to the database using {% link "load-yaml.php" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
 
-    {% raw %}```php
+    ```php
     ../../next-sdk/devkit/macros/load-yaml.php classes/XLite/Module/Tony/SettingsDemo/install.yaml
-    ```{% endraw %}
+    ```
 
 4.  Go to the module settings and you will see the following page:
     ![]({{site.baseurl}}/attachments/8224795/8355863.png)
@@ -84,7 +84,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 1.  Create the viewer class in your module as per {% link "step 2" Step-2---applying-design-changes_8224787.html %} article. Since my developer ID is **Tony** and module ID is **SettingsDemo**, I am creating the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/View/Header.php` file. You do not need to create .php file with Header name, it can be whatever you like, e.g. Code.php, HTML.php, etc.
 2.  Put the following content into your viewer class: 
 
-    {% raw %}```php
+    ```php
     <?php
     namespace XLite\Module\Tony\SettingsDemo\View;
     /**
@@ -102,7 +102,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
     		return \XLite\Core\Config::getInstance()->Tony->SettingsDemo->html_code;
     	}
     }
-    ```{% endraw %}
+    ```
 
     _Note: if you are using your own developer and module IDs, you should change the namespace part of this PHP code to namespace XLite\Module\<Your-Developer-ID>\<Your-Module-ID>\View;_
 
@@ -110,19 +110,19 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 
 3.  Now we need to create the template that was defined the `getDefaultTemplate()` method of the viewer class. Create the `<X-Cart>/skins/default/en/modules/Tony/SettingsDemo/html_code.tpl` file with the following content: 
 
-    {% raw %}```php
+    ```php
     {getHtmlCode():h}
-    ```{% endraw %}
+    ```
 
     This code simply calls `getHtmlCode()` method of our viewer class and output its result **without** applying [htmlentites()](http://php.net/function.htmlentities.php) function to the result. If we omit **:h** modifier, then all special symbols like <, >, etc will be converted to HTML entities.
 
 4.  Re-deploy the store and check the results. The HTML code specified in the setting field will be added to `<head></head>` section of all pages in store-front.
 5.  _Note: you can ask why do we need specify HTML code, not pure JS or CSS one? The answer is: quite often web-services provide integration code like this _
 
-    {% raw %}```php
+    ```php
     <script type="text/javascript">var some_var="value";</script> 
     <script type="text/javascript" src="http://link.to/some/javascript/file.js"></script> 
-    ```{% endraw %}
+    ```
 
     _and you cannot insert it into the web-page code using custom JS/CSS code fields from Theme Tweaker module. In this case, our module would work perfectly._
 
@@ -143,7 +143,7 @@ This is a type of setting we have used in our module already. It will allow to c
 YAML code example:
 
 **Textarea setting**
-{% raw %}```php
+```php
   - name: textarea_variable
     category: Tony\SettingsDemo
     type: textarea
@@ -153,7 +153,7 @@ YAML code example:
       - code: en
         option_name: I am textarea setting
         option_comment: Description of textarea setting
-```{% endraw %}
+```
 
 Here is the list of parameters you can specify for it:
 
@@ -178,7 +178,7 @@ This is a type of setting that will be represented as a single-line text field.
 YAML code example:
 
 **Text setting**
-{% raw %}```php
+```php
   - name: text_variable
     category: Tony\SettingsDemo
     type: text
@@ -188,7 +188,7 @@ YAML code example:
       - code: en
         option_name: I am text setting
         option_comment: Description of text setting
-```{% endraw %}
+```
 
 Parameters are the same as for **Textarea** setting.
 
@@ -201,7 +201,7 @@ This is a setting type that will be represented – obviously – as a checkbox.
 YAML code example:
 
 **Checkbox setting**
-{% raw %}```php
+```php
   - name: checkbox_variable
     category: Tony\SettingsDemo
     type: checkbox
@@ -211,7 +211,7 @@ YAML code example:
       - code: en
         option_name: I am checkbox
         option_comment: Checkbox description
-```{% endraw %}
+```
 
 Parameters are the same as for **Textarea** option.
 
@@ -224,7 +224,7 @@ This is an element that is used on settings page in order to separate option gro
 YAML code example:
 
 **Separator**
-{% raw %}```php
+```php
   - name: separator_delimiter
     category: Tony\SettingsDemo
     type: separator
@@ -232,7 +232,7 @@ YAML code example:
     translations:
       - code: en
         option_name: I am separator  
-```{% endraw %}
+```
 
 Parameters available are only **orderby** and **option_name** out of common ones (see **Textarea** parameters).
 
@@ -247,7 +247,7 @@ For the sake of example, let us add a selectbox of timezone to our module.
 YAML code example:
 
 **Time zone selectbox**
-{% raw %}```php
+```php
   - name: timezone_selectbox
     category: Tony\SettingsDemo
     type: \XLite\View\FormField\Select\TimeZone
@@ -256,7 +256,7 @@ YAML code example:
       - code: en
         option_name: I am timezone selectbox
         option_comment: Description of timezone selectbox
-```{% endraw %}
+```
 
 Parameters are almost common with only difference: you specify the class name in the **type** field. This class defines the representation of how exactly your setting should behave.
 
@@ -264,7 +264,7 @@ Another example is **Yes/No **selector:
 
 ![]({{site.baseurl}}/attachments/8224795/8355874.png)
 
-{% raw %}```php
+```php
   - name: yesno_selectbox
     category: Tony\SettingsDemo
     type: \XLite\View\FormField\Select\YesNo
@@ -274,7 +274,7 @@ Another example is **Yes/No **selector:
       - code: en
         option_name: I am Yes-No selectbox
         option_comment: Description of Yes-No selectbox
-```{% endraw %}
+```
 
 Again, parameters are the same, but you specify the class name in the **type** field.
 

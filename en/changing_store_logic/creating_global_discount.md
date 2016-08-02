@@ -34,7 +34,7 @@ You can create a discount in X-Cart by extending the `\XLite\Logic\Order\Modifi
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/DiscountDemo/Logic/Order/Modifier/Discount.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 
 namespace XLite\Module\Tony\DiscountDemo\Logic\Order\Modifier;
@@ -56,59 +56,59 @@ class Discount extends \XLite\Logic\Order\Modifier\Discount
         return $surcharge;
     }
 }
-```{% endraw %}
+```
 
 Let us have a closer look at this class' code.
 
 1.  The code below defines that this order modifier is a discount and the surcharge value should be aggregated into single **Discount** line in order totals: 
 
-    {% raw %}```php
+    ```php
         const MODIFIER_CODE = 'DISCOUNT';
 
         protected $type = \XLite\Model\Base\Surcharge::TYPE_DISCOUNT;
 
         protected $code = self::MODIFIER_CODE;
-    ```{% endraw %}
+    ```
 
 2.  `calculate()` method is the most important part of this class. It defines the routine of calculating discount and applying it to the order object. This method will be called in the `calculate()` method of the `\XLite\Model\Order` object in this `foreach()`: 
 
-    {% raw %}```php
+    ```php
             foreach ($this->getModifiers() as $modifier) {
                 if ($modifier->canApply()) {
                     $modifier->calculate();
                 }
             }
-    ```{% endraw %}
+    ```
 
 3.  _Note: our mod does not use it, but you can define `canApply()` method in your class in order to define whether this modifier must be applied or not._
 4.  Let us get back to our implementation of `calculate()` method. First we calculate the discount value: 
 
-    {% raw %}```php
+    ```php
     $discount = $this->getOrder()->getSubtotal() * 0.1;
-    ```{% endraw %}
+    ```
 
     and then we apply this discount to the order as a **negative value**: 
 
-    {% raw %}```php
+    ```php
     $surcharge = $this->addOrderSurcharge($this->code, $discount * -1);
-    ```{% endraw %}
+    ```
 
     We get the `$surcharge` object as a result, which will be returned as a result of `calculate()` method.
 
 5.  Final step is we distribute the discount value across all order items in the cart: 
 
-    {% raw %}```php
+    ```php
     $this->distributeDiscount($discount);
-    ```{% endraw %}
+    ```
 
 That is it with discount class.
 
 Now we need to register this order modifier in X-Cart and for that purpose we create the `<X-Cart>/classes/XLite/Module/Tony/DiscountDemo/install.yaml` file with the following content: 
 
-{% raw %}```php
+```php
 XLite\Model\Order\Modifier:
   - { class: '\XLite\Module\Tony\DiscountDemo\Logic\Order\Modifier\Discount', weight: 100 }
-```{% endraw %}
+```
 
 This way we tell X-Cart that our class described above must be registered as order modifier with **weight 100**. The higher the weight, the later this order modifier will be run in `foreach()` of bullet-point 3.
 

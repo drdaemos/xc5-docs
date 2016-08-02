@@ -21,21 +21,21 @@ There are two methods to do so:
 
 1.  In the file `etc/config.php`, add the line
 
-    {% raw %}```php
+    ```php
     HTML.Trusted = On
-    ```{% endraw %}
+    ```
 
     right after the line 
 
-    {% raw %}```php
+    ```php
     [html_purifier]
-    ```{% endraw %}
+    ```
 
     This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag <buttob> - from code.
 
 2.  Add the following code to the page where you need to insert your 'Add to cart' button:
 
-    {% raw %}```php
+    ```php
     <form action="?target=cart" method="post" accept-charset="utf-8" class="custom-add2cart">
        <input type="hidden" name="target" value="cart" />
        <input type="hidden" name="action" value="add" />
@@ -46,7 +46,7 @@ There are two methods to do so:
            </button>
        </div>
     </form>
-    ```{% endraw %}
+    ```
 
     where:
 
@@ -60,21 +60,21 @@ This method can be used to create a button that will add a product to cart witho
 
 1.  In the file `etc/config.php`, add the line
 
-    {% raw %}```php
+    ```php
     HTML.Trusted = On
-    ```{% endraw %}
+    ```
 
     right after the line 
 
-    {% raw %}```php
+    ```php
     [html_purifier]
-    ```{% endraw %}
+    ```
 
     This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag <buttob> - from code.
 
 2.  Add the following code to the page where you need to insert your 'Add to cart' button:
 
-    {% raw %}```php
+    ```php
     <script type="text/javascript">
        window.onload = function () {
            $('form.custom-add2cart').each(function () {
@@ -85,6 +85,6 @@ This method can be used to create a button that will add a product to cart witho
            })
        };
     </script>
-    ```{% endraw %}
+    ```
 
 Please note that this method will not work for X-Cart static pages in stores using the module TinyMCE integration, because this module will strip <script> from code. Also note that this method will not work for pages located on other sites outside X-Cart.

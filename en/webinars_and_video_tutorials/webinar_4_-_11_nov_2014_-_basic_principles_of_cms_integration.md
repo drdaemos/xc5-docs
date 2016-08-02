@@ -35,7 +35,7 @@ The aim of this webinar is to show developers how they can work with X-Cart from
 
 Initializing X-Cart is as easy as including two files into your PHP project. Here is working example – сreate `test.php` file inside your X-Cart folder with the following code:
 
-{% raw %}```php
+```php
 <?php
 
 require_once 'top.inc.php';
@@ -44,22 +44,22 @@ require_once 'top.inc.additional.php';
 $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array('product_id' => 1));
 
 echo $product->getName();
-```{% endraw %}
+```
 
 1.  This part initializes X-Cart and allows to use its public methods in our test PHP script
 
-    {% raw %}```php
+    ```php
     require_once 'top.inc.php';
     require_once 'top.inc.additional.php';
-    ```{% endraw %}
+    ```
 
 2.  This code pulls a product object and display its name
 
-    {% raw %}```php
+    ```php
     $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array('product_id' => 1));
 
     echo $product->getName();
-    ```{% endraw %}
+    ```
 
     _More information about pulling data from database is {% link "here" ref_L1zWfWvw %}._
 
@@ -71,7 +71,7 @@ X-Cart allows to show entire widgets in 3rd party scripts in very concise way.
 
 Let us edit the `test.php` script in root directory of X-Cart and define it like this:
 
-{% raw %}```php
+```php
 <?php
 require_once 'top.inc.php';
 require_once 'top.inc.additional.php';
@@ -79,26 +79,26 @@ require_once 'top.inc.additional.php';
 $widget = new \XLite\View\TopCategories();
 
 $widget->display();
-```{% endraw %}
+```
 
 1.  X-Cart initialization remains the same:
 
-    {% raw %}```php
+    ```php
     require_once 'top.inc.php';
     require_once 'top.inc.additional.php';
-    ```{% endraw %}
+    ```
 
 2.  This way we are pulling a widget object and tell them that it must be displayed now: 
 
-    {% raw %}```php
+    ```php
     $widget = new \XLite\View\TopCategories();
 
     $widget->display();
-    ```{% endraw %}
+    ```
 
 3.  This code will result in the following HTML code: 
 
-    {% raw %}```php
+    ```php
     <div class="block block-block block-top-categories">
       <div class="head-h2" >Categories</div>  <div class="content"><ul class="menu menu-list catalog-categories catalog-categories-path">
           <li  class="leaf first">
@@ -113,11 +113,11 @@ $widget->display();
         </ul>
     </div>
     </div>
-    ```{% endraw %}
+    ```
 
 4.  The same approach can be used for every other X-Cart viewer class. All {% link "viewer classes" ref_6dMJsZ63 %} are located in `<X-Cart>/classes/XLite/Viewer` folder. Here is working example:
 
-    {% raw %}```php
+    ```php
     <?php
 
     require_once 'top.inc.php';
@@ -130,11 +130,11 @@ $widget->display();
     // display of footer menu
     $footerMenu = new \XLite\View\Menu\Customer\Footer();
     $footerMenu->display();
-    ```{% endraw %}
+    ```
 
 5.  Finally, you can even render a template with all its children in an external script.
 
-    {% raw %}```php
+    ```php
     <?php
 
     require_once 'top.inc.php';
@@ -142,7 +142,7 @@ $widget->display();
 
     $content = new \XLite\View\Content();
     $content->display('layout/main.header.tpl');
-    ```{% endraw %}
+    ```
 
 6.  Using these approaches you can display almost any part of X-Cart interface – from a little <div> to entire page – in your script.
 
@@ -152,7 +152,7 @@ $widget->display();
 
 Let us imagine that we want to integrate X-Cart into a blog. The blog is installed on [http://localhost/](http://localhost/) and our X-Cart is in [http://localhost/next/src](http://localhost/next/src). In order to reproduce the situation, I am creating `test.php` file in the web-root of my localhost with the following content:
 
-{% raw %}```php
+```php
 <?php
 
 require_once 'next/src/top.inc.php';
@@ -160,7 +160,7 @@ require_once 'next/src/top.inc.additional.php';
 
 $widget = new \XLite\View\TopCategories();
 $widget->display();
-```{% endraw %}
+```
 
 It works, but there are two problems:
 
@@ -179,23 +179,23 @@ It can be achieved by decoration of the `\XLite\Core\Converter` class that conta
 
 We are running the {% link "following macro" ref_HvrXVNvJ#X-CartSDK-Decoratingclass %}:
 
-{% raw %}```php
+```php
 ../../next-sdk/devkit/macros/decorate.php --module=Tony\\CMSIntegration --class=classes/XLite/Core/Converter.php
-```{% endraw %}
+```
 
 and it creates the `Core/Converter.php` file inside my module's folder.
 
 Then, we go to my `test.php` script and define a constant there: 
 
-{% raw %}```php
+```php
 define('CMS_INTEGRATION', true);
-```{% endraw %}
+```
 
 We will use it in order to determine whether X-Cart methods are called from our script or through default X-Cart routine.
 
 Now we can implement new version of `buildURL()` method in the `<X-Cart>/classes/XLite/Module/Tony/CMSIntegration/Core/Converter.php` file:
 
-{% raw %}```php
+```php
     public static function buildURL($target = '', $action = '', array $params = array(), $interface = null, $forceCleanURL = false, $forceCuFlag = null)
     {
     	$return = parent::buildURL($target, $action, $params, $interface, $forceCleanURL, $forceCuFlag);
@@ -204,7 +204,7 @@ Now we can implement new version of `buildURL()` method in the `<X-Cart>/classes
         }
         return $return;
     }
-```{% endraw %}
+```
 
 This implementation is straight-forward, if `CMS_INTEGRATION` constant is defined, then we prepend 'next/src' part to all URLs. Otherwise, we keep URLs as they are.
 
@@ -214,13 +214,13 @@ The root of the problem is if our script is called outside of X-Cart folder, X-C
 
 We decorate the `\XLite\Core\Request` class by running this macro:
 
-{% raw %}```php
+```php
 ../../next-sdk/devkit/macros/decorate.php --module=Tony\\CMSIntegration --class=classes/XLite/Core/Request.php
-```{% endraw %}
+```
 
 Now we go to the `Core/Request.php` file inside the module and implement our version of the `getCookieURL()` method: 
 
-{% raw %}```php
+```php
 	protected function getCookieURL($secure = false)
 	{
 		$url = $secure
@@ -231,7 +231,7 @@ Now we go to the `Core/Request.php` file inside the module and implement our ver
 
 		return $return;
 	}	
-```{% endraw %}
+```
 
 This implementation means that if the method is called from our script, then X-Cart sets cookie to `/` (web-root), otherwise it works as usual.
 
@@ -249,7 +249,7 @@ Final point of today's webinar is how to create, log in and log off users throug
 
 The following code will create a user with **bit-bucket@x-cart.com** email and **tester** password:
 
-{% raw %}```php
+```php
 <?php
 
 require_once 'next/src/top.inc.php';
@@ -262,32 +262,32 @@ $profile->setPassword(\XLite\Core\Auth::encryptPassword('tester'));
 $profile->setForceChangePassword(false);
 
 $profile->update();
-```{% endraw %}
+```
 
 We create a profile object:
 
-{% raw %}```php
+```php
 $profile = new \XLite\Model\Profile();
-```{% endraw %}
+```
 
 Assign mandatory fields to it:
 
-{% raw %}```php
+```php
 $profile->setLogin('bit-bucket@x-cart.com');
 $profile->setPassword(\XLite\Core\Auth::encryptPassword('tester'));
-```{% endraw %}
+```
 
 We tell this profile that it must not ask for changing password after first login:
 
-{% raw %}```php
+```php
 $profile->setForceChangePassword(false);
-```{% endraw %}
+```
 
 Save the results:
 
-{% raw %}```php
+```php
 $profile->update();
-```{% endraw %}
+```
 
 If we check an admin area right now, we will see a user with **bit-bucket@x-cart.com** email there.
 
@@ -295,7 +295,7 @@ If we check an admin area right now, we will see a user with **bit-bucket@x-car
 
 Here is a code sample:
 
-{% raw %}```php
+```php
 <?php
 
 require_once 'next/src/top.inc.php';
@@ -308,39 +308,39 @@ if ($profile !== \XLite\Core\Auth::RESULT_ACCESS_DENIED) {
 } else {
 	echo 'User could not be logged in';
 }
-```{% endraw %}
+```
 
 This code is logging in a customer with **bit-bucket@x-cart.com** email and **tester** password:
 
-{% raw %}```php
+```php
 $profile = \XLite\Core\Auth::getInstance()->login('bit-bucket@x-cart.com', 'tester');
-```{% endraw %}
+```
 
 This piece of code just checks whether logging in went properly or not:
 
-{% raw %}```php
+```php
 if ($profile !== \XLite\Core\Auth::RESULT_ACCESS_DENIED) {
 	echo 'User is logged in';
 } else {
 	echo 'User could not be logged in';
 }
-```{% endraw %}
+```
 
 ## Logging user off
 
 This is code sample of logging the currently logged in user off:
 
-{% raw %}```php
+```php
 <?php
 
 require_once 'next/src/top.inc.php';
 require_once 'next/src/top.inc.additional.php';
 
 \XLite\Core\Auth::getInstance()->logoff();
-```{% endraw %}
+```
 
 This is as easy as running one line of code:
 
-{% raw %}```php
+```php
 \XLite\Core\Auth::getInstance()->logoff();
-```{% endraw %}
+```

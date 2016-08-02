@@ -40,21 +40,21 @@ we will be redirected to `http://example.com?target=main&transactionID=10&statu
 
 We will create this "payment gateway" script as the `<X-Cart>/payment.php` file with the following content: 
 
-{% raw %}```php
+```php
 <?php
 
 $location = $_POST['returnURL'] . '&transactionID=' . $_POST['transactionID'] . '&status=Paid';
 
 header('Location: ' . $location);
 die();
-```{% endraw %}
+```
 
 # Payment gateway module implementation
 
 We start the creation of the payment gateway by {% link "creating an empty module" ref_G2mlgckf %} with the developer ID **Tony** and the module ID **PaymentDemo**. Then, we create the file
 `<X-Cart>/classes/XLite/Module/Tony/PaymentDemo/Model/Payment/Processor/DemoPayment.php` with the following content: 
 
-{% raw %}```php
+```php
 <?php
 
 namespace XLite\Module\Tony\PaymentDemo\Model\Payment\Processor;
@@ -87,7 +87,7 @@ class DemoPayment extends \XLite\Model\Payment\Base\WebBased
         $this->transaction->setStatus($status);
     }
 }
-```{% endraw %}
+```
 
 and this class describes our payment gateway integration.
 
@@ -102,7 +102,7 @@ Let us have a closer look at its implementation:
 5.  Once X-Cart receives a request at the URL `cart.php?target=payment_return&txn_id_name=transactionID&transactionID=a1b2c3d4`, it will try to identify the transaction that needs to be updated. X-Cart will have a look at the `txn_id_name` parameter, and since its value is **transactionID**, X-Cart will find out that transaction ID is stored in the transactionID parameter and will have a look at the `transactionID=a1b2c3d4` parameter. Finally, it will find out that the needed transaction is identified by the ID **a1b2c3d4** and will look for it in the database.
 6.  When the transaction object is found, X-Cart will run our payment gateway's `processReturn()` method passing this transaction object as an argument to it: 
 
-    {% raw %}```php
+    ```php
         public function processReturn(\XLite\Model\Payment\Transaction $transaction)
         {
             parent::processReturn($transaction);
@@ -115,17 +115,17 @@ Let us have a closer look at its implementation:
 
             $this->transaction->setStatus($status);
         }
-    ```{% endraw %}
+    ```
 
     This method analyzes the request received, and if the request contains the **status=Paid** parameter, then we will mark this transaction as successful: 
 
-    {% raw %}```php
+    ```php
     $this->transaction->setStatus($status);
-    ```{% endraw %}
+    ```
 
 Our payment integration is ready and now we only need to register this payment gateway in the system. For that, we create the file `<X-Cart>/classes/XLite/Module/Tony/PaymentDemo/install.yaml` with the following content: 
 
-{% raw %}```php
+```php
 XLite\Model\Payment\Method:
   - service_name: DemoPayment
     class: Module\Tony\PaymentDemo\Model\Payment\Processor\DemoPayment
@@ -133,7 +133,7 @@ XLite\Model\Payment\Method:
     translations:
       - code: en
         name: Demo Payment
-```{% endraw %}
+```
 
 Now the YAML file contains all the needed information about this payment method:
 
@@ -145,12 +145,12 @@ Now the YAML file contains all the needed information about this payment method:
 
 For payment methods that have country restrictions based on the merchant's location, be sure to add information about these restrictions to the YAML file. The format is as follows: 
 
-{% raw %}```php
+```php
 XLite\Model\Payment\Method:
  - service_name: AuthorizeNet SIM
    countries: [US, CA]
    exCountries: [US, CA]
-```{% endraw %}
+```
 
 *   The field **countries** provides a list of codes of allowed merchant countries. If a country is listed in this field, it means that merchants from this country may register an account with the payment system and use this payment method to accept payments on their website. If the field is blank, it means that the payment method is available in all countries (In this case, the field **countries** may be omitted from the YAML file).
 *   The field **exCountries** provides a list of exceptions. It means that merchants from all countries - except for the ones listed in this field - may register an account and use this method. If there are no exceptions, the field may be omitted.
