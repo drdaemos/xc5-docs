@@ -1,3 +1,11 @@
+# encoding: utf-8
+
+# Jekyll plugin for providing navigation.
+# adds {% navigation_menu %} tag
+#
+# Author: Eugene Dementjev
+# Version: 0.1.0
+
 module Jekyll
   module NavigationPlugin
     class BreadcrumbsTag < Liquid::Tag
@@ -24,15 +32,21 @@ module Jekyll
       end
 
       def render_level(level, parent)
-        css_class = level == 2 ? 'ui large vertical secondary navigation' : 'sub'
+        menu_id = level == 2 ? 'id="navigation-menu"' : ''
+        css_class = level == 2 ? 'ui large vertical secondary navigation accordion pointing' : 'content'
 
         items_text = @menu_items.map { |item| render_item(item, level, parent) }.join
 
-        return <<-HTML
-        <div class="menu #{css_class}">
-          #{items_text}
-        </div>
-        HTML
+        if items_text.strip.length > 0 then
+          return <<-HTML
+          <div #{menu_id} class="#{css_class} menu">
+            #{items_text}
+          </div>
+          HTML
+
+        else
+          return ''
+        end
       end
 
       def render_item(item, level, parent)
@@ -41,11 +55,16 @@ module Jekyll
 
         if item.data.fetch('title', '') and itembase == parent and parts.length > level and parts.length <= level + 1
           next_level = render_level(level + 1, parts.join('/'))
+          next_opener = (next_level.length > 0) ? '<a class="opener"><i class="dropdown icon"></i></a>' : ''
+          has_sub = (next_level.length > 0 ? 'has-sub' : '')
 
           url = @site.baseurl + item['url']
           return <<-HTML
-            <div class="anchor-link item">
-                <a class="ui" href="#{url}">#{item['title']}</a>
+            <div class="anchor-link item #{has_sub}">
+                <div class="title">
+                  <a class="link" href="#{url}">#{item['title']}</a>
+                  #{next_opener}
+                </div>
                 #{next_level}
             </div>
           HTML

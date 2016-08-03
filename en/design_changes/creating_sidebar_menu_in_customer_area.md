@@ -20,10 +20,10 @@ This article describes how you can create your own sidebar menu in customer stor
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
-*   [Step 1\. Create an empty module](#step-1.-create-an-empty-module)
-*   [Step 2\. Create viewer class for your sidebar ](#step-2.-create-viewer-class-for-your-sidebar-)
-*   [Step 3\. Create template](#step-3.-create-template)
-*   [Step 4\. Rebuild the cache and check the results.](#step-4.-rebuild-the-cache-and-check-the-results.)
+*   [Step 1\. Create an empty module](#step-1-create-an-empty-module)
+*   [Step 2\. Create viewer class for your sidebar ](#step-2-create-viewer-class-for-your-sidebar-)
+*   [Step 3\. Create template](#step-3-create-template)
+*   [Step 4\. Rebuild the cache and check the results.](#step-4-rebuild-the-cache-and-check-the-results.)
 *   [Module pack](#module-pack)
 
 # Step 1\. Create an empty module

@@ -33,6 +33,10 @@
     padding: 5rem 0;
 }
 
+.ui.page.vertical.segment:first-child {
+    padding-top: 0;
+}
+
 .ui.container.page {
     padding: 2rem 0;
 }

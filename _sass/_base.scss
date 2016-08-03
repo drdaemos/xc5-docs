@@ -102,14 +102,51 @@ li {
 }
 
 aside.sidebar {
-    background: #fafafa;
-    .ui.large.vertical.menu {
+    padding: 0 !important;
+    margin-top: 1rem;
+    #navigation-menu {
+        border-right-color: rgba(34, 36, 38, 0.05);
+
         width: 100%;
         margin: 0px;
 
         .anchor-link.item {
+            padding: 0.25em 0;
             a {
                 line-height: 1.5em;
+            }
+
+            .title {
+                padding: 0.5rem 1.5rem 0.5rem 1rem;
+
+                .link:hover, .opener:hover {
+                    color: #43BEEC;
+                }
+
+                .opener {
+                    margin-right: -1.25rem;
+                }
+            }
+
+            .title:hover {
+                background: #f0f0f0;
+            }
+        }
+
+        .anchor-link.item.has-sub {
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .title.active, .title.active + .content {
+                border-left: 2px solid rgba(0,0,0,0.2);
+            }
+
+            > .content {
+                margin: 0px;
+                padding-left: 1rem;
             }
         }
     }

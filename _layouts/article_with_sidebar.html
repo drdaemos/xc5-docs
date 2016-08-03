@@ -2,11 +2,9 @@
 layout: page
 ---
 <div class="ui stackable grid">
-	<div class="four wide column">
-			{% include sidebar.html %}
-	</div>
+	{% include sidebar.html %}
 
-	<article class="twelve wide column">
+	<article class="content eleven wide column">
     {% include breadcrumbs.html %}
 
     <h1 class="post-title">{{ page.title }}</h1>

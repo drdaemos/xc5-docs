@@ -9,7 +9,6 @@ categories:
 
 ---
 
-
 # Introduction
 
 This guide describes the process of migration from X-Cart 4 to X-Cart 5\. The migration can be split up into two big steps: **data migration** and **design/custom functionality migration**.
@@ -19,10 +18,10 @@ This guide describes the process of migration from X-Cart 4 to X-Cart 5\. The mi
 *   [Introduction](#introduction)
 *   [Table of contents](#table-of-contents)
 *   [Data migration](#data-migration)
-    *   [Step 1\. Decide what data you want to migrate.](#step-1.-decide-what-data-you-want-to-migrate.)
-    *   [Step 2\. Decide who is going to run migration task.](#step-2.-decide-who-is-going-to-run-migration-task.)
-        *   [Step 2a. Migrating data by yourself](#step-2a.-migrating-data-by-yourself)
-        *   [Step 2b. Migrating data with paid help](#step-2b.-migrating-data-with-paid-help)
+    *   [Step 1\. Decide what data you want to migrate.](#step-1-decide-what-data-you-want-to-migrate)
+    *   [Step 2\. Decide who is going to run migration task.](#step-2-decide-who-is-going-to-run-migration-task)
+        *   [Step 2a. Migrating data by yourself](#step-2a-migrating-data-by-yourself)
+        *   [Step 2b. Migrating data with paid help](#step-2b-migrating-data-with-paid-help)
 *   [Migration of your custom functionality and design](#migration-of-your-custom-functionality-and-design)
 *   [Summary](#summary)
 

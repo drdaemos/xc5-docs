@@ -15,17 +15,17 @@ categories:
 This document describes the process of upgrade Litecommerce 3 to X-Cart 5.
 
 *   [Introduction](#introduction)
-*   [Step 1\. Install the module Migrate2XCN.](#step-1.-install-the-module-migrate2xcn.)
-*   [Step 2\. Open the Migrate2XCN module settings page and enter your X-Cart 5 license key.](#step-2.-open-the-migrate2xcn-module-settings-page-and-enter-your-x-cart-5-license-key.)
-*   [Step 3\. Change the marketplace URL in the file config.php.](#step-3.-change-the-marketplace-url-in-the-file-config.php.)
-*   [Step 4\. Clear the marketplace cache.](#step-4.-clear-the-marketplace-cache.)
-*   [Step 5\. Upgrade your store.](#step-5.-upgrade-your-store.)
-*   [Step 6\. Activate the license key.](#step-6.-activate-the-license-key.)
-*   [Step 7\. Update your etc/config.php file.](#step-7.-update-your-etc/config.php-file.)
+*   [Step 1\. Install the module Migrate2XCN.](#step-1-install-the-module-migrate2xcn)
+*   [Step 2\. Open the Migrate2XCN module settings page and enter your X-Cart 5 license key.](#step-2-open-the-migrate2xcn-module-settings-page-and-enter-your-x-cart-5-license-key)
+*   [Step 3\. Change the marketplace URL in the file config.php.](#step-3-change-the-marketplace-url-in-the-file-configphp)
+*   [Step 4\. Clear the marketplace cache.](#step-4-clear-the-marketplace-cache)
+*   [Step 5\. Upgrade your store.](#step-5-upgrade-your-store)
+*   [Step 6\. Activate the license key.](#step-6-activate-the-license-key)
+*   [Step 7\. Update your etc/config.php file.](#step-7-update-your-etcconfigphp-file)
 *   [FAQ](#faq)
-    *   [Error: maximum execution time of 30 seconds exceeded during cache regeneration or upgrade operation.](#error:-maximum-execution-time-of-30-seconds-exceeded-during-cache-regeneration-or-upgrade-operation.)
-    *   [Problem: X-Cart 5 displays only text without design during the upgrade.](#problem:-x-cart-5-displays-only-text-without-design-during-the-upgrade.)
-    *   [Problem: You are seeing inconsistency in design after upgrade.](#problem:-you-are-seeing-inconsistency-in-design-after-upgrade.)
+    *   [Error: maximum execution time of 30 seconds exceeded during cache regeneration or upgrade operation.](#error-maximum-execution-time-of-30-seconds-exceeded-during-cache-regeneration-or-upgrade-operation)
+    *   [Problem: X-Cart 5 displays only text without design during the upgrade.](#problem-x-cart-5-displays-only-text-without-design-during-the-upgrade)
+    *   [Problem: You are seeing inconsistency in design after upgrade.](#problem-you-are-seeing-inconsistency-in-design-after-upgrade)
 
 # Step 1\. Install the module Migrate2XCN.
 
@@ -116,16 +116,3 @@ Try to reload the pages, it usually happens if there are many installed modules 
 ## Problem: You are seeing inconsistency in design after upgrade.
 
 Try to clear the browser's cache.
-
-## Attachments:
-
-* [migration-lc3-xc5-step1.png]({{site.baseurl}}/attachments/3309570/7602238.png) (image/png)
-* [migration-lc3-xc5-step2.png]({{site.baseurl}}/attachments/3309570/7602239.png) (image/png)
-* [migration-lc3-xc5-step3.png]({{site.baseurl}}/attachments/3309570/7602240.png) (image/png)
-* [migration-lc3-xc5-step4.png]({{site.baseurl}}/attachments/3309570/7602241.png) (image/png)
-* [migration-lc3-xc5-step5.png]({{site.baseurl}}/attachments/3309570/7602242.png) (image/png)
-* [migration-lc3-xc5-step6.png]({{site.baseurl}}/attachments/3309570/7602243.png) (image/png)
-* [migration-lc3-xc5-step7.png]({{site.baseurl}}/attachments/3309570/7602244.png) (image/png)
-* [migration-lc3-xc5-step8.png]({{site.baseurl}}/attachments/3309570/7602245.png) (image/png)
-* [migration-lc3-xc5-step9.png]({{site.baseurl}}/attachments/3309570/7602246.png) (image/png)
-* [migration-lc3-xc5-step10.png]({{site.baseurl}}/attachments/3309570/7602247.png) (image/png)
