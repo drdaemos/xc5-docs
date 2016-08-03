@@ -28,6 +28,26 @@ module Jekyll
       end
     end
 
+    class RefTag < Liquid::Tag
+      def initialize(tag_name, args, tokens)
+        super
+        @id = args.strip
+      end
+
+      def render(context)
+        @site = context.registers[:site]
+        @config = context.registers[:site].config
+        @page = context.environments.first["page"]
+        baseurl = context['baseurl_lang']
+
+        url = @site.data['links'][@id] ? @site.data['links'][@id][:link] : '404.html'
+
+        markup = "#{baseurl}/#{url}"
+
+        return markup
+      end
+    end
+
     class ReferenceIndex < Jekyll::StaticFile
       def write(dest)
         true
@@ -63,3 +83,4 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('link', Jekyll::ReferencePlugin::LinkTag)
+Liquid::Template.register_tag('ref', Jekyll::ReferencePlugin::RefTag)
