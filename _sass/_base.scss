@@ -53,7 +53,7 @@ figcaption {
  * Lists
  */
 ul, ol {
-    margin-left: $spacing-unit;
+    margin-left: 0;
 }
 
 li {
@@ -102,13 +102,17 @@ li {
 }
 
 aside.sidebar {
-    padding: 0 !important;
-    margin-top: 1rem;
+    padding: 1rem 0 0 0 !important;
+
     #navigation-menu {
         border-right-color: rgba(34, 36, 38, 0.05);
 
         width: 100%;
         margin: 0px;
+
+        .menu .item {
+            font-size: 0.95em;
+        }
 
         .anchor-link.item {
             padding: 0.25em 0;
@@ -141,7 +145,7 @@ aside.sidebar {
             }
 
             .title.active, .title.active + .content {
-                border-left: 2px solid rgba(0,0,0,0.2);
+                border-left: 2px solid rgba(65,131,196,0.2);
             }
 
             > .content {

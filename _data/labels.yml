@@ -22,6 +22,32 @@
     en: 'Search'
     ru: 'Искать'
 
+'Home':
+    en: 'Home'
+    ru: 'Главная'
+
+'Menu':
+    en: 'Menu'
+    ru: 'Меню'
+
+'Get started':
+    en: 'Get started'
+    ru: 'C чего начать?'
+
+'How to install':
+    en: 'How to install'
+    ru: 'Как установить?'
+
 'This article applies to the specific versions of X-Cart':
     en: 'This article applies to the specific versions of software:'
     ru: 'Данная статья применима к следующим версиям:'
+
+# Links
+
+'installation_guide_link':
+    en: '/general_setup/installation_guide.html'
+    ru: '/документация_на_русском/установка_x-cart_5.html'
+
+'general_setup_link':
+    en: '/general_setup/'
+    ru: '/документация_на_русском/'

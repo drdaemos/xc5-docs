@@ -33,7 +33,7 @@ module Jekyll
 
       def render_level(level, parent)
         menu_id = level == 2 ? 'id="navigation-menu"' : ''
-        css_class = level == 2 ? 'ui large vertical secondary navigation accordion pointing' : 'content'
+        css_class = level == 2 ? 'ui sticky large vertical secondary navigation accordion pointing' : 'content'
 
         items_text = @menu_items.map { |item| render_item(item, level, parent) }.join
 

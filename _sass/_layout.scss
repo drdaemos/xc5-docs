@@ -30,7 +30,15 @@
 }
 
 .ui.navigation.segment {
-    padding: 3rem 0;
+    padding: 5rem 0;
+}
+
+.ui.sticky.bound.bottom {
+    position: static;
+}
+
+.ui.sticky.bound.bottom.absolute-bound {
+    position: absolute;
 }
 
 .ui.page.vertical.segment:first-child {
