@@ -117,11 +117,17 @@ aside.sidebar {
         .anchor-link.item {
             padding: 0.25em 0;
             a {
+                cursor: pointer;
                 line-height: 1.5em;
             }
 
             .title {
+                cursor: default;
                 padding: 0.5rem 1.5rem 0.5rem 1rem;
+
+                .link {
+                    @include flex-grow(1);
+                }
 
                 .link:hover, .opener:hover {
                     color: #43BEEC;
@@ -139,9 +145,9 @@ aside.sidebar {
 
         .anchor-link.item.has-sub {
             .title {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flexbox;
+                @include align-items(center);
+                @include justify-content(space-between);
             }
 
             .title.active, .title.active + .content {
