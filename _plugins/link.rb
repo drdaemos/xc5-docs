@@ -4,7 +4,7 @@
 # adds {% link %} and {% ref %} tags
 #
 # Author: Eugene Dementjev
-# Version: 0.2.0
+# Version: 0.2.1
 
 require 'pathname'
 require 'xmlsimple'
@@ -49,7 +49,7 @@ module Jekyll
         @config = context.registers[:site].config
         @page = context.environments.first["page"]
 
-        url = @site.data['links'][@id] ? @site.data['links'][@id][:link] + @hash : '404.html'
+        url = @site.data['links'][@id] ? @site.data['links'][@id][:link] : '404.html'
         lang = @site.data['links'][@id] ? @site.data['links'][@id][:lang] : @config['lang_default']
 
         baseurl = @config['baseurl'] + '/' + lang
