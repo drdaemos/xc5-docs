@@ -4,8 +4,11 @@ updated_at: 2015-07-02 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating popup widget'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -181,7 +184,7 @@ class DemoWidget extends \XLite\View\AView
 }
 ```
 
-Let's get quick overview of methods, featuring this viewer class (more about this in {% link "Working with viewer classes" Working-with-viewer-classes_8224836.html %}):
+Let's get quick overview of methods, featuring this viewer class (more about this in {% link "Working with viewer classes" ref_6dMJsZ63 %}):
 
 *   function `getAllowedTargets()` defines available targets allowed for this widget;
 

@@ -143,7 +143,7 @@ Implementation of handling a condition consists of two steps:
     'prepareCnd' . ucfirst($conditionName)
     ```
 
-    As you can see, implementation of `prepareCndMyCond()` method uses the same queryBuilder object we learned about in {% link "previous guide" QueryBuilder_8225337.html %}. However, since we use `\XLite\Core\CommonCell` object in order to run this small **prepareCnd** methods, it allows us to add small elements to this object – like oue where condition – based on needed conditions, so we will steadily build a complex query while meeting specific requirements incapsulated in our **prepareCnd** methods.
+    As you can see, implementation of `prepareCndMyCond()` method uses the same queryBuilder object we learned about in {% link "previous guide" ref_FJyeE9lP %}. However, since we use `\XLite\Core\CommonCell` object in order to run this small **prepareCnd** methods, it allows us to add small elements to this object – like oue where condition – based on needed conditions, so we will steadily build a complex query while meeting specific requirements incapsulated in our **prepareCnd** methods.
 
 Let us get back to our `test.php` script. Now if we run this code: 
 

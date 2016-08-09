@@ -4,11 +4,12 @@ updated_at: 2016-05-05 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to add Facebook Pixel Сode to X-Cart pages'
+version: X-Cart 5.2.16 and earlier
 categories:
   - How-To Articles
+  - Outdated
 
 ---
-
 
 This article describes how to add Facebook Pixel code to X-Cart pages.
 
@@ -113,18 +114,6 @@ Steps involved:
 
 7.  Re-generate X-Cart cache.
 
-Icon
-
 See also:
 
 *   [Facebook Pixel Setup](https://developers.facebook.com/docs/marketing-api/facebook-pixel/v2.5)
-
-## Related articles
-
-*   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
-*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
-*   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
-*   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
-
-Showing first 5 of 8 results

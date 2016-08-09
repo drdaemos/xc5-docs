@@ -72,7 +72,7 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
          */
         public static function getMajorVersion()
         {
-            return '5.2';
+            return '5.3';
         }
 
         /**
@@ -106,21 +106,14 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
 
 # Module creation via SDK
 
-1.  {% link "Obtain X-Cart SDK" ref_HvrXVNvJ#X-CartSDK-ObtainingX-CartSDK %}
-2.  Call {% link "create module macro" X-Cart-SDK_7864338.html#X-CartSDK-Creatingmodule %} with your developer and module IDs
+1.  {% link "Obtain X-Cart SDK" ref_HvrXVNvJ#obtaining-x-cart-sdk %}
+2.  Call {% link "create module macro" ref_HvrXVNvJ#creating-module %} with your developer and module IDs
 
 # Packing up your module
 
 If you want to create the module's distributive pack, you need to
 
-1.  Edit your `<X-Cart>/etc/config.php `file and define the `developer_mode `option as `On` there.
+1.  Edit your `<X-Cart>/etc/config.php` file and define the `developer_mode` option as `On` there.
 2.  After that you will see the Pack it link near each module in your Extensions > Installed modules section as shown on the snapshot below:
     ![]({{site.baseurl}}/attachments/524296/1212420.png?effects=drop-shadow)
 3.  Clicking **Pack it** link will generate your module's distribution pack.
-
-## Attachments:
-
-* [1.png]({{site.baseurl}}/attachments/524296/1212421.png) (image/png)
-* [1.png]({{site.baseurl}}/attachments/524296/1212420.png) (image/png)
-* [redeploy-the-store.png]({{site.baseurl}}/attachments/524296/7995397.png) (image/png)
-* [xc5_cache_redeploy.png]({{site.baseurl}}/attachments/524296/9437239.png) (image/png)

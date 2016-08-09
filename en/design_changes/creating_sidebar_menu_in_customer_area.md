@@ -4,8 +4,11 @@ updated_at: 2016-01-21 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating sidebar menu in customer area'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -21,9 +24,9 @@ This article describes how you can create your own sidebar menu in customer stor
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Step 1\. Create an empty module](#step-1-create-an-empty-module)
-*   [Step 2\. Create viewer class for your sidebar ](#step-2-create-viewer-class-for-your-sidebar-)
+*   [Step 2\. Create viewer class for your sidebar](#step-2-create-viewer-class-for-your-sidebar)
 *   [Step 3\. Create template](#step-3-create-template)
-*   [Step 4\. Rebuild the cache and check the results.](#step-4-rebuild-the-cache-and-check-the-results.)
+*   [Step 4\. Rebuild the cache and check the results.](#step-4-rebuild-the-cache-and-check-the-results)
 *   [Module pack](#module-pack)
 
 # Step 1\. Create an empty module
@@ -79,7 +82,7 @@ Create the template `<X-Cart 5>/skins/default/en/modules/Tony/SidebarMenu/menu/
 Hello world!
 ```
 
-# Step 4\. Rebuild the cache and check the results.
+# Step 4\. Rebuild the cache and check the results
 
 If you have done everything right, you will see the following results in customer store-front:
 

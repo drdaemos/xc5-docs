@@ -4,11 +4,12 @@ updated_at: 2015-04-16 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to create translation module'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Outdated
 
 ---
-
 
 Translation module is an add-on that translates X-Cart store to another language. Most part of such module is not a code, but the list of translated labels, so we tried to ease the process for translators and all they need to do is to perform their translating job. After that you can run a special script that will wrap up their translation into the module.
 
@@ -51,9 +52,9 @@ Once you are done with the CSV file, you should go to the [http://www.x-cart.co
 
 Fill in the form of this script as:
 
-*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: {% link "Step 1 - creating simplest module#Choosingidentifiers" ref_G2mlgckf#Step1-creatingsimplestmodule-Choosingidentifiers %}
+*   **Developer ID** should be filled in as your developer ID (without spaces). See more about developer ID here: {% link "Step 1 - creating simplest module" ref_G2mlgckf#choosing-identifiers %}
 *   **Module author** should contain the name of the translation author how it should be displayed to merchants.
-*   **Module service name** should contain the ID of your module in X-Cart. See more here: {% link "Step 1 - creating simplest module#Choosingidentifiers" Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Choosingidentifiers %}
+*   **Module service name** should contain the ID of your module in X-Cart. See more here: {% link "Step 1 - creating simplest module" ref_G2mlgckf#choosing-identifiers %}
 *   **Module name** should contain the name of your module how it is going to be displayed to merchants.
 *   **Module description** defines the description of the module that will be displayed to merchants.
 *   **Core version **field defines what X-Cart version is your module for.
@@ -65,11 +66,3 @@ Fill in the form of this script as:
 This script will process your translation file and will create a module out of it.
 
 ![]({{site.baseurl}}/attachments/7504191/8717039.png)
-
-## Attachments:
-
-* [translations-csv-icon.png]({{site.baseurl}}/attachments/7504191/7602235.png) (image/png)
-* [csv-translations.png]({{site.baseurl}}/attachments/7504191/7602236.png) (image/png)
-* [x-cart.com-translation-script.png]({{site.baseurl}}/attachments/7504191/7602237.png) (image/png)
-* [create-translation-module-form.png]({{site.baseurl}}/attachments/7504191/7602772.png) (image/png)
-* [Screen Shot 2015-04-16 at 14.05.52 .png]({{site.baseurl}}/attachments/7504191/8717039.png) (image/png)

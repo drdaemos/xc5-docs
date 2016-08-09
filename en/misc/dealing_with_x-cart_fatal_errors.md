@@ -49,7 +49,7 @@ This type of problem usually happens in user modules, so you can fix the problem
 
 # Problem with database connection
 
-Check {% link "this guide" http://kb.x-cart.com/pages/viewpage.action?pageId=524295#InstallationGuide-1.Problemswithconnectiontodatabase %} in order to find how you can fix this problem.
+Check {% link "this guide" http://kb.x-cart.com/en/general_setup/installation_guide.html#problems-with-connection-to-database %} in order to find how you can fix this problem.
 
 # Problem with Doctrine entities relationship
 

@@ -19,7 +19,7 @@ This guide will have two parts:
 *   First is about parameters of **columns** in the ItemsList;
 *   Second is about parameters of **ItemsList** itself.
 
-In order to be able to play with settings which will be described below, we recommend you to install a simple {% link "ItemsList module" ItemsList-in-admin-area_8225372.html#ItemsListinadminarea-Modulepack %} and try to change it according to options below.
+In order to be able to play with settings which will be described below, we recommend you to install a simple {% link "ItemsList module" ref_zsGkqC41#module-pack %} and try to change it according to options below.
 
 # Table of Contents
 
@@ -39,7 +39,7 @@ ItemsList columns are defined by the `defineColumns()` method and there are two 
 You can also define other parameters of a column:
 
 *   `static::COLUMN_MAIN` – value type: **boolean** – defines whether this is a main column. The main column will soak up all unused space of the ItemsList;
-*   `static::COLUMN_SORT` – value type: **string** – defines a sorting option for this column. {% link "More info" ItemsList-in-admin-area_8225372.html %} about implementing sorting in ItemsLists;
+*   `static::COLUMN_SORT` – value type: **string** – defines a sorting option for this column. {% link "More info" ref_zsGkqC41 %} about implementing sorting in ItemsLists;
 *   `static::COLUMN_TEMPLATE` – value type: **string** – defines a specific template for displaying column cell. Typical value is: `modules/Developer/Module/tempalte.tpl` and it will pick up the
     `<X-Cart>/skins/admin/en/modules/Developer/Module/tempalte.tpl` template;
 *   `static::COLUMN_HEAD_TEMPLATE` – value type: **string** – similar to above, defines a specific template for displaying head cell of a table;
@@ -74,9 +74,3 @@ Aside from these two, you can define:
     ```
 
     where **your_target** is a target of a page.
-
-## Attachments:
-
-* [switcher-icon.png]({{site.baseurl}}/attachments/8225369/8356181.png) (image/png)
-* [delete-icon.png]({{site.baseurl}}/attachments/8225369/8356182.png) (image/png)
-* [add-button.png]({{site.baseurl}}/attachments/8225369/8356183.png) (image/png)

@@ -4,8 +4,10 @@ updated_at: 2016-05-26 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to modify &quot;Print Invoice&quot; page'
+version: X-Cart 5.2.16 and earlier
 categories:
   - How-To Articles
+  - Outdated
 
 ---
 
@@ -60,26 +62,16 @@ Here are the steps involved:
 
 6.  Re-generate X-Cart cache.
 
-Icon
-
 You can also view the source code of the print invoice page using a special URL, for example:
 
 [http://demostore.x-cart.com/admin/admin.php?target=order&order_number=1&mode=invoice](http://demostore.x-cart.com/admin/admin.php?target=order&order_number=1&mode=invoice)
 
 Where:
 
-_target=order_
-_order_number=1_
-_mode=invoice_
+* _target=order_
+
+* _order_number=1_
+
+* _mode=invoice_
 
 are the required parameters to view the print out customer receipt page.
-
-## Related articles
-
-*   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
-*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
-*   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
-*   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
-
-Showing first 5 of 8 results

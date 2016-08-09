@@ -14,5 +14,5 @@ description: Take a look at some of the customizations, made for our clients
 
 _In this section:_
 
-*   {% link "Inserting an X-Cart 'Add to cart' button in a new page" ref_dQZEma4K %}
-*   {% link "Resetting the search parameter from "any word" to "all words"" ref_Q0TivL1v %}
+*   {% link "Inserting an X-Cart «Add to cart» button in a new page" ref_dQZEma4K %}
+*   {% link "Resetting the search parameter from «any word» to «all words»" ref_Q0TivL1v %}

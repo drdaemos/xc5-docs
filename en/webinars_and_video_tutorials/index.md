@@ -30,7 +30,7 @@ In this section you will find webinars and video tutorials for X-Cart 5.
 *   {% link "Editing templates on the example of Adding Market Price to Products List in X-Сart 5: Tutorial by Mike White" ref_WRFFgtBN %}
 *   {% link "Building a custom skin in X-Cart 5: Tutorial by Mike White" ref_i7rWMCdQ %}
 *   {% link "Removing the Primary Menu In X-Cart 5 (with the help of WebmasterKit): Tutorial by Mike White" ref_w2nBnONL %}
-*   {% link "Tweaking CSS Styles: remove space at the bottom of the page with the "Custom CSS" feature: Tutorial by Mike White" ref_tkTO9wsK %}
+*   {% link "Tweaking CSS Styles: remove space at the bottom of the page with the «Custom CSS» feature: Tutorial by Mike White" ref_tkTO9wsK %}
 *   {% link "Working with custom CSS in X-Cart 5: Tutorial by Mike White" ref_yULqFylQ %}
 *   {% link "Using Webmaster Mode in X-Cart 5" ref_siabU9Pf %}
 

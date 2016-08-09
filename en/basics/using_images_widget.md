@@ -4,8 +4,11 @@ updated_at: 2015-01-03 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Using images widget'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -198,8 +201,7 @@ Let us have a look at each important moment of this **SecondaryImage** class:
     @JoinColumn (name="product_id", referencedColumnName="product_id")
     ```
 
-7.  Now it is time to create the repository class that will handle pulling info about **SecondaryImage** objects from the database. We create the
-    `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/Model/Repo/Image/Product/SecondaryImage.php` file with the following content: 
+7.  Now it is time to create the repository class that will handle pulling info about **SecondaryImage** objects from the database. We create the `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/Model/Repo/Image/Product/SecondaryImage.php` file with the following content: 
 
     ```php
     <?php
@@ -246,7 +248,7 @@ Let us have a look at each important moment of this **SecondaryImage** class:
 
 ## Tweaking design of admin and customer interfaces
 
-First, we need to allow merchant to upload secondary images for a product on product details page in admin area. Similar task is already described in {% link "one of previous articles" Adding-new-property-to-a-product_8225149.html %}.
+First, we need to allow merchant to upload secondary images for a product on product details page in admin area. Similar task is already described in {% link "one of previous articles" ref_2bJSTtR3 %}.
 
 We need to decorate `\XLite\View\Model\Product` class, so we create the `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/View/Model/Product.php` file with the following content: 
 

@@ -9,14 +9,13 @@ categories:
 
 ---
 
-
 # Introduction
 
 This article is a continuation of an article about {% link "adding a new property to a product" ref_2bJSTtR3 %} and then displaying this property's value on the invoice page. The problem with that mod is that if we change the property's value for some product, then invoices of orders that contain this product will change its value as well. In some cases, it is OK, but sometimes it is not (e.g. price property).
 
 This article will explain how to save the product property's value when you place an order and even if you change this property's value later on, old invoices would still use saved value.
 
-This article assumes that you are already familiar with the task described in the {% link "Adding new property to a product" Adding-new-property-to-a-product_8225149.html %} guide.
+This article assumes that you are already familiar with the task described in the {% link "Adding new property to a product" ref_2bJSTtR3 %} guide.
 
 # Table of Contents
 

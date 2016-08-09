@@ -4,8 +4,11 @@ updated_at: 2015-01-13 00:00
 layout: article_with_sidebar
 lang: en
 title: 'ItemsList in admin area'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -275,7 +278,7 @@ abstract class Product extends \XLite\Model\Repo\Product implements \XLite\Base\
 }
 ```
 
-_Note: if you need more info about `search()` method implementation, please have a look here: {% link "search() method" 8225347.html %}._
+_Note: if you need more info about `search()` method implementation, please have a look here: {% link "search() method" ref_ehDn4NIi %}._
 
 Finally, we need to display our ItemsList widget on the page, so we go to the `<X-Cart>/skins/admin/en/modules/``Tony/ItemsListAdminDemo/page/items_list_demo/body.tpl` template and define its content as follows: 
 
@@ -288,9 +291,3 @@ That is it. Now we need to re-deploy the store and you will see our **ItemsList*
 # Module pack
 
 You can download this module's example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ItemsListAdminDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ItemsListAdminDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [items-list-example.png]({{site.baseurl}}/attachments/8225372/8356178.png) (image/png)
-* [items-list-example-1.png]({{site.baseurl}}/attachments/8225372/8356179.png) (image/png)
-* [demo-items-list.png]({{site.baseurl}}/attachments/8225372/8356180.png) (image/png)

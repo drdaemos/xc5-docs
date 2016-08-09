@@ -6,6 +6,7 @@ lang: en
 title: 'Creating product discount'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -26,7 +27,7 @@ Previously we have learned how to create a {% link "global discount" ref_mFAMapC
 
 # Implementation
 
-The main difference between this module and {% link "one that described global discount" Creating-global-discount_8225204.html %} is that in this module we will simply alter product prices and then adjust appearance of the price in order to show that it has been reduced. In that sense, if we have a $10 product and want to apply 10% discount to it, then:
+The main difference between this module and {% link "one that described global discount" ref_mFAMapCB %} is that in this module we will simply alter product prices and then adjust appearance of the price in order to show that it has been reduced. In that sense, if we have a $10 product and want to apply 10% discount to it, then:
 
 *   the database will still contain record about it having $10 price;
 *   product object will return price as $9, however;

@@ -4,24 +4,24 @@ updated_at: 2015-06-09 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Updating modules from 5.1 to 5.2 branch'
+version: X-Cart 5.1 - 5.2
 categories:
   - Migration guides
 
 ---
 
-
-# Introduction
+## Introduction
 
 This article describes the major change each module developer must apply to their modules in order allow their smooth upgrade from 5.1 to 5.2.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Checking if your module is a subject to hot-fix](#checking-if-your-module-is-a-subject-to-hot-fix)
 *   [Applying the solution](#applying-the-solution)
 
-# Checking if your module is a subject to hot-fix
+## Checking if your module is a subject to hot-fix
 
 Your module is a subject to hot-fix change if any of conditions below were triggered during module adaptation from 5.1 to 5.2 version:
 
@@ -29,11 +29,11 @@ Your module is a subject to hot-fix change if any of conditions below were trigg
 
 2.  You used `integer` properties in your Model classes .
 
-The easiest way to check your module is to take its distribution pack and [grep](https://www.gnu.org/software/grep/) its source for **`integer`** keyword. If any of your {% link "Model" Understanding-Models_8225323.html %} classes has this directive (or **`uinteger`**), then you need to apply the changes described below.
+The easiest way to check your module is to take its distribution pack and [grep](https://www.gnu.org/software/grep/) its source for **`integer`** keyword. If any of your {% link "Model" ref_wmExvPDD %} classes has this directive (or **`uinteger`**), then you need to apply the changes described below.
 
 If you do not update your modules, X-Cart merchants will still come to you and ask you to fix the problem for them even if they come right now. Thus it is more sensible to fix the problem in advance, which will save your time dealing with support requests and allow X-Cart merchants to upgrade smoothly.
 
-# Applying the solution
+## Applying the solution
 
 You need to release the next version of your module that will contain the following changes:
 

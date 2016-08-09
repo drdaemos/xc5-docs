@@ -4,8 +4,11 @@ updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating settings page for payment method'
+version: X-Cart 5.2.10 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -23,7 +26,7 @@ This article is a continuation of the guide about {% link "creating payment meth
 
 # Implementation
 
-We start with creating an empty module with developer ID **Tony** and module ID **PaymentFormDemo** and then implement a {% link "gateway described in the previous guide" Creating-a-payment-method_8225448.html %}.
+We start with creating an empty module with developer ID **Tony** and module ID **PaymentFormDemo** and then implement a {% link "gateway described in the previous guide" ref_U1KitTMm %}.
 
 1.  We create the `<X-Cart>/payment.php` file with the following code there: 
 
@@ -90,9 +93,9 @@ We start with creating an empty module with developer ID **Tony** and module ID 
     ```
 
     This file will register this payment method in the database.
-    _Note: do not forget to {% link "push this file into the database" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %}._
+    _Note: do not forget to {% link "push this file into the database" ref_HvrXVNvJ#loading-yaml-file %}._
 
-Now we have the module described in {% link "the previous guide" Creating-a-payment-method_8225448.html %}, but it has been created with module ID **PaymentFormDemo** and we want to add some settings to it. We will create a settings form that will contain three fields:
+Now we have the module described in {% link "the previous guide" ref_U1KitTMm %}, but it has been created with module ID **PaymentFormDemo** and we want to add some settings to it. We will create a settings form that will contain three fields:
 
 *   login
 *   password
@@ -127,7 +130,7 @@ XLite\Model\Payment\Method:
         value: live
 ```
 
-Once we are done with this, we need to {% link "push renewed version of our YAML file" X-Cart-SDK_7864338.html#X-CartSDK-LoadingYAMLfile %} to the database.
+Once we are done with this, we need to {% link "push renewed version of our YAML file" ref_HvrXVNvJ#loading-yaml-file %} to the database.
 
 After that we go to the `<X-Cart>/classes/XLite/Module/Tony/PaymentFormDemo/Model/Payment/Processor/DemoPayment.php` file and add following methods there: 
 

@@ -4,8 +4,11 @@ updated_at: 2015-01-22 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -123,9 +126,3 @@ Define it as you wish, then add this product to cart in customer zone and place 
 # Module pack
 
 You can download this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ProductFieldDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ProductFieldDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [new-field-on-invoice.png]({{site.baseurl}}/attachments/8225149/8356106.png) (image/png)
-* [product-details-custom-field.png]({{site.baseurl}}/attachments/8225149/8356107.png) (image/png)
-* [thank-you-page-with-custom-product-field.png]({{site.baseurl}}/attachments/8225149/8356108.png) (image/png)

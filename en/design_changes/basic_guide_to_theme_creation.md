@@ -4,8 +4,11 @@ updated_at: 2015-03-12 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Basic guide to theme creation'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -87,7 +90,7 @@ Let us assume a task that you want to get rid of exclamation marks from notifica
 
     in other words, we just remove the exclamation mark from the notification. The same way create three other overriding templates.
 
-5.  If {% link "developer mode is enabled" Step-1---creating-simplest-module_524296.html#Step1-creatingsimplestmodule-Packingupyourmodule %} in your store, effect will take place immediately after you save the templates, without having to re-deploy the store.
+5.  If {% link "developer mode is enabled" ref_G2mlgckf#packing-up-your-module %} in your store, effect will take place immediately after you save the templates, without having to re-deploy the store.
 6.  Surely, you can apply more complex modifications to your store layout using the same approach.
 
 ## Attachments:

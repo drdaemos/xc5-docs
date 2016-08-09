@@ -4,6 +4,7 @@ updated_at: 2014-08-19 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'
+version: X-Cart 5.2
 categories:
   - Webinars and video tutorials
 
@@ -20,31 +21,31 @@ This webinar is dedicated to creating the simple **News** module for X-Cart 5\. 
 *   [Table of contents](#table-of-contents)
 *   [Video](#video)
 *   [The process of module creation](#the-process-of-module-creation)
-    *   [1\. Create an empty module](#1.-create-an-empty-module)
-    *   [2\. Create a News entity](#2.-create-a-news-entity)
+    *   [1\. Create an empty module](#create-an-empty-module)
+    *   [2\. Create a News entity](#create-a-news-entity)
         *   [Create Repo for News model](#create-repo-for-news-model)
-    *   [3\. Admin area: create a page that displays list of news](#3.-admin-area:-create-a-page-that-displays-list-of-news)
+    *   [3\. Admin area: create a page that displays list of news](#admin-area-create-a-page-that-displays-list-of-news)
         *   [Create ItemsList for News](#create-itemslist-for-news)
         *   [Add News ItemsList to this page](#add-news-itemslist-to-this-page)
         *   [Add form for this ItemsList](#add-form-for-this-itemslist)
         *   [Add ItemsList handler to Controller](#add-itemslist-handler-to-controller)
-        *   [Add page for target=news_edit](#add-page-for-target=news_edit)
-    *   [4\. Admin area: news details page](#4.-admin-area:-news-details-page)
+        *   [Add page for target=news_edit](#add-page-for-targetnews_edit)
+    *   [4\. Admin area: news details page](#admin-area:-news-details-page)
         *   [Create form class for model editing](#create-form-class-for-model-editing)
         *   [Update template](#update-template)
         *   [Update controller](#update-controller)
-    *   [5\. Customer area: adding news menu](#5.-customer-area:-adding-news-menu)
-    *   [6\. Customer area: news details page](#6.-customer-area:-news-details-page)
-    *   [7\. Mod is finished ](#7.-mod-is-finished-)
-*   [Questions & Answers](#questions-&-answers)
-    *   [How can I disable cache?](#how-can-i-disable-cache?)
-    *   [How can we easily debug our code then?](#how-can-we-easily-debug-our-code-then?)
-    *   [How do you add a new field to product without modifying core code?](#how-do-you-add-a-new-field-to-product-without-modifying-core-code?)
-    *   [Is there a reason that events were not used in the code? ](#is-there-a-reason-that-events-were-not-used-in-the-code?-)
-    *   [Is there an easy way to determine the proper template file to modify for a given page section?](#is-there-an-easy-way-to-determine-the-proper-template-file-to-modify-for-a-given-page-section?)
-    *   [Where we can get macros like macros/create-module.php?](#where-we-can-get-macros-like-macros/create-module.php?)
-    *   [Can we modify the REST API in X-Cart 5 on our own?](#can-we-modify-the-rest-api-in-x-cart-5-on-our-own?)
-    *   [How can I check other module already installed/exists and if it is not installed?](#how-can-i-check-other-module-already-installed/exists-and-if-it-is-not-installed?)
+    *   [5\. Customer area: adding news menu](#customer-area-adding-news-menu)
+    *   [6\. Customer area: news details page](#customer-area-news-details-page)
+    *   [7\. Mod is finished ](#mod-is-finished)
+*   [Questions & Answers](#questions--answers)
+    *   [How can I disable cache?](#how-can-i-disable-cache)
+    *   [How can we easily debug our code then?](#how-can-we-easily-debug-our-code-then)
+    *   [How do you add a new field to product without modifying core code?](#how-do-you-add-a-new-field-to-product-without-modifying-core-code)
+    *   [Is there a reason that events were not used in the code? ](#is-there-a-reason-that-events-were-not-used-in-the-code)
+    *   [Is there an easy way to determine the proper template file to modify for a given page section?](#is-there-an-easy-way-to-determine-the-proper-template-file-to-modify-for-a-given-page-section)
+    *   [Where we can get macros like macros/create-module.php?](#where-we-can-get-macros-like-macroscreate-modulephp)
+    *   [Can we modify the REST API in X-Cart 5 on our own?](#can-we-modify-the-rest-api-in-x-cart-5-on-our-own)
+    *   [How can I check other module already installed/exists and if it is not installed?](#how-can-i-check-other-module-already-installedexists-and-if-it-is-not-installed)
 
 # Video
 

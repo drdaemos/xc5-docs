@@ -40,12 +40,19 @@ Web-client can access X-Cart via two end-points: `admin.php` for admin interface
 
 1.  End-point script (`admin.php` or `cart.php`) instantiates the `\XLite` object (defined in the `<X-Cart>/classes/XLite.php` file) and then runs its `processRequest()` method. Before running this method, it includes `top.inc.php` files from X-Cart root folder and initializes the application.
     _Note: the application is run from the <X-Cart>/var/run/classes/ directory, not from <X-Cart>/classes/ one. It means that if you need to debug your code, you should do it in the <X-Cart>/var/run/ folder. If you change code in the <X-Cart>/classes/ directory, changes will only take place after store re-deployment (**System settings** > **Re-deploy the store** link in your admin area)._
+
 2.  `processRequest()` method identifies what controller class must be run based on the **target** parameter passed in the HTTP request. If you request `admin.php?target=product` path, then the responsible controller will be `<X-Cart>/classes/XLite/Controller/Admin/Product.php`. If you request `cart.php?target=checkout_success`, then controller class will be `<X-Cart>/classes/XLite/Controller/Customer/CheckoutSuccess.php`. In other words, it converts **target** parameter from HTTP request to **camel** notation and then looks for such class in the `Customer/` or `Admin/` sub-directory of the `<X-Cart>/classes/XLite/Controller/` folder depending on called end-point. If target is not passed, it is assumed that target is main.
+
 3.  Once controller class is found, X-Cart calls `handleRequest()` and `processRequest()` methods of this controller class.
+
 4.  `processRequest()` method of controller class initializes the display process. It calls `display()` method of the `\XLite\View\Controller` class (defined in the `<X-Cart>/classes/XLite/View/Controller.php` file) and it calls the `display()` method of its parent – `\XLite\View\AView` class – which actually starts the output.
+
 5.  During output generating X-Cart will require some data, e.g. product, order, user, etc info and templates will request such data like this `{getSomeData()}` in their code. Such call means that X-Cart will start searching for `getSomeData()` method in the current viewer class or in the current controller class.
+
     _Note: while controller class is always the same for one particular page rendering, viewer class may change from one template to another. X-Cart will start generating content and \XLite\View\Controller class will manage the process at the beginning. Then, some view list may include a widget handled by other viewer class, e.g. \XLite\View\Order and it will mean that the current viewer class will switch from \XLite\View\Controller to \XLite\View\Order. If you call the {getAnotherData()} method from the template handled by \XLite\View\Order class, X-Cart will search for getAnotherData() method in the \XLite\View\Order class and the current controller classes._
+
 6.  As you can understand, X-Cart starts the output quite quickly and then **"lazy"** pulls data on demand.
+
 7.  During such lazy requests of data, X-Cart can create multiple model objects and run complex logic routines defined throughout X-Cart code.
 
 # Applying changes to X-Cart store

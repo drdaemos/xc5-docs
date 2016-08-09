@@ -6,6 +6,8 @@ lang: en
 title: 'Special offer with free item'
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -25,7 +27,7 @@ This guide is based on the previous one about {% link "creating a discount" ref_
 
 # Implementation
 
-We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the {% link "discount module" Creating-global-discount_8225204.html %}. We create the
+We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the {% link "discount module" ref_mFAMapCB %}. We create the
 `<X-Cart>/classes/XLite/Module/Tony/FreeItemDemo/Logic/Order/Modifier/FreeItem.php` file with the following content: 
 
 ```php

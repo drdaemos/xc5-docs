@@ -20,25 +20,25 @@ Aim of this webinar is to show developers how they can implement design changes 
 *   [Table of contents](#table-of-contents)
 *   [Video](#video)
 *   [Webinar process](#webinar-process)
-    *   [1\. How can I hide the Powered by label?](#1.-how-can-i-hide-the-powered-by-label?)
-        *   [1.1\. Via Custom CSS section of ThemeTweaker module](#1.1.-via-custom-css-section-of-themetweaker-module)
-        *   [1.2\. Via your own CSS file](#1.2.-via-your-own-css-file)
-        *   [1.3\. Via overriding template in CustomSkin module](#1.3.-via-overriding-template-in-customskin-module)
-    *   [2\. How can I wrap the <div id="content"> on home page into <div id="homepage">?](#2.-how-can-i-wrap-the-<div-id="content">-on-home-page-into-<div-id="homepage">?)
-        *   [2.1\. By overriding template](#2.1.-by-overriding-template)
-        *   [2.2\. By PHP code](#2.2.-by-php-code)
-    *   [3. How can I change the logo depending on the selected language? Logo image should be defined as a language variable](#3.-how-can-i-change-the-logo-depending-on-the-selected-language?-logo-image-should-be-defined-as-a-language-variable)
-    *   [4\. How can I replace the menu added by SimpleCMS with my own menu?](#4.-how-can-i-replace-the-menu-added-by-simplecms-with-my-own-menu?)
-    *   [5. How can I hide the category block from the home page and keep it on other pages?](#5.-how-can-i-hide-the-category-block-from-the-home-page-and-keep-it-on-other-pages?)
-    *   [6. How can I define the default view for products as Table/List instead of Grid?](#6.-how-can-i-define-the-default-view-for-products-as-table/list-instead-of-grid?)
-*   [Questions & answers](#questions-&-answers)
-    *   [Can the Webmaster Kit usage be IP-restricted?](#can-the-webmaster-kit-usage-be-ip-restricted?)
-    *   [Design changes do not need cache rebuilding, is this because developer mode is turned on in config.php?](#design-changes-do-not-need-cache-rebuilding,-is-this-because-developer-mode-is-turned-on-in-config.php?)
-    *   [How to create new separate skin from scratch?](#how-to-create-new-separate-skin-from-scratch?)
-    *   [Can someone else's mod overwrite our changes?](#can-someone-else's-mod-overwrite-our-changes?)
-    *   [How is TopMenu loaded after SimpleCMS menu?](#how-is-topmenu-loaded-after-simplecms-menu?)
-    *   [Why v5 is better than v4 if the skin overwrite is not easily upgraded? Isn't this exactly what v4 is?](#why-v5-is-better-than-v4-if-the-skin-overwrite-is-not-easily-upgraded?-isn't-this-exactly-what-v4-is?)
-    *   [How to add that <div id=homepage> to the homepage only, not store wide?](#how-to-add-that-<div-id=homepage>-to-the-homepage-only,-not-store-wide?)
+    *   [1\. How can I hide the Powered by label?](#how-can-i-hide-the-powered-by-label)
+        *   [1.1\. Via Custom CSS section of ThemeTweaker module](#via-custom-css-section-of-themetweaker-module)
+        *   [1.2\. Via your own CSS file](#via-your-own-css-file)
+        *   [1.3\. Via overriding template in CustomSkin module](#via-overriding-template-in-customskin-module)
+    *   [2\. How can I wrap the <div id="content"> on home page into <div id="homepage">?](#how-can-i-wrapthe-div-idcontent-on-home-page-into-div-idhomepage)
+        *   [2.1\. By overriding template](#by-overriding-template)
+        *   [2.2\. By PHP code](#by-php-code)
+    *   [3. How can I change the logo depending on the selected language? Logo image should be defined as a language variable](#how-can-i-change-the-logo-depending-on-the-selected-language-logo-image-should-be-defined-as-a-language-variable)
+    *   [4\. How can I replace the menu added by SimpleCMS with my own menu?](#how-can-ireplace-the-menu-added-by-simplecms-with-my-own-menu)
+    *   [5. How can I hide the category block from the home page and keep it on other pages?](#how-can-ihide-the-category-block-from-the-home-page-and-keep-it-on-other-pages)
+    *   [6. How can I define the default view for products as Table/List instead of Grid?](#how-can-i-define-the-default-view-for-products-as-tablelist-instead-of-grid)
+*   [Questions & answers](#questions--answers)
+    *   [Can the Webmaster Kit usage be IP-restricted?](#can-the-webmaster-kit-usage-be-ip-restricted)
+    *   [Design changes do not need cache rebuilding, is this because developer mode is turned on in config.php?](#design-changes-do-not-need-cache-rebuilding-is-this-because-developer-mode-is-turned-on-in-configphp)
+    *   [How to create new separate skin from scratch?](#how-to-create-new-separate-skin-from-scratch)
+    *   [Can someone else's mod overwrite our changes?](#can-someone-elses-mod-overwrite-our-changes)
+    *   [How is TopMenu loaded after SimpleCMS menu?](#how-is-topmenu-loaded-after-simplecms-menu)
+    *   [Why v5 is better than v4 if the skin overwrite is not easily upgraded? Isn't this exactly what v4 is?](#why-v5-is-better-than-v4-if-the-skin-overwrite-is-not-easily-upgraded-isnt-this-exactly-what-v4-is)
+    *   [How to add that <div id=homepage> to the homepage only, not store wide?](#how-to-add-that-div-idhomepage-to-the-homepage-only-not-store-wide)
 
 # Video
 
@@ -129,7 +129,7 @@ Although this method is more complex than ones above, it allows you to completel
 ### 2.1\. By overriding template
 
 1.  First step is to find what template contains the <div id="content">. The thorough explanation of how you can do it using **Webmaster Kit** module is given in video at ~18:00.
-2.  We can see that the **skins/default/en/layout/main.center.center.tpl** template contains this <div id="content"> and we can apply the approach described in {% link "section 1.3" 7504837.html %} in order to change it.
+2.  We can see that the **skins/default/en/layout/main.center.center.tpl** template contains this <div id="content"> and we can apply the approach described in [section 1.3](#via-overriding-template-in-customskin-module) in order to change it.
 3.  Copy the **main.center.center.tpl** template to **skins/custom_skin/default/en/layout/main.center.center.tpl .** It should have the following content: 
 
     ```php
@@ -174,7 +174,7 @@ Although, the approach shown above is easy, it has its downsides. If future vers
     This method unassigns **layout/main.center.center.tpl**from all view lists. 
 
 2.  The next step is to assign a custom template to the same view list and call **layout/main.center.center.tpl** inside this custom template.
-3.  Before next step please do not forget to remove the **skins/custom_skin/default/en/layout/main.center.center.tpl** template mentioned in {% link "section 2.1" 7504837.html %}.
+3.  Before next step please do not forget to remove the **skins/custom_skin/default/en/layout/main.center.center.tpl** template mentioned in [section 2.1](#by-overriding-template).
 4.  Create the **skins/default/en/modules/XC/CustomSkin/main.custom_center.center.tpl** template with the following content: 
 
     ```php
@@ -193,7 +193,7 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 
 ## 3. How can I change the logo depending on the selected language? Logo image should be defined as a language variable
 
-1.  Override the **skins/default/en/layout/header.logo.tpl** template with the **skins/custom_skin/default/en/layout/header.logo.tpl** one as described earlier ({% link "section 2.1" 7504837.html %}, {% link "section 1.3" 7504837.html %})
+1.  Override the **skins/default/en/layout/header.logo.tpl** template with the **skins/custom_skin/default/en/layout/header.logo.tpl** one as described earlier ([section 2.1](#by-overriding-template), [section 1.3](#via-overriding-template-in-customskin-module))
 2.  Define the code of this new template as follows and save the results. 
 
     ```php
@@ -337,16 +337,12 @@ Yes. X-Cart 5 designed in a way that every mod can overwrite every other mod. It
 
 ## How is TopMenu loaded after SimpleCMS menu?
 
-It was loaded after SimpleCMS because of the `@LC_Dependencies `construction used. Check the point 6 in the {% link "section 4" 7504837.html %}.
+It was loaded after SimpleCMS because of the `@LC_Dependencies `construction used. Check the point 6 in the [section 4](#how-can-ireplace-the-menu-added-by-simplecms-with-my-own-menu).
 
 ## Why v5 is better than v4 if the skin overwrite is not easily upgraded? Isn't this exactly what v4 is?
 
-You can use approach described in the {% link "section 2.2" 7504837.html %} in order to overcome problems with skin upgrade. You do not have such option in X-Cart 4.
+You can use approach described in the [section 2.2](#by-php-code) in order to overcome problems with skin upgrade. You do not have such option in X-Cart 4.
 
 ## How to add that <div id=homepage> to the homepage only, not store wide?
 
-In this case, you need to add a condition similar to one described in {% link "section 5" 7504837.html %}. According to this condition, you will either display <div id="homepage"> or not.
-
-## Attachments:
-
-* [image-language-variable.png]({{site.baseurl}}/attachments/7504837/7602607.png) (image/png)
+In this case, you need to add a condition similar to one described in [section 5](#how-can-ihide-the-category-block-from-the-home-page-and-keep-it-on-other-pages). According to this condition, you will either display <div id="homepage"> or not.

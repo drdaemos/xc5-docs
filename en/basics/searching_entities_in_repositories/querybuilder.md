@@ -6,6 +6,7 @@ lang: en
 title: 'QueryBuilder'
 categories:
   - Developer docs
+  - Example
 
 ---
 

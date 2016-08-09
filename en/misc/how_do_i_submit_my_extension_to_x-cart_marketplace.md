@@ -14,7 +14,7 @@ categories:
 
 This article is aimed to the developers who want to submit their extensions to X-Cart marketplace. This process is quite straight-forward and takes only 4 steps from your wish to actual publishing of your module.
 
-1.  Send us message at {% link "alliance@x-cart.com" mailto:alliance@x-cart.com %} and we will create you a partner account
+1.  Send us message at [alliance@x-cart.com](mailto:alliance@x-cart.com) and we will create you a partner account
 2.  Write the module and make sure that it is done according to our standards
 3.  Upload your module to the marketplace and we will review it
 4.  Create your module's page in our marketplace at [http://www.x-cart.com/extensions/addons](http://www.x-cart.com/extensions/addons)
@@ -41,7 +41,7 @@ First of all, if you decide to write extensions for X-Cart 5 (theme or module), 
 
 4.  Email for your partner account
 
-5.  Developer ID you prefer ({% link "learn more about developer ID" http://kb.x-cart.com/display/XDD/How+to+create+a+module#Howtocreateamodule-Choosingidentifiers %})
+5.  Developer ID you prefer ({% link "learn more about developer ID" ref_G2mlgckf#choosing-identifiers %})
 
 Once you send us this info, we will create you a partner account and you will be able to log into it at [http://my.x-cart.com/](http://my.x-cart.com/) 
 
@@ -74,11 +74,8 @@ If we find that something must be corrected, you will receive a list of required
 
 Once the module is accepted, it will be available to all X-Cart merchants via built-in marketplace. Besides that we want to create a dedicated page for your module that will contain detailed description, snapshots etc on our web-site: [http://www.x-cart.com/extensions/addons](http://www.x-cart.com/extensions/addons)
 
-In order to publish such page, please write us a message {% link "alliance@x-cart.com" mailto:alliance@x-cart.com %} and our marketing manager will discuss this matter with you. Usually, we initiate such process ourselves right after the module is accepted.
+In order to publish such page, please write us a message [alliance@x-cart.com]( mailto:alliance@x-cart.com) and our marketing manager will discuss this matter with you. Usually, we initiate such process ourselves right after the module is accepted.
 
 ## Attachments:
 
 * [module_template.psd]({{site.baseurl}}/attachments/7504739/7602402.psd) (image/vnd.adobe.photoshop)
-* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602840.png) (image/png)
-* [developer-activation-key.png]({{site.baseurl}}/attachments/7504739/7602839.png) (image/png)
-* [upload-module-myxcartcom.png]({{site.baseurl}}/attachments/7504739/7602841.png) (image/png)

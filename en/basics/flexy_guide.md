@@ -4,8 +4,10 @@ updated_at: 2015-01-19 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Flexy Guide'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -156,7 +158,7 @@ The same way you can include {% link "viewer classes" ref_6dMJsZ63 %} into templ
 {* the same way, {foo} variable will have "baz" value in this viewer class *}
 ```
 
-Finally, you can include view lists – {% link "view list is a collection of templates and viewer classes" Step-2---applying-design-changes_8224787.html#Step2-applyingdesignchanges-Hidingtemplatesandwidgets %} – into the template as follows: 
+Finally, you can include view lists – {% link "view list is a collection of templates and viewer classes" ref_E88KCMDD#hiding-templates-and-widgets %} – into the template as follows: 
 
 ```php
 <list name="list-name" />
@@ -254,7 +256,3 @@ As you can see all spaces have been removed from our test string.
 ## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-OutputFilterDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-OutputFilterDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [output-filter.png]({{site.baseurl}}/attachments/8225410/8356193.png) (image/png)

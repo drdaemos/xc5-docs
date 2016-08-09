@@ -4,11 +4,12 @@ updated_at: 2016-05-18 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to move category description below products list'
+version: X-Cart 5.2.16 and earlier
 categories:
   - How-To Articles
+  - Outdated
 
 ---
-
 
 This article describes how to move category description below products list.
 
@@ -67,11 +68,9 @@ This article describes how to move category description below products list.
 
     На скриншотах ниже приведен пример настройки баннера для категории:
 
-    [2016-05-05 15-35-25 - Banner - Apparel category.png](attachments/9307060/9439719.png)
+    ![2016-05-05 15-35-25 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439719.png)
 
-    [2016-05-05 15-34-10 - Banner - Apparel category.png](attachments/9307060/9439718.png)
-
-Icon
+    ![2016-05-05 15-34-10 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439718.png)
 
 Обратите внимание, что новый темплейт включается в список "center.bottom" с весовым коэффициэнтом weight="300". Таким образом, новый темплейт будет отображаться после виджета "Category products" (_XLite\View\ItemsList\Product\Customer\Category\Main : default/en/items_list/body.tpl_, для которого задан весовой коэффициэнт weight="200"), и перед виджетом "Bestseller products" (_XLite\Module\CDev\Bestsellers\View\Bestsellers : default/en/items_list/body.tpl_, для которого задан весовой коэффициэнт weight="400"):
 
@@ -89,23 +88,6 @@ _classes/XLite/Module/CDev/Bestsellers/View/Bestsellers.php_
 
 На скриншотах ниже показано, как с помощью инструмента "Webmaster mode" определить, какие виджеты и темплейты используются для отображения данных на странице категории:
 
-[2016-05-05 14-35-51 - Webmaster mode - Category description.png](attachments/9307060/9439716.png)
+![2016-05-05 14-35-51 - Webmaster mode - Category description.png]({{site.baseurl}}/attachments/9307060/9439716.png)
 
-[2016-05-05 14-50-29 - Webmaster mode - Category products.png](attachments/9307060/9439717.png)
-
-## Related articles
-
-*   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
-*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below products list" /display/XDD/How+to+move+category+description+below+products+list %}
-*   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
-*   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
-
-Showing first 5 of 8 results
-
-## Attachments:
-
-* [2016-05-05 14-35-51 - Webmaster mode - Category description.png]({{site.baseurl}}/attachments/9307060/9439716.png) (image/png)
-* [2016-05-05 14-50-29 - Webmaster mode - Category products.png]({{site.baseurl}}/attachments/9307060/9439717.png) (image/png)
-* [2016-05-05 15-34-10 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439718.png) (image/png)
-* [2016-05-05 15-35-25 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439719.png) (image/png)
+![2016-05-05 14-50-29 - Webmaster mode - Category products.png]({{site.baseurl}}/attachments/9307060/9439717.png)

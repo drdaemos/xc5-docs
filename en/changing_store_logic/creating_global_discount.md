@@ -6,6 +6,8 @@ lang: en
 title: 'Creating global discount'
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 

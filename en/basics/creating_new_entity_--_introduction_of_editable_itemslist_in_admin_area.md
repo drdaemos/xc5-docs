@@ -6,6 +6,7 @@ lang: en
 title: 'Creating new entity -- Introduction of editable ItemsList in admin area'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -475,7 +476,7 @@ class QuickMessageMenu extends \XLite\View\SideBarBox
 }
 ```
 
-The implementation is very similar to one showed in the basic guide of {% link "creating sidebar menu in storefront" Creating-sidebar-menu-in-customer-area_7505759.html %}, but there is also `getMessages()` method. This method is aimed to pull three latest quick messages from the database. However, `findNewest()` method does not exist in our `\XLite\Module\Tony\NewEntityDemo\Model\Repo\QuickMessage` class yet and we have to create it.
+The implementation is very similar to one showed in the basic guide of {% link "creating sidebar menu in storefront" ref_Z0IrS8PW %}, but there is also `getMessages()` method. This method is aimed to pull three latest quick messages from the database. However, `findNewest()` method does not exist in our `\XLite\Module\Tony\NewEntityDemo\Model\Repo\QuickMessage` class yet and we have to create it.
 
 We go to the `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/Repo/QuickMessage.php` file and add one more method there: 
 
@@ -513,10 +514,3 @@ We are done with this mod and we have to re-deploy the store one more time. If y
 # Module pack
 
 You can download the code of this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-NewEntityDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-NewEntityDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [quick-messages-items-list.png]({{site.baseurl}}/attachments/8225303/8356165.png) (image/png)
-* [empty-quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356166.png) (image/png)
-* [quick-messages-admin.png]({{site.baseurl}}/attachments/8225303/8356167.png) (image/png)
-* [quick-messages-customer.png]({{site.baseurl}}/attachments/8225303/8356168.png) (image/png)

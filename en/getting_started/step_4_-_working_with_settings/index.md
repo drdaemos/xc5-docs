@@ -6,6 +6,8 @@ lang: en
 title: 'Step 4 - working with settings'
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -36,7 +38,7 @@ For the sake of example, we will create a module that will have a textarea setti
 
 # Creating module with settings
 
-1.  Create the module according to {% link "step 1" Step-1---creating-simplest-module_524296.html %} article. In my example, I am using developer ID as **Tony** and module ID as **SettingsDemo**.
+1.  Create the module according to {% link "step 1" ref_G2mlgckf %} article. In my example, I am using developer ID as **Tony** and module ID as **SettingsDemo**.
 2.  Put the following method into your `Main.php` file: 
 
     ```php
@@ -69,7 +71,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
             option_comment: I am comment to the option and I am here just for show that you can put some text into me
     ```
 
-3.  Once it is done, push the changes to the database using {% link "load-yaml.php" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
+3.  Once it is done, push the changes to the database using {% link "load-yaml.php" ref_HvrXVNvJ#loading-yaml-file %} macros of X-Cart SDK. Since I am in the X-Cart's root folder (`<Web-Root>/next/src/`) in my console and my X-Cart SDK is located in the `<Web-Root>/next-sdk/`, I can do it using this command:
 
     ```php
     ../../next-sdk/devkit/macros/load-yaml.php classes/XLite/Module/Tony/SettingsDemo/install.yaml
@@ -81,7 +83,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 
 # Using setting values in the code
 
-1.  Create the viewer class in your module as per {% link "step 2" Step-2---applying-design-changes_8224787.html %} article. Since my developer ID is **Tony** and module ID is **SettingsDemo**, I am creating the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/View/Header.php` file. You do not need to create .php file with Header name, it can be whatever you like, e.g. Code.php, HTML.php, etc.
+1.  Create the viewer class in your module as per {% link "step 2" ref_E88KCMDD %} article. Since my developer ID is **Tony** and module ID is **SettingsDemo**, I am creating the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/View/Header.php` file. You do not need to create .php file with Header name, it can be whatever you like, e.g. Code.php, HTML.php, etc.
 2.  Put the following content into your viewer class: 
 
     ```php

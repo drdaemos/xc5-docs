@@ -14,8 +14,8 @@ Sometimes the standard 'Add to cart' buttons you get in your X-Cart  store are 
 
 There are two methods to do so:
 
-*   {% link "Method 1" ref_dQZEma4K %} (can be used both for pages outside and inside X-Cart);
-*   {% link "Method 2" 9666687.html %} (can be used only inside X-Cart).
+*   [Method 1](#method-1) (can be used both for pages outside and inside X-Cart);
+*   [Method 2](#method-2) (can be used only inside X-Cart).
 
 # Method 1
 

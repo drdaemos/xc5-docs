@@ -4,11 +4,13 @@ updated_at: 2016-01-11 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Step 2 - applying design changes'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
-
 
 # Introduction
 

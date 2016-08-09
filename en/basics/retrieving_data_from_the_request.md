@@ -6,6 +6,7 @@ lang: en
 title: 'Retrieving data from the request'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -27,16 +28,16 @@ This article teaches X-Cart developers how to retrive data from request to end-p
 # Implementation
 
 1.  We {% link "create a module" ref_G2mlgckf %} with developer ID **Tony** and module ID **RequesDemo**.
-2.  We {% link "create a page" Creating-new-page_8224999.html %} with **target=tony** customer area. Eventually, we will have three files in the module:
-    - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/Controller/Customer/Tony.php
-    `- `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`
-    - `<X-Cart>/skins/default/en/modules/Tony/RequestDemo/page/tony/body.tpl`
+2.  We {% link "create a page" ref_0VgqyxB8 %} with **target=tony** customer area. Eventually, we will have three files in the module:
+    - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/Controller/Customer/Tony.php`
+    - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`
+    - `<X-Cart>/skins/default/en/modules/Tony/RequestDemo/page/tony/body.twig`
 3.  We define the template's content as follows: 
 
     ```php
     <div>
-    Param: {getParamValue()} <br />
-    Param2: {getParam2Value()}
+    Param: {{ this.getParamValue() }} <br />
+    Param2: {{ this.getParam2Value() }}
     </div>
     ```
 

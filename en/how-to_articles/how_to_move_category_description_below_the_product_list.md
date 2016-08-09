@@ -4,11 +4,12 @@ updated_at: 2016-06-28 00:00
 layout: article_with_sidebar
 lang: en
 title: 'How to move category description below the product list'
+version: X-Cart 5.2.16 and earlier
 categories:
   - How-To Articles
+  - Outdated
 
 ---
-
 
 This article describes how to move category description below the product list.
 
@@ -65,11 +66,9 @@ To implement the necessary changes, you will need to modify X-Cart templates as 
 
     On the screenshots below you can find an example of how to set up such a banner for a category:
 
-    [2016-05-05 15-35-25 - Banner - Apparel category.png](attachments/9307060/9439719.png)
+    ![2016-05-05 15-35-25 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439719.png)
 
-    [2016-05-05 15-34-10 - Banner - Apparel category.png](attachments/9307060/9439718.png)
-
-Icon
+    ![2016-05-05 15-34-10 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439718.png)
 
 Please note that the new template is included into the "center.bottom" list with the weighting factor _weight="300"_. This way, the new template will be displayed after the widget "Category products" (_XLite\View\ItemsList\Product\Customer\Category\Main : default/en/items_list/body.tpl_, for which the weighting factor is specified as _weight="200"_), and before the widget "Bestseller products" (_XLite\Module\CDev\Bestsellers\View\Bestsellers : default/en/items_list/body.tpl_, for which the weighting factor is specified as _weight="400"_):
 
@@ -87,23 +86,6 @@ _classes/XLite/Module/CDev/Bestsellers/View/Bestsellers.php_
 
 On the screenshots below, it is shown how to use the "Webmaster mode" tool to determine what widgets and templates are used to display data on a category page:
 
-[2016-05-05 14-35-51 - Webmaster mode - Category description.png](attachments/9307060/9439716.png)
+![2016-05-05 14-35-51 - Webmaster mode - Category description.png]({{site.baseurl}}/attachments/9307060/9439716.png)
 
-[2016-05-05 14-50-29 - Webmaster mode - Category products.png](attachments/9307060/9439717.png)
-
-## Related articles
-
-*   Page:{% link "How to modify "Print Invoice" page" /pages/viewpage.action?pageId=9306925 %}
-*   Page:{% link "How to move category description below the product list" /display/XDD/How+to+move+category+description+below+the+product+list %}
-*   Page:{% link "How to remove Transaction ID info in order notification emails?" /pages/viewpage.action?pageId=9666581 %}
-*   Page:{% link "How to add Google Adwords Conversion Tracking Code to "Thank you for your order" page" /pages/viewpage.action?pageId=9307079 %}
-*   Page:{% link "How to add Facebook Pixel Сode to X-Cart pages" /pages/viewpage.action?pageId=9306783 %}
-
-Showing first 5 of 8 results
-
-## Attachments:
-
-* [2016-05-05 14-35-51 - Webmaster mode - Category description.png]({{site.baseurl}}/attachments/9307060/9439716.png) (image/png)  
-* [2016-05-05 14-50-29 - Webmaster mode - Category products.png]({{site.baseurl}}/attachments/9307060/9439717.png) (image/png)  
-* [2016-05-05 15-34-10 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439718.png) (image/png)  
-* [2016-05-05 15-35-25 - Banner - Apparel category.png]({{site.baseurl}}/attachments/9307060/9439719.png) (image/png)
+![2016-05-05 14-50-29 - Webmaster mode - Category products.png]({{site.baseurl}}/attachments/9307060/9439717.png)

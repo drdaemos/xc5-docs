@@ -35,7 +35,7 @@ Dwolla has already changed their API, so this integration no longer works, altho
     *   [Creating an empty module](#creating-an-empty-module)
 *   [Creating integration](#creating-integration)
     *   [Creating payment gateway class](#creating-payment-gateway-class)
-    *   [Creating install.yaml of your module](#creating-install.yaml-of-your-module)
+    *   [Creating install.yaml of your module](#creating-installyaml-of-your-module)
     *   [Getting Dwolla lib](#getting-dwolla-lib)
     *   [Core methods of each web-based payment gateway](#core-methods-of-each-web-based-payment-gateway)
     *   [Sending initial request](#sending-initial-request)
@@ -43,9 +43,9 @@ Dwolla has already changed their API, so this integration no longer works, altho
     *   [Payment is ready](#payment-is-ready)
 *   [Creating settings form for payment gateway](#creating-settings-form-for-payment-gateway)
     *   [Change install.yaml](#change-install.yaml)
-    *   [Changing Dwolla.php file](#changing-dwolla.php-file)
+    *   [Changing Dwolla.php file](#changing-dwollaphp-file)
     *   [Creating template](#creating-template)
-    *   [Changing Dwolla.php file again](#changing-dwolla.php-file-again)
+    *   [Changing Dwolla.php file again](#changing-dwollaphp-file-again)
 *   [Settings form is ready](#settings-form-is-ready)
 
 # Video

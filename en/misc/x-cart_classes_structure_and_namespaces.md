@@ -27,7 +27,7 @@ All X-Cart classes are located in the `<X-Cart>/classes/` directory. Let us walk
 
 *   `<X-Cart>/classes/XLite.php` is the class of the whole application; you will never use it in new modules;
 *   `<X-Cart>/classes/Base/` directory contains definitions of basic X-Cart interfaces including **Decorator** interface that allows {% link "applying changes to every part of X-Cart store" ref_AF6bmvL6 %} without modifying core classes;
-*   `<X-Cart>/classes/Controller/` directory contains definitions of classes that **handle requests** to X-Cart (controllers). Check {% link "general X-Cart workflow" Step-3---applying-logic-changes_8224804.html#Step3-applyinglogicchanges-GeneralX-Cartworkflow %} article in order to learn more about controller classes;
+*   `<X-Cart>/classes/Controller/` directory contains definitions of classes that **handle requests** to X-Cart (controllers). Check {% link "general X-Cart workflow" ref_AF6bmvL6#general-x-cart-workflow %} article in order to learn more about controller classes;
 *   `<X-Cart>/classes/Core/` directory contains definitions of core X-Cart entities, such as database, HTTP request, Mailer etc;
 *   `<X-Cart>/classes/DataSet/` directory includes the classes that defines different data structures; they are seldom used in the modules;
 *   `<X-Cart>/classes/Logic/` folder contains the classes that describe the business logic of complex routines: order calculation, import/export, etc;
