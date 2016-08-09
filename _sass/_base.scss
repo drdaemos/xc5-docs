@@ -115,6 +115,7 @@ aside.sidebar {
         }
 
         .anchor-link.item {
+            border-right-width: 0px;
             padding: 0.25em 0;
             a {
                 cursor: pointer;
@@ -122,6 +123,10 @@ aside.sidebar {
             }
 
             .title {
+                @include flexbox;
+                @include align-items(center);
+                @include justify-content(space-between);
+
                 cursor: default;
                 padding: 0.5rem 1.5rem 0.5rem 1rem;
 
@@ -144,11 +149,6 @@ aside.sidebar {
         }
 
         .anchor-link.item.has-sub {
-            .title {
-                @include flexbox;
-                @include align-items(center);
-                @include justify-content(space-between);
-            }
 
             .title.active, .title.active + .content {
                 border-left: 2px solid rgba(65,131,196,0.2);
