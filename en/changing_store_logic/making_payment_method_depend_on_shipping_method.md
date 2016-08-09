@@ -6,6 +6,7 @@ lang: en
 title: 'Making payment method depend on shipping method'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -37,7 +38,7 @@ We need to start with setting up payment and shipping methods in the store. We w
 We go to **Store setup** > **Shipping** section in your admin area and create these two shipping methods as follows:
 ![]({{site.baseurl}}/attachments/8225320/8356171.png)
 
-Do not forget to {% link "assign some shipping rates" ref_zJgAefeE %} to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
+Do not forget to [assign some shipping rates](http://kb.x-cart.com/en/shipping/custom_table_rates.html) to these shipping methods. I am using 0 shipping rate for **Pick up at store** and $10 for **Courier**. We also need to know ID of **Courier** shipping method, that is why we click the **Edit Rates** link next to it and look at address bar in the browser. It will be something like this: 
 
 ```php
 admin.php?target=shipping_rates&methodid=2

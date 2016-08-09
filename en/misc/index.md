@@ -4,7 +4,11 @@ updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Misc'
+order: 10
+icon: help circle
+description: Useful guides that could not be categorized to previous sections
 categories:
+  - home
   - Developer docs
 
 ---

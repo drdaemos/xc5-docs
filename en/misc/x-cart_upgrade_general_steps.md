@@ -25,4 +25,4 @@ If the installation of updates has been completed successfully (without errors),
 
 _Related pages:_
 
-*   {% link "Upgrading X-Cart 5" ref_pQQ1CLe1 %}
+*   [Upgrading X-Cart 5](http://kb.x-cart.com/en/general_setup/upgrading_x-cart_5.html)

@@ -22,7 +22,7 @@ The Basics section shows how to achieve typical tasks when you edit your X-Cart 
 *   How to work with products in customer and admin areas: {% link "adding new property to a product" ref_2bJSTtR3 %}, {% link "showing set of products on a page" ref_MRidEzuz %}, {% link "working with product attributes" ref_cPPwdSA9 %};
 *   How to create new entities and work with them: {% link "creating new entity" ref_hBpBE0vS %}, {% link "displaying list of entities in admin area" ref_zsGkqC41 %}, {% link "creating a page for an entity editing" ref_LanG54L9 %};
 *   How to work with images: {% link "using image widget" ref_IwyaUWEq %} and {% link "working with image resizing routine" ref_5XhuExQ3 %};
-*   How to work with {% link "user info" ref_gg1fQDgB %} and {% link "authorization" ref_fKauw8Cw %};
+*   How to work with {% link "user info" ref_xJBqLBws %} and {% link "authorization" ref_fKauw8Cw %};
 *   {% link "How to work with sessions" ref_PW2oOrvq %};
 *   {% link "Making request to external services" ref_HK4ekS1u %};
 *   {% link "Making dependencies between modules" ref_xdDPawlG %}.

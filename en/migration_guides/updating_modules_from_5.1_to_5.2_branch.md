@@ -108,7 +108,7 @@ abstract class Database extends \XLite\Core\Database implements \XLite\Base\IDec
 }
 ```
 
-and your module must include the following {% link "pre-upgrade hook" ref_pQQ1CLe1 %}: 
+and your module must include the following {% link "pre-upgrade hook" ref_WOuwAgsI %}: 
 
 ```php
 <?php
