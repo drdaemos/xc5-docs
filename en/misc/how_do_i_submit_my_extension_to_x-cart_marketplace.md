@@ -32,7 +32,7 @@ This article will explain each step, so you will be confident about what is goin
 
 # Get partner account
 
-First of all, if you decide to write extensions for X-Cart 5 (theme or module), you need to obtain developer NFR license. For that, please send us a message at {% link "alliance@x-cart.com" mailto:alliance@x-cart.com %} with the following information:
+First of all, if you decide to write extensions for X-Cart 5 (theme or module), you need to obtain developer NFR license. For that, please send us a message at [alliance@x-cart.com](mailto:alliance@x-cart.com) with the following information:
 
 1.  What module you are going to write
 2.  Your company name
