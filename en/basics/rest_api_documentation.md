@@ -20,28 +20,28 @@ If you want to exchange data with X-Cart through an external script, [REST API]
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Installing and configuring REST API](#installing-and-configuring-rest-api)
-*   [How do I work with data using REST API?](#how-do-i-work-with-data-using-rest-api?)
+*   [How do I work with data using REST API?](#how-do-i-work-with-data-using-rest-api)
     *   [Request parameters](#request-parameters)
-    *   [Condition (_cnd) param explained](#condition-(_cnd)-param-explained)
+    *   [Condition (_cnd) param explained](#condition-cnd-param-explained)
     *   [Model data and types](#model-data-and-types)
     *   [Security protection](#security-protection)
     *   [Output options](#output-options)
 *   [Working with REST API using a PHP client](#working-with-rest-api-using-a-php-client)
-*   [What data I can pull?](#what-data-i-can-pull?)
+*   [What data I can pull?](#what-data-i-can-pull)
     *   [Custom schema examples](#custom-schema-examples)
     *   [Default schema](#default-schema)
     *   [Data available in the Complex schema](#data-available-in-the-complex-schema)
-*   [How to work with different entities in the Default schema?](#how-to-work-with-different-entities-in-the-default-schema?)
+*   [How to work with different entities in the Default schema?](#how-to-work-with-different-entities-in-the-default-schema)
     *   [Building _path for core models](#building-_path-for-core-models)
     *   [Building _path for module models](#building-_path-for-module-models)
-*   [Examples of searching, changing, creating and removing entities](#examples-of-searching,-changing,-creating-and-removing-entities)
+*   [Examples of searching, changing, creating and removing entities](#examples-of-searching-changing-creating-and-removing-entities)
     *   [Searching all products within price range](#searching-all-products-within-price-range)
     *   [Creating product](#creating-product)
     *   [Creating several products at once](#creating-several-products-at-once)
-    *   [Changing SKU for a product with ID=1](#changing-sku-for-a-product-with-id=1)
-    *   [Changing SKUs for products with ID=1 and ID=3](#changing-skus-for-products-with-id=1-and-id=3)
+    *   [Changing SKU for a product with ID=1](#changing-sku-for-a-product-with-id1)
+    *   [Changing SKUs for products with ID=1 and ID=3](#changing-skus-for-products-with-id1-and-id3)
     *   [Assigning a product to a category](#assigning-a-product-to-a-category)
-    *   [Removing a product with ID=1](#removing-a-product-with-id=1)
+    *   [Removing a product with ID=1](#removing-a-product-with-id1)
     *   [Removing all products](#removing-all-products)
 
 # Installing and configuring REST API
@@ -57,15 +57,15 @@ After the module has been installed, you need to set it up.
         ![]({{site.baseurl}}/attachments/3768321/8718906.png?effects=drop-shadow)
         For instance, we set **read/write key** as "_key-to-do-everything" _and **read key** as "_key-for-reading_".
 
+        =%yellow:
         REST API allows to operate with absolutely all data of your store. External scripts will be able to fetch, edit and remove absolutely any data. That is why you should not give REST API keys to people and companies you do not trust. Also, make a point of providing read-only keys rather than read/write ones.
+        %=
 
 3.  In order to test REST API functionality, we are trying to open the following page: 
     `http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=key-to-do-everything&_path=product/1
     `_(Be sure to replace the <MY-XCART-PATH> portion with the actual path to where your X-Cart is installed and the "key-to-do-everything" portion with your actual REST API key)._
 
 4.  If product with ID = 1 exists in your database, you will get a result similar to the following:
-
-    ![]({{site.baseurl}}/images/icons/grey_arrow_down.png)JSON product data...
 
     ```
     {
@@ -371,6 +371,7 @@ As you can see, non-required fields can be omitted, and there are different type
 The **OneToMany** relationship is used when the entity is linked to many (0+) entities of another type (e.g. one Category is related to many child Categories). You should pass an array of objects of certain type here. 
 
 **Category children example (OneToMany)**
+
 ```php
 // QUERY
 ...
@@ -397,6 +398,7 @@ The **ManyToOne** relationship is used when the entity and, possibly, other ent
 The **ManyToMany** relationship is a combination of the two aforemented relations and is used when many entities of one type are related to many entities of another type (e.g. one Product can relate to several Categories, and one Category can group several Products). You prepare your data in the same manner as in ManyToOne relationship (because ManyToMany type is basically made of two linked ManyToOne relationships from both sides).
 
 **Category parent example (ManyToOne, ManyToMany)**
+
 ```php
 // QUERY
 ...
@@ -698,8 +700,6 @@ The rules are as follows:
 
 Example 1: building _path for \XLite\Model\Product model:
 
-Icon
-
 1.  Excluding \XLite\Model\ prefix: **\XLite\Model\Product **becomes** Product**
 2.  Lowercasing the rest: **Product** becomes **product**
 3.  Replacing back-slashes with dashes: **product** becomes **product **(no changes in fact, since there are no back-slashes)
@@ -707,8 +707,6 @@ Icon
 Result: **\XLite\Model\Product** is converted to **product**
 
 Example 2: building _path for \XLite\Model\Payment\Transaction model:
-
-Icon
 
 *   Excluding \XLite\Model\ prefix: **\XLite\Model\Payment\Transaction **becomes** Payment\Transaction**
 *   Lowercasing the rest: **Payment\Transaction **becomes **payment\transaction**
@@ -724,8 +722,6 @@ Result: **\XLite\Model\Payment\Transaction **is converted to** payment-transa
 
 Example 1: building _path for \XLite\Module\CDev\SalesTax\Model\Tax model
 
-Icon
-
 *   Excluding \XLite\Module\ and Model\ parts: **\XLite\Module\CDev\SalesTax\Model\Tax** becomes** CDev\SalesTax\Tax**
 *   Lowercasing the rest: **CDev\SalesTax\Tax** becomes** cd**ev\salestax\tax****
 *   Replacing back-slashes with dashes: **cd**ev\salestax\tax**** becomes** **cd**ev-salestax-tax******
@@ -733,8 +729,6 @@ Icon
 Result: **\XLite\Module\CDev\SalesTax\Model\Tax** is converted to** ****cd**ev-salestax-tax********
 
 Example 2: building _path for \XLite\Module\CDev\SalesTax\Model\Tax\Rate model
-
-Icon
 
 *   Excluding \XLite\Module\ and Model\ parts: **\XLite\Module\CDev\SalesTax\Model\Tax\Rate** becomes** CDev\SalesTax\Tax\Rate**
 *   Lowercasing the rest:** **CDev\SalesTax\Tax\Rate**** becomes** cd**ev\salestax\tax\rate****
