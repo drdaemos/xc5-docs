@@ -4,6 +4,7 @@ updated_at: 2014-05-14 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Migration from Litecommerce 3 to X-Cart 5'
+version: LiteCommerce 3
 categories:
   - Migration guides
 
@@ -46,7 +47,7 @@ and insert your X-Cart 5 license key there (you should have received this licens
 
 # Step 3\. Change the marketplace URL in the file config.php.
 
-1.  Open the file <litecommerce-dir>/etc/config.php in a text editor
+1.  Open the file `<litecommerce-dir>/etc/config.php` in a text editor
 
 2.  Find out these lines there:
 
@@ -94,13 +95,20 @@ Stock Chart and Wishlist modules are just for example here. You may see other mo
 
 It is recommended to adjust the config.php file after upgrade.
 
-1.  Create a backup of the <litecommerce-dir>/etc/config.php file (e.g. copy this to file config.bak.php)
-2.  Copy the file <litecommerce-dir>/etc/config.default.php to config.php
-3.  Open both the files <litecommerce-dir>/etc/config.php and config.bak.php in a text editor.
-4.  Copy the contents of the following sections from config.bak.php to <litecommerce-dir>/etc/config.php file:
+1.  Create a backup of the `<litecommerce-dir>/etc/config.php` file (e.g. copy this to file config.bak.php)
+
+2.  Copy the file `<litecommerce-dir>/etc/config.default.php` to config.php
+
+3.  Open both the files `<litecommerce-dir>/etc/config.php` and config.bak.php in a text editor.
+
+4.  Copy the contents of the following sections from config.bak.php to `<litecommerce-dir>/etc/config.php` file:
+
+    ```
     [database_details]
     [host_details]
     [installer_details]
+    ```
+
 5.  If any other sections in your config.php file have been changed, e.g. [clean_urls], [skin_details], etc, transfer them to the new config.php as well.
 
 # FAQ

@@ -42,7 +42,7 @@ All X-Cart classes are located in the `<X-Cart>/classes/` directory. Let us walk
 
 Namespace notation in X-Cart is straight-forward: it repeats the class' sub-path of the .php file in the `<X-Cart>/classes/` directory.
 
-*   PHP class defined in the `<X-Cart>/classes/XLite/Controller/Customer/Product.php` file will have namespace` XLite\Controller\Customer`; i.e. namespace includes all names of folders after <X-Cart>/classes/ separated by backslash (**\**)
+*   PHP class defined in the `<X-Cart>/classes/XLite/Controller/Customer/Product.php` file will have namespace` XLite\Controller\Customer`; i.e. namespace includes all names of folders after `<X-Cart>/classes/` separated by backslash (**\**)
 *   The same way, PHP class defined in the `<X-Cart>/classes/XLite/View/Header.php` file will have namespace `XLite\View`;
 *   Namespace can be quite long, e.g. if the class is located in the `<X-Cart>/classes/XLite/Module/CDev/AustraliaPost/Model/Shipping/Processor/AustraliaPost.php` file, then its namespace will be `XLite\Module\CDev\AustraliaPost\Model\Shipping\Processor`;
 *   PHP class defined in the `<X-Cart>/classes/XLite.php` file will have no namespace.

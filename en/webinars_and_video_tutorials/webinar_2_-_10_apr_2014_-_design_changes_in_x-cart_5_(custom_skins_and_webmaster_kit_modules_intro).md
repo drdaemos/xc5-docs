@@ -187,7 +187,7 @@ Although, the approach shown above is easy, it has its downsides. If future vers
     </div>
     ```
 
-    This code assigns this new template to **layout.main.center** view list, - the same view list where **layout/main.center.center.tpl** was - adds <div class="homepage"> wrapper and calls the initial template.
+    This code assigns this new template to **layout.main.center** view list, - the same view list where **layout/main.center.center.tpl** was - adds `<div id="homepage">` wrapper and calls the initial template.
 
 5.  Rebuild the cache and check the results.
 
@@ -343,6 +343,6 @@ It was loaded after SimpleCMS because of the `@LC_Dependencies `construction u
 
 You can use approach described in the [section 2.2](#by-php-code) in order to overcome problems with skin upgrade. You do not have such option in X-Cart 4.
 
-## How to add that <div id=homepage> to the homepage only, not store wide?
+## How to add that `<div id="homepage">` to the homepage only, not store wide?
 
-In this case, you need to add a condition similar to one described in [section 5](#how-can-ihide-the-category-block-from-the-home-page-and-keep-it-on-other-pages). According to this condition, you will either display <div id="homepage"> or not.
+In this case, you need to add a condition similar to one described in [section 5](#how-can-ihide-the-category-block-from-the-home-page-and-keep-it-on-other-pages). According to this condition, you will either display `<div id="homepage">` or not.

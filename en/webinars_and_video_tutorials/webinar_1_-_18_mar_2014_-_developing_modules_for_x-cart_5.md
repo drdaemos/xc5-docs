@@ -4,7 +4,7 @@ updated_at: 2014-08-19 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'
-version: X-Cart 5.2
+version: X-Cart 5.2.x
 categories:
   - Webinars and video tutorials
 
@@ -558,13 +558,13 @@ We are looking for a solution that would allow cache rebuild process complete fa
 
 ## How can we easily debug our code then?
 
-You should debug code in the **<X-Cart 5>/var/run/ **folder. This is the actual PHP code that is run at the moment. If you change anything there, it will have an immediate effect. However, all custom code in the **<X-Cart 5>/****var/run** folder will be lost after next cache rebuilding process.
+You should debug code in the `<X-Cart 5>/var/run/` folder. This is the actual PHP code that is run at the moment. If you change anything there, it will have an immediate effect. However, all custom code in the `<X-Cart 5>/var/run` folder will be lost after next cache rebuilding process.
 
 ## How do you add a new field to product without modifying core code?
 
 First of all, we are planning to write a thorough article describing the decoration approach that aims to help with such tasks.
 
-In short words, you can add a new field to the product model by adding the **classes/XLite/Module/Tony/News/Model/Product.php **with the following content:
+In short words, you can add a new field to the product model by adding the `classes/XLite/Module/Tony/News/Model/Product.php` with the following content:
 
 ```php
 <?php

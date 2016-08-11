@@ -10,9 +10,6 @@ categories:
 
 ---
 
-
-<a name="bugnotes" rel="nofollow"></a>
-
 **List of updated modules**
 
 *   Coupons

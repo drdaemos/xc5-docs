@@ -127,7 +127,7 @@ After that, we want to have this shipping rate object as an element of an array 
 
 Of course, your `getRates()` method can be far more complex and return dynamically generated rates. Flat $10 rate is just for a demo.
 
-We are almost done with the mod. We only need to create a shipping method in the database and then register our shipping processor – the <X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php class – in the system.
+We are almost done with the mod. We only need to create a shipping method in the database and then register our shipping processor – the `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php` class – in the system.
 
 Creating a shipping method is as easy as creating a YAML file. We create `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/install.yaml` with the following content: 
 

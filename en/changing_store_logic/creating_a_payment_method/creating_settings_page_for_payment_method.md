@@ -212,7 +212,7 @@ class DemoPayment extends \XLite\Model\Payment\Base\WebBased
 }
 ```
 
-Finally, we need to create the template mentioned in the getSettingsWidget() method, so we create the <X-Cart>/skins/admin/en/modules/Tony/PaymentFormDemo/config.tpl file with the following content: 
+Finally, we need to create the template mentioned in the getSettingsWidget() method, so we create the `<X-Cart>/skins/admin/en/modules/Tony/PaymentFormDemo/config.tpl` file with the following content: 
 
 ```php
 <table cellspacing="1" cellpadding="5" class="settings-table">

@@ -88,7 +88,7 @@ The method we will be using to send our notifications is `sendEmailDemoMessage(
 
 ## Designing the message template
 
-An email message is composed from several parts such as _header_, _subject_, _body_ and _signature. _You can customize the general header and signature in your store's admin area, on the <u>Store setup</u> -> <u>Email notifications</u> -> <u>Headers & signatures</u> page. However, the subject and body need to be customized through the template files named `subject.tpl` and `body.tpl, respectively`. These files should exist in the mail templates directory. In our case, they are present in the directory `<X-Cart>/skins/mail/en/modules/Tony/EmailDemo/message `with the following content:
+An email message is composed from several parts such as _header_, _subject_, _body_ and _signature. _You can customize the general header and signature in your store's admin area, on the _Store setup_ -> _Email notifications_ -> _Headers & signatures_ page. However, the subject and body need to be customized through the template files named `subject.tpl` and `body.tpl, respectively`. These files should exist in the mail templates directory. In our case, they are present in the directory `<X-Cart>/skins/mail/en/modules/Tony/EmailDemo/message `with the following content:
 
 **subject.tpl**
 

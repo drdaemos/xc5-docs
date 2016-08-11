@@ -31,7 +31,7 @@ There are two methods to do so:
     [html_purifier]
     ```
 
-    This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag <buttob> - from code.
+    This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag `<button>` - from code.
 
 2.  Add the following code to the page where you need to insert your 'Add to cart' button:
 
@@ -70,7 +70,7 @@ This method can be used to create a button that will add a product to cart witho
     [html_purifier]
     ```
 
-    This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag <buttob> - from code.
+    This line is needed to ensure that X-Cart will _not_ strip certain tags - like the tag `<button>` - from code.
 
 2.  Add the following code to the page where you need to insert your 'Add to cart' button:
 

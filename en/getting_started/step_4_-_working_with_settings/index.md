@@ -106,7 +106,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
     }
     ```
 
-    _Note: if you are using your own developer and module IDs, you should change the namespace part of this PHP code to namespace XLite\Module\<Your-Developer-ID>\<Your-Module-ID>\View;_
+    _Note: if you are using your own developer and module IDs, you should change the namespace part of this PHP code to namespace `XLite\Module\<Your-Developer-ID>\<Your-Module-ID>\View`;_
 
     As you can see, we are calling value of our option in the `getHtmlCode()` method. 
 
