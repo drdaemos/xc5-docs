@@ -8,24 +8,26 @@
     background-size: cover;
 
     .banner-menu {
-        .header.item {
-            img {
-                margin-right: 1rem;
-            }
-        }
+      max-width: 100%;
+      overflow: hidden;
+      .header.item {
+          img {
+              margin-right: 1rem;
+          }
+      }
     }
 
     .banner-welcome {
-        padding: 5rem 0;
+      padding: 5rem 0;
 
-        .header > .headline {
-            line-height: 1.5em;
-            font-size: 1.5em;
-        }
+      .header > .headline {
+          line-height: 1.5em;
+          font-size: 1.5em;
+      }
 
-        .header > .tagline {
-            font-size: 0.75em;
-        }
+      .header > .tagline {
+          font-size: 0.75em;
+      }
     }
 }
 
@@ -115,4 +117,61 @@ article {
         overflow: auto;
         box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
     }
+}
+
+// responsive semantic fix
+
+/* Mobile Sizing Combinations */
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .ui.grid > .row > [class*="third wide mobile"].column,
+  .ui.grid > .column.row > [class*="third wide mobile"].column,
+  .ui.grid > [class*="third wide mobile"].column,
+  .ui.column.grid > [class*="third wide mobile"].column {
+    width: 33% !important;
+  }
+}
+
+/* Tablet Sizing Combinations */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ui.grid > .row > [class*="third wide tablet"].column,
+  .ui.grid > .column.row > [class*="third wide tablet"].column,
+  .ui.grid > [class*="third wide tablet"].column,
+  .ui.column.grid > [class*="third wide tablet"].column {
+    width: 33% !important;
+  }
+}
+
+/* Computer/Desktop Sizing Combinations */
+
+@media only screen and (min-width: 992px) {
+  .ui.grid > .row > [class*="third wide computer"].column,
+  .ui.grid > .column.row > [class*="third wide computer"].column,
+  .ui.grid > [class*="third wide computer"].column,
+  .ui.column.grid > [class*="third wide computer"].column {
+    width: 33% !important;
+  }
+}
+
+/* Large Monitor Sizing Combinations */
+
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  .ui.grid > .row > [class*="third wide large screen"].column,
+  .ui.grid > .column.row > [class*="third wide large screen"].column,
+  .ui.grid > [class*="third wide large screen"].column,
+  .ui.column.grid > [class*="third wide large screen"].column {
+    width: 33% !important;
+  }
+}
+
+/* Widescreen Sizing Combinations */
+
+@media only screen and (min-width: 1920px) {
+  .ui.grid > .row > [class*="third wide widescreen"].column,
+  .ui.grid > .column.row > [class*="third wide widescreen"].column,
+  .ui.grid > [class*="third wide widescreen"].column,
+  .ui.column.grid > [class*="third wide widescreen"].column {
+    width: 33% !important;
+  }
 }
