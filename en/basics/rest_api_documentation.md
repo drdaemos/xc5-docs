@@ -10,7 +10,6 @@ categories:
 
 ---
 
-
 # Introduction
 
 If you want to exchange data with X-Cart through an external script, [REST API](http://en.wikipedia.org/wiki/Representational_state_transfer) is the way to go. This article explains how you can use X-Cart's REST API.
@@ -57,231 +56,17 @@ After the module has been installed, you need to set it up.
         ![]({{site.baseurl}}/attachments/3768321/8718906.png?effects=drop-shadow)
         For instance, we set **read/write key** as "_key-to-do-everything" _and **read key** as "_key-for-reading_".
 
-        =%yellow:
+        {% note danger %}
         REST API allows to operate with absolutely all data of your store. External scripts will be able to fetch, edit and remove absolutely any data. That is why you should not give REST API keys to people and companies you do not trust. Also, make a point of providing read-only keys rather than read/write ones.
-        %=
+        {% endnote %}
 
 3.  In order to test REST API functionality, we are trying to open the following page: 
-    `http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=key-to-do-everything&_path=product/1
-    `_(Be sure to replace the <MY-XCART-PATH> portion with the actual path to where your X-Cart is installed and the "key-to-do-everything" portion with your actual REST API key)._
+    `http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=key-to-do-everything&_path=product/1`
+    _(Be sure to replace the `<MY-XCART-PATH>` portion with the actual path to where your X-Cart is installed and the "key-to-do-everything" portion with your actual REST API key)._
 
 4.  If product with ID = 1 exists in your database, you will get a result similar to the following:
 
-    ```
-    {
-      "freeShip": false,
-      "freightFixedFee": 0,
-      "isCustomerAttachmentsAvailable": false,
-      "isCustomerAttachmentsRequired": false,
-      "participateSale": false,
-      "discountType": "sale_price",
-      "salePriceValue": 0,
-      "pinCodesEnabled": false,
-      "autoPinCodes": false,
-      "marketPrice": 0,
-      "ogMeta": "",
-      "useCustomOG": false,
-      "product_id": 1,
-      "price": 19.99,
-      "sku": "10001",
-      "enabled": true,
-      "weight": 0.32,
-      "useSeparateBox": false,
-      "boxWidth": 0,
-      "boxLength": 0,
-      "boxHeight": 0,
-      "itemsPerBox": 1,
-      "free_shipping": false,
-      "taxable": true,
-      "javascript": "",
-      "arrivalDate": 1424506256,
-      "date": 1437466241,
-      "updateDate": 1437466242,
-      "needProcess": false,
-      "attrSepTab": true,
-      "metaDescType": "A",
-      "upsellingProducts": [
-
-      ],
-      "upsellingParentProducts": [
-
-      ],
-      "reviews": [
-
-      ],
-      "variants": [
-
-      ],
-      "variantsAttributes": [
-
-      ],
-      "vendor": null,
-      "tabs": [
-
-      ],
-      "views_stats": [
-
-      ],
-      "purchase_stats": [
-
-      ],
-      "pinCodes": [
-
-      ],
-      "attachments": [
-
-      ],
-      "featuredProducts": [
-
-      ],
-      "categoryProducts": [
-        {
-          "id": 1,
-          "orderby": 0
-        }
-      ],
-      "order_items": [
-        {
-          "xpcFakeItem": false,
-          "item_id": 10,
-          "name": "Planet Express Babydoll",
-          "sku": "10001",
-          "price": 19.99,
-          "itemNetPrice": 19.99,
-          "discountedSubtotal": 17.979,
-          "amount": 1,
-          "total": 19.99,
-          "subtotal": 19.99
-        }
-      ],
-      "images": [
-        {
-          "orderby": -10,
-          "alt": "Planet Express Babydoll",
-          "s3icons": [
-
-          ],
-          "width": 500,
-          "height": 494,
-          "hash": null,
-          "needProcess": true,
-          "id": 1,
-          "path": "demo_p4003.jpeg",
-          "fileName": "",
-          "mime": "image\/jpeg",
-          "storageType": "r",
-          "size": 29749,
-          "date": 1280310731
-        }
-      ],
-      "inventory": {
-        "inventoryId": 1,
-        "enabled": true,
-        "amount": 50,
-        "lowLimitEnabled": true,
-        "lowLimitAmount": 10
-      },
-      "productClass": {
-        "id": 1,
-        "position": 0
-      },
-      "taxClass": null,
-      "attributes": [
-
-      ],
-      "attributeValueC": [
-
-      ],
-      "attributeValueT": [
-
-      ],
-      "attributeValueS": [
-        {
-          "priceModifier": 0,
-          "priceModifierType": "a",
-          "weightModifier": 0,
-          "weightModifierType": "a",
-          "defaultValue": false,
-          "id": 1
-        },
-        {
-          "priceModifier": 0,
-          "priceModifierType": "a",
-          "weightModifier": 0,
-          "weightModifierType": "a",
-          "defaultValue": false,
-          "id": 2
-        },
-        {
-          "priceModifier": 0,
-          "priceModifierType": "a",
-          "weightModifier": 0,
-          "weightModifierType": "a",
-          "defaultValue": false,
-          "id": 3
-        },
-        {
-          "priceModifier": 0,
-          "priceModifierType": "a",
-          "weightModifier": 0,
-          "weightModifierType": "a",
-          "defaultValue": false,
-          "id": 4
-        },
-        {
-          "priceModifier": 0,
-          "priceModifierType": "a",
-          "weightModifier": 0,
-          "weightModifierType": "a",
-          "defaultValue": false,
-          "id": 244
-        }
-      ],
-      "quickData": [
-        {
-          "id": 13,
-          "price": 19.99
-        },
-        {
-          "id": 14,
-          "price": 19.99
-        }
-      ],
-      "memberships": [
-
-      ],
-      "cleanURLs": [
-        {
-          "id": 1,
-          "cleanURL": "planet-express-babydoll.html"
-        }
-      ],
-      "translations": [
-        {
-          "name": "Planet Express Babydoll",
-          "description": "",
-          "briefDescription": "",
-          "metaTags": "",
-          "metaDesc": "",
-          "metaTitle": "",
-          "label_id": 1,
-          "code": "en"
-        },
-        {
-          "name": "\u0424\u0443\u0442\u0431\u043e\u043b\u043a\u0430 \"Planet Express Babydoll\"",
-          "description": "",
-          "briefDescription": "",
-          "metaTags": "",
-          "metaDesc": "",
-          "metaTitle": "",
-          "label_id": 46,
-          "code": "ru"
-        }
-      ]
-    }
-    ```
-
-    This is product information in JSON format.
+    [JSON Product schema]({{site.baseurl}}/attachments/code/product_schema.json){:target="_blank"} (this is product information in JSON format).
 
 # How do I work with data using REST API?
 
@@ -304,7 +89,7 @@ As you can see, in first case we passed the path as **_path=product/1** (where
 Each REST API request must contain three parameters:
 
 1.  **target**=RESTAPI;
-2.  **_key**=<your rest api key>;
+2.  **_key**=`<your rest api key>`;
 3.  **_path** param that identifies what entity you are pulling. This parameter is combined of an **{% link "entity name" ref_RSR29iWL %}** and an optional **entity ID** separated by the **/** character. Should contain **/0** (e.g. product/0) when used to create an entity with **POST** method.
 
 In addition to that, you can pass the** _method** parameter that will define what you are going to do within this request. Here are the possible values:
@@ -984,3 +769,4 @@ $result = $client->delete('product')->json();
 
 * [Tony-RESTExtension-v5_2_0.tar]({{site.baseurl}}/attachments/3768321/8718940.tar) (application/x-tar)
 * [XCExample-RESTAPI-v5_3_0.tar]({{site.baseurl}}/attachments/modules/XCExample-RESTAPI-v5_3_0.tar) (application/x-tar)
+* [Example JSON Product schema]({{site.baseurl}}/attachments/code/product_schema.json)
