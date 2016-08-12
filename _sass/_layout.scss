@@ -7,32 +7,98 @@
     background: url(#{$base-dir}/images/banner/img-home-web.jpg) no-repeat center center #514947;
     background-size: cover;
 
+    /* Phone and Tablet Only */
+    @media only screen and (max-width: 991px) {
+        &:not(.banner-large) {
+          padding: 0;
+        }
+    }
+
     .banner-menu {
       max-width: 100%;
       overflow: hidden;
+      font-weight: 300;
+
       .header.item {
-          img {
-              margin-right: 1rem;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Phone and Tablet Only */
+        @media only screen and (max-width: 991px) {
+          .header-title {
+            font-size: 0;
           }
+        }
+      }
+
+      .language.item {
+        /* Phone Only */
+        @media only screen and (max-width: 767px) {
+          display: none;
+        }
       }
     }
 
     .banner-welcome {
-      padding: 5rem 0;
+      padding: 3rem 0 6rem 0;
+
+      .divider {
+        margin-top: 2em;
+        margin-bottom: 1em;
+      }
 
       .header > .headline {
-          line-height: 1.5em;
-          font-size: 1.5em;
+        letter-spacing: 0;
+        line-height: 1em;
+        font-size: 3.75rem;
+        margin-bottom: 1rem;
       }
 
       .header > .tagline {
-          font-size: 0.75em;
+        letter-spacing: 0;
+        font-size: 0.75em;
+        line-height: 2.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .huge.button {
+        min-width: 250px;
+        margin-top: 1em;
+      }
+
+      /* Phone and Tablet Only */
+      @media only screen and (max-width: 991px) {
+        padding: 1rem 0 3rem 0;
+
+        .divider {
+          margin-top: 1em;
+          margin-bottom: 0em;
+        }
+
+        .header > .headline {
+          line-height: 1.5em;
+          font-size: 2rem;
+        }
+
+        .header > .tagline {
+          font-size: 1rem;
+          line-height: 1.5em;
+          margin-top: 1rem;
+        }
       }
     }
 }
 
 .ui.navigation.segment {
     padding: 5rem 0;
+
+    /* Phone and Tablet Only */
+    @media only screen and (max-width: 991px) {
+      padding: 2rem 0;
+    }
 }
 
 .ui.sticky.bound.bottom {
@@ -88,10 +154,16 @@
     padding: 5px 15px;
     border-radius: 500rem;
 
+    /* Phone and Tablet Only */
+    @media only screen and (max-width: 480px) {
+      display: none;
+    }
+
     .prompt {
-        border-radius: 0px;
+      border-radius: 0px;
     }
 }
+
 
 .search-results {
     margin-top: 1rem;
