@@ -2,6 +2,10 @@
     en: 'X-Cart Developer Documentation'
     ru: 'Документация для разработчиков X-Cart'
 
+'X-Cart Knowledge Base':
+    en: 'X-Cart Knowledge Base'
+    ru: 'База знаний X-Cart'
+
 'Build the tools that will shape the future of commerce':
     en: 'Build the tools that will shape the future of commerce'
     ru: 'Все, что вам нужно для того, чтобы построить интернет-магазин вашей мечты.'
@@ -21,6 +25,10 @@
 'Search':
     en: 'Search'
     ru: 'Искать'
+
+'Navigation':
+    en: 'Also in section'
+    ru: 'Также в секции'
 
 'Home':
     en: 'Home'
