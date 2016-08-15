@@ -13,8 +13,7 @@ categories:
 
 ---
 
-
-# Introduction
+## Introduction
 
 **ItemsList** is a type of X-Cart widget that displays records about entities in structured format. Examples of ItemsList widgets are below:
 
@@ -31,7 +30,7 @@ This article will explain how to create such ItemsList. For the sake of example,
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ItemsListAdminDemo**. Then we {% link "create a new page" ref_0VgqyxB8 %} `target=items_list_demo` in admin area. For that we create:
 
@@ -287,8 +286,10 @@ Finally, we need to display our ItemsList widget on the page, so we go to the `
 <widget class="XLite\Module\Tony\ItemsListAdminDemo\View\ItemsList\ItemsListDemo" />
 ```
 
-That is it. Now we need to re-deploy the store and you will see our **ItemsList** that supports sorting by Price on `admin.php?target=items_list_demo` page.![]({{site.baseurl}}/attachments/8225372/8356180.png)
+That is it. Now we need to re-deploy the store and you will see our **ItemsList** that supports sorting by Price on `admin.php?target=items_list_demo` page.
 
-# Module pack
+![]({{site.baseurl}}/attachments/8225372/8356180.png)
+
+## Module pack
 
 You can download this module's example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ItemsListAdminDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ItemsListAdminDemo-v5_1_0.tar)
