@@ -15,7 +15,7 @@ keywords:
 
 This group of articles describes how to define various forms in admin area utilizing _new_ API, based on [Symfony/Form](http://symfony.com/doc/current/forms.html) and [Vue.js view components](https://vuejs.org/guide/overview.html).
 
-Also, new API uses the DTO (Data-Transfer Object) approach, which is used to transport and validate data on its way to the entity and back. This allows to maintain several principles of a good architecture, such as [Single Resposibility Priciple](https://en.wikipedia.org/wiki/Single_responsibility_principle).
+Also, new API uses the DTO (Data-Transfer Object) approach, which is used to transport and validate data on its way to the entity and back. This allows to maintain several principles of a good architecture, such as [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle).
 
 You can start reading from {% link 'Model editing' ref_8MoO0Ob %} page and proceed later to this guides:
 

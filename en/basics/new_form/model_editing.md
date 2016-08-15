@@ -7,8 +7,9 @@ published: true
 title: Model editing
 version: X-Cart 5.3.0 and later
 identifier: ref_8MoO0Ob
-version: X-Cart 5.3.x
 description: During module creation developers sometimes create complex entities that require a separate page for editing of its properties. This article will explain a new way to create a page where you can edit certain fields of a model.
+categories:
+    - Demo module
 ---
 
 This article describes new way to create form to edit model entity. Original article with old implementation: {% link "Model editing page" ref_LanG54L9 %}
@@ -483,4 +484,5 @@ $this->setReturnURL($this->buildURL('example_product_edit', '', $params));
 We are done with this mod and now we have to re-deploy the store. After that try to open the admin.php?target=example_product_edit page.
 
 ## Module pack
-`XCExample\ModelEditing`
+
+*   [XCExample/ModelEditing]({{site.baseurl}}/attachments/modules/XCExample-ModelEditing-v5_3_0.tar)

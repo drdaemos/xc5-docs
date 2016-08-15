@@ -7,7 +7,10 @@ order: 30
 published: true
 version: X-Cart 5.3.0 and later
 title: Form fields
+categories:
+    - Demo module
 ---
+
 Each form section must contain at least one field.
 
 Form section fields defined in method `\XLite\View\FormModel\AFormModel::defineFields()`. It must return **key** -> **value** pairs with **key** as section name and **value** as fields definition. By default there is one unlabeled section with name `default`.
@@ -108,3 +111,7 @@ To define horizontal fields (several field on one row) you must set `XLite\View\
 If you want to define field visibility based on value of other field you must specify `show_when`  option as **key** -> **value** multylevel array. On each level **key** is section name or field name or horisontal groping field name (based on level and form definition). End level **value** is showing condition value, it can be scalar value or list (simple array with integer keys)
 
 To define conditionaly field enable state you mast specify `enable_when` options on the same rules as `show_when` option
+
+## Module pack
+
+*   [XCExample/ModelEditingAdvanced]({{site.baseurl}}/attachments/modules/XCExample-ModelEditingAdvanced-v5_3_0.tar)
