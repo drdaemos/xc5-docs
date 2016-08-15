@@ -12,6 +12,7 @@ description: Study different guides to achieve features that you need
 ---
 
 These articles will guide you to achieve some typical tasks and answer the most basic 'how-to' questions:
+
 *   {% link "How to remove Transaction ID info in order notification emails?" ref_H86AxdTJ %}
 *   {% link "How to modify «Print Invoice» page" ref_qhLz2Kb9 %}
 *   {% link "How to move category description below products list" ref_hOAZXJPp %}
