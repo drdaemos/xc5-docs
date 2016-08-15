@@ -6,9 +6,13 @@
     en: 'X-Cart Knowledge Base'
     ru: 'База знаний X-Cart'
 
-'Build the tools that will shape the future of commerce':
-    en: 'Build the tools that will shape the future of commerce'
-    ru: 'Все, что вам нужно для того, чтобы построить интернет-магазин вашей мечты.'
+'devs_tagline':
+    en: 'Essential resources for X-Cart 5 developers'
+    ru: 'Ценные ресурсы для разработчиков X-Cart 5'
+
+'kb_tagline':
+    en: 'Everything you need to know to manage your X-Cart 5 store'
+    ru: 'Все, что нужно знать, чтобы грамотно управлять магазином X-Cart 5'
 
 'Sorry, this page was not found':
     en: 'Sorry, this page was not found'
