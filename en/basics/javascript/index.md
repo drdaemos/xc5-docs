@@ -5,7 +5,7 @@ updated_at: '2016-07-27 12:53 +0400'
 identifier: ref_u4RcEV0R
 title: Javascript guides
 order: 100
-published: true
+published: false
 ---
 ## A New Post
 

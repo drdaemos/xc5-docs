@@ -3,9 +3,10 @@ lang: en
 layout: article_with_sidebar
 updated_at: '2016-07-26 16:34 +0400'
 identifier: ref_SlIeQwQo
-order: 100
+order: 30
 published: true
-title: From fields
+version: X-Cart 5.3.0 and later
+title: Form fields
 ---
 Each form section must contain at least one field.
 

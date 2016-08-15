@@ -3,11 +3,12 @@ lang: en
 layout: article_with_sidebar
 updated_at: '2016-07-26 17:14 +0400'
 identifier: ref_v732d5P3
-order: 100
+order: 50
 published: true
+version: X-Cart 5.3.0 and later
 title: Horizontal form field extending
 ---
-Horizontal extending form field can halp you to add field to same line as extendig one.
+Horizontal extending form field can halp you to add field to same line as extending one.
 You can see example in `CDev\Sale` module
 
 ## Form model

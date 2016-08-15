@@ -3,11 +3,12 @@ lang: en
 layout: article_with_sidebar
 updated_at: '2016-07-26 16:19 +0400'
 identifier: ref_Za60J20N
-order: 100
+order: 20
+version: X-Cart 5.3.0 and later
 published: true
 title: Form sections
 ---
-Form must contains at least one section. By default section with name `default` is defined
+Form must contain at least one section. By default section with name `default` is defined
 
 ## Section definition
 

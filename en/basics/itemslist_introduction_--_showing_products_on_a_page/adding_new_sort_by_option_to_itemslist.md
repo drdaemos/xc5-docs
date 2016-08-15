@@ -3,9 +3,10 @@ identifier: ref_Dwd0HwPQ
 updated_at: 2015-03-18 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Adding new sort by option to ItemsList'
+title: 'Adding new sort option to ItemsList'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 

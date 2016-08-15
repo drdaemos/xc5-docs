@@ -3,9 +3,12 @@ identifier: ref_MRidEzuz
 updated_at: 2015-01-12 00:00
 layout: article_with_sidebar
 lang: en
-title: 'ItemsList introduction -- showing products on a page'
+title: 'ItemsList in customer area'
+order: 60
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
