@@ -22,6 +22,7 @@ If you want to exchange data with X-Cart through an external script, [REST API]
 *   [How do I work with data using REST API?](#how-do-i-work-with-data-using-rest-api)
     *   [Request parameters](#request-parameters)
     *   [Condition (_cnd) param explained](#condition-cnd-param-explained)
+    *   [Limiting the output (Pagination)](#limiting-the-output-pagination)
     *   [Model data and types](#model-data-and-types)
     *   [Security protection](#security-protection)
     *   [Output options](#output-options)
@@ -107,15 +108,27 @@ This way you can make a POST request by making an actual HTTP POST request to _
 
 If want to filter entities you are pulling by a certain condition (using **GET** method), you should specify **_cnd** param in your query. This parameter should be an array of conditions. Conditions are key-value pairs, where key is the name of the condition and there are one or more values, depending on the certain condition.
 
-For example, product "**orderBy**" condition can be set through this query: `_cnd[**orderBy**][0]=**p.price**&_cnd[**orderBy**][1]=`**`asc`. **It consists of two values, sort condition and sort direction and this query will order you products by their price in ascending matter.
+For example, product "**orderBy**" condition can be set through this query: `_cnd[orderBy][0]=p.price&_cnd[orderBy][1]=asc`. It consists of two values, sort condition and sort direction and this query will order you products by their price in ascending matter.
 
 Another example is the product "**inventory**" condition, which filters product by their stock status. Possible statuses are "all" (every product, no filtration), "low" (low amount), "out" (out of stock) and "in" (in stock). If we need to find all products which are out of stock, we set query param like this: `_cnd[inventory]=out`. The whole request now looks like this: 
 
-```php
+```
 http://<MY-XCART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_cnd[inventory]=out
 ```
 
 To find out which conditions you can apply to various model, you should find the corresponding Model/Repo/<entity>.php script in your X-Cart distributive (See [How to work with different entities in the Default schema?](#how-to-work-with-different-entities-in-the-default-schema?) to get more information about different entites). We can't provide you a full list here because there are lots of types of entities, many of them are added by addons, and there are lots of conditions for each entity.
+
+## Limiting the output (Pagination)
+
+Condition (_cnd) parameter is also very helpful if you are looking for a way to paginate your entites and receive the data in portions instead of retrieving the entire list.
+
+You can set the offset (starting item) and the limit through this query: `_cnd[limit][0]=xxx&_cnd[limit][1]=xxx`. The first element is the offset and the second is the limit. Use integer values here to perform a successful query.
+
+For example, you can retrieve all products inside 0 - 100 range using this request:
+
+```
+http://<MY-XCART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_cnd[limit][0]=0&_cnd[limit][1]=100
+```
 
 ## Model data and types
 
