@@ -87,4 +87,4 @@ This method can be used to create a button that will add a product to cart witho
     </script>
     ```
 
-Please note that this method will not work for X-Cart static pages in stores using the module TinyMCE integration, because this module will strip <script> from code. Also note that this method will not work for pages located on other sites outside X-Cart.
+Please note that this method will not work for X-Cart static pages in stores using the module TinyMCE integration, because this module will strip `<script>` from code. Also note that this method will not work for pages located on other sites outside X-Cart.

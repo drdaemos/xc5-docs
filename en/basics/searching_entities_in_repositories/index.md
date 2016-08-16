@@ -9,14 +9,13 @@ categories:
 
 ---
 
-
-# Introduction
+## Introduction
 
 This article aims to teach developers how they can pull data from repositories by certain criteria.
 
 For the sake of example, we will consider pulling product information and will work with `\XLite\Model\Product` models and their repository `\XLite\Model\Repo\Product`. You can work the same way with any other entities: categories, users, orders, etc.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -26,7 +25,7 @@ For the sake of example, we will consider pulling product information and will w
 *   [Pulling many products by condition](#pulling-many-products-by-condition)
 *   [Pulling products by complex condition](#pulling-products-by-complex-condition)
 
-# Pulling product by ID
+## Pulling product by ID
 
 Repository method: `find()`
 
@@ -38,7 +37,7 @@ $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
 //$product now contains product object
 ```
 
-# Pulling all products
+## Pulling all products
 
 Repository method: `findAll()`
 
@@ -50,7 +49,7 @@ $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findAll();
 //$products now contains an array of product objects
 ```
 
-# Pulling one product by condition
+## Pulling one product by condition
 
 Repository method: `findOneBy()`
 
@@ -71,7 +70,7 @@ $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->findOneBy(array
 // the same as $product = \XLite\Core\Database::getRepo('XLite\Model\Product')->find($id);
 ```
 
-# Pulling many products by condition
+## Pulling many products by condition
 
 Repository method: `findBy()`
 
@@ -89,6 +88,6 @@ $products = \XLite\Core\Database::getRepo('XLite\Model\Product')->findBy($condit
 //$products now contains array of product objects and all of these products are enabled 
 ```
 
-# Pulling products by complex condition
+## Pulling products by complex condition
 
 If you need more complex queries to the database, please learn how to use {% link "QueryBuilder" ref_FJyeE9lP %} object.

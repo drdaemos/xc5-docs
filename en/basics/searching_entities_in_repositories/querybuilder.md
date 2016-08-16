@@ -7,9 +7,9 @@ title: 'QueryBuilder'
 categories:
   - Developer docs
   - Example
+  - Outdated
 
 ---
-
 
 # Introduction
 

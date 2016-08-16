@@ -12,7 +12,6 @@ categories:
 
 ---
 
-
 # Introduction
 
 This article describes the process of creating page with products. For instance, any category page is a page with products. In this guide we will create a page that is available at `cart.php?target=all_products` and then display all products on this page.
@@ -128,10 +127,10 @@ This article describes the process of creating page with products. For instance,
     As you can see, we just extend an abstract class `\XLite\View\Pager\Customer\Product\AProduct`. Once it is done we define our `getPagerClass()` method as: 
 
     ```php
-        protected function getPagerClass()
-        {
-            return '\XLite\Module\Tony\ProductsDemo\View\Pager\Customer\Product\Product';
-        }
+    protected function getPagerClass()
+    {
+        return '\XLite\Module\Tony\ProductsDemo\View\Pager\Customer\Product\Product';
+    }
     ```
 
 10.  That is it. Now we need to re-deploy the store and then open `cart.php?target=all_products` page in order to see the result of our mod work:![]({{site.baseurl}}/attachments/8225226/8356122.png)
@@ -139,7 +138,3 @@ This article describes the process of creating page with products. For instance,
 # Module pack
 
 You can download this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ProductsDemo-v5_1_2.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ProductsDemo-v5_1_2.tar)
-
-## Attachments:
-
-* [all-products-on-custom-page.png]({{site.baseurl}}/attachments/8225226/8356122.png) (image/png)

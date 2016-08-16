@@ -6,6 +6,8 @@ lang: en
 title: 'search() method'
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 
@@ -71,7 +73,6 @@ Now it is time to implement handling of our **myCond** condition in the `\XLite\
 
 ```php
  <?php
-// vim: set ts=4 sw=4 sts=4 et:
 
 namespace XLite\Module\Tony\SearchRepoDemo\Model\Repo;
 
@@ -171,7 +172,7 @@ It will return all products with ID less than 20\. If we comment the `$cnd->myC
 
 Imagine that you have dozen of conditions for pulling products. In this case, this approach will be very helpful for you.
 
-_Note: if you need to create search() method for your own entity, use {% link "this guide" ref_hBpBE0vS#Creatingnewentity--IntroductionofeditableItemsListinadminarea-CreatingRepositoryclass %}_ _for its general implementation._
+_Note: if you need to create search() method for your own entity, use {% link "this guide" ref_hBpBE0vS#creating-repository-class %}_ _for its general implementation._
 
 # Module pack
 

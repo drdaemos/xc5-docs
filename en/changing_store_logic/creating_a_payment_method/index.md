@@ -159,7 +159,7 @@ Your YAML file will probably contain just one of the above fields.
 
 The list of allowed countries / exceptions in the YAML file will be used to filter payment methods in the payment method selection popup in the admin area.
 
-Once the YAML file has been created, do not forget to {% link "push it to the database" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %}.
+Once the YAML file has been created, do not forget to {% link "push it to the database" ref_HvrXVNvJ#loading-yaml-file %}.
 
 The mod is completed, and we need to re-deploy the store in order to test it in action.
 

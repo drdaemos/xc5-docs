@@ -8,7 +8,7 @@ categories:
   - home
 order: 5
 icon: pencil square o
-description: Take a look at some of the customizations, made for our clients
+description: Take a look at some of the customizations made for our clients
 ---
 
 

@@ -161,6 +161,7 @@ module Jekyll
     safe true
 
     def generate(site)
+      return true
       #config
       es_config = site.config['elasticsearch']
       unless es_config

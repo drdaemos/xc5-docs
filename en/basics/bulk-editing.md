@@ -1,13 +1,15 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-07-26 17:48 +0400'
+updated_at: '2016-08-17 17:48 +0400'
 identifier: ref_HnaTNuQc
 order: 100
 published: true
 title: Bulk editing
+version: X-Cart 5.3.0 and later with Bulk Editing module enabled
 ---
-Bulk editing is essentially a list of fields to be edited combined into editing scenarios. Scenarios are described in `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Scenario::defineScenario()` method, which returns an array. Keys of the array are names of the scenarios and values are their settings. Let us have a look at scenario of bulk editing of products in categories:
+
+Bulk editing is essentially a list of editable fields combined into different editing scenarios. Scenarios are described in `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Scenario::defineScenario()` method, which returns an array. Keys of the array are names of the scenarios and values are their settings. Let's have a look at scenario of bulk editing product's categories:
 
 ```php
 'product_categories'           => [
@@ -33,7 +35,7 @@ Bulk editing is essentially a list of fields to be edited combined into editing 
 `formModel`, `view`, `DTO` и `step` - tech settings used in the scenario;
 `fields` - a list of fields divided into sections. Each field must contain a class and options (we only use `position` one in the example.
 
-## Fields
+## Fields of the bulk edit form
 
 Each field must be defined by a class inherited from `\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\AField`
 *   `getSchema()` returns a definition of the field. Returned value must be an array, where key is name of the field and value is its definition. This is required in order to allow several fields defined by one definition (`\XLite\Module\XC\BulkEditing\Logic\BulkEdit\Field\Product\Category`)
@@ -42,15 +44,13 @@ Each field must be defined by a class inherited from `\XLite\Module\XC\BulkEditi
 *   `getViewColumns()` defines a column (or columns) to display curent values of the field. The display table will be built based on this method.
 *   `getViewValue()` returns a current value of the field. If a field adds several columns to the table, then this method will be called for each column independently. During this call, X-Cart will pass a name of the column and object to take the value from for each column.
 
-## Initialisation
+## Connection with itemslist state
 
-### ItemsList
-
-In order to switch to bulk editing, the `\XLite\Module\XC\BulkEditing\View\Button\Product` button was aded to product list panel. The idea is to save a search criteria used in current product list as well as a list of selected products (if there are any) `\XLite\Module\XC\BulkEditing\Controller\Admin\BulkEdit`:
+In order to switch to bulk editing, the `\XLite\Module\XC\BulkEditing\View\Button\Product` button was added to product list panel. The idea is to save a search criteria used in current product list as well as a list of selected products (if there are any) `\XLite\Module\XC\BulkEditing\Controller\Admin\BulkEdit`:
 
 ```php
 /**
- + Before bulk edit form
+ * Before bulk edit form
  */
 protected function doActionStart()
 {
@@ -78,7 +78,7 @@ protected function doActionStart()
 
 ## Example of adding field into scenario
 
-*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Scenario` adds field into a scenario (as well as changes scenario's label)
+*   `\XLite\Module\XC\ProductTags\Logic\BulkEdit\Scenario` adds field into an existing scenario (as well as changes the scenario's label)
 
     ```php
     /**
@@ -193,5 +193,6 @@ protected function doActionStart()
     }
     ```
 
-## Saving data into DB
-Saving data happens in batches (the same as import), so it will not crash because we save a lot of objects.
+## How data is saved to DB
+
+Data saving is performed in batches (the same as import), so it won't crash in case of a big number of objects

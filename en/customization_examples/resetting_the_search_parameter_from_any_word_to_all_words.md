@@ -6,6 +6,7 @@ lang: en
 title: 'Resetting the search parameter from &quot;any word&quot; to &quot;all words&quot;'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -45,3 +46,10 @@ Search via the search form in X-Cart is performed based on the "any word" parame
 
     it has to be the value `namespace XLite\Module\<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>\View\Form\Product\Search\Customer;`
 3.  Re-generate X-Cart cache.
+
+## Module pack
+
+You can also install the pre-made module pack to achieve the same effect:
+
+*   [XCartDevs/ChangeSearchDefaults (for X-Cart 5.2.0)]({{site.baseurl}}/attachments/modules/XCartDevs-ChangeSearchDefaults-v5_2_0.tar)
+*   [XCartDevs/ChangeSearchDefaults (for X-Cart 5.3.0)]({{site.baseurl}}/attachments/modules/XCartDevs-ChangeSearchDefaults-v5_3_0.tar)

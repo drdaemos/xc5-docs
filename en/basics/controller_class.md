@@ -6,18 +6,18 @@ lang: en
 title: 'Controller class'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
-
 # Introduction
 
-**Controller** is a class that responsible for very first handling of request to X-Cart. This article aims to give a basic understanding of how controllers work in X-Cart and how you can use them.
+**Controller** is a class that is responsible for request handling in X-Cart. This article aims to give a basic understanding of how controllers work in X-Cart and how you can use them.
 
-# Table of Contets
+# Table of Contents
 
 *   [Introduction](#introduction)
-*   [Table of Contets](#table-of-contets)
+*   [Table of Contents](#table-of-contents)
 *   [Understanding of Controller classes](#understanding-of-controller-classes)
     *   [handleRequest()](#handlerequest())
 *   [Module example](#module-example)
@@ -47,45 +47,45 @@ Let us have a look at what exactly `handleRequest()` method does. See its implem
 Its implementation: 
 
 ```php
-    public function handleRequest()
-    {
-        if (!$this->checkAccess()) {
-            $this->markAsAccessDenied();
+public functio[n handleRequest()
+{
+    if (!$this->checkAccess()) {
+        $this->markAsAccessDenied();
 
-        } elseif (!$this->isVisible()) {
-            $this->display404();
+    } elseif (!$this->isVisible()) {
+        $this->display404();
 
-        } elseif ($this->needSecure()) {
-            $this->redirectToSecure();
+    } elseif ($this->needSecure()) {
+        $this->redirectToSecure();
 
-        } else {
-            $this->run();
-        }
-
-        if ($this->isRedirectNeeded()) {
-            $this->doRedirect();
-        }
+    } else {
+        $this->run();
     }
+
+    if ($this->isRedirectNeeded()) {
+        $this->doRedirect();
+    }
+}
 ```
 
 1.  It checks whether you are allowed to access this resource – `if (!$this->checkAccess())` – whether this page is visible –  `elseif (!$this->isVisible())` – and whether we need a redirect to HTTPS – `elseif ($this->needSecure())` 
 2.  If everything is good, then it calls `run()` method, which is implemented as follows: 
 
     ```php
-        protected function run()
-        {
-            if ($this->getAction() && $this->isValid()) {
-                $this->callAction();
+    protected function run()
+    {
+        if ($this->getAction() && $this->isValid()) {
+            $this->callAction();
 
-            } else {
-                $this->doNoAction();
+        } else {
+            $this->doNoAction();
 
-            }
-
-            if (!$this->isValid()) {
-                $this->restoreFormId();
-            }
         }
+
+        if (!$this->isValid()) {
+            $this->restoreFormId();
+        }
+    }
     ```
 
 3.  This method looks for **action** parameter in the request and if it is there, it tries to find a method for handling this action. If **action=create**, then it will search for `doActionCreate()` method, i.e. it uppercases the first letter in action parameter and prepend it with **do** prefix.

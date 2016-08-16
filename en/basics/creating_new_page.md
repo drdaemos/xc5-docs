@@ -6,6 +6,7 @@ lang: en
 title: 'Creating new page'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -32,7 +33,7 @@ First thing to do is to {% link "create an empty module" ref_G2mlgckf %}. We are
 
 For the sake of example, our task is to create the page which will be available at `admin.php?target=tony_custom` address and will display **Hello world!** text.
 
-1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look {% link "here" ref_AF6bmvL6#Step3-applyinglogicchanges-GeneralX-Cartworkflow %}. 
+1.  Create new controller class. Since we want our page to be opened at `admin.php?target=tony_custom`, the controller class must be named **TonyCustom**. If you need more info about how controllers work in X-Cart, look {% link "here" ref_AF6bmvL6#general-x-cart-workflow %}. 
 2.  We create the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/Admin/TonyCustom.php` file with the following content: 
 
     ```php
@@ -131,7 +132,7 @@ You can {% link "create a page via macro" ref_HvrXVNvJ#X-CartSDK-Creatingpage %}
 
 Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`) with **Hello world!** text, but in customer area. The process would be quite the same as for creating page for admin zone.
 
-1.  We create new controller class: `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/**Customer**/TonyCustom.php` . Notice that we changed the sub-directory from `Controller/**Admin**/TonyCustom.php` to `Controller/**Customer**/TonyCustom.php`, this way X-Cart will understand that this controller for customer zone, not admin. 
+1.  We create new controller class: `<X-Cart>/classes/XLite/Module/Tony/PageDemo/Controller/Customer/TonyCustom.php` . Notice that we changed the sub-directory from `Controller/**Admin**/TonyCustom.php` to `Controller/Customer/TonyCustom.php`, this way X-Cart will understand that this controller for customer zone, not admin. 
 
 2.  The content of the controller class will be as follows: 
 
@@ -145,9 +146,9 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
     }
     ```
 
-    The implementation of the controller class is similar to admin's one, but it has different namespace (`XLite\Module\Tony\PageDemo\Controller\**Customer**`) and it extends different class (`\XLite\Controller\**Customer\ACustomer**`)
+    The implementation of the controller class is similar to admin's one, but it has different namespace (`XLite\Module\Tony\PageDemo\Controller\Customer`) and it extends different class (`\XLite\Controller\**Customer\ACustomer`)
 
-3.  We create new viewer class: `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/**Customer**/TonyCustom.php` (again, notice change from `Page/**Admin**/TonyCustom.php` to `Page/**Customer**/TonyCustom.php` in the path) with the following content: 
+3.  We create new viewer class: `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Customer/TonyCustom.php` (again, notice change from `Page/Admin/TonyCustom.php` to `Page/Customer/TonyCustom.php` in the path) with the following content: 
 
     ```php
     <?php
@@ -187,23 +188,32 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
 
     We use this `@ListChild` directive in order to insert this viewer class into central area of customer area, instead of admin one;
 
+    <div class="ui top attached tabular menu">
+        <a class='item active' data-tab='tab-1'>5.2.x and earlier</a>
+        <a class='item' data-tab='tab-2'>5.3.x</a>
+    </div>
+    <div data-tab="tab-1" class="ui bottom attached active tab segment" markdown="1">
     ```php
-    	protected function getDefaultTemplate()
-        {
-            return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
-        }
+    protected function getDefaultTemplate()
+    {
+        return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
+    }
     ```
+    </div>
+    <div data-tab="tab-2" class="ui bottom attached tab segment" markdown="1">
+    ```php
+    protected function getDefaultTemplate()
+    {
+        return 'modules/Tony/PageDemo/page/tony_custom/body.twig';
+    }
+    ```
+    </div>
 
     The template for this viewer sits in other location. Aside from that, the implementation is the same.
 
-5.  Finally, we need to create the template mentioned in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/**default**/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` template (notice, that we create this template in the `skins/default/` directory, instead of `skins/admin/` one – it is so, because this template will be displayed in customer store-front) with **Hello world!** content.
+5.  Finally, we need to create the template mentioned in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/customer/modules/Tony/PageDemo/page/tony_custom/body.twig` (`<X-Cart>/skins/default/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` for 5.2.x) template (notice, that we create this template in the `skins/default/` directory, instead of `skins/admin/` one – it is so, because this template will be displayed in customer store-front) with **Hello world!** content.
 6.  Re-deploy the store and open the `cart.php?target=tony_custom` page after that. You will see the following result:![]({{site.baseurl}}/attachments/8224999/8355982.png)
 
 # Module pack
 
 You can download the module described here: [https://dl.dropboxusercontent.com/u/23858825/Tony-PageDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-PageDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [tony_custom-admin-page.png]({{site.baseurl}}/attachments/8224999/8355981.png) (image/png)
-* [tony_custom-customer-page.png]({{site.baseurl}}/attachments/8224999/8355982.png) (image/png)
