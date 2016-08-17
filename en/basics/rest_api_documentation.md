@@ -43,6 +43,12 @@ If you want to exchange data with X-Cart through an external script, [REST API]
     *   [Assigning a product to a category](#assigning-a-product-to-a-category)
     *   [Removing a product with ID=1](#removing-a-product-with-id1)
     *   [Removing all products](#removing-all-products)
+    *   [Creating a shipping zone](#creating-a-shipping-zone)
+    *   [Getting shipping zones info ](#getting-shipping-zones-info)
+    *   [Creating a shipping method](#creating-a-shipping-method)
+    *   [Getting shipping methods info](#getting-shipping-methods-info)
+    *   [Creating a shipping rate](#creating-a-shipping-rate)
+    *   [Updating an existing shipping rate](#updating-an-existing-shipping-rate)
 
 # Installing and configuring REST API
 
