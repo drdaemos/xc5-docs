@@ -20,6 +20,7 @@ module Jekyll
       if host == nil ||index == nil || type == nil
         raise "argument error"
       end
+
       @es = Elasticsearch::Client.new hosts: "#{host}", log: false, reload_on_failure: true
       @index = index
       @type = type
@@ -161,7 +162,6 @@ module Jekyll
     safe true
 
     def generate(site)
-      return true
       #config
       es_config = site.config['elasticsearch']
       unless es_config
@@ -184,12 +184,17 @@ module Jekyll
       end
 
       # if db is not exists, create one.
-      unless es.type_exists
-        es.create_index
-        # wait index created
-        sleep 2
+      begin
+        unless es.type_exists
+          es.create_index
+          # wait index created
+          sleep 2
+        end
+      rescue Exception => e
+        puts 'Skipping Elasticsearch update because: ' + e.message
+        return
       end
-
+ 
       now = Time.now
       site.pages.reverse.each_with_index do |page, i|
         if page.data.fetch('title', nil)
