@@ -7,9 +7,12 @@
   <title>{% if page.title %}{{ page.title | escape | append: ' - ' | append: site.title }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 300 }}{% else %}{{ site.description }}{% endif %}">
 
+  <link rel="shortcut icon" href="http://img6.xcart.com/sites/all/themes/xcartcom2/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="apple-touch-icon" href="//www.x-cart.com/apple-touch-icon.png">
   <link rel="stylesheet" href="{{ "/css/semantic.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.3/css/fluidbox.min.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
 </head>
