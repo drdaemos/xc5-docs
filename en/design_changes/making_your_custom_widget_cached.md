@@ -4,8 +4,10 @@ updated_at: 2014-12-03 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Making your custom widget cached'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Outdated
 
 ---
 

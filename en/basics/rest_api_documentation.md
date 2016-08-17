@@ -778,6 +778,143 @@ $client = \RESTAPIClient::factory($storeUrl, $restApiKey);
 $result = $client->delete('product')->json();
 ```
 
+## Creating a shipping zone
+
+Direct request:
+
+```
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=zone&_method=post&model[0][zone_name]=ZONE&model[0][zone_elements][0][element_value]=US&model[0][zone_elements][0][element_type]=C&model[0][zone_elements][1][element_value]=US_NY&model[0][zone_elements][1][element_type]=S&model[0][zone_elements][2][element_value]=10001&model[0][zone_elements][2][element_type]=Z
+```
+
+Example result: 
+
+```
+array (size=5)
+ 'target' => string 'RESTAPI' (length=7)
+  '_key' => string 'KEY' (length=3)
+  '_path' => string 'zone' (length=4)
+  '_method' => string 'post' (length=4)
+  'model' => 
+    array (size=1)
+      0 => 
+        array (size=2)
+          'zone_name' => string 'ZONE' (length=4)
+          'zone_elements' => 
+            array (size=3)
+              0 => 
+                array (size=2)
+                  'element_value' => string 'US' (length=2)
+                  'element_type' => string 'C' (length=1)
+              1 => 
+                array (size=2)
+                  'element_value' => string 'US_NY' (length=5)
+                  'element_type' => string 'S' (length=1)
+              2 => 
+                array (size=2)
+                  'element_value' => string '10001' (length=5)
+                  'element_type' => string 'Z' (length=1)
+```
+
+## Getting shipping zones info 
+
+Direct request:
+
+```
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=zone
+```
+
+## Creating a shipping method
+
+Direct request:
+
+```
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-method&_method=post&model[0][translations][0][name]=SHIPPING&model[0][processor]=offline&model[0][tableType]=S&model[0][added]=1&model[0][enabled]=1
+```
+
+Example result: 
+
+```
+array (size=5)
+ 'target' => string 'RESTAPI' (length=7)
+  '_key' => string 'KEY' (length=3)
+  '_path' => string 'shipping-method' (length=15)
+  '_method' => string 'post' (length=4)
+  'model' => 
+    array (size=1)
+      0 => 
+        array (size=5)
+          'translations' => 
+            array (size=1)
+              0 => 
+                array (size=1)
+                  'name' => string 'SHIPPING' (length=8)
+          'processor' => string 'offline' (length=7)
+          'tableType' => string 'S' (length=1)
+          'added' => string '1' (length=1)
+          'enabled' => string '1' (length=1)
+```
+
+## Getting shipping methods info
+
+Direct request:
+
+```
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-method
+```
+
+## Creating a shipping rate
+
+Direct request:
+
+```
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-markup&_method=post&model[0][zone][zone_id]=9&model[0][shipping_method][method_id]=135&model[0][markup_per_weight]=7
+```
+
+Example result: 
+
+```
+array (size=5)
+  'target' => string 'RESTAPI' (length=7)
+  '_key' => string 'KEY' (length=3)
+  '_path' => string 'shipping-markup' (length=15)
+  '_method' => string 'post' (length=4)
+  'model' => 
+    array (size=1)
+      0 => 
+        array (size=3)
+          'zone' => 
+            array (size=1)
+              'zone_id' => string '9' (length=1)
+          'shipping_method' => 
+            array (size=1)
+              'method_id' => string '135' (length=3)
+          'markup_per_weight' => string '7' (length=1)
+```
+
+## Updating an existing shipping rate
+
+Direct request:
+
+```
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-markup&_method=put&model[0][markup_id]=9&model[0][markup_per_weight]=77
+```
+
+Example result: 
+
+```
+array (size=5)
+  'target' => string 'RESTAPI' (length=7)
+  '_key' => string 'KEY' (length=3)
+  '_path' => string 'shipping-markup' (length=15)
+  '_method' => string 'put' (length=3)
+  'model' => 
+    array (size=1)
+      0 => 
+        array (size=2)
+          'markup_id' => string '9' (length=1)
+          'markup_per_weight' => string '77' (length=2)
+```
+
 ## Attachments:
 
 * [Tony-RESTExtension-v5_2_0.tar]({{site.baseurl}}/attachments/3768321/8718940.tar) (application/x-tar)

@@ -6,9 +6,10 @@ lang: en
 title: 'Making one module depend on another one -- creating a menu in the customer area'
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
-
 
 # Introduction
 

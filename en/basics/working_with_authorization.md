@@ -6,6 +6,7 @@ lang: en
 title: 'Working with authorization'
 categories:
   - Developer docs
+  - Demo script
 
 ---
 

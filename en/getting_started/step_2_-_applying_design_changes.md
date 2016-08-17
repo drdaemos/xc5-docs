@@ -5,6 +5,7 @@ layout: article_with_sidebar
 lang: en
 title: 'Step 2 - applying design changes'
 version: X-Cart 5.2.16 and earlier
+order: 200
 categories:
   - Developer docs
   - Demo module

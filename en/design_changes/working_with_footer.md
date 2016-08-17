@@ -4,8 +4,11 @@ updated_at: 2014-12-24 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Working with footer'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 

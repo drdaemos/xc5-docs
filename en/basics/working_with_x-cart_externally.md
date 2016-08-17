@@ -6,6 +6,7 @@ lang: en
 title: 'Working with X-Cart externally'
 categories:
   - Developer docs
+  - Demo script
 
 ---
 

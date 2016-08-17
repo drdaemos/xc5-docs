@@ -4,8 +4,11 @@ updated_at: 2014-12-01 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding CSS and JS files for Mobile Skin'
+version: X-Cart 5.1.x
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
 

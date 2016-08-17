@@ -53,10 +53,15 @@ HTML
         site      = context.registers[:site]
 
         content = super
+        first_char = content.index(/\S/m)
+        leading_space = content.slice(0, first_char)
+        content.strip!
         # content = converter.convert(content)
 
         return <<-HTML
-<div data-tab="#{@tabindex}" class="ui bottom attached tab segment" markdown="1">#{content}</div>
+#{leading_space}<div data-tab="#{@tabindex}" class="ui bottom attached tab segment" markdown="span">
+#{content}
+</div>
 HTML
       end
     end
@@ -68,7 +73,7 @@ HTML
         Jekyll::MarkupPlugin.tabs = Array.new
       end
       def render(context)
-        content = super.strip
+        content = super
 
         tabitems = Jekyll::MarkupPlugin.tabs.map { |tab|
           "<a class='item' data-tab='#{tab[:index]}'>#{tab[:title]}</a>"
@@ -76,10 +81,8 @@ HTML
 
 
         markup = <<-HTML
-<div class="tab-section">
 <div class="ui top attached tabular menu">#{tabitems}</div>
 #{content}
-</div>
 HTML
 
         markup.each_line {|s| puts s}

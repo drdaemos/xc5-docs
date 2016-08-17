@@ -4,11 +4,13 @@ updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Working with product attributes'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Demo module
+  - Outdated
 
 ---
-
 
 # Introduction
 
@@ -86,9 +88,3 @@ That is it. Now we need to re-deploy the store and check the results in storefro
 # Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-AttributeDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-AttributeDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [hidden-value-attribute-admin.png]({{site.baseurl}}/attachments/8225478/8356216.png) (image/png)
-* [hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356217.png) (image/png)
-* [no-hidden-value-customer.png]({{site.baseurl}}/attachments/8225478/8356218.png) (image/png)

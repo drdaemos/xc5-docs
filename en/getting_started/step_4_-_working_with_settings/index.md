@@ -4,6 +4,7 @@ updated_at: 2015-01-05 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Step 4 - working with settings'
+order: 400
 categories:
   - Developer docs
   - Demo module

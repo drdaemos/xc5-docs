@@ -6,9 +6,10 @@ lang: en
 title: 'Understanding Models'
 categories:
   - Developer docs
+  - Demo module
+  - Demo script
 
 ---
-
 
 # Introduction
 
@@ -52,6 +53,38 @@ class TestEntity extends \XLite\Model\AEntity
      * @Column (type="text")
      */
     protected $text;
+
+    /**
+     * Returns id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set text
+     *
+     * @param string $value Value
+     *
+     * @return void
+     */
+    public function setText($value)
+    {
+        $this->text = $value;
+    }
+
+    /**
+     * Returns text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
 }
 ```
 
@@ -84,12 +117,12 @@ Let us have a closer look at what we are doing here:
 4.  Our **TestEntity** has two properties. First is `$id` that is unique identifier of TestEntity in the database: 
 
     ```php
-        /**
-         * @Id
-         * @GeneratedValue (strategy="AUTO")
-         * @Column         (type="integer")
-         */
-    	protected $id; 
+    /**
+     * @Id
+     * @GeneratedValue (strategy="AUTO")
+     * @Column         (type="integer")
+     */
+	protected $id; 
     ```
 
     That is why we mark this property with `@Id` tag. We also specify that it has in an **integer** type and its value must be **automatically** **generated** upon creating a new object.
@@ -97,15 +130,51 @@ Let us have a closer look at what we are doing here:
 5.  The second property is `$text` that must have **TEXT** MySQL type: 
 
     ```php
-        /**
-         * @Column (type="text")
-         */
-        protected $text;
+    /**
+     * @Column (type="text")
+     */
+    protected $text;
     ```
+
+6.  Last step is to generate getters/setters for the properties:
+
+    ```php
+        /**
+     * Set text
+     *
+     * @param string $value Value
+     *
+     * @return void
+     */
+    public function setText($value)
+    {
+        $this->text = $value;
+    }
+
+    /**
+     * Returns text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+    ```
+
+    {% note info %}
+    If you develop under X-Cart 5.2.x and earlier, during rebuild process X-Cart will create **getter** and **setter** methods for properties automatically. In `<X-Cart>/var/run/classes/` folder, our class will be appended with `getId()`, `getText()` and `setText()` methods. `setId()` method will not be created, because X-Cart knows that this field is an ID and cannot be altered at all.
+    {% endnote %}
+
+    {% note warning %}
+    X-Cart 5.3.x doesn't generate getters/setters automatically, so you have to write them yourself or generate with IDE. You can also use `.dev/scripts/doctrine-generate-entities.php` script which will modify all files in `classes/` directory and add missing getters\setters. 
+
+    This reason for disabling automatic generation is to maintain more standard PHP code, fix errors about missing symbols in IDE, enable autocomplete for that methods. Also, it is the good practice to have only getters/setters which are used in actual code to provide strict incapsulation of a class.
+    {% endnote %}
 
 We are done with creating an entity class.
 
-When we re-deploy the store X-Cart will create `xc_test_entities` table with needed columns itself, we do not have to worry about it. Also, as you may have noticed TestEntity's properties are declared as **protected**, so they are not visible outside of an object, however X-Cart will create **getter** and **setter** methods for them automatically. In `<X-Cart>/var/run/classes/` folder, our class will be append with `getId()`, `getText()` and `setText()` methods. `setId()` method will not be created, because X-Cart knows that this field is an ID and cannot be altered at all.
+When we re-deploy the store X-Cart will create `xc_test_entities` table with needed columns itself, we do not have to worry about it. 
 
 Now, we create the `test.php` script in X-Cart's root and start experimenting with our **TestEntity** class. Here is a content of the `test.php` file: 
 

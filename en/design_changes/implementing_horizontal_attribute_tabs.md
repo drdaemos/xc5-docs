@@ -6,6 +6,7 @@ lang: en
 title: 'Implementing horizontal attribute tabs'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 

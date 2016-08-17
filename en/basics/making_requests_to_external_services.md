@@ -6,6 +6,7 @@ lang: en
 title: 'Making requests to external services'
 categories:
   - Developer docs
+  - Demo script
 
 ---
 

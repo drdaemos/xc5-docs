@@ -1,11 +1,12 @@
 ---
 identifier: ref_PW2oOrvq
-updated_at: 2015-01-19 00:00
+updated_at: 2016-08-17 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Working with sessions'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -60,12 +61,12 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
          */
         protected function getDefaultTemplate()
         {
-            return 'modules/Tony/SessionDemo/page/session_demo/body.tpl';
+            return 'modules/Tony/SessionDemo/page/session_demo/body.twig';
         }
     }
     ```
 
-*   an empty page template `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl`.
+*   an empty page template `<X-Cart>/skins/customer/modules/Tony/SessionDemo/page/session_demo/body.tpl`.
 
 Now we need to check each {% link "request" ref_pvZ8nad3 %} to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our {% link "controller class" ref_hkVaxgds %} `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
 
@@ -138,14 +139,14 @@ class SessionDemo extends \XLite\Controller\Customer\ACustomer
 }
 ```
 
-Now we need to define dynamically generated content of our page and mod will be done. We go to the `<X-Cart>/skins/default/en/``modules/Tony/SessionDemo/page/session_demo/body.tpl` template and define its content as follows: 
+Now we need to define dynamically generated content of our page and mod will be done. We go to the `<X-Cart>/skins/customer/modules/Tony/SessionDemo/page/session_demo/body.twig` template and define its content as follows: 
 
-```php
-{if:getSessionValue()}
-Session value is: {getSessionValue()}
-{else:}
+```twig
+{% if this.getSessionValue() %}
+Session value is: {{ this.getSessionValue() }}
+{% else %}
 Session value has not been specified yet
-{end:}
+{% endif %}
 ```
 
 If `getSessionValue()` returns non-empty value – empty string is considered as an empty value – then we display the **Session value has not been specified yet** message, otherwise we display the message **Session value is: session_value**.

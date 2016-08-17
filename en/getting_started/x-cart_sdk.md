@@ -5,6 +5,7 @@ layout: article_with_sidebar
 lang: en
 title: 'X-Cart SDK'
 version: X-Cart 5.2.16 and earlier
+order: 500
 categories:
   - Developer docs
   - Outdated

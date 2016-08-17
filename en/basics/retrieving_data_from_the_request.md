@@ -10,7 +10,6 @@ categories:
 
 ---
 
-
 # Introduction
 
 This article teaches X-Cart developers how to retrive data from request to end-points. For the sake of example, we will create a mod that will work as follows:
@@ -31,7 +30,7 @@ This article teaches X-Cart developers how to retrive data from request to end-p
 2.  We {% link "create a page" ref_0VgqyxB8 %} with **target=tony** customer area. Eventually, we will have three files in the module:
     - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/Controller/Customer/Tony.php`
     - `<X-Cart>/classes/XLite/Module/Tony/RequestDemo/View/Page/Customer/Tony.php`
-    - `<X-Cart>/skins/default/en/modules/Tony/RequestDemo/page/tony/body.twig`
+    - `<X-Cart>/skins/customer/modules/Tony/RequestDemo/page/tony/body.twig`
 3.  We define the template's content as follows: 
 
     ```php

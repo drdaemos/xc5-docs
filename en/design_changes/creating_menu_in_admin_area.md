@@ -6,6 +6,7 @@ lang: en
 title: 'Creating menu in admin area'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 

@@ -6,6 +6,7 @@ lang: en
 title: 'Working with image resizing routine'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 

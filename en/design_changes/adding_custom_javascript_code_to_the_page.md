@@ -4,8 +4,10 @@ updated_at: 2015-09-25 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding custom JavaScript code to the page'
+version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
+  - Outdated
 
 ---
 
@@ -42,9 +44,4 @@ This example code will be executed only on the **order_list** page in the Admin 
 
 _See also:_
 
-*   {% link "Basic guide to theme creation: Using Custom Skin module" ref_bC2TThPi#Basicguidetothemecreation-UsingCustomSkinmodule %}
-
-## Attachments:
-
-* [X Cart online store builder Installed Modules.png]({{site.baseurl}}/attachments/8750664/8719407.png) (image/png)
-* [X Cart online store builder Look Feel.png]({{site.baseurl}}/attachments/8750664/8719408.png) (image/png)
+*   {% link "Basic guide to theme creation: Using Custom Skin module" ref_bC2TThPi#using-custom-skin-module %}

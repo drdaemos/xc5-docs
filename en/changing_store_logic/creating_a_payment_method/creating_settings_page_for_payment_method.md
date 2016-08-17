@@ -267,6 +267,8 @@ Here we see the `isTestMode()` method in action.
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-PaymentFormDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-PaymentFormDemo-v5_1_0.tar)
 
+Module example (with the settings page) for X-Cart v5.2.x: [Tony-PaymentDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225448/9439206.tar)
+
 ## Attachments:
 
 * [demo-payment-unconfigured.png]({{site.baseurl}}/attachments/8225462/8356214.png) (image/png)

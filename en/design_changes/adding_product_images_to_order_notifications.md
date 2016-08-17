@@ -6,6 +6,7 @@ lang: en
 title: 'Adding product images to order notifications'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 

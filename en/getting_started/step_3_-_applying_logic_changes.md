@@ -4,8 +4,10 @@ updated_at: 2015-01-13 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Step 3 - applying logic changes'
+order: 300
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -124,20 +126,20 @@ Here is how we can achieve it:
     _Note: decorating class must always be abstract, no matter what class it decorates._
 
 6.  ```php
-        protected function isQuickLookEnabled()
-        {
-            return false;
-        }
+    protected function isQuickLookEnabled()
+    {
+        return false;
+    }
     ```
 
     Our implementation of the `isQuickLookEnabled()` method. Quite often, you want to keep existing functionality and just extend it with your own routines. In this case, you can decorate certain methods like this: 
 
     ```php
-        protected function isQuickLookEnabled()
-        {
-        	myMethod();
-            return parent::isQuickLookEnabled();
-        }
+    protected function isQuickLookEnabled()
+    {
+    	myMethod();
+        return parent::isQuickLookEnabled();
+    }
     ```
 
     In other words, you may want to call **parent** class in order to keep existing functionality in place.

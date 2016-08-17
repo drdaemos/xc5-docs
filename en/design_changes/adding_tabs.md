@@ -6,6 +6,7 @@ lang: en
 title: 'Adding tabs'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -54,7 +55,7 @@ abstract class Product extends \XLite\Controller\Admin\Product implements \XLite
     {
         $list = parent::getPageTemplates();
 
-        $list['custom_tab'] = 'modules/Tony/ProductTabDemo/tab/custom_tab.tpl';
+        $list['custom_tab'] = 'modules/Tony/ProductTabDemo/tab/custom_tab.twig';
 
         return $list;
     }
@@ -64,9 +65,9 @@ abstract class Product extends \XLite\Controller\Admin\Product implements \XLite
 First, we add a new element to an array returned by the `getPages()` method. This element has key as **custom_tab **– this means that this tab will be accessed by
 `admin.php?target=product&product_id=5&**page=custom_tab**` URL – and value as **My Custom Tab** – this text will be displayed on the tab.
 
-Next, we need to add a new element to an array returned by the `getPageTemplates()` method. The key of this new element is the same: **custom_tab**, value of this element is a template that defines a look of the tab section. In our case, this template will be `<X-Cart>/skins/admin/en/modules/Tony/ProductTabDemo/tab/custom_tab.tpl`.
+Next, we need to add a new element to an array returned by the `getPageTemplates()` method. The key of this new element is the same: **custom_tab**, value of this element is a template that defines a look of the tab section. In our case, this template will be `<X-Cart>/skins/admin/modules/Tony/ProductTabDemo/tab/custom_tab.twig`.
 
-Since this template does not exist yet, we need to create it. We create the `<X-Cart>/skins/admin/en/modules/Tony/ProductTabDemo/tab/custom_tab.tpl` file and define its content as **Hello world!**. Of course, you can define this template as containing some form or widget.
+Since this template does not exist yet, we need to create it. We create the `<X-Cart>/skins/admin/modules/Tony/ProductTabDemo/tab/custom_tab.twig` file and define its content as **Hello world!**. Of course, you can define this template as containing some form or widget.
 
 That is it with this mod. Now we need to re-deploy the store and check the results on any product details page, e.g. `admin.php?target=product&product_id=5&page=custom_tab`. It should look as follows: ![]({{site.baseurl}}/attachments/8225436/8356202.png)
 

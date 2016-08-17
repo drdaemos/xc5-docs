@@ -13,6 +13,7 @@ keywords:
   - entities
 categories:
   - Developer docs
+  - Demo module
 
 ---
 

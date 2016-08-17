@@ -6,6 +6,7 @@ lang: en
 title: 'How to find out what page is currently running'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -82,14 +83,28 @@ Let us have a closer look at this class implementation:
      */
     ```
 
-2.  `getDefaultTemplate()` method defines that our viewer class will use `<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` template in order to output the result:
+2.  `getDefaultTemplate()` method defines that our viewer class will use `<X-Cart>/skins/customer/modules/Tony/ControllerDetectionDemo/text.twig` (`<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` in X-Cart 5.2.x) template in order to output the result:
 
+    <div class="ui top attached tabular menu">
+        <a class='item' data-tab='tab-1'>5.2.x and earlier</a>
+        <a class='item active' data-tab='tab-2'>5.3.x</a>
+    </div>
+    <div data-tab="tab-1" class="ui bottom attached tab segment" markdown="1">
     ```php
-    	public function getDefaultTemplate() 
-    	{
-    		return 'modules/Tony/ControllerDetectionDemo/text.tpl';
-    	}
+	public function getDefaultTemplate() 
+	{
+		return 'modules/Tony/ControllerDetectionDemo/text.tpl';
+	}
     ```
+    </div>
+    <div data-tab="tab-2" class="ui bottom attached active tab segment" markdown="1">
+    ```php
+    public function getDefaultTemplate() 
+    {
+        return 'modules/Tony/ControllerDetectionDemo/text.twig';
+    }
+    ```
+    </div>
 
 3.  `getAllowedTargets()` method tells X-Cart that this widget must be displayed on home, category and checkout pages only:
 
@@ -127,12 +142,22 @@ Let us have a closer look at this class implementation:
 
     As you can see, we analyze the **controller** that is fetched by calling `\XLite::getController()` method.
 
-Now, it is time to create a template defined in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` template with the following content: 
+Now, it is time to create a template defined in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/customer/modules/Tony/ControllerDetectionDemo/text.twig` (`<X-Cart>/skins/default/en/modules/Tony/ControllerDetectionDemo/text.tpl` in X-Cart 5.2) template with the following content: 
 
+<div class="ui top attached tabular menu">
+    <a class='item' data-tab='tab-3'>5.2.x and earlier</a>
+    <a class='item active' data-tab='tab-4'>5.3.x</a>
+</div>
+<div data-tab="tab-3" class="ui bottom attached tab segment" markdown="1">
 ```php
 <div>{getOurText()}</div>
-
 ```
+</div>
+<div data-tab="tab-4" class="ui bottom attached active tab segment" markdown="1">
+```php
+<div>{{ this.getOurText() }}</div>
+```
+</div>
 
 We call our `getOurText()` method that will analyze current controller class and define a message for a customer.
 
@@ -143,7 +168,3 @@ Now, we need to re-deploy the store and check the results in customer store-fron
 # Module pack
 
 You can download this module pack from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ControllerDetectionDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ControllerDetectionDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [this-is-checkout-page.png]({{site.baseurl}}/attachments/524292/8356147.png) (image/png)

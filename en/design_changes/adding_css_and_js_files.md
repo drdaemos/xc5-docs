@@ -31,13 +31,11 @@ public function getCSSFiles()
 }
 ```
 
-LESS resource usage
-
-Icon
-
+{% note info %}
 You can also use the less resources along with the CSS ones. The LESS resources will be compiled into CSS. However you can merge your LESS resource with another one using `**'merge'**` parameter. It must contain the file path to the parent LESS file, in this case the resources will be linked into one LESS file with the **`'@import'`** LESS instruction.
 
 Please note that right now only one parent is supported, so you cannot link the resources in LESS chain. The best practice is to merge LESS resources with `'bootstrap/css/bootstrap.less'` file.
+{% endnote %}
 
 **LESS example**
 ```php
@@ -74,13 +72,14 @@ public function getJSFiles()
 	);
 }
 ```
-Icon
 
+{% note danger %}
 You shouldn't add the widget as a list child of `**'body'**` view list because it won't have its CSS and JS resources loaded that way.
 
 That happens because resources container is a list child of 'body' view list itself, and in such case your widget will be added later.
 
 Use `**'layout.main'**` or `**'layout.footer'**` instead. Also, you can use another method to load your resources, which is described in the following section.
+{% endnote %}
 
 There is an alternative way to add a new JS/CSS file to the layout and it requires you to decorate `\XLite\View\AView` class in your module.
 

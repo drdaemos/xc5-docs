@@ -6,6 +6,7 @@ lang: en
 title: 'Forcing product quantity while adding to cart'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 

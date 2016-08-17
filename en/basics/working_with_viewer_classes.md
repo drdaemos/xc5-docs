@@ -6,6 +6,7 @@ lang: en
 title: 'Working with viewer classes'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
@@ -46,7 +47,7 @@ For the sake of example, I will show how to insert <u>Hello world on {the curre
     {
     	protected function getDefaultTemplate()
     	{
-    		return 'modules/Tony/ViewerDemo/mycode.tpl';
+    		return 'modules/Tony/ViewerDemo/mycode.twig';
     	}
     	protected function getWeekDay()
     	{
@@ -61,10 +62,10 @@ For the sake of example, I will show how to insert <u>Hello world on {the curre
     `- class MyCode extends \XLite\View\AView` – definition of viewer class. It must extend` \XLite\View\AView` class or its child. Name of class must be the same of the filename it contains. E.g. `MyCode.php` file contains definition of MyCode class;
     `-` function `getDefaultTemplate()` defines what template is responsible for display of our custom code;
     `-` function `getWeekDay()` defines the dynamic portion of our HTML code being displayed; this is the method we are going to call from template.
-5.  PHP part of our mod is over. Now we need to create a template defined in the `getDefaultTemplate()` method. I am creating `skins/admin/en/modules``/Tony/ViewerDemo/mycode.tpl` template with the following content: 
+5.  PHP part of our mod is over. Now we need to create a template defined in the `getDefaultTemplate()` method. I am creating `skins/admin/modules/Tony/ViewerDemo/mycode.twig` template with the following content: 
 
-    ```php
-    <div class="custom-code">Hello world on {getWeekDay()}!</div>
+    ```twig
+    <div class="custom-code">Hello world on {{ this.getWeekDay() }}!</div>
     ```
 
 6.  As you can see, the code of the template does not contain definition of view list, because it was assigned in the viewer class. Instead, the template contains the plain part as usual text (Hello world) and dynamic part as calls of function (`{getWeekDay()}`).
@@ -74,9 +75,3 @@ For the sake of example, I will show how to insert <u>Hello world on {the curre
 # Module example
 
 You can download the module pack here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ViewerDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ViewerDemo-v5_1_0.tar)
-
-## Attachments:
-
-* [enable-clean-urls-button.png]({{site.baseurl}}/attachments/8224836/8355894.png) (image/png)
-* [custom-html-code-via-viewer-2.png]({{site.baseurl}}/attachments/8224836/8355895.png) (image/png)
-* [custom-html-via-viewer.png]({{site.baseurl}}/attachments/8224836/8355896.png) (image/png)

@@ -6,6 +6,7 @@ lang: en
 title: 'Adding third column'
 categories:
   - Developer docs
+  - Demo module
 
 ---
 
