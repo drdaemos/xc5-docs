@@ -33,6 +33,7 @@ elasticsearch:
     js_pass: "53cr37p4"
     index: "knowledgebase"
     type: "articles"
+    analyzer: "english"
 
 gems:
   - jekyll-redirect-from

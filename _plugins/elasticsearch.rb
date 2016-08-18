@@ -5,7 +5,7 @@
 # See readme file for documenation
 #
 # Author: Junichiro Takagi, Eugene Dementjev
-# Version: 0.1.4
+# Version: 0.2.0
 
 require 'elasticsearch'
 require 'oj'
@@ -70,6 +70,7 @@ module Jekyll
         "page_date" => { "type" => "date", "include_in_all" => false, "store" => true },
         "es_update_date" => { "type" => "date", "include_in_all" => false, "store" => true },
         "url" => { "type" => "string", "include_in_all" => false, "store" => true },
+        "categories" => { "type" => "string", "store" => true, "index" => "not_analyzed", "include_in_all" => false },
         "title" => title,
         "content" => content,
         "keywords" => keywords }
@@ -139,7 +140,9 @@ module Jekyll
 
         analysis = { "filter" => filter, "tokenizer" => tokenizer, "analyzer" => analyzer }
         settings = { "analysis" => analysis }
-      else
+      elsif @analyzer == 'english' || @analyzer == 'standard'
+        return
+      else        
         raise "[elasticsearch plugin]: undefined analyzer #{analyzer}"
       end
     end
@@ -211,6 +214,7 @@ module Jekyll
             "title" => page.data.fetch('title', ''),
             "description" => page.data.fetch('description', ''),
             "keywords" => page.data.fetch('keywords', ''),
+            "categories" => page.data.fetch('categories', ''),
             "url" => "#{site.config['url']}#{page.url}",
             "content" => get_page_content(site, page)
           }
