@@ -7,6 +7,7 @@ title: 'Webinar 1 - 18 Mar 2014 - Developing modules for X-Cart 5'
 version: X-Cart 5.2.x
 categories:
   - Webinars and video tutorials
+  - Outdated
 
 ---
 

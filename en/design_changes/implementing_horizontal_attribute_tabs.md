@@ -4,6 +4,7 @@ updated_at: 2015-01-20 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Implementing horizontal attribute tabs'
+version: X-Cart 5.1.4 - 5.2.16
 categories:
   - Developer docs
   - Demo module

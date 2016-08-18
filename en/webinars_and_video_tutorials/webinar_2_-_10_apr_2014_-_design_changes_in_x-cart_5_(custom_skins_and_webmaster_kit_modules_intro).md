@@ -4,8 +4,10 @@ updated_at: 2015-03-23 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Webinar 2 - 10 Apr 2014 - Design changes in X-Cart 5 (Custom Skins and Webmaster Kit modules intro)'
+version: X-Cart 5.2.x
 categories:
   - Webinars and video tutorials
+  - Outdated
 
 ---
 

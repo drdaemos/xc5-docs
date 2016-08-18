@@ -50,19 +50,44 @@ layout: null
   }
 
   Search.prototype.runAutocompleteQuery = function(query) {
-    return this.client.search({
-      index: this.elasticParams.index,
+    var params = {
+      index: '_all',
       type:  this.elasticParams.type,
       body: {
         query: {
-          multi_match: {
-            query: query,
-            fields: ["title^10", "keywords^5", "description^3", "content"]
+          bool: {
+            should: [
+              {
+                multi_match: {
+                  query: query,
+                  type: "phrase_prefix",
+                  max_expansions: 50,
+                  slop: 2,
+                  fields: ["title^5", "keywords^3", "description^2", "content"]
+                }
+              },
+              {
+                multi_match: {
+                  query: query,
+                  type: "best_fields",
+                  max_expansions: 50,
+                  fields: ["title^5", "keywords^3", "description^2", "content"],
+                  fuzziness: 'AUTO',
+                  minimum_should_match: "60%",
+                  tie_breaker: 0.3
+                }
+              }
+            ]
           }
         },
         fields: ["title", "url"],
+        indices_boost: {}
       }
-    });
+    };
+
+    params.body.indices_boost[this.elasticParams.index] = 10;
+
+    return this.client.search(params);
   }
 
   Search.prototype.runQuery = function() {
@@ -71,17 +96,38 @@ layout: null
     this.elements.queryMessage.text("Results for search query: \"" + this.query.q +"\"");
     this.elements.queryInput.val(this.query.q);
 
-    this.client.search({
-      index: this.elasticParams.index,
+    var params = {
+      index: '_all',
       type:  this.elasticParams.type,
       body: {
         query: {
-          multi_match: {
-            query: this.query.q,
-            fields: ["title^10", "keywords^5", "description^3", "content"]
+          bool: {
+            should: [
+              {
+                multi_match: {
+                  query: query,
+                  type: "phrase_prefix",
+                  max_expansions: 50,
+                  slop: 2,
+                  fields: ["title^5", "keywords^3", "description^2", "content"]
+                }
+              },
+              {
+                multi_match: {
+                  query: query,
+                  type: "best_fields",
+                  max_expansions: 50,
+                  fields: ["title^5", "keywords^3", "description^2", "content"],
+                  fuzziness: 'AUTO',
+                  minimum_should_match: "60%",
+                  tie_breaker: 0.3
+                }
+              }
+            ]
           }
         },
         fields: ["title", "url", "page_date"],
+        indices_boost: {},
         highlight: {
           fields: {
             content: {
@@ -90,7 +136,11 @@ layout: null
           }
         },
       }
-    }).then(this.onSuccess.bind(this), this.onFail.bind(this));
+    };
+
+    params.body.indices_boost[this.elasticParams.index] = 10;
+
+    this.client.search(params).then(this.onSuccess.bind(this), this.onFail.bind(this));
 
   }
 
