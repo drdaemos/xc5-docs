@@ -63,7 +63,7 @@ layout: null
                   type: "phrase_prefix",
                   max_expansions: 50,
                   slop: 2,
-                  fields: ["title^5", "keywords^3", "description^2", "content"]
+                  fields: ["title^4", "keywords^3", "description^2", "content"]
                 }
               },
               {
@@ -71,7 +71,7 @@ layout: null
                   query: query,
                   type: "best_fields",
                   max_expansions: 50,
-                  fields: ["title^5", "keywords^3", "description^2", "content"],
+                  fields: ["title^4", "keywords^3", "description^2", "content"],
                   fuzziness: 'AUTO',
                   minimum_should_match: "60%",
                   tie_breaker: 0.3
@@ -85,7 +85,7 @@ layout: null
       }
     };
 
-    params.body.indices_boost[this.elasticParams.index] = 10;
+    params.body.indices_boost[this.elasticParams.index] = 5;
 
     return this.client.search(params);
   }
@@ -105,19 +105,19 @@ layout: null
             should: [
               {
                 multi_match: {
-                  query: query,
+                  query: this.query.q,
                   type: "phrase_prefix",
                   max_expansions: 50,
                   slop: 2,
-                  fields: ["title^5", "keywords^3", "description^2", "content"]
+                  fields: ["title^4", "keywords^3", "description^2", "content"]
                 }
               },
               {
                 multi_match: {
-                  query: query,
+                  query: this.query.q,
                   type: "best_fields",
                   max_expansions: 50,
-                  fields: ["title^5", "keywords^3", "description^2", "content"],
+                  fields: ["title^4", "keywords^3", "description^2", "content"],
                   fuzziness: 'AUTO',
                   minimum_should_match: "60%",
                   tie_breaker: 0.3
@@ -138,7 +138,7 @@ layout: null
       }
     };
 
-    params.body.indices_boost[this.elasticParams.index] = 10;
+    params.body.indices_boost[this.elasticParams.index] = 5;
 
     this.client.search(params).then(this.onSuccess.bind(this), this.onFail.bind(this));
 
