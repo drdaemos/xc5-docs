@@ -5,7 +5,7 @@
 # See readme file for documenation
 #
 # Author: Junichiro Takagi, Eugene Dementjev
-# Version: 0.2.0
+# Version: 0.2.1
 
 require 'elasticsearch'
 require 'oj'
@@ -71,6 +71,7 @@ module Jekyll
         "es_update_date" => { "type" => "date", "include_in_all" => false, "store" => true },
         "url" => { "type" => "string", "include_in_all" => false, "store" => true },
         "categories" => { "type" => "string", "store" => true, "index" => "not_analyzed", "include_in_all" => false },
+        "version" => { "type" => "string", "store" => true, "index" => "analyzed" },
         "title" => title,
         "content" => content,
         "keywords" => keywords }
@@ -215,6 +216,7 @@ module Jekyll
             "description" => page.data.fetch('description', ''),
             "keywords" => page.data.fetch('keywords', ''),
             "categories" => page.data.fetch('categories', ''),
+            "version" => page.data.fetch('version', ''),
             "url" => "#{site.config['url']}#{page.url}",
             "content" => get_page_content(site, page)
           }
