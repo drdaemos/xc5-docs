@@ -59,7 +59,7 @@ Method 2:
 If you need to implement numerous design changes, handling the task via the **Custom CSS** section in X-Cart Admin may not be as convenient, so you may prefer to do it via the module "Custom Skin". Here are the steps involved to change the category top banner height using the "Custom  Skin" module:  
 
 1.  If you haven't yet done so, install and activate the module "Custom Skin":
-    ![xc5_custom_skin.png]({{site.baseurl}}/attachments/xc5_custom_skin.png?effects=drop-shadow)
+    ![]({{site.baseurl}}/attachments/xc5_custom_skin.png)![xc5_custom_skin.png]({{site.baseurl}}/attachments/xc5_custom_skin.png?effects=drop-shadow)
 
 2.  Create the following custom script in your X-Cart installation:
 
