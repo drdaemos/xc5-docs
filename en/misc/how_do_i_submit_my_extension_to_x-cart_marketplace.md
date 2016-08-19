@@ -18,7 +18,7 @@ This article is aimed to the developers who want to submit their extensions to X
 1.  Send us message at [alliance@x-cart.com](mailto:alliance@x-cart.com) and we will create you a partner account
 2.  Write the module and make sure that it is done according to our standards
 3.  Upload your module to the marketplace and we will review it
-4.  Create your module's page in our marketplace at [http://www.x-cart.com/extensions/addons](http://www.x-cart.com/extensions/addons)
+4.  Create your module's page in our marketplace at [http://market.x-cart.com/addons](http://market.x-cart.com/addons)
 
 This article will explain each step, so you will be confident about what is going to happen.
 
