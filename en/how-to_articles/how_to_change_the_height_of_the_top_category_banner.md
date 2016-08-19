@@ -83,7 +83,7 @@ If you need to implement numerous design changes, handling the task via the **Cu
     }
     ```
 
-3. Create the following CSS file:
+3.  Create the following CSS file:
     
     _skins/custom_skin/customer/category_banner/style.css_
      
