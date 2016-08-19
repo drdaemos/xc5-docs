@@ -11,9 +11,9 @@ keywords:
   - banner height
 ---
 This article provides information about the top category page banner - how it shows in the page layout and how you can adjust its height to fit your category image.
-    ![xc5_category_top_banner.png]({{site.baseurl}}/attachments/xc5_category_top_banner.png)
+    ![xc5_category_top_banner.png]({{site.baseurl}}/attachments/xc5_category_top_banner.png?effects=drop-shadow)
 
-The banner is designed to provide space for an image that is more wide than it is high. For this reason, the height of the banner is set to a fixed value via CSS. For the same reason, an image placed inside the top category banner will stretch to fit the width of the area, not to fit the rectangle (If we stretched the image to fit the rectangle, with some image width to height ratios it would mean blank areas appearing at the sides of the image when the image fits the height of the banner box).
+The banner is designed to provide space for an image that is more wide than it is high. For this reason, the height of the banner is set to a fixed value via CSS. For the same reason, an image placed inside this banner will stretch to fit the width of the area, not to fit the rectangle (If we stretched the image to fit the rectangle, with some image width to height ratios it would mean blank areas appearing at the sides of the image when the image fits the height of the banner box).
 
 If the height of the image you wish to use for a category is more than can fit within the pre-defined default height of the banner box after the image stretches to fit the width, you can adjust the banner height to fit the height of your image (See the Step-by-step guide further down on this page). Note, however, that we do not recommend stretching the top banner height too much, as the banner height needs to be in balance with the rest of the page content: a banner image with a greater height would use more valuable page space, pushing the main content of the category page - the subcategories and products inside the current category - further downward, which may result in higher bounce rate for the site.  
 
@@ -23,7 +23,7 @@ To increase the height of the top banner on the category page, use one of the me
 Method 1:
 
 1.  In your X-Cart store's Admin area, go to the **Look & Feel** section and switch to the **Custom CSS** tab:
-    ![xc5_custom_css_section.png]({{site.baseurl}}/attachments/xc5_custom_css_section.png)
+    ![xc5_custom_css_section.png]({{site.baseurl}}/attachments/xc5_custom_css_section.png?effects=drop-shadow)
 
 2.  In the area for custom CSS, add the following code:
 
@@ -47,7 +47,7 @@ Method 2:
 If you need to implement numerous design changes, handling the task via the **Custom CSS** section in X-Cart Admin may not be as convenient, so you may prefer to do it via the module "Custom Skin". Here are the steps involved:  
 
 1.  Install and activate the module "Custom Skin"
-    ![xc5_custom_skin.png]({{site.baseurl}}/attachments/xc5_custom_skin.png)
+    ![xc5_custom_skin.png]({{site.baseurl}}/attachments/xc5_custom_skin.png?effects=drop-shadow)
 
 
 2.  Create the following custom script in your X-Cart installation:
