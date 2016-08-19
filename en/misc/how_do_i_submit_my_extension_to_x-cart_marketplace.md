@@ -1,12 +1,13 @@
 ---
-identifier: ref_uGQn5pNX
-updated_at: 2014-11-24 00:00
-layout: article_with_sidebar
 lang: en
-title: 'How do I submit my extension to X-Cart marketplace'
+layout: article_with_sidebar
+updated_at: '2014-11-24 00:00'
+identifier: ref_uGQn5pNX
+title: How do I submit my extension to X-Cart marketplace
 categories:
   - Developer docs
-
+published: true
+order: 100
 ---
 
 
@@ -43,11 +44,8 @@ First of all, if you decide to write extensions for X-Cart 5 (theme or module), 
 
 5.  Developer ID you prefer ({% link "learn more about developer ID" ref_G2mlgckf#choosing-identifiers %})
 
-Once you send us this info, we will create you a partner account and you will be able to log into it at [http://my.x-cart.com/](http://my.x-cart.com/) 
+Once you send us this info, we will create you a partner account and you will be able to log into it at [https://market.x-cart.com/admin.php](https://market.x-cart.com/admin.php) 
 
-There you will be able to find a key for your development purposes.
-
-![]({{site.baseurl}}/attachments/7504739/7602839.png)
 
 # Write module
 
@@ -62,9 +60,7 @@ Beside that, we ask to create a demo of your module on any external web-site, so
 
 # Upload module to marketplace
 
-In order to upload your module to the marketplace, please go to your partner account in [http://my.x-cart.com/](http://my.x-cart.com/) and then go to the **Modules** section. There, you will be able to upload module for review using the **Add new module **button as shown on snapshot below.
-
-![]({{site.baseurl}}/attachments/7504739/7602841.png)
+In order to upload your module to the marketplace, please go to your partner account in [https://market.x-cart.com/admin.php](https://market.x-cart.com/admin.php) and then go to the **Catalog/Products** section. There, you will be able to upload module for review using the **Add new product** button.
 
 Once we receive a module, we will review it during a week (usually faster). The main purpose of module review is to check that its code comply to our standards (**Write module** section above). We are not testing the functionality of your module and we do not aim to find bugs in it. This is developer's responsibility, although we will not hide any found bugs from you.
 
@@ -72,7 +68,7 @@ If we find that something must be corrected, you will receive a list of required
 
 # Publish module page on our web-site
 
-Once the module is accepted, it will be available to all X-Cart merchants via built-in marketplace. Besides that we want to create a dedicated page for your module that will contain detailed description, snapshots etc on our web-site: [http://www.x-cart.com/extensions/addons](http://www.x-cart.com/extensions/addons)
+Once the module is accepted, it will be available to all X-Cart merchants via built-in marketplace. Besides that we want to create a dedicated page for your module that will contain detailed description, snapshots etc on our web-site: [http://market.x-cart.com/addons](http://market.x-cart.com/addons)
 
 In order to publish such page, please write us a message [alliance@x-cart.com]( mailto:alliance@x-cart.com) and our marketing manager will discuss this matter with you. Usually, we initiate such process ourselves right after the module is accepted.
 
