@@ -6,7 +6,7 @@ identifier: ref_uGQn5pNX
 title: How do I submit my extension to X-Cart marketplace
 categories:
   - Developer docs
-published: true
+published: false
 order: 100
 ---
 
