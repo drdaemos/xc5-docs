@@ -49,7 +49,6 @@ If you need to implement numerous design changes, handling the task via the **Cu
 1.  Install and activate the module "Custom Skin"
     ![xc5_custom_skin.png]({{site.baseurl}}/attachments/xc5_custom_skin.png?effects=drop-shadow)
 
-
 2.  Create the following custom script in your X-Cart installation:
 
     _classes/XLite/Module/XC/CustomSkin/View/CategoryBanner.php_
