@@ -9,6 +9,7 @@ published: false
 keywords:
   - category banner
   - banner height
+version: X-Cart 5.3.0 and later
 ---
 This article provides information about the top category page banner - how it shows in the page layout and how you can adjust its height to fit your category image.
     ![xc5_category_top_banner.png]({{site.baseurl}}/attachments/xc5_category_top_banner.png?effects=drop-shadow)
