@@ -5,7 +5,7 @@ updated_at: '2016-08-18 17:29 +0400'
 identifier: ref_VkhLV8mx
 title: How to change the height of the top category banner
 order: 100
-published: false
+published: true
 keywords:
   - category banner
   - banner height
