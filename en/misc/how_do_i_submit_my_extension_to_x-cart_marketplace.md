@@ -15,7 +15,7 @@ order: 100
 
 This article is aimed to the developers who want to submit their extensions to X-Cart marketplace. This process is quite straight-forward and takes only 4 steps from your wish to actual publishing of your module.
 
-1.  Send us message at [alliance@x-cart.com](mailto:alliance@x-cart.com) and we will create you a partner account
+1.  Send us message at [alliance@x-cart.com](mailto:alliance@x-cart.com) and we will create you a vendor account
 2.  Write the module and make sure that it is done according to our standards
 3.  Upload your module to the marketplace and we will review it
 4.  Create your module's page in our marketplace at [http://market.x-cart.com/addons](http://market.x-cart.com/addons)
@@ -26,25 +26,19 @@ This article will explain each step, so you will be confident about what is goin
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
-*   [Get partner account](#get-partner-account)
+*   [Get partner account](#get-vendor-account)
 *   [Write module](#write-module)
 *   [Upload module to marketplace](#upload-module-to-marketplace)
 *   [Publish module page on our web-site](#publish-module-page-on-our-web-site)
 
-# Get partner account
+# Get vendor account
 
-First of all, if you decide to write extensions for X-Cart 5 (theme or module), you need to obtain developer NFR license. For that, please send us a message at [alliance@x-cart.com](mailto:alliance@x-cart.com) with the following information:
+First of all, if you decide to write extensions for X-Cart 5 (theme or module), you need to obtain developer NFR license. For that, please send us a message at [partners@x-cart.com](mailto:partners@x-cart.com) with the following information:
 
 1.  What module you are going to write
-2.  Your company name
+2.  Email for your partner account
 
-3.  Your web-site address
-
-4.  Email for your partner account
-
-5.  Developer ID you prefer ({% link "learn more about developer ID" ref_G2mlgckf#choosing-identifiers %})
-
-Once you send us this info, we will create you a partner account and you will be able to log into it at [https://market.x-cart.com/admin.php](https://market.x-cart.com/admin.php) 
+Once you send us this info, we will create you a vendor account and you will be able to log into it at [https://market.x-cart.com/admin.php](https://market.x-cart.com/admin.php) 
 
 
 # Write module
