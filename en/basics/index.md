@@ -17,6 +17,7 @@ The Basics section shows how to achieve typical tasks when you edit your X-Cart 
 *   Understanding what is a {% link "controller" ref_hkVaxgds %}, {% link "model" ref_wmExvPDD %} and {% link "viewer" ref_6dMJsZ63 %} classes in terms of X-Cart;
 *   How to {% link "access data" ref_pvZ8nad3 %} submitted in the request;
 *   Introduction to {% link "Flexy template engine" ref_VcuME8xW %} used in X-Cart;
+*   How to define a {% link "skin module" ref_skinmodule %};
 *   Understanding how to {% link "initialize X-Cart" ref_ogmCiRWZ %} in the external script and then use its functions there;
 *   {% link "Pulling info from X-Cart database" ref_L1zWfWvw %};
 *   How to work with products in customer and admin areas: {% link "adding new property to a product" ref_2bJSTtR3 %}, {% link "showing set of products on a page" ref_MRidEzuz %}, {% link "working with product attributes" ref_cPPwdSA9 %};

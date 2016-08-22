@@ -14,11 +14,12 @@ description: Learn how to make your X-Cart store eye pretty. Discover design pat
 
 The Design changes cover typical tasks for design integrator.
 
-If you have not read anything from previous sections, then you should start with three basic guides:
+If you have not read anything from previous sections, then you should start with these basic guides:
 
 *   {% link "Creating typical design mod" ref_E88KCMDD %};
 *   {% link "Understanding viewer classes in X-Cart" ref_6dMJsZ63 %};
 *   {% link "Basic guide to theme creation" ref_bC2TThPi %}.
+*   {% link "Skin module definition" ref_skinmodule %}.
 
 After that, you will get better understanding of approaching more specific tasks:
 

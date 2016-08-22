@@ -19,6 +19,8 @@ This article aims to teach designers how they can create X-Cart skin using preem
 
 Before you get started, we recommend learning the {% link "basic designer guide" ref_E88KCMDD %} from **Getting started** section.
 
+Also, you might want to read about advanced {% link 'skin module definition' ref_skinmodule %}.
+
 # Table of Contents
 
 *   [Introduction](#introduction)
