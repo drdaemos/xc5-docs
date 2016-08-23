@@ -29,6 +29,10 @@ module Jekyll
           this_dir = this_dir.nil? ? '' : this_dir.join('/')
         end
 
+        puts this_dir.inspect
+        puts @dir.inspect
+        puts @dir.split('/').inspect
+
         parent = @site.pages.find { |page| 
           page.dir == this_dir + '/' and page.name == 'index.md'
         }
