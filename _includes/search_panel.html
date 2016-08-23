@@ -9,6 +9,7 @@
         </div>
     </form>
 </div>
-<div class="search-results">
+<div class="search-results reloading" id="search-results">
+    <div class="ui active inverted dimmer"><div class="ui text loader">{{ site.data.labels['Please wait...'][page.lang] }}</div></div>
     <p class="search-query"></p>
 </div>

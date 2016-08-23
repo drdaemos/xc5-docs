@@ -30,6 +30,10 @@
     en: 'Search'
     ru: 'Искать'
 
+'Please wait...':
+    en: 'Please wait...'
+    ru: 'Пожалуйста, подождите...'
+
 'Navigation':
     en: 'Also in section'
     ru: 'Также в секции'

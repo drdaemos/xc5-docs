@@ -9,6 +9,7 @@ layout: null
     // enable search
       $('.site-search')
         .search({
+          type: 'category',
           apiSettings: {
             responseAsync: function(settings, callback) {
               var queryHash = objectHash(settings.urlData.query);
@@ -16,7 +17,7 @@ layout: null
                 var pages = autocompleteCache[queryHash];
 
                 callback({
-                  success: pages.length > 0,
+                  success: pages !== null,
                   results: pages
                 });
               } else {
@@ -24,17 +25,51 @@ layout: null
                 .then(function(response) {
                   var pages = response.hits.hits.reduce(function(memo, item) {
                     memo.push({
-                      title: item.fields.title[0],
-                      url: item.fields.url[0],
+                      title: _.isArray(item.fields.title) ? item.fields.title[0] : '',
+                      url: _.isArray(item.fields.url) ? item.fields.url[0] : '',
+                      description: _.isArray(item.fields.parent) ? item.fields.parent[0] : '',
+                      index: item._index
                     });
                     return memo;
                   }, []);
 
-                  autocompleteCache[queryHash] = pages;
+                  var preferredIndex = '{{ site.elasticsearch.index }}';
+
+                  if (pages.length > 0) {
+                    var kb_category = {
+                      name: 'found in Knowledge base',
+                      results: pages.filter(function(item) {
+                        return item.index == 'usermanual'
+                      })
+                    };
+                    
+                    var devs_category = {
+                      name: 'found in Developer docs',
+                      results: pages.filter(function(item) {
+                        return item.index == 'knowledgebase'
+                      })
+                    };
+
+                    if (preferredIndex == 'usermanual') {
+                      var categories = {
+                        category1: kb_category,
+                        category2: devs_category
+                      }
+                    } else {
+                      var categories = {
+                        category1: devs_category,
+                        category2: kb_category
+                      }
+                    }      
+                  } else {
+                    var categories = null;
+                  }
+
+                  autocompleteCache[queryHash] = categories;
 
                   callback({
-                    success: pages.length > 0,
-                    results: pages
+                    success: categories !== null,
+                    results: categories
                   });
                 });
               }
@@ -43,6 +78,7 @@ layout: null
           fields: {
             title   : 'title',
             url     : 'url',
+            description: 'description'
           },
           minCharacters : 3
         });

@@ -18,6 +18,27 @@ module Jekyll
   class Page
     include Comparable
 
+    attr_accessor :parent_title
+
+    def get_parent()
+      if self.parent_title.nil? then
+        if @name != 'index.md' then
+          this_dir = @dir
+        else
+          this_dir = @dir.split('/').slice(0..-2)
+          this_dir = this_dir.nil? ? '' : this_dir.join('/')
+        end
+
+        parent = @site.pages.find { |page| 
+          page.dir == this_dir + '/' and page.name == 'index.md'
+        }
+
+        self.parent_title = parent.nil? ? '' : parent.data.fetch('title', '')
+      end
+
+      return self.parent_title
+    end
+
     def try_compare_by(field, other, default)
       ours = self.data.fetch(field, default)
       theirs = other.data.fetch(field, default)

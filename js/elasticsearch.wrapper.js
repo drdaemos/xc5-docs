@@ -40,11 +40,39 @@ layout: null
     type: '{{ site.elasticsearch.type }}'
   }
 
+  Search.prototype.startAnimation = function() {
+    if (this.elements.resultsContainer.length) {
+      this.inProgress = true;
+      this.elements.resultsContainer.addClass('reloading');
+    }
+  }
+
+  Search.prototype.endAnimation = function() {
+    if (this.elements.resultsContainer.length) {
+      this.inProgress = false;
+      this.elements.resultsContainer.removeClass('reloading');
+    }
+  }
+
+  Search.prototype.toggleAnimation = function() {
+    if (this.inProgress) {
+      this.endAnimation();
+    } else {
+      this.startAnimation();
+    }
+  }
+
   Search.prototype.renderRow = function(page) {
+    var date = moment(page.date);
+    var index = page.index === 'usermanual' ? 'Knowledge base' : 'Developer docs';
+    var date_string = date.isValid() ? '<div class="extra"><i class="icon calendar"></i> ' + date.format('D MMMM Y') + '</div>' : '';
+    var meta = page.parent ? '<div class="meta">' + index + ' | ' + page.parent + '</div>' : '';
     return '<div class="item search-result-item">' +
       '<div class="content">' +
         '<a class="header" href="' + page.url + '">' + page.title + '</a>' +
+        meta +
         '<div class="description">' + page.highlight + '</div>' +
+        date_string +
       '</div>' +
     '</div>';
   }
@@ -80,7 +108,8 @@ layout: null
             ]
           }
         },
-        fields: ["title", "url"],
+        fields: ["title", "url", "page_date"],
+        fielddata_fields : ["version", "parent"],
         indices_boost: {}
       }
     };
@@ -93,6 +122,7 @@ layout: null
   Search.prototype.runQuery = function() {
     var self = this;
     // write message
+    this.startAnimation();
     this.elements.queryMessage.text("Results for search query: \"" + this.query.q +"\"");
     this.elements.queryInput.val(this.query.q);
 
@@ -127,6 +157,7 @@ layout: null
           }
         },
         fields: ["title", "url", "page_date"],
+        fielddata_fields : ["version", "parent"],
         indices_boost: {},
         highlight: {
           fields: {
@@ -153,11 +184,14 @@ layout: null
         var title = hits[i].fields.title[0];
         var url = hits[i].fields.url[0];
         var date = hits[i].fields.page_date[0];
+        var parent = _.isArray(hits[i].fields.parent) ? hits[i].fields.parent[0] : '';
         var highlight = _.isUndefined(hits[i].highlight) ? '' : hits[i].highlight.content[0];
         var page = {
           title: title,
+          index: hits[i]._index,
           url:   url,
           date:  date,
+          parent: parent,
           highlight: _.unescape(highlight)
         };
         pages.push(page);
@@ -167,11 +201,13 @@ layout: null
     } catch (e) {
       console.error(e.message);
     }
+    this.endAnimation();
   }
 
   Search.prototype.onFail = function (err) {
     console.trace(err.message);
     this.renderError();
+    this.endAnimation();
   }
 
   Search.prototype.getQueryParams = function (qs) {
@@ -188,7 +224,7 @@ layout: null
 
   Search.prototype.renderResult = function (pages) {
     if (pages.length == 0) {
-      this.elements.resultsContainer.append("No results were found.");
+      this.elements.resultsContainer.append("<p class='search-no-results'>Oops, no results were found</p>");
     } else {
       var str = "<section class='ui very relaxed items search-results-list'>";
       for (var i = 0; i < pages.length; i++) {
