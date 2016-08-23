@@ -191,6 +191,9 @@ module Jekyll
       # if db is not exists, create one.
       begin
         unless es.type_exists
+          es.delete_index
+          sleep 5
+          
           es.create_index
           # wait index created
           sleep 2
