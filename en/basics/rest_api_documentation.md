@@ -1,18 +1,20 @@
 ---
 identifier: ref_RSR29iWL
-updated_at: 2016-08-15 00:00
+updated_at: 2016-08-24 00:00
 layout: article_with_sidebar
 lang: en
 title: 'REST API documentation'
 order: 10
-categories:
-  - API
 
 ---
 
 # Introduction
 
 If you want to exchange data with X-Cart through an external script, [REST API](http://en.wikipedia.org/wiki/Representational_state_transfer) is the way to go. This article explains how you can use X-Cart's REST API.
+
+{% note warning %}
+Please note that X-Cart models and their API change over time, so some example requests might not be compatible with your X-Cart store. This guide is based on **X-Cart 5.3.1 API**.
+{% endnote %}
 
 # Table of Contents
 
@@ -145,7 +147,7 @@ Model as a query param looks like this (this is a _product_ entity):
 ```php
 &model[sku]=sweatshirt  		  			// defining product data
 &model[price]=10.00
-&model[inventory][amount]=100     			// Inventory is linked model, that is why we use 2 dimensional array
+&model[amount]=100     			
 &model[translations][0][code]=en  			// Name is a part of translations model that is why we are using 2 dimensional array as well
 &model[translations][0][name]=sweatshirt
 ```
@@ -320,7 +322,7 @@ foreach ($products as $product) {
 	echo 'SKU: ' . $product['sku'] . PHP_EOL;
 	echo 'Title: ' . $extendedProductInfo['translations'][0]['name'] . PHP_EOL;
 	echo 'Description: ' . $extendedProductInfo['translations'][0]['description'] . PHP_EOL;
-	echo 'Quantity: ' . $extendedProductInfo['inventory']['amount'] . PHP_EOL;
+	echo 'Quantity: ' . $extendedProductInfo['amount'] . PHP_EOL;
 	echo 'Price: ' . $product['price'] . PHP_EOL;
 }
 ```
@@ -582,7 +584,7 @@ Such a request will create a product and then return the same product info in JS
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product/0&_method=post&model[sku]=sweatshirt&model[price]=10.00&model[inventory][amount]=100&model[translations][0][code]=en&model[translations][0][name]=sweatshirt
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product/0&_method=post&model[sku]=sweatshirt&model[price]=10.00&model[amount]=100&model[translations][0][code]=en&model[translations][0][name]=sweatshirt
 ```
 
 Explanation of this request:
@@ -592,7 +594,7 @@ http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product/0
 &_method=post           // we use POST method for creating products and we specify _path as product/0, where /0 tells X-Cart that new entity is being created
 &model[sku]=sweatshirt  // defining product data
 &model[price]=10.00
-&model[inventory][amount]=100     // Inventory is linked model, that is why we use 2 dimensional array
+&model[amount]=100     
 &model[translations][0][code]=en  // Name is a part of translations model that is why we are using 2 dimensional array as well
 &model[translations][0][name]=sweatshirt
 ```
@@ -605,8 +607,8 @@ $client = \RESTAPIClient::factory($storeUrl, $restApiKey);
 // preparing product data
 $product = array(
 	'sku'	=> 'sweatshirt',
-	'price' =>  10.00,
-	'inventory' => array ('amount' => 100),
+	'price' => 10.00,
+	'amount' => 100,
 	'translations' => array (
 			array(
 				'code' => 'en',
@@ -626,7 +628,7 @@ Such a request will create a product and then return the same product info in JS
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_method=post&model[0][sku]=red-apple&model[0][price]=5.00&model[0][inventory][amount]=100&model[0][translations][0][code]=en&model[0][translations][0][name]=Red%20apple&model[1][sku]=green-apple&model[1][price]=5.00&model[1][inventory][amount]=100&model[1][translations][1][code]=en&model[1][translations][0][name]=Green%20apple
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_method=post&model[0][sku]=red-apple&model[0][price]=5.00&model[0][amount]=100&model[0][translations][0][code]=en&model[0][translations][0][name]=Red%20apple&model[1][sku]=green-apple&model[1][price]=5.00&model[1][amount]=100&model[1][translations][1][code]=en&model[1][translations][0][name]=Green%20apple
 ```
 
 With REST API Client:
@@ -639,9 +641,7 @@ $products = array(
 	array (
 		'sku' => 'red-apple',
 		'price' => 5.00,
-		'inventory' => array(
-			'amount' => 100,
-			),
+		'amount' => 100,
 		'translations' => array(
 			array(
 				'code' => 'en',
@@ -652,9 +652,7 @@ $products = array(
 	array(
 		'sku' => 'green-apple',
 		'price' =>  5.00,
-		'inventory' => array(
-			'amount' => 100,
-			),
+		'amount' => 100,
 		'translations' => array (
 			array(
 				'code' => 'en',

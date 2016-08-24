@@ -5,10 +5,11 @@
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    border: 1px solid #f1f3f5;
     border-radius: 3px;
-    background-color: #f8f8f8;
-    white-space: pre
+    background-color: #f3f6fa;
+    white-space: normal;
 }
 
 code {
@@ -44,7 +45,7 @@ ul, ol, dl, figure,
     @extend %vertical-rhythm;
 
     .highlighter-rouge & {
-      background: #f8f8f8;
+      background: #f3f6fa;
     }
 
     .c     { color: #998; font-style: italic } // Comment
