@@ -2,7 +2,7 @@
 layout: null
 ---
 
-// version 0.2
+// version 0.2.1
 (function($){
 
   var autocompleteCache = {};
@@ -39,14 +39,14 @@ layout: null
 
                   if (pages.length > 0) {
                     var kb_category = {
-                      name: 'found in Knowledge base',
+                      name: 'Knowledge base',
                       results: pages.filter(function(item) {
                         return item.index == 'usermanual'
                       })
                     };
                     
                     var devs_category = {
-                      name: 'found in Developer docs',
+                      name: 'Developer docs',
                       results: pages.filter(function(item) {
                         return item.index == 'knowledgebase'
                       })

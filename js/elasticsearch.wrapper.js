@@ -2,7 +2,7 @@
 layout: null
 ---
 
-// Version 0.2
+// Version 0.2.1
 ;(function() {
 
   function Search() {
@@ -67,8 +67,8 @@ layout: null
   Search.prototype.renderRow = function(page) {
     var date = moment(page.date);
     var index = page.index === 'usermanual' ? 'Knowledge base' : 'Developer docs';
-    var date_string = date.isValid() ? '<div class="extra"><i class="icon calendar"></i> ' + date.format('D MMMM Y') + '</div>' : '';
-    var meta = page.parent ? '<div class="meta">' + index + ' | ' + page.parent + '</div>' : '';
+    var date_string = date.isValid() ? '<div class="extra">' + date.format('D MMMM Y') + '</div>' : '';
+    var meta = page.parent ? '<div class="meta">' + index + ' / ' + page.parent + '</div>' : '';
     return '<div class="item search-result-item">' +
       '<div class="content">' +
         '<a class="header" href="' + page.url + '">' + page.title + '</a>' +
