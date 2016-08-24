@@ -46,6 +46,10 @@ ul, ol, dl, figure,
 
     .highlighter-rouge & {
       background: #f3f6fa;
+
+      pre, code {
+        white-space: pre;
+      }
     }
 
     .c     { color: #998; font-style: italic } // Comment
