@@ -2,7 +2,7 @@
 layout: null
 ---
 
-// Version 0.2.5
+// Version 0.2.6
 ;(function() {
 
   function Search() {
@@ -103,7 +103,8 @@ layout: null
                   fuzziness: 'AUTO',
                   prefix_length: 3,
                   minimum_should_match: "80%",
-                  tie_breaker: 0.3
+                  tie_breaker: 0.3,
+                  boost: 0.5
                 }
               }
             ]
