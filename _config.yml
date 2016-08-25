@@ -50,3 +50,8 @@ lang:
 sort_default: order
 sorts:
     Changelog: updated_at
+
+# Category-wide Page ranking
+
+category_pr:
+    changelog: 0.2

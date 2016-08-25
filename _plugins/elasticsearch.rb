@@ -5,7 +5,7 @@
 # See readme file for documenation
 #
 # Author: Junichiro Takagi, Eugene Dementjev
-# Version: 0.2.5
+# Version: 0.2.6
 
 require 'elasticsearch'
 require 'oj'
@@ -75,7 +75,10 @@ module Jekyll
         "title" => title,
         "parent" => { "type" => "string", "store" => true, "index" => "not_analyzed" },
         "content" => content,
-        "keywords" => keywords }
+        "keywords" => keywords,
+        "page_rank" => { "type" => "integer", "store" => true, "index" => "not_analyzed" },
+        "depth" => { "type" => "integer", "store" => true, "index" => "not_analyzed" } 
+      }
 
       page = {
         "_source" => _source,
@@ -190,6 +193,9 @@ module Jekyll
 
       # if db is not exists, create one.
       begin
+        es.delete_index
+
+        sleep 5
         unless es.type_exists
 
           es.create_index
@@ -219,6 +225,8 @@ module Jekyll
             "keywords" => page.data.fetch('keywords', ''),
             "categories" => page.data.fetch('categories', ''),
             "parent" => page.get_parent,
+            "page_rank" => page.data.fetch('page_rank', page.get_category_pr),
+            "depth" => page.get_depth,
             "version" => page.data.fetch('version', ''),
             "url" => "#{site.config['url']}#{page.url}",
             "content" => get_page_content(site, page)

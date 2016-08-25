@@ -39,6 +39,16 @@ module Jekyll
       return self.parent_title
     end
 
+    def get_depth()
+      dirs = @dir.split('/').slice(2..-1)
+      return dirs.size
+    end
+
+    def get_category_pr()
+      category = @dir.split('/').slice(2)
+      return @site.config['category_pr'].has_key?(category) ? @site.config['category_pr'][category] : 1
+    end
+
     def try_compare_by(field, other, default)
       ours = self.data.fetch(field, default)
       theirs = other.data.fetch(field, default)

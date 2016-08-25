@@ -2,7 +2,7 @@
 layout: null
 ---
 
-// Version 0.2.1
+// Version 0.2.5
 ;(function() {
 
   function Search() {
@@ -79,11 +79,9 @@ layout: null
     '</div>';
   }
 
-  Search.prototype.runAutocompleteQuery = function(query) {
-    var params = {
-      index: '_all',
-      type:  this.elasticParams.type,
-      body: {
+  Search.prototype.getScoringQuery = function(query) {
+    return {
+      function_score: {
         query: {
           bool: {
             should: [
@@ -103,13 +101,42 @@ layout: null
                   max_expansions: 50,
                   fields: ["title^4", "keywords^3", "description^2", "content"],
                   fuzziness: 'AUTO',
-                  minimum_should_match: "60%",
+                  prefix_length: 3,
+                  minimum_should_match: "80%",
                   tie_breaker: 0.3
                 }
               }
             ]
           }
         },
+        functions: [
+          {
+            field_value_factor: { 
+                field: "page_rank",
+                modifier: "log1p",
+                missing: 1
+            }
+          },
+          {
+            field_value_factor: { 
+                field: "depth",
+                factor: 2,
+                modifier: "reciprocal",
+                missing: 1
+            }
+          }
+        ],
+        score_mode: "multiply"
+      }
+    };
+  }
+
+  Search.prototype.runAutocompleteQuery = function(query) {
+    var params = {
+      index: '_all',
+      type:  this.elasticParams.type,
+      body: {
+        query: this.getScoringQuery(query),
         fields: ["title", "url", "page_date"],
         fielddata_fields : ["version", "parent"],
         indices_boost: {}
@@ -132,32 +159,7 @@ layout: null
       index: '_all',
       type:  this.elasticParams.type,
       body: {
-        query: {
-          bool: {
-            should: [
-              {
-                multi_match: {
-                  query: this.query.q,
-                  type: "phrase_prefix",
-                  max_expansions: 50,
-                  slop: 2,
-                  fields: ["title^4", "keywords^3", "description^2", "content"]
-                }
-              },
-              {
-                multi_match: {
-                  query: this.query.q,
-                  type: "best_fields",
-                  max_expansions: 50,
-                  fields: ["title^4", "keywords^3", "description^2", "content"],
-                  fuzziness: 'AUTO',
-                  minimum_should_match: "60%",
-                  tie_breaker: 0.3
-                }
-              }
-            ]
-          }
-        },
+        query: this.getScoringQuery(this.query.q),
         fields: ["title", "url", "page_date"],
         fielddata_fields : ["version", "parent"],
         indices_boost: {},
