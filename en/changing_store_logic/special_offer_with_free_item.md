@@ -4,6 +4,7 @@ updated_at: 2015-01-19 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Special offer with free item'
+version: X-Cart 5.3.x and earlier
 categories:
   - Developer docs
   - Demo module
@@ -109,11 +110,15 @@ XLite\Model\Order\Modifier:
 
 and then {% link "push it to the database" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %}.
 
-Now we need to re-deploy the store and then check the results. For that, go to your customer area and add three items of the same product to a cart. You will see the following picture at the cart page: ![]({{site.baseurl}}/attachments/8225412/8356192.png)
+Now we need to re-deploy the store and then check the results. For that, go to your customer area and add three items of the same product to a cart. You will see the following picture at the cart page: ![]({{site.baseurl}}/attachments/8225412/5_3_x.png)
 
 # Module pack
 
-You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-FreeItemDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-FreeItemDemo-v5_1_0.tar)
+You can download this module example from here: 
+
+*   (X-Cart 5.1) [https://dl.dropboxusercontent.com/u/23858825/Tony-FreeItemDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-FreeItemDemo-v5_1_0.tar)
+
+*   (X-Cart 5.3) [XCExample-FreeItem-v5_3_0.tar]({{site.baseurl}}/attachments/modules/XCExample-FreeItem-v5_3_0.tar)
 
 ## Attachments:
 
