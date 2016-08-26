@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2014-11-24 00:00'
+updated_at: '2016-08-26 10:28 +0400'
 identifier: ref_uGQn5pNX
 title: How do I submit my extension to X-Cart marketplace
 categories:
@@ -78,4 +78,4 @@ When your pages are ready - shoot me an email for final review before publicatio
 
 ## Attachments:
 
-* [module_template.psd]({{site.baseurl}}/attachments/7504739/7602402.psd) (image/vnd.adobe.photoshop)
+* [module_template.psd]({{site.baseurl}}/attachments/7504739/7602402.psd)
