@@ -1,16 +1,16 @@
 ---
-identifier: ref_zsGkqC41
-updated_at: 2015-01-13 00:00
-layout: article_with_sidebar
 lang: en
-title: 'ItemsList in admin area'
+layout: article_with_sidebar
+updated_at: '2016-08-29 16:37 +0400'
+identifier: ref_zsGkqC41
+title: ItemsList in admin area
 order: 70
 version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
   - Demo module
   - Outdated
-
+published: true
 ---
 
 ## Introduction
@@ -21,7 +21,7 @@ categories:
 
 ![]({{site.baseurl}}/attachments/8225372/8356179.png)
 
-This article will explain how to create such ItemsList. For the sake of example, we will create an ItemsList with products that has price more than $10 and this list can be sorted by price.
+This article will explain how to create such ItemsList. For the sake of example, we will create an ItemsList with products that has price more than $10 and this list can be sorted by price. test
 
 # Table of Contents
 
