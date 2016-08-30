@@ -1,7 +1,7 @@
 ---
 lang: ru
 layout: article_with_sidebar
-updated_at: '2016-08-30 11:47 +0400'
+updated_at: '2016-08-30 11:48 +0400'
 title: С чего начать
 categories:
   - home
@@ -14,7 +14,7 @@ published: true
 ---
 
 X-Cart is a highly customizable e-commerce platform and content management system that you can use to build online storefronts or web sites for selling merchandise. X-Cart provides common e-commerce features, such as shopping carts and inventory management, and encourages extensive customization to meet your organization’s specific goals.  
-Test4
+Test41
 
 The essential principles of X-Cart’s powerful and highly scalable product architecture include: 
 
