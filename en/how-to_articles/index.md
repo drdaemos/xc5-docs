@@ -15,7 +15,7 @@ These articles will guide you to achieve some typical tasks and answer the most 
 
 *   {% link "How to remove Transaction ID info in order notification emails?" ref_H86AxdTJ %}
 *   {% link "How to modify «Print Invoice» page" ref_qhLz2Kb9 %}
-*   {% link "How to move category description below products list" ref_hOAZXJPp %}
+*   {% link "How to move category description below products list" ref_k2TqHwih %}
 *   {% link "How to add Google Adwords Conversion Tracking Code to «Thank you for your order» page" ref_g8xO0UNP %}
 *   {% link "How to add Facebook Pixel Сode to X-Cart pages" ref_dENrdWxT %}
 *   {% link "How to hide left-hand bar for static pages only" ref_MQdca6cP %}

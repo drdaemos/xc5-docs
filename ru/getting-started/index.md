@@ -3,13 +3,11 @@ lang: ru
 layout: article_with_sidebar
 updated_at: '2016-08-30 13:59 +0400'
 title: С чего начать
-categories:
-  - home
 order: 1
 icon: rocket
 description: >-
   Build addons for 35 000+ X-Cart merchants. Get your store up and running fast
-  without any hassle нун.
+  without any hassle.
 published: true
 ---
 John
