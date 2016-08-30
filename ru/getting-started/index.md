@@ -1,7 +1,7 @@
 ---
 lang: ru
 layout: article_with_sidebar
-updated_at: '2016-08-30 12:37 +0400'
+updated_at: '2016-08-30 12:38 +0400'
 title: С чего начать
 categories:
   - home
