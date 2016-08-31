@@ -47,7 +47,7 @@ The {% link 'View object' ref_6dMJsZ63 %} that is rendering the template is avai
 
 Also, there are some custom functions and tags available to you:
 
-#### widget()
+### `widget()`
 
 The `widget` function renders a certain **View** class. The FQCN name of the widget class must be passed as the first argument (note the **doubled backslashes** in class names which are required in Twig). You can pass several variables as the widget parameter, starting from the second argument of `widget` call.
 
@@ -60,7 +60,7 @@ If some of the widget parameters contain dashes (or other non-alphanumeric and n
 The above also applies to `widget_list` function parameters.
 {% endnote %}
 
-#### widget_list()
+### `widget_list()`
 
 The `widget` function renders a certain **view list**. View list is the collection of classes and templates marked with @ListChild annotation. The name of the view list is passed as the first argument. You can also pass several variables as the widget parameter, starting from the second argument of `widget_list` call.
 
@@ -68,7 +68,7 @@ The `widget` function renders a certain **view list**. View list is the collecti
 widget_list('product.details', param1='value1', param2='value2') }}
 ```
 
-#### form tag
+### `form` tag
 
 The `form` tag wraps content in `<form>` HTML tag with attributes received from a certain X-Cart Form class. Form class name is passed as the first parameter. This tag is balanced and should be closed with `endform` tag.
 
@@ -78,7 +78,7 @@ The `form` tag wraps content in `<form>` HTML tag with attributes received from 
 {% endform %} 
 ```
 
-#### t()
+### `t()`
 
 The `t` function provides translation for a certain language label. Name of the label is passed as the only argument. The _optional_ label parameters are passed within an object as the second argument.
 
@@ -88,7 +88,7 @@ The `t` function provides translation for a certain language label. Name of the 
 {{ t('Proceed to the special url', { 'specialUrl': this.getSpecialURL() }) }}
 ```
 
-#### url()
+### `url()`
 
 The `url` function serves as the shortcut for `AView::buildURL` function and returns url string. First two arguments are **target** and **action** and the third is the object of query parameters.
 
