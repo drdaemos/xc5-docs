@@ -69,8 +69,7 @@ If you modified templates only by using Webmaster mode or CustomSkin module, fol
 
 -   Upgrade your store to X-Cart 5.3;
 -   Go to _Look & Feel_ > _Webmaster mode_ section in your admin area. If there are any templates, then you will be able to convert them;
--   Go to `admin.php?target=flexy_to_twig` URL of your store;
--   Click _Search Flexy templates_ button;
+-   Click on the _Flexy-to-twig converter_ button;
 -   You will get a list of the files to convert. The first column will show which files will be converted. The second column will show the new location of the converted twig template. The last column will show the status of the file: whether it is converted or not.
 -   Press _Convert_ button to convert the files. As soon as the files convert you will see the green sign in the right column.
 

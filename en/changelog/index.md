@@ -19,7 +19,7 @@ description: Discover new features and bugfixes
       </div>
       <div class="statistic">
         <div class="label">Current stable 5.2.x version</div>
-        <div class="value" markdown="span">{% link '5.2.16' ref_SkfkKEI2 %}</div>
+        <div class="value" markdown="span">{% link '5.2.17' ref_5217changelog %}</div>
       </div>
     </div>
 </div>
