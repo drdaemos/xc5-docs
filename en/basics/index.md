@@ -16,7 +16,8 @@ The Basics section shows how to achieve typical tasks when you edit your X-Cart 
 *   {% link "Creating new page" ref_0VgqyxB8 %} and {% link "How to find out what page is currently running" ref_SmN15f4r %} from the PHP script;
 *   Understanding what is a {% link "controller" ref_hkVaxgds %}, {% link "model" ref_wmExvPDD %} and {% link "viewer" ref_6dMJsZ63 %} classes in terms of X-Cart;
 *   How to {% link "access data" ref_pvZ8nad3 %} submitted in the request;
-*   Introduction to {% link "Flexy template engine" ref_VcuME8xW %} used in X-Cart;
+*   Introduction to {% link "Flexy template engine" ref_VcuME8xW %} used in X-Cart 5.2 version;
+*   Introduction to custom features of the {% link "Twig template engine" ref_twigguide %} used in X-Cart 5.3;
 *   How to define a {% link "skin module" ref_skinmodule %};
 *   Understanding how to {% link "initialize X-Cart" ref_ogmCiRWZ %} in the external script and then use its functions there;
 *   {% link "Pulling info from X-Cart database" ref_L1zWfWvw %};

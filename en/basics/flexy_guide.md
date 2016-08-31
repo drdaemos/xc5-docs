@@ -5,6 +5,7 @@ layout: article_with_sidebar
 lang: en
 title: 'Flexy Guide'
 version: X-Cart 5.2.16 and earlier
+order: 95
 categories:
   - Developer docs
   - Demo module
