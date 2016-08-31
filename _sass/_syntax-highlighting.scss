@@ -12,6 +12,12 @@ code {
     white-space: normal;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    code {
+        font-size: inherit;
+    }
+}
+
 code {
     padding: 1px 5px;
 }
