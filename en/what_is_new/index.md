@@ -17,7 +17,7 @@ title: Developers blog
 
   <div class="item blogpost">
     <div class="content">
-      <a class="ui large header">Applying caching techniques in X-Cart to achieve high performance</a>
+      <a class="ui large header" href="{% ref ref_cachetechniques %}">Applying caching techniques in X-Cart to achieve high performance</a>
       <div class="meta">
         <img class="ui avatar image" src="/images/authors/nikita.jpg">
         <p class="article-meta">
@@ -36,7 +36,7 @@ title: Developers blog
 
   <div class="item blogpost">
     <div class="content">
-      <a class="ui large header">What is new in 5.3</a>
+      <a class="ui large header" href="{% ref ref_MJEGoA0S %}">What is new in 5.3</a>
       <div class="meta">
         <img class="ui avatar image" src="/images/authors/max.jpg">
         <p class="article-meta">
