@@ -38,6 +38,9 @@ elasticsearch:
 gems:
   - jekyll-redirect-from
 
+paginate_count: 5
+paginate_path: "/en/what_is_new/page:num/"
+
 # Languages
 
 lang_default: en
