@@ -65,7 +65,7 @@ The above also applies to `widget_list` function parameters.
 The `widget` function renders a certain **view list**. View list is the collection of classes and templates marked with @ListChild annotation. The name of the view list is passed as the first argument. You can also pass several variables as the widget parameter, starting from the second argument of `widget_list` call.
 
 ```twig
-widget_list('product.details', param1='value1', param2='value2') }}
+{{ widget_list('product.details', param1='value1', param2='value2') }}
 ```
 
 ### `form` tag
