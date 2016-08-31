@@ -32,6 +32,13 @@
         }
       }
 
+      a.item {
+        /* Phone Only */
+        @media only screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+
       .language.item {
         /* Phone Only */
         @media only screen and (max-width: 767px) {
