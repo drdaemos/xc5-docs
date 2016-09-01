@@ -15,5 +15,5 @@ In this tutorial from [http://babymonkeystudios.com](http://babymonkeystudios.c
 **Tools Used**: 
 Xampp [http://apachefriends.org](http://apachefriends.org/)
 Sublime Text 2: [http://www.sublimetext.com/2](http://www.sublimetext.com/2)
-Webmaster kit module: [http://www.x-cart.com/extensions/addons/webmaster-kit.html](http://www.x-cart.com/extensions/addons/webmaster-kit.html)
-Custom skin module: [http://www.x-cart.com/extensions/addons/custom-skin.html](http://www.x-cart.com/extensions/addons/custom-skin.html)<iframe class="youtube-player" type="text/html" style="width: 853px; height: 480px" src="http://www.youtube.com/embed/LxpUCoYU_nU" frameborder="0"></iframe>
+Webmaster kit module: [http://market.x-cart.com/addons/webmaster-kit.html](http://market.x-cart.com/addons/webmaster-kit.html)
+Custom skin module: [http://market.x-cart.com/addons/custom-skin.html](http://market.x-cart.com/addons/custom-skin.html)<iframe class="youtube-player" type="text/html" style="width: 853px; height: 480px" src="http://www.youtube.com/embed/LxpUCoYU_nU" frameborder="0"></iframe>

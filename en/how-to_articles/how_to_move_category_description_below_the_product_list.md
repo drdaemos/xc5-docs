@@ -13,7 +13,7 @@ categories:
 
 This article describes how to move category description below the product list.
 
-To implement the necessary changes, you will need to modify X-Cart templates as described below; you will also need to install and configure the module "[Banner System](http://www.x-cart.com/extensions/addons/banner-system.html)".
+To implement the necessary changes, you will need to modify X-Cart templates as described below; you will also need to install and configure the module "[Banner System](http://market.x-cart.com/addons/banner-system.html)".
 
 ## Step-by-step guide
 

@@ -203,4 +203,8 @@ Also, there are the following minor changes in the _skins/customer_ folder:
 - _top_continue_shopping.tpl_ was moved to _shopping_cart_;
 
 ## ItemsList improvements and new features
-In X-Cart 5.0 you had to create around 20 files in order to properly create ItemsList, now 2 files are enough.
+In X-Cart 5.0 you had to create around 20 files in order to properly create ItemsList, X-Cart 5.2 required you to have at least 5-6 files, but now in X-Cart 5.3 only 2 files are enough. Also you can disable form wrapping and easily connect to SearchPanel. 
+
+SearchPanels were also refactored and now can have different search case providers and switchable data storage. That means that you can build search form much easier. 
+
+There is an article about these features coming out soon. Stay tuned!

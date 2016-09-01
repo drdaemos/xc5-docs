@@ -18,7 +18,7 @@ For the sake of example we will add **Sort by date** option to all product Items
 
 ![]({{site.baseurl}}/attachments/8749095/8716414.png)
 
-Similar option already exists in [Product Advisor](http://www.x-cart.com/extensions/addons/product-advisor.html) module, so you need to disable it in order to get our module working properly.
+Similar option already exists in [Product Advisor](http://market.x-cart.com/addons/product-advisor.html) module, so you need to disable it in order to get our module working properly.
 
 ## Table of Contents
 

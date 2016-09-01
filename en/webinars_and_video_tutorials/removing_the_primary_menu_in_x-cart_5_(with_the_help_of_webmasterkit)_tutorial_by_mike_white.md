@@ -12,7 +12,7 @@ categories:
 
 # Introduction
 
-This is an X-Сart 5 tutorial by Mike White aka totaltec from [http://babymonkeystudios.com](http://babymonkeystudios.com/ "http://babymonkeystudios.com"). It explains how to remove the main menu in X-Cart 5. Template and classes lists are discussed. ["WebmasterKit" module](http://www.x-cart.com/extensions/addons/webmaster-kit.html) is used.
+This is an X-Сart 5 tutorial by Mike White aka totaltec from [http://babymonkeystudios.com](http://babymonkeystudios.com/ "http://babymonkeystudios.com"). It explains how to remove the main menu in X-Cart 5. Template and classes lists are discussed. ["WebmasterKit" module](http://market.x-cart.com/addons/webmaster-kit.html) is used.
 
 # Video
 
