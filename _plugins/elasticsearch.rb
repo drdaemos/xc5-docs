@@ -12,6 +12,7 @@ require 'oj'
 require 'digest/md5'
 require 'date'
 require "nokogiri"
+require 'CGI'
 
 module Jekyll
 
@@ -262,7 +263,7 @@ module Jekyll
       end
 
       doc = Nokogiri::HTML(bare.output)
-      doc.xpath("//text()").to_s
+      CGI::escape_html(doc.xpath("//text()").to_s)
     end
 
   end

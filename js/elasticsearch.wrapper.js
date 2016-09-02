@@ -73,7 +73,7 @@ layout: null
       '<div class="content">' +
         '<a class="header" href="' + page.url + '">' + page.title + '</a>' +
         meta +
-        '<div class="description">' + _.escape(page.highlight) + '</div>' +
+        '<div class="description">' + page.highlight + '</div>' +
         date_string +
       '</div>' +
     '</div>';
