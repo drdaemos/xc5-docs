@@ -2,7 +2,7 @@
 layout: null
 ---
 
-// Version 0.2.6
+// Version 0.2.7
 ;(function() {
 
   function Search() {
@@ -73,7 +73,7 @@ layout: null
       '<div class="content">' +
         '<a class="header" href="' + page.url + '">' + page.title + '</a>' +
         meta +
-        '<div class="description">' + page.highlight + '</div>' +
+        '<div class="description">' + _.escape(page.highlight) + '</div>' +
         date_string +
       '</div>' +
     '</div>';
