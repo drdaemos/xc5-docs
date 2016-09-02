@@ -12,7 +12,7 @@ require 'oj'
 require 'digest/md5'
 require 'date'
 require "nokogiri"
-require 'CGI'
+require 'htmlentities'
 
 module Jekyll
 
@@ -262,8 +262,10 @@ module Jekyll
         puts 'in file ' + page['path']
       end
 
+      coder = HTMLEntities.new
+
       doc = Nokogiri::HTML(bare.output)
-      CGI::escape_html(doc.xpath("//text()").to_s)
+      coder.encode(doc.xpath("//text()").to_s)
     end
 
   end
