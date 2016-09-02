@@ -5,7 +5,7 @@
 # See readme file for documenation
 #
 # Author: Junichiro Takagi, Eugene Dementjev
-# Version: 0.2.6
+# Version: 0.2.7
 
 require 'elasticsearch'
 require 'oj'
