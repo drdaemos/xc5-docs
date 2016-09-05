@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-08-18 17:29 +0400'
+updated_at: '2016-09-05 17:57 +0400'
 identifier: ref_VkhLV8mx
 title: How to change the height of the top category banner
 order: 100
@@ -39,19 +39,23 @@ Method 1:
     ```
     
     This allows you to adjust the styles responsible for the appearance of the category banner.
-    ![xc5_custom_css_section_1.png]({{site.baseurl}}/attachments/xc5_custom_css_section_1.png?effects=drop-shadow)
+    ![xc5_custom_css_section_1_0.png]({{site.baseurl}}/attachments/ref_VkhLV8mx/xc5_custom_css_section_1_0.png?effects=drop-shadow)
     
 3.  Edit the code you have added by replacing "500px" with the pixel value of the banner height you require (for example, "510 px"):
-    ![xc5_custom_css_section_2.png]({{site.baseurl}}/attachments/xc5_custom_css_section_2.png?effects=drop-shadow)
+    ![xc5_custom_css_section_2_0.png]({{site.baseurl}}/attachments/ref_VkhLV8mx/xc5_custom_css_section_2_0.png?effects=drop-shadow)
+
 
 4.  Enable the "Use custom css" check box and save the changes by clicking the **Save** button:
-    ![xc5_custom_css_section_3.png]({{site.baseurl}}/attachments/xc5_custom_css_section_3.png?effects=drop-shadow)
+    ![xc5_custom_css_section_3_0.png]({{site.baseurl}}/attachments/ref_VkhLV8mx/xc5_custom_css_section_3_0.png?effects=drop-shadow)
+
 
 The custom CSS will be updated:
-    ![xc5_custom_css_section_4.png]({{site.baseurl}}/attachments/xc5_custom_css_section_4.png?effects=drop-shadow)
+    ![xc5_custom_css_section_4_0.png]({{site.baseurl}}/attachments/ref_VkhLV8mx/xc5_custom_css_section_4_0.png?effects=drop-shadow)
+
     
 Now if you check the category page in the Customer area, after reloading the page you should be able to see the banner with the new height:
-    ![xc5_category_top_banner_1.png]({{site.baseurl}}/attachments/xc5_category_top_banner_1.png?effects=drop-shadow)
+    ![xc5_category_top_banner_0.png]({{site.baseurl}}/attachments/ref_VkhLV8mx/xc5_category_top_banner_0.png?effects=drop-shadow)
+
 
 
 Method 2:
