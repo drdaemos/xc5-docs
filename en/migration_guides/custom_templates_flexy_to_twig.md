@@ -1,9 +1,11 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-08-17 18:33 +0400'
+updated_at: '2016-09-07 18:30 +0400'
 identifier: ref_customflexytotwig
-title: How to convert CustomSkin templates and templates customized via Webmaster mode from Flexy to Twig
+title: >-
+  How to convert CustomSkin templates and templates customized via Webmaster
+  mode from Flexy to Twig
 order: 210
 published: true
 ---
@@ -35,3 +37,12 @@ To convert customized templates from Flexy to Twig:
     As soon as the files are converted, they get marked with a green check mark in the third column:
 
     ![]({{site.baseurl}}/attachments/ref_customflexytotwig/xc5_flexytwig_templates4conversion.png)
+    
+    If some of the templates may not be converted, you will see them marked like so:
+    ![xc5_flexytwig_cannot_convert.png]({{site.baseurl}}/attachments/ref_customflexytotwig/xc5_flexytwig_cannot_convert.png)
+    
+    A red exclamation mark icon opposite a template file name means that the template could not be converted because of a syntax error in the .tpl file, or because the original template file uses custom constructions (for example, if a custom flexy modifier was used).
+    
+    If a template name is marked in red color, it means that the original template from X-Cart 5.2.x was replaced by a custom one, and then the store was upgraded to 5.3.x, which no longer has this template - so the convertor does not know what location the old template should be placed at after the conversion.
+    
+    Both the templates marked red and the templates marked with an exclamation mark icon have to be converted manually.
