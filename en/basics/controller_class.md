@@ -3,7 +3,8 @@ identifier: ref_hkVaxgds
 updated_at: 2015-01-13 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Controller class'
+title: 'Controllers'
+order: 10
 categories:
   - Developer docs
   - Demo module

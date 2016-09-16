@@ -3,9 +3,9 @@ identifier: ref_VcuME8xW
 updated_at: 2015-01-19 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Flexy Guide'
+title: 'Flexy template engine guide'
 version: X-Cart 5.2.16 and earlier
-order: 95
+order: 56
 categories:
   - Developer docs
   - Demo module

@@ -4,7 +4,7 @@ layout: article_with_sidebar
 updated_at: '2016-07-27 12:53 +0400'
 identifier: ref_u4RcEV0R
 title: Javascript guides
-order: 100
+order: 40
 published: false
 ---
 ## A New Post

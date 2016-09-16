@@ -3,7 +3,7 @@ identifier: ref_pvZ8nad3
 updated_at: 2014-11-25 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Retrieving data from the request'
+title: 'Request data and API'
 categories:
   - Developer docs
   - Demo module

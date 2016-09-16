@@ -3,7 +3,7 @@ identifier: ref_cPPwdSA9
 updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Working with product attributes'
+title: 'Product attributes'
 version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs

@@ -3,7 +3,8 @@ identifier: ref_wmExvPDD
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Understanding Models'
+title: 'Models and entities'
+order: 20
 categories:
   - Developer docs
   - Demo module

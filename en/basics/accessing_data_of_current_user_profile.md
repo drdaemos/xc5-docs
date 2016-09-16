@@ -3,7 +3,7 @@ identifier: ref_xJBqLBws
 updated_at: 2016-08-16 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Accessing data of current user profile'
+title: 'Current user profile data'
 categories:
   - Developer docs
   - Demo module

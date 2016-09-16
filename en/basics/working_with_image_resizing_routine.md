@@ -3,7 +3,7 @@ identifier: ref_5XhuExQ3
 updated_at: 2014-12-03 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Working with image resizing routine'
+title: 'Image resizing API'
 categories:
   - Developer docs
   - Demo module

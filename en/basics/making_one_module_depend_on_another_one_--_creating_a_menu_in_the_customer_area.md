@@ -3,7 +3,7 @@ identifier: ref_xdDPawlG
 updated_at: 2015-12-02 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Making one module depend on another one -- creating a menu in the customer area'
+title: 'Code and module dependencies'
 categories:
   - Developer docs
   - Demo module

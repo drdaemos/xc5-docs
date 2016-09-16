@@ -4,7 +4,7 @@ layout: article_with_sidebar
 updated_at: '2016-08-29 16:37 +0400'
 identifier: ref_zsGkqC41
 title: ItemsList in admin area
-order: 70
+order: 65
 version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs

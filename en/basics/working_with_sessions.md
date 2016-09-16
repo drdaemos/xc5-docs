@@ -3,7 +3,7 @@ identifier: ref_PW2oOrvq
 updated_at: 2016-08-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Working with sessions'
+title: 'Session API'
 categories:
   - Developer docs
   - Demo module

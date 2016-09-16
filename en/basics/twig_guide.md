@@ -3,9 +3,9 @@ identifier: ref_twigguide
 updated_at: 2016-08-31 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Custom features with Twig engine'
+title: 'Custom features with Twig template engine'
 version: X-Cart 5.3.0 and later
-order: 94
+order: 55
 categories:
   - Developer docs
   - Demo module

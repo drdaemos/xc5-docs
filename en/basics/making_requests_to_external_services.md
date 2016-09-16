@@ -3,7 +3,7 @@ identifier: ref_HK4ekS1u
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Making requests to external services'
+title: 'Requests to external services'
 categories:
   - Developer docs
   - Demo script
