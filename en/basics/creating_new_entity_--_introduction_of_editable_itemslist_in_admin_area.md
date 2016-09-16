@@ -4,6 +4,7 @@ updated_at: 2015-01-15 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating new entity and the UI for its management (Admin area)'
+order: 70
 keywords:
   - Editable itemslist
   - Admin area

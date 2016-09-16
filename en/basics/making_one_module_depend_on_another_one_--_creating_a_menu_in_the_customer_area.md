@@ -4,6 +4,7 @@ updated_at: 2015-12-02 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Code and module dependencies'
+order: 46
 categories:
   - Developer docs
   - Demo module

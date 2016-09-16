@@ -5,6 +5,7 @@ layout: article_with_sidebar
 lang: en
 title: 'ViewModel and entity editing page'
 version: X-Cart 5.1 - 5.3
+order: 49
 description: During module creation developers sometimes create complex entities that require a separate page for editing of its properties. This article will explain how you can create a page where you can edit certain fields of a model.
 keywords:
   - forms

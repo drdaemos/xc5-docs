@@ -5,6 +5,7 @@ layout: article_with_sidebar
 lang: en
 title: 'Adding new property to a product'
 version: X-Cart 5.2.16 and earlier
+order: 80
 categories:
   - Developer docs
   - Demo module

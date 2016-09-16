@@ -6,7 +6,7 @@ identifier: ref_bOmExTXA
 order: 50
 published: true
 version: X-Cart 5.3.0 and later
-title: FormModel API
+title: Entity editing via FormModel API
 keywords:
     - Symfony
     - New form
