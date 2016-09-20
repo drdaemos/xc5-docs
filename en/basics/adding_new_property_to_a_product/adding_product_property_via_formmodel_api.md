@@ -113,7 +113,7 @@ That requires us to define a way to transfer user input from request data to the
 
 The following code will decorate the class `\XLite\Model\DTO\Product\Info` (which is responsible for transfering data from product editing page):
 
-```
+```php
 <?php
 
 namespace XLite\Module\XCExample\NewProductFieldDemo\Model\DTO\Product;
