@@ -349,9 +349,9 @@ class ExampleProductEdit extends \XLite\Model\DTO\Base\ADTO
 }
 ```
 
-*   `static::validate()` method need to implement DTO leavel validation (for field level validation `constraint` field param used)
-*   `init()` method used to transfer data to DTO
-*   `populateTo` method used to transfer data from DTO
+*   `static::validate()` method is needed to implement DTO level validation (for field level validation `constraint` field param used)
+*   `init()` method is used to transfer data to DTO
+*   `populateTo` method is used to transfer data from DTO
 
 Now we are good with the model editing widget and we need to add it to the page template. We go to the `<X-Cart>/skins/admin/modules/XCExample/ModelEditing/page/product_edit/body.twig` template and define its content as follows:
 
