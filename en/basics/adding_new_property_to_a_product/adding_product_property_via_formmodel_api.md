@@ -102,7 +102,7 @@ Note: see an example of creating model editing form with more detailed explanati
 {% endnote %}
 
 {% note warning %}
-Every field should be assigned to a certain section. By default, product page form contains several sections: the default one, Prices & Inventory, Shipping, Marketing. You can assign your field to one of them or create a new one through decorating the `defineSections()` method.
+Every field must be assigned to a certain section. By default, product page form contains several sections: the __default__ one, __Prices & Inventory__, __Shipping__, __Marketing__. You can assign your field to one of them or create a new one through decorating the `defineSections()` method.
 {% endnote %}
 
 ## Transfering data from form to entity and back
@@ -148,7 +148,7 @@ class Info extends \XLite\Model\DTO\Product\Info implements \XLite\Base\IDecorat
     {
         parent::populateTo($object, $rawData);
 
-        // The same here, $this->default, $this->shipping etc. vars contain the state of the fields.
+        // The same here, $this->default, $this->shipping etc. vars contain the state of the field sections.
 
         $object->setTestField($this->default->testField);
     }
@@ -186,13 +186,17 @@ In DTO class you can define several aspects of data transfer:
 
 -   (**Optional**) Domain-level data validation via `validateTo($dto, $context)` function. Run the code to test field against the domain rules. Don't run format validation here, the right way is to define constraints in `View\FormModel` class.
 
+{% note info %}
+You should use `$this->default` and other section vars inside `init()` and `populateTo()` function to access DTO data. For the product, there are `$this->default`, `$this->prices_and_inventory`, `$this->shipping`, `$this->marketing` vars available by default.
+{% endnote %}
+
 ## Displaying the field value
 
 Finally, we can display the value of this field on some page. As an example, we will show it on the **Invoice** page after a customer completes his checkout.
 
 In order to achieve it, we'll create the `<X-Cart>/skins/customer/modules/XCExample/NewProductFieldDemo/item.test-field.twig` template with the following content: 
 
-```php
+```twig
 {##
  # Test field item cell
  #

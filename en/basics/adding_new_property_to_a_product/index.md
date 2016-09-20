@@ -56,9 +56,9 @@ class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 *   this piece of code 
 
     ```php
-    	/**
-    	 * @Column (type="string", length=32)
-    	 */
+/**
+ * @Column (type="string", length=32)
+ */
     ```
 
     specifies parameters of this field, i.e. that this field is a **string** and can be up to **32 symbols**.
@@ -103,7 +103,7 @@ Finally, we need to display the value of this field on thank you page after the 
 
 In order to achieve it, we create the `<X-Cart>/skins/default/en/modules/Tony/ProductFieldDemo/item.test-field.tpl` template with the following content: 
 
-```php
+```
 {* vim: set ts=2 sw=2 sts=2 et: *}
 {**
  * @ListChild (list="invoice.item.name", weight="20")
