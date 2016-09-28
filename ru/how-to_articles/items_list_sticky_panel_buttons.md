@@ -1,7 +1,7 @@
 ---
 lang: ru
 layout: article_with_sidebar
-updated_at: '2016-09-28 17:11 +0400'
+updated_at: '2016-09-28 17:29 +0400'
 identifier: ref_v4SqT9xD
 title: 'Sticky panel buttons (admin area, items list)'
 order: 100
@@ -23,7 +23,7 @@ version: X-Cart 5.3.x
 
 ### Additional buttons (more actions).
 
-Предстовляет из себя группу (http://getbootstrap.com/components/#btn-groups). При этом кажый элемент руппы может быть как простой кнопкой так и раскрывающийся список (http://getbootstrap.com/components/#btn-dropdowns). Элементы объявляются в методе `\XLite\View\StickyPanel\ItemsListForm::defineAdditionalButtons()` как массив, в котором каждый элемент это кнопка внутри группы. Кнопки объявляеются декларативно, то есть не объектами AView, а простыми массивами. Для каждой кнопки обрабатывается три элемента массива:
+Представляет из себя группу (http://getbootstrap.com/components/#btn-groups). При этом кажый элемент руппы может быть как простой кнопкой так и раскрывающийся список (http://getbootstrap.com/components/#btn-dropdowns). Элементы объявляются в методе `\XLite\View\StickyPanel\ItemsListForm::defineAdditionalButtons()` как массив, в котором каждый элемент это кнопка внутри группы. Кнопки объявляеются декларативно, то есть не объектами AView, а простыми массивами. Для каждой кнопки обрабатывается три элемента массива:
 
 - class - класс объектом которого будет кнопка;
 - params - параметры виджета, используемые для создания виджета;
