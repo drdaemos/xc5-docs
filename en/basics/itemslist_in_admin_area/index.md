@@ -179,9 +179,9 @@ Let us have a look at the key parts of this widget implementation:
         }
     ```
 
-4.  Key of an array's element must be one of Model properties, so that X-Cart can pick up value automatically. The value must be an **array()** that describes the column. SKU column is very simple, we just define its column name as **SKU** and its orderby as **100**.
+4.  The key of an array's element must be one of Model properties so that X-Cart can pick up value automatically. The value must be an **array()** that describes the column. The SKU column is very simple, we just define its column name as **SKU** and its orderby as **100**.
 5.  The Name column is a bit more complex. It also has `COLUMN_NAME` and `COLUMN_ORDERBY`, but it additionally has the `COLUMN_MAIN = true` param, which defines that this column must be the widest among the ones in the ItemsList. It also has the `COLUMN_LINK` parameter that defines a link where you can see product details. As you can see, we just define target parameter as **product**, and X-Cart will build a proper URL for a particular product itself, so it would become `admin.php?target=product&product_id=ID`.
-6.  The Price column is a bit more complex as well. Although it has the same `COLUMN_NAME` and `COLUMN_ORDERBY` parameters, it supports sorting as defined by the `COLUMN_SORT` param. Aside from specifying this param in column, we must also create a constant called `SORT_BY_MODE_PRICE` as it refers to it:
+6.  The Price column is a bit more complex as well. Although it has the same `COLUMN_NAME` and `COLUMN_ORDERBY` parameters, it supports sorting as defined by the `COLUMN_SORT` param. Aside from specifying this param in the column, we must also create a constant called `SORT_BY_MODE_PRICE` as it refers to it:
 
     ```php
     const SORT_BY_MODE_PRICE = 'p.price';
