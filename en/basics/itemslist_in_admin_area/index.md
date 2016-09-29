@@ -15,13 +15,13 @@ published: true
 
 ## Introduction
 
-**ItemsList** is a type of X-Cart widget that displays records about entities in structured format. Examples of ItemsList widgets are below:
+**ItemsList** is a type of X-Cart widget that displays records about entities in a structured format. Examples of ItemsList widgets are below:
 
 ![]({{site.baseurl}}/attachments/8225372/8356178.png)
 
 ![]({{site.baseurl}}/attachments/8225372/8356179.png)
 
-This article will explain how to create such ItemsLists. For the sake of example, we will create an ItemsList of products with a price of more than $10, and this list will be sortable by price. test
+This article will explain how to create such ItemsLists. For the sake of example, we will create an ItemsList of products with a price of more than $10, and this list will be sortable by price. 
 
 # Table of Contents
 
