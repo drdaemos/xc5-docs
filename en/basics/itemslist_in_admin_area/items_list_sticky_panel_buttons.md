@@ -28,13 +28,13 @@ Is in fact a group (http://getbootstrap.com/components/#btn-groups). Each elemen
 - params - widget parameters used for the creation of the widget;
 - position - absolute position of the button within the group.
 
-For each element of the group, in the `style` parameter the presence of the `more-action` substring is required among the widget parameters.
+For each element of the group, the presence of a `more-action` substring is required in the `style` parameter among the widget parameters.
 
 #### Dropdown list
 
 To add a dropdown list, it is necessary to create a class inherited from `\XLite\View\Button\Dropdown\ADropdown` and use it as a class for a button within the group. The elements of the list are declared in the method `\XLite\View\Button\Dropdown\ADropdown::defineAdditionalButtons()` following the same principle as in `\XLite\View\StickyPanel\ItemsListForm::defineAdditionalButtons()`. For the list to be expanded upwards, which is the thing you require the most often for the panel, it is necessary to return the string `dropup` from the method `\XLite\View\Button\Dropdown\ADropdown::getDefaultDropDirection()` (or send the widget parameter `\XLite\View\Button\Dropdown\ADropdown::PARAM_DROP_DIRECTION` with that value in the `params` field of the group element).
 
-Для добавления разделителя в список необходимо добавить элемент (с соответствующим значением `position`):
+To add a divider to the list, it is necessary to add the following element (with the respective value of `position`):
 
 ```
 [
@@ -46,12 +46,12 @@ To add a dropdown list, it is necessary to create a class inherited from `\XLite
 ]
 ```
 
-Для каждого пункта списка обязятельно наличие подстроки `more-action` в параметре `style` среди параметров виджета.
+For each item in the list, the presence of a `more-action` substring is required in the `style` parameter among the widget parameters.
 
 
-#### Реакция на изменения в списке (выбор строк)
+#### Reaction to a change in the list (selection of lines)
 
-Может быть три реакции:
+There may be three types of reaction:
 
 - Элемент группы активен всегда;
 - Элемент неактивен, при выборе строк - активируется;
