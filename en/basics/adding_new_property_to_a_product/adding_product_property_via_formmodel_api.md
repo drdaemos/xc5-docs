@@ -1,6 +1,6 @@
 ---
 identifier: ref_productprop_formmodel
-updated_at: 2016-09-16 00:00
+updated_at: 2016-09-29 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Adding product property via FormModel API'
@@ -69,7 +69,7 @@ Voilà, you can proceed to creating an UI for that field.
 ## Creating interface for field editing
 
 To be able to specify value of this property on product details page in admin area, we have to decorate `\XLite\View\FormModel\Product\Info` class and create
-`<X-Cart>/classes/XLite/Module/XCExample/NewProductFieldDemo/View/Model/Product.php` file with the following content: 
+`<X-Cart>/classes/XLite/Module/XCExample/NewProductFieldDemo/View/FormModel/Product/Info.php` file with the following content: 
 
 ```php
 <?php
