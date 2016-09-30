@@ -53,16 +53,16 @@ For each item in the list, the presence of a `more-action` substring is required
 
 There may be three types of reaction:
 
-- Элемент группы активен всегда;
-- Элемент неактивен, при выборе строк - активируется;
-- Элемент отсутствует, при выборе строк - появляется.
+- Group element is active at all times;
+- Group element is not active, but is activated when lines are selected;
+- Group element is not present and appears when lines are selected.
 
-Управление происходит через изменеие парамтра `style` в поле `params` элемента группы. Для того чтобы кнопка была всегда активна, необходимо, что бы в этом параметре присутсвовала подстрока `always-enabled`. Второй вариант считается основным и не требует дополнительных настроек. Для третьего варианта необходимо, чтобы в `style` была подстрока `hide-on-disable hidden`.
+Управление происходит by adjusting the `style` parameter in the `params` field of a group element. For a button to be active at all times, it is necessary that the substring `always-enabled` is present in this parameter. The second type of reaction is the main variant; it does not require any additional settings. For the third variant it is necessary that `style` parameter contains the substring `hide-on-disable hidden`.
 
-Это также справедливо для пунктов раскрывающегося списка.
+The above is also true for items in a dropdown list.
 
 ## Custom buttons
 
-Для добавление дополнительных кнопок их нужно просто добавить в массив, возвращаемый методом `\XLite\View\StickyPanel\ItemsListForm::defineButtons()`. Добавлять нужно объекты, наследники `\XLite\View\Button\AButton`. Впрочем, если нужно отобразить не кнопку, то можно добавить объект любого виджета.
+To add custom buttons, you simply need to add them to the array returned by the method `\XLite\View\StickyPanel\ItemsListForm::defineButtons()`. The thing to be added is objects, наследники `\XLite\View\Button\AButton`. However, if you need to display not a button, but something else, you can add an object of any widget.
 
-Для того чтобы кнопка была всегда активна, необходимо добавить подстроку `always-enabled` в её виджет параметр `style`.
+For a button to be active at all times, you need to add the substring `always-enabled` to its widget parameter `style`.
