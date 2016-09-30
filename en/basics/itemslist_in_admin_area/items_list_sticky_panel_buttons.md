@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-09-29 20:03 +0400'
+updated_at: '2016-09-30 09:39 +0400'
 identifier: ref_vHI163Zu
 title: ''
 order: 100
@@ -49,20 +49,20 @@ To add a divider to the list, it is necessary to add the following element (with
 For each item in the list, the presence of a `more-action` substring is required in the `style` parameter among the widget parameters.
 
 
-#### Reaction to a change in the list (selection of lines)
+#### Reaction to a change in the list (selection of entries)
 
 There may be three types of reaction:
 
 - Group element is active at all times;
-- Group element is not active, but is activated when lines are selected;
-- Group element is not present and appears when lines are selected.
+- Group element is not active, but is activated when entries are selected;
+- Group element is hidden and is revealed when entries are selected.
 
-Управление происходит by adjusting the `style` parameter in the `params` field of a group element. For a button to be active at all times, it is necessary that the substring `always-enabled` is present in this parameter. The second type of reaction is the main variant; it does not require any additional settings. For the third variant it is necessary that `style` parameter contains the substring `hide-on-disable hidden`.
+The choice of the type of reaction is made by adjusting the `style` parameter in the `params` field of a group element. For a button to be active at all times, it is necessary that the substring `always-enabled` is present in this parameter. The second type of reaction is the default variant; it does not require any additional settings. For the third variant it is necessary that `style` parameter contains the substring `hide-on-disable hidden`.
 
 The above is also true for items in a dropdown list.
 
 ## Custom buttons
 
-To add custom buttons, you simply need to add them to the array returned by the method `\XLite\View\StickyPanel\ItemsListForm::defineButtons()`. The thing to be added is objects, наследники `\XLite\View\Button\AButton`. However, if you need to display not a button, but something else, you can add an object of any widget.
+To add custom buttons, you simply need to add them to the array returned by the method `\XLite\View\StickyPanel\ItemsListForm::defineButtons()`. The thing to be added is objects, the children of `\XLite\View\Button\AButton`. However, if you need to display not a button, but something else, you can add an object of any widget.
 
 For a button to be active at all times, you need to add the substring `always-enabled` to its widget parameter `style`.
