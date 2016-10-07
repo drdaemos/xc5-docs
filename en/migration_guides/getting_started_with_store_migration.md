@@ -5,7 +5,7 @@ updated_at: '2016-10-07 15:40 +0400'
 identifier: ref_enOvsLbT
 title: Getting started with store migration
 order: 90
-published: false
+published: true
 ---
 ![migration.jpg]({{site.baseurl}}/attachments/ref_enOvsLbT/migration.jpg)
 
