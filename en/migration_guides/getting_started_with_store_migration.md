@@ -61,13 +61,11 @@ We love beautiful stores as much as you do. That’s why we offer a number of to
 
 2.   You may also choose to modify the text labels, say, rename the button “add to cart” to “add to bag”, as is explained by {% link "this instruction" ref_IyGxQ1DN %}. 
 
-3.   {% link "Specify your company identity and contact information" ref_HcSs9eFL %}. Enable the {% link "Contact Us form" ref_hfZXkxzT %}. Edit the text on the Contact Us page as described here.To tell your customers about your company or to explain your store’s shipping and return policy, add static pages to your store. To modify the dummy  “terms and conditions” text of ours, follow this instruction.
+3.   {% link "Specify your company identity and contact information" ref_HcSs9eFL %}. Enable the {% link "Contact Us form" ref_hfZXkxzT %}. Edit the text on the Contact Us page {% link "as described here" ref_CsqC5DNX %}.To tell your customers about your company or to explain your store’s shipping and return policy, {% link "add static pages to your store" ref_Ptf5vaPn %}. To modify the dummy  “terms and conditions” text of ours, follow {% link "this instruction" ref_r5b4EKhF %}.
 
+4.   {% link "Configure your store’s General look and feel settings" ref_qAZlJxZm %} like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the {% link "localization" ref_cc4sCpa5 %} parameters like weight unit, time zone and weight format.
 
-Configure your store’s General look and feel settings like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the localization parameters like weight unit, time zone and weight format.
-
-
-You may also switch the store language in Admin area or add a custom translation to the storefront. 
+5. You may also {% link "switch the store language in Admin area" ref_x5oSN86B %} or {% link "add a custom translation to the storefront" ref_NH3w8sSS %}. 
 
 
 
