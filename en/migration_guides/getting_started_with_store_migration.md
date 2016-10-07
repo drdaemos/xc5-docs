@@ -21,7 +21,7 @@ This guide explains the main steps to set up an X-Cart store. Please refer to it
 
 4.   Once your X-Cart is installed, you will see a pop-up window suggesting that you register your free license ([see how](https://www.youtube.com/watch?v=MEncqXpJ8qc)) or activate a paid edition license (see [video instruction](https://www.youtube.com/watch?v=mmedPCQ91yA)). Follow the procedure in accordance with the X-Cart package chosen.
 
-## Step 2: Data migration with a store-migration app
+## Step 2: Data migration with a store migration app
 
 The easiest way to migrate store data is to use the service provided by X-Cart partners Cart2Cart. They guarantee the finest quality of data transfer to your new X-Cart store. With a number of ready-made migration modules that we provide, this task should be easy.
 
