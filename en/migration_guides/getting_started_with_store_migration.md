@@ -11,7 +11,7 @@ published: false
 
 This guide explains the main steps to set up an X-Cart store. Please refer to it to make sure you don't forget any key tasks before the store launch. [Contact X-Cart professionals](https://www.x-cart.com/contact-us.html) if you need assistance at any step: we’re just one call or email away ;)
 
-## Step 1: Obtaining an X-Cart license and installing software
+## Step 1: Obtaining an X-Cart license and installing the software
 
 1.  Follow the link below to compare X-Cart packages and choose the most suitable one: [http://www.x-cart.com/software_pricing.html](http://www.x-cart.com/software_pricing.html). [Download](https://www.x-cart.com/download.html) the software. If you select a commercial package, purchase a license to get a license key. 
 
