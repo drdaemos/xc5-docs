@@ -11,6 +11,7 @@ published: false
 
 This guide explains the main steps to set up an X-Cart store. Please refer to it to make sure you don't forget any key tasks before the store launch. [Contact X-Cart professionals](https://www.x-cart.com/contact-us.html) if you need assistance at any step: we’re just one call or email away ;)
 
+
 ## Step 1: Obtaining an X-Cart license and installing the software
 
 1.  Follow the link below to compare X-Cart packages and choose the most suitable one: [http://www.x-cart.com/software_pricing.html](http://www.x-cart.com/software_pricing.html). [Download](https://www.x-cart.com/download.html) the software. If you select a commercial package, purchase a license to get a license key. 
@@ -20,6 +21,7 @@ This guide explains the main steps to set up an X-Cart store. Please refer to it
 3.   Once the hosting is ready, proceed to X-Cart installation. See a detailed Installation guide [here](http://kb.x-cart.com/display/XDD/Installation+Guide#InstallationGuide-Installationprocess).
 
 4.   Once your X-Cart is installed, you will see a pop-up window suggesting that you register your free license ([see how](https://www.youtube.com/watch?v=MEncqXpJ8qc)) or activate a paid edition license (see [video instruction](https://www.youtube.com/watch?v=mmedPCQ91yA)). Follow the procedure in accordance with the X-Cart package chosen.
+
 
 ## Step 2: Data migration with a store migration app
 
@@ -39,6 +41,7 @@ The easiest way to migrate store data is to use the service provided by X-Cart p
 
 7.   Finish a free Demo and launch the Full Migration.
 
+
 ## Step 3: Check and organize your products after the migration
 
 If you have added products to X-Cart via a migration app, it is important to verify the products afterwards.
@@ -55,6 +58,7 @@ If you have added products to X-Cart via a migration app, it is important to ver
 
 6.   {% link "Optimize the store catalog pages for SEO" ref_OBh3V1k1 %}: define meta elements of your product and category pages - such as the page title, meta description and meta keywords; (% link "set up seo-friendly URLs" ref_nJxrzFEZ %}.
 
+
 ## Step 4: Configure the storefront
 
 We love beautiful stores as much as you do. That’s why we offer a number of tools that help you to personalize your X-Cart store easily:
@@ -68,6 +72,7 @@ We love beautiful stores as much as you do. That’s why we offer a number of to
 4.   {% link "Configure your store’s General look and feel settings" ref_qAZlJxZm %} like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the {% link "localization" ref_cc4sCpa5 %} parameters like weight unit, time zone and weight format.
 
 5. You may also {% link "switch the store language in Admin area" ref_x5oSN86B %} or {% link "add a custom translation to the storefront" ref_NH3w8sSS %}. 
+
 
 ## Step 5: Configure your Shipping and Payment methods
 
