@@ -69,20 +69,20 @@ We love beautiful stores as much as you do. That’s why we offer a number of to
 
 3.   [Specify your company identity and contact information](http://kb.x-cart.com/en/look_and_feel/specifying_your_company%27s_identity_and_contact_information.htm). Enable the [Contact Us form](http://kb.x-cart.com/en/look_and_feel/enabling_the_contact_us_form.html). Edit the text on the Contact Us page [as described here](http://kb.x-cart.com/en/look_and_feel/editing_the_text_on_the_contact_us_page.html).To tell your customers about your company or to explain your store’s shipping and return policy, [add static pages to your store](http://kb.x-cart.com/display/XDD/Adding+pages+to+your+store). To modify the dummy  “terms and conditions” text of ours, follow [this instruction](http://kb.x-cart.com/en/look_and_feel/changing_the_terms_and_conditions_page.html).
 
-4.   [Configure your store’s General look and feel settings](http://kb.x-cart.com/display/XDD/Configuring+your+store%27s+General+settings) like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the {% link "localization" ref_cc4sCpa5 %} parameters like weight unit, time zone and weight format.
+4.   [Configure your store’s General look and feel settings](http://kb.x-cart.com/display/XDD/Configuring+your+store%27s+General+settings) like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the [localization](http://kb.x-cart.com/en/look_and_feel/localizing_your_store.html) parameters like weight unit, time zone and weight format.
 
-5. You may also {% link "switch the store language in Admin area" ref_x5oSN86B %} or {% link "add a custom translation to the storefront" ref_NH3w8sSS %}. 
+5. You may also [switch the store language in Admin area](http://kb.x-cart.com/display/XDD/Switching+the+language+in+Admin+area) or [add a custom translation to the storefront](http://kb.x-cart.com/en/look_and_feel/translating_your_store%27s_user_interface_to_other_languages.html). 
 
 
 ## Step 5: Configure your Shipping and Payment methods
 
-Intangible goods (software programs, documents, online cards and the like) do not require shipping, so if you sell such products, you need to {% link "disable shipping calculation for them" ref_z5KmbFAu %}. For the rest of your products you have a number of tools to estimate the shipping cost properly.
+Intangible goods (software programs, documents, online cards and the like) do not require shipping, so if you sell such products, you need to [disable shipping calculation for them](http://kb.x-cart.com/en/shipping/shipping_setup_for_downloadable_products.html). For the rest of your products you have a number of tools to estimate the shipping cost properly.
 
-1.   First of all, X-Cart supports carrier-calculated shipping rates for the following carriers: FedEx, U.S.P.S., UPS, Canada Post, AustraliaPost, DHL, Pitney Bowes, EMS, ShippingCalc. {% link "Read how to enable this" ref_ybdiN8r0 %}.
+1.   First of all, X-Cart supports carrier-calculated shipping rates for the following carriers: FedEx, U.S.P.S., UPS, Canada Post, AustraliaPost, DHL, Pitney Bowes, EMS, ShippingCalc. [Read how to enable this](http://kb.x-cart.com/en/shipping/carrier-calculated_shipping_rates.html).
 
-2.   If you prefer custom table rates, {% link "follow this instruction" ref_3TG6AuN0 %}.
+2.   If you prefer custom table rates, [follow this instruction](http://kb.x-cart.com/en/shipping/custom_table_rates.html).
 
-3.   It is also possible to set up an individual shipping cost per product using the {% link "Shipping freight" ref_kioKBJIM %} feature. To charge a handling fee, {% link "follow these steps" ref_nFJTxPMR %}. {% link "Free shipping" ref_rOT8GezP %} is also easy to enable.
+3.   It is also possible to set up an individual shipping cost per product using the [Shipping freight](http://kb.x-cart.com/en/shipping/shipping_freight.html) feature. To charge a handling fee, [follow these steps](http://kb.x-cart.com/en/shipping/handling_fee.html). [Free shipping](http://kb.x-cart.com/display/XDD/Free+shipping) is also easy to enable.
 
 Once the shipping settings have been configured, make sure you can accept payments from your customers.
 
