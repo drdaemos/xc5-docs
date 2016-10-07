@@ -67,6 +67,30 @@ We love beautiful stores as much as you do. That’s why we offer a number of to
 
 5. You may also {% link "switch the store language in Admin area" ref_x5oSN86B %} or {% link "add a custom translation to the storefront" ref_NH3w8sSS %}. 
 
+## Step 5: Configure your Shipping and Payment methods
+
+Intangible goods (software programs, documents, online cards and the like) do not require shipping, so if you sell such products, you need to {% link "disable shipping calculation for them" ref_z5KmbFAu %}. For the rest of your products you have a number of tools to estimate the shipping cost properly.
+
+1.   First of all, X-Cart supports carrier-calculated shipping rates for the following carriers: FedEx, U.S.P.S., UPS, Canada Post, AustraliaPost, DHL, Pitney Bowes, EMS, ShippingCalc. {% link "Read how to enable this" ref_ybdiN8r0 %}.
+
+2.   If you prefer custom table rates, {% link "follow this instruction" ref_3TG6AuN0 %}.
+
+3.   It is also possible to set up an individual shipping cost per product using the {% link "Shipping freight" ref_kioKBJIM %} feature. To charge a handling fee, {% link "follow these steps" ref_nFJTxPMR %}. {% link "Free shipping" ref_rOT8GezP %} is also easy to enable.
+
+Once the shipping settings have been configured, make sure you can accept payments from your customers.
+
+1.   {% link "Enable at least one payment method" ref_Jq6Bsdrt %} and place a test order.
+
+2.   To enable PCI compliant credit card saving and processing, {% link "connect your store to X-Payments" ref_hlRUuVCV %}.
+
+3.   Specify the email addresses to receive {% link "notifications about new orders" ref_wKcxbiUf %}.
+
+After the above steps have been completed, we recommend that you make several test orders. Try the entire customer’s journey from finding a product and adding it to cart (you can create a test product which costs $0.01 for the purpose) to making a payment and updating {% link "order statuses" ref_r4PbRx4Z %}.
+
+Find more info in the [X-Cart user guide](http://kb.x-cart.com/), or [contact us](https://www.x-cart.com/migrate_me.html) for help.
+
+If the migration process scares you a bit, and you do not feel confident in your strength, we will be happy to do the whole data migration for you, just [let us know](https://www.x-cart.com/migrate_me.html)!
+
 
 
 
