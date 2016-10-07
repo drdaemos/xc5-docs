@@ -86,11 +86,11 @@ Intangible goods (software programs, documents, online cards and the like) do no
 
 Once the shipping settings have been configured, make sure you can accept payments from your customers.
 
-1.   {% link "Enable at least one payment method" ref_Jq6Bsdrt %} and place a test order.
+1.   [Enable at least one payment method](http://kb.x-cart.com/en/payments/accepting_payments.html) and place a test order.
 
-2.   To enable PCI compliant credit card saving and processing, {% link "connect your store to X-Payments" ref_hlRUuVCV %}.
+2.   To enable PCI compliant credit card saving and processing, [connect your store to X-Payments](http://kb.x-cart.com/en/webinars_and_video_tutorials/connecting_x-payments_2.1_x_with_x-cart_5.html).
 
-3.   Specify the email addresses to receive {% link "notifications about new orders" ref_wKcxbiUf %}.
+3.   Specify the email addresses to receive [notifications about new orders](http://kb.x-cart.com/en/look_and_feel/adding_recipient_addresses_for_email_notifications.html).
 
 After the above steps have been completed, we recommend that you make several test orders. Try the entire customer’s journey from finding a product and adding it to cart (you can create a test product which costs $0.01 for the purpose) to making a payment and updating {% link "order statuses" ref_r4PbRx4Z %}.
 
