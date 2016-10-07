@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-10-07 15:40 +0400'
+updated_at: '2016-10-07 17:01 +0400'
 identifier: ref_enOvsLbT
 title: Getting started with store migration
 order: 90
@@ -46,30 +46,30 @@ The easiest way to migrate store data is to use the service provided by X-Cart p
 
 If you have added products to X-Cart via a migration app, it is important to verify the products afterwards.
 
-1.   {% link "Check the product details" ref_fhzzxDTy %}, which includes product descriptions, images, variants and meta descriptions - depending on your previous software.
+1.   [Check the product details](http://kb.x-cart.com/display/XDD/Adding+products), which includes product descriptions, images, variants and meta descriptions - depending on your previous software.
 
-2.   {% link "Configure the taxes" ref_kJmd7K27 %} you require for your products or automate tax calculation via [Avatax Sales Tax calculation service](http://www.x-cart.com/extensions/addons/avatax-sales-tax-automation.html) by Avalara.
+2.   [Configure the taxes](http://kb.x-cart.com/display/XDD/Taxes) you require for your products or automate tax calculation via [Avatax Sales Tax calculation service](http://www.x-cart.com/extensions/addons/avatax-sales-tax-automation.html) by Avalara.
 
 3.   Make sure the products are arranged in categories correctly and are easy to find (Admin back-end –> Catalog –> Categories).
 
-4.   {% link "Add Featured products" ref_4iFdpTdv %} on the home page and/or category pages.
+4.   [Add Featured products](http://kb.x-cart.com/display/XDD/Adding+featured+products) on the home page and/or category pages.
 
-5.   If your products have options and variants, use the {% link "product classes and attributes feature" ref_T90ZcEpP %} to set them up. You may need them if your products have such parameters as color, size, material, country of origin, ISBN, technical specifications, etc.
+5.   If your products have options and variants, use the [product classes and attributes feature](http://kb.x-cart.com/en/product_classes_and_attributes/index.html) to set them up. You may need them if your products have such parameters as color, size, material, country of origin, ISBN, technical specifications, etc.
 
-6.   {% link "Optimize the store catalog pages for SEO" ref_OBh3V1k1 %}: define meta elements of your product and category pages - such as the page title, meta description and meta keywords; (% link "set up seo-friendly URLs" ref_nJxrzFEZ %}.
+6.   [Optimize the store catalog pages for SEO](http://kb.x-cart.com/display/XDD/Optimizing+your+catalog+pages+for+SEO): define meta elements of your product and category pages - such as the page title, meta description and meta keywords; [set up seo-friendly URLs](http://kb.x-cart.com/display/XDD/Setting+up+seo-friendly+URLs).
 
 
 ## Step 4: Configure the storefront
 
 We love beautiful stores as much as you do. That’s why we offer a number of tools that help you to personalize your X-Cart store easily:
 
-1.   {% link "Change X-Cart logo and favicon" ref_2VXSZhKE %} to your company’s ones. {% link "Change the default Welcome text and banner on the Front page" ref_Id69E4GT %} to the ones of your own. {% link "Change the theme" ref_GLqVdpgd %} if you like.  Add links to certain pages to the Primary or Footer menus on the storefront {% link "as explained here" ref_BDykFBbw %}.
+1.   [Change X-Cart logo and favicon](http://kb.x-cart.com/en/look_and_feel/changing_your_store%27s_logo_and_favicon.html) to your company’s ones. [Change the default Welcome text and banner on the Front page](http://kb.x-cart.com/en/look_and_feel/changing_your_store%27s_welcome_text_and_banner_on_the_front_page.html) to the ones of your own. [Change the theme](http://kb.x-cart.com/en/look_and_feel/changing_your_store%27s_theme.html) if you like.  Add links to certain pages to the Primary or Footer menus on the storefront [as explained here](http://kb.x-cart.com/en/look_and_feel/adding_new_items_to_your_store%27s_menus.html).
 
-2.   You may also choose to modify the text labels, say, rename the button “add to cart” to “add to bag”, as is explained by {% link "this instruction" ref_IyGxQ1DN %}. 
+2.   You may also choose to modify the text labels, say, rename the button “add to cart” to “add to bag”, as is explained by [this instruction](http://kb.x-cart.com/en/look_and_feel/managing_texts_labels_in_your_store.html). 
 
-3.   {% link "Specify your company identity and contact information" ref_HcSs9eFL %}. Enable the {% link "Contact Us form" ref_hfZXkxzT %}. Edit the text on the Contact Us page {% link "as described here" ref_CsqC5DNX %}.To tell your customers about your company or to explain your store’s shipping and return policy, {% link "add static pages to your store" ref_Ptf5vaPn %}. To modify the dummy  “terms and conditions” text of ours, follow {% link "this instruction" ref_r5b4EKhF %}.
+3.   [Specify your company identity and contact information](http://kb.x-cart.com/en/look_and_feel/specifying_your_company%27s_identity_and_contact_information.htm). Enable the [Contact Us form](http://kb.x-cart.com/en/look_and_feel/enabling_the_contact_us_form.html). Edit the text on the Contact Us page [as described here](http://kb.x-cart.com/en/look_and_feel/editing_the_text_on_the_contact_us_page.html).To tell your customers about your company or to explain your store’s shipping and return policy, [add static pages to your store](http://kb.x-cart.com/display/XDD/Adding+pages+to+your+store). To modify the dummy  “terms and conditions” text of ours, follow [this instruction](http://kb.x-cart.com/en/look_and_feel/changing_the_terms_and_conditions_page.html).
 
-4.   {% link "Configure your store’s General look and feel settings" ref_qAZlJxZm %} like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the {% link "localization" ref_cc4sCpa5 %} parameters like weight unit, time zone and weight format.
+4.   [Configure your store’s General look and feel settings](http://kb.x-cart.com/display/XDD/Configuring+your+store%27s+General+settings) like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the {% link "localization" ref_cc4sCpa5 %} parameters like weight unit, time zone and weight format.
 
 5. You may also {% link "switch the store language in Admin area" ref_x5oSN86B %} or {% link "add a custom translation to the storefront" ref_NH3w8sSS %}. 
 
@@ -97,8 +97,3 @@ After the above steps have been completed, we recommend that you make several te
 Find more info in the [X-Cart user guide](http://kb.x-cart.com/), or [contact us](https://www.x-cart.com/migrate_me.html) for help.
 
 If the migration process scares you a bit, and you do not feel confident in your strength, we will be happy to do the whole data migration for you, just [let us know](https://www.x-cart.com/migrate_me.html)!
-
-
-
-
-
