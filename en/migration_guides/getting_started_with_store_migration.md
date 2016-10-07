@@ -51,7 +51,23 @@ If you have added products to X-Cart via a migration app, it is important to ver
 
 5.   If your products have options and variants, use the {% link "product classes and attributes feature" ref_T90ZcEpP %} to set them up. You may need them if your products have such parameters as color, size, material, country of origin, ISBN, technical specifications, etc.
 
-6.   Optimize the store catalog pages for SEO: define meta elements of your product and category pages - such as the page title, meta description and meta keywords; set up seo-friendly URLs.
+6.   {% link "Optimize the store catalog pages for SEO" ref_OBh3V1k1 %}: define meta elements of your product and category pages - such as the page title, meta description and meta keywords; (% link "set up seo-friendly URLs" ref_nJxrzFEZ %}.
+
+## Step 4: Configure storefront
+
+We love beautiful stores as much as you do. That’s why we offer a number of tools that help you to personalize your X-Cart store easily:
+
+1.   {% link "Change X-Cart logo and favicon" ref_2VXSZhKE %} to your company’s ones. {% link "Change the default Welcome text and banner on the Front page" ref_Id69E4GT %} to the ones of your own. {% link "Change the theme" ref_GLqVdpgd %} if you like.  Add links to certain pages to the Primary or Footer menus on the storefront {% link "as explained here" ref_BDykFBbw %}.
+
+2.   You may also choose to modify the text labels, say, rename the button “add to cart” to “add to bag”, as is explained by {% link "this instruction" ref_IyGxQ1DN %}. 
+
+3.   {% link "Specify your company identity and contact information" ref_HcSs9eFL %}. Enable the {% link "Contact Us form" ref_hfZXkxzT %}. Edit the text on the Contact Us page as described here.To tell your customers about your company or to explain your store’s shipping and return policy, add static pages to your store. To modify the dummy  “terms and conditions” text of ours, follow this instruction.
+
+
+Configure your store’s General look and feel settings like product sorting within a category, minimal image width, number of products per category listing page, etc. Define the localization parameters like weight unit, time zone and weight format.
+
+
+You may also switch the store language in Admin area or add a custom translation to the storefront. 
 
 
 
