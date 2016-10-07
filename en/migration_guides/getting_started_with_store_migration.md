@@ -55,7 +55,7 @@ If you have added products to X-Cart via a migration app, it is important to ver
 
 6.   {% link "Optimize the store catalog pages for SEO" ref_OBh3V1k1 %}: define meta elements of your product and category pages - such as the page title, meta description and meta keywords; (% link "set up seo-friendly URLs" ref_nJxrzFEZ %}.
 
-## Step 4: Configure storefront
+## Step 4: Configure the storefront
 
 We love beautiful stores as much as you do. That’s why we offer a number of tools that help you to personalize your X-Cart store easily:
 
