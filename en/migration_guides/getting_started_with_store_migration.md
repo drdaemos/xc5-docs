@@ -7,6 +7,8 @@ title: Getting started with store migration
 order: 90
 published: false
 ---
+![migration.jpg]({{site.baseurl}}/attachments/ref_enOvsLbT/migration.jpg)
+
 This guide explains the main steps to set up an X-Cart store. Please refer to it to make sure you don't forget any key tasks before the store launch. [Contact X-Cart professionals](https://www.x-cart.com/contact-us.html) if you need assistance at any step: we’re just one call or email away ;)
 
 ## Step 1: Obtaining an X-Cart license and installing software
