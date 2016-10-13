@@ -4,7 +4,7 @@ layout: article_with_sidebar
 updated_at: '2016-10-13 14:57 +0400'
 identifier: ref_f4ohXara
 title: Customizing the Admin and Vendor Signup pages
-version: X-Cart 5.2.16 and earlier
+version: 'X-Cart 5.2.x and X-Cart 5.3.x '
 categories:
   - Developer docs
   - Outdated
