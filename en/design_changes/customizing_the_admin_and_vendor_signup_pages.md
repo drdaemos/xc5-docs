@@ -1,15 +1,22 @@
 ---
-identifier: ref_f4ohXara
-updated_at: 2016-02-12 00:00
-layout: article_with_sidebar
 lang: en
-title: 'Customizing the Admin and Vendor Signup pages'
+layout: article_with_sidebar
+updated_at: '2016-10-13 14:57 +0400'
+identifier: ref_f4ohXara
+title: Customizing the Admin and Vendor Signup pages
 version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
   - Outdated
+published: true
+order: 100
 ---
 
+It is possible to customize the Admin and Vendor Signup pages in your X-Cart store. See instructions for:
+*    [X-Cart 5.2.x](customization-of-admin-and-vendor-signup-pages-in-x-cart-5.2.x)
+*    [X-Cart 5.3.x](customization-of-admin-and-vendor-signup-pages-in-x-cart-5.3.x)
+
+## Customization of Admin and Vendor Signup pages in X-Cart 5.2.x
 
 To change the logo and the logo link for the Admin and Vendor Signup pages, use the **Custom skin** module and create a custom version of the default template:
 
@@ -25,15 +32,49 @@ If you also need to change the Admin Signup Page footer link "Official Website"
 
 *   for the "Official website" footer link:
 
-`skins/admin/en/footer/right/site.tpl`
+        `skins/admin/en/footer/right/site.tpl`
 
-`skins/custom_skin/admin/en/footer/right/site.tpl`
+        `skins/custom_skin/admin/en/footer/right/site.tpl`
 
 *   for the "Powered by X-Cart..." bottom text:
 
-`skins/admin/en/powered_by.tpl`
+        `skins/admin/en/powered_by.tpl`
 
-`skins/custom_skin/admin/en/powered_by.tpl`
+        `skins/custom_skin/admin/en/powered_by.tpl`
+
+
+## Customization of Admin and Vendor Signup pages in X-Cart 5.3.x
+
+If you need to change the page title, the footer links "Official Website", "Find us on..." and the bottom text "Powered by X-Cart..." in X-Cart admin side, use the "Custom Skin" module to create custom versions of the following templates:
+
+*   for the "Official website" footer link:
+
+        original template: `skins/admin/footer/right/site.twig`
+
+        custom template: `skins/custom_skin/admin/footer/right/site.twig`
+
+*   for the "Find us on..." footer links:
+
+        original template: `skins/admin/footer/right/social_link.twig`
+
+        custom template: `skins/custom_skin/admin/footer/right/social_link.twig`
+
+*   for the "Powered by X-Cart…" bottom text:
+
+        original template: `skins/admin/powered_by.twig`
+
+        custom template: `skins/custom_skin/admin/powered_by.twig`
+
+*   for the page title:
+
+        original template: `skins/admin/header/parts/title.twig`
+
+        custom template: `skins/custom_skin/admin/header/parts/title.twig`
+
+Then you can customize the code of the custom templates as you wish.
+
+
+
 
 _See also:_
 
