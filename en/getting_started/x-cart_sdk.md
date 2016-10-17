@@ -16,8 +16,6 @@ published: true
 
 X-Cart SDK is a collection of macros that ease X-Cart 5 development. This article explains how to obtain X-Cart SDK and how to use its macros.
 
-SDK is not yet applicable for X-Cart 5.3.x, but we are working on update and it will be coming soon.
-
 # Table of Contents
 
 *   [Introduction](#introduction)
