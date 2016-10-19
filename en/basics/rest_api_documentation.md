@@ -930,12 +930,12 @@ The above sample link allows you to update Order #5 and set its shipping status 
 
 NOTE: Below is the list of shipping statuses and their ID numbers:
 
-New = 1
-Processing = 2
-Shipped = 3
-Delivered = 4
-Will Not Deliver = 5
-Returned =  6
+*   New = 1
+*   Processing = 2
+*   Shipped = 3
+*   Delivered = 4
+*   Will Not Deliver = 5
+*   Returned =  6
 
 
 ## Attachments:
