@@ -1,11 +1,11 @@
 ---
-identifier: ref_RSR29iWL
-updated_at: 2016-08-24 00:00
-layout: article_with_sidebar
 lang: en
-title: 'REST API documentation'
+layout: article_with_sidebar
+updated_at: '2016-10-19 14:44 +0400'
+identifier: ref_RSR29iWL
+title: REST API documentation
 order: 100
-
+published: true
 ---
 
 # Introduction
@@ -51,6 +51,7 @@ Please note that X-Cart models and their API change over time, so some example r
     *   [Getting shipping methods info](#getting-shipping-methods-info)
     *   [Creating a shipping rate](#creating-a-shipping-rate)
     *   [Updating an existing shipping rate](#updating-an-existing-shipping-rate)
+    *   [Changing the shipping status for an order](#changing-the-shipping-status-for-an-order)
 
 # Installing and configuring REST API
 
@@ -918,6 +919,24 @@ array (size=5)
           'markup_id' => string '9' (length=1)
           'markup_per_weight' => string '77' (length=2)
 ```
+
+## Changing the shipping status for an order
+
+```
+http://127.0.0.1/xcart531/admin.php?target=RESTAPI&_key=rw2016mykey1977k&_path=order/5&_method=put&model[shippingStatus][id]=2
+```
+
+The above sample link allows you to update Order #5 and set its shipping status to "Processing" (ID=2)
+
+NOTE: Below is the list of shipping statuses and their ID numbers:
+
+New = 1
+Processing = 2
+Shipped = 3
+Delivered = 4
+Will Not Deliver = 5
+Returned =  6
+
 
 ## Attachments:
 
