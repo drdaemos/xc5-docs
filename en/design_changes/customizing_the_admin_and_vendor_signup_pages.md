@@ -16,7 +16,7 @@ It is possible to customize the Admin and Vendor Signup pages in your X-Cart sto
 
 *    [X-Cart 5.2.x](#customization-of-admin-and-vendor-signup-pages-in-x-cart-5%2E2%2Ex)
 
-*    [X-Cart 5.3.x](#customization-of-admin-and-vendor-signup-pages-in-x-cart-5.3.x)
+*    [X-Cart 5.3.x](#customization-of-admin-and-vendor-signup-pages-in-x-cart-5%2E3%2Ex)
 
 
 ## Customization of Admin and Vendor Signup pages in X-Cart 5.2.x
