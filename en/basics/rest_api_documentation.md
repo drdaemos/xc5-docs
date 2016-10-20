@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-10-19 14:44 +0400'
+updated_at: '2016-10-20 09:45 +0400'
 identifier: ref_RSR29iWL
 title: REST API documentation
 order: 100
@@ -385,8 +385,6 @@ $client = \RESTAPIClient::factory($storeUrl, $restApiKey, 'complex');
 
 ## Data available in the Complex schema
 
-![]({{site.baseurl}}/images/icons/grey_arrow_down.png)
-
 ### Product entity
 
 *   **sku **- string;
@@ -421,7 +419,7 @@ $client = \RESTAPIClient::factory($storeUrl, $restApiKey, 'complex');
 
 *   **translations** - array of translation entities (key is a language code, e.g. **en**, value is an array of **name**, **description** and **shortDescription** of that language)
 
-![]({{site.baseurl}}/images/icons/grey_arrow_down.png)Profile entity
+### Profile entity
 
 *   **profileId** - integer;
 
@@ -443,7 +441,7 @@ $client = \RESTAPIClient::factory($storeUrl, $restApiKey, 'complex');
 
 *   **lastname** - string, taken from default billing address.
 
-![]({{site.baseurl}}/images/icons/grey_arrow_down.png)Order entity
+### Order entity
 
 *   **orderId** - integer;
 
@@ -503,7 +501,7 @@ The rules are as follows:
 
 1.  The **\XLite\Model\** prefix is excluded;
 2.  The rest of path is **lowercased**;
-3.  **Back-slashes** become **dashes**.
+3.  **Back-slashes** (\) become **dashes** (-).
 
 Example 1: building _path for \XLite\Model\Product model:
 
@@ -551,7 +549,10 @@ For the sake of example, we will show examples for product entities only, but th
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_cnd[price][0]=10&_cnd[price][1]=20
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=product
+&_cnd[price][0]=10
+&_cnd[price][1]=20
 ```
 
 Explanation of this request:
@@ -585,7 +586,14 @@ Such a request will create a product and then return the same product info in JS
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product/0&_method=post&model[sku]=sweatshirt&model[price]=10.00&model[amount]=100&model[translations][0][code]=en&model[translations][0][name]=sweatshirt
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=product/0
+&_method=post
+&model[sku]=sweatshirt
+&model[price]=10.00
+&model[amount]=100
+&model[translations][0][code]=en
+&model[translations][0][name]=sweatshirt
 ```
 
 Explanation of this request:
@@ -629,7 +637,19 @@ Such a request will create a product and then return the same product info in JS
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_method=post&model[0][sku]=red-apple&model[0][price]=5.00&model[0][amount]=100&model[0][translations][0][code]=en&model[0][translations][0][name]=Red%20apple&model[1][sku]=green-apple&model[1][price]=5.00&model[1][amount]=100&model[1][translations][1][code]=en&model[1][translations][0][name]=Green%20apple
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=product
+&_method=post
+&model[0][sku]=red-apple
+&model[0][price]=5.00
+&model[0][amount]=100
+&model[0][translations][0][code]=en
+&model[0][translations][0][name]=Red%20apple
+&model[1][sku]=green-apple
+&model[1][price]=5.00
+&model[1][amount]=100
+&model[1][translations][1][code]=en
+&model[1][translations][0][name]=Green%20apple
 ```
 
 With REST API Client:
@@ -676,7 +696,10 @@ Such a request will create two products and then return their info as a result.
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product/1&_method=put&model[sku]=new-sku
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=product/1
+&_method=put
+&model[sku]=new-sku
 ```
 
 We are using the parameter** _**path=product/1**** since we want to update a product with ID=1\. If we wanted to update a product with ID=14, we would use **_path=product/14.**
@@ -701,7 +724,13 @@ Such a request will change the sku of the product with ID=1 and then return this
 Direct request:
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_method=put&model[0][product_id]=1&model[0][sku]=new-sku-1&model[1][product_id]=3&model[0][sku]=new-sku-3
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=product
+&_method=put
+&model[0][product_id]=1
+&model[0][sku]=new-sku-1
+&model[1][product_id]=3
+&model[0][sku]=new-sku-3
 ```
 
 With REST API Client:
@@ -729,7 +758,11 @@ $result = $client->put('product', array('body' => $products))->json();
 Direct request:
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=categoryproducts/0&_method=post&model[product][product_id]=1&model[category][category_id]=1
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=categoryproducts/0
+&_method=post
+&model[product][product_id]=1
+&model[category][category_id]=1
 ```
 
 With REST API Client:
@@ -754,7 +787,9 @@ $result = $client->post('categoryproducts/0', array('body' => $link))->json();
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product/1&_method=delete
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=product/1
+&_method=delete
 ```
 
 With REST API Client:
@@ -771,7 +806,9 @@ $result = $client->delete('product/1')->json();
 Direct request: 
 
 ```php
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key&_path=product&_method=delete
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=rest-api-key
+&_path=product
+&_method=delete
 ```
 
 With REST API Client:
@@ -788,7 +825,16 @@ $result = $client->delete('product')->json();
 Direct request:
 
 ```
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=zone&_method=post&model[0][zone_name]=ZONE&model[0][zone_elements][0][element_value]=US&model[0][zone_elements][0][element_type]=C&model[0][zone_elements][1][element_value]=US_NY&model[0][zone_elements][1][element_type]=S&model[0][zone_elements][2][element_value]=10001&model[0][zone_elements][2][element_type]=Z
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY
+&_path=zone
+&_method=post
+&model[0][zone_name]=ZONE
+&model[0][zone_elements][0][element_value]=US
+&model[0][zone_elements][0][element_type]=C
+&model[0][zone_elements][1][element_value]=US_NY
+&model[0][zone_elements][1][element_type]=S
+&model[0][zone_elements][2][element_value]=10001
+&model[0][zone_elements][2][element_type]=Z
 ```
 
 Example result: 
@@ -833,7 +879,14 @@ http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=zone
 Direct request:
 
 ```
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-method&_method=post&model[0][translations][0][name]=SHIPPING&model[0][processor]=offline&model[0][tableType]=S&model[0][added]=1&model[0][enabled]=1
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY
+&_path=shipping-method
+&_method=post
+&model[0][translations][0][name]=SHIPPING
+&model[0][processor]=offline
+&model[0][tableType]=S
+&model[0][added]=1
+&model[0][enabled]=1
 ```
 
 Example result: 
@@ -872,7 +925,12 @@ http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-method
 Direct request:
 
 ```
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-markup&_method=post&model[0][zone][zone_id]=9&model[0][shipping_method][method_id]=135&model[0][markup_per_weight]=7
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY
+&_path=shipping-markup
+&_method=post
+&model[0][zone][zone_id]=9
+&model[0][shipping_method][method_id]=135
+&model[0][markup_per_weight]=7
 ```
 
 Example result: 
@@ -901,7 +959,11 @@ array (size=5)
 Direct request:
 
 ```
-http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY&_path=shipping-markup&_method=put&model[0][markup_id]=9&model[0][markup_per_weight]=77
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY
+&_path=shipping-markup
+&_method=put
+&model[0][markup_id]=9
+&model[0][markup_per_weight]=77
 ```
 
 Example result: 
@@ -923,7 +985,10 @@ array (size=5)
 ## Changing the shipping status for an order
 
 ```
-http://127.0.0.1/xcart531/admin.php?target=RESTAPI&_key=rw2016mykey1977k&_path=order/5&_method=put&model[shippingStatus][id]=2
+http://<X-CART-PATH>/admin.php?target=RESTAPI&_key=KEY
+&_path=order/5
+&_method=put
+&model[shippingStatus][id]=2
 ```
 
 The above sample link allows you to update Order #5 and set its shipping status to "Processing" (ID=2)
@@ -937,6 +1002,60 @@ NOTE: Below is the list of shipping statuses and their ID numbers:
 *   Will Not Deliver = 5
 *   Returned =  6
 
+Example result excerpt (note the shipping status field):
+
+```json
+{
+    "order_id": 5,
+    "shipping_id": 90,
+    "shipping_method_name": "Courier",
+    "payment_method_name": "",
+    "tracking": "",
+    "date": 1452604702,
+    "lastRenewDate": 1476943206,
+    "notes": "",
+    "adminNotes": "",
+    "orderNumber": "5",
+    "recent": false,
+    "total": 352.81,
+    "subtotal": 351.31,
+    "pbOrder": null,
+    "messages": [],
+    "profile": {
+    	...profile data
+    },
+    "orig_profile": {
+    	...profile data
+    },
+    "paymentStatus": {
+        "id": 4,
+        "code": "P",
+        "position": 40
+    },
+    "shippingStatus": {
+        "id": 5,
+        "code": "WND",
+        "position": 50
+    },
+    "details": [],
+    "trackingNumbers": [],
+    "events": [
+        ...
+    ],
+    "items": [
+        ...
+    ],
+    "surcharges": [
+    	...
+    ],
+    "payment_transactions": [
+    	...
+    ],
+    "currency": {
+    	...
+    }
+}
+```
 
 ## Attachments:
 
