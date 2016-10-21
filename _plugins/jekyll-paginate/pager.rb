@@ -37,7 +37,6 @@ module Jekyll
         paginate_path = remove_leading_slash(config['paginate_path'])
         paginate_path = File.expand_path(paginate_path, config['source'])
 
-        puts paginate_path.inspect, page_dir.inspect
         page.name == 'index.html' &&
           in_hierarchy(config['source'], page_dir, File.dirname(paginate_path))
       end

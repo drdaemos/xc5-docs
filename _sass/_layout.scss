@@ -268,6 +268,17 @@ article {
         overflow: auto;
         box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.1);
     }
+
+    div.highlighter-rouge {
+      position: relative;
+    }
+
+    div.highlighter-rouge > .clipboard-button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 0px;
+    }
 }
 
 // responsive semantic fix

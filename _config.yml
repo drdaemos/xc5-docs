@@ -13,7 +13,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://devs.x-cart.com" # the base hostname & protocol for your site
 encoding: utf-8
 repository: xcart/xc5-docs
-ga_code: UA-82403212-2
+ga_code: UA-56346543-1
 
 # Build settings
 safe: false
