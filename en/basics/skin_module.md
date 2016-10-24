@@ -25,6 +25,7 @@ Skin module differs from other modules by having a specific Main.php file (modul
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Main.php definition](#mainphp-definition)
+    *   [Skin paths](#skin-paths)
     *   [Color schemes](#color-schemes)
 *   [Thumbnails and store logo](#thumbnails-and-store-logo)
 
@@ -73,6 +74,31 @@ public static function getMinorRequiredCoreVersion()
 ```
 
 Remember to delete this function when adapting your skin for 5.3.x versions.
+
+### Skin paths
+
+By default, every skin is based on the core X-Cart skin, placed in the `<X-Cart>/skins/customer/` folder. In order to modify any of the original files (mostly templates), you have to define `getSkins()` function:
+
+```php
+
+    /**
+     * The following pathes are defined as substitutional skins.
+     *
+     * @return array
+     */
+    public static function getSkins()
+    {
+        return [
+            \XLite::CUSTOMER_INTERFACE => ['crisp_white' . LC_DS . 'customer'],
+        ];
+    }
+```
+
+This function defines folders to lookup any files that will substitute the default ones. The function must return an array, containing key-value records where key is the interface code (in most situations it will be \XLite::CUSTOMER_INTERFACE) and the value is the array with folder paths inside `<X-Cart>/skins/` directory.
+
+Any files, placed in the mentioned folder, will be used instead of the original files. Read more about skin file substitution {% link 'here' ref_skin_substitution %}.
+
+Also, you can put new files there to use in skin-specific views; they won't replace anything, just become available to reference inside View classes.
 
 ### Color schemes
 
