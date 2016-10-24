@@ -21,7 +21,7 @@ File substitution system enables you to easily extend themes and minimize the ma
 *   [Table of Contents](#table-of-contents)
 *   [Substitution algorithm](#substitution-algorithm)
 *   [Fallback scheme](#fallback-scheme)
-*   [Solutions](#fallback-scheme)
+*   [Example usage](#example-usage)
 
 ## Substitution algorithm 
 
