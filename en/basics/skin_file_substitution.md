@@ -61,7 +61,7 @@ For example, the task is to add a message to the customer invoice below the logo
 
 The red zone can be modified through `<X-Cart>/skins/common/order/invoice/parts/bottom.twig` file. But it is the core file and you don't want to break the upgrade. Also, the task is to add the message to customer invoice **only**.
 
-Using file substitution system, you create either `<X-Cart>/skins/theme_tweaker/customer/order/invoice/parts/bottom.twig` with modified content, or go through the whole skin defining process and after that create `<X-Cart>/skins/new_skin/customer/order/invoice/parts/bottom.twig` file (let's just assume that skin registers its path as `new_skin/customer`).
+Using file substitution system, you create either `skins/theme_tweaker/customer/order/invoice/parts/bottom.twig` with modified content, or go through the whole skin defining process and after that create `skins/new_skin/customer/order/invoice/parts/bottom.twig` file (let's just assume that skin registers its path as `new_skin/customer`).
 
 One way or another, the result is:
 
