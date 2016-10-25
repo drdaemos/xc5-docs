@@ -49,11 +49,13 @@ For example, when X-Cart renders a widget for a Russian-speaking customer, `<int
 The locale code also fallbacks to the default language - **English**. If file is not found by other language code or English is the enabled one, `<interface>` will be simply `customer`.
 
 Such fallback can particularly help you when you have to display one image in different languages. You simply define page layout and style in default `customer` interface path and provide only the translated image inside `customer_<lang>` folder.
+
+Also, you can read more about available interfaces at {% link 'Templates and interface' ref_templates#view-interfaces %} page
 {% endnote %}
 
 So if you need to customize a certain template or file, you put an overriding one with the same name in the `<X-Cart>/skins/<skin_path>/<interface>/<path_to_file>` directory, where `<path_to_file>` is the path to the original template.
 
-### Example usage
+## Example usage
 
 For example, the task is to add a message to the customer invoice below the logo and invoice number. 
 
@@ -66,8 +68,3 @@ Using file substitution system, you create either `skins/theme_tweaker/customer/
 One way or another, the result is:
 
 ![]({{site.baseurl}}/attachments/ref_skin_substitution/after.png)
-
-
-
-
-
