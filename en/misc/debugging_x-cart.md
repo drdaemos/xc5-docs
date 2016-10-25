@@ -10,11 +10,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 The main purpose of debugging any software is to find faulty piece of code or data that causes the problem. This article describes main approaches of digging into X-Cart 5 and finding problem piece of code or data.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -23,7 +23,7 @@ The main purpose of debugging any software is to find faulty piece of code or da
 *   [Logging](#logging)
 *   [Problems with redirects](#problems-with-redirects)
 
-# Fixing fatal errors
+## Fixing fatal errors
 
 If you receive a PHP error message, this means quite simple case, because backtrace will tell you exact file and line number where problem is happened. You need to go to the **file mentioned in the error message** and investigate the problem there. Sometimes the line of code that fires an error is not a root of the problem, because it received wrong data from **other functions**, so you should dig into where the incorrect data came from and then you will identify a faulty algorithm or piece of data.
 
@@ -31,7 +31,7 @@ Make sure to debug the problem in the `<X-Cart>var/run/` folder, not in the `<X-
 
 Do not be afraid of putting any code to scripts in the `<X-Cart>/var/run/` folder. You will always be able to restore pre-modified version of working code by re-deploying the store.
 
-# There is a problem without fatal error
+## There is a problem without fatal error
 
 In this case you need to find a piece of code that generates a problem HTML code and then track down the problem to its root.
 
@@ -43,7 +43,7 @@ Good approaches are:
 
 Once you identified (or suspect) a problem piece of code, then you should use the same approach as with fatal errors: go to the `<X-Cart>var/run/` folder and start adding debug code ([var_dump()](http://php.net/var_dump), [var_export()](http://php.net/var_export) or [print_r()](http://php.net/print_r) functions) to this piece of software.
 
-# Logging
+## Logging
 
 If you need to dump some variable during script execution and you cannot call `die()`, then you can log the variable during execution by using the following method: 
 
@@ -56,6 +56,6 @@ If you need to dump some variable during script execution and you cannot call `d
     _Note: do not log entire objects, because your store will go down while doing var_export() on the object and your log will be empty._
 3.  `$whether_to_add_backtrace` defines whether backtrace should be put into log file. Backtrace is useful, but if you log a lot of info, this will be an overkill.
 
-# Problems with redirects
+## Problems with redirects
 
 If you see, that there is a problem that X-Cart performs a faulty redirect, but you do not know where it comes from, you should add logs with backtrace to the `redirect()` method of the `\XLite\Core\Operator` class. All standard redirects are done via this method.

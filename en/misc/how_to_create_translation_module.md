@@ -20,13 +20,13 @@ This article describes the whole process of creating translation module.
     *   [Example](#example)
 *   [Wrapping up the translation module](#wrapping-up-the-translation-module)
 
-# Getting CSV file
+## Getting CSV file
 
 We assume that you already have X-Cart 5 installation. You can get the complete list of labels for translation by clicking **CSV icon** in the **Store setup** > **Translations** section in your admin area.
 
 ![]({{site.baseurl}}/attachments/7504191/7602235.png)
 
-# Working with CSV
+## Working with CSV
 
 Open this CSV file in your favourite spreadsheet editor (MS Excel, OpenOffice Calc, etc). You will see three columns there.
 
@@ -36,7 +36,7 @@ Open this CSV file in your favourite spreadsheet editor (MS Excel, OpenOffice Ca
 *   The second column contains the key of the label. Our translation engine will use this key to identify what label should be pulled from the translation module.
 *   The third column contains the translation of the label. What you need to do is to translate the phrase in the third column and put the translated value back into this column.
 
-## Example
+### Example
 
 You want to add Spanish translation of X-Cart.
 
@@ -46,7 +46,7 @@ You want to add Spanish translation of X-Cart.
 4.  In the second row second column you add Spanish translation of phrase _Add to Cart_. Not _Add to cart _(with small c in cart), because you are translating the phrase that is in the second column, not the key that is in the first column. Quite often, label's key and its translation are the same, but this is not always.
 5.  Keep translating labels until the end of file and then save it with CSV extension.
 
-# Wrapping up the translation module
+## Wrapping up the translation module
 
 Once you are done with the CSV file, you should go to the [http://www.x-cart.com/xc5lm](http://www.x-cart.com/xc5lm) page and this script will allow you to wrap up this CSV file into the module.
 

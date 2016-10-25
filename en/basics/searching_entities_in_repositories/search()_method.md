@@ -12,7 +12,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes another approach of searching entities in the database and then pulling data. We already know two approaches:
 
@@ -23,14 +23,14 @@ Method **search()** is used primarily in {% link "ItemsLists objects" ref_MRidEz
 
 For the sake of example, we will create a mod that will display names of products that have IDs less than 20.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an external" ref_ogmCiRWZ %} `test.php` script inside X-Cart folder. We put the following code inside this script: 
 
@@ -174,6 +174,6 @@ Imagine that you have dozen of conditions for pulling products. In this case, th
 
 _Note: if you need to create search() method for your own entity, use {% link "this guide" ref_hBpBE0vS#creating-repository-class %}_ _for its general implementation._
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-SearchRepoDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-SearchRepoDemo-v5_1_0.tar)

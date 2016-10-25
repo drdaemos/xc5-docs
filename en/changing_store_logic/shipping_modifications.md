@@ -12,11 +12,11 @@ order: 100
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes the process of creating a simple shipping method. In our module, we will create a new shipping carrier – **My Processor** – that will have one shipping method – **My Shipping Method** –  that has a flat rate of **$10**.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -24,7 +24,7 @@ This article describes the process of creating a simple shipping method. In our 
 *   [Checking the results](#checking-the-results)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start by {% link "creating an empty module" ref_G2mlgckf %} with the developer ID **XCExample** and the module ID **ShippingDemo**. Then, we create the file
 `<X-Cart>/classes/XLite/Module/XCExample/ShippingDemo/Model/Shipping/Processor/MyProcessor.php`: 
@@ -197,7 +197,7 @@ Finally, we need to register our shipping processor in the system. For that purp
 
 **`\XLite\Module\XCExample\ShippingDemo\Model\Shipping\Processor\MyProcessor`** is the name of our shipping processor class.
 
-# Checking the results
+## Checking the results
 
 Now our module is ready and we need to re-deploy the store. Once this process is completed, we need to go to the **Store setup** > **Shipping** section in the admin area.
 
@@ -217,7 +217,7 @@ Then go to customer area, add some product to a cart and proceed to checkout. Yo
 
 ![]({{site.baseurl}}/attachments/8225333/9633893.png?effects=drop-shadow)
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [XCExample-ShippingDemo-v5_2_0.tar](attachments/8225333/9633894.tar)
 

@@ -12,20 +12,20 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
-This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in **xid** cookie – unless changed by {% link "decoration" ref_AF6bmvL6 %} of `\XLite\Core\Session` class.
+This guide will give an example how to work with sessions in X-Cart. X-Cart identifies a session data by a value stored in `xid` cookie – unless changed by {% link "decoration" ref_AF6bmvL6 %} of `\XLite\Core\Session` class.
 
-For the sake of example, we will create a module with a page `cart.php?target=session_demo` and this page can be called with the `session_value` parameter. For the very first time this page will display the **Session value has not been specified yet** message and it will remain the same until the **session_value** parameter is passed. Once it is passed, the page will display the **Session value is: {session_value}** message. Even if you open this page without **session_value** parameter after that, the message **Session value is: {session_value}** message will be displayed with the latest **session_value** submitted.
+For the sake of example, we will create a module with a page `cart.php?target=session_demo` and this page can be called with the `session_value` parameter. For the very first time this page will display the `Session value has not been specified yet` message and it will remain the same until the `session_value` parameter is passed. Once it is passed, the page will display the `Session value is: {session_value}` message. Even if you open this page without `session_value` parameter after that, the message `Session value is: {session_value}` message will be displayed with the latest `session_value` submitted.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module example](#module-example)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **SessionDemo**. Then we {% link "create a page" ref_0VgqyxB8 %} `cart.php?target=session_demo` in our module. For that we create:
 
@@ -69,7 +69,7 @@ We start with {% link "creating an empty module" ref_G2mlgckf %} with developer 
 
 *   an empty page template `<X-Cart>/skins/customer/modules/Tony/SessionDemo/page/session_demo/body.tpl`.
 
-Now we need to check each {% link "request" ref_pvZ8nad3 %} to `cart.php?target=session_demo` page and if there is **session_value** parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our {% link "controller class" ref_hkVaxgds %} `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
+Now we need to check each {% link "request" ref_pvZ8nad3 %} to `cart.php?target=session_demo` page and if there is `session_value` parameter, then we need to save it to the session variable. To achieve that we are going to implement custom `handleRequest()` method in our {% link "controller class" ref_hkVaxgds %} `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo`: 
 
 ```php
     public function handleRequest()
@@ -101,7 +101,7 @@ Now, we need to add a method to our controller that will fetch a value of this s
     }
 ```
 
-By default it returns an **empty string**, but if there is any value stored in the **s_value** session variable, then it will return this value.
+By default it returns an `empty string`, but if there is any value stored in the `s_value` session variable, then it will return this value.
 
 The final version of `\XLite\Module\Tony\SessionDemo\Controller\Customer\SessionDemo` class will be as follows: 
 
@@ -150,7 +150,7 @@ Session value has not been specified yet
 {% endif %}
 ```
 
-If `getSessionValue()` returns non-empty value – empty string is considered as an empty value – then we display the **Session value has not been specified yet** message, otherwise we display the message **Session value is: session_value**.
+If `getSessionValue()` returns non-empty value – empty string is considered as an empty value – then we display the `Session value has not been specified yet` message, otherwise we display the message `Session value is: session_value`.
 
 That is it. Now we need to re-deploy the store and check the results. Go to your `cart.php?target=session_demo` page and you will see the following result:![]({{site.baseurl}}/attachments/8225420/8356194.png)
 
@@ -160,7 +160,7 @@ If you try to open the same page as `cart.php?target=session_demo`, you will st
 
 and in order to see the initial message, you will have to clean up your cookies.
 
-# Module example
+## Module example
 
 This module pack can be downloaded from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-SessionDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-SessionDemo-v5_1_0.tar)
 

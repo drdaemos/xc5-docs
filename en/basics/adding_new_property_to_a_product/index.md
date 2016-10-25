@@ -14,11 +14,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This guide teaches X-Cart developers how they can add their own field to products and then use it on invoices.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -29,11 +29,11 @@ This guide teaches X-Cart developers how they can add their own field to product
     *   [Checking the results](#checking-the-results)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 First of all, {% link "create a new module" ref_G2mlgckf %}. We are creating a module with developer ID **Tony** and module ID **ProductFieldDemo**.
 
-## Adding new field to product model
+### Adding new field to product model
 
 {% link "Decorate" ref_AF6bmvL6 %} the `\XLite\Model\Product` class ({% link "more info about X-Cart classnames" ref_FAgFbEx9 %}). We are creating the `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/Model/Product.php` file with the following content: 
 
@@ -65,7 +65,7 @@ class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 
 That is it. If we re-deploy the store right now, X-Cart will create a new field in the database according to our parameters we specified. Do not initiate store re-deployment right now though.
 
-## Creating interface for editing this field
+### Creating interface for editing this field
 
 Now we need to be able to specify value of this property on product details page in admin area. We decorate `\XLite\View\Model\Product` class and create
 `<X-Cart>/classes/XLite/Module/Tony/ProductFieldDemo/View/Model/Product.php` file with the following content: 
@@ -97,7 +97,7 @@ Such code will add a new field to the product details page in admin area. This f
 
 _Note: see an example of creating model editing form with more detailed explanation here: {% link "Model editing page" ref_LanG54L9 %}._
 
-## Showing this field value on thank you page
+### Showing this field value on thank you page
 
 Finally, we need to display the value of this field on thank you page after the order is placed. It should be displayed like this:![]({{site.baseurl}}/attachments/8225149/8356106.png)
 
@@ -118,12 +118,12 @@ In this template, we tell template to be registered in the `invoice.item.name` v
 
 Another important part is that we just call value of **testField** property as `item.product.getTestField()`, even though we did not declare `getTestField()` method in the `\XLite\Model\Product`. X-Cart creates `get{PropertyName}()` methods for each property automatically, if it is not declared explicitly.
 
-## Checking the results
+### Checking the results
 
 Now we need to re-deploy the store and after it is finished, we go to any product in admin area and we will be able to see our new field there: ![]({{site.baseurl}}/attachments/8225149/8356107.png)
 
 Define it as you wish, then add this product to cart in customer zone and place an order with it. You will see a thank you page with this field's value there:![]({{site.baseurl}}/attachments/8225149/8356108.png)
 
-# Module pack
+## Module pack
 
 You can download this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ProductFieldDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ProductFieldDemo-v5_1_0.tar)

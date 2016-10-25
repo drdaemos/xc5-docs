@@ -11,11 +11,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This guide explains how you can add product images to order notifications. It also gives an overview of invoice structure in terms of templates.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -23,7 +23,7 @@ This guide explains how you can add product images to order notifications. It al
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# How it is going to work
+## How it is going to work
 
 Before we get started we have to understand what templates {% link "render an invoice page" ref_E88KCMDD %}. The responsible {% link "viewer class" ref_6dMJsZ63 %} for invoice display is `\XLite\View\Invoice` ({% link "more info about classnames in X-Cart" ref_FAgFbEx9 %}) and as we can see in its code, it starts rendering the invoice from the `order/invoice/body.tpl` template (see `getDefaultTemplate()` method of the class) depending on the area:
 
@@ -57,7 +57,7 @@ Here is a code of the `order/invoice/parts/items/items.tpl` template: 
 
 If we want to add a new element into header of this table, then we must put our template into the `invoice.items.head` view list. If we want to put a new element into product lines of the table, then we must insert our template into the `invoice.item` view list. Note that the `order/invoice/parts/items/items.tpl` template passes `{item}` parameter into display of the `invoice.item` view list, which means that we will be able to access `\XLite\Model\OrderItem` object in the template inserted into this view list. It will be handy, because we need to access its image URL.
 
-# Implementation
+## Implementation
 
 We start with creating an empty module with module ID **Tony** and developer ID **InvoiceChangeDemo**.
 
@@ -140,7 +140,7 @@ The mod is ready now. You need to re-deploy the store and check the results in c
 
 and in your mailbox.
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-InvoiceChangeDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-InvoiceChangeDemo-v5_1_0.tar)
 

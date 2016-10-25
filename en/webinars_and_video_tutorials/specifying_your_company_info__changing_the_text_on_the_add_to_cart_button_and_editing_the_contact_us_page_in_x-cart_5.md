@@ -10,10 +10,10 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This video demonstrates how to specify your company info, change the text on the Add to Cart button and edit the Contact Us page.
 
-# Video
+## Video
 
 <iframe class="youtube-player" type="text/html" style="width: 853px; height: 480px" src="https://www.youtube.com/embed/p_NYvk3-hmQ" frameborder="0"></iframe>

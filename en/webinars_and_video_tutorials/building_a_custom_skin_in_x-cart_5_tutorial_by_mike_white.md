@@ -14,7 +14,7 @@ Thanks to Mike White who created this video guide: [http://xcartguru.com/tutori
 
 <iframe class="youtube-player" type="text/html" style="width: 800px; height: 450px" src="http://www.youtube.com/embed/3zV1ZmHaUWY" frameborder="0"></iframe>
 
-# Topics Covered
+## Topics Covered
 
 Creating the Theme/Module folder - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=1m4s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=1m4s)
 Creating Main.php - [http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=2m45s](http://www.youtube.com/watch?v=3zV1ZmHaUWY&t=2m45s)

@@ -13,7 +13,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes how X-Cart developers can change content of footer area in customer store-front of X-Cart that by default looks like this:![]({{site.baseurl}}/attachments/8225291/8356161.png)
 
@@ -76,14 +76,14 @@ In details, we want to 
 
 Once we apply this change to footer's HTML code, we will be able to specify `float:left;` style for `<div id="footer-area-old">` and `<div id="visa-logo">` elements and the whole footer area will be rendered as Visa/Mastercard logo on the left side of footer's area while rest will be shifted to the right side.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 Content of `<div id="footer-area>` section is defined by the `<X-Cart>/skins/default/en/layout/main.footer.tpl` template. Our module should alter its content as it was described in the **Introduction** section.
 
@@ -181,7 +181,7 @@ In addition to that, we have to create aforementioned CSS file and we create the
 
 That is it. Now we need to re-deploy the store and check the results in customer store-front. It should be as follows:![]({{site.baseurl}}/attachments/8225291/8356162.png)
 
-# Module pack
+## Module pack
 
 You can download this mod's example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-FooterDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-FooterDemo-v5_1_0.tar)
 

@@ -12,13 +12,13 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This is the third article in **Getting Started** section and it aims to teach X-Cart developers how to change the store's logic. We will start with an overview of how X-Cart works in general and then explain how you can change this default workflow.
 
 This article also contains the working example of changing X-Cart's logic.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -28,7 +28,7 @@ This article also contains the working example of changing X-Cart's logic.
 *   [Module example](#module-example)
 *   [Other approaches to changing the default X-Cart logic](#other-approaches-to-changing-the-default-x-cart-logic)
 
-# General types of objects in X-Cart
+## General types of objects in X-Cart
 
 Before we start explaining general workflow of X-Cart, we must say that X-Cart uses **object-oriented paradigm**, which means that code is objects-based + code widely utilizes **inheritance** as well as uses polymorphism and encapsulation. We also can call X-Cart as **MVC** (Model - View - Controller) framework, because of three main class types in X-Cart:
 
@@ -36,7 +36,7 @@ Before we start explaining general workflow of X-Cart, we must say that X-Cart u
 2.  {% link "**Viewer** class" ref_6dMJsZ63 %} is a class that handles the output of HTML code to the client. For example, in order to display an order page there is a bulk of viewer classes that takes info from order model, then processes it and finally outputs to the client. All viewer classes are defined in files of the `<X-Cart>/classes/XLite/View/` directory.
 3.  **Controller** class aims to make a preparation of data and application before viewer class starts the output of content. All controller classes are described in files of the `<X-Cart>/classes/XLite/Controller/` folder.
 
-# General X-Cart workflow
+## General X-Cart workflow
 
 Web-client can access X-Cart via two end-points: `admin.php` for admin interface and `cart.php` for customer store-front. Once X-Cart receives requests at these end-points, it runs the application as follows:
 
@@ -51,13 +51,15 @@ Web-client can access X-Cart via two end-points: `admin.php` for admin interface
 
 5.  During output generating X-Cart will require some data, e.g. product, order, user, etc info and templates will request such data like this `{getSomeData()}` in their code. Such call means that X-Cart will start searching for `getSomeData()` method in the current viewer class or in the current controller class.
 
-    _Note: while controller class is always the same for one particular page rendering, viewer class may change from one template to another. X-Cart will start generating content and \XLite\View\Controller class will manage the process at the beginning. Then, some view list may include a widget handled by other viewer class, e.g. \XLite\View\Order and it will mean that the current viewer class will switch from \XLite\View\Controller to \XLite\View\Order. If you call the {getAnotherData()} method from the template handled by \XLite\View\Order class, X-Cart will search for getAnotherData() method in the \XLite\View\Order class and the current controller classes._
+    {% note info %}
+    Note: while controller class is always the same for one particular page rendering, viewer class may change from one template to another. X-Cart will start generating content and \XLite\View\Controller class will manage the process at the beginning. Then, some view list may include a widget handled by other viewer class, e.g. \XLite\View\Order and it will mean that the current viewer class will switch from \XLite\View\Controller to \XLite\View\Order. If you call the {getAnotherData()} method from the template handled by \XLite\View\Order class, X-Cart will search for getAnotherData() method in the \XLite\View\Order class and the current controller classes.
+    {% endnote %}
 
 6.  As you can understand, X-Cart starts the output quite quickly and then **"lazy"** pulls data on demand.
 
 7.  During such lazy requests of data, X-Cart can create multiple model objects and run complex logic routines defined throughout X-Cart code.
 
-# Applying changes to X-Cart store
+## Applying changes to X-Cart store
 
 As understood from the previous paragraph, X-Cart's code execution process is **treelike** and vertices of this tree are **methods** of certain classes/objects. In order to change X-Cart's behaviour we have to be able to change the tree by adding new vertices or changing existing ones. Changing any method of X-Cart's core (as well as methods of other modules) can be achieved via using [decorator pattern](http://en.wikipedia.org/wiki/Decorator_pattern).
 
@@ -147,11 +149,11 @@ Here is how we can achieve it:
 
 7.  Final step is to **re-deploy the store** and check the results in store-front.
 
-# Module example
+## Module example
 
 Module described above can be downloaded from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-DecoratorDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-DecoratorDemo-v5_1_0.tar)
 
-# Other approaches to changing the default X-Cart logic
+## Other approaches to changing the default X-Cart logic
 
 Decoration approach is widely-used in X-Cart modules and here are few other moments that you must know about:
 

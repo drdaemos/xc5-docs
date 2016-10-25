@@ -13,21 +13,21 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 Previously we have learned how to create a {% link "global discount" ref_mFAMapCB %} and this article explains how you can create an individual product discount. For the sake of example, we will create a module that will apply a 10% discount to each product that starts with A letter and this discount will be displayed near each such product as
 
 *   a **10% off** label on product lists;
 *   an **old price** label with crossed old price near product price.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module example](#module-example)
 
-# Implementation
+## Implementation
 
 The main difference between this module and {% link "one that described global discount" ref_mFAMapCB %} is that in this module we will simply alter product prices and then adjust appearance of the price in order to show that it has been reduced. In that sense, if we have a $10 product and want to apply 10% discount to it, then:
 
@@ -263,7 +263,7 @@ Your product details page will also have old price crossed, because product pric
 
 Finally, since we decorated the most basic product ItemsList class `\XLite\View\ItemsList\Product\Customer\ACustomer`, absolutely all product lists in customer area are having **10% off** labels, even those ones that are produced by other modules, e.g. **Customers who bought this product also bought **product list by **Product Advisor** module: ![]({{site.baseurl}}/attachments/8225422/8356198.png)
 
-# Module example
+## Module example
 
 You can download this module pack from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ProductDiscountDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ProductDiscountDemo-v5_1_0.tar)
 

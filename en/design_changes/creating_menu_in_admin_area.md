@@ -11,21 +11,21 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes how developers can create/change menu items in admin area.
  ![]({{site.baseurl}}/attachments/8225143/8356087.png)
 
 The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class ({% link "more info about X-Cart classnames" ref_FAgFbEx9 %}) and this guide describes how you can apply changes to it.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 1.  {% link "Create an empty module" ref_G2mlgckf %}. We are creating module with developer ID **Tony** and module ID **AdminMenuDemo**.
 2.  {% link "Decorate" ref_AF6bmvL6 %} the `\XLite\View\Menu\Admin\TopMenu` class in your module. We are creating the `<X-Cart>/classes/XLite/Module/Tony/AdminMenuDemo/View/Menu/Admin/TopMenu.php` file with the following content:
@@ -147,7 +147,7 @@ The admin menu section is defined by the `\XLite\View\Menu\Admin\TopMenu` class 
 9.  Now it is time to re-deploy the store and check the results. You will see new menu items:
     ![]({{site.baseurl}}/attachments/8225143/8356088.png)
 
-# Module pack
+## Module pack
 
 You can download this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-AdminMenuDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-AdminMenuDemo-v5_1_0.tar)
 

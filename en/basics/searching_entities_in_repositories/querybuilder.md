@@ -11,7 +11,7 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 This article is an introduction of **QueryBuilder** object – a special object that is used in order to pull info about {% link "Models" ref_wmExvPDD %} from the database.
 
@@ -23,13 +23,13 @@ Saving data into database is also very easy, because you just call `\XLite\Core\
 
 The drawback is that you have to learn new syntax – **DQL** – and new approach of working with data. More info about DQL syntax can be found in [Doctrine 2 docs](http://doctrine-orm.readthedocs.org/en/latest/reference/dql-doctrine-query-language.html). This article will give a brief overview of how to use DQL and **[QueryBuilder](https://doctrine-orm.readthedocs.org/en/latest/reference/query-builder.html)** object.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Example](#example)
 
-# Example
+## Example
 
 Imagine, you need to pull products that are enabled and they are not out of stock. Enabled flag is stored in the `xc_products` table (**enabled** field), number of products in stock is stored in the `xc_inventory` table (**amount** field). Pure MySQL code would be as follows: 
 

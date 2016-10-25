@@ -10,11 +10,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 The aim of this webinar is to show developers how they can work with X-Cart from 3rd party scripts, e.g. CMS.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -31,7 +31,7 @@ The aim of this webinar is to show developers how they can work with X-Cart from
     *   [Logging user in](#logging-user-in)
     *   [Logging user off](#logging-user-off)
 
-# Initializing X-Cart
+## Initializing X-Cart
 
 Initializing X-Cart is as easy as including two files into your PHP project. Here is working example – сreate `test.php` file inside your X-Cart folder with the following code:
 
@@ -65,7 +65,7 @@ echo $product->getName();
 
 The same way you can use absolutely all public methods of X-Cart in your scripts: create and update objects, get data out of these objects.
 
-# Displaying widgets outside of X-Cart
+## Displaying widgets outside of X-Cart
 
 X-Cart allows to show entire widgets in 3rd party scripts in very concise way.
 
@@ -146,7 +146,7 @@ $widget->display();
 
 6.  Using these approaches you can display almost any part of X-Cart interface – from a little <div> to entire page – in your script.
 
-# What if my script is not in X-Cart folder
+## What if my script is not in X-Cart folder
 
 ## Pitfalls
 
@@ -241,7 +241,7 @@ Now it is time to re-deploy the store and see our changes in action.
 
 The entire mod can be downloaded from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-CMSIntegration-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-CMSIntegration-v5_1_0.tar)
 
-# Working with users
+## Working with users
 
 Final point of today's webinar is how to create, log in and log off users through external script. Here are working examples which assume that we are going to put them into `localhost/test.php` script while X-Cart itself is installed in `localhost/next/src`.
 

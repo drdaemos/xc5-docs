@@ -15,11 +15,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes how developers can create new entity in X-Cart store. This article's example is how to create quick messages (they are our new entities) that can be created in admin area and then 3 latest active ones will be shown in storefront.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -32,7 +32,7 @@ This article describes how developers can create new entity in X-Cart store. Thi
     *   [Checking the final results](#checking-the-final-results)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 First of all we {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **NewEntityDemo**. In this module, we {% link "create a page" ref_0VgqyxB8 %} `target=quick_messages` in admin area. We create:
 
@@ -76,7 +76,7 @@ First of all we {% link "create an empty module" ref_G2mlgckf %} with developer 
 
 *   empty template `<X-Cart>/skins/admin/en/modules/Tony/NewEntityDemo/page/quick_messages/body.tpl`
 
-## Creating Quick Message entity
+### Creating Quick Message entity
 
 In order to create a new entity in X-Cart, we have to create a new {% link "Model class" ref_FAgFbEx9 %}. We create `<X-Cart>/classes/XLite/Module/Tony/NewEntityDemo/Model/QuickMessage.php` file with the following content: 
 
@@ -177,7 +177,7 @@ Let us have a close look at this class implementation:
 
 We have created the **Model** class and now we need to create **repository** class for QuickMessage entity.
 
-## Creating Repository class
+### Creating Repository class
 
 Repository class is used in order to pull entities' info from the database. We need an implementation of {% link "search() method" ref_ehDn4NIi %} in it in order to allow proper work with ItemsList.
 
@@ -242,7 +242,7 @@ Although, the implementation of repository class looks quite cumbersome, basical
 
 After creating **Model** and **Repository** classes, we are done with creating entity classes.
 
-## Creating interface for creating and editing Quick Messages in admin area
+### Creating interface for creating and editing Quick Messages in admin area
 
 Now it is time to add a form where you can create, edit or delete quick messages to the `target=quick_messages` page. This step can be divided to sub-steps:
 
@@ -436,7 +436,7 @@ $list->processQuick();
 
 Finally, we open the **target=quick_messages** page with updated data.
 
-## Checking intermittent results
+### Checking intermittent results
 
 Now we are done with the admin part of this mod and we can create our quick messages in admin area. Re-deploy the store and go to `admin.php?target=quick_messages` page. You should see the following result:![]({{site.baseurl}}/attachments/8225303/8356166.png)
 
@@ -444,7 +444,7 @@ Of course, we do not have any quick messages yet, but if you click **Create** bu
 
 Once you add some quick messages, do not forget to save results by clicking **Save changes** button.
 
-## Showing quick messages in customer area
+### Showing quick messages in customer area
 
 We will show three latest quick messages in {% link "sidebar box" ref_Z0IrS8PW %} in the left-hand side menu in storefront.
 
@@ -511,10 +511,10 @@ Finally, we have to create the folder that was mentioned in our viewer class �
 
 This code can be read as follows. If there are quick messages – `{if:getMessages()}` – then we create `<ul>` element and walk through each element returned by `getMessages()` method – `{foreach:getMessages(), message}` – displaying text of each quick message inside `<li>` element – `<li>{message.body}</li>`.
 
-## Checking the final results
+### Checking the final results
 
 We are done with this mod and we have to re-deploy the store one more time. If you have any active quick messages in admin area, you will see the following picture in the storefront: ![]({{site.baseurl}}/attachments/8225303/8356168.png)
 
-# Module pack
+## Module pack
 
 You can download the code of this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-NewEntityDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-NewEntityDemo-v5_1_0.tar)

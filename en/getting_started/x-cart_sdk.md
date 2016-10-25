@@ -7,16 +7,15 @@ title: X-Cart SDK
 order: 500
 categories:
   - Developer docs
-  - Outdated
 published: true
 ---
 
 
-# Introduction
+## Introduction
 
 X-Cart SDK is a collection of macros that ease X-Cart 5 development. This article explains how to obtain X-Cart SDK and how to use its macros.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -29,7 +28,7 @@ X-Cart SDK is a collection of macros that ease X-Cart 5 development. This articl
     *   [Loading YAML file](#loading-yaml-file)
     *   [Making demo dump for performance tests](#making-demo-dump-for-performance-tests)
 
-# Obtaining X-Cart SDK
+## Obtaining X-Cart SDK
 
 1.  Download X-Cart SDK from [https://github.com/xcart/next-sdk](https://github.com/xcart/next-sdk) repository. If you are not familiar with GIT, you can simply download it as **.zip** archive.
     ![]({{site.baseurl}}/attachments/7864338/7995398.png)
@@ -42,7 +41,7 @@ X-Cart SDK is a collection of macros that ease X-Cart 5 development. This articl
 
     Note: this macro call will create module with developer ID **Test** and module ID **Test**.
 
-## Notes
+### Notes
 
 1.  If you are using Mac and PHP is run as a part of MAMP, you may need to run the script as 
 
@@ -52,7 +51,7 @@ X-Cart SDK is a collection of macros that ease X-Cart 5 development. This articl
 
     i.e. you need to explicitly call MAMP's PHP binary instead of relying on default PHP binary.
 
-# Macros
+## Macros
 
 The most actual information about how to run macro can be found by calling it with `--help` parameter, e.g.
 
@@ -62,7 +61,7 @@ The most actual information about how to run macro can be found by calling it wi
 
 Let us take a closer look at macros available.
 
-## Creating module
+### Creating module
 
 Call this macro as:
 
@@ -77,7 +76,7 @@ Aside from that, you can specify the following parameters:
 1.  `--hasSettings` that will automatically mark this module as having settings (you will need to specify these settings additionally later on)
 2.  `--version=5.1 `in case you want to explicitly specify module's major version
 
-## Creating page
+### Creating page
 
 Call this macro as: 
 
@@ -101,7 +100,7 @@ In case of example macro call, the following files will be created:
 *   `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Admin/Tony.php`
 *   `<X-Cart>/skins/admin/en/modules/Tony/PageDemo/page/tony/body.tpl`
 
-## Decorating class
+### Decorating class
 
 Call this macro as:
 
@@ -121,7 +120,7 @@ Example 
 
 After running this command, the macro will create `<X-Cart>/classes/XLite/Module/Tony/DecoratorDemo/View/Minicart.php` file that will define a class that decorates the `\XLite\View\Minicart` one.
 
-## Loading YAML file
+### Loading YAML file
 
 You can use this macro in case you need to load YAML file without uninstalling/installing back your module.
 
@@ -135,7 +134,7 @@ Your YAML file must be located at the `path/to/yaml/file/install.yaml` path yo
 
 There is an {% link "alternative way to load YAML file" ref_8BPAwaEG %}, if you prefer not to use X-Cart SDK.
 
-## Making demo dump for performance tests
+### Making demo dump for performance tests
 
 In case you want to test your module or whole X-Cart's performance and you want to fill your database with dummy data, you can use this script. 
 

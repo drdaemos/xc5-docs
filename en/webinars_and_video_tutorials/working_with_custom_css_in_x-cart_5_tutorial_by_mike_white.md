@@ -10,10 +10,10 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This video provides a quick tip on working with Custom CSS in X-Cart 5 and Chrome. 
 
-# Video
+## Video
 
 <iframe class="youtube-player" type="text/html" style="width: 853px; height: 480px" src="http://www.youtube.com/embed/bir1_EdpUX0" frameborder="0"></iframe>

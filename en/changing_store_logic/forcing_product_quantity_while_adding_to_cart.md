@@ -11,18 +11,18 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article aims to show how you can change the routine of adding product to cart. In our case, we will create a module that will allow only **even** quantity of product (2, 4, 6) to be added to cart. If you try to add **odd** quantity of product (1, 3, 5), then you will be given a warning message.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **AddQuantityDemo**.
 
@@ -120,7 +120,7 @@ That is it. Now we need to re-deploy the store and check the results in customer
 
 If you want to see the PHP check in action, then go the JS file, comment out its entire content and reload the page. Try to add 1 product to a cart and you will see the following warning:![]({{site.baseurl}}/attachments/8225442/8356204.png)
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-AddQuantityDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-AddQuantityDemo-v5_1_0.tar)
 

@@ -11,17 +11,17 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article shows you can authenticate a user by login and password. It also shows you how to log off a current user.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an external script" ref_ogmCiRWZ %} `<X-Cart>/test.php` with the following content: 
 

@@ -12,18 +12,18 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 This article describes the process of creating page with products. For instance, any category page is a page with products. In this guide we will create a page that is available at `cart.php?target=all_products` and then display all products on this page.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 1.  {% link "Create an empty module" ref_G2mlgckf %}. We are creating a module with developer ID **Tony** and module ID **ProductsDemo**.
 2.  {% link "Create a page" ref_0VgqyxB8 %} in this module. We are creating a page in customer area that will be accessible by `cart.php?target=all_products` URL.
@@ -135,6 +135,6 @@ This article describes the process of creating page with products. For instance,
 
 10.  That is it. Now we need to re-deploy the store and then open `cart.php?target=all_products` page in order to see the result of our mod work:![]({{site.baseurl}}/attachments/8225226/8356122.png)
 
-# Module pack
+## Module pack
 
 You can download this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ProductsDemo-v5_1_2.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ProductsDemo-v5_1_2.tar)

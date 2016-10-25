@@ -10,11 +10,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes how developer can create a {% link "complex setting class" ref_qFCH64Dt %} in X-Cart instead of using predefined ones from the `<X-Cart>/classes/XLite/View/FormField/` folder. For the sake of example, we will create a new page in admin area where we will display our own select-box with custom values.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -22,7 +22,7 @@ This article describes how developer can create a {% link "complex setting class
 *   [Result](#result)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating a module" ref_G2mlgckf %} with developer ID **Tony** and module ID **FormFieldDemo**. Then, we {% link "create a page" ref_0VgqyxB8 %} **target=form_field** in admin area. During this process, we create:
 
@@ -111,11 +111,11 @@ or define some label for it: 
 
 Our module pack will contain both variants.
 
-# Result
+## Result
 
 Now we re-deploy the store and once it is finished we go to `admin.php?target=form_field` page in order to check the result. You should something like this: ![]({{site.baseurl}}/attachments/1048617/8356170.png)
 
-# Module pack
+## Module pack
 
 You can download an example of this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-FormFieldDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-FormFieldDemo-v5_1_0.tar)
 

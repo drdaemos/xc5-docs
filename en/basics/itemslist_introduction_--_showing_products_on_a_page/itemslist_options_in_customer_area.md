@@ -10,17 +10,17 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article is in advanced explanation of how to use {% link "ItemsLists in customer area" ref_MRidEzuz %}. It explains how to enable/disable pagination, sorting options, display options etc.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [ItemsList options](#itemslist-options)
 
-# ItemsList options
+## ItemsList options
 
 Main method that defines what options that exist in an **ItemsList** is `defineWidgetParams()`. See its implementation in the `\XLite\View\ItemsList\Product\Customer\ACustomer` class as an example: 
 

@@ -10,7 +10,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 The aim of this webinar is to show the process of creating payment gateway in X-Cart 5\. During webinar, we will create an integration with [Dwolla](https://developers.dwolla.com/) payment gateway. The integration will be done according to the following checkout flow: [https://developers.dwolla.com/dev/pages/gateway#server-to-server](https://developers.dwolla.com/dev/pages/gateway#server-to-server)
 
@@ -25,7 +25,7 @@ Icon
 
 Dwolla has already changed their API, so this integration no longer works, although principles of creating payment gateway module for X-Cart remain the same.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -48,11 +48,11 @@ Dwolla has already changed their API, so this integration no longer works, altho
     *   [Changing Dwolla.php file again](#changing-dwollaphp-file-again)
 *   [Settings form is ready](#settings-form-is-ready)
 
-# Video
+## Video
 
 <iframe class="youtube-player" type="text/html" style="width: 800px; height: 450px" src="http://www.youtube.com/embed/6qIBrsq1FAg" frameborder="0"></iframe>
 
-# Before getting started
+## Before getting started
 
 ## Getting sandbox account and credentials
 
@@ -65,7 +65,7 @@ Dwolla has already changed their API, so this integration no longer works, altho
 
 I am {% link "creating the module" ref_G2mlgckf %} with module ID **Dwolla** and developer ID **Tony**.
 
-# Creating integration
+## Creating integration
 
 ## Creating payment gateway class
 
@@ -245,7 +245,7 @@ In order to test your Dwolla integration, you must go to **Store setup > Payment
 
 Of course, at this point gateway's credentials are hard-coded, but we will create a settings form for Dwolla on the next steps. Once cache regeneration is done, try to enable your payment and test its work.
 
-# Creating settings form for payment gateway
+## Creating settings form for payment gateway
 
 ## Change install.yaml
 
@@ -368,6 +368,6 @@ Besides that we are adding couple of new methods in order to give X-Cart idea wh
 *   If mode setting is not live, then Dwolla is in test mode;
 *   If Dwolla ID or API key or API secret are not specified, then Dwolla is not fully configured.
 
-# Settings form is ready
+## Settings form is ready
 
 Rebuild the cache again and check integration one more time. This time it will take settings specified in admin area.

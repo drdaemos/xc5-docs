@@ -10,18 +10,18 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes the structure of X-Cart classes. Also, it describes how to generate namespaces correctly.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [X-Cart classes](#x-cart-classes)
 *   [Generating namespaces](#generating-namespaces)
 
-# X-Cart classes
+## X-Cart classes
 
 All X-Cart classes are located in the `<X-Cart>/classes/` directory. Let us walk through each type of X-Cart classes:
 
@@ -36,7 +36,7 @@ All X-Cart classes are located in the `<X-Cart>/classes/` directory. Let us walk
 *   `<X-Cart>/classes/Upgrade/` directory contains classes that are used during upgrade procedure;
 *   `<X-Cart>/classes/View/` folder contains classes that manage X-Cart's output.
 
-# Generating namespaces
+## Generating namespaces
 
 [Namespaces](http://php.net/manual/en/language.namespaces.php) are widely used constructions in OOP languages (PHP in particular). They allow to save time and not mix up different classes with the same name.
 

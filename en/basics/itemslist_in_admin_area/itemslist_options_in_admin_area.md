@@ -10,7 +10,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article explains main options of {% link "ItemsList widget in admin area" ref_zsGkqC41 %}: how to create **Remove** and **Create** buttons, define look of columns etc.
 
@@ -21,14 +21,14 @@ This guide will have two parts:
 
 In order to be able to play with settings which will be described below, we recommend you to install a simple {% link "ItemsList module" ref_zsGkqC41#module-pack %} and try to change it according to options below.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Column parameters](#column-parameters)
 *   [ItemsList parameters](#itemslist-parameters)
 
-# Column parameters
+## Column parameters
 
 ItemsList columns are defined by the `defineColumns()` method and there are two mandatory fields that must exist in each column:
 
@@ -46,7 +46,7 @@ You can also define other parameters of a column:
 *   `static::COLUMN_CLASS` – value type: **string** – defines a {% link "FormField class" ref_fxJxv6rf %} that will be used for displaying of editable field. E.g. `\XLite\View\FormField\Inline\Input\Text\Float`. If you need more info about creating editable ItemsList in admin area, please have a look at {% link "Creating new entity -- Introduction of editable ItemsList in admin area" ref_hBpBE0vS %} guide;
 *   `static::COLUMN_PARAMS` – value type: **array** – defines parameters for **FormField** class defined in `static::COLUMN_CLASS` param.
 
-# ItemsList parameters
+## ItemsList parameters
 
 ItemsList parameters are defined as methods and the mandatory methods are:
 

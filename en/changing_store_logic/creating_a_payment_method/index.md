@@ -11,13 +11,13 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This guide is an introduction to creating payment gateways in X-Cart.
 
 In this article, we will create the simplest PHP script that will emulate the work of a payment gateway, and then we will create an integration with this self-designed "payment gateway".
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -25,7 +25,7 @@ In this article, we will create the simplest PHP script that will emulate the wo
 *   [Payment gateway module implementation](#payment-gateway-module-implementation)
 *   [Module pack](#module-pack)
 
-# Self-designed payment gateway
+## Self-designed payment gateway
 
 Since payment gateways often change their API, and we want to keep this guide relevant as long as possible, we will create a test PHP script that will emulate the work of a payment gateway. This test script will be able to accept two parameters via POST request:
 
@@ -50,7 +50,7 @@ header('Location: ' . $location);
 die();
 ```
 
-# Payment gateway module implementation
+## Payment gateway module implementation
 
 We start the creation of the payment gateway by {% link "creating an empty module" ref_G2mlgckf %} with the developer ID **Tony** and the module ID **PaymentDemo**. Then, we create the file
 `<X-Cart>/classes/XLite/Module/Tony/PaymentDemo/Model/Payment/Processor/DemoPayment.php` with the following content: 
@@ -178,7 +178,7 @@ Now we need to go to the storefront, add some products to cart and go to checkou
 
 Finally, click the **Place Order** button and submit the order. You should see the **Thank you** page, and the status of this new order should be set to **Paid**.
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-PaymentDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-PaymentDemo-v5_1_0.tar)
 

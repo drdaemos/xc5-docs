@@ -11,18 +11,18 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 Imagine the situation that you want to pull some info from X-Cart and then display it in your blog software. In this case, you need to initialize X-Cart and then somehow call one of its functions. This article describes how you can achieve it.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Full code](#full-code)
 
-# Implementation
+## Implementation
 
 We create `test.php` file in X-Cart's root with the following content: 
 
@@ -41,7 +41,7 @@ echo \XLite\Core\Config::getInstance()->Company->company_name;
 
 and it will display company name from {% link "X-Cart settings" ref_qFCH64Dt %}.
 
-# Full code
+## Full code
 
 The entire code of our `test.php` file is: 
 

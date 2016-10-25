@@ -12,11 +12,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 Aim of this webinar is to show developers how they can implement design changes in X-Cart 5\. The webinar consists of 6 typical tasks and I will explain how approach them. Besides that, the webinar introduced Custom Skin and Webmaster Kit modules that will be helpful for X-Cart 5 developers.
 
-# Table of contents
+## Table of contents
 
 *   [Introduction](#introduction)
 *   [Table of contents](#table-of-contents)
@@ -42,11 +42,11 @@ Aim of this webinar is to show developers how they can implement design changes 
     *   [Why v5 is better than v4 if the skin overwrite is not easily upgraded? Isn't this exactly what v4 is?](#why-v5-is-better-than-v4-if-the-skin-overwrite-is-not-easily-upgraded-isnt-this-exactly-what-v4-is)
     *   [How to add that <div id=homepage> to the homepage only, not store wide?](#how-to-add-that-div-idhomepage-to-the-homepage-only-not-store-wide)
 
-# Video
+## Video
 
 <iframe class="youtube-player" type="text/html" style="width: 853px; height: 480px" src="http://www.youtube.com/embed/da6kXVDyJr4" frameborder="0"></iframe>
 
-# Webinar process
+## Webinar process
 
 ## 1\. How can I hide the Powered by label?
 
@@ -319,7 +319,7 @@ Although, the approach shown above is easy, it has its downsides. If future vers
 
 2.  Rebuild the cache and check the results.
 
-# Questions & answers
+## Questions & answers
 
 ## Can the Webmaster Kit usage be IP-restricted?
 

@@ -13,7 +13,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article aims to teach developers how to create settings of their module and then use them in the code. This article assumes that you have already learnt three previous articles from **Getting started** section:
 
@@ -23,7 +23,7 @@ This article aims to teach developers how to create settings of their module and
 
 For the sake of example, we will create a module that will have a textarea setting where you can put any HTML code and this HTML code will be added between `<head></head>` tags on each page in front-end. Also, this guide will contain code examples of how to create other setting types.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -37,7 +37,7 @@ For the sake of example, we will create a module that will have a textarea setti
     *   [Separator](#separator)
     *   [Complex setting](#complex-setting)
 
-# Creating module with settings
+## Creating module with settings
 
 1.  Create the module according to {% link "step 1" ref_G2mlgckf %} article. In my example, I am using developer ID as **Tony** and module ID as **SettingsDemo**.
 2.  Put the following method into your `Main.php` file: 
@@ -82,7 +82,7 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
     ![]({{site.baseurl}}/attachments/8224795/8355863.png)
 5.  Now you can put your own HTML code into this textarea field. X-Cart can save it, yet does not know how to use it.
 
-# Using setting values in the code
+## Using setting values in the code
 
 1.  Create the viewer class in your module as per {% link "step 2" ref_E88KCMDD %} article. Since my developer ID is **Tony** and module ID is **SettingsDemo**, I am creating the `<X-Cart>/classes/XLite/Module/Tony/SettingsDemo/View/Header.php` file. You do not need to create .php file with Header name, it can be whatever you like, e.g. Code.php, HTML.php, etc.
 2.  Put the following content into your viewer class: 
@@ -129,15 +129,15 @@ Now we need to create a textarea option, so it could accept the user-defined HTM
 
     _and you cannot insert it into the web-page code using custom JS/CSS code fields from Theme Tweaker module. In this case, our module would work perfectly._
 
-# Module example
+## Module example
 
 The example of the module described above can be downloaded from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-SettingsDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-SettingsDemo-v5_1_0.tar)
 
-# Different setting types
+## Different setting types
 
 This section will give an overview of how you can set up different option types in your module settings.
 
-## Textarea
+### Textarea
 
 This is a type of setting we have used in our module already. It will allow to create multi-line text form setting.
 
@@ -172,7 +172,7 @@ Here is the list of parameters you can specify for it:
 
 These parameters are common for all setting types.
 
-## Text string
+### Text string
 
 This is a type of setting that will be represented as a single-line text field.
 
@@ -195,7 +195,7 @@ YAML code example:
 
 Parameters are the same as for **Textarea** setting.
 
-## Checkbox setting
+### Checkbox setting
 
 This is a setting type that will be represented – obviously – as a checkbox.
 
@@ -218,7 +218,7 @@ YAML code example:
 
 Parameters are the same as for **Textarea** option.
 
-## Separator
+### Separator
 
 This is an element that is used on settings page in order to separate option groups.
 
@@ -239,7 +239,7 @@ YAML code example:
 
 Parameters available are only **orderby** and **option_name** out of common ones (see **Textarea** parameters).
 
-## Complex setting
+### Complex setting
 
 Sometimes simple options – as shown above – are not enough for your task and you need to add select-box, multi-selector or field with JavaScript checking to your module's settings. In this case, you should use the approach described below.
 

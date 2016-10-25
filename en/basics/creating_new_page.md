@@ -11,11 +11,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes how developers can create a new page in X-Cart. For instance, we want to create a page in admin area (`admin.php?target=tony_custom`) that will show some specific information. This guide explains how to achieve this task.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -25,11 +25,11 @@ This article describes how developers can create a new page in X-Cart. For insta
 *   [Creating page in customer area](#creating-page-in-customer-area)
 *   [Module pack](#module-pack)
 
-# Before get started
+## Before get started
 
 First thing to do is to {% link "create an empty module" ref_G2mlgckf %}. We are creating a module with developer ID **Tony** and module ID **PageDemo**.
 
-# Creating page in admin area
+## Creating page in admin area
 
 For the sake of example, our task is to create the page which will be available at `admin.php?target=tony_custom` address and will display **Hello world!** text.
 
@@ -124,11 +124,11 @@ For the sake of example, our task is to create the page which will be available 
 
 ![]({{site.baseurl}}/attachments/8224999/8355981.png)
 
-# Creating page via macro
+## Creating page via macro
 
 You can {% link "create a page via macro" ref_HvrXVNvJ#X-CartSDK-Creatingpage %}, so it will save your time. In this case, all files will be created automatically and you will only have to go to the template file and define its content.
 
-# Creating page in customer area
+## Creating page in customer area
 
 Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`) with **Hello world!** text, but in customer area. The process would be quite the same as for creating page for admin zone.
 
@@ -214,6 +214,6 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
 5.  Finally, we need to create the template mentioned in the `getDefaultTemplate()` method. We create the `<X-Cart>/skins/customer/modules/Tony/PageDemo/page/tony_custom/body.twig` (`<X-Cart>/skins/default/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` for 5.2.x) template (notice, that we create this template in the `skins/default/` directory, instead of `skins/admin/` one – it is so, because this template will be displayed in customer store-front) with **Hello world!** content.
 6.  Re-deploy the store and open the `cart.php?target=tony_custom` page after that. You will see the following result:![]({{site.baseurl}}/attachments/8224999/8355982.png)
 
-# Module pack
+## Module pack
 
 You can download the module described here: [https://dl.dropboxusercontent.com/u/23858825/Tony-PageDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-PageDemo-v5_1_0.tar)

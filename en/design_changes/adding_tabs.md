@@ -11,7 +11,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes how you can tabs on a page in admin area. For instance, each order page has two tabs: **General info** and **Invoice**: 
 
@@ -19,14 +19,14 @@ This article describes how you can tabs on a page in admin area. For instance, e
 
 For the sake of example, we will create our own tab on product details page.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ProductTabDemo**.
 
@@ -71,7 +71,7 @@ Since this template does not exist yet, we need to create it. We create the `<X
 
 That is it with this mod. Now we need to re-deploy the store and check the results on any product details page, e.g. `admin.php?target=product&product_id=5&page=custom_tab`. It should look as follows: ![]({{site.baseurl}}/attachments/8225436/8356202.png)
 
-# Module pack
+## Module pack
 
 You can download this mod from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ProductTabDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ProductTabDemo-v5_1_0.tar)
 

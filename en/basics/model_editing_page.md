@@ -21,20 +21,20 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 During module creation developers sometimes {% link "create complex entities" ref_wmExvPDD %} that require a **separate** page for editing of its properties, instead of doing it via {% link "ItemsList" ref_hBpBE0vS %}. This article will explain how you can create a page where you can edit certain fields of a model. For the sake of example, we will create a simple mod that will implement a new page where you can edit a product, but the same principles apply to all other entities as well.
 
 You might want to see another way of creating such page - {% link "New model editing implementation" ref_8MoO0Ob %}. This method utilizes the power of Symfony forms and Twig blocks and is considered more actual.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating a simple module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ModelEditingDemo**. Then, we create a page **target=product_edit** in admin area. For that we create:
 
@@ -318,7 +318,7 @@ If you fill this form in and submit it, then you will create a new product.
 
 If you open `admin.php?target=product_edit&product_id=10` page, then you will see the following result (assuming product with ID 10 exists in your database):![]({{site.baseurl}}/attachments/8225393/8356185.png)As you can see, X-Cart picked up properties of this product and now you can edit the product via this form.
 
-# Module pack
+## Module pack
 
 You can download this module example for Version 5.1 - 5.2 from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ModelEditingDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ModelEditingDemo-v5_1_0.tar)
 

@@ -12,20 +12,20 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 X-Cart allows to cache certain widgets that contain mostly (or entirely) static data. This way X-Cart will not need to render this widget from scratch and the store will work faster.
 
 This article explains developers how they can enable widget cache for their custom widgets.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Drawbacks](#drawbacks)
 
-# Implementation
+## Implementation
 
 Imagine a situation that we have added a {% link "custom sidebar widget" ref_Z0IrS8PW %}. We know that this widget never changes, that is why we can generate its content (HTML code) only once and then insert this HTML code without running PHP process. Let us mark this widget as available for cache.
 
@@ -56,7 +56,7 @@ Imagine a situation that we have added a {% link "custom sidebar widget" ref_Z0I
 4.  That is it. Now it is time to re-deploy the store and check the results.
 5.  _Important: widget's cache works only if you enable the **Use view cache** option in the **System Settings** > **Look & feel** > **Performance** section in admin area.![]({{site.baseurl}}/attachments/8225080/8356028.png)_
 
-# Drawbacks
+## Drawbacks
 
 If you feel that your widget changes quite often – for instance, you display the last registered customer's info – this approach will not work, because cached widget will always display static content and it will be dynamically updated only if you drop widget's cache.
 

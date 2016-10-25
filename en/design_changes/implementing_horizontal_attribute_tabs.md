@@ -12,7 +12,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 X-Cart 5.1.4 introduced **vertical product attribute tabs** that look as follows:![]({{site.baseurl}}/attachments/8225427/8356199.png)
 
@@ -20,14 +20,14 @@ If you are one of the clients, who want previous **horizontal** look of product 
 
 then this guide is for you.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ProductTabsChange**. This change comes to applying set of CSS rules, so we need to {% link "register a new CSS file" ref_p0CRZmMS %}. We create the
 `<X-Cart>/classes/XLite/Module/Tony/ProductTabsChange/View/AView.php` file with the following content: 
@@ -96,7 +96,7 @@ and then create the `<X-Cart>/skins/default/en/modules/Tony/ProductTabsChange/cs
 
 That is it. Now you need to re-deploy the store and check the results in store-front.
 
-# Module pack
+## Module pack
 
 You can download this module pack from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ProductTabsChange-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ProductTabsChange-v5_1_0.tar)
 

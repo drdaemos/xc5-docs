@@ -12,11 +12,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This guide describes how developers can display the dynamically generated content in X-Cart using viewer classes.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -24,11 +24,11 @@ This guide describes how developers can display the dynamically generated conten
 *   [Implementation](#implementation)
 *   [Module example](#module-example)
 
-# Understanding what is viewer class
+## Understanding what is viewer class
 
 Viewer class is a class that manages the template. It contains methods that can be called from template. This way template can pull data from PHP code. Let us have a look at real life example.
 
-# Implementation
+## Implementation
 
 For the sake of example, I will show how to insert <u>Hello world on {the current day of the week}</u> label to the order page in admin area. {the current day of the week} part will be generated dynamically, that is why we need a viewer class.
 
@@ -75,6 +75,6 @@ For the sake of example, I will show how to insert <u>Hello world on {the curre
 7.  Re-deploy the store and check the results on order page. You will see the results as follows:![]({{site.baseurl}}/attachments/8224836/8355895.png)
 8.  Now we need to apply several CSS rules in order to make it look smooth; check {% link "adding CSS files" ref_p0CRZmMS %} article for this task.
 
-# Module example
+## Module example
 
 You can download the module pack here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ViewerDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ViewerDemo-v5_1_0.tar)

@@ -11,18 +11,18 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article gives an example of how to create the right sidebar and hide the left sidebar in admin area, while transferring all sidebar widgets from left to right.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **RightColumnDemo**. The fact whether to show left and right sidebars is defined in the `\XLite\View\Controller` ({% link "more about classnames" ref_FAgFbEx9 %} in X-Cart) class: 
 
@@ -109,7 +109,7 @@ Now we are done with the mod and have to re-deploy the store. Once it is done, c
 
 _Note: using the same approach you can create three column layout or a vertical layout without sidebars._
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-RightColumnDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-RightColumnDemo-v5_1_0.tar)
 

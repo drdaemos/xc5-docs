@@ -12,11 +12,11 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 This article aims to show developers how to give priority to one class over another during the {% link "decoration process" ref_AF6bmvL6 %}. It also shows how one module can require another one for proper work.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -27,7 +27,7 @@ This article aims to show developers how to give priority to one class over anot
 *   [What if one module requires another one to work properly](#what-if-one-module-requires-another-one-to-work-properly)
 *   [Second module pack](#second-module-pack)
 
-# Understanding the problem
+## Understanding the problem
 
 Imagine the situation: You are writing a module that correlates with another one. A typical case – you want to override a customer menu on the storefront.
 
@@ -35,7 +35,7 @@ The top menu is defined in the core class `\XLite\View\Menu\Customer\Top` (see
 
 In order to solve the problem, we must be sure that our module will decorate the core class `\XLite\View\Menu\Customer\Top` after the SimpleCMS' class, otherwise SimpleCMS will just ignore our implementation of the menu.
 
-# Solution
+## Solution
 
 1.  {% link "Create a module" ref_G2mlgckf %}.  I am creating it with the developer ID **Tony** and the module ID **OverridingTopMenu**.
 2.  In order to tell X-Cart what menu items must be shown on the storefront, we need to decorate the method `defineItems()` of the class `\XLite\View\Menu\Customer\Top`.
@@ -107,11 +107,11 @@ In order to solve the problem, we must be sure that our module will decorate the
 
 6.  Re-deploy the store and check the results. You should see only the **Google menu** item in the storefront, no matter if the module SimpleCMS is enabled or not.
 
-# Module pack
+## Module pack
 
 You can download this sample module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-OverridingTopMenu-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-OverridingTopMenu-v5_1_0.tar)
 
-# LC_Dependencies on the same module
+## LC_Dependencies on the same module
 
 While specifying the directive `@LC_Dependencies ()`, you can make a certain class depend on its module. An example is the module **XC/SystemFields** in the free edition.
 
@@ -121,7 +121,7 @@ While specifying the directive `@LC_Dependencies ()`, you can make a certain cl
 
 The directive means that the class `\XLite\Module\XC\SystemFields\Logic\Import\Processor\ProductsVariants` will decorate the class `\XLite\Logic\Import\Processor\Products` only if the module **ProductVariants** is enabled, and if so, the decoration will happen after the decoration of the class `\XLite\Module\XC\SystemFields\Logic\Import\Processor\Products`.
 
-# What if one module requires another one to work properly
+## What if one module requires another one to work properly
 
 In this case, you need the entire module to be dependent on that other one.
 
@@ -141,7 +141,7 @@ For example, we want to write a module that can work only if the module **Simpl
 4.  Note that if the module DependenciesDemo is active, you cannot disable the module SimpleCMS either.
     ![]({{site.baseurl}}/attachments/8224842/8355886.png?effects=drop-shadow)
 
-# Second module pack
+## Second module pack
 
 An example of the module DependenciesDemo can be downloaded from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-DependenciesDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-DependenciesDemo-v5_1_0.tar)
 

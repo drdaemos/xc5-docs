@@ -13,7 +13,7 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article aims to teach designers how they can create X-Cart skin using preemptive (or substitutional) template model. This guide will also introduce **Custom Skin** module and will give real life example of how to work with preemptive templates in X-Cart.
 
@@ -21,7 +21,7 @@ Before you get started, we recommend learning the {% link "basic designer guide"
 
 Also, you might want to read about advanced {% link 'skin module definition' ref_skinmodule %}.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -29,7 +29,7 @@ Also, you might want to read about advanced {% link 'skin module definition' ref
 *   [Module example](#module-example)
 *   [Using CustomSkin module](#using-customskin-module)
 
-# Registering themes in the module
+## Registering themes in the module
 
 If we want to make our module to be a skin and dramatically change the X-Cart appearance, there is a special way how to do it:
 
@@ -64,11 +64,11 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
 7.  Check the store-front with re-deploying the store. It should display our welcome message there, while rest of the layout will be the same.![]({{site.baseurl}}/attachments/8224814/8355867.png)
 8.  _Important note: if you override templates that contain @ListChild directives, do not keep this directive in the overriding template. Otherwise X-Cart will include this template twice._
 
-# Module example
+## Module example
 
 You can download this module sample here: [https://dl.dropboxusercontent.com/u/23858825/Tony-SkinDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-SkinDemo-v5_1_0.tar)
 
-# Using CustomSkin module
+## Using CustomSkin module
 
 This part is more focused on merchants, because it introduces the **CustomSkin** module that eases the process of adjusting your store design without having to create your own module.
 

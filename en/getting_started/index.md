@@ -11,9 +11,6 @@ icon: rocket
 description: Start developing for X-Cart without any hassle. Speed up your work process with X-Cart SDK
 ---
 
-
-# Getting started 
-
 This section teaches developers how to work with X-Cart 5.
 
 You start with basic guides about X-Cart development process:

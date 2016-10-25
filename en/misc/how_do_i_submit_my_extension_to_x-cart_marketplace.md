@@ -11,7 +11,7 @@ order: 100
 ---
 
 
-# Introduction
+## Introduction
 
 This article is aimed to the developers who want to submit their extensions to X-Cart marketplace. This process is quite straight-forward and takes only 4 steps from your wish to actual publishing of your module.
 
@@ -22,7 +22,7 @@ This article is aimed to the developers who want to submit their extensions to X
 
 This article will explain each step, so you will be confident about what is going to happen.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -31,7 +31,7 @@ This article will explain each step, so you will be confident about what is goin
 *   [Upload module to marketplace](#upload-module-to-marketplace)
 *   [Publish module page on our web-site](#publish-module-page-on-our-web-site)
 
-# Get vendor account
+## Get vendor account
 
 First of all, if you decide to write extensions for X-Cart 5 (theme or module), you need to obtain developer NFR license. For that, please send us a message at [partners@x-cart.com](mailto:partners@x-cart.com) with the following information:
 
@@ -41,7 +41,7 @@ First of all, if you decide to write extensions for X-Cart 5 (theme or module), 
 Once you send us this info, we will create you a vendor account and you will be able to log into it at [https://market.x-cart.com/admin.php](https://market.x-cart.com/admin.php) 
 
 
-# Write module
+## Write module
 
 Next step is to write the module you want. We have several simple requirements to your module's code:
 
@@ -52,7 +52,7 @@ Next step is to write the module you want. We have several simple requirements t
 
 Beside that, we ask to create a demo of your module on any external web-site, so we could see your module in action.
 
-# Upload module to marketplace
+## Upload module to marketplace
 
 In order to upload your module to the Market site, please go to your vendor account at [https://market.x-cart.com/admin.php](https://market.x-cart.com/admin.php) and then go to the **Catalog/Products** section. There, you will be able to upload module for review using the **Add product** button. 
 
@@ -64,7 +64,7 @@ Once we receive a module, we will review it during a week (usually faster). The 
 
 If we find that something must be corrected, you will receive a list of required changes by email.
 
-# Publish module page on our web-site
+## Publish module page on our web-site
 
 Once the module is accepted, it will be available to all X-Cart merchants via built-in marketplace. Besides that we want you to create a dedicated page for your module that will contain detailed description, snapshots etc on our web-site: [http://market.x-cart.com/addons](http://market.x-cart.com/addons)
 

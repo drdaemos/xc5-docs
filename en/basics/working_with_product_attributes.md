@@ -12,7 +12,7 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 This guide aims to show some approach of working with product attributes. In this article we will create a mod that will hide certain attribute from being displayed in customer area.
 
@@ -23,14 +23,14 @@ We want to use this attribute in some modification, but we do not want to show i
 
 Our mod will hide this **hidden-value** attribute in storefront.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **AttributeDemo**.
 
@@ -85,6 +85,6 @@ We simply take attributes returned by parent class' `getAttrList()` method as ar
 
 That is it. Now we need to re-deploy the store and check the results in storefront. If we open the same product's details page, we will not see the **hidden-value** attribute there, although it exists in admin area. ![]({{site.baseurl}}/attachments/8225478/8356218.png)
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-AttributeDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-AttributeDemo-v5_1_0.tar)

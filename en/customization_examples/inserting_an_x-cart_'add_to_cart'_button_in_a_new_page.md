@@ -17,7 +17,7 @@ There are two methods to do so:
 *   [Method 1](#method-1) (can be used both for pages outside and inside X-Cart);
 *   [Method 2](#method-2) (can be used only inside X-Cart).
 
-# Method 1
+## Method 1
 
 1.  In the file `etc/config.php`, add the line
 
@@ -54,7 +54,7 @@ There are two methods to do so:
 
     **?target=cart** is the address of the cart page on the store site. If the code to insert the 'Add to cart' button is located on another domain, it is necessary to specify the full URL; for example, [http://demostore.x-cart.com/?target=cart](http://demostore.x-cart.com/?target=cart).
 
-# Method 2
+## Method 2
 
 This method can be used to create a button that will add a product to cart without reloading the page:
 

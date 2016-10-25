@@ -11,20 +11,20 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article teaches X-Cart developers how to determine what page is currently opened. For the sake of example, we will create a simple mod that will show different messages depending on whether **home**, **category** or **checkout** page is opened. If any other page is opened, then no message will be shown.
 
 This article assumes that you know {% link "how to work with viewer classes" ref_6dMJsZ63 %} in X-Cart.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 To get started we {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ControllerDetectionDemo**. Then, we create a new view class inside this module. We create the
 `<X-Cart>/classes/XLite/Module/Tony/ControllerDetectionDemo/View/OurWidget.php` class with the following content:
@@ -165,6 +165,6 @@ _Note: we could have also checked the current page by analyzing **target** param
 
 Now, we need to re-deploy the store and check the results in customer store-front. You should see messages similar to:![]({{site.baseurl}}/attachments/524292/8356147.png)
 
-# Module pack
+## Module pack
 
 You can download this module pack from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ControllerDetectionDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ControllerDetectionDemo-v5_1_0.tar)

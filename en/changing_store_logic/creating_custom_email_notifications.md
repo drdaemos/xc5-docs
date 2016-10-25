@@ -13,11 +13,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article describes how developers can configure and send custom **email notifications**. Custom email notifications may be useful if you want to send messages after certain events. For instance, we want to be able to send notifications on behalf of the shop admin. This guide explains how to do it; it will also cover the topic of regiseting your custom notifications in the admin area.
 
-# Table of contents
+## Table of contents
 
 *   [Introduction](#introduction)
 *   [Table of contents](#table-of-contents)
@@ -27,12 +27,12 @@ This article describes how developers can configure and send custom **email noti
     *   [Registering the notification in the admin area](#registering-the-notification-in-the-admin-area)
 *   [Module example](#module-example)
 
-# Implementation
+## Implementation
 
 First of all, this task requires you to have a custom module. We'll {% link "create a new module" ref_G2mlgckf %} with the developer ID **Tony** and the module ID **EmailDemo**.
 Besides, we'll create a {% link "custom page" ref_0VgqyxB8 %} in the admin area to test our notifications. Please note that this page is purely optional and will serve as an example of an action that triggers the notification. This page will be available at `cart.php?target=tony_custom_email` address.
 
-## Creating the mailer method
+### Creating the mailer method
 
 X-Cart offers a convenient and expandable interface to send emails -`XLite\Core\Mailer` class. This class contains a lot of functions designed to build and send messages step by step. In order to use it, we decorate the class `XLite\Core\Mailer `and add a method to send our notification. We create a file `<X-Cart>/classes/XLite/Module/Tony/EmailDemo/Core/Mailer.php `with the following content: 
 
@@ -89,7 +89,7 @@ The method we will be using to send our notifications is `sendEmailDemoMessage(
     8.  (optional) _string_ **$languageCode** - language code of the message.
 *   We'll return the value `static::getMailer()->getLastError() as `a result of the operation. If the message is sent successfully, it will be `**null**;` otherwise, it will contain an error message.
 
-## Designing the message template
+### Designing the message template
 
 An email message is composed from several parts such as _header_, _subject_, _body_ and _signature. _You can customize the general header and signature in your store's admin area, on the _Store setup_ -> _Email notifications_ -> _Headers & signatures_ page. However, the subject and body need to be customized through the template files named `subject.tpl` and `body.tpl, respectively`. These files should exist in the mail templates directory. In our case, they are present in the directory `<X-Cart>/skins/mail/en/modules/Tony/EmailDemo/message `with the following content:
 
@@ -140,7 +140,7 @@ protected function doActionSendEmail()
 
 Please note that the above way is simply an example of usage; you can send messages during certain events or logic processing, if needed. This example sends a message on form submit.
 
-## Registering the notification in the admin area
+### Registering the notification in the admin area
 
 The admin area of an X-Cart store allows you to turn off certain notifications for admin or for customer. You can configure that on the <u>Store setup</u> -> <u>Email notifications</u> -> <u>Settings</u> page. This page contains a list of different notification types and provides switches allowing the user to enable/disable specific notification types for administrator and customer. For a custom notification to appear in the mentioned list, it should be registered in the module file `install.yaml`. For instance, we will add the following content:
 
@@ -207,7 +207,7 @@ As a result of the above actions, you should be able to configure your custom me
 
 ![]({{site.baseurl}}/attachments/8750179/8718797.png)
 
-# Module example
+## Module example
 
 You can download this module example from here: [Tony-EmailDemo-v5.2.0.tar](attachments/8750179/8718801.tar)
 

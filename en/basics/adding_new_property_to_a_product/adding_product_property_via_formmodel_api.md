@@ -9,11 +9,11 @@ order: 80
 
 ---
 
-# Introduction
+## Introduction
 
 This guide shows how to add a property to the product entity and provide the UI to edit it. Due to adoption of the new {% link 'FormModel API' ref_bOmExTXA %} in the product configuration page, {% link 'old method' ref_2bJSTtR3 %} is no longer applicable and you have to upgrade existing modifications.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -22,13 +22,12 @@ This guide shows how to add a property to the product entity and provide the UI 
     *   [Creating interface for editing this field](#creating-interface-for-editing-this-field)
     *   [Transfering data from form to entity and back](#transfering-data-from-form-to-entity-and-back)
     *   [Displaying the field value](#displaying-the-field-value)
-*   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 First of all, {% link "create a new module" ref_G2mlgckf %}. We are creating a module with developer ID **XCExample** and module ID **NewProductFieldDemo**.
 
-## Adding new field to product model
+### Adding new field to product model
 
 This part is basically identical to the old guide, no changes here except we have to create getter and setter manually.
 
@@ -66,7 +65,7 @@ class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 
 Voilà, you can proceed to creating an UI for that field.
 
-## Creating interface for field editing
+### Creating interface for field editing
 
 To be able to specify value of this property on product details page in admin area, we have to decorate `\XLite\View\FormModel\Product\Info` class and create
 `<X-Cart>/classes/XLite/Module/XCExample/NewProductFieldDemo/View/FormModel/Product/Info.php` file with the following content: 
@@ -105,7 +104,7 @@ Note: see an example of creating model editing form with more detailed explanati
 Every field must be assigned to a certain section. By default, product page form contains several sections: the __default__ one, __Prices & Inventory__, __Shipping__, __Marketing__. You can assign your field to one of them or create a new one through decorating the `defineSections()` method.
 {% endnote %}
 
-## Transfering data from form to entity and back
+### Transfering data from form to entity and back
 
 The major change from old way to create editable entity properties is that UI representation of the property is completely separated from its model and persistance scheme.
 
@@ -190,7 +189,7 @@ In DTO class you can define several aspects of data transfer:
 You should use `$this->default` and other section vars inside `init()` and `populateTo()` function to access DTO data. For the product, there are `$this->default`, `$this->prices_and_inventory`, `$this->shipping`, `$this->marketing` vars available by default.
 {% endnote %}
 
-## Displaying the field value
+### Displaying the field value
 
 Finally, we can display the value of this field on some page. As an example, we will show it on the **Invoice** page after a customer completes his checkout.
 

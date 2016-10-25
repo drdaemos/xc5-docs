@@ -13,11 +13,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article explains how to use image selection widget in X-Cart as well as how to attach images to an entity. For the sake of example, we will create a mod that will add secondary images field for a product. Merchant will be able to assign any number of secondary images to a product and these images will be shown on product details page in customer area.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -29,13 +29,13 @@ This article explains how to use image selection widget in X-Cart as well as how
     *   [Checking the results](#checking-the-results)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
-## Create an empty module
+### Create an empty module
 
 First of all, we {% link "create an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **ImageDemo**.
 
-## Decorate Product class
+### Decorate Product class
 
 Inside this module, we {% link "decorate" ref_AF6bmvL6 %} the `\XLite\Model\Product` class as we want to add a new property to it as follows: 
 
@@ -119,7 +119,7 @@ Let us have a closer look at this implementation.
 
     telling Product class that `secondaryImages` property is an array.
 
-## Create SecondaryImage class
+### Create SecondaryImage class
 
 We create the `<X-Cart>/classes/XLite/Module/Tony/ImageDemo/Model/Image/Product/SecondaryImage.php` file with the following content: 
 
@@ -246,7 +246,7 @@ Let us have a look at each important moment of this **SecondaryImage** class:
 
     We are done with creating **SecondaryImage** entity.
 
-## Tweaking design of admin and customer interfaces
+### Tweaking design of admin and customer interfaces
 
 First, we need to allow merchant to upload secondary images for a product on product details page in admin area. Similar task is already described in {% link "one of previous articles" ref_2bJSTtR3 %}.
 
@@ -297,13 +297,13 @@ Besides that, we need to display secondary images in store-front. For that we {%
 
 In this template, we go through each secondary image object and then call `<widget class="\XLite\View\Image" image="{image}" />` in order to build proper HTML code for it. This widget also performs image resize on-the-fly if needed.
 
-## Checking the results
+### Checking the results
 
 Now we need to re-deploy the store and check the results. First we go to a product details page in admin area and try to add secondary images: ![]({{site.baseurl}}/attachments/8225295/8356163.png)
 
 After we save the changes, we go to this product details page in customer zone and should be able to see the following results:![]({{site.baseurl}}/attachments/8225295/8356164.png)
 
-# Module pack
+## Module pack
 
 You can download the example of this module from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ImageDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ImageDemo-v5_1_0.tar)
 

@@ -23,7 +23,7 @@ published: true
 
 This article will explain how to create such ItemsLists. For the sake of example, we will create an ItemsList of products with a price of more than $10, and this list will be sortable by price. 
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -278,7 +278,9 @@ abstract class Product extends \XLite\Model\Repo\Product implements \XLite\Base\
 }
 ```
 
-_Note: if you need more info about `search()` method implementation, please have a look here: {% link "search() method" ref_ehDn4NIi %}._
+{% note info %}
+Note: if you need more info about `search()` method implementation, please have a look here: {% link "search() method" ref_ehDn4NIi %}.
+{% endnote %}
 
 Finally, we need to display our ItemsList widget on the page, so we go to the `<X-Cart>/skins/admin/en/modules/``Tony/ItemsListAdminDemo/page/items_list_demo/body.tpl` template and define its content as follows: 
 

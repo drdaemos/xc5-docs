@@ -12,20 +12,20 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 X-Cart primarily works with **Model** objects. For instance, product, category, order, image, user are all Model objects. This article gives an introduction to what is Model classes and how to work with them. 
 
 For the sake of example, we will create a **TestEntity** class which will have two fields: **id** and **text**. Then, we will see how it is possible to create a new TestEntity object, define some text for it and then save it to the database.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **RepoDemo**.
 
@@ -230,6 +230,6 @@ entity text: test value
 entity text: test value
 ```
 
-# Module pack
+## Module pack
 
 You can download this module's example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-RepoDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-RepoDemo-v5_1_0.tar)

@@ -12,11 +12,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This webinar is dedicated to creating the simple **News** module for X-Cart 5\. In this module, admin can define news in back-end and customers can see them in the store-front.
 
-# Table of contents
+## Table of contents
 
 *   [Introduction](#introduction)
 *   [Table of contents](#table-of-contents)
@@ -48,11 +48,11 @@ This webinar is dedicated to creating the simple **News** module for X-Cart 5\. 
     *   [Can we modify the REST API in X-Cart 5 on our own?](#can-we-modify-the-rest-api-in-x-cart-5-on-our-own)
     *   [How can I check other module already installed/exists and if it is not installed?](#how-can-i-check-other-module-already-installedexists-and-if-it-is-not-installed)
 
-# Video
+## Video
 
 <iframe class="youtube-player" type="text/html" style="width: 853px; height: 480px" src="https://www.youtube.com/embed/mOzC7mknjwQ" frameborder="0"></iframe>
 
-# The process of module creation
+## The process of module creation
 
 ## 1\. Create an empty module
 
@@ -547,7 +547,7 @@ public function getNewsBody()
 
 Run the final cache rebuild process and check the results.
 
-# Questions & Answers
+## Questions & Answers
 
 ## How can I disable cache?
 

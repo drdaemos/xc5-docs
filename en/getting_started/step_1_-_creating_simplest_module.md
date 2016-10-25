@@ -11,11 +11,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This guide describes how one can create a simplest module in X-Cart 5.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -24,7 +24,7 @@ This guide describes how one can create a simplest module in X-Cart 5.
 *   [Module creation via SDK](#module-creation-via-sdk)
 *   [Packing up your module](#packing-up-your-module)
 
-# Choosing identifiers
+## Choosing identifiers
 
 Before you get started, you need to choose two identifiers:
 
@@ -35,7 +35,7 @@ Your **developer ID** will tell other programmers that the module is written by 
 
 The identifiers must begin with an uppercase letter and may consist of a maximum of 64 alphanumeric characters.
 
-# Manual module creation
+## Manual module creation
 
 1.  Create `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` directory inside your installation. Of course, you should use your own developer and module IDs instead of `<YOUR-DEVELOPER-ID>` and `<YOUR-MODULE-ID>` parts of the path.
 2.  Create `Main.php` file inside `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` folder with the following content: 
@@ -105,12 +105,12 @@ The identifiers must begin with an uppercase letter and may consist of a maximum
     ![]({{site.baseurl}}/attachments/524296/9437239.png?effects=drop-shadow) 
 5.  After the re-deployment process is over, your module will show up among the installed modules in your store's admin area.
 
-# Module creation via SDK
+## Module creation via SDK
 
 1.  {% link "Obtain X-Cart SDK" ref_HvrXVNvJ#obtaining-x-cart-sdk %}
 2.  Call {% link "create module macro" ref_HvrXVNvJ#creating-module %} with your developer and module IDs
 
-# Packing up your module
+## Packing up your module
 
 If you want to create the module's distributive pack, you need to
 

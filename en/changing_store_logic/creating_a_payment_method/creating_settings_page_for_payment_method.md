@@ -13,18 +13,18 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article is a continuation of the guide about {% link "creating payment method" ref_U1KitTMm %}. During this article, we will assume that you are already familiar with that guide and we will show you how to add a **settings form** for the payment method described there.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with creating an empty module with developer ID **Tony** and module ID **PaymentFormDemo** and then implement a {% link "gateway described in the previous guide" ref_U1KitTMm %}.
 
@@ -263,7 +263,7 @@ Go to the payment method's settings page, input any values into **Login**/**Pass
 
 Here we see the `isTestMode()` method in action.
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-PaymentFormDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-PaymentFormDemo-v5_1_0.tar)
 

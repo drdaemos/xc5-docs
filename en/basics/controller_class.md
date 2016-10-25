@@ -11,11 +11,11 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 **Controller** is a class that is responsible for request handling in X-Cart. This article aims to give a basic understanding of how controllers work in X-Cart and how you can use them.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -24,7 +24,7 @@ categories:
 *   [Module example](#module-example)
 *   [Module pack](#module-pack)
 
-# Understanding of Controller classes
+## Understanding of Controller classes
 
 When X-Cart receives a request to one of its end-points – `cart.php` or `admin.ph`p – it starts looking for an appropriate Controller class based on **target** parameter in the request. If target is not specified, it is assumed as **main**.
 
@@ -43,7 +43,7 @@ When, controller class is found, X-Cart calls its `handleRequest()` method – 
 
 Let us have a look at what exactly `handleRequest()` method does. See its implementation in the `\XLite\Controller\AController` class.
 
-## handleRequest()
+### handleRequest()
 
 Its implementation: 
 
@@ -97,7 +97,7 @@ In your modules, you might want to extend `handleRequest()` method itself or jus
 
 Also, talking about modules, if you want to create a controller for customer area, your controller class should extend the `\XLite\Controller\Customer\ACustomer` class. If you create a controller class for admin area, then it should extend the `\XLite\Controller\Admin\AAdmin` class. More details are in the module example below.
 
-# Module example
+## Module example
 
 Let us try to create some simple module that will show `doAction()` method work in real life.
 
@@ -209,6 +209,6 @@ The mod is done now and we need to re-deploy the store and then check the result
 SELECT * FROM xc_config WHERE category = "Tony\\ControllerDemo";
 ```
 
-# Module pack
+## Module pack
 
 You can download this module example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-ControllerDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-ControllerDemo-v5_1_0.tar)

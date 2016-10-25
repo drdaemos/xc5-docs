@@ -13,20 +13,20 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This guide explains how to create a module that implements a **special offer**: buy three items of the same product and the third one will be free for you. On top of that, this type of discount will be displayed as a **separate line** on the checkout.
 
 This guide is based on the previous one about {% link "creating a discount" ref_mFAMapCB %}, so you might want to look at it first.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 We start with {% link "creating an empty module" ref_G2mlgckf %} with developer ID **Tony** and module ID **FreeItemDemo**. Then we create an order modifier class inside our module similar to one we described in the {% link "discount module" ref_mFAMapCB %}. We create the
 `<X-Cart>/classes/XLite/Module/Tony/FreeItemDemo/Logic/Order/Modifier/FreeItem.php` file with the following content: 
@@ -112,7 +112,7 @@ and then {% link "push it to the database" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfil
 
 Now we need to re-deploy the store and then check the results. For that, go to your customer area and add three items of the same product to a cart. You will see the following picture at the cart page: ![]({{site.baseurl}}/attachments/8225412/5_3_x.png)
 
-# Module pack
+## Module pack
 
 You can download this module example from here: 
 

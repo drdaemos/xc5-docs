@@ -12,11 +12,11 @@ categories:
 ---
 
 
-# Introduction
+## Introduction
 
 This article teaches X-Cart developers how they can create discounts via custom module. For the sake of example, we will show how to create a straight-forward **10% discount** to order subtotal.
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
@@ -24,11 +24,11 @@ This article teaches X-Cart developers how they can create discounts via custom 
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Video tutorial
+## Video tutorial
 
 <iframe class="youtube-player" type="text/html" style="width: 800px; height: 600px" src="http://www.youtube.com/embed/OmskLxiaweM" frameborder="0"></iframe>
 
-# Implementation
+## Implementation
 
 As a first step, {% link "create an empty module" ref_G2mlgckf %}. We are creating the module with developer ID **Tony** and module ID **DiscountDemo**.
 
@@ -118,7 +118,7 @@ _Note: if you want to check all currently registered order modifiers, you can pu
 
 Once our **install.yaml** file is ready, we need to {% link "push it to the database" ref_HvrXVNvJ#X-CartSDK-LoadingYAMLfile %}. After that re-deploy the store and check the results: add any product to a cart and go to cart page. You will see a discount applied there:![]({{site.baseurl}}/attachments/8225204/8356110.png)
 
-# Module pack
+## Module pack
 
 You can download this module's example from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-DiscountDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-DiscountDemo-v5_1_0.tar)
 

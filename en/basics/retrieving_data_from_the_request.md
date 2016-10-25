@@ -10,21 +10,21 @@ categories:
 
 ---
 
-# Introduction
+## Introduction
 
 This article teaches X-Cart developers how to retrive data from request to end-points. For the sake of example, we will create a mod that will work as follows:
 
 1.  There will be a page that can be accessed as `cart.php?target=tony`. Please, check the {% link "previous guide" ref_0VgqyxB8 %} in order to learn how to approach such tasks.
 2.  You can call this page as `cart.php?target=tony&**param**=foo&**param2**=bar` and this page will display values of these parameters as shown below:![]({{site.baseurl}}/attachments/524294/8355983.png)
 
-# Table of Contents
+## Table of Contents
 
 *   [Introduction](#introduction)
 *   [Table of Contents](#table-of-contents)
 *   [Implementation](#implementation)
 *   [Module pack](#module-pack)
 
-# Implementation
+## Implementation
 
 1.  We {% link "create a module" ref_G2mlgckf %} with developer ID **Tony** and module ID **RequesDemo**.
 2.  We {% link "create a page" ref_0VgqyxB8 %} with **target=tony** customer area. Eventually, we will have three files in the module:
@@ -69,7 +69,7 @@ This article teaches X-Cart developers how to retrive data from request to end-p
 
 7.  Save the results and re-deploy the store. After that, call the `cart.php?target=tony&param=foo&param2=bar` script and you will see the following result:![]({{site.baseurl}}/attachments/524294/8355983.png)
 
-# Module pack
+## Module pack
 
 You can download this module sample from here: [https://dl.dropboxusercontent.com/u/23858825/Tony-RequestDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-RequestDemo-v5_1_0.tar)
 
