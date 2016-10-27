@@ -60,20 +60,19 @@ Now if you check the category page in the Customer area, after reloading the pag
 
 Method 2:
 
-If you need to implement numerous design changes, handling the task via the **Custom CSS** section in X-Cart Admin may not be as convenient, so you may prefer to do it via the module "Custom Skin". Here are the steps involved to change the category top banner height using the "Custom  Skin" module:  
+If you need to implement numerous design changes, handling the task via the **Custom CSS** section in X-Cart Admin may not be as convenient, so you may prefer to do it via template substitution. Here are the steps:  
 
-1.  If you haven't yet done so, install and activate the module "Custom Skin":
-    ![xc5_custom_skin.png]({{site.baseurl}}/attachments/xc5_custom_skin.png?effects=drop-shadow)
+1.  If you haven't yet done so, install and activate the module "Theme Tweaker":
 
 2.  Create the following custom script in your X-Cart installation:
 
-    _classes/XLite/Module/XC/CustomSkin/View/CategoryBanner.php_
+    _classes/XLite/Module/XC/ThemeTweaker/View/CategoryBanner.php_
 
     The content of the custom script should be as follows:
 
     ```php
     <?php
-    namespace XLite\Module\XC\CustomSkin\View;
+    namespace XLite\Module\XC\ThemeTweaker\View;
 
     class CategoryBanner extends \XLite\View\CategoryBanner implements \XLite\Base\IDecorator
     {
@@ -89,7 +88,7 @@ If you need to implement numerous design changes, handling the task via the **Cu
 
 3.  Create the following CSS file:
     
-    _skins/custom_skin/customer/category_banner/style.css_
+    _skins/theme_tweaker/customer/category_banner/style.css_
      
     The content of the file should be as follows:
     

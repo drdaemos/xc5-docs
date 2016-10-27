@@ -23,7 +23,7 @@ Here are the steps involved:
     - copy the default template file:
     _skins/mail/en/order/invoice/parts/bottom.methods.payment.tpl_
     - to this custom template file:_
-    _skins/custom_skin/mail/en/order/invoice/parts/bottom.methods.payment.tpl_
+    _skins/theme_tweaker/mail/en/order/invoice/parts/bottom.methods.payment.tpl_
     _
 3.  Modify the custom template as you need - for example, remove the code that is used to display Transaction ID info:
 

@@ -103,7 +103,11 @@ Template files should be moved according to the following scheme:
 *   `skins/default/en/mail/` -> `skins/mail/customer/`
 *   the same for ColorSchemes and CustomSkin: `default` should be renamed to `customer`
 
-You might want to check out [section about changing template names](http://devs.x-cart.com/en/what_is_new/#new-templates-structure "Migrating modules to X-Cart 5.3") in developer blog post.   
+{% note warning %}
+CustomSkin module has become discontinued as a method to apply changes over any skin, so you need to move files from `skins/custom_skin/` folder to `skins/theme_tweaker/`. Please note that it will only work for `customer` and `mail` interface files. 
+{% endnote %}
+
+You might want to check out [section about changing template names](http://devs.x-cart.com/en/what_is_new/#new-templates-structure "Migrating modules to X-Cart 5.3") in developer blog post.
 
 ## Model changes
 

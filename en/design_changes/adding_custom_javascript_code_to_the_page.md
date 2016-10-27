@@ -24,7 +24,7 @@ The easiest way is by using the **ThemeTweaker** addon module:
 
 However, if you need to load your code in the `<head>` tag or want to limit its usage to a certain page (for example, the **orders list**), or customize your store's back end, you should use the **Custom Skin** add-on module. 
 
-If you choose to put your code in the `<body>` tag, you should enable the **Custom Skin** module, then copy the default template "`skins/admin/en/body.tpl`" to "`skins/custom_skin/admin/en/body.tpl`", and add your code using the following <script> element:
+If you choose to put your code in the `<body>` tag, you should enable the **Custom Skin** module, then copy the default template "`skins/admin/en/body.tpl`" to "`skins/custom_skin/admin/en/body.tpl`", and add your code using the following `<script>` element:
 
 ```php
 <script IF="getTarget()=#order_list#">

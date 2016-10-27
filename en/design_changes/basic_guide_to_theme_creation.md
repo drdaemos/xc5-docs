@@ -68,23 +68,22 @@ If we want to make our module to be a skin and dramatically change the X-Cart ap
 
 You can download this module sample here: [https://dl.dropboxusercontent.com/u/23858825/Tony-SkinDemo-v5_1_0.tar](https://dl.dropboxusercontent.com/u/23858825/Tony-SkinDemo-v5_1_0.tar)
 
-## Using CustomSkin module
+## Using ThemeTweaker module
 
-This part is more focused on merchants, because it introduces the **CustomSkin** module that eases the process of adjusting your store design without having to create your own module.
+This part is more focused on merchants, because it introduces the **ThemeTweaker** module that eases the process of adjusting your store design without having to create your own module.
 
 Let us assume a task that you want to get rid of exclamation marks from notifications about orders changed their status. Here is how you can approach it:
 
-1.  Go to your admin area and enable the **Custom Skin** module in your **Extensions** > **Installed** **modules** section. This module is free for all X-Cart pakages.
+1.  Go to your admin area and enable the **ThemeTweaker** module in your **Extensions** > **Installed** **modules** section. This module is free for all X-Cart pakages.
 2.  Once the module is enabled, we should find what template defines the **Order receipt #1234!** messages. We can do it using the approach described earlier or just by searching files for **Order receipt** substring. These templates are:
     - `skins/mail/en/order_advanced_changed/subject.tpl`
     - `skins/mail/en/order_changed/subject.tpl`
     - `skins/mail/en/order_processed/subject.tpl`
     - `skins/mail/en/order_shipped/subject.tpl`
-3.  Now we need to override these templates as explained earlier in this article – by putting substituting templates into the custom skin folders. Custom Skin module already has directories where you can put such templates and these templates will override default layout. These directories are:
-    - `skins/custom_skin/admin/en/` for admin interface
-    - `skins/custom_skin/customer/en/` for customer interface
-    - `skins/custom_skin/mail/en/` for email notifications interface
-4.  We create the `<X-Cart>/skins/custom_skin/mail/en/order_advanced_changed/subject.tpl` with the following content: 
+3.  Now we need to override these templates as explained earlier in this article – by putting substituting templates into the custom skin folders. ThemeTweaker module already has directories where you can put such templates and these templates will override default layout. These directories are:
+    - `skins/theme_tweaker/customer/` for customer interface
+    - `skins/theme_tweaker/mail/` for email notifications interface
+4.  We create the `<X-Cart>/skins/theme_tweaker/mail/en/order_advanced_changed/subject.tpl` with the following content: 
 
     ```php
     {config.Company.company_name:h}: {t(#Order receipt#)} #{order.getOrderNumber()}
