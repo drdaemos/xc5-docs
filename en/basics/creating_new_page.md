@@ -51,6 +51,12 @@ For the sake of example, our task is to create the page which will be available 
 
 3.  Create new viewer class that will manage the data output. This viewer class must sit in the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Admin/` directory and it must be named the same as its controller class. This way X-Cart can pick it up automatically. We are creating the `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Admin/TonyCustom.php` file with the following content: 
 
+
+    <div class="ui top attached tabular menu">
+        <a class='item' data-tab='tab_1-1'>5.2.x and earlier</a>
+        <a class='item active' data-tab='tab_1-2'>5.3.x</a>
+    </div>
+    <div data-tab="tab_1-1" class="ui bottom attached tab segment" markdown="1">
     ```php
     <?php
 
@@ -73,6 +79,31 @@ For the sake of example, our task is to create the page which will be available 
         }
     }
     ```
+    </div>
+    <div data-tab="tab_1-2" class="ui bottom attached active tab segment" markdown="1">
+    ```php
+    <?php
+
+    namespace XLite\Module\Tony\PageDemo\View\Page\Admin;
+
+    /**
+     * @ListChild (list="admin.center", zone="admin")
+     */
+
+    class TonyCustom extends \XLite\View\AView
+    {
+        public static function getAllowedTargets()
+        {
+            return array_merge(parent::getAllowedTargets(), array('tony_custom'));
+        }
+
+        protected function getDefaultTemplate()
+        {
+            return 'modules/Tony/PageDemo/page/tony_custom/body.twig';
+        }
+    }
+    ```
+    </div>
 
 4.  Let us walk through each line of this code. 
 
@@ -108,13 +139,13 @@ For the sake of example, our task is to create the page which will be available 
     ```php
         protected function getDefaultTemplate()
         {
-            return 'modules/Tony/PageDemo/page/tony_custom/body.tpl';
+            return 'modules/Tony/PageDemo/page/tony_custom/body.twig';
         }
     ```
 
     The `getDefaultTemplate()` method defines what template will be used in order to output the content. The template path can be whatever you prefer.
 
-5.  Now it is time to create the template defined in the `getDefaultTemplate()` method, so it would display **Hello world!** text. We are creating the `<X-Cart>/skins/admin/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` file with the following content: 
+5.  Now it is time to create the template defined in the `getDefaultTemplate()` method, so it would display **Hello world!** text. We are creating the `<X-Cart>/skins/admin/modules/Tony/PageDemo/page/tony_custom/body.twig` (`<X-Cart>/skins/admin/en/modules/Tony/PageDemo/page/tony_custom/body.tpl` for 5.2.x) file with the following content: 
 
     ```php
     Hello world!
@@ -150,6 +181,11 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
 
 3.  We create new viewer class: `<X-Cart>/classes/XLite/Module/Tony/PageDemo/View/Page/Customer/TonyCustom.php` (again, notice change from `Page/Admin/TonyCustom.php` to `Page/Customer/TonyCustom.php` in the path) with the following content: 
 
+    <div class="ui top attached tabular menu">
+        <a class='item' data-tab='tab_3-1'>5.2.x and earlier</a>
+        <a class='item active' data-tab='tab_3-2'>5.3.x</a>
+    </div>
+    <div data-tab="tab_3-1" class="ui bottom attached tab segment" markdown="1">
     ```php
     <?php
 
@@ -171,6 +207,30 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
         }
     }
     ```
+    </div>
+    <div data-tab="tab_3-2" class="ui bottom attached active tab segment" markdown="1">
+    ```php
+    <?php
+
+    namespace XLite\Module\Tony\PageDemo\View\Page\Customer;
+
+    /**
+     * @ListChild (list="center")
+     */
+    class TonyCustom extends \XLite\View\AView
+    {
+        public static function getAllowedTargets()
+        {
+            return array_merge(parent::getAllowedTargets(), array('tony_custom'));
+        }
+
+        protected function getDefaultTemplate()
+        {
+            return 'modules/Tony/PageDemo/page/tony_custom/body.twig';
+        }
+    }
+    ```
+    </div>
 
 4.  As you can see this implementation has only few differences: 
 
@@ -189,10 +249,10 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
     We use this `@ListChild` directive in order to insert this viewer class into central area of customer area, instead of admin one;
 
     <div class="ui top attached tabular menu">
-        <a class='item active' data-tab='tab-1'>5.2.x and earlier</a>
-        <a class='item' data-tab='tab-2'>5.3.x</a>
+        <a class='item' data-tab='tab_2-1'>5.2.x and earlier</a>
+        <a class='item active' data-tab='tab_2-2'>5.3.x</a>
     </div>
-    <div data-tab="tab-1" class="ui bottom attached active tab segment" markdown="1">
+    <div data-tab="tab_2-1" class="ui bottom attached tab segment" markdown="1">
     ```php
     protected function getDefaultTemplate()
     {
@@ -200,7 +260,7 @@ Imagine, we have a similar task of creating page (`cart.php?target=tony_custom`)
     }
     ```
     </div>
-    <div data-tab="tab-2" class="ui bottom attached tab segment" markdown="1">
+    <div data-tab="tab_2-2" class="ui bottom attached active tab segment" markdown="1">
     ```php
     protected function getDefaultTemplate()
     {
