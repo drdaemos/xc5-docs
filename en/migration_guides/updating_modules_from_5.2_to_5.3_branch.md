@@ -121,20 +121,6 @@ You might want to check out [section about changing template names](http://devs.
 
 -   Starting from 5.3.x, `XLite/Model/Repo/ARepo` class contains all general methods to search entities, like `search()` and it doesn't use `getHandlingSearchParams()` method anymore. Therefore you should **remove** `search()`, `searchCount()`, `searchResult()`, `callSearchConditionHandler()`, `isSearchParamHasHandler()`, `getHandlingSearchParams()`, `prepareCndLimit()`, `prepareCndOrderBy()` methods. Define them only to modify the default behaviour.
 
-    All that is left is to add custom condition handlers in, except these:
-
-    *   prepareCndLimit(), которая используется, например, так:
-        
-        ```
-        $cnd->{\XLite\Model\Repo\Product::P_LIMIT} = array(0, static::MAX_COUNT);
-        ```
-
-    *   prepareCndOrderBy(), в котором метод сортировки по-умолчанию задаётся в ARepo->$defaultOrderBy, а параметр сортировки при поиске через передачу названия поля, по которому сортировать, например:
-
-        ```
-        $cnd->{\XLite\Model\Repo\Product::P_ORDER_BY}  = array('translations.name', 'asc');
-        ```
-
 -   Replace `SEARCH_ORDERBY and `SEARCH_LIMIT` constants with `P_ORDER_BY` and `P_LIMIT` respectively.
 
 -   Replace all `P_ORDER_BY` usages to the one of the following:
