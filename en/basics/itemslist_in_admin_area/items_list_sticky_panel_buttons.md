@@ -3,7 +3,7 @@ lang: en
 layout: article_with_sidebar
 updated_at: '2016-11-09 16:13 +0400'
 identifier: ref_vHI163Zu
-title: ''
+title: Items List Sticky Panel buttons
 order: 100
 published: true
 ---
