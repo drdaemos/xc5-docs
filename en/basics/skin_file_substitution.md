@@ -37,7 +37,7 @@ The fallback scheme is the following:
 
 2.  Current enabled skin paths: `<X-Cart>/skins/<skin_path>/<interface>`. This path has to be defined by skin (read more about {% link 'definition format' ref_skinmodule#skin-paths %}). 
 
-3.  Default skin path: `<X-Cart>/skins/<interface>`.
+3.  Default skin path: `<X-Cart>/skins/<interface>`. 
 
 4.  Common files, which are used regardless of interface: `<X-Cart>/skins/common`.
 
@@ -53,6 +53,8 @@ Such fallback can particularly help you when you have to display one image in di
 Also, you can read more about available interfaces at {% link 'Templates and interface' ref_templates#view-interfaces %} page
 {% endnote %}
 
+The special case here is the `mail` interface - its folder can contain any other interface. When X-Cart renders mail message for a customer, it will look inside `mail/<interface>` folder for a message template.
+
 So if you need to customize a certain template or file, you put an overriding one with the same name in the `<X-Cart>/skins/<skin_path>/<interface>/<path_to_file>` directory, where `<path_to_file>` is the path to the original template.
 
 ## Example usage
@@ -65,6 +67,11 @@ The red zone can be modified through `<X-Cart>/skins/common/order/invoice/parts/
 
 Using file substitution system, you create either `skins/theme_tweaker/customer/order/invoice/parts/bottom.twig` with modified content, or go through the whole skin defining process and after that create `skins/new_skin/customer/order/invoice/parts/bottom.twig` file (let's just assume that skin registers its path as `new_skin/customer`).
 
+{% note info %}
+If you need to modify this template for a mailed invoice, you have to use `skins/new_skin/mail/common/order/invoice/parts/bottom.twig` (in case of separate skin module). Also, starting from 5.3.2 version, you can create `skins/theme_tweaker/mail/common/order/invoice/parts/bottom.twig` with modified content.
+{% endnote %}
+
 One way or another, the result is:
 
 ![]({{site.baseurl}}/attachments/ref_skin_substitution/after.png)
+

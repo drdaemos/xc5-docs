@@ -141,7 +141,7 @@ X-Cart is using five interface modes:
     Or in other words - fallback interface, which is accessed when the current interface doesn't have the needed file.
 
 *   Mail interface (stored in `mail` folder).
-    Contains very specific files and rules to render mail messages.
+    This interface can contain any other interface, such as `admin`, `customer`, `common` ones. It contains very specific files and rules to render mail messages.
 
 *   PDF interface (stored in `pdf` folder).
     Similar to mail interface, contains specific templates to render pdf pages.
