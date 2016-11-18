@@ -1,6 +1,6 @@
 ---
 identifier: ref_U1KitTMm
-updated_at: 2016-03-30 00:00
+updated_at: 2016-11-18 00:00
 layout: article_with_sidebar
 lang: en
 title: 'Creating a payment method'
@@ -184,11 +184,4 @@ You can download this module example from here: [https://dl.dropboxusercontent.
 
 Module example (with the settings page) for X-Cart v5.2.x: [Tony-PaymentDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225448/9439206.tar)
 
-## Attachments:
-
-* [choose-payment-method.png]({{site.baseurl}}/attachments/8225448/8356207.png) (image/png)
-* [enable-payment-method.png]({{site.baseurl}}/attachments/8225448/8356208.png) (image/png)
-* [payment-method-checkout.png]({{site.baseurl}}/attachments/8225448/8356209.png) (image/png)
-* [add_demo_payment.png]({{site.baseurl}}/attachments/8225448/8718902.png) (image/png)
-* [enable-demo-payment-method.png]({{site.baseurl}}/attachments/8225448/8718903.png) (image/png)
-* [Tony-PaymentDemo-v5_2_0.tar]({{site.baseurl}}/attachments/8225448/9439206.tar) (application/x-tar)
+Module example (with the settings page) for X-Cart v5.3.x: [XCExample-Payment-v5_3_0.tar]({{site.baseurl}}/attachments/modules/XCExample-Payment-v5_3_0.tar)
