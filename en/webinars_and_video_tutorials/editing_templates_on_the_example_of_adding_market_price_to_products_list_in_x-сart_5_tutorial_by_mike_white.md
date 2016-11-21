@@ -16,6 +16,7 @@ order: 100
 In this tutorial from [http://babymonkeystudios.com](http://babymonkeystudios.com/ "http://babymonkeystudios.com") we will investigate editing the products list that displays in feature products and category pages. This should show you how to both make such a change, and how to divine where the change is needed. You can apply the lessons learned to most any type of change you want to make in the templates. 
 
 **Tools Used**: 
+
 *   Xampp [http://apachefriends.org](http://apachefriends.org/)
 *   Sublime Text 2: [http://www.sublimetext.com/2](http://www.sublimetext.com/2)
 *   Webmaster kit module: [http://market.x-cart.com/addons/webmaster-kit.html](http://market.x-cart.com/addons/webmaster-kit.html)
