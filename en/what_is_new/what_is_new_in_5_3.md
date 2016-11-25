@@ -1,12 +1,19 @@
 ---
 lang: en
 layout: blogpost
-updated_at: '2016-07-27 12:44 +0400'
+updated_at: '2016-11-25 10:26 +0400'
 identifier: ref_MJEGoA0S
 published: true
 title: What is new in 5.3
 author: Max Vydrin
-description: X-Cart 5.3 comes with significant performance and usability improvements, such as new built-in Crisp White skin, development mode decorator, improved widget caching and developer DebugBar. It also utilizes the power of PHP 7 while PHP 5.4 becomes minimum version. Finally, it comes upgraded with Twig template engine so you'll need to convert old Flexy templates to new Twig ones. This articles overviews major changes in the software and required adaptations.
+description: >-
+  X-Cart 5.3 comes with significant performance and usability improvements, such
+  as new built-in Crisp White skin, development mode decorator, improved widget
+  caching and developer DebugBar. It also utilizes the power of PHP 7 while PHP
+  5.4 becomes minimum version. Finally, it comes upgraded with Twig template
+  engine so you'll need to convert old Flexy templates to new Twig ones. This
+  articles overviews major changes in the software and required adaptations.
+order: 100
 ---
 
 ## “Crisp White” Skin
@@ -55,7 +62,9 @@ In new core decorating and decorated classes are not [MappedSuperclass](http://d
 
 In X-Cart 5.2, you did not worry about these moments, but you could come to a pitfall described in [Doctrine documentation](http://doctrine-orm.readthedocs.io/projects/doctrine-orm/en/latest/reference/inheritance-mapping.html#mapped-superclasses "What is new in 5.3"):
 
-> A mapped superclass cannot be an entity, it is not query-able and persistent relationships defined by a mapped superclass must be unidirectional (with an owning side only). This means that One-To-Many associations are not possible on a mapped superclass at all. Furthermore Many-To-Many associations are only possible if the mapped superclass is only used in exactly one entity at the moment. For further support of inheritance, the single or joined table inheritance features have to be used.
+{% note info %}
+A mapped superclass cannot be an entity, it is not query-able and persistent relationships defined by a mapped superclass must be unidirectional (with an owning side only). This means that One-To-Many associations are not possible on a mapped superclass at all. Furthermore Many-To-Many associations are only possible if the mapped superclass is only used in exactly one entity at the moment. For further support of inheritance, the single or joined table inheritance features have to be used.
+{% endnote %}
 
 New approach works around this problem and it is faster, because it does not walk through parent classes and you could not make a class non-MappedSuperclass earlier. Also, in old core you could not make a class non-MappedSuperclass, which makes new system more flexible. However, you have to be cautious about metadata. Properties with metadata must be defined as protected, not private. Or you need to explicitly define a class as MappedSuperclass by adding `@MappedSuperclass` directive, for example if you want to add indexes to decorator as `@Table(@Index)`. 
 
@@ -70,14 +79,16 @@ and the right one is:
 
 ## New annotations to decorate classes
 Instead of @LC_Dependencies you should use the following annotations:
-- @Decorator\Depend, which is the same as @LC_Dependencies;
-- @Decorator\After defines decorator after decorators of the described modules, if these modules are enabled. If the these modules are disabled this annotation will be ignored;
-- @Decorator\Before defines decorator before decorators of the described modules, if these modules are enabled. If the these modules are disabled this annotation will be ignored.
+
+-	@Decorator\Depend, which is the same as @LC_Dependencies;
+-	@Decorator\After defines decorator after decorators of the described modules, if these modules are enabled. If the these modules are disabled this annotation will be ignored;
+-	@Decorator\Before defines decorator before decorators of the described modules, if these modules are enabled. If the these modules are disabled this annotation will be ignored.
 
 Examples:
-* @Decorator\Depend("XC\ProductVariants")
-* @Decorator\After ("XC\MultiVendor")
-* @Decorator\Before("XC\ProductVariants")
+
+*	@Decorator\Depend("XC\ProductVariants")
+*	@Decorator\After ("XC\MultiVendor")
+*	@Decorator\Before("XC\ProductVariants")
 
 ## Replace Flexy with Twig
 Finally, we upgraded our template-engine to [Twig](http://twig.sensiolabs.org/ "What is new in 5.3"). We thoroughly reviewed Smarty 3 and Twig and decided to use the latter, since it is more powerful and flexible. Although it already has huge community, it continues growing very fast. Twig is very similar to Smarty in syntax and developers who are familiar with Smarty will be able to switch to Twig in a couple of hours. If you are a developer, you can see it for yourself in [Twig’s documentation](http://twig.sensiolabs.org/documentation "What is new in 5.3").
