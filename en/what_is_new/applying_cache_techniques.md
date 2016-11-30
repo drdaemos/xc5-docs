@@ -4,6 +4,7 @@ layout: blogpost
 updated_at: '2016-08-30 00:00 +0400'
 identifier: ref_cachetechniques
 published: true
+order: 998
 title: Applying caching techniques in X-Cart to achieve high performance
 author: Nikita Pchelintsev
 description: In this article I’m going to shed some light on what makes X-Cart 5.3 significantly faster than its predecessor. In the first part I will walk you through the process of analyzing performance bottlenecks and present strategies to make things faster. The second part is more of a tutorial that explains how caching works in general and how it is applied in practice using techniques that are available in X-Cart. Given that I’m going to discuss technical matters, this article is mainly aimed at X-Cart developers and system integrators. That said, it can be useful for anyone interested in web application performance and how things work in X-Cart internally.

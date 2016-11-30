@@ -52,7 +52,8 @@ lang:
 
 sort_default: order
 sorts:
-    Changelog: updated_at
+    changelog: updated_at
+
 
 # Category-wide Page ranking
 

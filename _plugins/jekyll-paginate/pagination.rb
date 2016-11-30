@@ -39,6 +39,8 @@ module Jekyll
       #                   "next_page" => <Number> }}
       def paginate(site, page)
         all_posts = site.site_payload['site']['pages'].reject { |post| post['published'] === false || !post['layout'].eql?("blogpost") }
+        all_posts = all_posts.sort { |a, b| a <=> b }
+        
         pages = Pager.calculate_pages(all_posts, site.config['paginate_count'].to_i)
         (1..pages).each do |num_page|
           pager = Pager.new(site, num_page, all_posts, pages)

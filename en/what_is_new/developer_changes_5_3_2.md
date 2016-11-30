@@ -4,6 +4,7 @@ layout: blogpost
 updated_at: '2016-11-28 00:00 +0400'
 identifier: ref_developer532
 published: true
+order: 997
 title: Improvements of event tasks, file integrity checker and other developer features of X-Cart 5.3.2
 author: Eugene Dementjev
 description: X-Cart 5.3.2 version comes with a bunch of developer-related goodies and API changes, so you'd want to adapt your modules before the release comes for the merchant stores. Among the most significant changes are the event tasks refactoring, allowing you to create step-based tasks with less effort, the file integrity checker (which can discover files, different to the original release version) and the additional selector for layout type of the home page.
