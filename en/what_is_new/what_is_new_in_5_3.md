@@ -12,9 +12,11 @@ description: >-
   caching and developer DebugBar. It also utilizes the power of PHP 7 while PHP
   5.4 becomes minimum version. Finally, it comes upgraded with Twig template
   engine so you'll need to convert old Flexy templates to new Twig ones. This
-  articles overviews major changes in the software and required adaptations.
+  article overviews the major changes in the software and required adaptations.
 order: 100
 ---
+
+X-Cart 5.3 comes with significant performance and usability improvements, such as new built-in Crisp White skin, development mode decorator, improved widget caching and developer DebugBar. It also utilizes the power of PHP 7 while PHP 5.4 becomes minimum version. Finally, it comes upgraded with Twig template engine so you'll need to convert old Flexy templates to new Twig ones. This article overviews the major changes in the software and required adaptations.
 
 ## “Crisp White” Skin
 
