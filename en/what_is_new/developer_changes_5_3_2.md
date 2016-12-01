@@ -1,18 +1,26 @@
 ---
 lang: en
 layout: blogpost
-updated_at: '2016-11-28 00:00 +0400'
+updated_at: '2016-12-01 11:34 +0400'
 identifier: ref_developer532
 published: true
 order: 997
-title: Improvements of event tasks, file integrity checker and other developer features of X-Cart 5.3.2
+title: >-
+  Improvements of event tasks, file integrity checker and other developer
+  features of X-Cart 5.3.2
 author: Eugene Dementjev
-description: X-Cart 5.3.2 version comes with a bunch of developer-related goodies and API changes, so you'd want to adapt your modules before the release comes for the merchant stores. Among the most significant changes are the event tasks refactoring, allowing you to create step-based tasks with less effort, the file integrity checker (which can discover files, different to the original release version) and the additional selector for layout type of the home page.
+description: >-
+  X-Cart 5.3.2 version comes with a bunch of developer-related goodies and API
+  changes, so you'd want to adapt your modules before the release comes for the
+  merchant stores. Among the most significant changes are the event tasks
+  refactoring, allowing you to create step-based tasks with less effort, the
+  file integrity checker (which can discover files, different to the original
+  release version) and the additional selector for layout type of the home page.
 ---
 
 ## Introduction
 
-X-Cart 5.3.2 version comes with a bunch of developer-related goodies and API changes, so you'd want to adapt your modules before the release comes for the merchant stores. Among the most significant changes are the event tasks refactoring, allowing you to create step-based tasks with less effort, the file integrity checker (which can discover files, different to the original release version) and the additional selector for layout type of the home page.
+X-Cart version 5.3.2 comes with a bunch of developer-related goodies and API changes, so you may want to adapt your modules before the release comes to the merchant stores. Among the most significant changes are the event tasks refactoring allowing you to create step-based tasks with less effort, the file integrity checker, which can discover files that differ from the original release version, and the additional selector of layout type for the home page.
 
 ## Event tasks refactoring
 
@@ -301,7 +309,3 @@ abstract class Complex implements \XLite\Module\XC\RESTAPI\Core\Schema\Complex i
 ```
 
 This method returns key-value records where **key** is the entity class name and **value** is the schema class name.
-
-
-
-
