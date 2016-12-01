@@ -297,7 +297,7 @@ If you do not want to bother making requests via pure cURL and then parse result
 X-Cart REST API supports two data schemes:
 
 1.  **Default format** - This is a format that exactly matches the way data is stored in the database. This format allows to pull absolutely every single data entity from X-Cart.
-2.  **Complex schema** - Thisis a format that was designed to serve typical business cases for REST API integrations. This format supports only **product**, **user** and **order** entities.
+2.  **Complex schema** - This is a format that was designed to serve typical business cases for REST API integrations. This format supports only **product**, **user** and **order** entities.
 
 You can reasonably ask what format you should choose. The best answer is to show you an example. For instance, you need to pull product info such as **sku**, **name**, **description**, **price** and **quantity** for all your products. Using the default format it would look as follows: 
 

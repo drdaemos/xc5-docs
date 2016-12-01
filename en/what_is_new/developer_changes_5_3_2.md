@@ -18,7 +18,7 @@ X-Cart 5.3.2 version comes with a bunch of developer-related goodies and API cha
 
 Event task progress widget and task processors were completely refactored to reduce the size of excess copy-pasted code. `EventTaskProgress` widget now has integrated progress message, cancel button, note and Bootstrap 3 progress bar styles.
 
-To adapt your progress page should should remove any code, related to message, buttons, and notes, and achieve the similar:
+To adapt your progress page, you should should remove any code related to message, buttons, notes, and achieve the similar:
 
 ```twig
 <div class="event-task-progress-page some-event-box some-event-progress">
@@ -35,7 +35,7 @@ To adapt your progress page should should remove any code, related to message, b
 </div>
 ```
 
-Don't forget to add `event-task-progress-page` css class to the container and remove any cancel buttons, time labels and help messages, related to the event task progress. Also, look at the added `message` widget parameter, it will allow you to provide the progress message.
+Don't forget to add the `event-task-progress-page` css class to the container and remove any cancel buttons, time labels and help messages, related to the event task progress widget. Also, look at the added `message` widget parameter, it will allow you to provide the progress message.
 
 Remove any `changePercent` changing JS handlers like this (because this behaviour is handled by EventTaskProgress controller):
 
@@ -168,3 +168,140 @@ public static function getLayoutTypes()
 Skins, supporting that feature will have an additional selector at the "Look & Feel" -> "Layout" page:
 
 ![]({{site.baseurl}}/attachments/ref_developer532/layout_type_selector.png)
+
+## REST API Complex schema changes
+
+Complex schema was completely refactored and returns more important details about profiles and orders. Model schema is modular now and store addons can easily modify schema via decorator class. 
+
+Let's take a look at **Social Login** addon file, which adds info about social login provider and login id into **Profile Complex** schema:
+
+```php
+namespace XLite\Module\CDev\SocialLogin\Module\XC\RESTAPI\Core\Schema\Complex;
+
+/**
+ * Complex schema
+ *
+ * @Decorator\Depend ("XC\RESTAPI")
+ */
+class Profile extends \XLite\Module\XC\RESTAPI\Core\Schema\Complex\Profile implements \XLite\Base\IDecorator
+{
+    /**
+     * Convert model (order)
+     *
+     * @param \XLite\Model\AEntity $model Entity
+     * @param boolean $withAssociations Convert with associations
+     *
+     * @return array
+     */
+    public function convertModel(\XLite\Model\AEntity $model, $withAssociations)
+    {
+        $data = parent::convertModel($model, $withAssociations);
+
+        $newData = [
+            'socialLoginProvider'   => $model->getSocialLoginProvider() ?: '',
+            'socialLoginId'         => $model->getSocialLoginId() ?: '',
+            'pictureUrl'            => $model->getPictureUrl() ?: '',
+        ];
+
+        return array_merge(
+            $data,
+            $newData
+        );
+    }
+}
+```
+
+Every Complex schema definition has a `convertModel (\XLite\Model\AEntity $model, $withAssociations)` method, where you can provide key-value data of the entity (by `$model` param). Also, it has `prepareInput (array $requestData)` method, which is used to preprocess input from request, and `preloadData(\XLite\Model\AEntity $model, array $data)`, which is used to update entity with given data.
+
+Alongside with the default `Profile`, `Order` and `Product` schemas, you can provide your own model schema in the addon. To achieve this, you should create a class which implements `XLite/Module/XC/RESTAPI/Core/Schema/Complex/IModel` interface.
+
+For example, we'll create the example **Category Complex** schema
+
+```php
+namespace \XLite\Module\XC\RESTAPI\Core\Schema\Complex\Category;
+
+class Category implements \XLite\Module\XC\RESTAPI\Core\Schema\Complex\IModel
+{
+    /**
+     * Convert model
+     *
+     * @param \XLite\Model\AEntity $model            Entity
+     * @param boolean              $withAssociations Convert with associations
+     *
+     * @return array
+     */
+    public function convertModel(\XLite\Model\AEntity $model, $withAssociations)
+    {
+        $categories = array();
+
+        foreach ($model->getChildren() as $category) {
+          $categories[] = $this->convertModel($category, $withAssociations);
+        }
+
+        $products = array();
+
+        foreach ($model->getCategoryProducts() as $catProduct) {
+          $products[] = array(
+            'productId' => $catProduct->getProduct()->getProductId(),
+            'name'      => $catProduct->getProduct()->getName(),
+          );
+        }
+
+        return array(
+            'categoryId'       => $model->getCategoryId(),
+            'name'             => $model->getName(),
+            'description'      => $model->getDescription(),
+            'children'         => $categories,
+            'products'         => $products,
+        );
+    }
+
+    /**
+     * Prepare input
+     *
+     * @param array $data Data
+     *
+     * @return array
+     */
+    public function prepareInput(array $data)
+    {
+    }
+
+    /**
+     * Preload data
+     *
+     * @param \XLite\Model\AEntity $entity Product
+     * @param array                $data   Data
+     *
+     * @return void
+     */
+    public function preloadData(\XLite\Model\AEntity $entity, array $data)
+    {
+    }
+}
+```
+
+To add this schema into the list of schemes, used by Complex mode, you should decorate `XLite\Module\XC\RESTAPI\Core\Schema\Complex` class and modify the `getAllowedEntityClasses()` method like this:
+
+```php
+abstract class Complex implements \XLite\Module\XC\RESTAPI\Core\Schema\Complex implements \XLite\Base\IDecorator
+{
+    /**
+     * Get allowed entity classes
+     *
+     * @return array
+     */
+    protected function getAllowedEntityClasses()
+    {
+        return array_merge(parent::getAllowedEntityClasses(), array(
+            'XLite\Model\Category'  => 'XLite\Module\XC\RESTAPI\Core\Schema\Complex\Category',
+        ));
+    }
+}
+```
+
+This method returns key-value records where **key** is the entity class name and **value** is the schema class name.
+
+
+
+
