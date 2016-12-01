@@ -24,9 +24,9 @@ X-Cart version 5.3.2 comes with a bunch of developer-related goodies and API cha
 
 ## Event tasks refactoring
 
-Event task progress widget and task processors were completely refactored to reduce the size of excess copy-pasted code. `EventTaskProgress` widget now has integrated progress message, cancel button, note and Bootstrap 3 progress bar styles.
+The event task progress widget and task processors were refactored completely to reduce excess copy-pasted code. The `EventTaskProgress` widget now has an integrated progress message, a cancel button, a note and Bootstrap 3 progress bar styles.
 
-To adapt your progress page, you should should remove any code related to message, buttons, notes, and achieve the similar:
+To adapt your progress page, you should remove any code responsible for the progress message, the cancel button and any notes, and achieve something similar to the following:
 
 ```twig
 <div class="event-task-progress-page some-event-box some-event-progress">
@@ -43,7 +43,7 @@ To adapt your progress page, you should should remove any code related to messag
 </div>
 ```
 
-Don't forget to add the `event-task-progress-page` css class to the container and remove any cancel buttons, time labels and help messages, related to the event task progress widget. Also, look at the added `message` widget parameter, it will allow you to provide the progress message.
+Don't forget to add the `event-task-progress-page` css class to the container and remove any cancel buttons, time labels and help messages related to the event task progress widget. Also, note the added `message` widget parameter; it will allow you to provide the progress message.
 
 Remove any `changePercent` changing JS handlers like this (because this behaviour is handled by EventTaskProgress controller):
 
@@ -59,9 +59,9 @@ jQuery('.some-event-progress .bar')
 )
 ```
 
-The `error` and `complete` handlers should still be present. Remove any unneccessary css styles, the default ones are incorporated inside `EventTaskProgress` widget.
+The `error` and `complete` handlers should still be present. Remove any unneccessary css styles; the default ones are incorporated inside the `EventTaskProgress` widget.
 
-Next comes your progress page PHP class, it should be using the `EventTaskProgressProviderTrait` and provide access to the processor object via `getProcessor()` function. The only required code at the most cases will be looking like this:
+Next comes your progress page PHP class; it should be using `EventTaskProgressProviderTrait` and should provide access to the processor object via the `getProcessor()` function. The only required code, in most cases, will look as follows:
 
 ```php
 <?php
@@ -93,15 +93,15 @@ class Progress extends \XLite\View\AView
 
 ```
 
-After doing that, your export page will be looking as fancy as this screenshot. Yay!
+Once you do that, your export page will look as fancy as the following screenshot. Yay!
 
 ![]({{site.baseurl}}/attachments/ref_developer532/eventtask.png)
 
-That's it for the neccessary upgrade changes, but you can do an extra mile and provide your event tasks with new additional features.
+That's it for the required upgrade changes; however, you can go an extra mile and provide your event tasks with new additional features.
 
-### Available event task improvements
+### Additional event task improvements
 
-You can provide custom progress message by implementing this function in the View which uses `EventTaskProgressProviderTrait`:
+You can provide a custom progress message by implementing this function in the View which uses `EventTaskProgressProviderTrait`:
 
 ```php
 /**
@@ -115,7 +115,7 @@ protected function getTimeLabel()
 }
 ```
 
-Also, you'll need to implement `compileTouchData()` function in the `EventListener` class. Let's look at the `XLite\Core\EventListener\Import` class for the example:
+Also, you'll need to implement the `compileTouchData()` function in the `EventListener` class. For the sake of example, let's have a look at the `XLite\Core\EventListener\Import` class:
 
 ```php
 /**
@@ -136,27 +136,27 @@ protected function compileTouchData()
 }
 ```
 
-In this function you should provide `message` field inside `touchData` array, this field will be used to update progress message label.
+In this function, you should provide the `message` field within the `touchData` array; this field will be used to update the progress message label.
 
-To ease the creation of event-based tasks, `XLite\Logic\AGenerator` and `XLite\Logic\ARepoStep` classes were introduced. This class contains the common logic of iterating over entities and performing some actions with them. If you have some existing logic, based on Generator pattern, or want to do a new one, you should extend from these classes. 
+To facilitate the creation of event-based tasks, the classes `XLite\Logic\AGenerator` and `XLite\Logic\ARepoStep` were introduced. These classes contain the common logic of iterating over entities and performing actions with them. If you have some existing logic based on Generator pattern, or want to do a new one, you should extend from these classes. 
 
 ## File integrity checker
 
-A new tool is available for the developers and the watchful merchants - it is called "Integrity check". This tool can be run to compare the file checksums of the existing X-Cart core and modules with the version, stored in the X-Cart Marketplace. You have to activate an X-Cart license key to be able to use this tool, otherwise Marketplace won't provide any checksums.
+A new tool is available for the developers and the watchful merchants - it is called "Integrity check". This tool can be run to compare the file checksums of the existing X-Cart core and modules with the version stored in the X-Cart Marketplace. You have to activate an X-Cart license key to be able to use this tool, otherwise the Marketplace won't provide any checksums.
 
-You can find integrity checker at the "Tools" -> "Integrity check" section at the admin zone:
+You can find the integrity checker in the "Tools" -> "Integrity check" section at the Admin area:
 
 ![]({{site.baseurl}}/attachments/ref_developer532/file_integrity_1.png)
 
-After running a check you will see a screen with the list of added\modified\deleted files, grouped by module:
+After running a check, you will see a screen with the list of added\modified\deleted files grouped by the module:
 
 ![]({{site.baseurl}}/attachments/ref_developer532/file_integrity_2.png)
 
-You can use this information to determine files that will be overwritten by upgrade, or some suspiciously changed files.
+You can use this information to determine which files will be overwritten by an upgrade, or to detect suspiciously modified files.
 
 ## Home page layout type selector
 
-Starting with 5.3.2, X-Cart store can have different layout type for the homepage and any other page. Right now only **Standard** skin, its **Color Schemes** and the beautiful **Crisp White** skin utilize this ability, but you can easily upgrade your skin with changing its definition class (Main.php) like this:
+Starting with 5.3.2, an X-Cart store can have a different layout type for the homepage and any other page. Right now, only the **Standard** skin, including all its **Color Schemes**, and the beautiful **Crisp White** skin support this feature; however, any skin can be easily adapted by changing its definition class (Main.php) like this:
 
 ```php
 /**
@@ -173,7 +173,7 @@ public static function getLayoutTypes()
 }
 ```
 
-Skins, supporting that feature will have an additional selector at the "Look & Feel" -> "Layout" page:
+The skins supporting this feature will have an additional selector on the "Look & Feel" -> "Layout" page:
 
 ![]({{site.baseurl}}/attachments/ref_developer532/layout_type_selector.png)
 
