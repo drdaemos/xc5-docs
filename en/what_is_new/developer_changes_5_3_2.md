@@ -22,6 +22,12 @@ description: >-
 
 X-Cart version 5.3.2 comes with a bunch of developer-related goodies and API changes, so you may want to adapt your modules before the release comes to the merchant stores. Among the most significant changes are the event tasks refactoring allowing you to create step-based tasks with less effort, the file integrity checker, which can discover files that differ from the original release version, and the additional selector of layout type for the home page.
 
+## Decorators sorting order was revised
+
+Before X-Cart 5.3.2, if several decorators of a single class had the same priority (based on the `After`, `Before`, `Depend` annotations), they were ordered by a filesystem position (internally, by `glob()` function return). Due to the fact that _filesystem file order_ is being different on some systems, you could have different effects from these decorators. 
+
+Filesystem ordering was replaced with the _string-based alphabetic_ sorting, which is pretty much consistent everywhere. You should **recheck** decorators order in your modules and set the appropriate annotations if it is wrong. There is a possibility that you haven't noticed a mistake because of the lucky filesystem order on your system, and that mistake have appeared on the other systems.
+
 ## Event tasks refactoring
 
 The event task progress widget and task processors were refactored completely to reduce excess copy-pasted code. The `EventTaskProgress` widget now has an integrated progress message, a cancel button, a note and Bootstrap 3 progress bar styles.
