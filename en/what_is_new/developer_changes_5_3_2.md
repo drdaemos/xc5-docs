@@ -179,9 +179,9 @@ The skins supporting this feature will have an additional selector on the "Look 
 
 ## REST API Complex schema changes
 
-Complex schema was completely refactored and returns more important details about profiles and orders. Model schema is modular now and store addons can easily modify schema via decorator class. 
+Complex schema was completely refactored and now returns more important details about profiles and orders. Model schema is modular now, and store addons can easily modify the schema via decorator class. 
 
-Let's take a look at **Social Login** addon file, which adds info about social login provider and login id into **Profile Complex** schema:
+Let's take a look at the **Social Login** addon file, which adds info about a social login provider and login id into the **Profile Complex** schema:
 
 ```php
 namespace XLite\Module\CDev\SocialLogin\Module\XC\RESTAPI\Core\Schema\Complex;
@@ -219,11 +219,11 @@ class Profile extends \XLite\Module\XC\RESTAPI\Core\Schema\Complex\Profile imple
 }
 ```
 
-Every Complex schema definition has a `convertModel (\XLite\Model\AEntity $model, $withAssociations)` method, where you can provide key-value data of the entity (by `$model` param). Also, it has `prepareInput (array $requestData)` method, which is used to preprocess input from request, and `preloadData(\XLite\Model\AEntity $model, array $data)`, which is used to update entity with given data.
+Every Complex schema definition has a `convertModel (\XLite\Model\AEntity $model, $withAssociations)` method where you can provide key-value data of the entity (by `$model` param). Also, it has a `prepareInput (array $requestData)` method, which is used to preprocess input from request, and `preloadData(\XLite\Model\AEntity $model, array $data)`, which is used to update an entity with given data.
 
-Alongside with the default `Profile`, `Order` and `Product` schemas, you can provide your own model schema in the addon. To achieve this, you should create a class which implements `XLite/Module/XC/RESTAPI/Core/Schema/Complex/IModel` interface.
+Alongside with the default `Profile`, `Order` and `Product` schemas, you can provide your own model schema in the addon. To achieve this, you should create a class which implements the `XLite/Module/XC/RESTAPI/Core/Schema/Complex/IModel` interface.
 
-For example, we'll create the example **Category Complex** schema
+For example, we'll create a sample **Category Complex** schema
 
 ```php
 namespace \XLite\Module\XC\RESTAPI\Core\Schema\Complex\Category;
@@ -289,7 +289,7 @@ class Category implements \XLite\Module\XC\RESTAPI\Core\Schema\Complex\IModel
 }
 ```
 
-To add this schema into the list of schemes, used by Complex mode, you should decorate `XLite\Module\XC\RESTAPI\Core\Schema\Complex` class and modify the `getAllowedEntityClasses()` method like this:
+To add this schema into the list of schemes used by Complex mode, you should decorate the `XLite\Module\XC\RESTAPI\Core\Schema\Complex` class and modify the `getAllowedEntityClasses()` method like this:
 
 ```php
 abstract class Complex implements \XLite\Module\XC\RESTAPI\Core\Schema\Complex implements \XLite\Base\IDecorator
@@ -308,4 +308,4 @@ abstract class Complex implements \XLite\Module\XC\RESTAPI\Core\Schema\Complex i
 }
 ```
 
-This method returns key-value records where **key** is the entity class name and **value** is the schema class name.
+This method returns key-value records, where **key** is the entity class name and **value** is the schema class name.
