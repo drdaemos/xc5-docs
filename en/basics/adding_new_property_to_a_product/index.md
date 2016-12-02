@@ -52,16 +52,15 @@ class Product extends \XLite\Model\Product implements \XLite\Base\IDecorator
 }
 ```
 
-*   `protected $testField` says that now product objects will have a new property that can be accessed like `$product->testField`
-*   this piece of code 
+Here `protected $testField` says that now product objects will have a new property that can be accessed like `$product->testField`. 
 
-    ```php
+```php
 /**
  * @Column (type="string", length=32)
  */
-    ```
+```
 
-    specifies parameters of this field, i.e. that this field is a **string** and can be up to **32 symbols**.
+This line of the code specifies parameters of this field, i.e. that this field is a **string** and can be up to **32 symbols**.
 
 That is it. If we re-deploy the store right now, X-Cart will create a new field in the database according to our parameters we specified. Do not initiate store re-deployment right now though.
 
