@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-10-20 09:45 +0400'
+updated_at: '2016-12-05 23:45 +0400'
 identifier: ref_RSR29iWL
 title: REST API documentation
 order: 100
@@ -52,6 +52,7 @@ Please note that X-Cart models and their API change over time, so some example r
     *   [Creating a shipping rate](#creating-a-shipping-rate)
     *   [Updating an existing shipping rate](#updating-an-existing-shipping-rate)
     *   [Changing the shipping status for an order](#changing-the-shipping-status-for-an-order)
+    *   [Updating a product variant](#updating-product-variant)
 
 ## Installing and configuring REST API
 
@@ -67,7 +68,7 @@ After the module has been installed, you need to set it up.
         For instance, we set **read/write key** as _"key-to-do-everything"_ and **read key** as _"key-for-reading"_.
 
         {% note danger %}
-        REST API allows to operate with absolutely all data of your store. External scripts will be able to fetch, edit and remove absolutely any data. That is why you should not give REST API keys to people and companies you do not trust. Also, make a point of providing read-only keys rather than read/write ones.
+        REST API allows to operate with absolutely all the data of your store. External scripts will be able to fetch, edit and remove absolutely any data. That is why you should not give REST API keys to people and companies you do not trust. Also, make a point of providing read-only keys rather than read/write ones.
         {% endnote %}
 
 3.  In order to test REST API functionality, we are trying to open the following page: 
@@ -1055,6 +1056,17 @@ Example result excerpt (note the shipping status field):
     	...
     }
 }
+```
+
+### Updating a product variant
+If you know the specific product variant ID that needs to be updated, you can update the variant data directly. In the below example, we change "amount" to 10 for variant ID = 143
+
+```
+http://<MY-XCART-PATH>/admin.php?target=RESTAPI&_key=WRITEAPIKEY
+&_path=xc-productvariants-productvariant
+&_method=put
+&model[0][id]=143
+&model[0][amount]=10
 ```
 
 ## Attachments:
