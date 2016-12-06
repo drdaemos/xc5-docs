@@ -1,14 +1,17 @@
 ---
-identifier: ref_I06hOMLI
-updated_at: 2015-01-23 00:00
-layout: article_with_sidebar
 lang: en
-title: 'Architecture basics'
+layout: article_with_sidebar
+updated_at: '2016-12-05 23:58 +0400'
+identifier: ref_I06hOMLI
+title: Architecture basics
 categories:
   - home
 order: 3
 icon: sitemap
-description: Understand what technologies and approaches used in the X-Cart core and learn how to achieve typical tasks
+description: >-
+  Understand what technologies and approaches used in the X-Cart core and learn
+  how to achieve typical tasks
+published: true
 ---
 
 The Basics section shows how to achieve typical tasks when you edit your X-Cart store:
@@ -27,4 +30,5 @@ The Basics section shows how to achieve typical tasks when you edit your X-Cart 
 *   How to work with {% link "user info" ref_xJBqLBws %} and {% link "authorization" ref_fKauw8Cw %};
 *   {% link "How to work with sessions" ref_PW2oOrvq %};
 *   {% link "Making request to external services" ref_HK4ekS1u %};
-*   {% link "Making dependencies between modules" ref_xdDPawlG %}.
+*   {% link "Making dependencies between modules" ref_xdDPawlG %};
+*   {% link "REST API documentation" ref_RSR29iWL %}".
