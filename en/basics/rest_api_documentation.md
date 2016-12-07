@@ -821,6 +821,176 @@ $client = \RESTAPIClient::factory($storeUrl, $restApiKey);
 $result = $client->delete('product')->json();
 ```
 
+### Adding attribute to the product
+
+With REST API Client:
+
+```php
+$client = \RESTAPIClient::factory($storeUrl, $restApiKey);
+$productId = 5;
+
+$attribute = array(
+    array(
+        'position'  => 0,
+        'visible' => true,
+        'type'  => 'S',
+        'translations' => array(
+            array(
+                'code' => 'en',
+                'name' => 'Colour'
+            )
+        ),
+        'attribute_options' => array(
+            array(
+                'translations' => array(
+                    array(
+                        'code' => 'en',
+                        'name' => 'Blue'
+                    )
+                )
+            ),
+            array(
+                'translations' => array(
+                    array(
+                        'code' => 'en',
+                        'name' => 'Black'
+                    )
+                )
+            ),
+            array(
+                'translations' => array(
+                    array(
+                        'code' => 'en',
+                        'name' => 'Red'
+                    )
+                )
+            )
+        )
+    )
+);
+
+$result = $client->post('attribute', array('body' => $attribute))->json();
+
+$attributeId = $result[0]['id'];
+$attributeInfo = $client->get('attribute/' . $attributeId)->json();
+
+$options = $attributeInfo['attribute_options'];
+
+$attributeValueSelect = array();
+
+foreach($options as $option) {
+    $attributeValueSelect[] = array(
+        'product' => array(
+            'product_id' => $productId
+        ),
+        'attribute' => array(
+            'id' => $attributeId
+        ),
+        'attribute_option' => array(
+            'id' => $option['id']
+        )
+    );
+}
+
+$result = $client
+    ->post('attributevalue-attributevalueselect', array('body' => $attributeValueSelect))
+    ->json();
+```
+
+### Adding attribute to the product
+
+With REST API Client:
+
+```php
+$client = \RESTAPIClient::factory($storeURL, $RESTAPIKey);
+$productId = 5;
+
+// create variants for product #5
+$variants = array(              
+    array(
+        'product' => array(
+            'product_id' => $productId      
+        ),
+        'price' => 0.0000,
+        'weight' => 0.0000,
+        'amount' => 0,
+        'sku' => 'TEST_VAR0',
+        'defaultValue' => 0,
+        // this is the record id in the xc_product_variant_attribute_value_select table
+        'attributeValueS' => array(     
+            array(
+                'id' => 284
+            )
+        )
+    ),
+    array(
+        'product' => array(
+            'product_id' => $productId
+        ),
+        'price' => 0.0000,
+        'weight' => 0.0000,
+        'amount' => 0,
+        'sku' => 'TEST_VAR1',
+        'defaultValue' => 0,
+        'attributeValueS' => array(
+            array(
+                'id' => 285
+            )
+        )
+    ),
+    array(
+        'product' => array(
+            'product_id' => $productId
+        ),
+        'price' => 0.0000,
+        'weight' => 0.0000,
+        'amount' => 0,
+        'sku' => 'TEST_VAR2',
+        'defaultValue' => 0,
+        'attributeValueS' => array(
+            array(
+                'id' => 286
+            )
+        )
+    )
+);
+
+$result = $client->post('xc-productvariants-productvariant', array('body' => $variants))->json();
+
+// this is the linkage of the xc_product_variants table and xc_attributes table
+$variantAttributes = array(             
+    'variantsAttributes' => array(
+         array(
+            'id' => 59,
+            'product' => array(
+                'product_id' => $productId
+            )
+        )
+    )
+);
+
+$result = $client->put('product/' . $productId, array('body' => $variantAttributes))->json();
+```
+
+### Getting all product variants
+If you know the specific product variant ID that needs to be updated, you can update the variant data directly. In the below example, we change "amount" to 10 for variant ID = 143
+
+```
+http://<MY-XCART-PATH>/admin.php?target=RESTAPI&_key=WRITEAPIKEY
+&_path=xc-productvariants-productvariant
+```
+
+### Updating a product variant
+If you know the specific product variant ID that needs to be updated, you can update the variant data directly. In the below example, we change "amount" to 10 for variant ID = 143
+
+```
+http://<MY-XCART-PATH>/admin.php?target=RESTAPI&_key=WRITEAPIKEY
+&_path=xc-productvariants-productvariant
+&_method=put
+&model[0][id]=143
+&model[0][amount]=10
+```
+
 ### Creating a shipping zone
 
 Direct request:
@@ -1056,17 +1226,6 @@ Example result excerpt (note the shipping status field):
     	...
     }
 }
-```
-
-### Updating a product variant
-If you know the specific product variant ID that needs to be updated, you can update the variant data directly. In the below example, we change "amount" to 10 for variant ID = 143
-
-```
-http://<MY-XCART-PATH>/admin.php?target=RESTAPI&_key=WRITEAPIKEY
-&_path=xc-productvariants-productvariant
-&_method=put
-&model[0][id]=143
-&model[0][amount]=10
 ```
 
 ## Attachments:
