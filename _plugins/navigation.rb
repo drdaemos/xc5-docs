@@ -4,7 +4,7 @@
 # adds {% navigation_menu %} tag
 #
 # Author: Eugene Dementjev
-# Version: 0.3.0
+# Version: 0.3.5
 
 module Jekyll
   module NavigationPlugin
@@ -60,7 +60,7 @@ module Jekyll
         parts = item['url'].sub('/', '').gsub('index.html', '').split('/')
         itembase = parts.slice(0, level).join('/')
 
-        if item.data.fetch('title', '') and itembase == parent and parts.length > level and parts.length <= level + 1
+        if item.data.fetch('show_in_sidebar', true) and item.data.fetch('title', '') and itembase == parent and parts.length > level and parts.length <= level + 1
           # Menu item is active
           is_active = item['identifier'] == @page['identifier']
           active_class = is_active ? 'active' : ''
