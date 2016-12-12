@@ -55,6 +55,13 @@ module Jekyll
       ours <=> theirs
     end
 
+    def lang_equal_url (other_url)
+      ours = self.url().split('/').slice(2..-1).join('/')
+      theirs = other_url.split('/').slice(2..-1).join('/')
+
+      ours <=> theirs
+    end
+
     def <=> (other)
       sort_by = @site.config['sort_default']
 

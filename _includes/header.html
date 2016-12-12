@@ -27,21 +27,7 @@
         </form>
 
         <!-- Language selector -->
-        <div class="ui language floating dropdown link item" id="language-selector">
-          <i class="world icon"></i>
-          <span class="text">{{ site.lang[page.lang] }}</span>
-          <div class="menu">
-            {% for item in site.lang %}
-              {% assign lang_current_part = page.lang | append: '/' %}
-              {% if item[0] == page.lang %}
-                <div class="item">{{ item[1] }}</div>
-              {% else %}
-                <a class="item" href="{{ page.url | remove_first: lang_current_part | prepend: item[0] | prepend: '/' | prepend: site.baseurl }}">{{ item[1] }}</a>
-              {% endif %}
-            {% endfor %}
-          </div>
-        </div>
-
+        {% language_selector %}
       </div>
     </div>
   </div>
