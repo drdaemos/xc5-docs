@@ -1,7 +1,6 @@
 <div class="ui vertical basic segment" id="breadcrumb-block">
     <div class="ui container">
         <div class="ui breadcrumb">
-        <a class="section" href="{{ baseurl_lang }}/">Home</a>
         {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
         {% assign splitted_url_parts = page_url_without_index_html | split: '/' %}
         {% capture forLoopMaxInt %}{{ splitted_url_parts.size | minus:1 }}{% endcapture %}
