@@ -252,6 +252,10 @@
 
 #breadcrumb-block {
   padding-bottom: 0;
+
+  .ui.breadcrumb > span.divider:first-of-type {
+    display: none;
+  }
 }
 
 article {
