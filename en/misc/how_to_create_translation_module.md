@@ -1,14 +1,15 @@
 ---
-identifier: ref_haeJE8rQ
-updated_at: 2015-04-16 00:00
-layout: article_with_sidebar
 lang: en
-title: 'How to create translation module'
+layout: article_with_sidebar
+updated_at: '2016-12-14 16:23 +0400'
+identifier: ref_haeJE8rQ
+title: How to create a translation module
 version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
   - Outdated
-
+published: true
+order: 100
 ---
 
 Translation module is an add-on that translates X-Cart store to another language. Most part of such module is not a code, but the list of translated labels, so we tried to ease the process for translators and all they need to do is to perform their translating job. After that you can run a special script that will wrap up their translation into the module.
