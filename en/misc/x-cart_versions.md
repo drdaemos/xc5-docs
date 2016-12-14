@@ -1,12 +1,13 @@
 ---
-identifier: ref_wUXMKpNm
-updated_at: 2016-08-12 00:00
-layout: article_with_sidebar
 lang: en
-title: 'X-Cart versions'
+layout: article_with_sidebar
+updated_at: '2016-12-14 16:24 +0400'
+identifier: ref_wUXMKpNm
+title: X-Cart versioning
 categories:
   - Developer docs
-
+published: true
+order: 100
 ---
 
 ## Introduction
@@ -53,4 +54,3 @@ Also, when you release new bugfix version, you must include all changes to a new
 ## Related articles
 
 *   {% link 'Module changelogs' ref_modulechangelogs %}
-
