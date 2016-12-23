@@ -2,6 +2,10 @@
     padding: 2em 0em;
 }
 
+#google_translate_element {
+  align-self: center;
+}
+
 #banner {
     padding: 1rem 0;
     background: url(#{$base-dir}/images/banner/img-home-web.jpg) no-repeat center center #514947;
