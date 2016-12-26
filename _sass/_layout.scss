@@ -6,6 +6,10 @@
   align-self: center;
 }
 
+#language-selector + #google_translate_element {
+  display: none;
+}
+
 #banner {
     padding: 1rem 0;
     background: url(#{$base-dir}/images/banner/img-home-web.jpg) no-repeat center center #514947;
