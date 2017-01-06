@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-13 16:17 +0400'
+updated_at: '2017-01-06 15:10 +0400'
 identifier: ref_TkLzPRtO
 title: Changelog
 categories:
@@ -16,11 +16,11 @@ published: true
     <div class="ui statistics">
       <div class="statistic">
         <div class="label">Current stable 5.3.x version</div>
-        <div class="value" markdown="span">{% link '5.3.2.2' ref_5322changelog %}</div>
+        <div class="value" markdown="span">{% link '5.3.2.3' ref_5323changelog %}</div>
       </div>
       <div class="statistic">
         <div class="label">Current stable 5.2.x version</div>
-        <div class="value" markdown="span">{% link '5.2.20' ref_5220changelog %}</div>
+        <div class="value" markdown="span">{% link '5.2.21' ref_5221changelog %}</div>
       </div>
     </div>
 </div>
