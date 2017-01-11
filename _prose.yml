@@ -164,3 +164,9 @@ prose:
               value: "home"
             - name: "Top panel"
               value: "top"
+      - name: "redirect_from"
+        field:
+          element: "multiselect"
+          label: "Redirects from"
+          placeholder: "/en/some_page.html"
+          alterable: true
