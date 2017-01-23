@@ -1,18 +1,19 @@
 ---
-identifier: ref_p0CRZmMS
-updated_at: 2015-08-05 00:00
-layout: article_with_sidebar
 lang: en
-title: 'Adding CSS and JS files'
+layout: article_with_sidebar
+updated_at: '2017-01-23 17:16 +0400'
+identifier: ref_p0CRZmMS
+title: Adding CSS and JS files
 categories:
   - Developer docs
-
+published: true
+order: 100
 ---
 
 
-In order to register some CSS/JS resources in your viewer class (more about this in {% link "Working with viewer classes" ref_6dMJsZ63 %}), it should implement two specific methods: `getCSSFiles() and ``getJSFiles().`
+In order to register some CSS/JS resources in your viewer class (more about this in {% link "Working with viewer classes" ref_6dMJsZ63 %}), it should implement two specific methods: `getCSSFiles()` and `getJSFiles().`
 
-`**getCSSFiles()**`
+## `getCSSFiles()`
 
 Via this method the widget registers its CSS files. During the initialization of viewer classes these CSS files are collected into the static storage.
 
@@ -32,12 +33,13 @@ public function getCSSFiles()
 ```
 
 {% note info %}
-You can also use the less resources along with the CSS ones. The LESS resources will be compiled into CSS. However you can merge your LESS resource with another one using `**'merge'**` parameter. It must contain the file path to the parent LESS file, in this case the resources will be linked into one LESS file with the **`'@import'`** LESS instruction.
+You can also use the less resources along with the CSS ones. The LESS resources will be compiled into CSS. However you can merge your LESS resource with another one using `merge` parameter. It must contain the file path to the parent LESS file, in this case the resources will be linked into one LESS file with the `@import` LESS instruction.
 
-Please note that right now only one parent is supported, so you cannot link the resources in LESS chain. The best practice is to merge LESS resources with `'bootstrap/css/bootstrap.less'` file.
+Please note that right now only one parent is supported, so you cannot link the resources in LESS chain. The best practice is to merge LESS resources with `bootstrap/css/bootstrap.less` file.
 {% endnote %}
 
-**LESS example**
+### LESS example
+
 ```php
 public function getCSSFiles()
 {
@@ -54,7 +56,8 @@ public function getCSSFiles()
     );
 }
 ```
-`**getJSFiles()**`
+
+## `getJSFiles()`
 
 Via this method the widget registers its JS files. During the initialization of viewer classes these JS files are collected into the static storage.
 
@@ -74,18 +77,19 @@ public function getJSFiles()
 ```
 
 {% note danger %}
-You shouldn't add the widget as a list child of `**'body'**` view list because it won't have its CSS and JS resources loaded that way.
+You shouldn't add the widget as a list child of `body` view list because it won't have its CSS and JS resources loaded that way.
 
-That happens because resources container is a list child of 'body' view list itself, and in such case your widget will be added later.
+That happens because resources container is a list child of `body` view list itself, and in such case your widget will be added later.
 
-Use `**'layout.main'**` or `**'layout.footer'**` instead. Also, you can use another method to load your resources, which is described in the following section.
+Use `layout.main` or `layout.footer` instead. Also, you can use another method to load your resources, which is described in the following section.
 {% endnote %}
 
 There is an alternative way to add a new JS/CSS file to the layout and it requires you to decorate `\XLite\View\AView` class in your module.
 
 1.  Create `View/AView.php` file in your module with the following content: 
 
-    **classes/XLite/Module/<Developer>/<Module>/View/AView.php**
+    `classes/XLite/Module/<Developer>/<Module>/View/AView.php`
+    
     ```php
     namespace XLite\Module\<Developer ID>\<Module ID>\View;
     abstract class AView extends \XLite\View\AView implements \XLite\Base\IDecorator
@@ -105,7 +109,6 @@ There is an alternative way to add a new JS/CSS file to the layout and it requir
             return $list;
         }
     }
-
     ```
 
     Of course you need to use real developer and module IDs in the namespace.
@@ -116,4 +119,4 @@ There is an alternative way to add a new JS/CSS file to the layout and it requir
     $list[static::RESOURCE_JS][] = 'modules/<Developer ID>/<Module ID>/script.js';
     ```
 
-     the `skins/default/en/modules/<Developer ID>/<Module ID>/script.js` file must exist.
+    the `skins/default/en/modules/<Developer ID>/<Module ID>/script.js` file must exist.
