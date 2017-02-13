@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-07-28 18:33 +0400'
+updated_at: '2017-02-13 17:09 +0400'
 identifier: ref_u8kJ3imU
 title: Updating modules from 5.2 to 5.3 branch
 order: 200
@@ -121,15 +121,15 @@ You might want to check out [section about changing template names](http://devs.
 
 -   Starting from 5.3.x, `XLite/Model/Repo/ARepo` class contains all general methods to search entities, like `search()` and it doesn't use `getHandlingSearchParams()` method anymore. Therefore you should **remove** `search()`, `searchCount()`, `searchResult()`, `callSearchConditionHandler()`, `isSearchParamHasHandler()`, `getHandlingSearchParams()`, `prepareCndLimit()`, `prepareCndOrderBy()` methods. Define them only to modify the default behaviour.
 
--   Replace `SEARCH_ORDERBY and `SEARCH_LIMIT` constants with `P_ORDER_BY` and `P_LIMIT` respectively.
+-   Replace `SEARCH_ORDERBY` and `SEARCH_LIMIT` constants with `P_ORDER_BY` and `P_LIMIT` respectively.
 
 -   Replace all `P_ORDER_BY` usages to the one of the following:
 
-    ```
+    ```php
     $cnd->{static::P_ORDER_BY} = array(static::SORT_BY_MODE_LAST_VISIT_DATE, 'DESC');
     ```
     
-    ```
+    ```php
     $cnd->{static::P_ORDER_BY} = array(
         array(Repo::SORT_BY_MODE_ENABLED, 'DESC'),
         array(Repo::SORT_BY_MODE_DELAY, 'ASC'),
@@ -138,7 +138,7 @@ You might want to check out [section about changing template names](http://devs.
 
 -   If you need the default sort order, add this field to the repo:
     
-    ```
+    ```php
     protected $defaultOrderBy = array('date' => false); // true means ASC, false means DESC
     ```
 
