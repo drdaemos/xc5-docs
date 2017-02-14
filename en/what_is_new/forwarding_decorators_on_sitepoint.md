@@ -5,7 +5,7 @@ updated_at: '2017-02-14 12:10 +0400'
 identifier: ref_fIkxhT5K
 title: Article about Forwarding Decorators featured at Sitepoint.com
 order: 996
-published: false
+published: true
 description: >-
   Hooray, an article about X-Cart decorator system has been published at major
   developer portal Sitepoint.com! This article explains our concept for
