@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: blogpost
-updated_at: '2017-02-14 12:29 +0400'
+updated_at: '2017-02-14 13:09 +0400'
 identifier: ref_fIkxhT5K
 title: Article about Forwarding Decorators featured at Sitepoint.com
 order: 996
@@ -20,4 +20,6 @@ Hooray, an [article about X-Cart decorator system](https://www.sitepoint.com/ach
 
 Also, we are working on the second part of this article, explaining internals of the decorator compiler. Stay tuned!
 
+<div style="text-align: center;">
 <a href="https://www.sitepoint.com/achieving-modular-architecture-with-forwarding-decorators/"><button class="ui primary basic button">Read the article</button></a>
+</div>
