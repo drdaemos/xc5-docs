@@ -1,6 +1,6 @@
 ---
 lang: en
-layout: article_with_sidebar
+layout: blogpost
 updated_at: '2017-02-14 12:10 +0400'
 identifier: ref_fIkxhT5K
 title: Article about Forwarding Decorators featured at Sitepoint.com
