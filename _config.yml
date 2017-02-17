@@ -28,7 +28,7 @@ index_path: "links.xml"
 
 elasticsearch:
     host: "localhost:9200"
-    js_host: "devs.x-cart.com"
+    js_host: "kbsearch.x-cart.com"
     js_user: "kbuser"
     js_pass: "53cr37p4"
     index: "knowledgebase"

@@ -2,7 +2,7 @@
 layout: null
 ---
 
-// Version 0.2.8
+// Version 0.2.9
 ;(function() {
 
   function Search() {
@@ -23,7 +23,7 @@ layout: null
   Search.prototype.connection = {
     host: {
       host: '{{ site.elasticsearch.js_host }}',
-      port: (window.location.protocol === 'https:' ? 8443 : 8000),
+      port: (window.location.protocol === 'https:' ? 443 : 80),
       protocol: (window.location.protocol === 'https:' ? 'https' : 'http'),
     },
     log:  'trace',
