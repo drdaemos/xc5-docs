@@ -1,14 +1,15 @@
 ---
-identifier: ref_mFAMapCB
-updated_at: 2015-01-20 00:00
-layout: article_with_sidebar
 lang: en
-title: 'Creating global discount'
+layout: article_with_sidebar
+updated_at: '2017-03-13 13:33 +0400'
+identifier: ref_mFAMapCB
+title: Creating global discount
 categories:
   - Developer docs
   - Demo module
   - Outdated
-
+published: true
+order: 100
 ---
 
 
@@ -26,7 +27,7 @@ This article teaches X-Cart developers how they can create discounts via custom 
 
 ## Video tutorial
 
-<iframe class="youtube-player" type="text/html" style="width: 800px; height: 600px" src="http://www.youtube.com/embed/OmskLxiaweM" frameborder="0"></iframe>
+<iframe class="youtube-player" type="text/html" style="width: 800px; height: 600px" src="https://www.youtube.com/embed/OmskLxiaweM" frameborder="0"></iframe>
 
 ## Implementation
 
