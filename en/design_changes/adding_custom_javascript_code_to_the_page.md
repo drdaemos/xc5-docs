@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-03-22 10:59 +0400'
+updated_at: '2017-03-22 12:14 +0400'
 identifier: ref_mw8w648h
 title: Adding custom JavaScript code to the page
 version: X-Cart 5.2.16 and earlier
@@ -37,7 +37,7 @@ The easiest way is by using the **ThemeTweaker** addon module:
 
 If you need to load your code in the `<head>` tag or want to limit its usage to a certain page (for example, the **orders list**), or customize your store's back end, you should also use the **Theme Tweaker** add-on module but in a different fashion. 
 
-For example, you should create the Twig template and place it to `skins/theme_tweaker/admin/header/parts/custom_js.twig` file. Then you should append the file with the code like this:
+For example, you should create the Twig template and place it to `skins/theme_tweaker/customer/header/parts/custom_js.twig` file. Then you should append the file with the code like this:
 
 ```twig
 {##
@@ -54,9 +54,11 @@ For example, you should create the Twig template and place it to `skins/theme_tw
 {% endif %}
 ```
 
-This example code will be executed only on the `order_list` page in the Admin back end. You can see the result here: `http://<store domain>/admin.php?target=order_list`.
+This example code will be executed only on the `order_list` page in the Storefront. You can see the result here: `http://<store domain>/carp.php?target=order_list`.
 
-You can also create such files inside `skins/theme_tweaker/customer/` folder to execute your code in the Storefront. Also, you can put custom script tags inside `<body>` tag to a certain place by changing the `@ListChild` annotation `list` parameter.
+Also, you can put custom script tags inside `<body>` tag to a certain place by changing the `@ListChild` annotation `list` parameter.
+
+If you have X-Cart 5.3.2 and later, you can create such files inside `skins/theme_tweaker/admin/` folder to execute your code in the Admin Backend. 
 
 ## Script tag in content fields or static pages
 
@@ -72,5 +74,3 @@ Also, if you have X-Cart 5.3.3 or later, you can totally disable HTMLPurifier (i
     [html_purifier]
 	purifier = Off
     ```
-
-
