@@ -14,8 +14,8 @@ order: 100
 ## Table of Contents
 
 - [Custom JS code for every page](#custom-js-code-for-every-page)
-- [Custom JS code for every page](#custom-js-code-for-every-page)
-
+- [Putting custom JS to a certain part of the HTML](#putting-custom-js-to-a-certain part-of-the-html)
+- [Script tag in content fields or static pages](#script-tag-in-content-fields-or-static-pages)
 
 ## Custom JS code for every page
 
