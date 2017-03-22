@@ -1,47 +1,76 @@
 ---
-identifier: ref_mw8w648h
-updated_at: 2015-09-25 00:00
-layout: article_with_sidebar
 lang: en
-title: 'Adding custom JavaScript code to the page'
+layout: article_with_sidebar
+updated_at: '2017-03-22 10:59 +0400'
+identifier: ref_mw8w648h
+title: Adding custom JavaScript code to the page
 version: X-Cart 5.2.16 and earlier
 categories:
   - Developer docs
   - Outdated
-
+published: true
+order: 100
 ---
+## Table of Contents
 
+- [Custom JS code for every page](#custom-js-code-for-every-page)
+- [Custom JS code for every page](#custom-js-code-for-every-page)
+
+
+## Custom JS code for every page
 
 If you want to add some custom JavaScript code or load additional scripts to store pages, there are several ways of doing that.
 
 The easiest way is by using the **ThemeTweaker** addon module:
 
 1.  Make sure the **ThemeTweaker** module is enabled:
-    ![]({{site.baseurl}}/attachments/8750664/8719407.png?effects=drop-shadow)
+
+    ![]({{site.baseurl}}/attachments/8750664/8719407.png)
+    
 2.  Open the page **Look & Feel -> Custom JS **of your store's Admin back end and enable the **Use custom js** option by putting a check mark in the respective check box:
-    ![]({{site.baseurl}}/attachments/8750664/8719408.png?effects=drop-shadow)
-3.  Write the code in the following textarea (don't use the `<script>` tag, it will be added automatically). This code will be loaded before the </body> closing tag at the end of any storefront page.
 
-However, if you need to load your code in the `<head>` tag or want to limit its usage to a certain page (for example, the **orders list**), or customize your store's back end, you should use the **Custom Skin** add-on module. 
+    ![Custom JavaScript page]({{site.baseurl}}/attachments/ref_mw8w648h/custom_js_page.png)
+    
+3.  Write the code in the following textarea (don't use the `<script>` tag, it will be added automatically). This code will be loaded before the `</body>` closing tag at the end of any storefront page.
 
-If you choose to put your code in the `<body>` tag, you should enable the **Custom Skin** module, then copy the default template "`skins/admin/en/body.tpl`" to "`skins/custom_skin/admin/en/body.tpl`", and add your code using the following `<script>` element:
+## Putting custom JS to a certain part of the HTML
 
-```php
-<script IF="getTarget()=#order_list#">
-<!– PLACE YOUR CODE BELOW THIS LINE –>
-</script>
+If you need to load your code in the `<head>` tag or want to limit its usage to a certain page (for example, the **orders list**), or customize your store's back end, you should also use the **Theme Tweaker** add-on module but in a different fashion. 
+
+For example, you should create the Twig template and place it to `skins/theme_tweaker/admin/header/parts/custom_js.twig` file. Then you should append the file with the code like this:
+
+```twig
+{##
+ # Custom script tag
+ #
+ # @ListChild (list="head", weight="999")
+ #}
+
+{% if this.getTarget() == "order_list" %}
+  <script type="text\javascript">
+  	<!-- HERE GOES YOUR JAVASCRIPT CODE
+    	 YOU CAN ALSO USE SRC PARAM OF SCRIPT TAG -->
+  </script>
+{% endif %}
 ```
 
-For the head template, it can be implemented as follows: you can copy the default template "skins/admin/en/header/body.tpl" to "skins/custom_skin/admin/en/header/body.tpl", then add your custom code using the following bit of code:
+This example code will be executed only on the `order_list` page in the Admin back end. You can see the result here: `http://<store domain>/admin.php?target=order_list`.
 
-```php
-<script IF="getTarget()=#order_list#">
-<!– PLACE YOUR CODE BELOW THIS LINE –>
-</script>
-```
+You can also create such files inside `skins/theme_tweaker/customer/` folder to execute your code in the Storefront. Also, you can put custom script tags inside `<body>` tag to a certain place by changing the `@ListChild` annotation `list` parameter.
 
-This example code will be executed only on the **order_list** page in the Admin back end. You can see the result here: **`http://<store domain>/admin.php?target=order_list`**.
+## Script tag in content fields or static pages
 
-_See also:_
+To paste script tags inside static pages or product\category description, you should disable any WYSIWYG modules (like TinyMCE or Froala Editor). Unfortunately, as long as the `<script>` tags are present inside textareas, you shouldn't enable the WYSIWYG editors as they will remove such tags upon save.
 
-*   {% link "Basic guide to theme creation: Using Custom Skin module" ref_bC2TThPi#using-custom-skin-module %}
+{% note info %}
+Starting from X-Cart 5.3.3 you can paste the `<script>` right inside the WYSIWYG areas in the static pages or product description. This functionality is available for Root Administrators.
+{% endnote %}
+
+Also, if you have X-Cart 5.3.3 or later, you can totally disable HTMLPurifier (it is not advised though), by setting `purifier` option to `Off` under the `[html_purifier]` section in the `etc/config.php` file:
+
+	```ini
+    [html_purifier]
+	purifier = Off
+    ```
+
+
