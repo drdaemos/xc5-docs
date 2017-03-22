@@ -70,7 +70,7 @@ Starting from X-Cart 5.3.3 you can paste the `<script>` right inside the WYSIWYG
 
 Also, if you have X-Cart 5.3.3 or later, you can totally disable HTMLPurifier (it is not advised though), by setting `purifier` option to `Off` under the `[html_purifier]` section in the `etc/config.php` file:
 
-	```ini
-    [html_purifier]
-	purifier = Off
-    ```
+```ini
+[html_purifier]
+purifier = Off
+```
