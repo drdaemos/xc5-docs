@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-05 23:45 +0400'
+updated_at: '2017-03-27 16:36 +0400'
 identifier: ref_RSR29iWL
 title: REST API documentation
 order: 100
@@ -45,6 +45,10 @@ Please note that X-Cart models and their API change over time, so some example r
     *   [Assigning a product to a category](#assigning-a-product-to-a-category)
     *   [Removing a product with ID=1](#removing-a-product-with-id1)
     *   [Removing all products](#removing-all-products)
+    *   [Adding an attribute to the product](#adding-an-attribute-to-the-product)
+    *   [Adding product variants](#adding-product-variants)
+    *   [Getting all product variants](#getting-all-product-variants)
+    *   [Updating a product variant](#updating-product-variant)
     *   [Creating a shipping zone](#creating-a-shipping-zone)
     *   [Getting shipping zones info ](#getting-shipping-zones-info)
     *   [Creating a shipping method](#creating-a-shipping-method)
@@ -52,7 +56,6 @@ Please note that X-Cart models and their API change over time, so some example r
     *   [Creating a shipping rate](#creating-a-shipping-rate)
     *   [Updating an existing shipping rate](#updating-an-existing-shipping-rate)
     *   [Changing the shipping status for an order](#changing-the-shipping-status-for-an-order)
-    *   [Updating a product variant](#updating-product-variant)
 
 ## Installing and configuring REST API
 
@@ -821,7 +824,7 @@ $client = \RESTAPIClient::factory($storeUrl, $restApiKey);
 $result = $client->delete('product')->json();
 ```
 
-### Adding attribute to the product
+### Adding an attribute to the product
 
 With REST API Client:
 
@@ -897,7 +900,7 @@ $result = $client
     ->json();
 ```
 
-### Adding attribute to the product
+### Adding product variants
 
 With REST API Client:
 
@@ -973,6 +976,7 @@ $result = $client->put('product/' . $productId, array('body' => $variantAttribut
 ```
 
 ### Getting all product variants
+
 If you know the specific product variant ID that needs to be updated, you can update the variant data directly. In the below example, we change "amount" to 10 for variant ID = 143
 
 ```
@@ -981,6 +985,7 @@ http://<MY-XCART-PATH>/admin.php?target=RESTAPI&_key=WRITEAPIKEY
 ```
 
 ### Updating a product variant
+
 If you know the specific product variant ID that needs to be updated, you can update the variant data directly. In the below example, we change "amount" to 10 for variant ID = 143
 
 ```
