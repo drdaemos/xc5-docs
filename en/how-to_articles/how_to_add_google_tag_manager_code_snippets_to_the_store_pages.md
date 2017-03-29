@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-03-29 16:46 +0400'
+updated_at: '2017-03-29 18:45 +0400'
 identifier: ref_eHPw9R4e
 title: How to add Google Tag Manager code snippets to the store pages
 order: 100
@@ -20,9 +20,9 @@ Follow the steps below:
 
 2.  Activate Webmaster mode.
 
-3.  Copy the <script> portion of the JavaScript snippet provided in your Google Tag Manager account and paste it into the file <xcart_dir>/skins/theme_tweaker/customer/header/body.twig using Webmaster mode.
+3.  Copy the ``<script>`` portion of the JavaScript snippet provided in your Google Tag Manager account and paste it into the file <xcart_dir>/skins/theme_tweaker/customer/header/body.twig using Webmaster mode.
 
-4.  Similarly, copy the <noscript> portion of the Google Tag Manager snippet and paste it using Webmaster mode into the file <xcart_dir>/skins/theme_tweaker/customer/body.twig.
+4.  Similarly, copy the ``<noscript>`` portion of the Google Tag Manager snippet and paste it using Webmaster mode into the file <xcart_dir>/skins/theme_tweaker/customer/body.twig.
 
 5.  Apply the changes you have made in Webmaster mode.
 
