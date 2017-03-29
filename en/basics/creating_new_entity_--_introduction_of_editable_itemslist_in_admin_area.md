@@ -1,9 +1,9 @@
 ---
-identifier: ref_hBpBE0vS
-updated_at: 2015-01-15 00:00
-layout: article_with_sidebar
 lang: en
-title: 'Creating new entity and the UI for its management (Admin area)'
+layout: article_with_sidebar
+updated_at: '2017-03-29 09:34 +0400'
+identifier: ref_hBpBE0vS
+title: Creating new entity and the UI for its management (Admin area)
 order: 70
 keywords:
   - Editable itemslist
@@ -11,7 +11,8 @@ keywords:
 categories:
   - Developer docs
   - Demo module
-
+published: true
+version: X-Cart 5.1.x - 5.2.x
 ---
 
 
