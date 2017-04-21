@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-03-22 12:14 +0400'
+updated_at: '2017-04-21 16:39 +0400'
 identifier: ref_mw8w648h
 title: Adding custom JavaScript code to the page
 version: X-Cart 5.2.16 and earlier
@@ -27,7 +27,7 @@ The easiest way is by using the **ThemeTweaker** addon module:
 
     ![]({{site.baseurl}}/attachments/8750664/8719407.png)
     
-2.  Open the page **Look & Feel -> Custom JS **of your store's Admin back end and enable the **Use custom js** option by putting a check mark in the respective check box:
+2.  Open the page **Look & Feel -> Custom JS** of your store's Admin back end and enable the **Use custom js** option by putting a check mark in the respective check box:
 
     ![Custom JavaScript page]({{site.baseurl}}/attachments/ref_mw8w648h/custom_js_page.png)
     
@@ -65,12 +65,5 @@ If you have X-Cart 5.3.2 and later, you can create such files inside `skins/them
 To paste script tags inside static pages or product\category description, you should disable any WYSIWYG modules (like TinyMCE or Froala Editor). Unfortunately, as long as the `<script>` tags are present inside textareas, you shouldn't enable the WYSIWYG editors as they will remove such tags upon save.
 
 {% note info %}
-Starting from X-Cart 5.3.3 you can paste the `<script>` right inside the WYSIWYG areas in the static pages or product description. This functionality is available for Root Administrators.
-{% endnote %}
-
-Also, if you have X-Cart 5.3.3 or later, you can totally disable HTMLPurifier (it is not advised though), by setting `purifier` option to `Off` under the `[html_purifier]` section in the `etc/config.php` file:
-
-```ini
-[html_purifier]
-purifier = Off
-```
+Starting from X-Cart 5.3.3 you can paste the `<script>` right inside the WYSIWYG areas in the static pages or product description. This functionality is available for **Root Administrators** and Administrators with **Allow unfiltered HTML** permission.
+{% endnote 
