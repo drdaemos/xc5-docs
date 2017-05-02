@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-04-21 16:39 +0400'
+updated_at: '2017-05-02 16:42 +0400'
 identifier: ref_mw8w648h
 title: Adding custom JavaScript code to the page
 version: X-Cart 5.2.16 and earlier
@@ -66,4 +66,4 @@ To paste script tags inside static pages or product\category description, you sh
 
 {% note info %}
 Starting from X-Cart 5.3.3 you can paste the `<script>` right inside the WYSIWYG areas in the static pages or product description. This functionality is available for **Root Administrators** and Administrators with **Allow unfiltered HTML** permission.
-{% endnote 
+{% endnote %}
