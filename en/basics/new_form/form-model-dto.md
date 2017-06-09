@@ -1,13 +1,13 @@
 ---
+title: Form model DTO and validation
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-07-26 17:07 +0400'
+updated_at: 2016-07-26 17:07 +0400
 identifier: ref_S60wDZGW
 order: 40
-published: true
 version: X-Cart 5.3.0 and later
-title: Form model DTO and validation
 ---
+
 DTO used to transfer data to the form and get data from it.
 
 ## Definition

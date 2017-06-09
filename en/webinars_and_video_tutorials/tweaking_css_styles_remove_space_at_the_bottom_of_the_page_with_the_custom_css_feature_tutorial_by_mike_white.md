@@ -1,14 +1,13 @@
 ---
+title: 'Tweaking CSS Styles: remove space at the bottom of the page with the &quot;Custom
+  CSS&quot; feature: Tutorial by Mike White'
 identifier: ref_tkTO9wsK
 updated_at: 2014-05-01 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Tweaking CSS Styles: remove space at the bottom of the page with the &quot;Custom CSS&quot; feature: Tutorial by Mike White'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

@@ -1,15 +1,13 @@
 ---
+title: Adding third column
 identifier: ref_BBz737s4
 updated_at: 2015-01-14 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Adding third column'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

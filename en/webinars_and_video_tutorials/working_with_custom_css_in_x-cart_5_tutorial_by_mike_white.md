@@ -1,14 +1,12 @@
 ---
+title: 'Working with custom CSS in X-Cart 5: Tutorial by Mike White'
 identifier: ref_yULqFylQ
 updated_at: 2015-06-14 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Working with custom CSS in X-Cart 5: Tutorial by Mike White'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

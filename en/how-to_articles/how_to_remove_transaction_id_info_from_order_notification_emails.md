@@ -1,17 +1,15 @@
 ---
+title: How to remove Transaction ID info in order notification emails?
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-03-29 18:06 +0400'
+updated_at: 2017-03-29 18:06 +0400
 identifier: ref_H86AxdTJ
-title: How to remove Transaction ID info in order notification emails?
 version: X-Cart 5.2.16 and earlier
 categories:
-  - How-To Articles
-  - Outdated
-published: true
+- How-To Articles
+- Outdated
 order: 100
 ---
-
 
 ## Step-by-step guide
 

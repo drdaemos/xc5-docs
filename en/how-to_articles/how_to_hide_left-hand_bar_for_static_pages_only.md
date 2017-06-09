@@ -1,16 +1,14 @@
 ---
+title: How to hide left-hand bar for static pages only
 identifier: ref_MQdca6cP
 updated_at: 2016-04-18 00:00
 layout: article_with_sidebar
 lang: en
-title: 'How to hide left-hand bar for static pages only'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - How-To Articles
-  - Outdated
-
+- How-To Articles
+- Outdated
 ---
-
 
 If you would like to hide the left-hand bar for static pages only, but still want it displayed for other pages, just follow the below guide.
 

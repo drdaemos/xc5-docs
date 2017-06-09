@@ -1,13 +1,14 @@
 ---
+title: Sticky panel buttons (admin area, items list)
+published: false
 lang: ru
 layout: article_with_sidebar
-updated_at: '2016-09-28 17:29 +0400'
+updated_at: 2016-09-28 17:29 +0400
 identifier: ref_v4SqT9xD
-title: 'Sticky panel buttons (admin area, items list)'
 order: 100
-published: false
 version: X-Cart 5.3.x
 ---
+
 ## Общая структура
 
 Панель состаит из трех основных частей:

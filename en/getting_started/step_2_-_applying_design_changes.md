@@ -1,16 +1,15 @@
 ---
+title: Step 2 - applying design changes
 identifier: ref_E88KCMDD
 updated_at: 2016-01-11 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Step 2 - applying design changes'
 version: X-Cart 5.2.16 and earlier
 order: 200
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
 
 ## Introduction

@@ -1,15 +1,13 @@
 ---
+title: Creating menu in admin area
 identifier: ref_Tkkqgkgr
 updated_at: 2014-12-11 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Creating menu in admin area'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

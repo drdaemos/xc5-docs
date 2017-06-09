@@ -1,11 +1,10 @@
 ---
+title: Bulk editing API
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-08-17 17:48 +0400'
+updated_at: 2016-08-17 17:48 +0400
 identifier: ref_HnaTNuQc
 order: 100
-published: true
-title: Bulk editing API
 version: X-Cart 5.3.0 and later with Bulk Editing module enabled
 ---
 

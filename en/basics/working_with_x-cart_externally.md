@@ -1,15 +1,13 @@
 ---
+title: Working with X-Cart externally
 identifier: ref_ogmCiRWZ
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Working with X-Cart externally'
 categories:
-  - Developer docs
-  - Demo script
-
+- Developer docs
+- Demo script
 ---
-
 
 ## Introduction
 

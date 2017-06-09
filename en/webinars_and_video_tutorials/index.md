@@ -1,11 +1,11 @@
 ---
+title: Webinars and video tutorials
 identifier: ref_STELArig
 updated_at: 2015-11-16 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Webinars and video tutorials'
 categories:
-  - home
+- home
 order: 10
 icon: youtube play
 description: Live video from our developers and associates

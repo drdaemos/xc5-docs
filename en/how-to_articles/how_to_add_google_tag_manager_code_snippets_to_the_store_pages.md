@@ -1,13 +1,13 @@
 ---
+title: How to add Google Tag Manager code snippets to the store pages
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-03-29 18:45 +0400'
+updated_at: 2017-03-29 18:45 +0400
 identifier: ref_eHPw9R4e
-title: How to add Google Tag Manager code snippets to the store pages
 order: 100
-published: true
 version: X-Cart 5.3.x
 ---
+
 [Google Tag Manager](https://www.google.com/analytics/tag-manager/ "Google Tag Manager") is a tag management system that allows you to quickly and easily update tags and code snippets on a website, such as those intended for traffic analysis and marketing optimization. 
 
 To use the Google Tag Manager solution with X-Cart, you need to set up a tag container in your Google Tag Manager account and add the container code snippets to every page of your X-Cart based store.

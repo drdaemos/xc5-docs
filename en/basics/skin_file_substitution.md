@@ -1,14 +1,13 @@
 ---
+title: Skin file substitution
 lang: en
 layout: article_with_sidebar
 updated_at: 2016-10-24 00:00
 identifier: ref_skin_substitution
-title: Skin file substitution
 order: 32
-published: true
 keywords:
-  - custom skin
-  - template substitution
+- custom skin
+- template substitution
 ---
 
 ## Introduction

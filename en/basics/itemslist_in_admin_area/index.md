@@ -1,16 +1,15 @@
 ---
+title: ItemsList in admin area
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-09-29 20:08 +0400'
+updated_at: 2016-09-29 20:08 +0400
 identifier: ref_zsGkqC41
-title: ItemsList in admin area
 order: 65
 version: X-Cart 5.2.16 and earlier
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-published: true
+- Developer docs
+- Demo module
+- Outdated
 ---
 
 ## Introduction

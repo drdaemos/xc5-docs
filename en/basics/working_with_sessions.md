@@ -1,16 +1,14 @@
 ---
+title: Session API
 identifier: ref_PW2oOrvq
 updated_at: 2016-08-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Session API'
 order: 45
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

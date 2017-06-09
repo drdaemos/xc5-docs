@@ -1,15 +1,14 @@
 ---
+title: Module changelogs
 identifier: ref_modulechangelogs
 updated_at: 2016-08-12 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Module changelogs'
 version: X-Cart 5.3.0 and later
 keywords:
-  - guide
+- guide
 categories:
-  - Migration guides
-
+- Migration guides
 ---
 
 ## Introduction

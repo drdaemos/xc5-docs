@@ -1,14 +1,12 @@
 ---
+title: Basic front-end changes in X-Cart 5.2 - Theme, Logo, Favicon, Home Page Banner
 identifier: ref_8yinPdfC
 updated_at: 2015-05-08 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Basic front-end changes in X-Cart 5.2 - Theme, Logo, Favicon, Home Page Banner'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

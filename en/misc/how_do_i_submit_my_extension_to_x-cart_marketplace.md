@@ -1,15 +1,13 @@
 ---
+title: How do I submit my extension to X-Cart marketplace
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-08-26 10:28 +0400'
+updated_at: 2016-08-26 10:28 +0400
 identifier: ref_uGQn5pNX
-title: How do I submit my extension to X-Cart marketplace
 categories:
-  - Developer docs
-published: true
+- Developer docs
 order: 100
 ---
-
 
 ## Introduction
 

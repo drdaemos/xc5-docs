@@ -1,15 +1,14 @@
 ---
+title: ItemsList in customer area
 identifier: ref_MRidEzuz
 updated_at: 2015-01-12 00:00
 layout: article_with_sidebar
 lang: en
-title: 'ItemsList in customer area'
 order: 60
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
 
 ## Introduction

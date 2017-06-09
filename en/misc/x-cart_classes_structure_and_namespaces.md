@@ -1,14 +1,12 @@
 ---
+title: X-Cart classes structure and namespaces
 identifier: ref_FAgFbEx9
 updated_at: 2014-11-25 00:00
 layout: article_with_sidebar
 lang: en
-title: 'X-Cart classes structure and namespaces'
 categories:
-  - Developer docs
-
+- Developer docs
 ---
-
 
 ## Introduction
 

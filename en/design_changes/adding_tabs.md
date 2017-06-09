@@ -1,15 +1,13 @@
 ---
+title: Adding tabs
 identifier: ref_DsCbLpqy
 updated_at: 2015-01-21 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Adding tabs'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

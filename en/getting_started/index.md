@@ -1,14 +1,15 @@
 ---
+title: Getting started
 identifier: ref_c4ZdVsX4
 updated_at: 2015-02-22 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Getting started'
 categories:
-  - home
+- home
 order: 1
 icon: rocket
-description: Start developing for X-Cart without any hassle. Speed up your work process with X-Cart SDK
+description: Start developing for X-Cart without any hassle. Speed up your work process
+  with X-Cart SDK
 ---
 
 This section teaches developers how to work with X-Cart 5.

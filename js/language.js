@@ -1,6 +1,7 @@
 ---
-layout: null
+layout: 
 ---
+
 (function($){
   $(document).ready(function(){
     $('#language-selector').dropdown({

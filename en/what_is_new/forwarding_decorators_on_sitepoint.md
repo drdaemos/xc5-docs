@@ -1,18 +1,15 @@
 ---
+title: Article about Forwarding Decorators featured at Sitepoint.com
 lang: en
 layout: blogpost
-updated_at: '2017-02-14 13:09 +0400'
+updated_at: 2017-02-14 13:09 +0400
 identifier: ref_fIkxhT5K
-title: Article about Forwarding Decorators featured at Sitepoint.com
 order: 996
-published: true
-description: >-
-  Hooray, an <a
-  href="https://www.sitepoint.com/achieving-modular-architecture-with-forwarding-decorators/">article
-  about X-Cart decorator system</a> has been published at major developer portal
-  Sitepoint.com! This article explains our concept for approaching modularity in
-  the app - wrapping classes in other classes and recompiling everything; we
-  recommend any X-Cart developer to read it.
+description: Hooray, an <a href="https://www.sitepoint.com/achieving-modular-architecture-with-forwarding-decorators/">article
+  about X-Cart decorator system</a> has been published at major developer portal Sitepoint.com!
+  This article explains our concept for approaching modularity in the app - wrapping
+  classes in other classes and recompiling everything; we recommend any X-Cart developer
+  to read it.
 author: Eugene Dementjev
 ---
 

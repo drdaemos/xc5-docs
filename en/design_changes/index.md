@@ -1,16 +1,16 @@
 ---
+title: Design changes
 identifier: ref_NGe77wql
 updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Design changes'
 categories:
-  - home
+- home
 order: 3
 icon: paint brush
-description: Learn how to make your X-Cart store eye pretty. Discover design patterns for making X-Cart themes.
+description: Learn how to make your X-Cart store eye pretty. Discover design patterns
+  for making X-Cart themes.
 ---
-
 
 The Design changes cover typical tasks for design integrator.
 

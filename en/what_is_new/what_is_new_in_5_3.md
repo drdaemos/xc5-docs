@@ -1,19 +1,17 @@
 ---
+title: What is new in 5.3
 lang: en
 layout: blogpost
-updated_at: '2016-11-25 15:35 +0400'
+updated_at: 2016-11-25 15:35 +0400
 identifier: ref_MJEGoA0S
-published: true
 order: 999
-title: What is new in 5.3
 author: Max Vydrin
-description: >-
-  X-Cart 5.3 comes with significant performance and usability improvements, such
-  as new built-in Crisp White skin, development mode decorator, improved widget
-  caching and developer DebugBar. It also utilizes the power of PHP 7 while PHP
-  5.4 becomes minimum version. Finally, it comes upgraded with Twig template
-  engine so you'll need to convert old Flexy templates to new Twig ones. This
-  article overviews the major changes in the software and required adaptations.
+description: X-Cart 5.3 comes with significant performance and usability improvements,
+  such as new built-in Crisp White skin, development mode decorator, improved widget
+  caching and developer DebugBar. It also utilizes the power of PHP 7 while PHP 5.4
+  becomes minimum version. Finally, it comes upgraded with Twig template engine so
+  you'll need to convert old Flexy templates to new Twig ones. This article overviews
+  the major changes in the software and required adaptations.
 ---
 
 X-Cart 5.3 comes with significant performance and usability improvements, such as new built-in Crisp White skin, development mode decorator, improved widget caching and developer DebugBar. It also utilizes the power of PHP 7 while PHP 5.4 becomes minimum version. Finally, it comes upgraded with Twig template engine so you'll need to convert old Flexy templates to new Twig ones. This article overviews the major changes in the software and required adaptations.

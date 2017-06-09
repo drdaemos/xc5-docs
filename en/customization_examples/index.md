@@ -1,16 +1,15 @@
 ---
+title: Customization examples
 identifier: ref_A97LBZ2Q
 updated_at: 2016-06-28 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Customization examples'
 categories:
-  - home
+- home
 order: 5
 icon: pencil square o
 description: Take a look at some of the customizations made for our clients
 ---
-
 
 _In this section:_
 

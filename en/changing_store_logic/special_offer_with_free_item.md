@@ -1,17 +1,15 @@
 ---
+title: Special offer with free item
 identifier: ref_9VmCzbOW
 updated_at: 2015-01-19 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Special offer with free item'
 version: X-Cart 5.3.x and earlier
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
-
 
 ## Introduction
 

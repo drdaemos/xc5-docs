@@ -1,14 +1,12 @@
 ---
+title: ItemsList options in customer area
 identifier: ref_uW8ghAid
 updated_at: 2015-01-12 00:00
 layout: article_with_sidebar
 lang: en
-title: 'ItemsList options in customer area'
 categories:
-  - Developer docs
-
+- Developer docs
 ---
-
 
 ## Introduction
 

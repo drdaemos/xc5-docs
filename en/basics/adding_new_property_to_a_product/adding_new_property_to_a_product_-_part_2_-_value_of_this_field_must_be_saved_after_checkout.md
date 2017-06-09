@@ -1,16 +1,15 @@
 ---
+title: Persisting product property in order item
 identifier: ref_Rtu42BwL
 updated_at: 2016-08-15 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Persisting product property in order item'
 order: 10
 version: X-Cart 5.2.16 and earlier
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
 
 ## Introduction

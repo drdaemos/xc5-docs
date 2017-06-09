@@ -1,16 +1,14 @@
 ---
+title: How to modify &quot;Print Invoice&quot; page
 identifier: ref_qhLz2Kb9
 updated_at: 2016-05-26 00:00
 layout: article_with_sidebar
 lang: en
-title: 'How to modify &quot;Print Invoice&quot; page'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - How-To Articles
-  - Outdated
-
+- How-To Articles
+- Outdated
 ---
-
 
 I would like make some minor CSS changes to the print invoice page in the admin section of the store. How do I do that?
 

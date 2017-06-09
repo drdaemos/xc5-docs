@@ -1,14 +1,13 @@
 ---
+title: Как переместить описание категории под список продуктов
 identifier: ref_hOAZXJPp
 updated_at: 2016-05-18 00:00
 layout: article_with_sidebar
 lang: ru
-title: 'Как переместить описание категории под список продуктов'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - How-To Articles
-  - Outdated
-
+- How-To Articles
+- Outdated
 ---
 
 This article describes how to move category description below products list.

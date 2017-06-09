@@ -1,17 +1,15 @@
 ---
+title: Image widget, uploading and storage
 identifier: ref_IwyaUWEq
 updated_at: 2015-01-03 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Image widget, uploading and storage'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
-
 
 ## Introduction
 

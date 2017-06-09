@@ -1,14 +1,12 @@
 ---
+title: 'Adding a New Page in X Cart 5: Tutorial by Mike White'
 identifier: ref_qpNKW8m1
 updated_at: 2015-06-29 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Adding a New Page in X Cart 5: Tutorial by Mike White'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

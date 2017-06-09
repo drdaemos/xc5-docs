@@ -1,16 +1,14 @@
 ---
+title: Shipping modifications
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-06-17 00:00'
+updated_at: 2016-06-17 00:00
 identifier: ref_TVWpzWfL
-title: Shipping modifications
 categories:
-  - Developer docs
-  - Demo module
-published: true
+- Developer docs
+- Demo module
 order: 100
 ---
-
 
 ## Introduction
 

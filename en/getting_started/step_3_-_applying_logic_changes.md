@@ -1,16 +1,14 @@
 ---
+title: Step 3 - applying logic changes
 identifier: ref_AF6bmvL6
 updated_at: 2015-01-13 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Step 3 - applying logic changes'
 order: 300
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

@@ -1,15 +1,14 @@
 ---
+title: Models and entities
 identifier: ref_wmExvPDD
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Models and entities'
 order: 20
 categories:
-  - Developer docs
-  - Demo module
-  - Demo script
-
+- Developer docs
+- Demo module
+- Demo script
 ---
 
 ## Introduction

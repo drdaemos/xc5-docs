@@ -1,13 +1,12 @@
 ---
+title: Updating modules from 5.1 to 5.2 branch
 identifier: ref_cz32Z9u5
 updated_at: 2015-06-09 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Updating modules from 5.1 to 5.2 branch'
 version: X-Cart 5.1 - 5.2
 categories:
-  - Migration guides
-
+- Migration guides
 ---
 
 ## Introduction

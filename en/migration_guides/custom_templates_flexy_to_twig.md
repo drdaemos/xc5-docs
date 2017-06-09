@@ -1,13 +1,11 @@
 ---
+title: How to convert CustomSkin templates and templates customized via Webmaster
+  mode from Flexy to Twig
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-09-07 18:30 +0400'
+updated_at: 2016-09-07 18:30 +0400
 identifier: ref_customflexytotwig
-title: >-
-  How to convert CustomSkin templates and templates customized via Webmaster
-  mode from Flexy to Twig
 order: 210
-published: true
 ---
 
 Unlike previous X-Cart versions which use {% link 'Flexy template engine' ref_VcuME8xW %}, X-Cart 5.3.x uses a different template engine - [Twig](http://twig.sensiolabs.org/doc/templates.html). If your X-Cart store has templates with modifications made using Webmaster mode or CustomSkin module, after upgrading the store from 5.2.16 to 5.3.x, you will need to convert these customized templates from Flexy to Twig. We are providing a tool that will help you to handle the conversion. Below you will find the guidelines for using the Flexy to Twig conversion tool. Please be sure to perform all the changes on your developer store copy, not on the live store!

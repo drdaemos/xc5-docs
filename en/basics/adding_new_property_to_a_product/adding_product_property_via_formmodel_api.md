@@ -1,12 +1,11 @@
 ---
+title: Adding product property via FormModel API
 identifier: ref_productprop_formmodel
 updated_at: 2016-09-29 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Adding product property via FormModel API'
 version: X-Cart 5.3.0 and later
 order: 80
-
 ---
 
 ## Introduction

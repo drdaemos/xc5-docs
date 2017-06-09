@@ -1,16 +1,16 @@
 ---
+title: Changing store logic
 identifier: ref_asknZWzk
 updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Changing store logic'
 categories:
-  - home
+- home
 order: 4
 icon: setting
-description: Learn how to adapt the X-Cart workflow and enlarge possibilities for your customers
+description: Learn how to adapt the X-Cart workflow and enlarge possibilities for
+  your customers
 ---
-
 
 This section contains guides that describe changes of X-Cart workflow:
 

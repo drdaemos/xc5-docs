@@ -1,14 +1,12 @@
 ---
+title: Using Webmaster Mode in X-Cart 5
 identifier: ref_siabU9Pf
 updated_at: 2015-05-22 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Using Webmaster Mode in X-Cart 5'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

@@ -1,15 +1,13 @@
 ---
+title: Forcing product quantity while adding to cart
 identifier: ref_a5KAeMkw
 updated_at: 2015-01-21 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Forcing product quantity while adding to cart'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

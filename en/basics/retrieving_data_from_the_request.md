@@ -1,13 +1,12 @@
 ---
+title: Request data and API
 identifier: ref_pvZ8nad3
 updated_at: 2014-11-25 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Request data and API'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
 
 ## Introduction

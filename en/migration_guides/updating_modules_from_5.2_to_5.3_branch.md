@@ -1,12 +1,12 @@
 ---
+title: Updating modules from 5.2 to 5.3 branch
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-02-13 17:09 +0400'
+updated_at: 2017-02-13 17:09 +0400
 identifier: ref_u8kJ3imU
-title: Updating modules from 5.2 to 5.3 branch
 order: 200
-published: true
 ---
+
 This is a guide that will help you to adapt your module to X-Cart 5.3 version. Please be sure to apply those changes only on dev copy of your store.
 
 ### Table of contents

@@ -1,16 +1,14 @@
 ---
+title: View classes
 identifier: ref_6dMJsZ63
 updated_at: 2014-11-07 00:00
 layout: article_with_sidebar
 lang: en
-title: 'View classes'
 order: 15
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

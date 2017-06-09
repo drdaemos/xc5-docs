@@ -1,16 +1,15 @@
 ---
+title: Entity editing via FormModel API
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-07-26 16:41 +0400'
+updated_at: 2016-07-26 16:41 +0400
 identifier: ref_bOmExTXA
 order: 50
-published: true
 version: X-Cart 5.3.0 and later
-title: Entity editing via FormModel API
 keywords:
-    - Symfony
-    - New form
-    - API
+- Symfony
+- New form
+- API
 ---
 
 This group of articles describes how to define various forms in admin area utilizing _new_ API, based on [Symfony/Form](http://symfony.com/doc/current/forms.html) and [Vue.js view components](https://vuejs.org/guide/overview.html).

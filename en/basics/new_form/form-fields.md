@@ -1,14 +1,13 @@
 ---
+title: Form fields
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-07-26 16:34 +0400'
+updated_at: 2016-07-26 16:34 +0400
 identifier: ref_SlIeQwQo
 order: 30
-published: true
 version: X-Cart 5.3.0 and later
-title: Form fields
 categories:
-    - Demo module
+- Demo module
 ---
 
 Each form section must contain at least one field.

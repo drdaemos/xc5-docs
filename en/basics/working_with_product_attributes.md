@@ -1,15 +1,14 @@
 ---
+title: Product attributes
 identifier: ref_cPPwdSA9
 updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Product attributes'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
 
 ## Introduction

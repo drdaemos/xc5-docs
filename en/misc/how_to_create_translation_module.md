@@ -1,14 +1,13 @@
 ---
+title: How to create a translation module
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-14 16:23 +0400'
+updated_at: 2016-12-14 16:23 +0400
 identifier: ref_haeJE8rQ
-title: How to create a translation module
 version: X-Cart 5.2.16 and earlier
 categories:
-  - Developer docs
-  - Outdated
-published: true
+- Developer docs
+- Outdated
 order: 100
 ---
 

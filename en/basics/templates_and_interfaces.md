@@ -1,12 +1,11 @@
 ---
+title: Templates and interfaces
 lang: en
 layout: article_with_sidebar
 updated_at: 2016-10-25 00:00
 identifier: ref_templates
-title: Templates and interfaces
 order: 50
-published: true
-keywords:
+keywords: 
 ---
 
 ## Introduction

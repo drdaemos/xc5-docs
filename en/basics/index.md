@@ -1,17 +1,15 @@
 ---
+title: Architecture basics
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-05 23:58 +0400'
+updated_at: 2016-12-05 23:58 +0400
 identifier: ref_I06hOMLI
-title: Architecture basics
 categories:
-  - home
+- home
 order: 3
 icon: sitemap
-description: >-
-  Understand what technologies and approaches used in the X-Cart core and learn
-  how to achieve typical tasks
-published: true
+description: Understand what technologies and approaches used in the X-Cart core and
+  learn how to achieve typical tasks
 ---
 
 The Basics section shows how to achieve typical tasks when you edit your X-Cart store:

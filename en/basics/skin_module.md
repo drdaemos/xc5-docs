@@ -1,16 +1,14 @@
 ---
+title: Skin module definition
 lang: en
 layout: article_with_sidebar
 updated_at: 2016-08-22 00:00
 identifier: ref_skinmodule
-title: Skin module definition
 order: 30
-published: true
 keywords:
-  - custom skin
-  - main.php
+- custom skin
+- main.php
 ---
-
 
 ## Introduction
 

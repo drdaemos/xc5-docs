@@ -1,14 +1,12 @@
 ---
+title: Webinar 3 - 21 Aug 2014 - Payment gateway creation
 identifier: ref_BDJ1ZHIU
 updated_at: 2014-10-30 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Webinar 3 - 21 Aug 2014 - Payment gateway creation'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

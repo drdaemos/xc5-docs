@@ -1,12 +1,12 @@
 ---
+title: ItemsList Sticky Panel buttons
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-11-09 16:13 +0400'
+updated_at: 2016-11-09 16:13 +0400
 identifier: ref_vHI163Zu
-title: ItemsList Sticky Panel buttons
 order: 100
-published: true
 ---
+
 ## General structure
 
 The panel consists of three main parts:

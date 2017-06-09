@@ -1,14 +1,12 @@
 ---
+title: Debugging X-Cart
 identifier: ref_7BMuAMXk
 updated_at: 2015-01-22 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Debugging X-Cart'
 categories:
-  - Developer docs
-
+- Developer docs
 ---
-
 
 ## Introduction
 

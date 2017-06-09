@@ -1,17 +1,15 @@
 ---
+title: Creating settings page for payment method
 identifier: ref_vZNkXFnt
 updated_at: 2015-01-23 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Creating settings page for payment method'
 version: X-Cart 5.2.10 and earlier
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
-
 
 ## Introduction
 

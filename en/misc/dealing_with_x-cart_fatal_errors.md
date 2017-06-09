@@ -1,12 +1,11 @@
 ---
+title: Dealing with X-Cart fatal errors
 identifier: ref_nI5Nu52p
 updated_at: 2014-09-23 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Dealing with X-Cart fatal errors'
 categories:
-  - Developer docs
-
+- Developer docs
 ---
 
 ## Introduction

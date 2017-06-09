@@ -1,17 +1,15 @@
 ---
+title: Creating custom email notifications
 identifier: ref_9bIzlU4u
 updated_at: 2015-07-07 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Creating custom email notifications'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
-
 
 ## Introduction
 

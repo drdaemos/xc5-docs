@@ -1,17 +1,16 @@
 ---
+title: Upgrade hooks
 identifier: ref_WOuwAgsI
 updated_at: 2016-08-18 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Upgrade hooks'
 keywords:
-  - pre upgrade
-  - post upgrade
-  - post rebuild
-  - hook messages
+- pre upgrade
+- post upgrade
+- post rebuild
+- hook messages
 categories:
-  - Developer docs
-
+- Developer docs
 ---
 
 ### Table of contents

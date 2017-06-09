@@ -1,18 +1,16 @@
 ---
+title: Adding new property to a product
 identifier: ref_2bJSTtR3
 updated_at: 2015-01-22 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Adding new property to a product'
 version: X-Cart 5.2.16 and earlier
 order: 80
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
-
 
 ## Introduction
 

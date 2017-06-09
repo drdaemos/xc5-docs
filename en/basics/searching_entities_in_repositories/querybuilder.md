@@ -1,14 +1,13 @@
 ---
+title: QueryBuilder
 identifier: ref_FJyeE9lP
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'QueryBuilder'
 categories:
-  - Developer docs
-  - Example
-  - Outdated
-
+- Developer docs
+- Example
+- Outdated
 ---
 
 ## Introduction

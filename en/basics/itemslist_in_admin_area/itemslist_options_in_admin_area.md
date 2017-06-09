@@ -1,14 +1,12 @@
 ---
+title: ItemsList options in admin area
 identifier: ref_C6Qh0XDC
 updated_at: 2015-01-13 00:00
 layout: article_with_sidebar
 lang: en
-title: 'ItemsList options in admin area'
 categories:
-  - Developer docs
-
+- Developer docs
 ---
-
 
 ## Introduction
 

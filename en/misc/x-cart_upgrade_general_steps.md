@@ -1,12 +1,11 @@
 ---
+title: X-Cart Upgrade General Steps
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-14 16:14 +0400'
+updated_at: 2016-12-14 16:14 +0400
 identifier: ref_xCPLmTHT
-title: X-Cart Upgrade General Steps
 categories:
-  - Developer docs
-published: true
+- Developer docs
 order: 100
 ---
 

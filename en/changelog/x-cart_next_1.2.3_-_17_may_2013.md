@@ -1,15 +1,13 @@
 ---
+title: X-Cart Next 1.2.3 - 17 May 2013
 identifier: ref_SMqzG6HT
 updated_at: 2014-07-31 00:00
 layout: article_with_sidebar
 lang: en
 order: 1002
-title: 'X-Cart Next 1.2.3 - 17 May 2013'
 categories:
-  - Changelog
-
+- Changelog
 ---
-
 
 **List of new modules**
 

@@ -1,16 +1,15 @@
 ---
+title: How to add Google Adwords Conversion Tracking Code to &quot;Thank you for your
+  order&quot; page
 identifier: ref_g8xO0UNP
 updated_at: 2016-05-06 00:00
 layout: article_with_sidebar
 lang: en
-title: 'How to add Google Adwords Conversion Tracking Code to &quot;Thank you for your order&quot; page'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - How-To Articles
-  - Outdated
-
+- How-To Articles
+- Outdated
 ---
-
 
 This article describes how to add Google Adwords Conversion Tracking code to X-Car's order confirmation page ("Thank you for your order" page).
 

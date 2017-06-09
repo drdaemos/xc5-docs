@@ -1,15 +1,13 @@
 ---
+title: How to find out what page is currently running
 identifier: ref_SmN15f4r
 updated_at: 2014-12-22 00:00
 layout: article_with_sidebar
 lang: en
-title: 'How to find out what page is currently running'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

@@ -1,15 +1,13 @@
 ---
+title: Making payment method depend on shipping method
 identifier: ref_Z6mwXUDg
 updated_at: 2015-01-06 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Making payment method depend on shipping method'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

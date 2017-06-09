@@ -1,14 +1,13 @@
 ---
+title: How to add Facebook Pixel Сode to X-Cart pages
 identifier: ref_dENrdWxT
 updated_at: 2016-05-05 00:00
 layout: article_with_sidebar
 lang: en
-title: 'How to add Facebook Pixel Сode to X-Cart pages'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - How-To Articles
-  - Outdated
-
+- How-To Articles
+- Outdated
 ---
 
 This article describes how to add Facebook Pixel code to X-Cart pages.

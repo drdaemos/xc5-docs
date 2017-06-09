@@ -1,6 +1,7 @@
 ---
-layout: null
+layout: 
 ---
+
 (function($){
   var refresher = function() {
     if (stickyState) {

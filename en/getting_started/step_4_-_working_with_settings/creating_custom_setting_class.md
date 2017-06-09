@@ -1,14 +1,12 @@
 ---
+title: Creating custom setting class
 identifier: ref_fxJxv6rf
 updated_at: 2015-01-05 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Creating custom setting class'
 categories:
-  - Developer docs
-
+- Developer docs
 ---
-
 
 ## Introduction
 

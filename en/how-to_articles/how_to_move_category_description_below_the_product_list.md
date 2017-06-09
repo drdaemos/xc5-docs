@@ -1,14 +1,13 @@
 ---
+title: How to move category description below the product list
 identifier: ref_k2TqHwih
 updated_at: 2016-06-28 00:00
 layout: article_with_sidebar
 lang: en
-title: 'How to move category description below the product list'
 version: X-Cart 5.2.16 and earlier
 categories:
-  - How-To Articles
-  - Outdated
-
+- How-To Articles
+- Outdated
 ---
 
 This article describes how to move category description below the product list.

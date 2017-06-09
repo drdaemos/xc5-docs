@@ -1,12 +1,11 @@
 ---
+title: X-Cart versioning
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-14 16:24 +0400'
+updated_at: 2016-12-14 16:24 +0400
 identifier: ref_wUXMKpNm
-title: X-Cart versioning
 categories:
-  - Developer docs
-published: true
+- Developer docs
 order: 100
 ---
 

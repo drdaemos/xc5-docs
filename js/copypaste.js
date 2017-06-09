@@ -1,6 +1,7 @@
 ---
-layout: null
+layout: 
 ---
+
 (function($){
   $(document).ready(function(){
     $('article div.highlighter-rouge').each(function(){

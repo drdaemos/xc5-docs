@@ -1,16 +1,14 @@
 ---
+title: search() method
 identifier: ref_ehDn4NIi
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'search() method'
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-
+- Developer docs
+- Demo module
+- Outdated
 ---
-
 
 ## Introduction
 

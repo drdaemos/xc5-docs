@@ -1,16 +1,16 @@
 ---
+title: How to change the height of the top category banner
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-09-05 17:57 +0400'
+updated_at: 2016-09-05 17:57 +0400
 identifier: ref_VkhLV8mx
-title: How to change the height of the top category banner
 order: 100
-published: true
 keywords:
-  - category banner
-  - banner height
+- category banner
+- banner height
 version: X-Cart 5.3.0 and later
 ---
+
 This article provides information about the top category page banner - how it shows in the page layout and how you can adjust its height to fit your category image.
     ![xc5_category_top_banner.png]({{site.baseurl}}/attachments/xc5_category_top_banner.png?effects=drop-shadow)
     

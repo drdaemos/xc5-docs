@@ -1,12 +1,11 @@
 ---
+title: Coding guidelines and standards
 identifier: ref_2RV1BTPq
 updated_at: 2014-02-26 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Coding guidelines and standards'
 categories:
-  - Developer docs
-
+- Developer docs
 ---
 
 ## PHP coding standards

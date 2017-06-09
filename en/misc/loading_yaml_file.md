@@ -1,15 +1,13 @@
 ---
+title: Loading YAML files
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-14 16:25 +0400'
+updated_at: 2016-12-14 16:25 +0400
 identifier: ref_8BPAwaEG
-title: Loading YAML files
 categories:
-  - Developer docs
-published: true
+- Developer docs
 order: 100
 ---
-
 
 ## Introduction
 

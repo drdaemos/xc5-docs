@@ -1,5 +1,5 @@
 ---
-layout: null
+layout: 
 ---
 
 // version 0.2.1

@@ -1,14 +1,12 @@
 ---
+title: X-Cart 5 development lectures (in Russian with English subtitles)
 identifier: ref_wbaVGonh
 updated_at: 2014-07-15 00:00
 layout: article_with_sidebar
 lang: en
-title: 'X-Cart 5 development lectures (in Russian with English subtitles)'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

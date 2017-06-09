@@ -1,15 +1,13 @@
 ---
+title: Creating a payment method
 identifier: ref_U1KitTMm
 updated_at: 2016-11-18 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Creating a payment method'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

@@ -1,18 +1,16 @@
 ---
+title: Misc
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-12-14 16:18 +0400'
+updated_at: 2016-12-14 16:18 +0400
 identifier: ref_S6VQco37
-title: Misc
 order: 10
 icon: help circle
 description: Useful guides that could not be categorized to previous sections
 categories:
-  - home
-  - Developer docs
-published: true
+- home
+- Developer docs
 ---
-
 
 This section contains useful guides that could not be categorized to previous sections:
 

@@ -1,17 +1,15 @@
 ---
+title: Creating global discount
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-03-13 13:33 +0400'
+updated_at: 2017-03-13 13:33 +0400
 identifier: ref_mFAMapCB
-title: Creating global discount
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-published: true
+- Developer docs
+- Demo module
+- Outdated
 order: 100
 ---
-
 
 ## Introduction
 

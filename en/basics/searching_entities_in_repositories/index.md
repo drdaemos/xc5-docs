@@ -1,13 +1,12 @@
 ---
+title: Model repositories and DB querying
 identifier: ref_L1zWfWvw
 updated_at: 2015-01-09 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Model repositories and DB querying'
 order: 25
 categories:
-  - Developer docs
-
+- Developer docs
 ---
 
 ## Introduction

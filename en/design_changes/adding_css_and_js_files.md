@@ -1,15 +1,13 @@
 ---
+title: Adding CSS and JS files
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-01-23 17:16 +0400'
+updated_at: 2017-01-23 17:16 +0400
 identifier: ref_p0CRZmMS
-title: Adding CSS and JS files
 categories:
-  - Developer docs
-published: true
+- Developer docs
 order: 100
 ---
-
 
 In order to register some CSS/JS resources in your viewer class (more about this in {% link "Working with viewer classes" ref_6dMJsZ63 %}), it should implement two specific methods: `getCSSFiles()` and `getJSFiles().`
 

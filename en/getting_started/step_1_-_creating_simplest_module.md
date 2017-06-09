@@ -1,15 +1,13 @@
 ---
+title: Step 1 - creating simplest module
 identifier: ref_G2mlgckf
 updated_at: 2015-12-25 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Step 1 - creating simplest module'
 order: 100
 categories:
-  - Developer docs
-
+- Developer docs
 ---
-
 
 ## Introduction
 

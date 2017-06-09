@@ -1,61 +1,46 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+---
 title: X-Cart 5 Developer Documentation
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 email: daemos@x-cart.com
-description: X-Cart is the free shopping cart software & solutions for high‑performing online stores
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://devs.x-cart.com" # the base hostname & protocol for your site
+description: X-Cart is the free shopping cart software & solutions for high‑performing
+  online stores
+baseurl: ''
+url: http://devs.x-cart.com
 encoding: utf-8
 repository: xcart/xc5-docs
 ga_code: UA-56346543-1
-
-# Build settings
 safe: false
 markdown: kramdown
 incremental: false
 lsi: true
-
 kramdown:
   input: GFM
-
-index_path: "links.xml"
-
+index_path: links.xml
 elasticsearch:
-    host: "localhost:9200"
-    js_host: "kbsearch.x-cart.com"
-    js_user: "kbuser"
-    js_pass: "53cr37p4"
-    index: "knowledgebase"
-    type: "articles"
-    analyzer: "english"
-
+  host: localhost:9200
+  js_host: kbsearch.x-cart.com
+  js_user: kbuser
+  js_pass: 53cr37p4
+  index: knowledgebase
+  type: articles
+  analyzer: english
 gems:
-  - jekyll-redirect-from
-
+- jekyll-redirect-from
 paginate_count: 5
 paginate_path: "/en/what_is_new/page:num/"
-
-# Languages
-
 lang_default: en
 lang:
-    en: English
-    ru: Russian
-
-# Sort orders
-
+  en: English
+  ru: Russian
 sort_default: order
 sorts:
-    changelog: updated_at
-
-
-# Category-wide Page ranking
-
+  changelog: updated_at
 category_pr:
-    changelog: 0.2
+  changelog: 0.2

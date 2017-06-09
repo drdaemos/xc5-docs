@@ -1,14 +1,12 @@
 ---
+title: Webinar 4 - 11 Nov 2014 - Basic principles of CMS integration
 identifier: ref_g6nU3zbt
 updated_at: 2014-11-11 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Webinar 4 - 11 Nov 2014 - Basic principles of CMS integration'
 categories:
-  - Webinars and video tutorials
-
+- Webinars and video tutorials
 ---
-
 
 ## Introduction
 

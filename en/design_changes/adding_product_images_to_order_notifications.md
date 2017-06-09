@@ -1,15 +1,13 @@
 ---
+title: Adding product images to order notifications
 identifier: ref_Qn8aa4z4
 updated_at: 2015-01-21 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Adding product images to order notifications'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 

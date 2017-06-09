@@ -1,15 +1,13 @@
 ---
+title: Authorization API
 identifier: ref_fKauw8Cw
 updated_at: 2015-04-17 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Authorization API'
 categories:
-  - Developer docs
-  - Demo script
-
+- Developer docs
+- Demo script
 ---
-
 
 ## Introduction
 

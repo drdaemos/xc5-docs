@@ -1,15 +1,16 @@
 ---
+title: Editable form model
 lang: en
 layout: article_with_sidebar
-updated_at: '2016-07-26 15:55 +0400'
+updated_at: 2016-07-26 15:55 +0400
 order: 10
-published: true
-title:  Editable form model
 version: X-Cart 5.3.0 and later
 identifier: ref_8MoO0Ob
-description: During module creation developers sometimes create complex entities that require a separate page for editing of its properties. This article will explain a new way to create a page where you can edit certain fields of a model.
+description: During module creation developers sometimes create complex entities that
+  require a separate page for editing of its properties. This article will explain
+  a new way to create a page where you can edit certain fields of a model.
 categories:
-    - Demo module
+- Demo module
 ---
 
 This article describes new way to create form to edit model entity. Original article with old implementation: {% link "Model editing page" ref_LanG54L9 %}

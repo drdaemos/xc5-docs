@@ -1,15 +1,13 @@
 ---
+title: Creating new page
 identifier: ref_0VgqyxB8
 updated_at: 2014-12-18 00:00
 layout: article_with_sidebar
 lang: en
-title: 'Creating new page'
 categories:
-  - Developer docs
-  - Demo module
-
+- Developer docs
+- Demo module
 ---
-
 
 ## Introduction
 
