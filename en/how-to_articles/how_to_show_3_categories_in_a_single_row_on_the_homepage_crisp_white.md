@@ -1,9 +1,9 @@
 ---
-title: ''
-published: false
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-06-29 12:04 +0400
+updated_at: '2017-06-29 12:11 +0400'
+title: ''
+published: true
 identifier: ref_4lX8GZDF
 order: 100
 ---
@@ -33,4 +33,3 @@ width: 33.33333333%;
 }
 
 ```
-
