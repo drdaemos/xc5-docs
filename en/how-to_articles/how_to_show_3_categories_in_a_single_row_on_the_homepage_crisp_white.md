@@ -1,9 +1,8 @@
 ---
+title: ''
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-06-29 12:11 +0400'
-title: ''
-published: true
+updated_at: 2017-06-29 12:11 +0400
 identifier: ref_4lX8GZDF
 order: 100
 ---
