@@ -1,15 +1,14 @@
 ---
+title: How-To Articles
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-06-29 12:09 +0400'
-title: How-To Articles
+updated_at: 2017-06-29 12:09 +0400
 identifier: ref_mBdZQvEu
 categories:
-  - home
+- home
 order: 5
 icon: info circle
 description: Study different guides to achieve features that you need
-published: true
 ---
 
 These articles will guide you to achieve some typical tasks and answer the most basic 'how-to' questions:
