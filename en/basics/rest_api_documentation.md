@@ -1,13 +1,12 @@
 ---
+title: REST API documentation
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-06-29 12:24 +0400'
-title: REST API documentation
+updated_at: 2017-06-29 12:24 +0400
 identifier: ref_RSR29iWL
 order: 100
-published: true
 redirect_to:
-  - /rest-api/
+- "/rest-api/"
 ---
 
 ## Introduction
