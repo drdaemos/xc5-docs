@@ -3,7 +3,7 @@ lang: en
 layout: article_with_sidebar
 updated_at: '2017-06-29 12:04 +0400'
 identifier: ref_4lX8GZDF
-title: ''
+title: How to show 3 categories in a single row on homepage (Crisp White skin)
 order: 100
 published: false
 ---
