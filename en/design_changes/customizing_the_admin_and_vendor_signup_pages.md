@@ -1,14 +1,15 @@
 ---
-title: Customizing the Admin and Vendor Signup pages
 lang: en
 layout: article_with_sidebar
-updated_at: 2016-10-20 10:08 +0400
+updated_at: '2017-07-10 12:55 +0400'
+title: Customizing the Admin and Vendor Signup pages
 identifier: ref_f4ohXara
 version: 'X-Cart 5.2.x and X-Cart 5.3.x '
 categories:
-- Developer docs
-- Outdated
+  - Developer docs
+  - Outdated
 order: 100
+published: true
 ---
 
 It is possible to customize the Admin and Vendor Signup pages in your X-Cart store. See instructions for:
@@ -75,7 +76,17 @@ If you need to change the page title, the footer links "Official Website", "Find
 
 Then you can customize the code of the custom templates as you wish.
 
+For example, you can modify the code of the custom template "powered_by.twig" as follows:
 
+- find this line of code:
+
+  `<p class="copyright">&copy; {{ this.getCompanyYear() }} {{ this.getMessage()|raw }}</p>`
+
+- and change it to:
+
+  `<p class="copyright">{{ t('Custom Message') }}</p>`
+
+Then you can modify the "Custom Message" text label via the **Translations** >> **Edit language** >> **Edit labels** page.
 
 
 _See also:_
