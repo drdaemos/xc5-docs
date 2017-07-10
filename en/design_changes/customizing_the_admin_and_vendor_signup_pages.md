@@ -1,15 +1,14 @@
 ---
+title: Customizing the Admin and Vendor Signup pages
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-07-10 12:55 +0400'
-title: Customizing the Admin and Vendor Signup pages
+updated_at: 2017-07-10 12:55 +0400
 identifier: ref_f4ohXara
 version: 'X-Cart 5.2.x and X-Cart 5.3.x '
 categories:
-  - Developer docs
-  - Outdated
+- Developer docs
+- Outdated
 order: 100
-published: true
 ---
 
 It is possible to customize the Admin and Vendor Signup pages in your X-Cart store. See instructions for:
