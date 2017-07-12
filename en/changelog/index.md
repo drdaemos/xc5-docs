@@ -1,21 +1,22 @@
 ---
-title: Changelog
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-06-01 09:56 +0400
+updated_at: '2017-07-12 11:23 +0400'
+title: Changelog
 identifier: ref_TkLzPRtO
 categories:
-- home
+  - home
 order: 11
 icon: announcement
 description: Discover new features and bugfixes
+published: true
 ---
 
 <div class="ui vertical padded center aligned basic segment">
     <div class="ui statistics">
       <div class="statistic">
         <div class="label">Current stable 5.3.x version</div>
-        <div class="value" markdown="span">{% link '5.3.2.12' ref_53212changelog %}</div>
+        <div class="value" markdown="span">{% link '5.3.3.1' ref_5331changelog %}</div>
       </div>
       <div class="statistic">
         <div class="label">Current stable 5.2.x version</div>
