@@ -1,15 +1,14 @@
 ---
+title: Changelog
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-07-12 11:23 +0400'
-title: Changelog
+updated_at: 2017-07-12 11:23 +0400
 identifier: ref_TkLzPRtO
 categories:
-  - home
+- home
 order: 11
 icon: announcement
 description: Discover new features and bugfixes
-published: true
 ---
 
 <div class="ui vertical padded center aligned basic segment">
