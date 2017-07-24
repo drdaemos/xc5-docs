@@ -1,12 +1,12 @@
 ---
+title: How to restore from a backup file created by “Backup Master” module
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-07-25 00:14 +0400'
+updated_at: 2017-07-25 00:14 +0400
 identifier: ref_rC8eMnM8
-title: How to restore from a backup file created by “Backup Master” module
 order: 100
-published: true
 ---
+
 You can set up a test copy of your X-Cart store (using one of the backup files created by the "Backup Master" module) through your website cPanel, as follows:
 
    1. Create a new folder on your site, for example, `/public_html/xcart5220/`.
