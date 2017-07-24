@@ -1,15 +1,16 @@
 ---
-title: Misc
 lang: en
 layout: article_with_sidebar
-updated_at: 2016-12-14 16:18 +0400
+updated_at: '2017-07-24 20:20 +0400'
+title: Misc
 identifier: ref_S6VQco37
 order: 10
 icon: help circle
 description: Useful guides that could not be categorized to previous sections
 categories:
-- home
-- Developer docs
+  - home
+  - Developer docs
+published: true
 ---
 
 This section contains useful guides that could not be categorized to previous sections:
@@ -23,4 +24,5 @@ This section contains useful guides that could not be categorized to previous se
 *   {% link "X-Cart versioning" ref_wUXMKpNm %};
 *   {% link "Loading YAML files" ref_8BPAwaEG %};
 *   {% link "X-Cart Upgrade General Steps" ref_xCPLmTHT %};
-*   {% link "Upgrade hooks" ref_WOuwAgsI %}.
+*   {% link "Upgrade hooks" ref_WOuwAgsI %};
+*   {% link "Contents of X-Cart /var directory" ref_GW35wpNW %};
