@@ -1,12 +1,12 @@
 ---
+title: Contents of X-Cart /var directory
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-07-24 19:56 +0400'
+updated_at: 2017-07-24 19:56 +0400
 identifier: ref_GW35wpNW
-title: Contents of X-Cart /var directory
 order: 100
-published: true
 ---
+
 In the `/var` folder of an X-Cart store, the following subfolders can be found:
 
    * var/log - X-Cart log files;
