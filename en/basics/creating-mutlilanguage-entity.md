@@ -5,7 +5,7 @@ updated_at: '2017-08-21 17:13 +0400'
 identifier: ref_qWgTz3uG
 title: Creating multi-language entity
 order: 100
-published: false
+published: true
 ---
 ## Introduction
 
