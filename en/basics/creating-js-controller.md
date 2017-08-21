@@ -124,7 +124,7 @@ class SideBarBox extends \XLite\View\SideBarBox
     
 You may notice two differences compared to the aforementioned article about sidebar menu:
 1. We have method `getJSFiles()` that defines a file of our JS controller;
-2. We have method `getBlockClasses()` that defines that <div> of our sidebar menu will also have `block-random-product` class. This is needed because this way we can use this CSS class as jQuery selector in our JS controller.
+2. We have method `getBlockClasses()` that defines that `<div>` of our sidebar menu will also have `block-random-product` class. This is needed because this way we can use this CSS class as jQuery selector in our JS controller.
 
 Create template for displaying content of this sidebar menu (`skins/customer/modules/XCExample/JsControllerDemo/sidebarbox/body.twig`) and leave this file blank for now.
 Create empty JS file (`skins/customer/modules/XCExample/JsControllerDemo/js/controller.js`) for our JS controller.
