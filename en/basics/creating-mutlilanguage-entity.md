@@ -1,7 +1,7 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-21 17:13 +0400'
+updated_at: '2017-08-21 17:48 +0400'
 identifier: ref_qWgTz3uG
 title: Creating multi-language entity
 order: 100
