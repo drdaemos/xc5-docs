@@ -1,13 +1,7 @@
 ---
-lang: en
-layout: article_with_sidebar
-updated_at: '2017-08-21 17:48 +0400'
-identifier: ref_qWgTz3uG
-title: Creating multi-language entity
-order: 100
-published: true
+identifier: ref_KsS0bVf7
 ---
-## Introduction
+## Introduction  
 
 This article explains how create a multi-language entity. For the sake of example, we will create a list of messages (we will call them Quick Messages) and text of those can be different if you switch a language in the store.
 
