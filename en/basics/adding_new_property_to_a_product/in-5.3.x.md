@@ -1,12 +1,12 @@
 ---
+title: ''
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-22 16:17 +0400'
+updated_at: 2017-08-22 16:17 +0400
 identifier: ref_ErrHUaHH
-title: ''
 order: 100
-published: true
 ---
+
 ## Introduction
 
 This article explains how to add a new field to a product in X-Cart 5.3.x. For the sake of example, we will add a new property called ‘My Message’ to a product and if it is not empty, it will be displayed on product details page in customer area.
