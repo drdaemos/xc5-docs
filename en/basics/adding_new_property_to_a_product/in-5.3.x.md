@@ -1,10 +1,11 @@
 ---
-title: ''
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-08-22 16:17 +0400
+updated_at: '2017-08-22 16:34 +0400'
+title: Adding new property to a product in X-Cart 5.3.x
 identifier: ref_ErrHUaHH
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -176,7 +177,3 @@ As you can see you can access this new property in template the same as other pr
 
 ## Module pack
 You can download this module pack from here: [https://www.dropbox.com/s/ny81po07zxqnvku/XCExample-ProductPropertyDemo-v5_3_0.tar](https://www.dropbox.com/s/ny81po07zxqnvku/XCExample-ProductPropertyDemo-v5_3_0.tar?dl=0)
-
-
-
-
