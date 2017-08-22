@@ -1,16 +1,15 @@
 ---
+title: Adding new property to a product
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-22 16:50 +0400'
-title: Adding new property to a product
+updated_at: 2017-08-22 16:50 +0400
 identifier: ref_2bJSTtR3
 version: X-Cart 5.2.16 and earlier
 order: 80
 categories:
-  - Developer docs
-  - Demo module
-  - Outdated
-published: true
+- Developer docs
+- Demo module
+- Outdated
 ---
 
 ## Introduction
