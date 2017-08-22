@@ -1,10 +1,11 @@
 ---
-title: Creating simple JS controller
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-08-22 16:42 +0400
+updated_at: '2017-08-22 21:29 +0400'
+title: Creating simple JS controller
 identifier: ref_6SCZVZcv
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -130,13 +131,14 @@ Create template for displaying content of this sidebar menu (`skins/customer/mod
 Create empty JS file (`skins/customer/modules/XCExample/JsControllerDemo/js/controller.js`) for our JS controller.
 
 If you refresh any category page after you have done all that, you will see a sidebar menu with empty body like this:
-![random-product.png]({{site.baseurl}}/attachments/ref_AabTAHKd/random-product.png)
+![random-product.png]({{site.baseurl}}/attachments/ref_6SCZVZcv/random-product.png)
 
 ## Creating PHP controller
 
 Now let us create a PHP code that returns info about random product whenever called. It will be just a regular X-Cart controller.
 
 We create `classes/XLite/Module/XCExample/Controller/Customer/RandomProduct.php` file with the following content:
+
 ```php
 <?php
 // vim: set ts=4 sw=4 sts=4 et:
@@ -197,7 +199,7 @@ Now let us display info about some random product in our sidebar menu and then a
 First let us create a method in `SideBarBox` class that returns info about random product:
 
 ```php
-	protected function getRandomProduct()
+    protected function getRandomProduct()
     {
         if (is_null(static::$product)) {
             static::$product = \XLite\Module\XCExample\JsControllerDemo\Controller\Customer\RandomProduct::fetchRandomProduct();
@@ -210,6 +212,7 @@ First let us create a method in `SideBarBox` class that returns info about rando
 As you can see, we use the same method `fetchRandomProduct()` as we defined earlier in the controller. We also need to create static variable `$produc`t in this class, because once we pull a random product, we want to always work with this product (not another random one) when we call `getRandomProduct()` method.
 
 The final version of SideBarBox class is as follows:
+
 ```php
 <?php
  
@@ -282,6 +285,7 @@ If you open any category page right now, you will see a good looking sidebar men
 Now we only need to create JS code that will call for our PHP controller described earlier and once it gets info, refresh the block.
 
 Let us edit the `skins/customer/modules/XCExample/JsControllerDemo/js/controller.js` file and define its content as follows:
+
 ```js
 /* vim: set ts=2 sw=2 sts=2 et: */
  
