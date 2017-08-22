@@ -1,11 +1,10 @@
 ---
+title: Adding new property to a product in X-Cart 5.3.x
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-22 16:34 +0400'
-title: Adding new property to a product in X-Cart 5.3.x
+updated_at: 2017-08-22 16:34 +0400
 identifier: ref_ErrHUaHH
 order: 100
-published: true
 ---
 
 ## Introduction
