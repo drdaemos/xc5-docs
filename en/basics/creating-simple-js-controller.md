@@ -1,11 +1,10 @@
 ---
+title: Creating simple JS controller
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-22 21:29 +0400'
-title: Creating simple JS controller
+updated_at: 2017-08-22 21:29 +0400
 identifier: ref_6SCZVZcv
 order: 100
-published: true
 ---
 
 ## Introduction
