@@ -1,20 +1,21 @@
 ---
+lang: en
+layout: article_with_sidebar
+updated_at: '2017-08-22 16:50 +0400'
 title: Adding new property to a product
 identifier: ref_2bJSTtR3
-updated_at: 2015-01-22 00:00
-layout: article_with_sidebar
-lang: en
 version: X-Cart 5.2.16 and earlier
 order: 80
 categories:
-- Developer docs
-- Demo module
-- Outdated
+  - Developer docs
+  - Demo module
+  - Outdated
+published: true
 ---
 
 ## Introduction
 
-This guide teaches X-Cart developers how they can add their own field to products and then use it on invoices.
+This guide teaches X-Cart developers how they can add their own field to products and then use it on invoices. This guide works for X-Cart 5.0.x - 5.2.x and you need to follow {% link "the separate guide for X-Cart 5.3.x" ref_ErrHUaHH %}.
 
 ## Table of Contents
 
