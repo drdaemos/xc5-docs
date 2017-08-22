@@ -1,11 +1,11 @@
 ---
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-21 17:53 +0400'
+updated_at: '2017-08-22 15:06 +0400'
 identifier: ref_AabTAHKd
 title: ''
 order: 100
-published: false
+published: true
 ---
 ## Introduction
 
@@ -123,8 +123,8 @@ class SideBarBox extends \XLite\View\SideBarBox
 ```
     
 You may notice two differences compared to the aforementioned article about sidebar menu:
-1. We have method `getJSFiles()` that defines a file of our JS controller;
-2. We have method `getBlockClasses()` that defines that `<div>` of our sidebar menu will also have `block-random-product` class. This is needed because this way we can use this CSS class as jQuery selector in our JS controller.
+- We have method `getJSFiles()` that defines a file of our JS controller;
+- We have method `getBlockClasses()` that defines that `<div>` of our sidebar menu will also have `block-random-product` class. This is needed because this way we can use this CSS class as jQuery selector in our JS controller.
 
 Create template for displaying content of this sidebar menu (`skins/customer/modules/XCExample/JsControllerDemo/sidebarbox/body.twig`) and leave this file blank for now.
 Create empty JS file (`skins/customer/modules/XCExample/JsControllerDemo/js/controller.js`) for our JS controller.
@@ -333,3 +333,6 @@ Let us change the `doNoAction()` method in our controller class and make it as f
 
 As you can see, we return info about a random product only if the request is made through JS. You can see that clicking **Surprise me!** button still refreshes the sidebar menu, while if you go to `cart.php?target=random_product` page directly, it returns an empty screen.
 
+## Module pack
+You can download the entire module described in this article from here:
+[https://www.dropbox.com/s/u3ovulxn3rpwyrl/XCExample-JsControllerDemo-v5_3_0.tar](https://www.dropbox.com/s/u3ovulxn3rpwyrl/XCExample-JsControllerDemo-v5_3_0.tar?dl=0)
