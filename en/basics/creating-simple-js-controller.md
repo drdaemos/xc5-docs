@@ -1,12 +1,12 @@
 ---
+title: Creating simple JS controller
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-22 16:42 +0400'
+updated_at: 2017-08-22 16:42 +0400
 identifier: ref_6SCZVZcv
-title: Creating simple JS controller
 order: 100
-published: true
 ---
+
 ## Introduction
 
 This article describes how to create JS controller in X-Cart 5. In other words, how to create a piece of JavaScript code that pulls some info from X-Cart and a listener code that is ready to return this info.
