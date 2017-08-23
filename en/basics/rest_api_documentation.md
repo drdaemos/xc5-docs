@@ -1,19 +1,17 @@
 ---
+title: REST API documentation
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-08-23 15:36 +0400'
-title: REST API documentation
+updated_at: 2017-08-23 15:36 +0400
 identifier: ref_RSR29iWL
 order: 100
 redirect_to:
-  - /rest-api/
+- "/rest-api/"
 icon: plug
 categories:
-  - home
-description: >-
-  If you want to exchange data with X-Cart through an external script, REST API
-  is the way to go.
-published: true
+- home
+description: If you want to exchange data with X-Cart through an external script,
+  REST API is the way to go.
 ---
 
 ## Introduction
