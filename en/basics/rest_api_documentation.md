@@ -1,17 +1,19 @@
 ---
-title: REST API documentation
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-06-29 12:29 +0400
+updated_at: '2017-08-23 15:36 +0400'
+title: REST API documentation
 identifier: ref_RSR29iWL
 order: 100
 redirect_to:
-- "/rest-api/"
+  - /rest-api/
 icon: plug
 categories:
-- home
-description: If you want to exchange data with X-Cart through an external script,
-  REST API is the way to go.
+  - home
+description: >-
+  If you want to exchange data with X-Cart through an external script, REST API
+  is the way to go.
+published: true
 ---
 
 ## Introduction
@@ -65,7 +67,7 @@ Please note that X-Cart models and their API change over time, so some example r
 
 ## Installing and configuring REST API
 
-In order to be able to access X-Cart's data externally, you have to {% link "install" ref_Vn1mMUw9 %} the **REST API** module.
+In order to be able to access X-Cart's data externally, you have to [install](http://kb.x-cart.com/en/modules/managing_modules/index.html "REST API documentation") the **REST API** module.
 After the module has been installed, you need to set it up.
 
 1.  Go to the **Settings** section for the REST API module: 
