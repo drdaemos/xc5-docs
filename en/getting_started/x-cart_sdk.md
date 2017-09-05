@@ -1,15 +1,20 @@
 ---
-title: X-Cart SDK
 lang: en
 layout: article_with_sidebar
-updated_at: 2016-10-17 15:30 +0400
+updated_at: '2017-09-05 11:46 +0400'
+title: X-Cart SDK
 identifier: ref_HvrXVNvJ
 order: 500
 categories:
-- Developer docs
+  - Developer docs
+published: true
+version: X-Cart 5.0 - 5.2
 ---
-
 ## Introduction
+
+{% note warning %}
+This SDK is deprecated since X-Cart 5.3.4. {% link "X-Cart command line tool" ref_eg4htFFH %} is the direct replacement with the similar features.
+{% endnote %}
 
 X-Cart SDK is a collection of macros that ease X-Cart 5 development. This article explains how to obtain X-Cart SDK and how to use its macros.
 
