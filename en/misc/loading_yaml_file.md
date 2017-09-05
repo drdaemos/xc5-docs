@@ -13,7 +13,7 @@ version: X-Cart 5.0 - 5.2
 
 ## Introduction
 
-{% note info  %}
+{% note info %}
 We highly advise to use the {% link "X-Cart command line tool" ref_eg4htFFH %} to load YAML files. This guide is deprecated and considered uneffective.
 {% endnote %}
 
