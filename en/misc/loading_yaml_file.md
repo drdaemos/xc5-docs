@@ -1,19 +1,18 @@
 ---
+title: Loading YAML files
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-09-05 12:22 +0400'
-title: Loading YAML files
+updated_at: 2017-09-05 12:22 +0400
 identifier: ref_8BPAwaEG
 categories:
-  - Developer docs
+- Developer docs
 order: 100
-published: true
 version: X-Cart 5.0 - 5.2
 ---
 
 ## Introduction
 
-{% note info %}
+{% note info  %}
 We highly advise to use the {% link "X-Cart command line tool" ref_eg4htFFH %} to load YAML files. This guide is deprecated and considered uneffective.
 {% endnote %}
 
