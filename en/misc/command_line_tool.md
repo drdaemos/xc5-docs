@@ -1,14 +1,15 @@
 ---
-title: X-Cart Command Line Tool
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-09-05 11:44 +0400
+updated_at: '2017-09-05 15:38 +0400'
+title: X-Cart Command Line Tool
 identifier: ref_eg4htFFH
 order: 100
-version: X-Cart 5.3.4
+version: X-Cart 5.3.3.4
+published: true
 ---
 
-X-Cart command line (CLI) tool is the collection of helpful commands for your use while developing your modules. This tool is included with X-Cart starting from 5.3.4 version and is a direct replacement for the deprecated {% link "X-Cart SDK" ref_HvrXVNvJ %}. It is driven by the powerful Symfony Console component.
+X-Cart command line (CLI) tool is the collection of helpful commands for your use while developing your modules. This tool is included with X-Cart starting from 5.3.3.4 version and is a direct replacement for the deprecated {% link "X-Cart SDK" ref_HvrXVNvJ %}. It is driven by the powerful Symfony Console component.
 
 ## Usage
 
