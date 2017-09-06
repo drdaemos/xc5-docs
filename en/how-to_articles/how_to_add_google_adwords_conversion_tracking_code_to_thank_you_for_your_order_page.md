@@ -9,7 +9,6 @@ identifier: ref_g8xO0UNP
 version: X-Cart 5.3
 categories:
   - How-To Articles
-  - Outdated
 published: true
 order: 100
 ---
