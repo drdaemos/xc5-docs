@@ -1,15 +1,14 @@
 ---
+title: How to add Google Adwords Conversion Tracking Code to &quot;Thank you for your
+  order&quot; page
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-09-06 14:43 +0400'
-title: >-
-  How to add Google Adwords Conversion Tracking Code to &quot;Thank you for your
-  order&quot; page
+updated_at: 2017-09-06 14:43 +0400
 identifier: ref_g8xO0UNP
 version: X-Cart 5.3
 categories:
-  - How-To Articles
-published: true
+- How-To Articles
+- Outdated
 order: 100
 ---
 
