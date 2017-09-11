@@ -1,11 +1,10 @@
 ---
+title: Importing / Export properties
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-09-11 14:55 +0400'
-title: Importing / Export properties
+updated_at: 2017-09-11 14:55 +0400
 identifier: ref_BVtg8BBg
 order: 100
-published: true
 ---
 
 ## Introduction
