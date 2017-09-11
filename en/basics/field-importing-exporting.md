@@ -1,10 +1,11 @@
 ---
-title: Creating import / export routines
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-09-11 15:01 +0400
+updated_at: '2017-09-11 17:06 +0400'
+title: Creating import / export routines
 identifier: ref_BVtg8BBg
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -19,7 +20,7 @@ This article describes the process of creating import/export processes in X-Cart
 * [Adding test field to export file](#adding-test-field-to-export-file)
 * [Updating import routine](#updating-import-routine)
 * [What if I want to add property to other object types](#what-if-i-want-to-add-property-to-other-object-types)
-* [Checking the resuls and module pack](#checking-the-resuls-and-module-pack)
+* [Checking the results and module pack](#checking-the-results-and-module-pack)
 
 
 ## Creating product property
@@ -214,7 +215,7 @@ If you want to add property to import/export of categories, users etc, then the 
 - Users: `\XLite\Logic\Export\Step\Users` and `\XLite\Logic\Import\Processor\Customers`;
 - Orders: `\XLite\Logic\Export\Step\Orders`; since you cannot import orders into X-Cart you can only alter export process of orders.
 
-## Checking the resuls and module pack
+## Checking the results and module pack
 
 That is it for the module. Now you can try to go to admin area, pick a product and define its 'Test Field' property as you want. Then, export this product and make sure that the 'testField' column has the same value. After that, define a new value for this column and import the file back. 'Test Field' property should be updated accordingly.
 
