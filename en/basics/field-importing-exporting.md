@@ -1,12 +1,12 @@
 ---
+title: ''
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-09-11 13:46 +0400'
+updated_at: 2017-09-11 13:46 +0400
 identifier: ref_BVtg8BBg
-title: ''
 order: 100
-published: true
 ---
+
 ## Introduction
 
 This article describes the process of creating import/export processes in X-Cart 5. For the sake of example we will show how to add new product field column to export file and how to import values from the same column.
