@@ -1,10 +1,11 @@
 ---
-title: Adding new property to a product in X-Cart 5.3.x
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-08-22 16:34 +0400
+updated_at: '2017-09-14 01:33 +0400'
+title: Adding new property to a product in X-Cart 5.3.x
 identifier: ref_ErrHUaHH
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -26,7 +27,7 @@ We start off with {% link "creating a module" ref_G2mlgckf %} with developer ID 
 
 ## Decorating model class
 
-To add ‘My Message’ to default product model, we need to decorate `\XLite\Model\Product` class. We create the `classes/XLite/Module/XCExample/ProductPropertyDemo/Mode/Product.php` class with the following content:
+To add ‘My Message’ to default product model, we need to decorate `\XLite\Model\Product` class. We create the `classes/XLite/Module/XCExample/ProductPropertyDemo/Model/Product.php` class with the following content:
 
 ```php
 <?php
@@ -60,7 +61,7 @@ The most important part of this PHP file is the declaration of the field:
      * @Column (type="string")
      */
     protected $myMessage;
- ```
+```
 
 It tells X-Cart that now product model also has myMessage field and its type is a string. 
 
