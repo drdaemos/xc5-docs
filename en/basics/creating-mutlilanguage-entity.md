@@ -1,10 +1,11 @@
 ---
-title: Creating multi-language entity
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-08-21 17:48 +0400
+updated_at: '2017-09-18 02:09 +0400'
+title: Creating multi-language entity
 identifier: ref_qWgTz3uG
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -71,7 +72,7 @@ class QuickMessage extends \XLite\Model\Base\I18n
 ```
 
 Notice few differences compared to {% link "the usual process of creating an entity" ref_wmExvPDD %}.
-1. We extend `\XLite\Model\Base\I18n` class instead of `\XLite\Model\AModel`. This is because we want a multi-language entity and we need a different class.
+1. We extend `\XLite\Model\Base\I18n` class instead of `\XLite\Model\AEntity`. This is because we want a multi-language entity and we need a different class.
 2. We do not have a column for a text of a message. It is intended, because it will be defined in a class that will reflect all multi-language fields of an entity.
 
 Let us create a class for multi-language fields (just one field in our particular case). We create file `classes/XLite/Module/XCExample/MultilanguageEntityDemo/Model/QuickMessageTranslation.php` with the following content:
