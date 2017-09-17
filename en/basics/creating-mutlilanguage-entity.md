@@ -1,11 +1,10 @@
 ---
+title: Creating multi-language entity
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-09-18 02:09 +0400'
-title: Creating multi-language entity
+updated_at: 2017-09-18 02:09 +0400
 identifier: ref_qWgTz3uG
 order: 100
-published: true
 ---
 
 ## Introduction
