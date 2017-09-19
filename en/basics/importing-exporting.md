@@ -1,12 +1,12 @@
 ---
-title: Importing / Exporting your entities
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-09-19 14:23 +0400
+updated_at: '2017-09-19 16:00 +0400'
+title: Importing / Exporting your entities
 identifier: ref_O91LH8wn
 order: 100
+published: true
 ---
-
 ## Introduction
 
 This article describes how you can import/export an entity you added to the store. If you want to see an example of how to import/export a field to existing X-Cart entity (product, category, user or order), check {% link "a dedicated guide to that task" ref_BVtg8BBg %}.
@@ -14,6 +14,12 @@ This article describes how you can import/export an entity you added to the stor
 For the sake of example, we will create a module that will add a new entity called 'Import Entity'. This entity will be essentially {% link "a message as in this example" ref_hBpBE0vS %}, but we will call it 'Import Entity' and will add an ability to import and export it.
 
 ## Table of Contents
+* [Introduction](#introduction)
+* [Table of Contents](#table-of-contents)
+* [Creating entity and page for its editing](#creating-entity-and-page-for-its-editing)
+* [Exporting entity](#exporting-entity)
+* [Importing entity](#importing-entity)
+* [Checking the results and module pack](#checking-the-results-and-module-pack)
 
 ## Creating entity and page for its editing
 
@@ -394,9 +400,10 @@ class ImportEntities extends \XLite\Logic\Import\Processor\AProcessor
         return $this->normalizeValueAsBoolean($value);
     }
 
-    protected function importIdColumn()
+    protected function importIdColumn(\XLite\Module\XCExample\ImportExportDemo\Model\ImportEntity $model, $value, array $column)
     {
     }
+
 }
 ```
 
@@ -405,4 +412,12 @@ Let us walk through each method in this class and see what they do:
 2. `getRepository()` defines a repository of entities being imported;
 3. `defineColumns()` defines what columns are going to be processed by import routine. We see `static::COLUMN_IS_KEY   => true` option in 'id' column. It defines that X-Cart will search existing entity by this column. If it cannot find an entity by this column or column is empty, then a new entity will be created;
 4. `isImportedFile()` defines a check that must be passed by filename of CSV file. If this check is passed, then X-Cart will know that this import processor must be used on this CSV file;
-5. 
+5. `getMessages()` defines error and warning messages that can be used throughout importing process. We register our own error message 'IMPORT-DEMO-BODY-IS-EMPTY', which are going to be used later.
+
+
+## Checking the results and module pack
+
+Try to export Import Entities and then import them back. Try to modify bodies of Import Entities and make sure that these changes are saved after import. Try to import an Import Entity without 'id' and make sure that it creates a new entity. Try to import an entity with empty 'body' and make sure you receive an error.
+
+You can download the module pack from here:
+[https://www.dropbox.com/s/unmof7i4238zh7k/XCExample-ImportExportDemo-v5_3_0.tar](https://www.dropbox.com/s/unmof7i4238zh7k/XCExample-ImportExportDemo-v5_3_0.tar?dl=0 "Importing / Exporting your entities")
