@@ -1,12 +1,12 @@
 ---
+title: Importing / Exporting your entities
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-09-19 16:00 +0400'
-title: Importing / Exporting your entities
+updated_at: 2017-09-19 16:00 +0400
 identifier: ref_O91LH8wn
 order: 100
-published: true
 ---
+
 ## Introduction
 
 This article describes how you can import/export an entity you added to the store. If you want to see an example of how to import/export a field to existing X-Cart entity (product, category, user or order), check {% link "a dedicated guide to that task" ref_BVtg8BBg %}.
