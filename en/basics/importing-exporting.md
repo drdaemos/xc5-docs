@@ -1,10 +1,11 @@
 ---
-title: Importing / Exporting your entities
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-09-21 16:17 +0400
+updated_at: '2017-09-21 16:30 +0400'
+title: Importing / Exporting your entities
 identifier: ref_O91LH8wn
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -272,7 +273,9 @@ class ImportEntities extends \XLite\Logic\Export\Step\AStep
     }    
 }
 ```
+
 Let us walk through each method:
+
 1. `getRepository()` returns a repository of our entity;
 2. `defineColumns()` defines which columns will be in result CSV file. Our fields are id (if we want to import back this file, X-Cart will update an existing entity found by id or it will create a new entity, if id is empty), body and enabled/disabled flag;
 3. `getFilename()` defines what would name of the file export results in. Even though we specify it as just 'import-entities.csv', the actual filename will also contain date stamp, so it would be like 'import-entities-2017-09-18.csv' if you run export at September, 18th 2017;
