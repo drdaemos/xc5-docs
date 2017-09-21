@@ -1,10 +1,11 @@
 ---
-title: Importing / Exporting your entities
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-09-19 16:00 +0400
+updated_at: '2017-09-21 16:17 +0400'
+title: Importing / Exporting your entities
 identifier: ref_O91LH8wn
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -408,11 +409,16 @@ class ImportEntities extends \XLite\Logic\Import\Processor\AProcessor
 ```
 
 Let us walk through each method in this class and see what they do:
+
 1. `getTitle()` defines what message will be displayed once the import is complete;
 2. `getRepository()` defines a repository of entities being imported;
 3. `defineColumns()` defines what columns are going to be processed by import routine. We see `static::COLUMN_IS_KEY   => true` option in 'id' column. It defines that X-Cart will search existing entity by this column. If it cannot find an entity by this column or column is empty, then a new entity will be created;
 4. `isImportedFile()` defines a check that must be passed by filename of CSV file. If this check is passed, then X-Cart will know that this import processor must be used on this CSV file;
-5. `getMessages()` defines error and warning messages that can be used throughout importing process. We register our own error message 'IMPORT-DEMO-BODY-IS-EMPTY', which are going to be used later.
+5. `getMessages()` defines error and warning messages that can be used throughout importing process. We register our own error message 'IMPORT-DEMO-BODY-IS-EMPTY', which are going to be used later;
+6. `verifyBody()` method is used before X-Cart imports value. Its purpose is to check whether the value passed is sufficient for the import and if not, generate either error or warning (error will halt the import process, while warning will not). In our case, we make sure that 'body' column is not empty and if not, generate an error. If you want to generate a warning, then you would call $this->addWarning() with the same arguments. If you need to verify other column, you define method `verify<COLUMN-NAME>`;
+7. `normalizeEnabledValue()` method is used to format a value from CSV file to the appropriate form. In our case, we want to transform 'Yes' or 'No' in the 'enabled' column to boolean values. If you want to add normalization routine for other columns, you need to create method with `normalize<COLUMN-NAME>Value()` name;
+8. `importIdColumn()` method is used to explicitely describe importing routine. Again, the name method is `import<COLUMN-NAME>Column` and if such method is not there, then X-Cart will just save normalized value into model's property specified in `<COLUMN-NAME>`. In this particular case, we want to ommit saving value from 'id' column into model, because our model does not have `setId()` method in it.
+
 
 
 ## Checking the results and module pack
