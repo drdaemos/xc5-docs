@@ -1,9 +1,9 @@
 ---
 title: How to add Piwik tracking code to the store pages
-published: false
+published: true
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-09-28 11:20 +0400
+updated_at: '2017-09-28 11:20 +0400'
 identifier: ref_M3gFDNfd
 order: 100
 ---
@@ -16,6 +16,6 @@ The following example demonstrates adding Piwik tracking code to the file `/skin
 
 Note how the code is added before the </head> tag.
 
-For more info, see https://developer.piwik.org/guides/tracking-javascript-guide
+For more info on Piwik tracking code, see https://developer.piwik.org/guides/tracking-javascript-guide
 
 **Important:** Like any integration requiring you to add a tracking code snippet to your X-Cart store pages, Piwik can be added to your store site using Google Tag Manager. For information on using Google Tag Manager with X-Cart, see the section {% link "How to add Google Tag Manager code snippets to the store pages" ref_eHPw9R4e %} of this manual.
