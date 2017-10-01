@@ -1,12 +1,13 @@
 ---
-lang: en
-layout: article_with_sidebar
-updated_at: '2017-10-02 00:21 +0400'
 title: ''
 published: false
+lang: en
+layout: article_with_sidebar
+updated_at: 2017-10-02 00:21 +0400
 identifier: ref_I9L2KZJN
 order: 100
 ---
+
 ## Decorator pattern
 
 X-Cart uses [Decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern) in order to apply changes to the core functionality. The idea behind this approach is to keep core untouched and all files related to modules would be separate from the core. In this case, upgrade can be simply done by replcaing core files with new ones.
