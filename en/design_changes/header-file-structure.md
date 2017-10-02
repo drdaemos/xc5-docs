@@ -1,12 +1,13 @@
 ---
+title: File structure of header
+published: false
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-02 13:45 +0400'
+updated_at: 2017-10-02 13:45 +0400
 identifier: ref_xG0ZIbxu
-title: File structure of header
 order: 100
-published: false
 ---
+
 To avoid any misunderstanding, by header section of X-Cart customer area, we assume the section shown below:
 ![header.png]({{site.baseurl}}/attachments/ref_xG0ZIbxu/header.png)
 
