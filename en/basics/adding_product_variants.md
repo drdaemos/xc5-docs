@@ -1,12 +1,13 @@
 ---
+title: ''
+published: false
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-03 14:56 +0400'
+updated_at: 2017-10-03 14:56 +0400
 identifier: ref_bLhsOAwO
-title: ''
 order: 100
-published: false
 ---
+
 ## Introduction
 
 This article explains how you can create product variants from the code instead of doing so through admin interface. During this article we assume that you have the module Product Variants enabled.
