@@ -1,11 +1,12 @@
 ---
-title: X-Cart Command Line Tool
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-09-05 15:38 +0400
+updated_at: '2017-10-03 15:31 +0400'
+title: X-Cart Command Line Tool
 identifier: ref_eg4htFFH
 order: 100
 version: X-Cart 5.3.3.4
+published: true
 ---
 
 X-Cart command line (CLI) tool is the collection of helpful commands for your use while developing your modules. This tool is included with X-Cart starting from 5.3.3.4 version and is a direct replacement for the deprecated {% link "X-Cart SDK" ref_HvrXVNvJ %}. It is driven by the powerful Symfony Console component.
@@ -15,7 +16,7 @@ X-Cart command line (CLI) tool is the collection of helpful commands for your us
 To run the CLI tool, you should switch to the X-Cart working directory and run:
 
 ```
-php xcart <command> <arguments>
+php xc5 <command> <arguments>
 ```
 
 {% note %}
@@ -36,7 +37,7 @@ export PATH=$PATH:/var/www/html/xcart
 To view a list of all available X-Cart commands, you may use the list command:
 
 ```
-php xcart list
+php xc5 list
 ```
 
 Current available command reference:
@@ -62,7 +63,7 @@ utils:runHook              Run upgrade hook
 Every command also includes a "help" screen which displays and describes the command's available arguments and options. To view a help screen, simply precede the name of the command with help:
 
 ```
-php xcart help utils:loadYaml
+php xc5 help utils:loadYaml
 ```
 
 This command will output:
@@ -94,5 +95,5 @@ Help:
 You may also view the current version of your X-Cart installation using the `--version` option:
 
 ```
-php xcart --version
+php xc5 --version
 ```
