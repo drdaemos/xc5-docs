@@ -1,20 +1,22 @@
 ---
+lang: en
+layout: article_with_sidebar
+updated_at: '2017-10-05 13:15 +0400'
 title: Webinars and video tutorials
 identifier: ref_STELArig
-updated_at: 2015-11-16 00:00
-layout: article_with_sidebar
-lang: en
 categories:
-- home
+  - home
 order: 10
 icon: youtube play
 description: Live video from our developers and associates
+published: true
 ---
 
 In this section you will find webinars and video tutorials for X-Cart 5.
 
 ## Look & Feel
 
+*   [Basic Design Changes in X Cart 5.3](http://kb.x-cart.com/en/webinars_and_video_tutorials/basic_design_changes_in_x-cart_5.3.html)
 *   {% link "Basic front-end changes in X-Cart 5.2 - Theme, Logo, Favicon, Home Page Banner" ref_8yinPdfC %}
 
 ## Content
