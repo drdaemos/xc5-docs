@@ -1,17 +1,22 @@
 ---
-title: Specifying your company info, changing the text on the Add to Cart button and
+lang: en
+layout: article_with_sidebar
+updated_at: '2017-10-05 13:11 +0400'
+title: >-
+  Specifying your company info, changing the text on the Add to Cart button and
   editing the Contact Us page in X-Cart 5
 identifier: ref_r41l3HIn
-updated_at: 2015-05-22 00:00
-layout: article_with_sidebar
-lang: en
 categories:
-- Webinars and video tutorials
+  - Webinars and video tutorials
+published: true
+order: 100
 ---
 
 ## Introduction
 
 This video demonstrates how to specify your company info, change the text on the Add to Cart button and edit the Contact Us page.
+
+**Important:** The video tutorial below provides instructions for X-Cart 5.2. Instructions for X-Cart 5.3 is available here: {% link "Basic Design Changes in X Cart 5.3" ref_KpqQsVGf %}
 
 ## Video
 
