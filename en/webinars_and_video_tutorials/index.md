@@ -1,15 +1,14 @@
 ---
+title: Webinars and video tutorials
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-05 13:15 +0400'
-title: Webinars and video tutorials
+updated_at: 2017-10-05 13:15 +0400
 identifier: ref_STELArig
 categories:
-  - home
+- home
 order: 10
 icon: youtube play
 description: Live video from our developers and associates
-published: true
 ---
 
 In this section you will find webinars and video tutorials for X-Cart 5.
