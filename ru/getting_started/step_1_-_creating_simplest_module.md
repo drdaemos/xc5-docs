@@ -1,12 +1,13 @@
 ---
-title: Шаг 1 - создание простейшего модуля для X-Cart
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-12 16:51 +0400
+updated_at: '2017-10-12 17:27 +0400'
+title: Шаг 1 - создание простейшего модуля для X-Cart
 identifier: ref_TzTBkZ8i
 order: 100
 keywords:
-- Developers docs
+  - Developers docs
+published: true
 ---
 
 ## Введение
@@ -106,7 +107,7 @@ keywords:
 
 ## Создание модуля с помощью CLI
 
-{% link "Инструмент командной строки X-Cart" ref_eg4htFFH %}
+{% link "Инструмент командной строки X-Cart" ref_kC6eLh5V %}
 
 
 ## Создание дистрибутива модуля
