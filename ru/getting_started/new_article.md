@@ -5,7 +5,7 @@ updated_at: '2017-10-12 15:41 +0400'
 identifier: ref_oGOlsZws
 title: ''
 order: 100
-published: false
+published: true
 ---
 Данный раздел посвящен основам работы с X-Cart 
 
