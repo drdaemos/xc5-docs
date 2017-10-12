@@ -1,13 +1,12 @@
 ---
-title: ''
-published: false
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-12 17:36 +0400
+updated_at: '2017-10-12 17:41 +0400'
+title: ''
+published: true
 identifier: ref_2uNTP3oq
 order: 100
 ---
+Данный раздел содержит статьи, не вошедшие в другие тематические разделы:
 
-## A New Post
-
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+[Инструмент командной строки X-Cart](http://devs.x-cart.com/ru/misc/command_line_tool.html)
