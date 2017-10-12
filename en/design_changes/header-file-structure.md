@@ -1,12 +1,13 @@
 ---
-title: File structure of header
-published: false
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-10-02 13:45 +0400
+updated_at: '2017-10-13 01:22 +0400'
+title: File structure of header
+published: true
 identifier: ref_xG0ZIbxu
 order: 100
 ---
+## Introduction
 
 To avoid any misunderstanding, by header section of X-Cart customer area, we assume the section shown below:
 ![header.png]({{site.baseurl}}/attachments/ref_xG0ZIbxu/header.png)
@@ -14,9 +15,16 @@ To avoid any misunderstanding, by header section of X-Cart customer area, we ass
 and the section highlighted below is 'Top menu':
 ![top-menu.png]({{site.baseurl}}/attachments/ref_xG0ZIbxu/top-menu.png)
 
-In this article we are going to cover what templates, viewer classes and view lists render these sections, so you would know what files to extend in order to apply your design.
+In this article we are going to cover what templates, viewer classes and view lists render these sections, so you would know {% link "what files to extend in order to apply your design" ref_fCqWygpc %}.
 
-## Header
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
+- [Header structure](#header-structure)
+- [Top menu structure](#top-menu-structure)
+
+## Header structure
 
 The main template that is responsible for rendering header area is `<X-Cart>/skins/customer/layout/header/main.header.twig`.
 
@@ -56,8 +64,21 @@ This article focuses of desktop header, so let us have a look at what we have in
 		- `<X-Cart>/skins/customer/mini_cart/horizontal/parts/items.twig` renders the section that appears once you click on basket icon
 	- 'minicart.horizontal.base' empty view list
 
-Below is the structure of templates and view lists called inside `<X-Cart>/skins/customer/layout/header/header.bar.twig` template:
+`<X-Cart>/skins/customer/layout/header/header.bar.twig` template calls for content of 'layout.header.bar' view list and here is the structure of templates in this view list:
 
+- `customer/layout/header/header.bar.links.logged.twig` template
+	- 'layout.header.bar.links.logged' view list
+    	- `customer/layout/header/header.bar.links.logged.account.twig` defines 'My account' link
+        - `customer/layout/header/header.bar.links.logged.logout.twig` defines 'Log out' link
+        - `customer/language_selector/body.twig` defines language selector
+- `customer/modules/XC/Geolocation/location_popup/button.twig` template that renders selector for choosing your location if you have Geolocation module installed
+- `customer/layout/header/header.bar.search.twig` template that renders quick search form
 
+## Top menu structure
 
+Top menu's main template is `customer/layout/header/top_menu.twig`, however it defines only wrapper divs around actual top menu and calls for 'header.menu' view list. This view list consists of only `XLite\View\Menu\Customer\Top` viewer class.
 
+If you have Simple CMS module enabled, it overrides default `XLite\View\Menu\Customer\Top` class and uses `customer/modules/CDev/SimpleCMS/primary_menu_items.twig` template. Default `XLite\View\Menu\Customer\Top` class uses `customer/layout/header/main_menu_items.twig` template.
+
+These two templates do actual work of rendering menu items depending on what menu items defined in admin area.
+    
