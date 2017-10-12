@@ -1,9 +1,9 @@
 ---
 title: ''
-published: false
+published: true
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-12 17:05 +0400
+updated_at: '2017-10-12 17:05 +0400'
 identifier: ref_kC6eLh5V
 order: 100
 ---
@@ -97,8 +97,3 @@ Help:
 ```
 php xc5 --version
 ```
-
-
-
-
-
