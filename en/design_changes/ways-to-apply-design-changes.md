@@ -1,9 +1,8 @@
 ---
+title: How to apply design changes
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-13 01:01 +0400'
-title: How to apply design changes
-published: true
+updated_at: 2017-10-13 01:01 +0400
 identifier: ref_fCqWygpc
 order: 100
 ---
