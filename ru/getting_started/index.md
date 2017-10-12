@@ -1,13 +1,14 @@
 ---
-title: Начало работы
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-12 16:45 +0400
+updated_at: '2017-10-12 17:57 +0400'
+title: Начало работы с X-Cart
 identifier: ref_oGOlsZws
 order: 1
 icon: rocket
 categories:
-- home
+  - home
+published: true
 ---
 
 Данный раздел посвящен основам работы с X-Cart 
