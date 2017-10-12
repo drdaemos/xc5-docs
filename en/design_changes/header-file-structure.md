@@ -1,12 +1,12 @@
 ---
+title: File structure of header
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-13 01:22 +0400'
-title: File structure of header
-published: true
+updated_at: 2017-10-13 01:22 +0400
 identifier: ref_xG0ZIbxu
 order: 100
 ---
+
 ## Introduction
 
 To avoid any misunderstanding, by header section of X-Cart customer area, we assume the section shown below:
