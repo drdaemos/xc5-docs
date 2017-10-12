@@ -1,8 +1,9 @@
 ---
 title: ''
+published: false
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-12 15:54 +0400
+updated_at: 2017-10-12 15:41 +0400
 identifier: ref_oGOlsZws
 order: 100
 ---
