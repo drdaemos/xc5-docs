@@ -1,11 +1,10 @@
 ---
+title: ''
 lang: ru
 layout: article_with_sidebar
-updated_at: '2017-10-12 17:44 +0400'
-title: ''
+updated_at: 2017-10-12 17:44 +0400
 identifier: ref_2uNTP3oq
 order: 100
-published: true
 ---
 
 Данный раздел содержит статьи, не вошедшие в другие тематические разделы:
