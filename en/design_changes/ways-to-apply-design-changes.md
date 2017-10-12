@@ -1,12 +1,13 @@
 ---
+title: How to apply design changes
+published: false
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-12 21:26 +0400'
+updated_at: 2017-10-12 21:26 +0400
 identifier: ref_fCqWygpc
-title: How to apply design changes
 order: 100
-published: false
 ---
+
 ## Introduction
 
 This article explains main approaches of how to change look of X-Cart.
