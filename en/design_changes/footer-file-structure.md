@@ -1,12 +1,12 @@
 ---
+title: File structure of footer
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-13 01:03 +0400'
-title: File structure of footer
-published: true
+updated_at: 2017-10-13 01:03 +0400
 identifier: ref_TLfQP0C0
 order: 100
 ---
+
 ## Introduction
 
 This article describes what templates are used to render footer section of customer area in X-Cart. By 'footer' we mean the section shown below:
