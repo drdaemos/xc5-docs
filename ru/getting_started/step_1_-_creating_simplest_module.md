@@ -1,12 +1,13 @@
 ---
-title: Шаг 1 - создание простейшего модуля для X-Cart
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-13 15:18 +0400
+updated_at: '2017-10-13 15:49 +0400'
+title: Шаг 1 - создание простейшего модуля для X-Cart
 identifier: ref_TzTBkZ8i
 order: 100
 keywords:
-- Developers docs
+  - Developers docs
+published: true
 ---
 
 ## Введение
@@ -95,7 +96,7 @@ abstract class Main extends \XLite\Module\AModule
 }
 ```
 
-	В секции файла `namespace` замените значения `<YOUR-DEVELOPER-ID>` и `<YOUR-MODULE-ID>` на свои идентификаторы разработчика и модуля.
+В секции файла `namespace` замените значения `<YOUR-DEVELOPER-ID>` и `<YOUR-MODULE-ID>` на свои идентификаторы разработчика и модуля.
 
 3. Задайте методы `getDescription()`, `getModuleName()` и `getAuthorName()` чтобы они возвращали ваши данные - описание модуля, название модуля и автора модуля.
 
