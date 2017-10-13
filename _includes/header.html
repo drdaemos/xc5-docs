@@ -39,11 +39,11 @@
         <div class="tagline">{{ site.data.labels['devs_tagline'][page.lang] }}</div>
       </h1>
       <div class="ui hidden divider"></div>
-      <a href="{{ '/getting_started/' | prepend: baseurl_lang }}" class="ui huge inverted basic button">
-          Get started
+      <a href="{{ site.data.labels['getting_started_link'][page.lang] | prepend: baseurl_lang }}" class="ui huge inverted basic button">
+          {{ site.data.labels['Get started'][page.lang] }}
       </a>
-      <a href="{{ '/what_is_new/' | prepend: baseurl_lang }}" class="ui huge inverted basic button">
-          Developers blog
+      <a href="{{ site.data.labels['developers_blog_link'][page.lang] | prepend: baseurl_lang }}" class="ui huge inverted basic button">
+          {{ site.data.labels['Developers blog'][page.lang] }}
       </a>
     </div>
   {% endif %}
