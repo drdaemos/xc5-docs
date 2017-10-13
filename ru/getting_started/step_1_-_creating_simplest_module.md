@@ -1,12 +1,13 @@
 ---
-title: Шаг 1 - создание простейшего модуля для X-Cart
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-13 13:32 +0400
+updated_at: '2017-10-13 14:02 +0400'
+title: Шаг 1 - создание простейшего модуля для X-Cart
 identifier: ref_TzTBkZ8i
 order: 100
 keywords:
-- Developers docs
+  - Developers docs
+published: true
 ---
 
 ## Введение
@@ -37,7 +38,7 @@ keywords:
 
 2. В папке `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` создайте файл Main.php следующего содержания: 
 
-	```php
+```php
     <?php
     namespace XLite\Module\<YOUR-DEVELOPER-ID>\<YOUR-MODULE-ID>;
 
@@ -93,7 +94,7 @@ keywords:
             return 'Your module description';
         }
     }
-    ```
+```
 
 	В секции файла `namespace` замените значения `<YOUR-DEVELOPER-ID>` и `<YOUR-MODULE-ID>` на свои идентификаторы разработчика и модуля.
 
