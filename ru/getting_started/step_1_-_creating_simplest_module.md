@@ -1,13 +1,12 @@
 ---
+title: Шаг 1 - создание простейшего модуля для X-Cart
 lang: ru
 layout: article_with_sidebar
-updated_at: '2017-10-13 15:49 +0400'
-title: Шаг 1 - создание простейшего модуля для X-Cart
+updated_at: 2017-10-13 15:49 +0400
 identifier: ref_TzTBkZ8i
 order: 100
 keywords:
-  - Developers docs
-published: true
+- Developers docs
 ---
 
 ## Введение
