@@ -1,12 +1,13 @@
 ---
-title: Шаг 1 - создание простейшего модуля для X-Cart
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-13 14:02 +0400
+updated_at: '2017-10-13 15:18 +0400'
+title: Шаг 1 - создание простейшего модуля для X-Cart
 identifier: ref_TzTBkZ8i
 order: 100
 keywords:
-- Developers docs
+  - Developers docs
+published: true
 ---
 
 ## Введение
@@ -38,61 +39,61 @@ keywords:
 2. В папке `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` создайте файл Main.php следующего содержания: 
 
 ```php
-    <?php
-    namespace XLite\Module\<YOUR-DEVELOPER-ID>\<YOUR-MODULE-ID>;
+<?php
+namespace XLite\Module\<YOUR-DEVELOPER-ID>\<YOUR-MODULE-ID>;
 
-    abstract class Main extends \XLite\Module\AModule
+abstract class Main extends \XLite\Module\AModule
+{
+    /**
+     * Author name
+     *
+     * @return string
+     */
+    public static function getAuthorName()
     {
-        /**
-         * Author name
-         *
-         * @return string
-         */
-        public static function getAuthorName()
-        {
-            return 'Your name';
-        }
-
-        /**
-         * Module name
-         *
-         * @return string
-         */
-        public static function getModuleName()
-        {
-            return 'Your module name';
-        }
-
-        /**
-         * Get module major version
-         *
-         * @return string
-         */
-        public static function getMajorVersion()
-        {
-            return '5.3';
-        }
-
-        /**
-         * Module version
-         *
-         * @return string
-         */
-        public static function getMinorVersion()
-        {
-            return 0;
-        }
-
-        /**
-         * Module description
-         *
-         * @return string
-         */
-        public static function getDescription()
-        {
-            return 'Your module description';
-        }
+        return 'Your name';
     }
+
+    /**
+     * Module name
+     *
+     * @return string
+     */
+    public static function getModuleName()
+    {
+        return 'Your module name';
+    }
+
+    /**
+     * Get module major version
+     *
+     * @return string
+     */
+    public static function getMajorVersion()
+    {
+        return '5.3';
+    }
+
+    /**
+     * Module version
+     *
+     * @return string
+     */
+    public static function getMinorVersion()
+    {
+        return 0;
+    }
+
+    /**
+     * Module description
+     *
+     * @return string
+     */
+    public static function getDescription()
+    {
+        return 'Your module description';
+    }
+}
 ```
 
 	В секции файла `namespace` замените значения `<YOUR-DEVELOPER-ID>` и `<YOUR-MODULE-ID>` на свои идентификаторы разработчика и модуля.
