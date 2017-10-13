@@ -1,12 +1,13 @@
 ---
-title: Шаг 1 - создание простейшего модуля для X-Cart
 lang: ru
 layout: article_with_sidebar
-updated_at: 2017-10-13 13:21 +0400
+updated_at: '2017-10-13 13:32 +0400'
+title: Шаг 1 - создание простейшего модуля для X-Cart
 identifier: ref_TzTBkZ8i
 order: 100
 keywords:
-- Developers docs
+  - Developers docs
+published: true
 ---
 
 ## Введение
@@ -33,12 +34,11 @@ keywords:
 
 ## Создание модуля вручную
 
-1. В директории установки магазина создайте новую папку с названием <X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/. Обратите внимание, что  <YOUR-DEVELOPER-ID>и <YOUR-MODULE-ID> - это ваши идентификаторы разработчика и модуля.
-2. В папке <X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/ создайте файл Main.php следующего содержания: 
+1. В директории установки магазина создайте новую папку с названием `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/`. Обратите внимание, что  `<YOUR-DEVELOPER-ID>` и `<YOUR-MODULE-ID>` - это ваши идентификаторы разработчика и модуля.
 
+2. В папке `<X-Cart>/classes/XLite/Module/<YOUR-DEVELOPER-ID>/<YOUR-MODULE-ID>/` создайте файл Main.php следующего содержания: 
 
-
-```php
+	```php
     <?php
     namespace XLite\Module\<YOUR-DEVELOPER-ID>\<YOUR-MODULE-ID>;
 
@@ -95,29 +95,28 @@ keywords:
         }
     }
     ```
-    
-   
 
-В секции файла `namespace` замените значения `<YOUR-DEVELOPER-ID>` и `<YOUR-MODULE-ID>` на свои идентификаторы разработчика и модуля.
+	В секции файла `namespace` замените значения `<YOUR-DEVELOPER-ID>` и `<YOUR-MODULE-ID>` на свои идентификаторы разработчика и модуля.
 
 3. Задайте методы `getDescription()`, `getModuleName()` и `getAuthorName()` чтобы они возвращали ваши данные - описание модуля, название модуля и автора модуля.
-4. Обновите кеш магазина на странице управления кэшем в зоне администратора:
 
-![1.jpg]({{site.baseurl}}/attachments/ref_TzTBkZ8i/1.jpg)
+4. Обновите кеш магазина на странице управления кэшем в зоне администратора:
+	![1.jpg]({{site.baseurl}}/attachments/ref_TzTBkZ8i/1.jpg)
+    
 5. После обновления магазина модуль появится в списке установленных модулей на странице "Мои модули" в зоне администратора.
 
 ## Создание модуля с помощью CLI
 
 {% link "Инструмент командной строки X-Cart" ref_kC6eLh5V %}
 
-
 ## Создание дистрибутива модуля
 
 Чтобы создать дистрибутив модуля:
 
 1. Активируйте опцию `developer_mode` в файле `<X-Cart>/etc/config.php` (установите ее значение `On`).
+
 2. После этого у каждого модуля в на странице "Мои модули/Установленные модули" появится кнопка "Упаковать":
 
-![2.jpg]({{site.baseurl}}/attachments/ref_TzTBkZ8i/2.jpg)
+	![2.jpg]({{site.baseurl}}/attachments/ref_TzTBkZ8i/2.jpg)
 
 3. Нажав кнопку **Упаковать**, вы получите дистрибутив модуля.
