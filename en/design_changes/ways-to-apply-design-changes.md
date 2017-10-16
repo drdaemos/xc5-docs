@@ -1,10 +1,11 @@
 ---
-title: How to apply design changes
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-10-13 01:01 +0400
+updated_at: '2017-10-16 14:14 +0400'
+title: How to apply design changes
 identifier: ref_fCqWygpc
 order: 100
+published: true
 ---
 
 ## Introduction
@@ -70,12 +71,17 @@ Let us take a real-world example, we want to edit your company logo in top left 
 ![company-logo.png]({{site.baseurl}}/attachments/ref_fCqWygpc/company-logo.png)
 
 
-How do we know what template or widget renders this page? To find out that we are going to use 'Webmaster mode' feature (it is a part of standard 'Theme Tweaker' module). To enable Webmaster Mode, you should go to 'Look & Feel > Webmaster mode' section in admin area and enable it there:
-![webmaster-mode.png]({{site.baseurl}}/attachments/ref_fCqWygpc/webmaster-mode.png)
+How do we know what template or widget renders this page? To find out that we are going to use 'Webmaster mode' feature (it is a part of standard 'Theme Tweaker' module). To use Webmaster Mode, you should log in as admin and go to customer area. You will see a wheel icon at the bottom of the page:
+![webmaster-mode-wheel.png]({{site.baseurl}}/attachments/ref_fCqWygpc/webmaster-mode-wheel.png)
 
 
-Once you enabled Webmaster mode, go to your customer area and click the section you want to know the template for. You will see something like this:
-![template-strcuture-logo.png]({{site.baseurl}}/attachments/ref_fCqWygpc/template-strcuture-logo.png)
+Click this wheel and you will see several panels for editing look of customer area. Click on 'Template editor' and you will see a section like this:
+![template-editor.png]({{site.baseurl}}/attachments/ref_fCqWygpc/template-editor.png)
+
+
+Tick the option 'Pick templates from page' on and click the section you want to know the template for. The result will be as follows:
+![logo-in-webmaster-mode.png]({{site.baseurl}}/attachments/ref_fCqWygpc/logo-in-webmaster-mode.png)
+
 
 As you can see, X-Cart says that the template responsible for this area is `customer/layout/header/header.logo.twig`, which is a part of 'layout.header' view list, which is called in `customer/layout/header/main.header.twig` template, which is in turn a part of 'layout.main' view list, which is called from `customer/main.twig` template.
 
