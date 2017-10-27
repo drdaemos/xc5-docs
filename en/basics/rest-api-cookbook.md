@@ -1,12 +1,13 @@
 ---
+title: ''
+published: false
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-27 15:22 +0400'
+updated_at: 2017-10-27 15:22 +0400
 identifier: ref_I90uIumU
-title: ''
 order: 100
-published: false
 ---
+
 ## Introduction
 
 This article contains step-by-step instructions for creating tricky records in X-Cart via REST API. For more infromation about how REST API works in X-Cart, please refer to main article: {% link "REST API documentation" ref_RSR29iWL %}.
