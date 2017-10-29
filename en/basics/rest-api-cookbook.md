@@ -1,13 +1,12 @@
 ---
-title: ''
-published: false
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-10-27 15:22 +0400
+updated_at: '2017-10-29 16:42 +0400'
+title: ''
+published: false
 identifier: ref_I90uIumU
 order: 100
 ---
-
 ## Introduction
 
 This article contains step-by-step instructions for creating tricky records in X-Cart via REST API. For more infromation about how REST API works in X-Cart, please refer to main article: {% link "REST API documentation" ref_RSR29iWL %}.
@@ -40,10 +39,10 @@ If you want to assign file attachment and store these attachments in your store,
 
 ## How to define product translations
 
-We will work with product with ID 40.
+We will work with product with ID 30.
 
 Fetch data for a product you want to change translation for:
-`https://localhost//admin.php?target=RESTAPI&_key=write&_path=product/40`
+`https://localhost/admin.php?target=RESTAPI&_key=write&_path=product/30`
 
 The response will contain the section like this:
 ```
@@ -88,6 +87,14 @@ Dolby Digital 7.1 sound and wireless 5.8GHz technology
         )
 ```
 
-You need to save the 'label_id' value for translation for needed language. In this example, if we want to change English values, then label_id = 30, for Russian translation, label_id = 72.
+You need to save the 'label_id' value for translation for needed language. In this example, if we want to change English values, then label_id = 30. For Russian translation, label_id = 72.
+
+Knowing 'label_id' we make PUT request to change those values, e.g.
+
+```
+http://localhost/next/src/admin.php?target=RESTAPI&_key=write&_method=put&_path=producttranslation/30&model[name]=test%20name&model[description]=test%20description
+```
+
+This request defines English name of a product as 'test name' and full description as 'test description'.
 
 Как создать аттрибуты продукта http://go.x-cart.com/mes=2711929
