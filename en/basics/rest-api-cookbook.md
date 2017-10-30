@@ -1,12 +1,12 @@
 ---
-title: REST API cookbook
 lang: en
 layout: article_with_sidebar
-updated_at: 2017-10-29 22:06 +0400
+updated_at: '2017-10-30 15:00 +0400'
+title: REST API cookbook
 identifier: ref_I90uIumU
 order: 100
+published: true
 ---
-
 ## Introduction
 
 This article contains step-by-step instructions for creating tricky records in X-Cart via REST API. For more infromation about how REST API works in X-Cart, please refer to main article: {% link "REST API documentation" ref_RSR29iWL %}.
@@ -14,6 +14,11 @@ This article contains step-by-step instructions for creating tricky records in X
 During the article, we will assume that your X-Cart store is available at https://localhost/, your REST API key with writable permissions is 'write'.
 
 ## Table of Contents
+- [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
+- [Defining product attachments for product](#defining-product-attachments-for-product)
+- [How to define product translations](#how-to-define-product-translations)
+- [Creating product attributes](#creating-product-attributes)
 
 ## Defining product attachments for product
 
@@ -42,9 +47,11 @@ If you want to assign file attachment and store these attachments in your store,
 We will work with product with ID 30.
 
 Fetch data for a product you want to change translation for:
+
 `https://localhost/admin.php?target=RESTAPI&_key=write&_path=product/30`
 
 The response will contain the section like this:
+
 ```
 [translations] => Array
         (
@@ -102,6 +109,7 @@ This request defines English name of a product as 'test name' and full descripti
 We are going to create attribute (Color = Black) for product with ID = 30.
 
 1) Create product attribute object as follows:
+
 ```
 https://localhost/admin.php?target=RESTAPI&_key=write&_method=post&_path=attribute/0&model[product][product_id]=30&model[type]=S&model[visible]=1
 ```
@@ -109,6 +117,7 @@ https://localhost/admin.php?target=RESTAPI&_key=write&_method=post&_path=attribu
 We define `model[product][product_id]` as ID of a product we create an attribute for.
 
 The response to this request will be something like that:
+
 ```
 {"visible":"1","id":89,"position":0,"decimals":0,"type":"S","addToNew":"","variantsProducts":null,"productClass":null,"attributeGroup":null,"attribute_options":[],"product":{"ogMeta":"","useCustomOG":false,"marketPrice":0,"pinCodesEnabled":false,"autoPinCodes":false,"participateSale":false,"discountType":"sale_price","salePriceValue":0,"xcPendingBulkEdit":false,"isCustomerAttachmentsAvailable":false,"isCustomerAttachmentsRequired":false,"facebookMarketingEnabled":false,"freeShip":false,"freightFixedFee":0,"useAsSegmentCondition":false,"exported_pb":false,"gpc":null,"gtin":null,"hs_code":null,"mpn":null,"model_number":null,"stock_number":null,"hazmat":null,"chemicals":null,"pesticide":null,"aerosol":null,"rppc":null,"non_spillable":null,"fuel":null,"ormd":null,"battery":null,"product_condition":null,"product_id":30,"version":1,"price":299.99,"sku":"12003","enabled":true,"weight":2.1,"useSeparateBox":false,"boxWidth":0,"boxLength":0,"boxHeight":0,"itemsPerBox":1,"free_shipping":false,"taxable":true,"javascript":"","arrivalDate":1495372320,"date":1508332301,"updateDate":1508332301,"needProcess":false,"inventoryEnabled":true,"amount":60,"lowLimitEnabledCustomer":true,"lowLimitEnabled":true,"lowLimitAmount":10,"attrSepTab":true,"metaDescType":"A","sales":0,"xcPendingExport":false,"entityVersion":"089ff09a-f2ea-4b6c-8ed1-d916f286f71a"},"attribute_properties":null,"translations":[]}
 ```
