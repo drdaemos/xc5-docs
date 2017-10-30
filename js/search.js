@@ -2,7 +2,7 @@
 layout: 
 ---
 
-// version 0.3
+// version 0.4
 (function($){
 
   var autocompleteCache = {};
@@ -30,6 +30,11 @@ layout:
                   callback({
                     success: pages !== null,
                     results: pages
+                  });
+                }, function() {
+                  callback({
+                    success: false,
+                    results: null
                   });
                 });
               }

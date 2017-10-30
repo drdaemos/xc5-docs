@@ -2,7 +2,7 @@
 layout: 
 ---
 
-// Version 0.1
+// Version 0.2
 ;(function() {
 
   function Search() {
@@ -96,7 +96,7 @@ layout:
       q: query,
       num: 10
     };
-    this.sendRequest(params).then(_.bind(this.onAutocompleteSuccess, this));
+    return this.sendRequest(params).then(_.bind(this.onAutocompleteSuccess, this), _.bind(this.onAutocompleteFail, this));
   }
 
   Search.prototype.onAutocompleteSuccess = function (response) {
@@ -144,6 +144,10 @@ layout:
     }
 
     return categories;
+  }
+
+  Search.prototype.onAutocompleteFail = function() {
+    return null;
   }
 
   Search.prototype.runQuery = function() {
