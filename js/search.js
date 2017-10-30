@@ -2,7 +2,7 @@
 layout: 
 ---
 
-// version 0.2.1
+// version 0.3
 (function($){
 
   var autocompleteCache = {};
@@ -24,54 +24,12 @@ layout:
                 });
               } else {
                 Search.runAutocompleteQuery(settings.urlData.query)
-                .then(function(response) {
-                  var pages = response.hits.hits.reduce(function(memo, item) {
-                    memo.push({
-                      title: _.isArray(item.fields.title) ? item.fields.title[0] : '',
-                      url: _.isArray(item.fields.url) ? item.fields.url[0] : '',
-                      description: _.isArray(item.fields.parent) ? item.fields.parent[0] : '',
-                      index: item._index
-                    });
-                    return memo;
-                  }, []);
-
-                  var preferredIndex = '{{ site.elasticsearch.index }}';
-
-                  if (pages.length > 0) {
-                    var kb_category = {
-                      name: 'Knowledge base',
-                      results: pages.filter(function(item) {
-                        return item.index == 'usermanual'
-                      })
-                    };
-                    
-                    var devs_category = {
-                      name: 'Developer docs',
-                      results: pages.filter(function(item) {
-                        return item.index == 'knowledgebase'
-                      })
-                    };
-
-                    if (preferredIndex == 'usermanual') {
-                      var categories = {
-                        category1: kb_category,
-                        category2: devs_category
-                      }
-                    } else {
-                      var categories = {
-                        category1: devs_category,
-                        category2: kb_category
-                      }
-                    }      
-                  } else {
-                    var categories = null;
-                  }
-
-                  autocompleteCache[queryHash] = categories;
+                .then(function(pages) {
+                  autocompleteCache[queryHash] = pages;
 
                   callback({
-                    success: categories !== null,
-                    results: categories
+                    success: pages !== null,
+                    results: pages
                   });
                 });
               }

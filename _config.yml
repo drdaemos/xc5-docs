@@ -23,6 +23,11 @@ lsi: true
 kramdown:
   input: GFM
 index_path: links.xml
+search:
+  preferred: devs.x-cart.com
+cse:
+  host: kbsearch.x-cart.com
+  path: search
 elasticsearch:
   host: localhost:9200
   js_host: kbsearch.x-cart.com
