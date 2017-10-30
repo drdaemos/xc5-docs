@@ -2,7 +2,7 @@
 layout: 
 ---
 
-// Version 0.5
+// Version 0.6
 ;(function() {
 
   function Search() {
@@ -111,7 +111,6 @@ layout:
       return memo;
     }, []);
 
-    var preferredSite = '{{ site.search.preferred }}';
 
     if (pages.length > 0) {
       var kb_category = {
@@ -128,7 +127,9 @@ layout:
         })
       };
 
-      if (prefix_length == 'kb.x-cart.com') {
+      var preferredSite = '{{ site.search.preferred }}';
+
+      if (preferredSite == 'kb.x-cart.com') {
         var categories = {
           category1: kb_category,
           category2: devs_category
@@ -228,7 +229,7 @@ layout:
 
   Search.prototype.renderRow = function(page) {
     var date = moment(page.date);
-    var index = page.index === 'usermanual' ? 'Knowledge base' : 'Developer docs';
+    var index = page.index === 'kb.x-cart.com' ? 'Knowledge base' : 'Developer docs';
     var date_string = date.isValid() ? '<div class="extra">' + date.format('D MMMM Y') + '</div>' : '';
     var meta = page.parent ? '<div class="meta">' + index + ' / ' + page.parent + '</div>' : '';
     return '<div class="item search-result-item">' +
