@@ -12,7 +12,6 @@ layout:
 
     this.PAGE_LENGTH = 10;
     this.query = this.getQueryParams(document.location.search);
-    this.client = new $.es.Client(this.connection);
 
     Search.instance = this
   }
