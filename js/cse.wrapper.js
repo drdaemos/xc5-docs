@@ -2,7 +2,7 @@
 layout: 
 ---
 
-// Version 0.2
+// Version 0.5
 ;(function() {
 
   function Search() {
