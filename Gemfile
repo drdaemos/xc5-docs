@@ -6,6 +6,3 @@ source "https://rubygems.org"
 gem 'jekyll'
 gem 'xml-simple'
 gem 'github-pages'
-gem 'elasticsearch'
-gem 'oj'
-gem 'htmlentities'
