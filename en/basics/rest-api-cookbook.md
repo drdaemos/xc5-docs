@@ -1,9 +1,8 @@
 ---
+title: REST API cookbook
 lang: en
 layout: article_with_sidebar
-updated_at: '2017-10-29 22:06 +0400'
-title: REST API cookbook
-published: true
+updated_at: 2017-10-29 22:06 +0400
 identifier: ref_I90uIumU
 order: 100
 ---
